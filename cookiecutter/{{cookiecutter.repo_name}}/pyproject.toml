@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ cookiecutter.repo_name }}"
+version = "0.1.0"
+description = "{{ cookiecutter.course_name }}"
+readme = "README.md"
+requires-python = ">={{ cookiecutter.python_version }}"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "{{ cookiecutter.student_name }}", email = "{{ cookiecutter.github_username }}@users.noreply.github.com" },
+]
+
+dependencies = [
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+    "mypy>=1.8",
+    "ipython>=8.20",
+    "matplotlib>=3.8",
+]
+inference = [
+    # Opt in only when you start Week 84+
+    "vllm>=0.6",
+    "torch>=2.3",
+]
+llm = [
+    # Opt in only when you start Week 70+
+    "transformers>=4.41",
+    "datasets>=2.19",
+    "peft>=0.10",
+    "trl>=0.9",
+]
+platform = [
+    # Opt in only when you start Week 94+
+    "fastapi>=0.111",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.7",
+    "redis>=5.0",
+    "prometheus-client>=0.20",
+]
+
+[project.urls]
+Homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["engineering_primitives*"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra --strict-markers"
+testpaths = ["02_engineering_primitives"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py{{ cookiecutter.python_version | replace('.', '') }}"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "{{ cookiecutter.python_version }}"
+strict = false
+ignore_missing_imports = true

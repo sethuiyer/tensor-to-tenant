@@ -1,5 +1,7 @@
 # `tensor-to-tenant`
 
+![tensor-to-tenant banner](./tensor_to_tenant_cutout.png)
+
 > *A 108-week journey from linear algebra to multi-tenant production AI platforms.*
 
 A consolidated, production-oriented learning path that turns you into an AI / software engineer who can build, evaluate, deploy, and operate ML and LLM systems — and pass the interviews that get you hired to do it.
@@ -19,6 +21,36 @@ A consolidated, production-oriented learning path that turns you into an AI / so
 | `chat-108 Week Course Design.txt` | Original course design source (108-week full plan) |
 | `COTNEXT.md` | Source knowledge base: books, papers, blogs, YouTube, practice exercises, math curriculum, interview roadmap |
 | `CAPSTONE.md` | **Final capstone interview artifact** — staff-level Multi-Tenant LLM Trace Forensics with Mo's algorithm (system design + coding + worked solution + self-grading rubric) |
+| `cookiecutter/` | **[`cookiecutter-tensor-to-tenant`](#the-cookiecutter--portfolio-piece--social-proof)** — one-command scaffolder that turns this course into a personalized 108-week learner repo with progress dashboard, milestone gates, and primitive stubs. The cookiecutter itself is the **portfolio piece** and the **social proof** of the course. |
+
+### The cookiecutter — portfolio piece & social proof
+
+The `cookiecutter/` directory is a runnable [Cookiecutter](https://cookiecutter.readthedocs.io/) template. One command scaffolds a fresh, personalized learner repo with all 108 weekly journal entries pre-stamped with your start date, engineering-primitive stubs, an interview-drill folder tree, the capstone scaffold, and three helper scripts (`make progress`, `make gate`, `make journal`).
+
+```bash
+pip install cookiecutter
+cookiecutter gh:sethuiyer/tensor-to-tenant
+# answer the prompts — repo is ready in 30 seconds.
+```
+
+**Why this is the portfolio piece:**
+
+The cookiecutter *is* the artifact. A learner who runs it and ships through Week 108 ends up with:
+
+1. A **public git history** of 108 weeks of focused work — the most credible resume an AI engineer can produce.
+2. **A working capstone** (Phase 9) — the same Multi-Tenant LLM Trace Forensics problem this README documents.
+3. **A reusable engineering primitive library** in `02_engineering_primitives/` — retrieval, rate limiting, caching, sketches, routing, every primitive with tests.
+4. **The cookiecutter itself**, forkable. The cleanest signal of "I understand AI systems end-to-end" is shipping a parameterized, opinionated course that someone else can run.
+
+**Why this is the social proof:**
+
+Every public learner repo generated from this template is a public commit that says *“I did the work.”* The cookiecutter is the course’s compounding loop:
+
+- More learners → more public repos → more visible proof the course works → more learners.
+- Every cohort member gets the same folder structure, so peer review and group retros just work.
+- When someone forks the cookiecutter to ship their own variant (e.g. *tensor-to-tenant for healthcare*), the original repo gains a citation.
+
+If you’re a hiring manager, an engineer evaluating the course, or a future self wondering whether 108 weeks was worth it: **look at the forks and the public learner repos.** The cookiecutter makes them cheap to start and impossible to fake.
 
 ### The arc: tensor → tenant
 

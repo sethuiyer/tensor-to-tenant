@@ -1,0 +1,12 @@
+{
+    "repo_name": "tensor-to-tenant-journal",
+    "course_name": "Tensor-to-Tenant \u2014 108-Week AI Engineering, ML Systems & Interview Mastery",
+    "course_short": "tensor-to-tenant",
+    "student_name": "Your Name",
+    "github_username": "yourusername",
+    "start_date": "2026-01-05",
+    "effort_hours_per_week": "10-15",
+    "python_version": "3.11",
+    "use_docker": ["yes", "no"],
+    "track": ["production-ai-platform", "llm-inference", "rag-agents", "balanced"]
+}
