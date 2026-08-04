@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { PHASES, WEEKS, phaseForWeek, type WeekMode } from '../../data/weeks';
 import { MANDALAS } from '../../data/mandalas';
 import { GATES } from '../../data/gates';
+import { url } from '../../config';
 
 export function getStaticPaths() {
   return PHASES.map((p) => ({
@@ -35,7 +36,7 @@ const relatedGate = GATES.find((g) => g.week === phase.end);
 >
   <div class="container" style="padding-top:2.5rem">
     <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
-      <a href="/curriculum/">Curriculum</a> / Phase {phase.id}
+      <a href={url('/curriculum/')}>Curriculum</a> / Phase {phase.id}
     </nav>
 
     <header style="margin-bottom:2rem">
@@ -46,8 +47,8 @@ const relatedGate = GATES.find((g) => g.week === phase.end);
 
     <!-- Prev / next -->
     <div style="display:flex;gap:1rem;margin-bottom:2rem;font-size:0.9rem">
-      {prevPhase && <a class="btn" href={`/phases/${prevPhase.id}/`}>← Phase {prevPhase.id}</a>}
-      {nextPhase && <a class="btn" href={`/phases/${nextPhase.id}/`}>Phase {nextPhase.id} →</a>}
+      {prevPhase && <a class="btn" href={url(`/phases/${prevPhase.id}/`)}>← Phase {prevPhase.id}</a>}
+      {nextPhase && <a class="btn" href={url(`/phases/${nextPhase.id}/`)}>Phase {nextPhase.id} →</a>}
     </div>
 
     <div class="table-wrap">

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../config';
 
 const pitfalls = [
   'tout = timer-1 vs tin+size-1 confusion → off-by-one, queries miss nodes',
@@ -18,7 +19,7 @@ const pitfalls = [
 <BaseLayout title="Capstone 2 — Agent Execution Forensics with Euler Tour + DSU on Tree" description="The optional Week 108 boss fight capstone." activeNav="capstones">
   <div class="container" style="padding-top:2.5rem">
     <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
-      <a href="/capstones/">Capstones</a> / Tree Forensics
+      <a href={url('/capstones/')}>Capstones</a> / Tree Forensics
     </nav>
 
     <header style="margin-bottom:2rem">

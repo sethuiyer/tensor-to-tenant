@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../config';
 
 const promises = [
   { label: 'one API', desc: 'a normalized endpoint that hides provider-specific wire formats' },
@@ -38,7 +39,7 @@ const interviewQuestions = [
 <BaseLayout title="Capstone 3 — Enterprise Multi-Model AI Gateway" description="The OpenRouter-inspired enterprise AI gateway capstone." activeNav="capstones">
   <div class="container" style="padding-top:2.5rem">
     <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
-      <a href="/capstones/">Capstones</a> / AI Gateway
+      <a href={url('/capstones/')}>Capstones</a> / AI Gateway
     </nav>
 
     <header style="margin-bottom:2rem">
