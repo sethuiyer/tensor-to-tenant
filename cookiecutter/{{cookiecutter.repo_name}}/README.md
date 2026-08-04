@@ -91,6 +91,48 @@ and run `make auror` for the optional badge check.
 └── scripts/                            # weekly, recovery, release, gate, progress
 ```
 
+## Weekly modes and time budget
+
+Every weekly journal carries a `Mode` line that declares what kind of
+deliverable to ship. This is not optional decoration; it is the difference
+between a 7-hour week and a 25-hour nightmare.
+
+| Mode | What you ship | Examples |
+|---|---|---|
+| `implement` | Working code you can run | LRU cache (W35), `analyze_ab_test` (W63), tenant limiter (W99) |
+| `read_diagram` | A written document: design doc, trade-off note, comparison table | Two case-study design docs (W53–56), training architecture map (W74), inference cost model (W93) |
+| `deploy_benchmark` | A live deployment or benchmark run on a GPU | vLLM deployment (W84), live inference dashboard (W87) |
+
+Distribution across the 108 weeks: **69 `implement`**, **35 `read_diagram`**,
+**4 `deploy_benchmark`** (Weeks 75, 84, 87, 89). The `deploy_benchmark`
+weeks are the only ones that *require* GPU access; everything else is
+either code or writing.
+
+The 15-hour weekly budget splits into two non-negotiable buckets:
+
+```text
+15 hr/week total
+├── 6–8.5 hr  Fixed weekly overhead
+│              ├ 1–1.5  Coding drill
+│              ├ 1.5–2  System design question or pattern
+│              ├ 0.5–1  Behavioral story refinement
+│              ├ 0.5    Technical explanation out loud
+│              ├ 1–1.5  Algorithmic Forge drill
+│              └ 1–1.5  Sailboat retro + journal + evidence
+└── 7–9 hr   Core topic work (this week's deliverable)
+```
+
+If you skip the overhead to fit the core topic, your interview readiness
+silently degrades. The Friday Forge drill and the weekly retro are both
+interview preparation, even when they don't feel like it.
+
+**When you get stuck — read [`docs/bottlenecks.md`](./docs/bottlenecks.md) before
+debugging.** It documents the three most common ways learners stall (no GPU
+budget at Week 84, burning 25 hours on Week 74, treating self-graded gates
+as guardrails) and gives explicit self-recovery protocols that don't
+require external infrastructure. Modal is the default GPU redirect for
+`deploy_benchmark` weeks; the free tier covers every Phase 8 deliverable.
+
 ## Daily cadence
 
 | Day | Slot | Purpose |
