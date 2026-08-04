@@ -6,10 +6,16 @@ PY   := python{{ cookiecutter.python_version }}
 
 .DEFAULT_GOAL := dispatch
 
-.PHONY: dispatch help init journal week recovery remediate release badge forge design darbar auror gate progress test clean lint fmt
+.PHONY: dispatch help init journal week recovery remediate release badge forge design darbar auror gate progress test clean lint fmt status log ambush recall boss restore rpg-init
 
 dispatch: ## Show help, or run `make week=14`, `make recovery=14`, `make remediate=18`, `make release=30`, `make badge=30`, `make forge=57`, `make design=54`, or `make darbar=42`.
-	@if [ -n "$(week)" ]; then $(MAKE) --no-print-directory _week WEEK="$(week)"; \
+	@if [ -n "$(boss)" ]; then $(MAKE) --no-print-directory _boss WEEK="$(boss)"; \
+	elif [ "$(restore)" = "1" ] || [ "$(restore)" = "yes" ]; then $(MAKE) --no-print-directory _restore; \
+	elif [ "$(status)" = "1" ] || [ "$(status)" = "yes" ]; then $(MAKE) --no-print-directory _status; \
+	elif [ "$(log)" = "1" ] || [ "$(log)" = "yes" ]; then $(MAKE) --no-print-directory _log; \
+	elif [ "$(ambush)" = "1" ] || [ "$(ambush)" = "yes" ]; then $(MAKE) --no-print-directory _ambush; \
+	elif [ "$(recall)" = "1" ] || [ "$(recall)" = "yes" ]; then $(MAKE) --no-print-directory _recall; \
+	elif [ -n "$(week)" ]; then $(MAKE) --no-print-directory _week WEEK="$(week)"; \
 	elif [ -n "$(recovery)" ]; then $(MAKE) --no-print-directory _recovery WEEK="$(recovery)"; \
 	elif [ -n "$(remediate)" ]; then $(MAKE) --no-print-directory _remediate GATE="$(remediate)"; \
 	elif [ -n "$(badge)" ]; then $(MAKE) --no-print-directory _badge WEEK="$(badge)"; \
@@ -91,6 +97,49 @@ gate: ## Run the milestone gate checker.
 
 progress: ## Print weekly completion dashboard.
 	@$(PY) scripts/progress.py
+
+# ---------------------------------------------------------------------------
+# RPG / character layer
+# ---------------------------------------------------------------------------
+
+rpg-init: ## Bootstrap character + memory from journals.
+	@$(PY) scripts/character.py init
+
+status: ## Render the full RPG character sheet.
+	@$(PY) scripts/character.py status
+
+_status:
+	@$(PY) scripts/character.py status
+
+log: ## Log this week's XP manually (interactive).
+	@$(PY) scripts/character.py log
+
+_log:
+	@$(PY) scripts/character.py log
+
+ambush: ## Trigger a hallway recall ambush against the most-at-risk concept.
+	@$(PY) scripts/character.py ambush
+
+_ambush:
+	@$(PY) scripts/character.py ambush
+
+recall: ## List all concepts sorted by current retention.
+	@$(PY) scripts/character.py recall
+
+_recall:
+	@$(PY) scripts/character.py recall
+
+boss: ## Record a boss-fight reward: `make boss=18`.
+	@$(PY) scripts/character.py boss --week "$(WEEK)"
+
+_boss:
+	@$(PY) scripts/character.py boss --week "$(WEEK)"
+
+restore: ## Spend a recovery week (+30 HP).
+	@$(PY) scripts/character.py restore
+
+_restore:
+	@$(PY) scripts/character.py restore
 
 test: ## Run pytest across the engineering primitives.
 	@$(PY) -m pytest 02_engineering_primitives -v
