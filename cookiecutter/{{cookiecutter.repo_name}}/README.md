@@ -134,10 +134,18 @@ make test          # pytest across engineering primitives
 
 ## Capstone
 
-Phase 9 is the **Multi-Tenant LLM Trace Forensics with Mo's Algorithm** drill
-(see your course bundle's `CAPSTONE.md` for the full pedagogical walkthrough,
-pitfalls index, and worked solution). The scaffolding in `08_capstone/` is wired
-to that artifact.
+Weeks 103-108 offer three coherent paths:
+
+- **Capstone 1:** Multi-Tenant LLM Trace Forensics with Mo's Algorithm
+- **Capstone 2:** optional Agent Execution Forensics with Euler Tour + DSU on Tree
+- **Capstone 3:** OpenRouter-inspired Enterprise Multi-Model AI Gateway
+
+The gateway path designs and builds unified API normalization, provider
+registry, policy-aware routing, stream-safe failover, enterprise tenancy,
+per-tenant admission, cost attribution, and observability. See your course
+bundle's `CAPSTONE3_OPENROUTER.md` for the full requirements and rubric. The
+scaffold in `08_capstone/openrouter/` is ready for the design, simulator,
+benchmarks, and staff-defense evidence.
 
 ## License
 
