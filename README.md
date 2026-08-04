@@ -1,89 +1,8 @@
 # `tensor-to-tenant`
 
-![Tensor-to-Tenant curriculum map](./cover_image.webp)
+![Tensor-to-Tenant curriculum map](./tensor_to_tenant_cutout.png)
 
-> *A 108-week journey from linear algebra to multi-tenant production AI platforms.*
-
-A consolidated, production-oriented learning path that turns you into an AI / software engineer who can build, evaluate, deploy, and operate ML and LLM systems — and pass the interviews that get you hired to do it.
-
-![108 weeks](https://img.shields.io/badge/duration-108_weeks-blueviolet)
-![Phases](https://img.shields.io/badge/phases-10-blue)
-![Effort](https://img.shields.io/badge/effort-10%E2%80%9315_hrs%2Fwk-orange)
-![Stack](https://img.shields.io/badge/stack-ML_%2F_LLM_%2F_Platform-success)
-
-> **Duration:** 108 weeks · **Effort:** 10–15 hours/week · **Rhythm:** Mon = theory, Tue = build, Wed = systems/papers, Thu = eval/interview, Fri = Algorithmic Forge + review/retro, Weekend = buffer.
-
-### Course at a glance
-
-| Core curriculum | Count | Parallel tracks | Count |
-|---|---:|---|---:|
-| Instructional weeks | **108** | Leetcode Darbar problems | **548** |
-| Phases | **10** | Darbar difficulty | **255 Easy · 240 Medium · 53 Hard** |
-| Stackable programs | **3** | Darbar categories | **19** |
-| Math modules / areas | **100 / 28** | Algorithmic Forge lanes | **13** |
-| Production implementation tasks | **30** | Forge tiers | **4** |
-| Timed coding drills | **40** | Forge boss fights | **9** |
-| Engineering primitive packages | **11** |  |  |
-| System Design weeks | **12** | Capstone paths | **3** |
-| System Design cases / families | **37 / 8** | Failure-injection scenarios | **10** |
-| Technology labs | **12** *(6 core · 6 supporting)* | Gateway rubric dimensions | **12** |
-| OOD/LLD problems | **9** | Gateway boss extensions | **8** |
-| Production AI platform components | **18** |  |  |
-| Milestone gates | **10** |  |  |
-| Recovery windows | **13** |  |  |
-| Portfolio releases | **3** |  |  |
-| Evidence types per week | **4** |  |  |
-
-The core path moves from mathematical foundations to production AI platform
-judgment. The parallel Darbar and Algorithmic Forge lanes add interview speed
-and advanced algorithmic depth without changing the 108-week spine. The three
-capstone paths are **Multi-Tenant Trace Forensics with Mo’s Algorithm**,
-**Agent Execution Forensics with Euler Tour + DSU on Tree**, and an
-**OpenRouter-inspired Enterprise AI Gateway**.
-
-### What's inside
-
-| File | Purpose |
-|---|---|
-| `README.md` | The 108-week curriculum, all phases, all reference resources |
-| `CAPSTONE.md` | **Final capstone interview artifact** — staff-level Multi-Tenant LLM Trace Forensics with Mo's algorithm (system design + coding + worked solution + self-grading rubric) |
-| `CAPSTONE2_EULER_DSU.md` | **Optional Week 108 Boss fight** — Multi-Tenant Agent Execution Forensics with Euler Tour + DSU on Tree |
-| [`CAPSTONE3_OPENROUTER.md`](./CAPSTONE3_OPENROUTER.md) | **Final gateway capstone option** — OpenRouter-inspired enterprise multi-model routing, policy, reliability, tenancy, and economics |
-| [`ALGORITHMIC_FORGE.md`](./ALGORITHMIC_FORGE.md) | Parallel algorithmic spine: Core, Supporting, Archive, and Boss-fight treatment for the programming-camp material |
-| [`SYSTEM_DESIGN_TRACK.md`](./SYSTEM_DESIGN_TRACK.md) | Canonical Weeks 46–57 system-design, distributed-systems, technology-lab, case-study, and OOD track |
-| [`LEETCODE_DARBAR.md`](./LEETCODE_DARBAR.md) | Parallel 548-problem interview-execution track, with Standard and optional Auror completion paths |
-| [`SAILBOAT_RETRO.md`](./SAILBOAT_RETRO.md) | Weekly human retrospective ritual: destination, wind, anchor, rocks, boat position, and next heading |
-| [`MANDALA.md`](./MANDALA.md) | 15 complete 48-day capability cycles plus a 36-day graduation cycle, with identity progression and parallel streams |
-| `cookiecutter/` | **[`cookiecutter-tensor-to-tenant`](#the-cookiecutter--portfolio-piece--social-proof)** — one-command scaffolder that turns this course into a personalized 108-week learner repo with progress dashboard, milestone gates, and primitive stubs. The cookiecutter itself is the **portfolio piece** and the **social proof** of the course. |
-
-### The cookiecutter — portfolio piece & social proof
-
-The `cookiecutter/` directory is a runnable [Cookiecutter](https://cookiecutter.readthedocs.io/) template. One command scaffolds a fresh, personalized learner repo with all 108 weekly journal entries pre-stamped with your start date, engineering-primitive stubs, an interview-drill folder tree, the capstone scaffold, and three helper scripts (`make progress`, `make gate`, `make journal`).
-
-```bash
-pip install cookiecutter
-cookiecutter gh:sethuiyer/tensor-to-tenant
-# answer the prompts — repo is ready in 30 seconds.
-```
-
-**Why this is the portfolio piece:**
-
-The cookiecutter *is* the artifact. A learner who runs it and ships through Week 108 ends up with:
-
-1. A **public git history** of 108 weeks of focused work — the most credible resume an AI engineer can produce.
-2. **A working capstone** (Phase 9) — the same Multi-Tenant LLM Trace Forensics problem this README documents.
-3. **A reusable engineering primitive library** in `02_engineering_primitives/` — retrieval, rate limiting, caching, sketches, routing, every primitive with tests.
-4. **The cookiecutter itself**, forkable. The cleanest signal of "I understand AI systems end-to-end" is shipping a parameterized, opinionated course that someone else can run.
-
-**Why this is the social proof:**
-
-Every public learner repo generated from this template is a public commit that says *“I did the work.”* The cookiecutter is the course’s compounding loop:
-
-- More learners → more public repos → more visible proof the course works → more learners.
-- Every cohort member gets the same folder structure, so peer review and group retros just work.
-- When someone forks the cookiecutter to ship their own variant (e.g. *tensor-to-tenant for healthcare*), the original repo gains a citation.
-
-If you’re a hiring manager, an engineer evaluating the course, or a future self wondering whether 108 weeks was worth it: **look at the forks and the public learner repos.** The cookiecutter makes them cheap to start and impossible to fake.
+A consolidated, production-oriented learning path that turns you into an AI / software engineer who can build, evaluate, deploy, and operate ML and LLM systems and pass the interviews that get you hired to do it.
 
 ### The arc: tensor → tenant
 
@@ -158,31 +77,6 @@ Train into a production-oriented AI/software engineer who can:
 4. Pass system design, coding, ML, and behavioral interviews.
 5. Produce a portfolio of reproducible projects, benchmarks, and design docs.
 
-### Week 5 paper anchor: hypothesis choice and generalization
-
-Before the curriculum introduces formal model training, Week 5 uses Michael
-Timothy Bennett's [*The Optimal Choice of Hypothesis Is the Weakest, Not the
-Shortest*](https://arxiv.org/abs/2301.12987v4) as a critical reading on
-induction, generalization, and inductive bias.
-
-The paper argues—under its finite-language and uniformly distributed task
-assumptions—that maximizing a hypothesis's **weakness** (the size of the set of
-possibilities it leaves open) can generalize better than minimizing description
-length. Learners should treat this as a claim to examine, not a replacement for
-MDL, regularization, or task-specific priors.
-
-The bounded Week 5 paper lab is:
-
-- define the paper's terms: task, model, extension, weakness, and description length;
-- reproduce or critique the binary-arithmetic toy comparison on a small finite dataset;
-- report generalization rate, extent of generalization, and the assumptions that make the comparison meaningful; and
-- connect the result to later leakage checks, calibration, slice-based retrieval evaluation, and LLM behavior under distribution shift.
-
-The evidence is one technical explanation plus a small reproducible experiment
-or a falsifiable critique. It does not add another phase or change the 100-math-
-module count; it gives the early diagnostic a stronger theory-of-generalization
-anchor.
-
 ## Why this course
 
 The market has plenty of specialists. It has far fewer engineers who can move
@@ -238,14 +132,6 @@ The differentiator is not that the graduate has “seen” all these subjects. I
 is that the portfolio shows they can **explain, implement, benchmark, operate,
 and defend** the resulting systems.
 
-### The honest Staff-level caveat
-
-Finishing 108 weeks does not make someone Staff on day one. Staff engineering
-also means owning incidents at 2 a.m., influencing several teams without
-authority, saying no to a bad executive request, and completing migrations or
-reliability work that nobody wants to own. Those are earned in organizations,
-not simulated perfectly in a repository.
-
 What this course can provide is Staff-level technical breadth, reasoning, and
 portfolio evidence. When the graduate enters that environment, they spend less
 time discovering basic production failure modes and more time exercising
@@ -269,32 +155,6 @@ judgment, influence, and ownership.
 | 10 | 103–108 | Capstone, portfolio, and interview readiness |
 
 ---
-
-## The Apprenticeship Model
-
-This is a 108-instructional-week apprenticeship with valuable stopping points,
-not a single all-or-nothing course. The advanced material stays intact; the
-path becomes easier to enter, pause, resume, and show to other people.
-
-### Three stackable programs
-
-| Program | Weeks | Portfolio release | Evidence badge | What you can prove at the checkpoint |
-|---|---:|---|---|---|
-| **Foundations** | 1–30 | Week 30 | Gate 3 + core evidence | Mathematical foundations, numerical routines, and an experimentation toolkit |
-| **Engineering + Systems** | 31–69 | Week 69 | Gate 6 + core evidence | Tested engineering primitives, system designs, MLOps tools, and a production postmortem |
-| **LLM Platform** | 70–108 | Week 108 | Gate 10 + core evidence | LLM/RAG work, inference benchmarks, a production AI platform, and the capstone |
-
-Each release is independently valuable. A learner can stop after Foundations,
-publish its evidence, and still have completed a coherent program rather than
-leaving with an unfinished Week 1–108 checklist.
-
-```mermaid
-flowchart LR
-    F["FOUNDATIONS<br/>Weeks 1–30<br/>Release: math + experimentation"]
-    E["ENGINEERING + SYSTEMS<br/>Weeks 31–69<br/>Release: primitives + MLOps"]
-    L["LLM PLATFORM<br/>Weeks 70–108<br/>Release: platform + capstone"]
-    F --> E --> L
-```
 
 ### The weekly contract: core first, depth second
 
@@ -325,6 +185,30 @@ or take a deliberate rest before continuing.
 
 ### Portfolio releases
 
+### Week 5 paper anchor: hypothesis choice and generalization
+
+Before the curriculum introduces formal model training, Week 5 uses Michael
+Timothy Bennett's [*The Optimal Choice of Hypothesis Is the Weakest, Not the
+Shortest*](https://arxiv.org/abs/2301.12987v4) as a critical reading on
+induction, generalization, and inductive bias.
+
+The paper argues—under its finite-language and uniformly distributed task
+assumptions—that maximizing a hypothesis's **weakness** (the size of the set of
+possibilities it leaves open) can generalize better than minimizing description
+length. Learners should treat this as a claim to examine, not a replacement for
+MDL, regularization, or task-specific priors.
+
+The bounded Week 5 paper lab is:
+
+- define the paper's terms: task, model, extension, weakness, and description length;
+- reproduce or critique the binary-arithmetic toy comparison on a small finite dataset;
+- report generalization rate, extent of generalization, and the assumptions that make the comparison meaningful; and
+- connect the result to later leakage checks, calibration, slice-based retrieval evaluation, and LLM behavior under distribution shift.
+
+The evidence is one technical explanation plus a small reproducible experiment
+or a falsifiable critique. It does not add another phase or change the 100-math-
+module count; it gives the early diagnostic a stronger theory-of-generalization
+anchor.
 - **Week 30 — Foundations release:** math diagnostic, numerical linear algebra
   lab, statistics/experimentation toolkit, and an explanation of the work.
 - **Week 69 — Engineering + Systems release:** primitive library, system design
