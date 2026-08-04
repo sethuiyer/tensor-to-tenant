@@ -11,7 +11,7 @@ A consolidated, production-oriented learning path that turns you into an AI / so
 ![Effort](https://img.shields.io/badge/effort-10%E2%80%9315_hrs%2Fwk-orange)
 ![Stack](https://img.shields.io/badge/stack-ML_%2F_LLM_%2F_Platform-success)
 
-> **Duration:** 108 weeks · **Effort:** 10–15 hours/week · **Rhythm:** Mon = theory, Tue = build, Wed = systems/papers, Thu = eval/interview, Fri = review/retro, Weekend = buffer.
+> **Duration:** 108 weeks · **Effort:** 10–15 hours/week · **Rhythm:** Mon = theory, Tue = build, Wed = systems/papers, Thu = eval/interview, Fri = Algorithmic Forge + review/retro, Weekend = buffer.
 
 ### What's inside
 
@@ -19,9 +19,12 @@ A consolidated, production-oriented learning path that turns you into an AI / so
 |---|---|
 | `README.md` | The 108-week curriculum, all phases, all reference resources |
 | `CAPSTONE.md` | **Final capstone interview artifact** — staff-level Multi-Tenant LLM Trace Forensics with Mo's algorithm (system design + coding + worked solution + self-grading rubric) |
+| `CAPSTONE2_EULER_DSU.md` | **Optional Week 108 Boss fight** — Multi-Tenant Agent Execution Forensics with Euler Tour + DSU on Tree |
+| [`ALGORITHMIC_FORGE.md`](./ALGORITHMIC_FORGE.md) | Parallel algorithmic spine: Core, Supporting, Archive, and Boss-fight treatment for the programming-camp material |
+| [`SYSTEM_DESIGN_TRACK.md`](./SYSTEM_DESIGN_TRACK.md) | Canonical Weeks 46–57 system-design, distributed-systems, technology-lab, case-study, and OOD track |
+| [`LEETCODE_DARBAR.md`](./LEETCODE_DARBAR.md) | Parallel 548-problem interview-execution track, with Standard and optional Auror completion paths |
+| [`SAILBOAT_RETRO.md`](./SAILBOAT_RETRO.md) | Weekly human retrospective ritual: destination, wind, anchor, rocks, boat position, and next heading |
 | `cookiecutter/` | **[`cookiecutter-tensor-to-tenant`](#the-cookiecutter--portfolio-piece--social-proof)** — one-command scaffolder that turns this course into a personalized 108-week learner repo with progress dashboard, milestone gates, and primitive stubs. The cookiecutter itself is the **portfolio piece** and the **social proof** of the course. |
-| `chat-108 Week Course Design.txt` *(optional, local-only)* | Original course design source. Not required to use the repo. |
-| `COTNEXT.md` *(optional, local-only)* | Source knowledge base (books, papers, blogs, YouTube, math curriculum). Not required to use the repo. |
 
 ### The cookiecutter — portfolio piece & social proof
 
@@ -71,9 +74,15 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
 ## Table of Contents
 
 1. [Course Goal](#course-goal)
-2. [Course Structure (10 Phases)](#course-structure-10-phases)
-3. [Full 108-Week Curriculum](#full-108-week-curriculum)
-4. [Phase Details](#phase-details)
+2. [Why this course](#why-this-course)
+3. [Course Structure (10 Phases)](#course-structure-10-phases)
+4. [The Apprenticeship Model](#the-apprenticeship-model)
+5. [Algorithmic Forge](#algorithmic-forge)
+6. [System Design Track](#system-design-track)
+7. [Leetcode Darbar](#leetcode-darbar)
+8. [Sailboat Retrospective](#sailboat-retrospective)
+9. [Full 108-Week Curriculum](#full-108-week-curriculum)
+10. [Phase Details](#phase-details)
    - [Phase 1 — Orientation, Tooling, Diagnostics (Weeks 1–6)](#phase-1--orientation-tooling-and-diagnostics--weeks-16)
    - [Phase 2 — Mathematical Foundations I (Weeks 7–18)](#phase-2--mathematical-foundations-i--weeks-718)
    - [Phase 3 — Mathematical Foundations II (Weeks 19–30)](#phase-3--mathematical-foundations-ii--weeks-1930)
@@ -84,8 +93,8 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
    - [Phase 8 — LLM Inference & Performance Engineering (Weeks 82–93)](#phase-8--llm-inference-and-performance-engineering--weeks-8293)
    - [Phase 9 — Production AI Platform Engineering (Weeks 94–102)](#phase-9--production-ai-platform-engineering--weeks-94102)
    - [Phase 10 — Capstone, Portfolio & Interview Readiness (Weeks 103–108)](#phase-10--capstone-portfolio-and-interview-readiness--weeks-103108)
-5. [Milestone Gates](#milestone-gates)
-6. [Source Material Mapping](#source-material-mapping)
+11. [Milestone Gates](#milestone-gates)
+12. [Source Material Mapping](#source-material-mapping)
    - [Math Curriculum Path](#math-curriculum-path)
    - [Engineering Implementation Tasks](#engineering-implementation-tasks)
    - [Engineering Practice Exercises](#engineering-practice-exercises)
@@ -93,13 +102,13 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
    - [ML Systems & MLOps Reading](#ml-systems--mlops-reading)
    - [LLM Inference Papers & Systems](#llm-inference-papers--systems)
    - [LLM Training, RAG, Agents & Evaluation](#llm-training-rag-agents--evaluation)
-7. [Weekly Template & Repo Structure](#weekly-template--repo-structure)
-8. [Interview Preparation Integration](#interview-preparation-integration)
-9. [Behavioral Interview Track (CARL Stories)](#behavioral-interview-track-carl-stories)
-10. [Final Capstone Requirements](#final-capstone-requirements)
-11. [Completion Criteria](#completion-criteria)
-12. [Final Capstone Artifact](#final-capstone-artifact)
-13. [Reference Resources](#reference-resources)
+13. [Weekly Template & Repo Structure](#weekly-template--repo-structure)
+14. [Interview Preparation Integration](#interview-preparation-integration)
+15. [Behavioral Interview Track (CARL Stories)](#behavioral-interview-track-carl-stories)
+16. [Final Capstone Requirements](#final-capstone-requirements)
+17. [Completion Criteria](#completion-criteria)
+18. [Final Capstone Artifact](#final-capstone-artifact)
+19. [Reference Resources](#reference-resources)
     - [YouTube Playlists](#youtube-playlists)
     - [Books & Reading List](#books--reading-list)
     - [Research Papers](#research-papers)
@@ -118,6 +127,74 @@ Train into a production-oriented AI/software engineer who can:
 3. Implement production-grade backend and distributed-system patterns.
 4. Pass system design, coding, ML, and behavioral interviews.
 5. Produce a portfolio of reproducible projects, benchmarks, and design docs.
+
+## Why this course
+
+The market has plenty of specialists. It has far fewer engineers who can move
+vertically from numerical reasoning to production AI platform judgment.
+
+This apprenticeship is designed to produce a **production-minded Staff AI
+Systems Engineer with algorithmic depth**—someone who can connect the math, the
+algorithms, the ML lifecycle, the model stack, and the operational platform.
+
+### The scarcity is in the seams
+
+Many engineers are strong in one lane but have never crossed the boundary into
+the next one:
+
+- Can solve Leetcode problems, but would send raw emails into Kafka before durable logging.
+- Can build a RAG demo, but treats HNSW as magic and cannot explain Recall@K by query slice.
+- Can discuss PagedAttention, but has never built a per-tenant concurrency limiter with leader election.
+- Knows transformers, but cannot diagnose why a logistic-regression baseline is miscalibrated.
+
+Tensor-to-Tenant makes those seams the curriculum. The point is not to collect
+topic badges; it is to repeatedly carry an idea from first principles into a
+system with workload constraints, failure modes, evidence, and trade-offs.
+
+### The vertical capability ladder
+
+| Layer | Graduate capability |
+|---|---|
+| **Math** | Recognize when an SVD is unstable, inspect the condition number, and choose a numerically defensible approach. |
+| **Algorithms** | Move quickly through the 548 Darbar patterns, then go deep on flows, suffix structures, Euler tours, and DSU on Tree when the workload requires it. |
+| **ML** | Frame the problem, catch leakage, run bootstrap confidence intervals, and evaluate slices rather than celebrating one aggregate metric. |
+| **LLM systems** | Build and critique SFT, LoRA, DPO, GRPO, RAG, agents, memory, evaluation, and guardrails—with an understanding of where each breaks. |
+| **Inference** | Read a roofline plot, identify memory-bound behavior, explain PagedAttention, judge when speculative decoding helps, and model serving economics. |
+| **Platform** | Ship routing, quotas, tracing, idempotency, work queues, registries, tenant isolation, and cost attribution—the Week 102 platform is working evidence, not slides. |
+| **Staff judgment** | Write design docs, challenge assumptions, choose exact versus approximate guarantees from workload shape, and defend trade-offs in review. |
+
+The intended outcome is a straight line from `vector.dot()` to a per-tenant
+concurrency limiter with leader election. Mathematics informs the algorithm;
+the algorithm informs the primitive; the primitive informs the distributed
+design; the design becomes a reliable AI platform.
+
+### What this prepares someone to do
+
+Strong graduates can target roles such as:
+
+- Staff AI Engineer
+- Staff ML Systems Engineer
+- AI Infrastructure or LLM Platform Engineer
+- Retrieval/Search Engineer
+- Inference Performance Engineer
+- Production ML Platform Engineer
+
+The differentiator is not that the graduate has “seen” all these subjects. It
+is that the portfolio shows they can **explain, implement, benchmark, operate,
+and defend** the resulting systems.
+
+### The honest Staff-level caveat
+
+Finishing 108 weeks does not make someone Staff on day one. Staff engineering
+also means owning incidents at 2 a.m., influencing several teams without
+authority, saying no to a bad executive request, and completing migrations or
+reliability work that nobody wants to own. Those are earned in organizations,
+not simulated perfectly in a repository.
+
+What this course can provide is Staff-level technical breadth, reasoning, and
+portfolio evidence. When the graduate enters that environment, they spend less
+time discovering basic production failure modes and more time exercising
+judgment, influence, and ownership.
 
 ---
 
@@ -138,9 +215,172 @@ Train into a production-oriented AI/software engineer who can:
 
 ---
 
+## The Apprenticeship Model
+
+This is a 108-instructional-week apprenticeship with valuable stopping points,
+not a single all-or-nothing course. The advanced material stays intact; the
+path becomes easier to enter, pause, resume, and show to other people.
+
+### Three stackable programs
+
+| Program | Weeks | Portfolio release | Evidence badge | What you can prove at the checkpoint |
+|---|---:|---|---|---|
+| **Foundations** | 1–30 | Week 30 | Gate 3 + core evidence | Mathematical foundations, numerical routines, and an experimentation toolkit |
+| **Engineering + Systems** | 31–69 | Week 69 | Gate 6 + core evidence | Tested engineering primitives, system designs, MLOps tools, and a production postmortem |
+| **LLM Platform** | 70–108 | Week 108 | Gate 10 + core evidence | LLM/RAG work, inference benchmarks, a production AI platform, and the capstone |
+
+Each release is independently valuable. A learner can stop after Foundations,
+publish its evidence, and still have completed a coherent program rather than
+leaving with an unfinished Week 1–108 checklist.
+
+```mermaid
+flowchart LR
+    F["FOUNDATIONS<br/>Weeks 1–30<br/>Release: math + experimentation"]
+    E["ENGINEERING + SYSTEMS<br/>Weeks 31–69<br/>Release: primitives + MLOps"]
+    L["LLM PLATFORM<br/>Weeks 70–108<br/>Release: platform + capstone"]
+    F --> E --> L
+```
+
+### The weekly contract: core first, depth second
+
+Every week has two lanes:
+
+- **Core deliverable:** the one artifact that keeps the learner moving. It is
+  sized for the stated weekly effort and is the requirement for progress.
+- **Optional depth work:** a harder extension such as a proof, from-scratch
+  implementation, benchmark, failure analysis, or production trade-off note.
+  It preserves the course's advanced ceiling without making every week a
+  prerequisite-heavy research project.
+
+Every core artifact records evidence in four forms: code or implementation,
+benchmark or result, design document or technical explanation, and a short
+retrospective. The curriculum tracks evidence shipped, not attendance.
+
+### Blocking gates, remediation, and recovery
+
+Milestone gates are real dependencies. If a gate is not passed, the next gate
+is blocked until the learner completes a focused remediation cycle and submits
+the missing evidence. Remediation is specific to the failed criterion; it does
+not require restarting the entire course.
+
+Recovery weeks are planned buffer windows after Weeks 6, 14, 22, 30, 38, 46,
+54, 62, 70, 78, 86, 94, and 102. They are not extra curriculum topics: use
+them to close an evidence gap, recover from a missed week, rerun a benchmark,
+or take a deliberate rest before continuing.
+
+### Portfolio releases
+
+- **Week 30 — Foundations release:** math diagnostic, numerical linear algebra
+  lab, statistics/experimentation toolkit, and an explanation of the work.
+- **Week 69 — Engineering + Systems release:** primitive library, system design
+  portfolio, experimentation toolkit, monitoring plan, and a postmortem.
+- **Week 108 — LLM Platform release:** inference benchmark, production platform
+  layer, capstone, mock-interview scorecard, and 30-day job plan.
+
+The cookiecutter generates the release checklists, evidence folders, recovery
+plans, remediation templates, and badge verifier alongside the weekly journals.
+In a generated repo, `make badge=30`, `make badge=69`, or `make badge=108`
+checks core evidence plus the corresponding blocking gate before marking a
+program badge as earned.
+
+---
+
+## Algorithmic Forge
+
+The programming-camp material is a **parallel algorithmic spine**, not an
+eleventh phase. Every Friday gets a bounded Forge drill connected to the
+current AI-systems work. The canonical taxonomy and 108-week map live in
+[`ALGORITHMIC_FORGE.md`](./ALGORITHMIC_FORGE.md).
+
+| Level | Role in the 108-week course | Default timebox |
+|---|---|---:|
+| **Core** | Must implement and explain; directly supports the current phase | 45–90 min |
+| **Supporting** | Guided lab or one representative problem; promote when relevant | 45–120 min |
+| **Archive** | Reference only; no scheduled obligation | 0 min scheduled |
+| **Boss fight** | Selected advanced topic integrated with a gate or capstone | 2–3 hr |
+
+The Core spine includes graphs and topological sort, shortest paths, dynamic
+programming, greedy methods, tries and pattern matching, heaps, Fenwick and
+segment trees, DSU, Euler tours, binary search, randomized algorithms, number
+theory basics, probability, combinatorics, and the selected flow/matching
+concepts needed for systems work.
+
+Computational geometry, suffix trees/automata, HLD, dynamic trees, advanced
+group theory, Burnside/Polya, Dancing Links, and exotic contest machinery stay
+Supporting, Archive, or Boss-fight material. Capstone 1 (Mo’s over immutable
+traces) remains required; Capstone 2 (Euler Tour + DSU on Tree) becomes the
+optional Week 108 tree-forensics boss fight rather than a fourth month.
+
+## System Design Track
+
+System design is the canonical architecture track for **Weeks 46–57**, not an
+additional phase. It replaces the old short list of generic interview prompts
+with a layered progression through foundations, distributed-systems patterns,
+technology labs, case-study families, and OOD/LLD. The full map is in
+[`SYSTEM_DESIGN_TRACK.md`](./SYSTEM_DESIGN_TRACK.md).
+
+The weekly design loop is:
+
+```text
+requirements → API/data model → scale/partition/cache/queue
+             → failure/consistency/observability → AI extension
+```
+
+The track deliberately connects cases such as Bitly, Redis-backed rate
+limiting, Dropbox, WhatsApp, search, schedulers, payments, Kafka/Flink
+pipelines, ChatGPT, and Figma multiplayer to the later platform work. Gate 5
+requires a defensible design from any case family, including capacity math,
+tenant isolation, idempotency, failure semantics, cost, and one AI extension.
+
+## Leetcode Darbar
+
+[`LEETCODE_DARBAR.md`](./LEETCODE_DARBAR.md) is the parallel high-achiever lane.
+Its target catalog is 548 problems (255 Easy, 240 Medium, 53 Hard), tracked as
+interview execution rather than core attendance. The Standard Apprenticeship
+does a small phase-aligned problem set most weeks; the optional **Auror Track**
+targets all 548, averaging about five per week.
+
+Darbar is intentionally complementary:
+
+| Lane | Learner behavior | Result |
+|---|---|---|
+| Leetcode Darbar | Fast pattern recognition and timed implementation | Interview fluency |
+| Algorithmic Forge | Derivation, adversarial analysis, advanced structures | Algorithmic depth |
+| Core curriculum | Workload-shaped systems implementation | Production judgment |
+
+Darbar never overrides a core deliverable or blocking gate. A solved problem
+needs an explanation, final complexity, and a link to the production concept it
+reinforces. Generated repos expose `make darbar=42`, `make progress`, and the
+optional `make auror` verifier.
+
+## Sailboat Retrospective
+
+Every week ends with a short [Sailboat Retro](./SAILBOAT_RETRO.md). It is the
+human navigation layer of the apprenticeship:
+
+| Sailboat element | Weekly question |
+|---|---|
+| **Island / destination** | What capability am I trying to reach? |
+| **Wind** | What helped progress? |
+| **Anchor** | What slowed me down? |
+| **Rocks** | What could derail next week? |
+| **Boat position** | Am I ahead, on track, or drifting? |
+| **Next heading** | What is the single most important adjustment? |
+
+The retro is part of the existing weekly evidence and review ritual, not a new
+assignment or gate. It gives the learner permission to recover, change pace,
+protect the core deliverable, and keep the long apprenticeship pointed toward
+the next capability rather than merely the next checkbox.
+
+---
+
 ## Full 108-Week Curriculum
 
-| Week | Module | Focus | Deliverable |
+The table below lists the **core deliverable** for every instructional week.
+The generated learner repo adds an optional depth lane and an evidence record
+to every journal entry.
+
+| Week | Module | Focus | Core deliverable |
 |---:|---|---|---|
 | 1 | Orientation and course OS | Course setup, tracker, repo, weekly template | Course dashboard + README |
 | 2 | Python engineering refresh | Typing, testing, async basics | CLI project skeleton with tests |
@@ -294,9 +534,18 @@ engineering_primitives/
 
 ### Phase 5 — System Design and Distributed Systems Fundamentals (Weeks 46–57)
 
-Requirements, trade-offs, API design, data modeling, observability, rate limiting, caching, replication, scaling reads/writes, blob storage, workflow orchestration, schema evolution, and **10 classic case studies**: URL shortener, Dropbox, Ticketmaster, News Feed, WhatsApp, LeetCode, Uber, web crawler, ad click aggregator, payments.
+This is the canonical [System Design Track](./SYSTEM_DESIGN_TRACK.md): delivery
+framework, networking, API design, data modeling, caching, sharding,
+consistent hashing, CAP, indexes, read/write scaling, contention, workflows,
+large blobs, real-time updates, schema evolution, technology labs, case-study
+families, and OOD/LLD. Core cases include Bitly, rate limiting, Dropbox, News
+Feed, WhatsApp, search, scheduling, streaming, payments, and ChatGPT; the
+supporting catalog adds Redis, Kafka, Flink, vector databases, Figma, Spotify,
+Discord, Slack, and Shopify inventory reservations.
 
-For each case study, deliver: requirements, high-level architecture, data model, API design, scaling plan, failure modes, trade-offs, bottom-line recommendation.
+Every design must include requirements, API, data model, scale plan, failure
+modes, trade-offs, and an AI extension. The track is sized inside the existing
+12 weeks; OOD is a parallel interview/build lane, not Weeks 109+.
 
 ### Phase 6 — ML Lifecycle, Experimentation, and MLOps (Weeks 58–69)
 
@@ -331,18 +580,23 @@ Pick **one** capstone: Enterprise RAG assistant · LLM gateway/platform · Agent
 
 ## Milestone Gates
 
-| Gate | Week | Pass criteria |
-|---:|---:|---|
-| 1 | 6 | Course repo · weekly tracker · Dockerized service · diagnostic report |
-| 2 | 18 | Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines |
-| 3 | 30 | Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE |
-| 4 | 45 | Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing) |
-| 5 | 57 | Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes |
-| 6 | 69 | A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan |
-| 7 | 81 | RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype |
-| 8 | 93 | Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding report, inference cost model |
-| 9 | 102 | Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters |
-| 10 | 108 | Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan |
+Gates are **blocking checkpoints**, not decorative progress markers. When a
+gate fails, pause new content, use the next recovery window for a targeted
+remediation cycle, and submit the missing evidence before advancing. A failed
+gate does not erase prior work or require restarting the whole phase.
+
+| Gate | Week | Pass criteria | If blocked |
+|---:|---:|---|---|
+| 1 | 6 | Course repo · weekly tracker · Dockerized service · diagnostic report | Remediate orientation and systems setup |
+| 2 | 18 | Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines | Remediate linear/numerical algebra |
+| 3 | 30 | Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE | Remediate calculus/statistics; publish Foundations release |
+| 4 | 45 | Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing) | Remediate the missing primitive contracts/tests |
+| 5 | 57 | Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes | Remediate the weakest design pattern |
+| 6 | 69 | A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan | Remediate experimentation/MLOps; publish Engineering + Systems release |
+| 7 | 81 | RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype | Remediate the weakest LLM/RAG component |
+| 8 | 93 | Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding report, inference cost model | Remediate inference benchmarking and operations |
+| 9 | 102 | Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters | Remediate the missing platform capability |
+| 10 | 108 | Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan | Remediate the specific capstone/interview gap |
 
 ---
 
@@ -435,28 +689,13 @@ The full list of 30 exercises lives in [§ Engineering Practice Exercises](#engi
 
 | Source topic | Course weeks |
 |---|---:|
-| System design orientation | 46 |
-| Delivery framework | 46 |
-| Core concepts | 46–47 |
-| Key technologies | 47–48 |
-| URL shortener | 53 |
-| Dropbox | 53 |
-| Ticketmaster | 54 |
-| Facebook News Feed | 54 |
-| WhatsApp | 55 |
-| LeetCode | 55 |
-| Uber | 56 |
-| Web crawler | 56 |
-| Ad click aggregator | 57 |
-| Payments | 57 |
-| Rate limiter | 48 |
-| Scaling reads | 49 |
-| Scaling writes | 49 |
-| Large blobs | 50 |
-| Long-running tasks | 50–51 |
-| Orchestration vs choreography | 51 |
-| Contracts/schema evolution | 52 |
-| Trade-off analysis | 57, 103 |
+| Canonical track and delivery framework | [SYSTEM_DESIGN_TRACK.md](./SYSTEM_DESIGN_TRACK.md), 46–57 |
+| Networking, API, data modeling, numbers | 46–47 |
+| Caching, sharding, consistent hashing, CAP | 48–49 |
+| Blob storage, workflows, schema evolution | 50–52 |
+| Search, messaging, social, scheduling | 53–55 |
+| Streaming, analytics, payments, ChatGPT | 56–57 |
+| OOD / LLD | Parallel Thursday lane, 46–57 |
 
 ### ML Systems & MLOps Reading
 
@@ -561,8 +800,11 @@ The full papers table with venues and topics lives in [§ Research Papers](#rese
 ```text
 Week [number]: [title]
 
-Objective:
+Core objective:
 - 
+
+Optional depth:
+- Proof, benchmark, failure analysis, or production extension.
 
 Monday:
 - Math/theory:
@@ -577,15 +819,43 @@ Thursday:
 - Evaluation/interview:
 
 Friday:
-- Review/docs/retrospective:
+- Algorithmic Forge:
+- Tier (Core / Supporting / Archive / Boss):
+- Drill and complexity:
+- Review / Sailboat retrospective:
 
-Deliverable:
+Sailboat:
+- Island / destination:
+- Wind:
+- Anchor:
+- Rocks:
+- Boat position (ahead / on track / drifting):
+- Next heading:
+
+Optional Auror lane:
+- Leetcode Darbar problem IDs / titles:
+- Status, attempts, final complexity:
+- Production concept reinforced:
+
+Core deliverable:
 - 
 
-Evidence:
-- Link to code:
-- Link to notes:
-- Link to results:
+Evidence record:
+- Code / implementation:
+- Benchmark / result:
+- Design doc / technical explanation:
+- Retrospective / learning note:
+
+Core status:
+- [ ] Theory
+- [ ] Build
+- [ ] Systems / papers
+- [ ] Evaluation / interview
+- [ ] Review / retro
+- [ ] Core deliverable shipped
+
+Optional depth status:
+- [ ] Depth work attempted (optional)
 ```
 
 ---
@@ -621,9 +891,19 @@ Evidence:
     design/ src/ eval/ dashboards/ reports/
   09_interview/
     system_design/ coding/ behavioral/ mocks/
+    leetcode_darbar/ algorithmic_forge/
+      core/ supporting/ archive/ boss_fights/
+  portfolio/
+    releases/ foundations_week_030.md
+    releases/ engineering_systems_week_069.md
+    releases/ llm_platform_week_108.md
+  evidence/
+    weeks/week_001/ ... week_108/
+  docs/
+    remediation/ recovery_weeks.md
   journal/
-    week_001.md
-    week_002.md
+    weeks/week_001.md
+    recovery/after_week_006.md
     ...
 ```
 
@@ -638,6 +918,11 @@ Interview prep is **continuous**, not just at the end.
 - 1 system design question or pattern
 - 1 behavioral story refinement
 - 1 technical explanation out loud
+
+The canonical design sequence is [`SYSTEM_DESIGN_TRACK.md`](./SYSTEM_DESIGN_TRACK.md).
+The standard coding rhythm uses selected Darbar problems; the optional Auror
+lane uses the full [Leetcode Darbar](https://aninokuma.codeberg.page/leetcode-darbar/)
+catalog at roughly five problems per week. Forge remains the Friday depth lane.
 
 | Weeks | Interview focus |
 |---:|---|
@@ -689,20 +974,31 @@ Use the **CARL** format — **C**ontext, **A**ction, **R**esult, **L**earning.
 
 The canonical artifact for Phase 10 lives in [`CAPSTONE.md`](./CAPSTONE.md) — a staff-level **Multi-Tenant LLM Trace Forensics with Mo's Algorithm** question that synthesizes Phases 6–9 (ingestion, immutable segments, exact slice forensics, approximation, multi-tenancy) into a single interview drill. It includes a system-design diagram, pitfalls index, pedagogical walkthrough, worked solution, and a 24-point self-grading rubric.
 
+The optional Week 108 Boss fight is [`CAPSTONE2_EULER_DSU.md`](./CAPSTONE2_EULER_DSU.md): Multi-Tenant Agent Execution Forensics with Euler Tour + DSU on Tree. It extends the algorithmic spine into tree topology without adding a fourth month or blocking the LLM Platform badge.
+
 ---
 
 ## Completion Criteria
 
-1. Completed ≥ 90% of weekly deliverables
-2. Built all major engineering primitives
-3. Written ≥ 10 system design documents
-4. Built an experimentation/evaluation toolkit
-5. Built a RAG/agent prototype
-6. Completed an LLM inference benchmark report
-7. Built a production AI platform layer
-8. Completed a capstone
-9. Passed ≥ 3 full mock interviews
-10. Published a portfolio
+The course has three independent completion levels:
+
+1. **Foundations (Week 30):** core work shipped for Weeks 1–30, Gate 3 passed,
+   and the Foundations portfolio release published.
+2. **Engineering + Systems (Week 69):** core work shipped for Weeks 31–69,
+   Gate 6 passed, and the Engineering + Systems release published.
+3. **LLM Platform (Week 108):** core work shipped for Weeks 70–108, Gate 10
+   passed, and the final portfolio release published.
+4. **Auror (optional):** one of the above program releases plus all 548 Darbar
+   tracker entries solved and explained, the required Forge spine, and both
+   capstone boss artifacts attempted.
+
+At every level, completion means evidence exists: code, benchmark or result,
+design/technical explanation, and retrospective. Optional depth work raises the
+ceiling but is never required for the core checkpoint. Core Algorithmic Forge
+drills in that program range are part of the evidence; Supporting, Archive, and
+optional Boss-fight topics are not hidden prerequisites. Darbar is tracked
+separately so the standard path stays completable while the Auror path remains
+genuinely demanding.
 
 ---
 
@@ -1186,9 +1482,15 @@ The roadmap also contains curated tracks for **ML System Design**, **AI Engineer
 
 ## Final Notes
 
-- Treat the **weekly template** as non-negotiable: plan Mon, build Tue, systems/papers Wed, eval/interview Thu, retro Fri.
-- Use the **milestone gates** as your stop / continue checkpoints — if a gate fails, repeat the previous phase before progressing.
+- Treat the **weekly template** as non-negotiable: plan Mon, build Tue, systems/papers Wed, eval/interview Thu, Algorithmic Forge + retro Fri, and use Darbar as an optional daily lane.
+- End every week with the [Sailboat Retro](./SAILBOAT_RETRO.md): name the destination, wind, anchor, rocks, boat position, and one next heading.
+- Treat the **milestone gates** as blocking stop / continue checkpoints; use a recovery window and targeted remediation when one fails.
+- Think in three stackable programs and publish the Week 30, Week 69, and Week 108 releases as soon as their evidence is ready.
 - The interview roadmap runs **continuously**, not just at Week 107 — every week should produce at least one interview artifact (coding drill, design doc, behavioral story, or technical explanation).
-- The repository layout is a **template**, not a constraint — collapse folders, add your own, but keep `journal/` religiously.
+- The target identity is a straight line from `vector.dot()` to per-tenant concurrency limiting with leader election: math, algorithms, system design, ML/LLM systems, inference, platform reliability, and staff judgment are one apprenticeship.
+- The repository layout is a **template**, not a constraint — collapse folders, add your own, but keep `journal/`, `evidence/`, and the release records.
+
+This is not a course that everyone finishes. It is an apprenticeship with
+valuable stopping points.
 
 **You can consider the course complete when you have completed the [Completion Criteria](#completion-criteria) above.** Good luck.
