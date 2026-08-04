@@ -130,7 +130,7 @@ PHASE_8 = [
     (87, "Observability",                          "Prometheus/Grafana for serving",                               "Live inference dashboard"),
     (88, "Benchmarking",                           "Request-rate sweeps, saturation points",                       "Benchmark methodology doc"),
     (89, "SGLang",                                 "RadixAttention, prefix reuse",                                 "SGLang comparison report"),
-    (90, "Scheduling",                             "Orca, continuous batching, chunked prefill",                   "Scheduler comparison"),
+    (90, "Scheduling & MoE Execution",             "Orca, continuous batching, chunked prefill, MoE all-to-all routing, Warp Decode, COMET overlap", "MoE overlap schedule design doc + latency-hiding simulator"),
     (91, "Quantization",                           "FP8, AWQ, GPTQ, KV cache compression",                         "Quality/throughput table"),
     (92, "Speculative / long context",             "Medusa, EAGLE, StreamingLLM, KV eviction",                     "Latency/memory lab"),
     (93, "Disaggregation",                         "DistServe, Splitwise, Mooncake, autoscaling",                  "Disaggregated serving plan"),

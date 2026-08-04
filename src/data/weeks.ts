@@ -128,7 +128,7 @@ export const WEEKS: Week[] = [
   { week: 87, module: 'Observability', focus: 'Prometheus/Grafana for serving', mode: 'deploy_benchmark', deliverable: 'Live inference dashboard' },
   { week: 88, module: 'Benchmarking', focus: 'Request-rate sweeps, saturation points', mode: 'read_diagram', deliverable: 'Benchmark methodology doc' },
   { week: 89, module: 'SGLang', focus: 'RadixAttention, prefix reuse', mode: 'deploy_benchmark', deliverable: 'SGLang comparison report' },
-  { week: 90, module: 'Scheduling', focus: 'Orca, continuous batching, chunked prefill', mode: 'read_diagram', deliverable: 'Scheduler comparison' },
+  { week: 90, module: 'Scheduling & MoE Execution', focus: 'Orca, continuous batching, chunked prefill, MoE all-to-all routing, Warp Decode, COMET overlap', mode: 'read_diagram', deliverable: 'MoE overlap schedule design doc + latency-hiding simulator' },
   { week: 91, module: 'Quantization', focus: 'FP8, AWQ, GPTQ, KV cache compression', mode: 'read_diagram', deliverable: 'Quality/throughput table' },
   { week: 92, module: 'Speculative/long context', focus: 'Medusa, EAGLE, StreamingLLM, KV eviction', mode: 'read_diagram', deliverable: 'Latency/memory lab' },
   { week: 93, module: 'Disaggregation', focus: 'DistServe, Splitwise, Mooncake, autoscaling', mode: 'read_diagram', deliverable: 'Disaggregated serving plan' },
