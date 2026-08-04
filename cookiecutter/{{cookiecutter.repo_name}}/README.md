@@ -213,6 +213,11 @@ make ambush=1      # trigger a hallway recall ambush (forgetting-curve simulatio
 make recall        # list concepts sorted by current retention
 make boss=18       # record a gate/capstone boss-fight reward
 make restore       # spend a recovery week (+30 HP)
+make ask p="..."   # ask the OpenRouter-backed learning partner a socratic question
+make quiz          # quiz driven by FADING/LOST concepts in the RPG memory DB
+make review        # walk this week's journal with the partner
+make plan          # next 4 weeks anchored on the next gate
+make debug p="..." # minimal-hint diagnostic help
 make test          # pytest across engineering primitives
 ```
 
@@ -226,6 +231,40 @@ and the **Hallway Ambush** triggers whenever a concept crosses WANING.
 See **RPG layer (Tensor-to-Tenant character system)** above for classes, stats,
 battle types, and the XP curve. Saves live in `journal/character.json` and
 `journal/memory.json` and are git-tracked.
+
+## Learning partner (`AGENTS.md`)
+
+An AI learning partner ships with every repo. The full role spec is in
+[`AGENTS.md`](./AGENTS.md); the CLI is `scripts/learning_partner.py`. It
+talks to an OpenRouter-compatible API and uses the journal + RPG state as
+context. The default model is `deepseek/deepseek-v4-flash-20260731`,
+configurable via `OPENROUTER_MODEL` env var.
+
+**Five modes, all socratic by default** (the partner asks more than it
+types):
+
+```bash
+make ask p="why can't exact global mode be merged from local winners?"
+make quiz                  # drills driven by FADING/LOST concepts
+make review                # walk this week's journal
+make plan                  # next 4 weeks anchored on the next gate
+make debug p="my Mo's algo gives wrong top error tool on week 14"
+```
+
+Setup:
+
+```bash
+export OPENROUTER_API_KEY=sk-or-v1-...
+export OPENROUTER_MODEL="deepseek/deepseek-v4-flash-20260731"
+# optional: export OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+```
+
+To swap the model entirely (Claude, GPT-4o, Llama, whatever OpenRouter
+exposes), change `OPENROUTER_MODEL` -- no code changes needed.
+
+The partner has five modes and five anti-patterns. Read `AGENTS.md` for the
+role spec and the failure modes the partner refuses to fall into.
+
 
 ## Capstone
 

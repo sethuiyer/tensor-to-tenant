@@ -6,10 +6,15 @@ PY   := python{{ cookiecutter.python_version }}
 
 .DEFAULT_GOAL := dispatch
 
-.PHONY: dispatch help init journal week recovery remediate release badge forge design darbar auror gate progress test clean lint fmt status log ambush recall boss restore rpg-init
+.PHONY: dispatch help init journal week recovery remediate release badge forge design darbar auror gate progress test clean lint fmt status log ambush recall boss restore rpg-init ask quiz review plan debug
 
 dispatch: ## Show help, or run `make week=14`, `make recovery=14`, `make remediate=18`, `make release=30`, `make badge=30`, `make forge=57`, `make design=54`, or `make darbar=42`.
-	@if [ -n "$(boss)" ]; then $(MAKE) --no-print-directory _boss WEEK="$(boss)"; \
+	@if [ "$(ask)" = "1" ] || [ "$(ask)" = "yes" ]; then $(MAKE) --no-print-directory _ask; \
+	elif [ "$(quiz)" = "1" ] || [ "$(quiz)" = "yes" ]; then $(MAKE) --no-print-directory _quiz; \
+	elif [ "$(review)" = "1" ] || [ "$(review)" = "yes" ]; then $(MAKE) --no-print-directory _review; \
+	elif [ "$(plan)" = "1" ] || [ "$(plan)" = "yes" ]; then $(MAKE) --no-print-directory _plan; \
+	elif [ "$(debug)" = "1" ] || [ "$(debug)" = "yes" ]; then $(MAKE) --no-print-directory _debug; \
+	elif [ -n "$(boss)" ]; then $(MAKE) --no-print-directory _boss WEEK="$(boss)"; \
 	elif [ "$(restore)" = "1" ] || [ "$(restore)" = "yes" ]; then $(MAKE) --no-print-directory _restore; \
 	elif [ "$(status)" = "1" ] || [ "$(status)" = "yes" ]; then $(MAKE) --no-print-directory _status; \
 	elif [ "$(log)" = "1" ] || [ "$(log)" = "yes" ]; then $(MAKE) --no-print-directory _log; \
@@ -140,6 +145,40 @@ restore: ## Spend a recovery week (+30 HP).
 
 _restore:
 	@$(PY) scripts/character.py restore
+
+# ---------------------------------------------------------------------------
+# Learning partner (OpenRouter-backed)
+# ---------------------------------------------------------------------------
+
+ask: ## Socratic question to the learning partner. Use: `make ask p="..."`.
+	@$(PY) scripts/learning_partner.py ask $(foreach v,$(p),$v)
+
+_ask:
+	@$(PY) scripts/learning_partner.py ask $(foreach v,$(p),$v)
+
+quiz: ## Generate recall questions driven by RPG memory DB.
+	@$(PY) scripts/learning_partner.py --with-rpg quiz
+
+_quiz:
+	@$(PY) scripts/learning_partner.py --with-rpg quiz
+
+review: ## Walk this week's journal with the partner.
+	@$(PY) scripts/learning_partner.py review
+
+_review:
+	@$(PY) scripts/learning_partner.py review
+
+plan: ## Plan the next 4 weeks from current mandala + next gate.
+	@$(PY) scripts/learning_partner.py plan
+
+_plan:
+	@$(PY) scripts/learning_partner.py plan
+
+debug: ## Minimal-hint diagnostic mode. Use: `make debug p="..."`.
+	@$(PY) scripts/learning_partner.py debug $(foreach v,$(p),$v)
+
+_debug:
+	@$(PY) scripts/learning_partner.py debug $(foreach v,$(p),$v)
 
 test: ## Run pytest across the engineering primitives.
 	@$(PY) -m pytest 02_engineering_primitives -v
