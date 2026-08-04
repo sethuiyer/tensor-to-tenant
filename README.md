@@ -107,6 +107,19 @@ Tensor-to-Tenant makes those seams the curriculum. The point is not to collect
 topic badges; it is to repeatedly carry an idea from first principles into a
 system with workload constraints, failure modes, evidence, and trade-offs.
 
+### Why the market doesn't produce this person
+
+Because companies have silos for a reason. At any real company:
+
+- Research team owns Weeks 7 to 30 and 70 to 74
+- Retrieval team owns 31 to 39 and 75 to 78
+- Inference team owns 82 to 93
+- Platform team owns 94 to 102
+
+They literally sit on different floors and use different Slack channels.
+Tensor-to-Tenant compresses two job hops, three team transfers, and years of
+accidental exposure into one deliberate apprenticeship.
+
 ### The vertical capability ladder
 
 | Layer | Graduate capability |
