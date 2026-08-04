@@ -99,6 +99,7 @@ export const RESEARCH_PAPERS: Paper[] = [
   { paper: 'Switch Transformer', venue: 'JMLR', topic: 'Mixture of Experts', url: '' },
   { paper: 'GShard', venue: 'ICLR 2021', topic: 'Sparse expert scaling', url: '' },
   { paper: 'DeepSeekMoE', venue: 'arXiv', topic: 'Modern MoE architecture', url: '' },
+  { paper: 'COMET', venue: 'arXiv 2502.19811', topic: 'Fine-grained computation-communication overlap for MoE', url: 'https://arxiv.org/abs/2502.19811' },
   { paper: 'LoRA', venue: 'ICLR 2022', topic: 'Parameter-efficient fine-tuning', url: '' },
   { paper: 'QLoRA', venue: 'NeurIPS 2023', topic: '4-bit fine-tuning', url: '' },
   { paper: 'DoRA', venue: 'ICML 2024', topic: 'Weight decomposition tuning', url: '' },
@@ -179,4 +180,6 @@ export const BLOG_ARTICLES: BlogLink[] = [
   { title: 'SGLang v0.4 zero-overhead scheduler', url: 'https://lmsys.org/blog/2024-12-04-sglang-v0-4/' },
   { title: 'RadixAttention / SGLang blog', url: 'https://lmsys.org/blog/2024-01-17-sglang/' },
   { title: 'SGLang docs', url: 'https://docs.sglang.io' },
+  { title: 'Warp Decode — better MoE model inference (Cursor)', url: 'https://cursor.com/blog/warp-decode' },
+  { title: 'Mixture-of-Kittens — deterministic MoE megakernel for NVL72s (Cursor)', url: 'https://cursor.com/blog/mixture-of-kittens' },
 ];

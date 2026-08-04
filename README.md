@@ -24,16 +24,17 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
 
 1. [Course Goal](#course-goal)
 2. [Why this course](#why-this-course)
-3. [Prerequisites — the 36-week on-ramp](#prerequisites--the-36-week-on-ramp)
-4. [Course Structure (10 Phases)](#course-structure-10-phases)
-5. [The Apprenticeship Model](#the-apprenticeship-model)
-6. [Algorithmic Forge](#algorithmic-forge)
-7. [System Design Track](#system-design-track)
-8. [Leetcode Darbar](#leetcode-darbar)
-9. [Sailboat Retrospective](#sailboat-retrospective)
-10. [The bridge to the agent-building bootcamp](#the-bridge-to-the-agent-building-bootcamp)
-11. [Full 108-Week Curriculum](#full-108-week-curriculum)
-12. [Phase Details](#phase-details)
+3. [Target Audience](#target-audience)
+4. [Prerequisites — the 36-week on-ramp](#prerequisites--the-36-week-on-ramp)
+5. [Course Structure (10 Phases)](#course-structure-10-phases)
+6. [The Apprenticeship Model](#the-apprenticeship-model)
+7. [Algorithmic Forge](#algorithmic-forge)
+8. [System Design Track](#system-design-track)
+9. [Leetcode Darbar](#leetcode-darbar)
+10. [Sailboat Retrospective](#sailboat-retrospective)
+11. [The bridge to the agent-building bootcamp](#the-bridge-to-the-agent-building-bootcamp)
+12. [Full 108-Week Curriculum](#full-108-week-curriculum)
+13. [Phase Details](#phase-details)
    - [Phase 1 — Orientation, Tooling, Diagnostics (Weeks 1–6)](#phase-1--orientation-tooling-and-diagnostics--weeks-16)
    - [Phase 2 — Mathematical Foundations I (Weeks 7–18)](#phase-2--mathematical-foundations-i--weeks-718)
    - [Phase 3 — Mathematical Foundations II (Weeks 19–30)](#phase-3--mathematical-foundations-ii--weeks-1930)
@@ -44,8 +45,8 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
    - [Phase 8 — LLM Inference & Performance Engineering (Weeks 82–93)](#phase-8--llm-inference-and-performance-engineering--weeks-8293)
    - [Phase 9 — Production AI Platform Engineering (Weeks 94–102)](#phase-9--production-ai-platform-engineering--weeks-94102)
    - [Phase 10 — Capstone, Portfolio & Interview Readiness (Weeks 103–108)](#phase-10--capstone-portfolio-and-interview-readiness--weeks-103108)
-13. [Milestone Gates](#milestone-gates)
-14. [Source Material Mapping](#source-material-mapping)
+14. [Milestone Gates](#milestone-gates)
+15. [Source Material Mapping](#source-material-mapping)
    - [Math Curriculum Path](#math-curriculum-path)
    - [Engineering Implementation Tasks](#engineering-implementation-tasks)
    - [Engineering Practice Exercises](#engineering-practice-exercises)
@@ -53,19 +54,19 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
    - [ML Systems & MLOps Reading](#ml-systems--mlops-reading)
    - [LLM Inference Papers & Systems](#llm-inference-papers--systems)
    - [LLM Training, RAG, Agents & Evaluation](#llm-training-rag-agents--evaluation)
-15. [Weekly Template & Repo Structure](#weekly-template--repo-structure)
-16. [Interview Preparation Integration](#interview-preparation-integration)
-17. [Behavioral Interview Track (CARL Stories)](#behavioral-interview-track-carl-stories)
-18. [Final Capstone Requirements](#final-capstone-requirements)
-19. [Completion Criteria](#completion-criteria)
-20. [Final Capstone Artifact](#final-capstone-artifact)
-21. [Reference Resources](#reference-resources)
+16. [Weekly Template & Repo Structure](#weekly-template--repo-structure)
+17. [Interview Preparation Integration](#interview-preparation-integration)
+18. [Behavioral Interview Track (CARL Stories)](#behavioral-interview-track-carl-stories)
+19. [Final Capstone Requirements](#final-capstone-requirements)
+20. [Completion Criteria](#completion-criteria)
+21. [Final Capstone Artifact](#final-capstone-artifact)
+22. [Reference Resources](#reference-resources)
     - [YouTube Playlists](#youtube-playlists)
     - [Books & Reading List](#books--reading-list)
     - [Research Papers](#research-papers)
     - [Blog & Article URLs](#blog--article-urls)
     - [Interview Preparation Roadmap](#interview-preparation-roadmap)
-22. [Repository Layout](#repository-layout)
+23. [Repository Layout](#repository-layout)
 
 ---
 
@@ -78,6 +79,10 @@ Train into a production-oriented AI/software engineer who can:
 3. Implement production-grade backend and distributed-system patterns.
 4. Pass system design, coding, ML, and behavioral interviews.
 5. Produce a portfolio of reproducible projects, benchmarks, and design docs.
+
+## Target Audience
+
+This is not for the "I want to learn AI in 30 days to get a remote job" crowd. This is for the mid-level Software Engineer or Data Scientist who has 2-3 years of experience, possesses deep intellectual curiosity, and wants to become a Principal/Staff AI Systems Architect.
 
 ## Why this course
 
@@ -713,7 +718,7 @@ to every journal entry.
 | 87 | Observability | Prometheus/Grafana for serving | deploy_benchmark | Live inference dashboard |
 | 88 | Benchmarking | Request-rate sweeps, saturation points | read_diagram | Benchmark methodology doc |
 | 89 | SGLang | RadixAttention, prefix reuse | deploy_benchmark | SGLang comparison report |
-| 90 | Scheduling | Orca, continuous batching, chunked prefill | read_diagram | Scheduler comparison |
+| 90 | Scheduling & MoE Execution | Orca, continuous batching, chunked prefill, MoE all-to-all routing, Warp Decode, COMET overlap | read_diagram | MoE overlap schedule design doc + latency-hiding simulator |
 | 91 | Quantization | FP8, AWQ, GPTQ, KV cache compression | read_diagram | Quality/throughput table |
 | 92 | Speculative/long context | Medusa, EAGLE, StreamingLLM, KV eviction | read_diagram | Latency/memory lab |
 | 93 | Disaggregation | DistServe, Splitwise, Mooncake, autoscaling | read_diagram | Disaggregated serving plan |
@@ -867,7 +872,7 @@ Transformer architecture, tokenization, data pipelines, dedup, SFT/LoRA/QLoRA/Do
 
 ### Phase 8 — LLM Inference and Performance Engineering (Weeks 82–93)
 
-GPU performance regimes, arithmetic intensity, roofline, FlashAttention, PagedAttention, vLLM, SGLang, RadixAttention, continuous batching, Orca, Sarathi-Serve, chunked prefill, FP8/AWQ/GPTQ, KV-cache compression (KIVI, H2O, SnapKV, MInference), speculative decoding (Medusa, EAGLE), StreamingLLM, DistServe, Splitwise, Mooncake, disaggregated prefill/decode, autoscaling, inference economics.
+GPU performance regimes, arithmetic intensity, roofline, FlashAttention, PagedAttention, vLLM, SGLang, RadixAttention, continuous batching, Orca, Sarathi-Serve, chunked prefill, MoE all-to-all dispatch/combine, Warp Decode, COMET overlap, FP8/AWQ/GPTQ, KV-cache compression (KIVI, H2O, SnapKV, MInference), speculative decoding (Medusa, EAGLE), StreamingLLM, DistServe, Splitwise, Mooncake, disaggregated prefill/decode, autoscaling, inference economics.
 
 ### Phase 9 — Production AI Platform Engineering (Weeks 94–102)
 
@@ -974,6 +979,7 @@ The full 100-module mathematics curriculum path (tracks + topics) lives in [§ M
 | Embedding Cache | 102 |
 | Cost Attribution Engine | 102 |
 | End-to-End AI Request Trace | 95 |
+| MoE All-to-All Schedule Precomputer | 90 |
 
 The full task specs (problem / description / what to do) live in [§ Engineering Implementation Tasks](#engineering-implementation-tasks) below.
 
@@ -1056,6 +1062,9 @@ The full list of 30 exercises lives in [§ Engineering Practice Exercises](#engi
 | Continuous batching | 90 |
 | Sarathi-Serve | 90 |
 | Chunked prefill | 90 |
+| MoE all-to-all dispatch/combine patterns | 90 |
+| Warp Decode (Cursor blog) | 90 |
+| COMET (fine-grained comp-comm overlap for MoE) | 90 |
 | Quantization methods | 91 |
 | KIVI / H2O / SnapKV / MInference | 91–92 |
 | Speculative decoding | 92 |
@@ -1441,6 +1450,7 @@ genuinely demanding.
 | Switch Transformer | JMLR | Mixture of Experts | — |
 | GShard | ICLR 2021 | Sparse expert scaling | — |
 | DeepSeekMoE | arXiv | Modern MoE architecture | — |
+| COMET | arXiv | Fine-grained computation-communication overlap for MoE | — |
 | LoRA | ICLR 2022 | Parameter-efficient fine-tuning | — |
 | QLoRA | NeurIPS 2023 | 4-bit fine-tuning | — |
 | DoRA | ICML 2024 | Weight decomposition tuning | — |
@@ -1501,6 +1511,8 @@ The following blogs/articles are referenced in the course (especially in the inf
 - SGLang v0.4 zero-overhead scheduler — https://lmsys.org/blog/2024-12-04-sglang-v0-4/
 - RadixAttention / SGLang blog — https://lmsys.org/blog/2024-01-17-sglang/
 - SGLang docs — https://docs.sglang.io
+- Warp Decode — better MoE model inference (Cursor) — https://cursor.com/blog/warp-decode
+- Mixture-of-Kittens — deterministic MoE megakernel for NVL72s (Cursor) — https://cursor.com/blog/mixture-of-kittens
 
 ### Mathematics Curriculum Path
 
@@ -1611,7 +1623,7 @@ The following blogs/articles are referenced in the course (especially in the inf
 
 ### Engineering Implementation Tasks
 
-30 production-style implementation tasks, each with a problem statement, full description, and detailed "what to do" prompt.
+31 production-style implementation tasks, each with a problem statement, full description, and detailed "what to do" prompt.
 
 | # | Problem | What to Do (Summary) |
 |---:|---|---|
@@ -1645,6 +1657,7 @@ The following blogs/articles are referenced in the course (especially in the inf
 | 28 | Model Registry & Promotion Pipeline | Implement model registration, stage transitions (Dev → Staging → Production), approval workflow, rollback, lineage tracking. |
 | 29 | Distributed Configuration Service | Strongly-versioned config retrieval with watches, caching, rollback, consistency guarantees. |
 | 30 | End-to-End AI Request Trace | Correlate inference, retrieval, tool calls, prompts, downstream services via trace IDs. Generate execution timeline + latency breakdown. |
+| 31 | MoE All-to-All Schedule Precomputer | Given $T$ tokens, $E$ experts, and $G$ GPUs, write a CPU-side scheduler that generates the dispatch/combine offset table ($\Phi$). Simulate a timeline where compute blocks (FFN) and comm blocks (NVLink All-to-All) are interleaved. Output a Gantt chart showing the % of time the GPU spends idle vs. overlapping. Prove that precomputing the schedule takes <3% of the total step time. |
 
 ### Engineering Practice Exercises
 
