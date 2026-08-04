@@ -24,7 +24,7 @@ PHASE_1 = [
     (2,  "Python engineering refresh",              "Typing, testing, async basics",                                "CLI project skeleton with tests"),
     (3,  "Numerical Python",                       "NumPy, vectorization, broadcasting",                           "Vector math utility library"),
     (4,  "Reproducibility",                        "Git, notebooks, experiment tracking",                          "Reproducible notebook + Makefile"),
-    (5,  "Math diagnostic",                        "Linear algebra, calculus, probability baseline",               "Diagnostic report + gap map"),
+    (5,  "Math diagnostic and induction",          "Linear algebra, probability, hypothesis choice, generalization", "Diagnostic report + gap map + paper lab"),
     (6,  "Systems diagnostic",                     "HTTP, Docker, APIs, Linux basics",                             "Containerized hello-service"),
 ]
 
@@ -434,6 +434,29 @@ def optional_depth_for(week_no: int) -> str:
     return "Add a production-shaped benchmark, cost or safety analysis, and an architecture trade-off note."
 
 
+def paper_for_week(week_no: int) -> str:
+    """Return the bounded paper-study brief for weeks with a named anchor paper."""
+    if week_no != 5:
+        return ""
+    return textwrap.dedent("""\
+        ## Anchor paper — hypothesis choice and generalization
+
+        Read Michael Timothy Bennett, *The Optimal Choice of Hypothesis Is the
+        Weakest, Not the Shortest* (arXiv:2301.12987v4):
+        https://arxiv.org/abs/2301.12987v4
+
+        This is a critical reading, not a theorem to accept without checking.
+        The paper's central comparison is conditional on a finite implementable
+        language and a uniform distribution over tasks.
+
+        - [ ] Define task, model, extension, weakness, and description length.
+        - [ ] Reproduce or critique the binary-arithmetic toy experiment.
+        - [ ] Report generalization rate, extent, and the assumptions behind them.
+        - [ ] Connect the result to inductive bias, leakage, calibration, and
+          distribution shift.
+        """)
+
+
 def forge_for_week(week_no: int) -> tuple[str, str, str, str]:
     if week_no in FORGE_BOSSES:
         return FORGE_BOSSES[week_no]
@@ -465,6 +488,7 @@ def generate_weeks(root: Path, start: dt.date) -> None:
                 "## Core objective\n"
                 "-\n"
                 "\n"
+                "{paper}\n"
                 "## Optional depth\n"
                 "- {depth}\n"
                 "\n"
@@ -550,6 +574,7 @@ def generate_weeks(root: Path, start: dt.date) -> None:
                 focus=focus,
                 deliv=deliverable,
                 depth=optional_depth_for(week_no),
+                paper=paper_for_week(week_no),
                 forge_tier=forge_tier,
                 forge_topic=forge_topic,
                 forge_timebox=forge_timebox,
@@ -1162,6 +1187,9 @@ def generate_capstone_scaffold(root: Path) -> None:
     base = root / "08_capstone"
     for sub in ("design", "src", "eval", "dashboards", "reports"):
         (base / sub).mkdir(parents=True, exist_ok=True)
+    gateway = base / "openrouter"
+    for sub in ("design", "src", "eval", "dashboards", "reports"):
+        (gateway / sub).mkdir(parents=True, exist_ok=True)
 
     write(base / "README.md", textwrap.dedent("""\
         # Capstone -- Multi-Tenant LLM Trace Forensics
@@ -1193,10 +1221,43 @@ def generate_capstone_scaffold(root: Path) -> None:
           service itself
         - `reports/` -- final writeup + benchmark + interview summary
 
+        ## Capstone 3 — OpenRouter-inspired Enterprise AI Gateway
+
+        `openrouter/` is the gateway path. Build a local simulator with mock
+        providers and document unified API normalization, provider registry,
+        policy-aware routing, stream-safe failover, enterprise tenancy,
+        per-tenant admission, idempotent cost attribution, and PII-safe
+        observability. The parent course bundle's `CAPSTONE3_OPENROUTER.md`
+        contains the full requirements, failure matrix, evidence checklist, and
+        24-point rubric.
+
         ## Self-grade before mock interview
 
         Use the 24-point rubric in your course bundle's `CAPSTONE.md`. Schedule
         the Week 107 mock interview only after you score 18+.
+        """))
+    write(gateway / "README.md", textwrap.dedent("""\
+        # Capstone 3 — OpenRouter-inspired Enterprise AI Gateway
+
+        This is an alternative final capstone for Weeks 103-108. It is a design
+        and implementation simulator, not a claim to reproduce private
+        OpenRouter internals.
+
+        ## Required evidence
+
+        - `design/` - requirements, architecture, control/request-plane boundary,
+          route-decision contract, and trade-offs
+        - `src/` - normalized API, provider adapters, policy/routing,
+          stream-aware fallback, admission, and usage ledger
+        - `eval/` - provider failures, policy matrix, fairness, accounting, and
+          gateway-overhead benchmarks
+        - `dashboards/` - route, TTFT, throughput, fallback, budget, token, and
+          cost views without raw prompts
+        - `reports/` - threat model, incident runbook, cost reconciliation,
+          portfolio writeup, and staff-defense recording notes
+
+        Minimum: three mock providers, three core components implemented from
+        scratch, and tests for every failure in the capstone matrix.
         """))
 
 

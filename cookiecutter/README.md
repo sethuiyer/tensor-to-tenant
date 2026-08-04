@@ -20,7 +20,7 @@ Running this cookiecutter generates a fresh, opinionated repo with:
 - **Evidence-based badge verifier** for the three release checkpoints
 - **Phase folders** (`00_orientation` to `09_interview`) with READMEs explaining objectives, deliverables, and milestone gates
 - **Engineering primitive stubs** (`02_engineering_primitives/`) with `__init__.py`, module README, and `test_*.py` skeletons
-- **Capstone scaffolding** (`08_capstone/`) wired to the staff-level **Multi-Tenant LLM Trace Forensics** question
+- **Capstone scaffolding** (`08_capstone/`) with the required trace-forensics artifact, optional Euler/DSU boss, and OpenRouter-inspired enterprise gateway option
 - **Interview folders** (`09_interview/`) for system-design, coding, behavioral, and mock artifacts
 - **Helper scripts** (`scripts/`): `new_week.py`, `milestone_gate.py`, `progress.py`
 - **Workflow commands**: `make design=54`, `make darbar=42`, and `make auror`
@@ -159,7 +159,7 @@ drill in the correct tier.
 ├── 05_llm/                # Weeks 70-81
 ├── 06_inference/          # Weeks 82-93
 ├── 07_platform/           # Weeks 94-102
-├── 08_capstone/           # Weeks 103-108 (references CAPSTONE.md)
+├── 08_capstone/           # Weeks 103-108 (three capstone paths)
 ├── 09_interview/          # continuous interview prep
 │   └── algorithmic_forge/ # core, supporting, archive, boss_fights
 ├── portfolio/              # release checklists for Weeks 30, 69, and 108

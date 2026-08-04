@@ -1,6 +1,6 @@
 # `tensor-to-tenant`
 
-![tensor-to-tenant banner](./tensor_to_tenant_cutout.png)
+![Tensor-to-Tenant curriculum map](./cover_image.webp)
 
 > *A 108-week journey from linear algebra to multi-tenant production AI platforms.*
 
@@ -13,6 +13,34 @@ A consolidated, production-oriented learning path that turns you into an AI / so
 
 > **Duration:** 108 weeks · **Effort:** 10–15 hours/week · **Rhythm:** Mon = theory, Tue = build, Wed = systems/papers, Thu = eval/interview, Fri = Algorithmic Forge + review/retro, Weekend = buffer.
 
+### Course at a glance
+
+| Core curriculum | Count | Parallel tracks | Count |
+|---|---:|---|---:|
+| Instructional weeks | **108** | Leetcode Darbar problems | **548** |
+| Phases | **10** | Darbar difficulty | **255 Easy · 240 Medium · 53 Hard** |
+| Stackable programs | **3** | Darbar categories | **19** |
+| Math modules / areas | **100 / 28** | Algorithmic Forge lanes | **13** |
+| Production implementation tasks | **30** | Forge tiers | **4** |
+| Timed coding drills | **40** | Forge boss fights | **9** |
+| Engineering primitive packages | **11** |  |  |
+| System Design weeks | **12** | Capstone paths | **3** |
+| System Design cases / families | **37 / 8** | Failure-injection scenarios | **10** |
+| Technology labs | **12** *(6 core · 6 supporting)* | Gateway rubric dimensions | **12** |
+| OOD/LLD problems | **9** | Gateway boss extensions | **8** |
+| Production AI platform components | **18** |  |  |
+| Milestone gates | **10** |  |  |
+| Recovery windows | **13** |  |  |
+| Portfolio releases | **3** |  |  |
+| Evidence types per week | **4** |  |  |
+
+The core path moves from mathematical foundations to production AI platform
+judgment. The parallel Darbar and Algorithmic Forge lanes add interview speed
+and advanced algorithmic depth without changing the 108-week spine. The three
+capstone paths are **Multi-Tenant Trace Forensics with Mo’s Algorithm**,
+**Agent Execution Forensics with Euler Tour + DSU on Tree**, and an
+**OpenRouter-inspired Enterprise AI Gateway**.
+
 ### What's inside
 
 | File | Purpose |
@@ -20,6 +48,7 @@ A consolidated, production-oriented learning path that turns you into an AI / so
 | `README.md` | The 108-week curriculum, all phases, all reference resources |
 | `CAPSTONE.md` | **Final capstone interview artifact** — staff-level Multi-Tenant LLM Trace Forensics with Mo's algorithm (system design + coding + worked solution + self-grading rubric) |
 | `CAPSTONE2_EULER_DSU.md` | **Optional Week 108 Boss fight** — Multi-Tenant Agent Execution Forensics with Euler Tour + DSU on Tree |
+| [`CAPSTONE3_OPENROUTER.md`](./CAPSTONE3_OPENROUTER.md) | **Final gateway capstone option** — OpenRouter-inspired enterprise multi-model routing, policy, reliability, tenancy, and economics |
 | [`ALGORITHMIC_FORGE.md`](./ALGORITHMIC_FORGE.md) | Parallel algorithmic spine: Core, Supporting, Archive, and Boss-fight treatment for the programming-camp material |
 | [`SYSTEM_DESIGN_TRACK.md`](./SYSTEM_DESIGN_TRACK.md) | Canonical Weeks 46–57 system-design, distributed-systems, technology-lab, case-study, and OOD track |
 | [`LEETCODE_DARBAR.md`](./LEETCODE_DARBAR.md) | Parallel 548-problem interview-execution track, with Standard and optional Auror completion paths |
@@ -127,6 +156,31 @@ Train into a production-oriented AI/software engineer who can:
 3. Implement production-grade backend and distributed-system patterns.
 4. Pass system design, coding, ML, and behavioral interviews.
 5. Produce a portfolio of reproducible projects, benchmarks, and design docs.
+
+### Week 5 paper anchor: hypothesis choice and generalization
+
+Before the curriculum introduces formal model training, Week 5 uses Michael
+Timothy Bennett's [*The Optimal Choice of Hypothesis Is the Weakest, Not the
+Shortest*](https://arxiv.org/abs/2301.12987v4) as a critical reading on
+induction, generalization, and inductive bias.
+
+The paper argues—under its finite-language and uniformly distributed task
+assumptions—that maximizing a hypothesis's **weakness** (the size of the set of
+possibilities it leaves open) can generalize better than minimizing description
+length. Learners should treat this as a claim to examine, not a replacement for
+MDL, regularization, or task-specific priors.
+
+The bounded Week 5 paper lab is:
+
+- define the paper's terms: task, model, extension, weakness, and description length;
+- reproduce or critique the binary-arithmetic toy comparison on a small finite dataset;
+- report generalization rate, extent of generalization, and the assumptions that make the comparison meaningful; and
+- connect the result to later leakage checks, calibration, slice-based retrieval evaluation, and LLM behavior under distribution shift.
+
+The evidence is one technical explanation plus a small reproducible experiment
+or a falsifiable critique. It does not add another phase or change the 100-math-
+module count; it gives the early diagnostic a stronger theory-of-generalization
+anchor.
 
 ## Why this course
 
@@ -386,7 +440,7 @@ to every journal entry.
 | 2 | Python engineering refresh | Typing, testing, async basics | CLI project skeleton with tests |
 | 3 | Numerical Python | NumPy, vectorization, broadcasting | Vector math utility library |
 | 4 | Reproducibility | Git, notebooks, experiment tracking | Reproducible notebook + Makefile |
-| 5 | Math diagnostic | Linear algebra, calculus, probability baseline | Diagnostic report + gap map |
+| 5 | Math diagnostic and induction | Linear algebra, probability, hypothesis choice, and generalization | Diagnostic report + gap map + paper lab |
 | 6 | Systems diagnostic | HTTP, Docker, APIs, Linux basics | Containerized hello-service |
 | 7 | Linear algebra I | Vector spaces, span, basis, dimension | Problem set + concept map |
 | 8 | Linear algebra II | Linear independence, rank, nullity | Solver exercises + notes |
@@ -574,7 +628,10 @@ ai_platform/
 
 ### Phase 10 — Capstone, Portfolio, and Interview Readiness (Weeks 103–108)
 
-Pick **one** capstone: Enterprise RAG assistant · LLM gateway/platform · Agent workflow platform · Experimentation platform · Multimodal search system.
+Pick **one** capstone: Enterprise RAG assistant · OpenRouter-inspired enterprise
+AI gateway · Agent workflow platform · Experimentation platform · Multimodal
+search system. The gateway option is specified in
+[`CAPSTONE3_OPENROUTER.md`](./CAPSTONE3_OPENROUTER.md).
 
 ---
 
@@ -888,7 +945,7 @@ Optional depth status:
     router/ quotas/ tracing/ logging/ scheduler/ idempotency/
     work_queue/ registry/ cost/
   08_capstone/
-    design/ src/ eval/ dashboards/ reports/
+    design/ src/ eval/ dashboards/ reports/ openrouter/
   09_interview/
     system_design/ coding/ behavioral/ mocks/
     leetcode_darbar/ algorithmic_forge/
@@ -975,6 +1032,35 @@ Use the **CARL** format — **C**ontext, **A**ction, **R**esult, **L**earning.
 The canonical artifact for Phase 10 lives in [`CAPSTONE.md`](./CAPSTONE.md) — a staff-level **Multi-Tenant LLM Trace Forensics with Mo's Algorithm** question that synthesizes Phases 6–9 (ingestion, immutable segments, exact slice forensics, approximation, multi-tenancy) into a single interview drill. It includes a system-design diagram, pitfalls index, pedagogical walkthrough, worked solution, and a 24-point self-grading rubric.
 
 The optional Week 108 Boss fight is [`CAPSTONE2_EULER_DSU.md`](./CAPSTONE2_EULER_DSU.md): Multi-Tenant Agent Execution Forensics with Euler Tour + DSU on Tree. It extends the algorithmic spine into tree topology without adding a fourth month or blocking the LLM Platform badge.
+
+The gateway capstone option is [`CAPSTONE3_OPENROUTER.md`](./CAPSTONE3_OPENROUTER.md):
+an OpenRouter-inspired enterprise multi-model gateway with a unified API,
+provider registry, policy-aware routing, stream-safe failover, workspace
+controls, per-tenant admission, cost attribution, observability, and enterprise
+commercial boundaries. It is designed from public product documentation and
+does not claim access to private OpenRouter internals.
+
+### Capstone visual map
+
+Each visual is linked to its full specification:
+
+<a href="./CAPSTONE.md">
+  <img src="./capstone_trace_forensics_infographic.webp" alt="Capstone 1 — Multi-Tenant LLM Trace Forensics with Mo's Algorithm" width="900">
+</a>
+
+**Capstone 1 — Multi-Tenant LLM Trace Forensics with Mo's Algorithm**
+
+<a href="./CAPSTONE2_EULER_DSU.md">
+  <img src="./capstone_tree_nightmare_forensics.webp" alt="Capstone 2 — Multi-Tenant Agent Execution Forensics with Euler Tour and DSU on Tree" width="900">
+</a>
+
+**Capstone 2 — Optional Agent Execution Forensics with Euler Tour + DSU on Tree**
+
+<a href="./CAPSTONE3_OPENROUTER.md">
+  <img src="./capstone3_enterprise_ai_gateway.webp" alt="Capstone 3 — OpenRouter-inspired Enterprise AI Gateway" width="900">
+</a>
+
+**Capstone 3 — OpenRouter-inspired Enterprise AI Gateway**
 
 ---
 
@@ -1066,6 +1152,7 @@ genuinely demanding.
 
 | Paper | Venue | Topic | URL |
 |---|---|---|---|
+| The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest | arXiv 2301.12987v4 (2024) | Induction, weakness, description length, and generalization | https://arxiv.org/abs/2301.12987v4 |
 | PagedAttention / vLLM | SOSP 2023 | KV cache paging | https://arxiv.org/abs/2309.06180 |
 | Orca | OSDI 2022 | Continuous batching | https://www.usenix.org/conference/osdi22/presentation/yu |
 | SGLang | NeurIPS 2024 | RadixAttention, prefix reuse | https://arxiv.org/abs/2312.07104 |
