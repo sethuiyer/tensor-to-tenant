@@ -53,6 +53,7 @@ capstone paths are **Multi-Tenant Trace Forensics with Mo’s Algorithm**,
 | [`SYSTEM_DESIGN_TRACK.md`](./SYSTEM_DESIGN_TRACK.md) | Canonical Weeks 46–57 system-design, distributed-systems, technology-lab, case-study, and OOD track |
 | [`LEETCODE_DARBAR.md`](./LEETCODE_DARBAR.md) | Parallel 548-problem interview-execution track, with Standard and optional Auror completion paths |
 | [`SAILBOAT_RETRO.md`](./SAILBOAT_RETRO.md) | Weekly human retrospective ritual: destination, wind, anchor, rocks, boat position, and next heading |
+| [`MANDALA.md`](./MANDALA.md) | 15 complete 48-day capability cycles plus a 36-day graduation cycle, with identity progression and parallel streams |
 | `cookiecutter/` | **[`cookiecutter-tensor-to-tenant`](#the-cookiecutter--portfolio-piece--social-proof)** — one-command scaffolder that turns this course into a personalized 108-week learner repo with progress dashboard, milestone gates, and primitive stubs. The cookiecutter itself is the **portfolio piece** and the **social proof** of the course. |
 
 ### The cookiecutter — portfolio piece & social proof
@@ -336,6 +337,18 @@ plans, remediation templates, and badge verifier alongside the weekly journals.
 In a generated repo, `make badge=30`, `make badge=69`, or `make badge=108`
 checks core evidence plus the corresponding blocking gate before marking a
 program badge as earned.
+
+### The mandala progression
+
+The 108-week apprenticeship is also a sequence of **15 complete 48-day
+capability cycles plus a final 36-day graduation cycle**. Each mandala produces
+a new professional identity, evidence for it, a retrospective, and a stronger
+operating system for the next cycle. The full transformation map is in
+[`MANDALA.md`](./MANDALA.md).
+
+<a href="./MANDALA.md">
+  <img src="./mandala.webp" alt="Tensor-to-Tenant 16-mandala capability progression" width="900">
+</a>
 
 ---
 
