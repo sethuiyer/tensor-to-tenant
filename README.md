@@ -18,10 +18,10 @@ A consolidated, production-oriented learning path that turns you into an AI / so
 | File | Purpose |
 |---|---|
 | `README.md` | The 108-week curriculum, all phases, all reference resources |
-| `chat-108 Week Course Design.txt` | Original course design source (108-week full plan) |
-| `COTNEXT.md` | Source knowledge base: books, papers, blogs, YouTube, practice exercises, math curriculum, interview roadmap |
 | `CAPSTONE.md` | **Final capstone interview artifact** — staff-level Multi-Tenant LLM Trace Forensics with Mo's algorithm (system design + coding + worked solution + self-grading rubric) |
 | `cookiecutter/` | **[`cookiecutter-tensor-to-tenant`](#the-cookiecutter--portfolio-piece--social-proof)** — one-command scaffolder that turns this course into a personalized 108-week learner repo with progress dashboard, milestone gates, and primitive stubs. The cookiecutter itself is the **portfolio piece** and the **social proof** of the course. |
+| `chat-108 Week Course Design.txt` *(optional, local-only)* | Original course design source. Not required to use the repo. |
+| `COTNEXT.md` *(optional, local-only)* | Source knowledge base (books, papers, blogs, YouTube, math curriculum). Not required to use the repo. |
 
 ### The cookiecutter — portfolio piece & social proof
 
