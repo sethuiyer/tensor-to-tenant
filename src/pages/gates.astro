@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { GATES, PROGRAMS } from '../data/gates';
+---
+
+<BaseLayout title="Milestone Gates" description="The ten blocking milestone gates of the Tensor-to-Tenant course." activeNav="curriculum">
+  <PageHeader
+    eyebrow="Milestone gates"
+    title="Progress is gated, not assumed"
+    lead="Milestone gates are blocking checkpoints. A failed gate pauses new content until the learner completes a targeted remediation plan and submits the missing evidence."
+    meta="10 gates · 3 portfolio releases"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th class="num">Gate</th><th class="num">Week</th><th>Passing criteria</th><th>Remediation path</th></tr>
+          </thead>
+          <tbody>
+            {
+              GATES.map((g) => (
+                <tr>
+                  <td class="num mono"><span class="chip chip--accent">G{g.gate}</span></td>
+                  <td class="num mono">{g.week}</td>
+                  <td style="min-width:320px">{g.criteria}</td>
+                  <td style="min-width:220px">{g.remediation}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">Portfolio releases</div>
+      <h2>Three evidence-backed checkpoints</h2>
+      <div class="grid grid-3">
+        {
+          PROGRAMS.map((p) => (
+            <div class="card">
+              <div class="card__title"><span class="chip chip--accent">{p.weeks}</span>{p.name}</div>
+              <p>{p.release}</p>
+              <div class="mono" style="font-size:0.8rem;color:var(--text-faint);margin-top:0.75rem">
+                badge verified · Week {p.releaseWeek}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="callout callout--amber">
+        <strong>Completion is evidence-based, not attendance-based</strong>
+        <p>
+          At every level, completion means evidence exists: code, a benchmark or result, a
+          design/technical explanation, and a retrospective. Optional depth work raises the ceiling
+          but is never required for the core checkpoint.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

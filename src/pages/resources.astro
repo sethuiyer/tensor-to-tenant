@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { YOUTUBE_PLAYLISTS, BOOKS_READING_LIST, RESEARCH_PAPERS, AGENT_PAPERS, BLOG_ARTICLES } from '../data/resources';
+---
+
+<BaseLayout title="Resources" description="Reference resources for the Tensor-to-Tenant course: videos, books, papers, and blogs." activeNav="resources">
+  <PageHeader
+    eyebrow="Resources"
+    title="Reference library"
+    lead="The course curates a focused set of videos, books, research papers, and engineering blogs. These are the anchors for the weekly modules and the inference-performance weeks in particular."
+    meta={`${YOUTUBE_PLAYLISTS.length} videos · ${BOOKS_READING_LIST.length} book references · ${RESEARCH_PAPERS.length} papers · ${AGENT_PAPERS.length} agent papers · ${BLOG_ARTICLES.length} articles`}
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="callout">
+        <strong>Coming in without the fundamentals?</strong>
+        <p>
+          There is a sanctioned 36-week prerequisite lane — CS50x, Nand to Tetris, MIT 6.042J, Statistical
+          Learning, Git, search and docs fluency, programming paradigms, and Software Engineering at Google —
+          in the order to take them, with a week-by-week budget.
+          <a href="/prerequisites/" style="color:inherit">See the on-ramp →</a>
+        </p>
+      </div>
+
+      <!-- YouTube -->
+      <div class="kicker">YouTube playlists</div>
+      <h2>Video reference</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Title</th></tr></thead>
+          <tbody>
+            {
+              YOUTUBE_PLAYLISTS.map((v) => (
+                <tr>
+                  <td><a href={v.url} target="_blank" rel="noopener noreferrer">{v.title}</a></td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Books -->
+      <div class="kicker" style="margin-top:2.5rem">Books &amp; reading list</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Book</th><th class="num">Pages</th><th>Topic</th></tr></thead>
+          <tbody>
+            {
+              BOOKS_READING_LIST.map((b) => (
+                <tr>
+                  <td style="min-width:150px"><strong>{b.book}</strong></td>
+                  <td class="num mono" style="white-space:nowrap">{b.pages}</td>
+                  <td style="min-width:240px">{b.topic}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Papers -->
+      <div class="kicker" style="margin-top:2.5rem">Research papers</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Paper</th><th>Venue</th><th>Topic</th></tr></thead>
+          <tbody>
+            {
+              RESEARCH_PAPERS.map((p) => (
+                <tr>
+                  <td style="min-width:200px">
+                    {p.url ? <a href={p.url} target="_blank" rel="noopener noreferrer">{p.paper}</a> : <strong>{p.paper}</strong>}
+                  </td>
+                  <td class="mono" style="white-space:nowrap">{p.venue}</td>
+                  <td style="min-width:220px">{p.topic}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Agent papers -->
+      <div class="kicker" style="margin-top:2.5rem">Agent &amp; Graph-RAG papers</div>
+      <p class="lead" style="font-size:0.95rem">
+        The anchors for the GenAI agents track: ReAct, tool-use, DSPy, MCP, corrective RAG, and Graph-RAG.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Paper</th><th>Source</th><th>Focus Area</th></tr></thead>
+          <tbody>
+            {
+              AGENT_PAPERS.map((p) => (
+                <tr>
+                  <td style="min-width:280px"><a href={p.url} target="_blank" rel="noopener noreferrer">{p.paper}</a></td>
+                  <td class="mono" style="white-space:nowrap">{p.venue}</td>
+                  <td style="min-width:240px">{p.topic}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Blogs -->
+      <div class="kicker" style="margin-top:2.5rem">Blog &amp; article URLs</div>
+      <div class="grid grid-2">
+        {
+          BLOG_ARTICLES.map((b) => (
+            <div class="card" style="padding:0.85rem 1.05rem">
+              <a href={b.url} target="_blank" rel="noopener noreferrer" style="font-size:0.92rem;font-weight:600">{b.title}</a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

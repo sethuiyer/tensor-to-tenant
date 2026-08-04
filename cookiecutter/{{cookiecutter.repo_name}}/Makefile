@@ -6,9 +6,9 @@ PY   := python{{ cookiecutter.python_version }}
 
 .DEFAULT_GOAL := dispatch
 
-.PHONY: dispatch help init journal week recovery remediate release badge forge design darbar auror gate progress test clean lint fmt status log ambush recall boss restore rpg-init ask quiz review plan debug
+.PHONY: dispatch help init journal week recovery remediate release badge forge design darbar agent auror gate progress test clean lint fmt status log ambush recall boss restore rpg-init ask quiz review plan debug
 
-dispatch: ## Show help, or run `make week=14`, `make recovery=14`, `make remediate=18`, `make release=30`, `make badge=30`, `make forge=57`, `make design=54`, or `make darbar=42`.
+dispatch: ## Show help, or run `make week=14`, `make recovery=14`, `make remediate=18`, `make release=30`, `make badge=30`, `make forge=57`, `make design=54`, `make darbar=42`, or `make agent=7.5`.
 	@if [ "$(ask)" = "1" ] || [ "$(ask)" = "yes" ]; then $(MAKE) --no-print-directory _ask; \
 	elif [ "$(quiz)" = "1" ] || [ "$(quiz)" = "yes" ]; then $(MAKE) --no-print-directory _quiz; \
 	elif [ "$(review)" = "1" ] || [ "$(review)" = "yes" ]; then $(MAKE) --no-print-directory _review; \
@@ -27,6 +27,7 @@ dispatch: ## Show help, or run `make week=14`, `make recovery=14`, `make remedia
 	elif [ -n "$(forge)" ]; then $(MAKE) --no-print-directory _forge WEEK="$(forge)"; \
 	elif [ -n "$(design)" ]; then $(MAKE) --no-print-directory _design WEEK="$(design)"; \
 	elif [ -n "$(darbar)" ]; then $(MAKE) --no-print-directory _darbar PROBLEM="$(darbar)"; \
+	elif [ -n "$(agent)" ]; then $(MAKE) --no-print-directory _agent MODULE="$(agent)"; \
 	elif [ "$(auror)" = "1" ] || [ "$(auror)" = "yes" ]; then $(MAKE) --no-print-directory _auror; \
 	elif [ -n "$(release)" ]; then $(MAKE) --no-print-directory _release WEEK="$(release)"; \
 	else $(MAKE) --no-print-directory help; fi
@@ -90,6 +91,12 @@ darbar: ## Prepare Darbar evidence: `make darbar=42`.
 
 _darbar:
 	@$(PY) scripts/darbar.py --problem "$(PROBLEM)"
+
+agent: ## Open a GenAI agents module scaffold: `make agent=7.5`.
+	@$(PY) scripts/agents.py --module "$(MODULE)"
+
+_agent:
+	@$(PY) scripts/agents.py --module "$(MODULE)"
 
 auror: ## Verify the optional 548-problem Auror track: `make auror=1`.
 	@$(PY) scripts/auror.py

@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import {
+  DESIGN_WEEKS,
+  DESIGN_LOOP,
+  DESIGN_TECH_CORE,
+  DESIGN_TECH_SUPPORTING,
+  DESIGN_TECH_QUESTION,
+  DESIGN_PATTERNS,
+  DESIGN_PATTERN_INDEX,
+  DESIGN_FAMILIES,
+  DESIGN_CASES,
+  DESIGN_OOD,
+  DESIGN_OOD_CONTRACT,
+  DESIGN_AI_EXTENSIONS,
+  DESIGN_CAPABILITIES,
+  DESIGN_GATE5,
+} from '../data/systemDesign';
+---
+
+<BaseLayout title="System Design Track" description="The canonical system design lane of the Tensor-to-Tenant course (Weeks 46–57)." activeNav="system-design">
+  <PageHeader
+    eyebrow="System Design Track"
+    title="The canonical design lane: Weeks 46–57"
+    lead="System design is a first-class phase of the course — not an afterthought. Twelve weeks take you from the design method, through the distributed patterns, to a family of case studies and OOD/LLD practice."
+    meta="12 weeks · 8 case families · 10 deep-dive cases · 8 AI extensions"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <!-- Four-layer loop -->
+      <div class="callout callout--violet">
+        <strong>The four-layer loop</strong>
+        <p style="margin:0.5rem 0 0">
+          Every design week runs the same loop. The artifact is a design document, a small implementation or
+          simulation, and an interview-ready explanation — a diagram alone does not count.
+        </p>
+      </div>
+      <div class="grid grid-2" style="margin-top:1rem">
+        {
+          DESIGN_LOOP.map((l, i) => (
+            <div class="card" style="padding:1rem 1.2rem">
+              <div class="mono" style="font-size:0.78rem;color:var(--accent-2)">Layer {i + 1}</div>
+              <div style="font-weight:700">{l.step}</div>
+              <p style="margin:0.4rem 0 0;color:var(--text-muted);font-size:0.92rem">{l.detail}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Week map -->
+      <div class="kicker" style="margin-top:2.5rem">Weeks 46–57</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th class="num">Week</th><th>Core system-design theme</th><th>Core case / lab</th><th>Evidence</th></tr>
+          </thead>
+          <tbody>
+            {
+              DESIGN_WEEKS.map((w) => (
+                <tr>
+                  <td class="num mono">{w.week}</td>
+                  <td style="min-width:280px">{w.topic}</td>
+                  <td style="min-width:220px"><strong>{w.caseLab}</strong></td>
+                  <td style="min-width:220px">{w.evidence}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.75rem">
+        The case list is intentionally larger than twelve weeks: each week has one core case plus adjacent cases
+        for comparison, mock interviews, or optional depth. You are not expected to fully implement every analogue.
+      </p>
+
+      <!-- Technology labs -->
+      <div class="kicker" style="margin-top:2.5rem">Technology labs</div>
+      <p style="color:var(--text-muted);font-size:0.92rem;max-width:70ch">
+        Use one technology as the concrete substrate for the design pattern. {DESIGN_TECH_QUESTION}
+      </p>
+      <div style="margin-bottom:0.6rem">
+        <span class="mono" style="font-size:0.8rem;color:var(--accent-2);margin-right:0.6rem">Core labs</span>
+        <span style="display:inline-flex;flex-wrap:wrap;gap:0.45rem;align-items:center">
+          {DESIGN_TECH_CORE.map((t) => <span class="chip chip--accent">{t}</span>)}
+        </span>
+      </div>
+      <div>
+        <span class="mono" style="font-size:0.8rem;color:var(--text-faint);margin-right:0.6rem">Supporting</span>
+        <span style="display:inline-flex;flex-wrap:wrap;gap:0.45rem;align-items:center">
+          {DESIGN_TECH_SUPPORTING.map((t) => <span class="chip">{t}</span>)}
+        </span>
+      </div>
+
+      <!-- Pattern library -->
+      <div class="kicker" style="margin-top:2.5rem">Pattern library</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Pattern</th><th>Problem</th><th>Solution</th></tr>
+          </thead>
+          <tbody>
+            {
+              DESIGN_PATTERNS.map((p) => (
+                <tr>
+                  <td style="min-width:150px"><strong>{p.pattern}</strong></td>
+                  <td style="min-width:220px">{p.problem}</td>
+                  <td style="min-width:260px">{p.solution}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pattern index -->
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <div class="card">
+          <div class="card__title mono" style="font-size:0.9rem">Foundations</div>
+          <p style="font-size:0.92rem">{DESIGN_PATTERN_INDEX.foundations}</p>
+        </div>
+        <div class="card">
+          <div class="card__title mono" style="font-size:0.9rem">Distributed systems</div>
+          <p style="font-size:0.92rem">{DESIGN_PATTERN_INDEX.distributed}</p>
+        </div>
+      </div>
+
+      <!-- Case families -->
+      <div class="kicker" style="margin-top:2.5rem">Case-study families</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Family</th><th>Cases</th></tr>
+          </thead>
+          <tbody>
+            {
+              DESIGN_FAMILIES.map((f) => (
+                <tr>
+                  <td style="min-width:190px"><strong>{f.family}</strong></td>
+                  <td style="min-width:300px">{f.cases}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Deep-dive case studies -->
+      <div class="kicker" style="margin-top:2.5rem">Deep-dive case studies</div>
+      <p style="color:var(--text-muted);font-size:0.92rem;max-width:70ch">
+        Ten of the families are worked in depth across the twelve weeks.
+      </p>
+      <div class="grid grid-2">
+        {
+          DESIGN_CASES.map((c) => (
+            <div class="card">
+              <div class="card__title">{c.name}</div>
+              <p>{c.focuses}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- OOD / LLD -->
+      <div class="kicker" style="margin-top:2.5rem">OOD / LLD companion lane</div>
+      <p style="color:var(--text-muted);font-size:0.92rem;max-width:70ch">
+        Object-oriented design runs as the Thursday implementation/interview variant — practice correctness,
+        coordination, scarcity, OOP concepts, design principles, and patterns.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:0.75rem">
+        {DESIGN_OOD.map((o) => <span class="chip chip--amber">{o}</span>)}
+      </div>
+      <p style="color:var(--text-muted);font-size:0.92rem;max-width:70ch">{DESIGN_OOD_CONTRACT}</p>
+
+      <!-- AI extensions -->
+      <div class="kicker" style="margin-top:2.5rem">AI extensions</div>
+      <p style="color:var(--text-muted);font-size:0.92rem;max-width:70ch">
+        Every design gets one AI extension so the track connects directly to the rest of Tensor-to-Tenant.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Base design</th><th>AI extension</th></tr>
+          </thead>
+          <tbody>
+            {
+              DESIGN_AI_EXTENSIONS.map((a) => (
+                <tr>
+                  <td style="min-width:170px"><strong>{a.base}</strong></td>
+                  <td style="min-width:300px">{a.extension}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Capabilities -->
+      <div class="kicker" style="margin-top:2.5rem">Capabilities built</div>
+      <dl class="grid-dl">
+        {
+          DESIGN_CAPABILITIES.map((c) => (
+            <div><dt>{c.name}</dt><dd>{c.description}</dd></div>
+          ))
+        }
+      </dl>
+
+      <!-- Gate 5 contract -->
+      <div class="callout callout--amber" style="margin-top:2rem">
+        <strong>Gate 5 contract</strong>
+        <p style="margin:0.5rem 0 0">
+          By Week 57 you must be able to choose a case from any family and, under interview time pressure, produce:
+        </p>
+        <ul style="margin:0.75rem 0 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+          {DESIGN_GATE5.map((g) => <li style="margin-bottom:0.3rem">{g}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

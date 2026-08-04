@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { FORGE_TIERS, FORGE_LANES, FORGE_BOSSES, FORGE_COVERAGE } from '../data/forge';
+---
+
+<BaseLayout title="Algorithmic Forge" description="The parallel Friday algorithmic spine of the Tensor-to-Tenant course." activeNav="forge">
+  <PageHeader
+    eyebrow="Algorithmic Forge"
+    title="Friday is for fluency"
+    lead="The Algorithmic Forge is the parallel algorithmic spine of the course. Every Friday you sharpen a skill that supports the current phase — with four tiers so depth never blocks the core path."
+    meta="Runs parallel to the 108 weeks · 4 tiers · 10 boss fights"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <!-- Tiers -->
+      <div class="kicker">Tiers</div>
+      <div class="grid grid-4">
+        {
+          FORGE_TIERS.map((t) => (
+            <div class="card">
+              <div class="card__title"><span class="chip chip--accent">{t.level}</span></div>
+              <p style="font-size:0.85rem">{t.treatment}</p>
+              <div class="mono" style="font-size:0.8rem;color:var(--accent-2);margin-top:0.5rem">⏱ {t.timebox}</div>
+              <div style="font-size:0.82rem;color:var(--text-faint);margin-top:0.35rem">{t.rule}</div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- 108-week lane map -->
+      <div class="kicker" style="margin-top:2.5rem">The 108-week lane map</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Weeks</th><th>Theme</th><th>Tier</th><th>Artifact</th></tr>
+          </thead>
+          <tbody>
+            {
+              FORGE_LANES.map((l) => (
+                <tr>
+                  <td class="mono" style="white-space:nowrap">{l.weeks}</td>
+                  <td style="min-width:260px">{l.theme}</td>
+                  <td><span class="chip">{l.tier}</span></td>
+                  <td style="min-width:220px">{l.artifact}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Boss fights -->
+      <div class="kicker" style="margin-top:2.5rem">Boss fights</div>
+      <div class="grid grid-2">
+        {
+          FORGE_BOSSES.map((b) => (
+            <div class="card">
+              <div class="card__title">{b.name}</div>
+              <p>{b.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Coverage -->
+      <div class="kicker" style="margin-top:2.5rem">Coverage map</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Algorithmic area</th><th>Treatment</th><th>Lands in</th></tr>
+          </thead>
+          <tbody>
+            {
+              FORGE_COVERAGE.map((c) => (
+                <tr>
+                  <td style="min-width:280px">{c.area}</td>
+                  <td>{c.treatment}</td>
+                  <td class="mono">{c.lands}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--violet">
+        <strong>Depth raises the ceiling; it does not set the floor</strong>
+        <p>
+          Core drills are required and phase-aligned. Supporting labs are guided depth. Archive topics
+          are reference-only. Boss fights are selected gate or capstone extensions. A learner is never
+          blocked from the next phase by optional depth work.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

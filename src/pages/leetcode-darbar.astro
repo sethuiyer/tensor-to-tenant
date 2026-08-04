@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import {
+  DARBAR_PATTERNS,
+  DARBAR_PACING,
+  DARBAR_CATALOG,
+  DARBAR_PACING_MAP,
+  DARBAR_TRIANGULATION,
+  DARBAR_OPERATING_RULE,
+  DARBAR_CATEGORIES,
+  DARBAR_PRINCIPLES,
+} from '../data/darbar';
+---
+
+<BaseLayout title="Leetcode Darbar" description="The parallel timed problem-solving lane of Tensor-to-Tenant with a 548-slot tracker." activeNav="darbar">
+  <PageHeader
+    eyebrow="Leetcode Darbar"
+    title="Timer on, then review"
+    lead="A parallel, timed, problem-solving lane. The Darbar builds coding fluency through six pattern blocks — 548 total slots — with optional Standard and Auror completion paths."
+    meta={`${DARBAR_PACING.totalSlots} slots · ${DARBAR_PACING.weeklyCadence}`}
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <!-- Live catalog -->
+      <div class="callout callout--violet">
+        <strong>The live catalog — 548 hand-crafted picks</strong>
+        <p>{DARBAR_CATALOG.tagline}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem">
+          <span class="chip chip--ok">{DARBAR_CATALOG.easy} Easy</span>
+          <span class="chip chip--amber">{DARBAR_CATALOG.medium} Medium</span>
+          <span class="chip">{DARBAR_CATALOG.hard} Hard</span>
+          <a class="chip chip--violet" href={DARBAR_CATALOG.link} target="_blank" rel="noopener noreferrer" style="text-decoration:none">
+            Open the Darbar →
+          </a>
+        </div>
+      </div>
+
+      <!-- Paths -->
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <div class="callout">
+          <strong>Standard path</strong>
+          <p>{DARBAR_PACING.standardTarget}</p>
+        </div>
+        <div class="callout callout--amber">
+          <strong>Auror path</strong>
+          <p>{DARBAR_PACING.aurorTarget}</p>
+        </div>
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">Pacing map</div>
+      <p class="lead" style="font-size:0.95rem">
+        The emphasis shifts with the phase of the course, and every set is wired back to a production concept.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Weeks</th><th>Darbar emphasis</th><th>Production connection</th></tr>
+          </thead>
+          <tbody>
+            {
+              DARBAR_PACING_MAP.map((r) => (
+                <tr>
+                  <td class="mono" style="white-space:nowrap">{r.weeks}</td>
+                  <td style="min-width:280px">{r.emphasis}</td>
+                  <td style="min-width:240px">{r.production}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">Weekly operating rule</div>
+      <div class="card" style="padding:1rem 1.25rem">
+        <ul style="margin:0;padding-left:1.2rem;color:var(--text-muted);font-size:0.95rem">
+          {DARBAR_OPERATING_RULE.map((r) => <li style="margin-bottom:0.35rem">{r}</li>)}
+        </ul>
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">Pattern blocks</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Pattern</th><th>Weeks</th><th class="num">Slots</th><th>Focus &amp; tips</th><th>Timed exam</th></tr>
+          </thead>
+          <tbody>
+            {
+              DARBAR_PATTERNS.map((p) => (
+                <tr>
+                  <td style="min-width:150px"><strong>{p.name}</strong></td>
+                  <td class="mono" style="white-space:nowrap">{p.weeks}</td>
+                  <td class="num mono">{p.slots}</td>
+                  <td style="min-width:260px">{p.tips}</td>
+                  <td style="min-width:220px">{p.exam}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">Concept triangulation</div>
+      <p class="lead" style="font-size:0.95rem">
+        The Darbar is one leg of three. The same concept is drilled for speed here, derived for depth in the
+        Forge, and placed into a production artifact by the core course.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Concept</th><th>Darbar speed set</th><th>Forge depth</th><th>Tensor-to-Tenant artifact</th></tr>
+          </thead>
+          <tbody>
+            {
+              DARBAR_TRIANGULATION.map((r) => (
+                <tr>
+                  <td style="min-width:100px"><strong>{r.concept}</strong></td>
+                  <td style="min-width:200px">{r.speed}</td>
+                  <td style="min-width:220px">{r.depth}</td>
+                  <td style="min-width:220px">{r.artifact}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">Category spine</div>
+      <p style="color:var(--text-muted);font-size:0.92rem;max-width:70ch">
+        The catalog is organized across the full data-structure and algorithm spectrum:
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.45rem">
+        {DARBAR_CATEGORIES.map((c) => <span class="chip">{c}</span>)}
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">Principles</div>
+      <ul style="margin:1rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.95rem">
+        {DARBAR_PRINCIPLES.map((p) => <li style="margin-bottom:0.4rem">{p}</li>)}
+      </ul>
+
+      <div class="callout">
+        <strong>Why a separate lane?</strong>
+        <p>
+          The Darbar is tracked independently so standard learners can keep the 108-week path viable
+          while Auror learners can solve and explain all 548 catalog slots. It never becomes a hidden
+          prerequisite for the core course.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

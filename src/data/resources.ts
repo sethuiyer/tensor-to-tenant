@@ -1,0 +1,182 @@
+/**
+ * Reference resources and interview preparation roadmap.
+ * Transcribed from README.md §Reference Resources and §Interview Preparation Integration.
+ */
+
+export interface VideoResource {
+  title: string;
+  url: string;
+}
+
+export const YOUTUBE_PLAYLISTS: VideoResource[] = [
+  { title: '20 AI Concepts Explained in 40 Minutes', url: 'https://www.youtube.com/watch?v=7QisFjITGlI' },
+  { title: 'Distilling an LLM into a 150M-parameter model | AGI Tamer', url: 'https://www.youtube.com/watch?v=3SZSDKEZqoA' },
+  { title: 'Learn Snowflake with ONE Project', url: 'https://www.youtube.com/watch?v=cSOTxxvqwyE' },
+  { title: 'Airbnb End-To-End Data Engineering Project (For Beginners) | DBT + Snowflake + AWS', url: 'https://www.youtube.com/watch?v=MdkLh1UC3IQ' },
+  { title: 'End-to-End Hotel Booking Data Engineering Project in Snowflake', url: 'https://www.youtube.com/watch?v=DUNk4GPZ9bw' },
+  { title: 'Statistics for Data Science (A/B Testing Interview Questions in Tech Companies)', url: 'https://www.youtube.com/watch?v=jrvY43-c_UM' },
+  { title: 'A/B Testing in Data Science Interviews by a Google Data Scientist | DataInterview', url: 'https://www.youtube.com/watch?v=qjKAqMSD4Vw' },
+  { title: 'Increasing Sales through A/B Testing (with Tinder Sr. Data Science Mgr)', url: 'https://www.youtube.com/watch?v=cggcQbNC4-k' },
+  { title: 'AI Engineer Interview Guide (2026): Questions, System Design, Coding, RAG, Portfolio', url: 'https://www.youtube.com/watch?v=2t-ls6ekA8E' },
+  { title: 'ML System Design & MLOps For Beginners', url: 'https://www.youtube.com/watch?v=OYvlznJ4IZQ' },
+  { title: 'Agent AI System Design Explained in 27 Minutes', url: 'https://www.youtube.com/watch?v=XVlt94Lemus' },
+  { title: 'AI Agents Explained in 14 Minutes (The Complete Guide)', url: 'https://www.youtube.com/watch?v=ruA_EYARCNg' },
+  { title: 'Multi-Agent AI Systems Explained: The Complete Guide', url: 'https://www.youtube.com/watch?v=mwN75EiGfCE' },
+  { title: 'FULL Data Science Mock Interview | SQL, Statistics, Business', url: 'https://www.youtube.com/watch?v=TZMdEg1ZoIo' },
+  { title: 'Learn Snowflake – Full 1-Hour Crash Course for Complete Beginners', url: 'https://www.youtube.com/watch?v=-zBbij9rrEI' },
+];
+
+export interface BookReference {
+  book: string;
+  pages: string;
+  topic: string;
+}
+
+export const BOOKS_READING_LIST: BookReference[] = [
+  { book: 'Designing ML Systems', pages: '118–132', topic: 'Labeling, natural labels, weak supervision' },
+  { book: 'Designing ML Systems', pages: '149–156', topic: 'Data augmentation, synthetic-to-real gaps' },
+  { book: 'Designing ML Systems', pages: '224–247', topic: 'Deployment, batch vs online, compression' },
+  { book: 'Designing ML Systems', pages: '267–290', topic: 'Production failures, distribution shift, monitoring' },
+  { book: 'Practical MLOps', pages: '181–204', topic: 'Logging, observability, model monitoring, drift' },
+  { book: 'Acing System Design', pages: '203–226', topic: 'Rate limiting, token bucket, sliding windows' },
+  { book: 'ML Interviews', pages: '176–189', topic: 'Live coding, thinking aloud, edge cases' },
+  { book: 'Designing ML Systems', pages: '174–180', topic: 'Data leakage, contamination detection' },
+  { book: 'Designing ML Systems', pages: '182–195', topic: 'Evaluation, experiment tracking, versioning' },
+  { book: 'Designing ML Systems', pages: '203–217', topic: 'Baselines, offline evaluation, slices, CIs' },
+  { book: 'Designing ML Systems', pages: '316–325', topic: 'A/B testing, shadow deployment, canary, bandits' },
+  { book: 'ML Interviews', pages: '163–170', topic: 'Metrics — Recall@K, MRR, NDCG trade-offs' },
+  { book: 'Acing System Design', pages: '277–296', topic: 'Search architecture, candidate generation, freshness' },
+  { book: 'ML Interviews', pages: '117–122', topic: 'Recommender systems refresher' },
+  { book: 'Acing System Design', pages: '56–79', topic: 'Requirements, trade-offs, API, data model, observability' },
+  { book: 'Acing System Design', pages: '86–107', topic: 'Scalability, latency, privacy, tenant isolation' },
+  { book: 'Designing ML Systems', pages: '52–76', topic: 'Business objectives, constraints, iterative development' },
+  { book: 'Software Architecture', pages: '317–339', topic: 'Orchestration vs choreography, workflow state ownership' },
+  { book: 'Software Architecture', pages: '383–397', topic: 'Contracts, schema evolution, backward compatibility' },
+  { book: 'Software Architecture', pages: '417–433', topic: 'Trade-off analysis, MECE reasoning, bottom line over evidence' },
+  { book: 'System Design', pages: '191–195', topic: 'Interview method checklist — read night before' },
+  { book: 'Practical MLOps', pages: '181–204', topic: 'Four-layer monitoring framework' },
+  { book: 'ML Interviews', pages: '222–239', topic: 'Monitoring, MLOps, system design questions' },
+];
+
+export interface Paper {
+  paper: string;
+  venue: string;
+  topic: string;
+  url: string;
+}
+
+export const RESEARCH_PAPERS: Paper[] = [
+  { paper: 'The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest', venue: 'arXiv 2301.12987v4 (2024)', topic: 'Induction, weakness, description length, and generalization', url: 'https://arxiv.org/abs/2301.12987v4' },
+  { paper: 'PagedAttention / vLLM', venue: 'SOSP 2023', topic: 'KV cache paging', url: 'https://arxiv.org/abs/2309.06180' },
+  { paper: 'Orca', venue: 'OSDI 2022', topic: 'Continuous batching', url: 'https://www.usenix.org/conference/osdi22/presentation/yu' },
+  { paper: 'SGLang', venue: 'NeurIPS 2024', topic: 'RadixAttention, prefix reuse', url: 'https://arxiv.org/abs/2312.07104' },
+  { paper: 'SARATHI / Sarathi-Serve', venue: 'OSDI 2024', topic: 'Chunked prefill', url: 'https://arxiv.org/abs/2308.16369' },
+  { paper: 'DistServe', venue: 'OSDI 2024', topic: 'Prefill/decode disaggregation', url: 'https://arxiv.org/abs/2403.02310' },
+  { paper: 'Splitwise', venue: 'ISCA 2024', topic: 'Phase splitting across GPU types', url: 'https://www.usenix.org/conference/osdi24/presentation/zhong-yinmin' },
+  { paper: 'Mooncake', venue: 'FAST 2025', topic: 'KV-cache-centric serving', url: 'https://arxiv.org/abs/2311.18677' },
+  { paper: 'StreamingLLM', venue: 'ICLR 2024', topic: 'Attention sinks, long context', url: 'https://arxiv.org/abs/2407.00079' },
+  { paper: 'EAGLE', venue: 'arXiv', topic: 'Speculative sampling', url: 'https://arxiv.org/abs/2309.17453' },
+  { paper: 'FlashAttention', venue: 'NeurIPS 2022', topic: 'IO-aware attention', url: 'https://arxiv.org/abs/2401.15077' },
+  { paper: 'FlashAttention-2', venue: 'ICLR 2024', topic: 'Faster attention kernels', url: '' },
+  { paper: 'FlashAttention-3', venue: '—', topic: 'Hopper-optimized attention', url: '' },
+  { paper: 'Ring Attention', venue: 'ICLR 2024', topic: 'Long-context distributed attention', url: '' },
+  { paper: 'Infini-attention', venue: 'NeurIPS 2024', topic: 'Infinite context', url: '' },
+  { paper: 'KIVI', venue: 'ICML 2024', topic: 'KV cache quantization', url: '' },
+  { paper: 'H2O', venue: 'NeurIPS 2023', topic: 'Heavy hitter KV eviction', url: '' },
+  { paper: 'SnapKV', venue: 'NeurIPS 2024', topic: 'KV cache compression', url: '' },
+  { paper: 'MInference', venue: 'NeurIPS 2024', topic: 'Dynamic sparse attention', url: '' },
+  { paper: 'Medusa', venue: 'ICML 2024', topic: 'Multi-head speculative decoding', url: '' },
+  { paper: 'SpecInfer', venue: 'SIGMOD 2024', topic: 'Speculative inference', url: '' },
+  { paper: 'Lookahead Decoding', venue: 'ACL 2024', topic: 'Faster decoding', url: '' },
+  { paper: 'TensorRT-LLM', venue: 'NVIDIA', topic: 'Production inference optimization', url: '' },
+  { paper: 'DeepSpeed-Inference', venue: 'Microsoft', topic: 'High-performance inference', url: '' },
+  { paper: 'FasterTransformer', venue: 'NVIDIA', topic: 'Transformer inference', url: '' },
+  { paper: 'Megatron-LM', venue: 'SC 2019', topic: 'Large-scale transformer training', url: '' },
+  { paper: 'DeepSpeed', venue: 'KDD 2020', topic: 'ZeRO optimizer', url: '' },
+  { paper: 'ZeRO', venue: 'SC 2020', topic: 'Optimizer state partitioning', url: '' },
+  { paper: 'ZeRO-Infinity', venue: 'SC 2021', topic: 'Extreme-scale training', url: '' },
+  { paper: 'FSDP', venue: 'PyTorch', topic: 'Fully Sharded Data Parallel', url: '' },
+  { paper: 'Switch Transformer', venue: 'JMLR', topic: 'Mixture of Experts', url: '' },
+  { paper: 'GShard', venue: 'ICLR 2021', topic: 'Sparse expert scaling', url: '' },
+  { paper: 'DeepSeekMoE', venue: 'arXiv', topic: 'Modern MoE architecture', url: '' },
+  { paper: 'LoRA', venue: 'ICLR 2022', topic: 'Parameter-efficient fine-tuning', url: '' },
+  { paper: 'QLoRA', venue: 'NeurIPS 2023', topic: '4-bit fine-tuning', url: '' },
+  { paper: 'DoRA', venue: 'ICML 2024', topic: 'Weight decomposition tuning', url: '' },
+  { paper: 'RLHF', venue: 'NeurIPS 2022', topic: 'Human feedback alignment', url: '' },
+  { paper: 'Direct Preference Optimization (DPO)', venue: 'NeurIPS 2023', topic: 'Preference optimization', url: '' },
+  { paper: 'ORPO', venue: 'ICLR 2024', topic: 'Odds-ratio preference optimization', url: '' },
+  { paper: 'ColBERT', venue: 'SIGIR 2020', topic: 'Late interaction retrieval', url: '' },
+  { paper: 'ColBERTv2', venue: 'NAACL 2022', topic: 'Efficient retrieval', url: '' },
+  { paper: 'HyDE', venue: 'ACL 2023', topic: 'Hypothetical document retrieval', url: '' },
+  { paper: 'RAPTOR', venue: 'arXiv 2024', topic: 'Hierarchical RAG', url: '' },
+  { paper: 'GraphRAG', venue: 'Microsoft', topic: 'Graph retrieval', url: '' },
+  { paper: 'Self-RAG', venue: 'ICLR 2024', topic: 'Self-reflective retrieval', url: '' },
+  { paper: 'CRAG', venue: 'NeurIPS 2024', topic: 'Corrective retrieval augmentation', url: '' },
+];
+
+export interface AgentPaper {
+  paper: string;
+  venue: string;
+  topic: string;
+  url: string;
+}
+
+export const AGENT_PAPERS: AgentPaper[] = [
+  { paper: 'ReAct: Synergizing Reasoning and Acting in Language Models', venue: 'arXiv 2210.03629', topic: 'Foundation of ReAct agents', url: 'https://arxiv.org/abs/2210.03629' },
+  { paper: 'Toolformer: Language Models Can Teach Themselves to Use Tools', venue: 'arXiv 2302.04761', topic: 'Self-supervised tool-use agents', url: 'https://arxiv.org/abs/2302.04761' },
+  { paper: 'DSPy: Compiling Declarative Language Model Calls', venue: 'arXiv 2310.03714', topic: 'Programming LMs, self-improving pipelines', url: 'https://arxiv.org/abs/2310.03714' },
+  { paper: 'LangGraph: Multi-Agent Workflows', venue: 'LangChain Docs', topic: 'Graph-based orchestration, cycles, human-in-the-loop', url: 'https://python.langchain.com/docs/langgraph' },
+  { paper: 'Corrective RAG (CRAG)', venue: 'arXiv 2401.06999', topic: 'Self-correcting retrieval loops', url: 'https://arxiv.org/abs/2401.06999' },
+  { paper: 'Model Context Protocol (MCP) Specification', venue: 'Model Context', topic: 'Standardized tool/data access for LLMs', url: 'https://www.modelcontext.org/' },
+  { paper: 'Generative Agents: Interactive Simulacra of Human Behavior', venue: 'arXiv 2304.03442', topic: 'Simulating multi-agent societies', url: 'https://arxiv.org/abs/2304.03442' },
+  { paper: 'Reflexion: Language Agents with Verbal Reinforcement Learning', venue: 'arXiv 2303.11366', topic: 'Self-verbalization and strategy updates', url: 'https://arxiv.org/abs/2303.11366' },
+  { paper: 'AutoGen: Enabling Next-Gen Multi-Agent Applications', venue: 'Microsoft Research', topic: 'Collaborative protocol design', url: 'https://www.microsoft.com/en-us/research/project/autogen/' },
+  { paper: 'Kùzu: An Embedded Property Graph Database', venue: 'Kùzu', topic: 'Architecture and performance of Kùzu', url: 'https://kuzudb.com/blog' },
+];
+
+export interface BlogLink {
+  title: string;
+  url: string;
+}
+
+export const BLOG_ARTICLES: BlogLink[] = [
+  { title: 'The shift to distributed LLM inference (BentoML)', url: 'https://www.bentoml.com/blog/the-shift-to-distributed-llm-inference' },
+  { title: 'Collective operations (Aleksa Gordić)', url: 'http://www.aleksagordic.com/blog/collective-operations' },
+  { title: 'ELI5 FlashAttention (Aleksa Gordić)', url: 'https://gordicaleksa.medium.com/eli5-flash-attention-5c44017022ad' },
+  { title: 'vLLM (Aleksa Gordić)', url: 'https://www.aleksagordic.com/blog/vllm' },
+  { title: 'Matmul (Aleksa Gordić)', url: 'https://www.aleksagordic.com/blog/matmul' },
+  { title: 'Transformer (Aleksa Gordić)', url: 'https://www.aleksagordic.com/blog/transformer' },
+  { title: 'Making Deep Learning Go Brrrr From First Principles (Horace He)', url: 'https://horace.io/brrr_intro.html' },
+  { title: 'Stanford CS336 Spring 2025 lectures', url: 'https://github.com/stanford-cs336/spring2025-lectures' },
+  { title: 'GPU MODE Lecture 22 — Hacker’s Guide to Speculative Decoding', url: 'https://www.youtube.com/watch?v=6OBtO9niT00' },
+  { title: 'Transformer Inference Arithmetic (kipply)', url: 'https://kipp.ly/transformer-inference-arithmetic/' },
+  { title: 'Databricks — LLM Inference Performance Engineering', url: 'https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices' },
+  { title: 'PagedAttention announcement (vLLM blog)', url: 'https://blog.vllm.ai/2023/06/20/vllm.html' },
+  { title: 'vLLM on Modal', url: 'https://modal.com/docs/examples/vllm_inference' },
+  { title: 'vLLM Office Hours 22: Intro to vLLM V1', url: 'https://www.youtube.com/watch?v=jmzIvQZCLZM' },
+  { title: 'vLLM V1 architecture', url: 'https://blog.vllm.ai/2025/01/27/v1-alpha-release.html' },
+  { title: 'Anatomy of a High-Throughput Inference System', url: 'https://blog.vllm.ai/2025/09/05/anatomy-of-vllm.html' },
+  { title: 'vLLM repo', url: 'https://github.com/vllm-project/vllm' },
+  { title: 'vLLM V1 metrics design doc', url: 'https://docs.vllm.ai/en/latest/design/v1/metrics/' },
+  { title: 'Prometheus/Grafana example (vLLM)', url: 'https://docs.vllm.ai/en/latest/examples/online_serving/prometheus_grafana/' },
+  { title: 'NVIDIA benchmarking fundamentals', url: 'https://developer.nvidia.com/blog/llm-inference-benchmarking-fundamental-concepts/' },
+  { title: 'How to Benchmark LLM Engines (Modal)', url: 'https://modal.com/llm-almanac/how-to-benchmark' },
+  { title: 'GuideLLM intro talk', url: 'https://www.youtube.com/watch?v=0ZVu0A4wWQg' },
+  { title: 'GuideLLM repo', url: 'https://github.com/vllm-project/guidellm' },
+  { title: 'vLLM bench serve CLI', url: 'https://docs.vllm.ai/en/latest/benchmarking/cli/' },
+  { title: 'Triton perf_analyzer', url: 'https://github.com/triton-inference-server/perf_analyzer' },
+  { title: 'Practical strategies for vLLM performance tuning (Red Hat)', url: 'https://developers.redhat.com/articles/2026/03/03/practical-strategies-vllm-performance-tuning' },
+  { title: 'Lilian Weng — Inference Optimization survey', url: 'https://lilianweng.github.io/posts/2023-01-10-inference-optimization/' },
+  { title: 'vLLM quantization docs', url: 'https://docs.vllm.ai/en/latest/features/quantization/' },
+  { title: 'QLoRA talk (Tim Dettmers)', url: 'https://www.youtube.com/watch?v=9wNAgpX6z_4' },
+  { title: 'vLLM production stack', url: 'https://github.com/vllm-project/production-stack' },
+  { title: 'KServe autoscaling for vLLM with KEDA (Red Hat)', url: 'https://developers.redhat.com/articles/2025/09/23/how-set-kserve-autoscaling-vllm-keda' },
+  { title: 'LLM Inference Economics from First Principles (TensorEconomics)', url: 'https://www.tensoreconomics.com/p/llm-inference-economics-from-first' },
+  { title: 'DigitalOcean — LLM Inference Cost', url: 'https://www.digitalocean.com/community/tutorials/llm-inference-cost' },
+  { title: 'Character.AI — Optimizing AI Inference', url: 'https://blog.character.ai/optimizing-ai-inference-at-character-ai-2/' },
+  { title: 'NVIDIA — Mastering LLM Techniques: Inference Optimization', url: 'https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/' },
+  { title: 'SGLang intro (Lianmin Zheng)', url: 'https://www.youtube.com/watch?v=Ny4xxErgFgQ' },
+  { title: 'SGLang v0.4 zero-overhead scheduler', url: 'https://lmsys.org/blog/2024-12-04-sglang-v0-4/' },
+  { title: 'RadixAttention / SGLang blog', url: 'https://lmsys.org/blog/2024-01-17-sglang/' },
+  { title: 'SGLang docs', url: 'https://docs.sglang.io' },
+];

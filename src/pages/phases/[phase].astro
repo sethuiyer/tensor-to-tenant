@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PHASES, WEEKS, phaseForWeek, type WeekMode } from '../../data/weeks';
+import { MANDALAS } from '../../data/mandalas';
+import { GATES } from '../../data/gates';
+
+export function getStaticPaths() {
+  return PHASES.map((p) => ({
+    params: { phase: String(p.id) },
+    props: { phase: p },
+  }));
+}
+
+const { phase } = Astro.props;
+const phaseWeeks = WEEKS.filter((w) => w.week >= phase.start && w.week <= phase.end);
+const nextPhase = PHASES.find((p) => p.id === phase.id + 1);
+const prevPhase = PHASES.find((p) => p.id === phase.id - 1);
+
+const modeLabel: Record<WeekMode, string> = {
+  implement: 'implement',
+  read_diagram: 'read · diagram',
+  deploy_benchmark: 'deploy · benchmark',
+};
+
+const relatedMandala = MANDALAS.find((m) =>
+  m.weeks.replace('Weeks ', '').split('–').map((x) => parseInt(x, 10)).some((n) => phaseWeeks.some((w) => w.week === n))
+);
+const relatedGate = GATES.find((g) => g.week === phase.end);
+---
+
+<BaseLayout
+  title={`Phase ${phase.id} — ${phase.theme}`}
+  description={`Phase ${phase.id} of the Tensor-to-Tenant curriculum: ${phase.theme}`}
+  activeNav="curriculum"
+>
+  <div class="container" style="padding-top:2.5rem">
+    <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/curriculum/">Curriculum</a> / Phase {phase.id}
+    </nav>
+
+    <header style="margin-bottom:2rem">
+      <div class="eyebrow">Phase {phase.id} · Weeks {phase.weeks}</div>
+      <h1>{phase.theme}</h1>
+      <p class="lead">{phaseWeeks.length} core deliverables in this phase.</p>
+    </header>
+
+    <!-- Prev / next -->
+    <div style="display:flex;gap:1rem;margin-bottom:2rem;font-size:0.9rem">
+      {prevPhase && <a class="btn" href={`/phases/${prevPhase.id}/`}>← Phase {prevPhase.id}</a>}
+      {nextPhase && <a class="btn" href={`/phases/${nextPhase.id}/`}>Phase {nextPhase.id} →</a>}
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th class="num">Week</th><th>Module</th><th>Focus</th><th>Mode</th><th>Core deliverable</th></tr>
+        </thead>
+        <tbody>
+          {
+            phaseWeeks.map((w) => (
+              <tr>
+                <td class="num mono">{w.week}</td>
+                <td style="min-width:170px">{w.module}</td>
+                <td style="min-width:220px">{w.focus}</td>
+                <td><span class:list={['chip', 'chip-mode', w.mode]}>{modeLabel[w.mode]}</span></td>
+                <td style="min-width:200px">{w.deliverable}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    {
+      relatedGate && (
+        <div class="callout callout--amber">
+          <strong>Milestone gate at the end of this phase</strong>
+          <p>{relatedGate.gate} — {relatedGate.criteria}</p>
+          <p style="margin-top:0.5rem"><em>Remediation:</em> {relatedGate.remediation}</p>
+        </div>
+      )
+    }
+
+    {
+      relatedMandala && (
+        <div class="callout callout--violet">
+          <strong>Related mandala</strong>
+          <p>{relatedMandala.title} — you become a <em>{relatedMandala.identity}</em>.</p>
+          <p style="margin-top:0.5rem">{relatedMandala.transformation}</p>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

@@ -1,0 +1,137 @@
+/**
+ * Prerequisite resources — the on-ramp lane for students who need to cover
+ * fundamentals before Week 1. Students are told to allocate 36 weeks to
+ * cover everything here if they need to.
+ */
+
+export interface PrerequisiteResource {
+  title: string;
+  url: string;
+  focus: string;
+  weeks: string;
+  outcome: string;
+}
+
+export const PREREQUISITE_RESOURCES: PrerequisiteResource[] = [
+  {
+    title: 'Google Like a Pro — Advanced Search Operators',
+    url: 'https://www.youtube.com/watch?v=BRiNw490Eq0',
+    focus: 'Finding the right source, fast',
+    weeks: 'W1–2',
+    outcome: 'Self-serve research: filter, scope, and verify results instead of hoping Google guesses right.',
+  },
+  {
+    title: 'How To Read Documentation For Beginners',
+    url: 'https://www.youtube.com/watch?v=SWr6NW2osqc',
+    focus: 'Reading docs as a skill',
+    weeks: 'W1–2',
+    outcome: 'Navigate any framework docs — quickstarts, references, and changelogs — without a tutorial.',
+  },
+  {
+    title: 'Git for Beginners',
+    url: 'https://www.youtube.com/watch?v=vwj89i2FmG0',
+    focus: 'Version control fluency',
+    weeks: 'W1–2',
+    outcome: 'Commit, branch, merge, and recover — the tooling habit every weekly artifact depends on.',
+  },
+  {
+    title: 'CS50x 2024 Lectures',
+    url: 'https://www.youtube.com/playlist?list=PLhQjrBD2T381WAHyx1pq-sBfykqMBI7V4',
+    focus: 'Computer science fundamentals',
+    weeks: 'W1–6',
+    outcome: 'C, memory, algorithms, data structures, and web — the shared vocabulary of the whole course.',
+  },
+  {
+    title: 'Nand to Tetris',
+    url: 'https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI',
+    focus: 'A computer from first principles',
+    weeks: 'W7–10',
+    outcome: 'Build a working computer from NAND gates up — assembler, VM, compiler, OS — and a Tetris game.',
+  },
+  {
+    title: 'MIT 6.042J — Mathematics for Computer Science',
+    url: 'https://www.youtube.com/playlist?list=PLB7540DEDD482705B',
+    focus: 'Discrete mathematics',
+    weeks: 'W11–16',
+    outcome: 'Proofs, induction, counting, probability, and graphs — the reasoning the course front-loads in Weeks 7–30.',
+  },
+  {
+    title: 'YACR — Programming Paradigms Explained',
+    url: 'https://codeberg.org/aninokuma/YACR#programming-paradigms-explained-procedural-functional-object-oriented-and-let-it-crash',
+    focus: 'Programming paradigms',
+    weeks: 'W17–18',
+    outcome: 'Procedural, functional, object-oriented, and let-it-crash thinking — and why each exists.',
+  },
+  {
+    title: 'Statistical Learning with Python',
+    url: 'https://www.youtube.com/playlist?list=PLoROMvodv4rPP6braWoRt5UCXYZ71GZIQ',
+    focus: 'Statistics and ML foundations',
+    weeks: 'W19–28',
+    outcome: 'Supervised and unsupervised learning from the data side — the empirical backbone of every ML week.',
+  },
+  {
+    title: 'Software Engineering at Google',
+    url: 'https://abseil.io/resources/swe-book',
+    focus: 'Engineering culture and practice',
+    weeks: 'W29–32',
+    outcome: 'How teams design, test, review, and ship at scale — the professional layer under the technical arc.',
+  },
+];
+
+export interface PrerequisiteWeekPhase {
+  weeks: string;
+  title: string;
+  resources: string[];
+  outcome: string;
+}
+
+export const PREREQUISITE_36_WEEKS: PrerequisiteWeekPhase[] = [
+  {
+    weeks: 'W1–2',
+    title: 'Learning how to learn',
+    resources: ['Google Like a Pro', 'How To Read Documentation', 'Git for Beginners'],
+    outcome: 'Search and docs fluency plus version control — the self-serve skills every later week compounds.',
+  },
+  {
+    weeks: 'W3–6',
+    title: 'Computer science foundations',
+    resources: ['CS50x Lectures 1–6'],
+    outcome: 'C, memory, and algorithms — the vocabulary of computation the course assumes at Week 1.',
+  },
+  {
+    weeks: 'W7–10',
+    title: 'A computer from first principles',
+    resources: ['Nand to Tetris'],
+    outcome: 'From NAND gates to a CPU, compiler, and OS — nothing is magic anymore.',
+  },
+  {
+    weeks: 'W11–16',
+    title: 'Mathematics for computer science',
+    resources: ['MIT 6.042J'],
+    outcome: 'Proofs, induction, counting, probability, and graphs — the exact reasoning Weeks 7–30 rely on.',
+  },
+  {
+    weeks: 'W17–18',
+    title: 'Programming paradigms',
+    resources: ['YACR'],
+    outcome: 'Procedural, functional, OO, and let-it-crash — the lenses behind every framework you will read.',
+  },
+  {
+    weeks: 'W19–28',
+    title: 'Statistical learning',
+    resources: ['Statistical Learning with Python'],
+    outcome: 'Supervised and unsupervised learning — the empirical core of the ML and evaluation weeks.',
+  },
+  {
+    weeks: 'W29–32',
+    title: 'Software engineering at scale',
+    resources: ['Software Engineering at Google'],
+    outcome: 'Design docs, testing, code review, and ownership — the discipline that makes weekly artifacts professional.',
+  },
+  {
+    weeks: 'W33–36',
+    title: 'Synthesis project',
+    resources: ['All of the above'],
+    outcome: 'Consolidate everything into one working project — then Week 1 of the arc starts on solid ground.',
+  },
+];

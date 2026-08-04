@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pitfalls = [
+  'tout = timer-1 vs tin+size-1 confusion → off-by-one, queries miss nodes',
+  'Forgetting to compress tool_id and tie-break on the original',
+  'Adding non-error nodes to the aggregates',
+  'Not walking max_freq down on remove → stale top',
+  'Python recursion limit — use iterative or setrecursionlimit',
+  'Adding the heavy child twice (dfs + add_subtree loop)',
+  'min() over a plain set bucket is O(K) — mention SortedSet/heap in production',
+  'Not handling the keep flag — leaks light subtree data into siblings',
+  'Forgetting heavy child → O(N²) instead of O(N log N)',
+  'No cycle detection → stack overflow in the Euler pass',
+];
+---
+
+<BaseLayout title="Capstone 2 — Agent Execution Forensics with Euler Tour + DSU on Tree" description="The optional Week 108 boss fight capstone." activeNav="capstones">
+  <div class="container" style="padding-top:2.5rem">
+    <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/capstones/">Capstones</a> / Tree Forensics
+    </nav>
+
+    <header style="margin-bottom:2rem">
+      <div class="eyebrow">Capstone 2 · Week 108 · Optional Boss Fight</div>
+      <h1>Multi-Tenant Agent Execution Forensics</h1>
+      <p class="lead">
+        Euler Tour + DSU on Tree. Staff-level sequel to Capstone 1: if that was forensics over a flat log, this is
+        forensics over a forest of agent execution trees. Brutal — you must combine systems design with esoteric
+        tree algorithms.
+      </p>
+    </header>
+
+    <div class="callout callout--err">
+      <strong>You will fail if you treat a tree like an array</strong>
+      <p>
+        Subtree structure is data, and Euler order is the indexing strategy that makes it queryable.
+      </p>
+    </div>
+
+    <h2>The scenario</h2>
+    <p>
+      Your LLM gateway now serves ReAct / Plan-Execute agents. Each request spawns an execution tree; thousands of
+      tenants, 10k agent traces/sec, each tree 10–50k nodes worst case, nodes arrive out-of-order, duplicates from
+      retries. Engineers need exact subtree forensics: which tool failed the most under this node? How many distinct
+      tools errored? How many tokens wasted?
+    </p>
+    <pre>{`trace_id: tr_9f8s7d
+root (agent planner) [model=claude-4, tokens=1200]
+ ├── tool: search_docs [tool_id=12, status=ok, tokens=400]
+ │    ├── tool: embed_query [tool_id=5, error, tokens=200]
+ │    └── tool: rerank [tool_id=12, error, tokens=150]
+ └── tool: code_exec [tool_id=8, error, tokens=800]
+      └── tool: search_docs [tool_id=12, ok, tokens=100]`}</pre>
+
+    <h2>Why Euler + DSU, not a recursive CTE</h2>
+    <p>
+      Recursive CTE over 50k-node trees × 200k queries = death. Flatten once via an Euler Tour so every subtree is a
+      contiguous range [tin, tout], then answer queries over an array. For a batch of offline subtree queries on the
+      same tree, DSU on Tree (sack / keep-heavy) gives O(N log N + Q).
+    </p>
+
+    <h2>The coding problem</h2>
+    <p>
+      Rooted tree of agent nodes, each with tool_id, is_error, tokens. Q offline queries; for each node u return:
+      top_error_tool (max error count, ties → smallest tool_id), top_error_count, distinct_error_tools, wasted_tokens.
+    </p>
+    <pre>{`    0(tool=1, err=T, 100)
+   / \\
+  1(2,F,50) 2(1,T,200)
+            / \\
+        3(3,T,10) 4(2,T,70)
+
+Queries: [0, 2]
+Subtree 0: tool1:2, tool2:1, tool3:1 -> top=1 count=2 distinct=3 wasted=380
+Subtree 2: tool1:1, tool2:1, tool3:1 -> tie, smallest id -> top=1 count=1 distinct=3 wasted=280`}</pre>
+
+    <h2>The DSU invariant</h2>
+    <p>Right before answering queries at u, the active sack contains exactly all nodes in subtree(u), and no nodes outside it. Prove it:</p>
+    <ol style="color:var(--text-muted);font-size:0.95rem;line-height:1.8">
+      <li>Every light child is processed and cleared.</li>
+      <li>The heavy child remains.</li>
+      <li>Every light subtree is added exactly once.</li>
+      <li>u is added.</li>
+      <li>Therefore the sack equals subtree(u).</li>
+      <li>If keep=false, all of subtree(u) is removed before returning.</li>
+    </ol>
+
+    <h2>Pitfalls index</h2>
+    <div class="grid grid-2">
+      {
+        pitfalls.map((p, i) => (
+          <div class="card" style="padding:0.8rem 1rem">
+            <div class="mono" style="font-size:0.78rem;color:var(--accent-2)">#{i + 1}</div>
+            <div style="font-size:0.9rem">{p}</div>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2>Follow-ups that change the machinery</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>If the query becomes…</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Path (u → v), not subtree</td><td>Heavy-Light Decomposition; offline exact path mode → Mo's on Tree</td></tr>
+          <tr><td>Tree mutates (reparenting)</td><td>Euler Tour Tree or Link-Cut Tree</td></tr>
+          <tr><td>Top-K error tools per subtree</td><td>Counter + heap of (count, tool); Space-Saving as approximate alternative</td></tr>
+          <tr><td>One huge tree split across shards</td><td>Full frequency map needed — top-1 is not mergeable</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout--amber">
+      <strong>The progression it teaches</strong>
+      <p>
+        Flat log → range query → Mo's. Execution tree → subtree → Euler interval → DSU on Tree. Path query →
+        different workload → different machinery. Mutable tree → static preprocessing invalid → dynamic structures.
+        Do not select an algorithm because the query sounds similar — select it from topology, mutability, workload
+        shape, and aggregation algebra.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

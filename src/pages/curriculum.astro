@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { WEEKS, PHASES, phaseForWeek, MODE_COUNTS, GPU_WEEKS, RECOVERY_AFTER, type WeekMode } from '../data/weeks';
+import { PROGRAMS } from '../data/gates';
+
+const modeLabel: Record<WeekMode, string> = {
+  implement: 'implement',
+  read_diagram: 'read · diagram',
+  deploy_benchmark: 'deploy · benchmark',
+};
+
+const totalWeeks = WEEKS.length;
+---
+
+<BaseLayout title="Curriculum" description="The full 108-week Tensor-to-Tenant curriculum." activeNav="curriculum">
+  <PageHeader
+    eyebrow="Curriculum"
+    title="108 weeks, ten phases, one arc"
+    lead="Every instructional week has a module, a focus, a mode, and a core deliverable. There is no attendance-based completion — each week produces evidence."
+    meta={`${totalWeeks} weeks · 10 phases · ${MODE_COUNTS.implement} implement / ${MODE_COUNTS.read_diagram} read+diagram / ${MODE_COUNTS.deploy_benchmark} deploy+benchmark · 13 recovery windows`}
+  />
+
+  <section class="container">
+    <!-- Phase filter -->
+    <div class="callout">
+      <strong>Filter by phase</strong>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem">
+        <button class="btn phase-filter" data-phase="0" style="padding:0.35rem 0.7rem;font-size:0.85rem">All phases</button>
+        {
+          PHASES.map((p) => (
+            <button class="btn phase-filter" data-phase={String(p.id)} style="padding:0.35rem 0.7rem;font-size:0.85rem">
+              Phase {p.id} · W{p.weeks}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">
+      <span><span class="chip chip-mode implement">implement</span> build &amp; test working code</span>
+      <span><span class="chip chip-mode read_diagram">read · diagram</span> design, analyze &amp; explain</span>
+      <span><span class="chip chip-mode deploy_benchmark">deploy · benchmark</span> run on real infra &amp; measure</span>
+      <span><span class="chip chip--amber">GPU weeks</span> {GPU_WEEKS.join(', ')}</span>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table id="curriculum-table">
+        <thead>
+          <tr>
+            <th class="num">Week</th>
+            <th>Phase</th>
+            <th>Module</th>
+            <th>Focus</th>
+            <th>Mode</th>
+            <th>Core deliverable</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            WEEKS.map((w) => {
+              const phase = phaseForWeek(w.week);
+              const isGpu = w.mode === 'deploy_benchmark';
+              return (
+                <tr data-phase={String(phase)} class:list={{ 'gpu-row': isGpu }}>
+                  <td class="num mono">{w.week}</td>
+                  <td class="mono"><span class="chip chip--amber">P{phase}</span></td>
+                  <td style="min-width:180px">{w.module}</td>
+                  <td style="min-width:220px">{w.focus}</td>
+                  <td><span class:list={['chip', 'chip-mode', w.mode]}>{modeLabel[w.mode]}</span></td>
+                  <td style="min-width:200px">{w.deliverable}</td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Recovery -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="kicker">Recovery windows</div>
+      <h2>Deliberate catch-up, not extra topics</h2>
+      <p class="lead">
+        After these weeks the course pauses new content so you can consolidate, remediate gates, or rest.
+        They are generated as part of the rhythm — a recovery week is never an additional topic.
+      </p>
+      <p class="mono" style="color:var(--text-muted)">
+        After weeks: {RECOVERY_AFTER.join(' · ')}
+      </p>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="section">
+    <div class="container">
+      <div class="kicker">Stackable programs</div>
+      <h2>Three publishable checkpoints</h2>
+      <div class="grid grid-3">
+        {
+          PROGRAMS.map((p) => (
+            <div class="card">
+              <div class="card__title"><span class="chip chip--accent">{p.weeks}</span>{p.name}</div>
+              <p>{p.release}</p>
+              <div class="mono" style="font-size:0.8rem;color:var(--text-faint);margin-top:0.75rem">
+                Portfolio release · Week {p.releaseWeek}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <p style="margin-top:1.5rem">
+        <a href="/math/">100-module mathematics curriculum →</a> · <a href="/engineering/">30 engineering tasks + 40 practice drills →</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const buttons = document.querySelectorAll('.phase-filter');
+  const rows = document.querySelectorAll('#curriculum-table tbody tr');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('btn--primary'));
+      btn.classList.add('btn--primary');
+      const phase = btn.dataset.phase;
+      rows.forEach((row) => {
+        row.style.display = phase === '0' || row.dataset.phase === phase ? '' : 'none';
+      });
+    });
+  });
+  // Default: all phases active
+  buttons[0]?.classList.add('btn--primary');
+</script>
+
+<style>
+  .gpu-row td {
+    background: color-mix(in srgb, var(--accent-2) 7%, transparent);
+  }
+</style>

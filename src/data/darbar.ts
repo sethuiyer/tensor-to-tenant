@@ -1,0 +1,91 @@
+/**
+ * Leetcode Darbar — a parallel, timed, problem-solving lane.
+ * Transcribed from LEETCODE_DARBAR.md.
+ */
+
+export interface DarbarPattern {
+  name: string;
+  weeks: string;
+  slots: string;
+  tips: string;
+  warmup: string;
+  core: string;
+  exam: string;
+}
+
+export const DARBAR_PATTERNS: DarbarPattern[] = [
+  { name: 'Timed routing', weeks: '1–15', slots: '1–120', tips: 'Two-pointer scanning, map-based lookups, prefix products, interval merging', warmup: 'LeetCode-style easy problems (15 min each)', core: 'Data-structure and string/array basics under a clock', exam: 'Weekly timed block, 3–5 problems in 60 minutes' },
+  { name: 'State machines & simulations', weeks: '16–30', slots: '121–200', tips: 'Transition tables, cycle detection in simulation, stack/queue state', warmup: 'Simulation and state-transition drills', core: 'Problems whose solution is a disciplined state machine', exam: '2–3 state-machine problems in 60 minutes' },
+  { name: 'Tree & graph fluency', weeks: '31–45', slots: '201–280', tips: 'DFS/BFS patterns, subtree invariants, shortest-path frames, topo order', warmup: 'Tree traversals and adjacency-list graph walks', core: 'Tree and graph problems across difficulty bands', exam: 'Tree+graph block with one design flavored problem' },
+  { name: 'Data-structure mastery', weeks: '46–60', slots: '281–360', tips: 'Heaps, Fenwick/segment trees, tries, DSU, balanced structures', warmup: 'Standard-library structure drills', core: 'Problems that pick the right structure by workload shape', exam: 'Structure-selection exam with 2–3 advanced problems' },
+  { name: 'Advanced & interview fusion', weeks: '61–90', slots: '361–470', tips: 'DP, greedy, sliding-window optimizations, offline queries', warmup: 'Classic DP and greedy patterns', core: 'Fusion problems that combine two or more techniques', exam: 'Mixed 4-problem block mirroring a real interview' },
+  { name: 'Mock & personal gauntlet', weeks: '91–108', slots: '471–548', tips: 'Full mock interviews, random pick from all patterns, time pressure', warmup: 'Two-problem blocks (45 min)', core: 'Company-tagged and previously missed problems', exam: 'Full mock interviews scored on a rubric' },
+];
+
+export const DARBAR_PACING = {
+  totalSlots: 548,
+  standardTarget: 'One “Standard” solve path to keep the 108-week core viable.',
+  aurorTarget: 'Solve, explain, and timebox all 548 catalog slots.',
+  weeklyCadence: '3–5 problems per week across the pattern blocks.',
+};
+
+export const DARBAR_CATALOG = {
+  easy: 255,
+  medium: 240,
+  hard: 53,
+  tagline: '548 hand-crafted picks covering the full data-structure and algorithm spectrum.',
+  link: 'https://aninokuma.codeberg.page/leetcode-darbar/',
+};
+
+export interface DarbarPacingRow {
+  weeks: string;
+  emphasis: string;
+  production: string;
+}
+
+export const DARBAR_PACING_MAP: DarbarPacingRow[] = [
+  { weeks: '1–6', emphasis: 'Arrays, strings, hash tables, stacks, queues, searching/sorting', production: 'Python engineering, APIs, diagnostics' },
+  { weeks: '7–30', emphasis: 'Math, bit manipulation, divide and conquer, recursion, backtracking', production: 'Linear algebra, probability, statistics, optimization' },
+  { weeks: '31–45', emphasis: 'Heaps, linked lists, tries, range queries, hashing', production: 'Retrieval, Top-K, caching, sketches, routing' },
+  { weeks: '46–57', emphasis: 'Graphs, trees, greedy, DSU, range queries', production: 'System design, workflows, sharding, scheduling' },
+  { weeks: '58–69', emphasis: 'Dynamic programming, greedy, math, probability', production: 'Experiment assignment, rollouts, monitoring' },
+  { weeks: '70–81', emphasis: 'Strings, tries, graphs, sequence DP', production: 'Tokenization, retrieval, agents, guardrails' },
+  { weeks: '82–102', emphasis: 'Heaps, priority queues, graphs, trees, range queries', production: 'Inference schedulers, quotas, queues, tenant fairness' },
+  { weeks: '103–108', emphasis: 'Mixed timed sets and mock interviews', production: "Mo's traces, Euler/DSU boss, portfolio defense" },
+];
+
+export interface DarbarTriangulation {
+  concept: string;
+  speed: string;
+  depth: string;
+  artifact: string;
+}
+
+export const DARBAR_TRIANGULATION: DarbarTriangulation[] = [
+  { concept: 'Heap', speed: 'Top-K and scheduler problems', depth: 'Heap invariants and adversarial streams', artifact: 'Streaming Top-K / inference batching' },
+  { concept: 'Trees', speed: 'Traversal, LCA, tree DP', depth: 'Euler Tour, HLD, DSU on Tree', artifact: 'Agent-execution forensics' },
+  { concept: 'Graphs', speed: 'BFS/DFS and shortest paths', depth: 'SCC, flow, matching, min-cost flow', artifact: 'Workflow and routing platform' },
+  { concept: 'Strings', speed: 'Prefix matching and tries', depth: 'KMP, Aho-Corasick, suffix structures', artifact: 'PII detector / retrieval index' },
+  { concept: 'Hashing', speed: 'Frequency and lookup patterns', depth: 'Consistent/rendezvous hashing', artifact: 'Tenant-aware routing and caches' },
+];
+
+export const DARBAR_OPERATING_RULE: string[] = [
+  'Mon–Thu: one catalog problem per day',
+  'Fri: one timed problem or contest set',
+  'Weekend: review, editorial rewrite, or recovery',
+];
+
+export const DARBAR_CATEGORIES: string[] = [
+  'array', 'backtracking', 'bit manipulation', 'divide and conquer', 'dynamic programming',
+  'graphs', 'greedy', 'hash table', 'heap', 'linked list', 'math', 'queue',
+  'range query', 'recursion', 'searching and sorting', 'stack', 'string', 'trees', 'trie',
+];
+
+export const DARBAR_PRINCIPLES: string[] = [
+  'Rigor with sanity: prioritize problems that force the phase’s algorithms.',
+  'Timer on, then review: solve under a clock, then study the editorial regardless of outcome.',
+  'Evidence per slot: one file that proves the attempt, the solution, and the complexity note.',
+  'Patterns before volume: mastery is choosing the right tool for the workload, not memorizing solutions.',
+  'Mock pressure from week one: the timed block is a permanent part of the ritual.',
+  'Auror track is optional: the 548-slot catalog is depth; the 108-week path never depends on it.',
+];

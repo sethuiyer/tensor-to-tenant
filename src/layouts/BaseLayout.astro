@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import { SITE } from '../config';
+
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+  wide?: boolean;
+}
+
+const {
+  title,
+  description = 'Tensor-to-Tenant — a production-oriented 108-week AI engineering, ML systems & interview mastery apprenticeship.',
+  activeNav = '',
+} = Astro.props;
+
+const nav = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/curriculum/', label: 'Curriculum', key: 'curriculum' },
+  { href: '/agents/', label: 'Agents', key: 'agents' },
+  { href: '/mandala/', label: 'Mandalas', key: 'mandala' },
+  { href: '/algorithmic-forge/', label: 'Forge', key: 'forge' },
+  { href: '/system-design/', label: 'System Design', key: 'system-design' },
+  { href: '/leetcode-darbar/', label: 'Darbar', key: 'darbar' },
+  { href: '/capstones/', label: 'Capstones', key: 'capstones' },
+  { href: '/resources/', label: 'Resources', key: 'resources' },
+  { href: '/faq/', label: 'FAQ', key: 'faq' },
+];
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {SITE.short}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Theme init before paint to avoid FOUC -->
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem('t3-theme');
+          var theme = saved === 'light' || saved === 'dark' ? saved : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="site-nav__inner">
+        <a class="brand" href="/">tensor<span>→</span>tenant</a>
+        <div class="nav-links">
+          {
+            nav.map((item) => (
+              <a
+                href={item.href}
+                class:list={{ active: activeNav === item.key }}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+        <div class="nav-spacer"></div>
+        <button class="theme-toggle" aria-label="Toggle theme">☀</button>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div>
+          <strong>Tensor-to-Tenant</strong> · 108-week AI engineering apprenticeship
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+          <a href={SITE.github} target="_blank" rel="noopener noreferrer" class="mono">GitHub</a>
+          <a href="/faq/" class="mono">FAQ</a>
+          <a href="/resources/" class="mono">Resources</a>
+          <span class="mono">vector.dot() → per-tenant concurrency limiter</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      import { toggleTheme } from '../scripts/theme.ts';
+      const btn = document.querySelector('.theme-toggle');
+      btn?.addEventListener('click', toggleTheme);
+    </script>
+  </body>
+</html>

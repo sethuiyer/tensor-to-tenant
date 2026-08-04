@@ -1,0 +1,90 @@
+/**
+ * Engineering Tasks (30) and Engineering Practice (40) — the hands-on micro-projects.
+ * Transcribed from README.md §Engineering Tasks and §Engineering Practice.
+ */
+
+export interface EngineeringTask {
+  n: number;
+  title: string;
+}
+
+export interface PracticeExercise {
+  n: number;
+  title: string;
+}
+
+export const ENGINEERING_TASKS: EngineeringTask[] = [
+  { n: 1, title: 'Implementation of retrieval engine with cosine similarity' },
+  { n: 2, title: 'Implementation of exact top-k selection' },
+  { n: 3, title: 'Heap-based top-k with fixed memory' },
+  { n: 4, title: 'Implementation of retrieval reranker' },
+  { n: 5, title: 'Two-stage retrieval pipeline with reranker' },
+  { n: 6, title: 'Dynamic top-k with mutable scores' },
+  { n: 7, title: 'Sliding window rate limiter' },
+  { n: 8, title: 'Token bucket rate limiter' },
+  { n: 9, title: 'Distributed rate limiter using Redis' },
+  { n: 10, title: 'LRU cache with O(1) operations' },
+  { n: 11, title: 'TTL cache' },
+  { n: 12, title: 'Cache simulator with hit-ratio and stall-time statistics' },
+  { n: 13, title: 'Text chunker with sentence awareness' },
+  { n: 14, title: 'Token-aware chunker' },
+  { n: 15, title: 'PII span merging and regex/NER detection' },
+  { n: 16, title: 'Redaction utility with PII spans' },
+  { n: 17, title: 'Brier score and reliability diagrams' },
+  { n: 18, title: 'Expected calibration error' },
+  { n: 19, title: 'NDCG, MRR, Recall@K retrieval evaluation' },
+  { n: 20, title: 'Thread-safe inference batcher' },
+  { n: 21, title: 'Retry with exponential backoff and jitter' },
+  { n: 22, title: 'Circuit breaker' },
+  { n: 23, title: 'Count-Min Sketch' },
+  { n: 24, title: 'Bloom filter' },
+  { n: 25, title: 'HyperLogLog' },
+  { n: 26, title: 'Consistent hashing' },
+  { n: 27, title: 'Weighted load balancer' },
+  { n: 28, title: 'Snowflake ID generation' },
+  { n: 29, title: 'Leaky bucket rate limiter' },
+  { n: 30, title: 'Sliding-window counter (global)' },
+];
+
+export const PRACTICE_EXERCISES: PracticeExercise[] = [
+  { n: 1, title: 'Vector dot product using native Python vs NumPy' },
+  { n: 2, title: 'Parallel dot product with multiprocessing and shared memory' },
+  { n: 3, title: 'Thread-safe vector addition with locks' },
+  { n: 4, title: 'Thread-safe vector addition with atomic operations' },
+  { n: 5, title: 'Concurrent dictionary with counters' },
+  { n: 6, title: 'Concurrent counters with Redis' },
+  { n: 7, title: 'Implement a semaphore' },
+  { n: 8, title: 'Reader-writer lock' },
+  { n: 9, title: 'Producer-consumer queue with condition variables' },
+  { n: 10, title: 'Work queue with channel semantics' },
+  { n: 11, title: 'Token bucket rate limiter' },
+  { n: 12, title: 'Sliding window rate limiter with timestamp list' },
+  { n: 13, title: 'Sliding window rate limiter with counter + timestamp' },
+  { n: 14, title: 'LRU cache' },
+  { n: 15, title: 'TTL cache' },
+  { n: 16, title: 'Randomized load balancer' },
+  { n: 17, title: 'Round-robin load balancer' },
+  { n: 18, title: 'Weighted round-robin load balancer' },
+  { n: 19, title: 'Rendezvous hashing' },
+  { n: 20, title: 'Consistent hashing' },
+  { n: 21, title: 'PII redactor' },
+  { n: 22, title: 'PII detector with spans' },
+  { n: 23, title: 'Batch processor with queue' },
+  { n: 24, title: 'Batch processor with reservation and timeout' },
+  { n: 25, title: 'Retry wrapper with exponential backoff' },
+  { n: 26, title: 'Retry wrapper with circuit breaker' },
+  { n: 27, title: 'Count-Min Sketch' },
+  { n: 28, title: 'Bloom filter' },
+  { n: 29, title: 'HyperLogLog' },
+  { n: 30, title: 'Snowflake ID generator' },
+  { n: 31, title: 'KNN with cosine similarity' },
+  { n: 32, title: 'KNN with euclidean distance' },
+  { n: 33, title: 'Two-stage retrieval with reranker' },
+  { n: 34, title: 'Stream top-k with heap' },
+  { n: 35, title: 'Chunker with fixed-size windows' },
+  { n: 36, title: 'Chunker with sentence awareness' },
+  { n: 37, title: 'Token-aware chunker' },
+  { n: 38, title: 'LRU cache with TTL' },
+  { n: 39, title: 'Thread-safe LRU cache' },
+  { n: 40, title: 'Concurrent batch processor with timeout' },
+];

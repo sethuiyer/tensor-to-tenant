@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { AGENT_MODULES, AGENT_BRIDGES, BRIDGE_SUMMARY, BRIDGE_PITCH, MANUS_CAPSTONE } from '../data/agents';
+
+const bridgeByModule = new Map(AGENT_BRIDGES.map((b) => [b.module, b]));
+
+const track = [
+  'Foundations',
+  'No-code prototyping',
+  'Coding essentials',
+  'LangChain',
+  'Prompting',
+  'RAG',
+  'Agents from scratch',
+  'MCP',
+  'LangGraph / AutoGen / CrewAI',
+  'Agentic patterns',
+  'Advanced frameworks',
+  'Agentic RAG',
+  'DSPy',
+  'Kùzu',
+  'Manus capstone',
+];
+---
+
+<BaseLayout title="GenAI Agents Track" description="The 18-module GenAI agents specialisation of Tensor-to-Tenant: LangChain, LangGraph, AutoGen, CrewAI, MCP, DSPy, Kùzu and the Manus capstone." activeNav="agents">
+  <PageHeader
+    eyebrow="GenAI Agents track"
+    title="From no-code prototypes to autonomous UI agents"
+    lead="An 18-module specialisation inside the course: foundations, prompt engineering, RAG, agents from scratch, Model Context Protocol, the three orchestration frameworks, agentic design patterns, DSPy, Kùzu graph RAG — and a capstone agent that operates a real browser and terminal."
+    meta="18 modules · Module 7.5 MCP · Project Manus capstone"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="callout callout--violet">
+        <strong>How it fits the arc</strong>
+        <p>
+          This track lives alongside the mathematics, systems, and inference spine. It takes the LLM/RAG work of
+          the later phases and turns it into interoperable, production-shaped agents — every framework below is
+          grounded in the same evidence-first, tenant-aware discipline as the rest of the course.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem">
+          {track.map((t) => <span class="chip">{t}</span>)}
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>The bridge — not a merge</strong>
+        <p style="color:var(--text-muted);font-size:0.95rem">
+          {BRIDGE_PITCH.quote}
+        </p>
+        <p style="margin-top:0.75rem;font-weight:700;color:var(--accent)">{BRIDGE_PITCH.tag}</p>
+      </div>
+
+      <div class="kicker" style="margin-top:2.5rem">The modules</div>
+      <p class="lead" style="font-size:0.95rem">
+        Open any module to see its topics, key concepts, labs, and the bridge — the exact tensor-to-tenant weeks
+        that explain <em>why</em> the framework works under the hood.
+      </p>
+
+      {
+        AGENT_MODULES.map((m) => {
+          const br = bridgeByModule.get(m.id);
+          return (
+            <details class="card" style="padding:1.25rem 1.5rem;margin:1rem 0">
+              <summary style="cursor:pointer;list-style:none">
+                <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap">
+                  <span class="chip chip--violet">Module {m.id}</span>
+                  <span style="font-weight:700;font-size:1.05rem;color:var(--text)">{m.title}</span>
+                </div>
+                {m.theme && (
+                  <div class="mono" style="font-size:0.8rem;color:var(--accent-2);margin-top:0.35rem">{m.theme}</div>
+                )}
+              </summary>
+              <div style="margin-top:1rem;display:flex;flex-direction:column;gap:1rem">
+                <div>
+                  <div class="kicker" style="margin-bottom:0.35rem">Topics</div>
+                  <ul style="margin:0;padding-left:1.2rem;color:var(--text-muted);font-size:0.93rem">
+                    {m.topics.map((t) => <li style="margin-bottom:0.3rem">{t}</li>)}
+                  </ul>
+                </div>
+                {
+                  m.sections?.map((s) => (
+                    <div>
+                      <div class="kicker" style="margin-bottom:0.35rem">{s.label}</div>
+                      <ul style="margin:0;padding-left:1.2rem;color:var(--text-muted);font-size:0.93rem">
+                        {s.items.map((i) => <li style="margin-bottom:0.3rem">{i}</li>)}
+                      </ul>
+                    </div>
+                  ))
+                }
+                {m.labs && m.labs.length > 0 && (
+                  <div>
+                    <div class="kicker" style="margin-bottom:0.35rem">Lab exercises</div>
+                    <ul style="margin:0;padding-left:1.2rem;color:var(--text-muted);font-size:0.93rem">
+                      {m.labs.map((l) => <li style="margin-bottom:0.3rem">{l}</li>)}
+                    </ul>
+                  </div>
+                )}
+                {m.outcomes && m.outcomes.length > 0 && (
+                  <div>
+                    <div class="kicker" style="margin-bottom:0.35rem">Learning outcomes</div>
+                    <ul style="margin:0;padding-left:1.2rem;color:var(--text-muted);font-size:0.93rem">
+                      {m.outcomes.map((o) => <li style="margin-bottom:0.3rem">{o}</li>)}
+                    </ul>
+                  </div>
+                )}
+                {br && (
+                  <div style="border-top:1px solid var(--border);padding-top:1rem">
+                    <div class="kicker" style="margin-bottom:0.35rem">Bridge to the arc</div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);margin:0 0 0.75rem">{br.gap}</p>
+                    <div class="table-wrap">
+                      <table style="font-size:0.85rem">
+                        <thead>
+                          <tr>
+                            <th>Bootcamp concept</th>
+                            <th>tensor-to-tenant week</th>
+                            <th>What you actually learn</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {br.rows.map((r) => (
+                            <tr>
+                              <td style="min-width:180px"><strong>{r.concept}</strong></td>
+                              <td class="mono num" style="white-space:nowrap">{r.weeks}</td>
+                              <td style="min-width:220px">{r.insight}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </details>
+          );
+        })
+      }
+
+      <div class="kicker" style="margin-top:3rem">Summary map</div>
+      <h2>Every module, mapped to its weeks</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>tensor-to-tenant weeks that explain it</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              BRIDGE_SUMMARY.map((s) => (
+                <tr>
+                  <td class="mono" style="white-space:nowrap">{s.module}</td>
+                  <td style="min-width:260px">{s.weeks}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--violet" style="margin-top:2rem">
+        <strong>{BRIDGE_PITCH.tag}</strong>
+        <p style="color:var(--text-muted);font-size:0.95rem">
+          The bootcamp gives you agent builders who can ship. tensor-to-tenant is where the ceiling you hit in
+          production — throughput, deadlocks, degenerate optimization, tenancy — becomes a floor. Same ladder,
+          two rungs: <a href="/curriculum/" style="color:inherit">the 108-week curriculum</a> is the deep rung.
+        </p>
+      </div>
+
+      <div class="kicker" style="margin-top:3rem">Capstone</div>
+      <div class="card" style="padding:1.5rem;margin:1rem 0 0">
+        <div class="card__title" style="font-size:1.25rem">
+          <span class="chip chip--amber">Capstone</span>
+          {MANUS_CAPSTONE.title}
+        </div>
+        <p style="color:var(--text-muted);margin-top:0.75rem">{MANUS_CAPSTONE.vision}</p>
+
+        <div class="grid grid-2" style="margin-top:1.25rem">
+          <div>
+            <div class="kicker">Key features &amp; capabilities</div>
+            <ul style="margin:0.5rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+              {MANUS_CAPSTONE.features.map((f) => <li style="margin-bottom:0.3rem">{f}</li>)}
+            </ul>
+          </div>
+          <div>
+            <div class="kicker">Technical architecture</div>
+            <ul style="margin:0.5rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+              {MANUS_CAPSTONE.architecture.map((a) => <li style="margin-bottom:0.3rem">{a}</li>)}
+            </ul>
+          </div>
+          <div>
+            <div class="kicker">Potential challenges</div>
+            <ul style="margin:0.5rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+              {MANUS_CAPSTONE.challenges.map((c) => <li style="margin-bottom:0.3rem">{c}</li>)}
+            </ul>
+          </div>
+          <div>
+            <div class="kicker">Evaluation criteria</div>
+            <ul style="margin:0.5rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+              {MANUS_CAPSTONE.evaluation.map((e) => <li style="margin-bottom:0.3rem">{e}</li>)}
+            </ul>
+          </div>
+        </div>
+
+        <p style="color:var(--text-muted);font-size:0.95rem;margin-top:1.25rem">
+          <strong style="color:var(--accent)">Learning focus:</strong> {MANUS_CAPSTONE.learningFocus}
+        </p>
+
+        <div class="kicker" style="margin-top:1rem">Possible extensions</div>
+        <ul style="margin:0.5rem 0 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+          {MANUS_CAPSTONE.extensions.map((x) => <li style="margin-bottom:0.3rem">{x}</li>)}
+        </ul>
+
+        <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.25rem">
+          {MANUS_CAPSTONE.stack.map((s) => <span class="chip chip--accent">{s}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const paths = [
+  { name: 'Path 1 — Ingestion & PII safety', detail: 'Events leave the SDK already redacted, validated and deduped, then enter the durable log. Redaction before the log boundary is non-negotiable.' },
+  { name: 'Path 2 — Ordering, sealing, late events', detail: 'Bounded reorder buffers, watermarks as a function of observed event_seq, monotonic sealing, and correction segments for late arrivals.' },
+  { name: 'Path 3 — Storage layout', detail: 'Columnar, partitioned by time + tenant + shard, immutable segments, and a metadata catalog with sketch summaries as first-class citizens.' },
+  { name: 'Path 4 — Three query executors', detail: 'Interactive scan+prune, offline batch with Mo’s algorithm, and approximate sketch execution. One path does not fit all workloads.' },
+  { name: 'Path 5 — Multi-tenant protection', detail: 'Per-tenant scan budgets, weighted admission, circuit breakers around the scanner, and cost attribution back to the tenant.' },
+  { name: 'Path 6 — Self-observability', detail: 'Query latency, scan volume, cache hit rate, seal lag, reorder occupancy, correction rate, quota consumption — the system observes itself.' },
+];
+
+const mergeTable = [
+  ['sum', '✅ Yes', 'Sum of sums'],
+  ['distinct_count', '❌ No from local counts alone', 'Return sets / sorted IDs / Roaring bitmaps, or use HLL'],
+  ['mode (top model)', '❌ No from local top-1 alone', 'Full frequency map per shard, or candidate set + exact recount'],
+  ['p95 latency', '❌ No from local p95s', 't-digest / DDSketch, merge the sketches'],
+  ['heavy hitters', 'approximate only', 'Count-Min estimates; Space-Saving finds candidates'],
+];
+
+const codingPitfalls = [
+  'No coordinate compression — always compress model_id, keep comp_to_orig',
+  'Tie-break on the compressed index instead of the original model_id',
+  'Non-reversible add/remove — every mutation must be undoable',
+  'Forgetting the empty-range answer: -1 and all zeros',
+  'Stale heap entries — pop until the top matches current frequency',
+  'Using Mo’s for a single query — just scan the range directly',
+  'Max-freq not walked down on remove',
+  'Counting non-error events in the error aggregates',
+  'Allocating an unbounded frequency bucket per event',
+  'Forgetting that tokens are summed only on errors',
+];
+---
+
+<BaseLayout title="Capstone 1 — LLM Trace Forensics with Mo's Algorithm" description="Multi-tenant LLM trace forensics capstone with Mo's algorithm." activeNav="capstones">
+  <div class="container" style="padding-top:2.5rem">
+    <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/capstones/">Capstones</a> / Trace Forensics
+    </nav>
+
+    <header style="margin-bottom:2rem">
+      <div class="eyebrow">Capstone 1 · Weeks 103–108 · Required</div>
+      <h1>Multi-Tenant LLM Trace Forensics</h1>
+      <p class="lead">A staff-level system design + coding capstone: build the observability and forensics platform for a large multi-tenant LLM gateway, then answer exact batch forensic queries with Mo’s algorithm.</p>
+    </header>
+
+    <h2>The scenario</h2>
+    <p>
+      Every request to the gateway produces a structured trace event. Engineers need to answer: between event
+      sequence 1M and 5M, which model had the most errors? For a tenant, what were the distinct failing models in
+      this window? How many tokens were wasted by failed requests in this range?
+    </p>
+    <pre>{`{
+  "event_seq": 98231,
+  "event_id": "evt_8f3a9c",
+  "trace_id": "tr_9f8s7d",
+  "tenant_id": "tenant_123",
+  "model": "llama-70b",
+  "prompt_tokens": 842,
+  "completion_tokens": 129,
+  "latency_ms": 2410,
+  "status": "error",
+  "error_code": "CONTEXT_LENGTH_EXCEEDED",
+  "retriever": "vector_db_a",
+  "guardrail_triggered": true,
+  "timestamp": "2026-06-15T14:22:11Z"
+}`}</pre>
+
+    <h2>Six logical paths</h2>
+    <div class="grid grid-2">
+      {
+        paths.map((p) => (
+          <div class="card">
+            <div class="card__title">{p.name}</div>
+            <p>{p.detail}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2>The coding problem</h2>
+    <p>
+      Given an immutable array of events and Q offline range queries (l, r), return the model with the most error
+      events in the range (ties → smallest original model_id), its count, the number of distinct error models, and
+      the total wasted tokens. Constraints: N, Q ≤ 200,000; model_id ≤ 10⁹. Required approach:
+      <strong>Mo’s algorithm</strong>.
+    </p>
+    <pre>{`events = [
+  Event(model_id=1, is_error=True,  tokens=100),
+  Event(model_id=2, is_error=False, tokens=50),
+  Event(model_id=1, is_error=True,  tokens=200),
+  Event(model_id=3, is_error=True,  tokens=10),
+  Event(model_id=2, is_error=True,  tokens=70),
+  Event(model_id=1, is_error=False, tokens=10),
+]
+queries = [(0, 4), (1, 5)]
+# ->
+# [ {top_error_model:1, count:2, distinct:3, wasted:380},
+#   {top_error_model:2, count:1, distinct:2, wasted:80} ]`}</pre>
+    <p>
+      Mo’s reorders the queries so adjacent queries reuse the current range state — O((N+Q)·√N·log N) instead of
+      O(N·Q). The hard part is maintaining the current mode with reversible add/remove, frequency buckets, and
+      tie-breaking on the original ID.
+    </p>
+
+    <h2>Exact vs approximate mergeability — the killer question</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Statistic</th><th>Exact merge from local?</th><th>How to merge</th></tr></thead>
+        <tbody>
+          {mergeTable.map((r) => (
+            <tr><td class="mono"><strong>{r[0]}</strong></td><td>{r[1]}</td><td>{r[2]}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout--err">
+      <strong>Red flag answer</strong>
+      <p>"Just sum the local top-K and pick the global winner." Exact global mode requires full frequency maps or a guaranteed candidate set — local top-K is not enough.</p>
+    </div>
+
+    <h2>Pitfalls index</h2>
+    <div class="grid grid-2">
+      {
+        codingPitfalls.map((p, i) => (
+          <div class="card" style="padding:0.8rem 1rem">
+            <div class="mono" style="font-size:0.78rem;color:var(--accent-2)">#{i + 1}</div>
+            <div style="font-size:0.9rem">{p}</div>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2>Self-grading rubric</h2>
+    <p>
+      26 points across system design (12) and coding (12–14). <strong>Target 18+ before scheduling a mock
+      interview.</strong> 0–9 not ready; 10–17 getting there; 18–23 solid; 24 hire on the spot.
+    </p>
+
+    <div class="callout callout--amber">
+      <strong>The core lesson</strong>
+      <p>
+        "Algorithm selection depends on workload shape, not just problem shape." Mo’s is an offline batch tool —
+        not the interactive default, and not for a single query.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
