@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
-import { SITE } from '../config';
+import { SITE, url } from '../config';
 
 const faqs = [
   {
@@ -10,6 +10,15 @@ const faqs = [
       'The 108-week figure is a ceiling, not a race. The course is built as an apprenticeship with three stackable stopping points — Foundations (Weeks 1–30), Engineering + Systems (Weeks 31–69), and LLM Platform (Weeks 70–108) — and each one ends in a publishable release. You can stop at any checkpoint with something real to show.',
       'The pace is deliberately flexible so slower learners are never discouraged: the core lane is a minimum viable weekly artifact, and recovery windows are built in after Weeks 6, 14, 22, 30, 38, 46, 54, 62, 70, 78, 86, 94 and 102 as sanctioned catch-up or rest weeks.',
       'And realistically, implementation always takes more time than we think. The weekly budget is 10–15 hours, but if you go deep — from-scratch implementations, benchmarks, failure analysis — each week can take longer. That is expected and fine. A 108-week design also means every abstraction is grounded in mathematics first, so nothing is skipped or hand-waved.',
+    ],
+  },
+  {
+    q: 'Why is it an apprenticeship? Why not a bootcamp?',
+    a: [
+      'Because you are not asked to temporarily stop living and become a full-time student. You keep your job, health, family, hobbies, and responsibilities — and gradually turn ordinary weeks into evidence of professional growth. At roughly 15 hours per week, the intended rhythm is about two hours on weekdays with room to redistribute effort: before work, after dinner, or in longer weekend blocks. You are not expected to spend every evening grinding.',
+      'The course explicitly includes recovery windows, scoped weekly modes, time logs, retrospectives, and multiple portfolio exits because real adults occasionally get sick, travel, change jobs, care for family, or simply have a terrible month. That is apprenticeship logic: learning is integrated into life rather than isolated from it.',
+      'The Sailboat Retro matters here too. Every week it forces you to ask: What accelerated me? What became an anchor? What risk is approaching? Is my workload sustainable? What should I deliberately drop next cycle? That is not motivational decoration. It teaches capacity planning for your own life — the same judgment required when planning engineering work.',
+      'It is long because it refuses the bootcamp fantasy that mathematical maturity, systems judgment, production instincts, and Staff-level breadth can be compressed into twelve frantic weeks. A real apprentice does not merely learn the craft. They learn how to keep practising the craft for decades without setting their entire life on fire.',
     ],
   },
   {
@@ -120,7 +129,7 @@ const faqs = [
         <p>
           The full source — curriculum, mandalas, forge, capstones, and the cookiecutter template — is open on
           <a href={SITE.github} target="_blank" rel="noopener noreferrer"> GitHub</a>. Start with the
-          <a href="/curriculum/"> curriculum</a> or scaffold your own learner repo with the
+          <a href={url('/curriculum/')}> curriculum</a> or scaffold your own learner repo with the
           <a href={SITE.cookiecutter} target="_blank" rel="noopener noreferrer"> cookiecutter</a>.
         </p>
       </div>

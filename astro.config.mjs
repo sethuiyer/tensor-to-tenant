@@ -5,7 +5,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   // Static site output. `dist/` holds the final static website.
   output: 'static',
-  site: 'https://tensor-to-tenant.dev',
+  // Deployed as a GitHub Pages project site under the consolidator account.
+  site: 'https://sethuiyer.github.io',
+  base: '/tensor-to-tenant',
   build: {
     format: 'directory',
   },

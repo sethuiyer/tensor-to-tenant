@@ -177,7 +177,7 @@ course front-loads: mathematics first, engineering discipline second.
 | W33–36 | **Synthesis project** — all of the above | One working project, then Week 1 of the arc starts on solid ground |
 
 The same content is published on the site at
-[`/prerequisites/`](https://tensor-to-tenant.dev/prerequisites/).
+[`/prerequisites/`](https://sethuiyer.github.io/tensor-to-tenant/prerequisites/).
 
 ---
 

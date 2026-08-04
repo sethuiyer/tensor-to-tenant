@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { WEEKS, PHASES, phaseForWeek, MODE_COUNTS, GPU_WEEKS, RECOVERY_AFTER, type WeekMode } from '../data/weeks';
 import { PROGRAMS } from '../data/gates';
+import { url } from '../config';
 
 const modeLabel: Record<WeekMode, string> = {
   implement: 'implement',
@@ -114,7 +115,7 @@ const totalWeeks = WEEKS.length;
         }
       </div>
       <p style="margin-top:1.5rem">
-        <a href="/math/">100-module mathematics curriculum →</a> · <a href="/engineering/">30 engineering tasks + 40 practice drills →</a>
+        <a href={url('/math/')}>100-module mathematics curriculum →</a> · <a href={url('/engineering/')}>30 engineering tasks + 40 practice drills →</a>
       </p>
     </div>
   </section>

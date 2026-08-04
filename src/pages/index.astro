@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE } from '../config';
+import { SITE, url } from '../config';
 import { PHASES, WEEKS, MODE_COUNTS, GPU_WEEKS, RECOVERY_AFTER } from '../data/weeks';
 import { PROGRAMS, GATES } from '../data/gates';
 import { MANDALAS } from '../data/mandalas';
@@ -35,11 +35,11 @@ const stats = [
       </h1>
       <p class="tagline">{SITE.tagline}</p>
       <div class="btn-row">
-        <a class="btn btn--primary" href="/curriculum/">Explore the curriculum</a>
+        <a class="btn btn--primary" href={url('/curriculum/')}>Explore the curriculum</a>
         <a class="btn" href="#course-structure">How it works</a>
       </div>
       <img
-        src="/images/cover_image.webp"
+        src={url('/images/cover_image.webp')}
         alt="Tensor-to-Tenant course cover"
         width="960"
         height="640"
@@ -158,7 +158,7 @@ const stats = [
         }
       </div>
       <p style="margin-top:1.5rem">
-        <a href="/curriculum/">See the full 108-week table →</a>
+        <a href={url('/curriculum/')}>See the full 108-week table →</a>
       </p>
     </div>
   </section>
@@ -175,7 +175,7 @@ const stats = [
             A weekly algorithmic drill with Core, Supporting, Archive and Boss-fight tiers, mapped across
             all 108 weeks. Friday is for fluency.
           </p>
-          <div class="mono" style="margin-top:0.75rem"><a href="/algorithmic-forge/">The Forge →</a></div>
+          <div class="mono" style="margin-top:0.75rem"><a href={url('/algorithmic-forge/')}>The Forge →</a></div>
         </div>
         <div class="card">
           <div class="card__title"><span class="chip chip--amber">Canonical</span>System Design Track</div>
@@ -183,7 +183,7 @@ const stats = [
             Weeks 46–57: foundations, distributed patterns, technology labs, case studies, and OOD/LLD —
             the canonical design lane of the course.
           </p>
-          <div class="mono" style="margin-top:0.75rem"><a href="/system-design/">The Design Track →</a></div>
+          <div class="mono" style="margin-top:0.75rem"><a href={url('/system-design/')}>The Design Track →</a></div>
         </div>
         <div class="card">
           <div class="card__title"><span class="chip chip--violet">Parallel</span>Leetcode Darbar</div>
@@ -191,7 +191,7 @@ const stats = [
             A timed problem-solving lane with a 548-slot tracker and optional Standard/Auror completion
             paths. 3–5 problems per week, timer on.
           </p>
-          <div class="mono" style="margin-top:0.75rem"><a href="/leetcode-darbar/">The Darbar →</a></div>
+          <div class="mono" style="margin-top:0.75rem"><a href={url('/leetcode-darbar/')}>The Darbar →</a></div>
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@ const stats = [
           agentic patterns → advanced RAG → DSPy → Kùzu. Every framework grounded in evidence-first,
           tenant-aware engineering.
         </p>
-        <div class="mono" style="margin-top:0.75rem"><a href="/agents/">Explore the modules →</a></div>
+        <div class="mono" style="margin-top:0.75rem"><a href={url('/agents/')}>Explore the modules →</a></div>
       </div>
     </div>
   </section>
@@ -230,7 +230,7 @@ const stats = [
       </p>
       <div style="text-align:center">
         <img
-          src="/images/mandala.webp"
+          src={url('/images/mandala.webp')}
           alt="The sixteen mandalas of the identity ladder"
           width="440"
           height="440"
@@ -250,7 +250,7 @@ const stats = [
           ))
         }
       </div>
-      <p><a href="/mandala/">Full mandala breakdown →</a></p>
+      <p><a href={url('/mandala/')}>Full mandala breakdown →</a></p>
     </div>
   </section>
 
@@ -295,7 +295,7 @@ const stats = [
           <p>An OpenRouter-inspired enterprise multi-model AI gateway: routing, tenancy, accounting and reliability.</p>
         </div>
       </div>
-      <p style="margin-top:1.25rem"><a href="/capstones/">Capstone specifications →</a></p>
+      <p style="margin-top:1.25rem"><a href={url('/capstones/')}>Capstone specifications →</a></p>
     </div>
   </section>
 
@@ -313,10 +313,10 @@ const stats = [
           style="display:block;width:fit-content;max-width:100%;background:var(--surface-2);border:1px solid var(--border);padding:0.7rem 1rem;border-radius:8px;font-family:var(--font-mono);color:var(--accent);margin:1rem 0 1.5rem"
         >cookiecutter gh:sethuiyer/tensor-to-tenant</code>
         <div class="btn-row" style="margin-bottom:0">
-          <a class="btn btn--primary" href="/curriculum/">Start with the curriculum</a>
-          <a class="btn" href="/prerequisites/">The 36-week on-ramp</a>
-          <a class="btn" href="/agents/">The agents track</a>
-          <a class="btn" href="/faq/">FAQ</a>
+          <a class="btn btn--primary" href={url('/curriculum/')}>Start with the curriculum</a>
+          <a class="btn" href={url('/prerequisites/')}>The 36-week on-ramp</a>
+          <a class="btn" href={url('/agents/')}>The agents track</a>
+          <a class="btn" href={url('/faq/')}>FAQ</a>
           <a class="btn" href={SITE.github} target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>

@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE } from '../config';
+import { SITE, url } from '../config';
 
 interface Props {
   title: string;
@@ -37,13 +37,15 @@ const nav = [
     <title>{title} · {SITE.short}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/png" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href={url('/favicon.svg')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Beampipe analytics -->
+    <script is:inline async defer src="https://beampipe.io/js/tracker.js" data-beampipe-domain="sethuiyer.github.io"></script>
     <!-- Theme init before paint to avoid FOUC -->
     <script is:inline>
       (function () {
@@ -60,12 +62,12 @@ const nav = [
   <body>
     <nav class="site-nav">
       <div class="site-nav__inner">
-        <a class="brand" href="/">tensor<span>→</span>tenant</a>
+        <a class="brand" href={url('/')}>tensor<span>→</span>tenant</a>
         <div class="nav-links">
           {
             nav.map((item) => (
               <a
-                href={item.href}
+                href={url(item.href)}
                 class:list={{ active: activeNav === item.key }}
               >
                 {item.label}
@@ -89,8 +91,9 @@ const nav = [
         </div>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
           <a href={SITE.github} target="_blank" rel="noopener noreferrer" class="mono">GitHub</a>
-          <a href="/faq/" class="mono">FAQ</a>
-          <a href="/resources/" class="mono">Resources</a>
+          <a href={SITE.consolidator} target="_blank" rel="noopener noreferrer" class="mono">Consolidator</a>
+          <a href={url('/faq/')} class="mono">FAQ</a>
+          <a href={url('/resources/')} class="mono">Resources</a>
           <span class="mono">vector.dot() → per-tenant concurrency limiter</span>
         </div>
       </div>

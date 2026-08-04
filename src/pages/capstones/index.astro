@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import { url } from '../../config';
 
 const capstones = [
   {
@@ -54,11 +55,11 @@ const capstones = [
     <div class="container">
       {
         capstones.map((c) => (
-          <a href={`/capstones/${c.slug}/`} style="text-decoration:none;color:inherit">
+          <a href={url(`/capstones/${c.slug}/`)} style="text-decoration:none;color:inherit">
             <div class="card" style="padding:1.5rem;margin:1.25rem 0">
               <div style="display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap">
                 <img
-                  src={c.img}
+                  src={url(c.img)}
                   alt={`${c.title} infographic`}
                   width="320"
                   height="213"

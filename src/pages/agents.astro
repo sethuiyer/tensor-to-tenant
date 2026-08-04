@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { AGENT_MODULES, AGENT_BRIDGES, BRIDGE_SUMMARY, BRIDGE_PITCH, MANUS_CAPSTONE } from '../data/agents';
+import { url } from '../config';
 
 const bridgeByModule = new Map(AGENT_BRIDGES.map((b) => [b.module, b]));
 
@@ -167,7 +168,7 @@ const track = [
         <p style="color:var(--text-muted);font-size:0.95rem">
           The bootcamp gives you agent builders who can ship. tensor-to-tenant is where the ceiling you hit in
           production — throughput, deadlocks, degenerate optimization, tenancy — becomes a floor. Same ladder,
-          two rungs: <a href="/curriculum/" style="color:inherit">the 108-week curriculum</a> is the deep rung.
+          two rungs: <a href={url('/curriculum/')} style="color:inherit">the 108-week curriculum</a> is the deep rung.
         </p>
       </div>
 

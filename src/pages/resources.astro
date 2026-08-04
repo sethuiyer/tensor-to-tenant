@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { YOUTUBE_PLAYLISTS, BOOKS_READING_LIST, RESEARCH_PAPERS, AGENT_PAPERS, BLOG_ARTICLES } from '../data/resources';
+import { url } from '../config';
 ---
 
 <BaseLayout title="Resources" description="Reference resources for the Tensor-to-Tenant course: videos, books, papers, and blogs." activeNav="resources">
@@ -20,7 +21,7 @@ import { YOUTUBE_PLAYLISTS, BOOKS_READING_LIST, RESEARCH_PAPERS, AGENT_PAPERS, B
           There is a sanctioned 36-week prerequisite lane — CS50x, Nand to Tetris, MIT 6.042J, Statistical
           Learning, Git, search and docs fluency, programming paradigms, and Software Engineering at Google —
           in the order to take them, with a week-by-week budget.
-          <a href="/prerequisites/" style="color:inherit">See the on-ramp →</a>
+          <a href={url('/prerequisites/')} style="color:inherit">See the on-ramp →</a>
         </p>
       </div>
 

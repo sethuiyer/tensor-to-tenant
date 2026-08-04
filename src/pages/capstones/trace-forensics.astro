@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../config';
 
 const paths = [
   { name: 'Path 1 — Ingestion & PII safety', detail: 'Events leave the SDK already redacted, validated and deduped, then enter the durable log. Redaction before the log boundary is non-negotiable.' },
@@ -35,7 +36,7 @@ const codingPitfalls = [
 <BaseLayout title="Capstone 1 — LLM Trace Forensics with Mo's Algorithm" description="Multi-tenant LLM trace forensics capstone with Mo's algorithm." activeNav="capstones">
   <div class="container" style="padding-top:2.5rem">
     <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
-      <a href="/capstones/">Capstones</a> / Trace Forensics
+      <a href={url('/capstones/')}>Capstones</a> / Trace Forensics
     </nav>
 
     <header style="margin-bottom:2rem">
