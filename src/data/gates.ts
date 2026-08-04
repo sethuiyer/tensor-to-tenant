@@ -1,0 +1,37 @@
+/**
+ * Milestone gates — blocking checkpoints, not decorative progress markers.
+ * Transcribed from README.md §Milestone Gates.
+ */
+
+export interface Gate {
+  gate: number;
+  week: number;
+  criteria: string;
+  remediation: string;
+}
+
+export const GATES: Gate[] = [
+  { gate: 1, week: 6, criteria: 'Course repo · weekly tracker · Dockerized service · diagnostic report', remediation: 'Remediate orientation and systems setup' },
+  { gate: 2, week: 18, criteria: 'Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines', remediation: 'Remediate linear/numerical algebra' },
+  { gate: 3, week: 30, criteria: 'Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE', remediation: 'Remediate calculus/statistics; publish Foundations release' },
+  { gate: 4, week: 45, criteria: 'Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing)', remediation: 'Remediate the missing primitive contracts/tests' },
+  { gate: 5, week: 57, criteria: 'Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes', remediation: 'Remediate the weakest design pattern' },
+  { gate: 6, week: 69, criteria: 'A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan', remediation: 'Remediate experimentation/MLOps; publish Engineering + Systems release' },
+  { gate: 7, week: 81, criteria: 'RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype', remediation: 'Remediate the weakest LLM/RAG component' },
+  { gate: 8, week: 93, criteria: 'Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding report, inference cost model', remediation: 'Remediate inference benchmarking and operations' },
+  { gate: 9, week: 102, criteria: 'Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters', remediation: 'Remediate the missing platform capability' },
+  { gate: 10, week: 108, criteria: 'Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan', remediation: 'Remediate the specific capstone/interview gap' },
+];
+
+export interface Program {
+  name: string;
+  weeks: string;
+  releaseWeek: number;
+  release: string;
+}
+
+export const PROGRAMS: Program[] = [
+  { name: 'Foundations', weeks: 'W1–30', releaseWeek: 30, release: 'Math, numerical routines, and experimentation toolkit' },
+  { name: 'Engineering + Systems', weeks: 'W31–69', releaseWeek: 69, release: 'Tested primitives, system designs, MLOps tools, and postmortem' },
+  { name: 'LLM Platform', weeks: 'W70–108', releaseWeek: 108, release: 'LLM/RAG work, inference benchmark, platform layer, and capstone' },
+];

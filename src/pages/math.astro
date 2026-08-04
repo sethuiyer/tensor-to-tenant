@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { MATH_TRACKS } from '../data/math';
+---
+
+<BaseLayout title="Mathematics Curriculum" description="The 100-module mastery-level mathematics curriculum of Tensor-to-Tenant." activeNav="curriculum">
+  <PageHeader
+    eyebrow="Mathematics"
+    title="100 modules across ten tracks"
+    lead="Mathematics is the load-bearing wall of this course. One hundred modules span foundational analysis, numerical methods, probability and statistics, experimentation, ML theory, distributed systems math, inference mathematics, and production AI."
+    meta="10 tracks · 100 learning modules"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      {
+        MATH_TRACKS.map((t) => (
+          <div style="margin-bottom:3rem">
+            <div class="kicker">Track {t.id} · {t.range}</div>
+            <h2>{t.name}</h2>
+            <p class="lead">{t.description}</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th class="num">#</th><th>Module</th><th>Focus</th></tr>
+                </thead>
+                <tbody>
+                  {
+                    t.modules.map((m) => (
+                      <tr>
+                        <td class="num mono">{m.n}</td>
+                        <td style="min-width:240px"><strong>{m.title}</strong></td>
+                        <td style="min-width:260px">{m.focus}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))
+      }
+
+      <div class="callout">
+        <strong>Category = Learning Module</strong>
+        <p>
+          Nearly every entry is a learning module to derive, prove, implement and explain — not a
+          lecture to watch. The proof of mastery is the artifact you can hand over.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

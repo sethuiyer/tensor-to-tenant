@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+
+const capstones = [
+  {
+    slug: 'trace-forensics',
+    img: '/images/capstone_trace_forensics_infographic.webp',
+    chip: 'Required',
+    chipClass: 'chip--ok',
+    title: 'Capstone 1 — Multi-Tenant LLM Trace Forensics',
+    subtitle: "Mo's Algorithm over immutable trace segments",
+    weeks: 'Weeks 103–108',
+    description:
+      'A staff-level system design + coding capstone. Build the observability and forensics platform for a large multi-tenant LLM gateway, then answer exact batch forensic queries over immutable event segments with Mo’s algorithm. The required algorithmic capstone.',
+    points: ['High-throughput ingestion, PII safety', 'Immutable segments, watermarks, correction deltas', "Mo's algorithm + frequency buckets", 'Exact vs approximate mergeability', '24-point self-grading rubric'],
+  },
+  {
+    slug: 'tree-forensics',
+    img: '/images/capstone_tree_nightmare_forensics.webp',
+    chip: 'Boss fight',
+    chipClass: 'chip--amber',
+    title: 'Capstone 2 — Agent Execution Forensics',
+    subtitle: 'Euler Tour + DSU on Tree',
+    weeks: 'Week 108 · optional',
+    description:
+      'The optional Week 108 boss fight. If Capstone 1 was forensics over a flat log, this is forensics over a forest of agent execution trees. Combine systems design with esoteric tree algorithms for exact subtree queries.',
+    points: ['Forest assembly, reorder buffers, cycle detection', 'Euler Tour to flatten subtree → range', 'DSU on Tree (sack / keep-heavy)', 'Reversible aggregates + mode tie-breaks', 'Not required for the LLM Platform badge'],
+  },
+  {
+    slug: 'ai-gateway',
+    img: '/images/capstone3_enterprise_ai_gateway.webp',
+    chip: 'Gateway',
+    chipClass: 'chip--violet',
+    title: 'Capstone 3 — Enterprise Multi-Model AI Gateway',
+    subtitle: 'OpenRouter-inspired control + request plane',
+    weeks: 'Weeks 103–108 · alternative',
+    description:
+      'An OpenRouter-inspired final capstone: design and build the control plane, request plane, routing policy, reliability layer, enterprise tenancy, and economics behind a unified multi-model AI gateway.',
+    points: ['One API → many models and providers', 'Policy-compliant, explainable routing', 'Stream-safe failover, idempotency, admission', 'Append-only usage and cost ledger', '24-point rubric, PII-safe observability'],
+  },
+];
+---
+
+<BaseLayout title="Capstones" description="The three staff-level capstone paths of Tensor-to-Tenant." activeNav="capstones">
+  <PageHeader
+    eyebrow="Capstones"
+    title="Three staff-level finale paths"
+    lead="Weeks 103–108 are a synthesis exam, not fresh topics. Every capstone traces back to specific weeks of the course — the only thing left is articulating them under pressure."
+    meta="Capstone 1 required · Capstone 2 optional boss · Capstone 3 gateway alternative"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      {
+        capstones.map((c) => (
+          <a href={`/capstones/${c.slug}/`} style="text-decoration:none;color:inherit">
+            <div class="card" style="padding:1.5rem;margin:1.25rem 0">
+              <div style="display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap">
+                <img
+                  src={c.img}
+                  alt={`${c.title} infographic`}
+                  width="320"
+                  height="213"
+                  loading="lazy"
+                  style="width:320px;max-width:100%;border-radius:10px;border:1px solid var(--border);flex-shrink:0"
+                />
+                <div style="flex:1;min-width:280px">
+                  <div class="card__title" style="font-size:1.25rem">
+                    <span class:list={['chip', c.chipClass]}>{c.chip}</span>
+                    {c.title}
+                  </div>
+                  <p style="color:var(--accent);font-family:var(--font-mono);font-size:0.9rem;margin-bottom:0.5rem">
+                    {c.subtitle} · <span style="color:var(--text-faint)">{c.weeks}</span>
+                  </p>
+                  <p>{c.description}</p>
+                  <ul style="margin:0.75rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.9rem">
+                    {c.points.map((p) => <li>{p}</li>)}
+                  </ul>
+                  <div class="mono" style="font-size:0.82rem;color:var(--accent)">Read the full spec →</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

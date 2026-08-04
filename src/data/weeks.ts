@@ -1,0 +1,165 @@
+/**
+ * The full 108-week curriculum — core deliverable for every instructional week.
+ * Transcribed from README.md §Full 108-Week Curriculum.
+ */
+
+export type WeekMode = 'implement' | 'read_diagram' | 'deploy_benchmark';
+
+export interface Week {
+  week: number;
+  module: string;
+  focus: string;
+  mode: WeekMode;
+  deliverable: string;
+}
+
+export interface Phase {
+  id: number;
+  weeks: string;
+  theme: string;
+  start: number;
+  end: number;
+}
+
+export const PHASES: Phase[] = [
+  { id: 1, weeks: '1–6', theme: 'Orientation, tooling, and diagnostics', start: 1, end: 6 },
+  { id: 2, weeks: '7–18', theme: 'Mathematical foundations I: linear algebra & numerical methods', start: 7, end: 18 },
+  { id: 3, weeks: '19–30', theme: 'Mathematical foundations II: calculus, autodiff, probability, statistics', start: 19, end: 30 },
+  { id: 4, weeks: '31–45', theme: 'Engineering micro-projects and applied ML primitives', start: 31, end: 45 },
+  { id: 5, weeks: '46–57', theme: 'System design and distributed systems fundamentals', start: 46, end: 57 },
+  { id: 6, weeks: '58–69', theme: 'ML lifecycle, experimentation, and MLOps', start: 58, end: 69 },
+  { id: 7, weeks: '70–81', theme: 'LLM training, RAG, agents, and evaluation', start: 70, end: 81 },
+  { id: 8, weeks: '82–93', theme: 'LLM inference and performance engineering', start: 82, end: 93 },
+  { id: 9, weeks: '94–102', theme: 'Production AI platform engineering', start: 94, end: 102 },
+  { id: 10, weeks: '103–108', theme: 'Capstone, portfolio, and interview readiness', start: 103, end: 108 },
+];
+
+export function phaseForWeek(week: number): number {
+  return PHASES.find((p) => week >= p.start && week <= p.end)?.id ?? 0;
+}
+
+export const WEEKS: Week[] = [
+  { week: 1, module: 'Orientation and course OS', focus: 'Course setup, tracker, repo, weekly template', mode: 'implement', deliverable: 'Course dashboard + README' },
+  { week: 2, module: 'Python engineering refresh', focus: 'Typing, testing, async basics', mode: 'implement', deliverable: 'CLI project skeleton with tests' },
+  { week: 3, module: 'Numerical Python', focus: 'NumPy, vectorization, broadcasting', mode: 'implement', deliverable: 'Vector math utility library' },
+  { week: 4, module: 'Reproducibility', focus: 'Git, notebooks, experiment tracking', mode: 'implement', deliverable: 'Reproducible notebook + Makefile' },
+  { week: 5, module: 'Math diagnostic and induction', focus: 'Linear algebra, probability, hypothesis choice, and generalization', mode: 'implement', deliverable: 'Diagnostic report + gap map + paper lab' },
+  { week: 6, module: 'Systems diagnostic', focus: 'HTTP, Docker, APIs, Linux basics', mode: 'implement', deliverable: 'Containerized hello-service' },
+  { week: 7, module: 'Linear algebra I', focus: 'Vector spaces, span, basis, dimension', mode: 'implement', deliverable: 'Problem set + concept map' },
+  { week: 8, module: 'Linear algebra II', focus: 'Linear independence, rank, nullity', mode: 'implement', deliverable: 'Solver exercises + notes' },
+  { week: 9, module: 'Linear algebra III', focus: 'Inner products, norms, dual norms', mode: 'implement', deliverable: 'Norm/distance library' },
+  { week: 10, module: 'Linear algebra IV', focus: 'Orthogonality, projections, Gram-Schmidt', mode: 'implement', deliverable: 'Projection demo' },
+  { week: 11, module: 'Linear algebra V', focus: 'Linear transformations, change of basis', mode: 'implement', deliverable: 'Coordinate transform lab' },
+  { week: 12, module: 'Linear algebra VI', focus: 'Eigenvalues, eigenvectors, diagonalization', mode: 'implement', deliverable: 'PCA-style mini lab' },
+  { week: 13, module: 'Linear algebra VII', focus: 'PSD matrices, quadratic forms, Rayleigh quotient', mode: 'implement', deliverable: 'Proof + visualization' },
+  { week: 14, module: 'Linear algebra VIII', focus: 'SVD, pseudoinverse, low-rank approximation', mode: 'implement', deliverable: 'Low-rank compression demo' },
+  { week: 15, module: 'Numerical linear algebra I', focus: 'Matrix norms, condition numbers, perturbation', mode: 'implement', deliverable: 'Perturbation experiment' },
+  { week: 16, module: 'Numerical linear algebra II', focus: 'LU, QR, Cholesky decomposition', mode: 'implement', deliverable: 'Decomposition library' },
+  { week: 17, module: 'Numerical linear algebra III', focus: 'Iterative solvers, power iteration, Krylov methods', mode: 'implement', deliverable: 'Solver benchmark' },
+  { week: 18, module: 'Numerical linear algebra IV', focus: 'Randomized SVD, tensor notation', mode: 'implement', deliverable: 'Randomized approximation lab' },
+  { week: 19, module: 'Calculus I', focus: 'Partial derivatives, gradients, directional derivatives', mode: 'implement', deliverable: 'Gradient visualizer' },
+  { week: 20, module: 'Calculus II', focus: 'Jacobians, Hessians, Taylor approximations', mode: 'implement', deliverable: 'Curvature lab' },
+  { week: 21, module: 'Calculus III', focus: 'Chain rule on computational graphs', mode: 'implement', deliverable: 'Manual backprop worksheet' },
+  { week: 22, module: 'Automatic differentiation', focus: 'Forward/reverse mode, JVPs, VJPs', mode: 'implement', deliverable: 'Tiny autodiff prototype' },
+  { week: 23, module: 'Probability I', focus: 'Probability spaces, conditioning, Bayes theorem', mode: 'implement', deliverable: 'Probability problem set' },
+  { week: 24, module: 'Probability II', focus: 'Random variables, distributions, transformations', mode: 'implement', deliverable: 'Simulation notebook' },
+  { week: 25, module: 'Probability III', focus: 'Random vectors, covariance, correlation', mode: 'implement', deliverable: 'Covariance/correlation lab' },
+  { week: 26, module: 'Probability IV', focus: 'LLN, CLT, delta method', mode: 'implement', deliverable: 'Monte Carlo convergence demo' },
+  { week: 27, module: 'Statistics I', focus: 'MLE, MAP, estimator bias/variance', mode: 'implement', deliverable: 'Estimator comparison' },
+  { week: 28, module: 'Statistics II', focus: 'Hypothesis testing, p-values, Type I/II errors', mode: 'implement', deliverable: 'Test implementation' },
+  { week: 29, module: 'Statistics III', focus: 'Confidence intervals, bootstrap, permutation tests', mode: 'implement', deliverable: 'Bootstrap CI package' },
+  { week: 30, module: 'Statistics IV', focus: 'Power, MDE, sample size, multiple testing', mode: 'implement', deliverable: 'Experiment-size calculator' },
+  { week: 31, module: 'Retrieval math', focus: 'Cosine similarity, exact KNN', mode: 'implement', deliverable: 'Vector search mini-lab' },
+  { week: 32, module: 'Top-K systems', focus: 'Memory-bounded KNN, streaming Top-K', mode: 'implement', deliverable: 'Heap-based Top-K service' },
+  { week: 33, module: 'Ranking pipelines', focus: 'Dynamic Top-K, two-stage retrieval/reranking', mode: 'implement', deliverable: 'Reranking prototype' },
+  { week: 34, module: 'Rate limiting I', focus: 'Sliding-window and token bucket rate limiters', mode: 'implement', deliverable: 'API limiter module' },
+  { week: 35, module: 'Caching', focus: 'LRU cache and TTL cache', mode: 'implement', deliverable: 'Cache simulator with tests' },
+  { week: 36, module: 'Text chunking', focus: 'Token-aware and recursive sentence chunking', mode: 'implement', deliverable: 'Chunking library' },
+  { week: 37, module: 'PII handling', focus: 'PII span merging, regex/NER detection', mode: 'implement', deliverable: 'Redaction utility' },
+  { week: 38, module: 'Calibration', focus: 'Expected Calibration Error, Brier score', mode: 'implement', deliverable: 'Reliability dashboard' },
+  { week: 39, module: 'Ranking metrics', focus: 'NDCG, MRR, Recall@K', mode: 'implement', deliverable: 'Retrieval evaluator' },
+  { week: 40, module: 'Batching', focus: 'Thread-safe inference batcher', mode: 'implement', deliverable: 'Concurrent batcher' },
+  { week: 41, module: 'Resilience', focus: 'Retry, exponential backoff, jitter, circuit breaker', mode: 'implement', deliverable: 'Fault-tolerance kit' },
+  { week: 42, module: 'Sketches', focus: 'Count-Min Sketch, Bloom filter', mode: 'implement', deliverable: 'Probabilistic data structures' },
+  { week: 43, module: 'Cardinality/routing', focus: 'HyperLogLog, consistent hashing', mode: 'implement', deliverable: 'Distributed routing lab' },
+  { week: 44, module: 'Load balancing', focus: 'Weighted round robin, rendezvous hashing', mode: 'implement', deliverable: 'Load balancer module' },
+  { week: 45, module: 'IDs/traffic', focus: 'Snowflake IDs, leaky bucket, sliding-window counter', mode: 'implement', deliverable: 'Platform primitives lab' },
+  { week: 46, module: 'System design framework', focus: 'Requirements, constraints, API design', mode: 'read_diagram', deliverable: 'Design doc template' },
+  { week: 47, module: 'Data and APIs', focus: 'Data models, observability, contracts', mode: 'read_diagram', deliverable: 'API design exercise' },
+  { week: 48, module: 'Rate limiting design', focus: 'Token bucket, sliding windows at scale', mode: 'read_diagram', deliverable: 'Rate limiter design writeup' },
+  { week: 49, module: 'Scaling reads/writes', focus: 'Caching, replication, contention', mode: 'read_diagram', deliverable: 'Scaling pattern notes' },
+  { week: 50, module: 'Large blobs', focus: 'Storage, CDN, media pipelines', mode: 'read_diagram', deliverable: 'Blob storage design' },
+  { week: 51, module: 'Workflow systems', focus: 'Orchestration vs choreography', mode: 'read_diagram', deliverable: 'Workflow state design' },
+  { week: 52, module: 'Schema evolution', focus: 'Backward compatibility, contracts', mode: 'read_diagram', deliverable: 'Schema migration plan' },
+  { week: 53, module: 'Case studies I', focus: 'URL shortener, Dropbox', mode: 'read_diagram', deliverable: 'Two design docs' },
+  { week: 54, module: 'Case studies II', focus: 'Ticketmaster, News Feed', mode: 'read_diagram', deliverable: 'Two design docs' },
+  { week: 55, module: 'Case studies III', focus: 'WhatsApp, LeetCode', mode: 'read_diagram', deliverable: 'Two design docs' },
+  { week: 56, module: 'Case studies IV', focus: 'Uber, web crawler', mode: 'read_diagram', deliverable: 'Two design docs' },
+  { week: 57, module: 'Case studies V', focus: 'Ad click aggregator, payments', mode: 'read_diagram', deliverable: 'Trade-off analysis' },
+  { week: 58, module: 'ML problem framing', focus: 'Objectives, constraints, iterative development', mode: 'read_diagram', deliverable: 'ML project charter' },
+  { week: 59, module: 'Data quality', focus: 'Labeling, weak supervision, augmentation', mode: 'read_diagram', deliverable: 'Data quality checklist' },
+  { week: 60, module: 'Leakage/contamination', focus: 'Detection, eval tracking, versioning', mode: 'read_diagram', deliverable: 'Leakage audit' },
+  { week: 61, module: 'Offline evaluation', focus: 'Baselines, slices, confidence intervals', mode: 'implement', deliverable: 'Eval harness' },
+  { week: 62, module: 'Online evaluation', focus: 'A/B tests, shadow deployment, canary, bandits', mode: 'read_diagram', deliverable: 'Rollout plan' },
+  { week: 63, module: 'A/B calculator', focus: 'Lift, z-score, p-value, confidence intervals', mode: 'implement', deliverable: 'analyze_ab_test function' },
+  { week: 64, module: 'Bootstrap methods', focus: 'Paired bootstrap for model comparisons', mode: 'implement', deliverable: 'bootstrap_ci package' },
+  { week: 65, module: 'SRM detection', focus: 'Sample-ratio mismatch, chi-square diagnostics', mode: 'implement', deliverable: 'SRM detector' },
+  { week: 66, module: 'Feature flags', focus: 'Rules, rollouts, sticky assignment', mode: 'implement', deliverable: 'Flag engine' },
+  { week: 67, module: 'Experiment assignment', focus: 'Deterministic assignment, namespaces', mode: 'implement', deliverable: 'Assignment service' },
+  { week: 68, module: 'Monitoring', focus: 'Drift, observability, four-layer monitoring', mode: 'read_diagram', deliverable: 'Monitoring dashboard spec' },
+  { week: 69, module: 'Production failures', focus: 'Distribution shift, postmortems', mode: 'read_diagram', deliverable: 'Incident postmortem template' },
+  { week: 70, module: 'LLM anatomy', focus: 'Transformer, tokenizer, matmul', mode: 'read_diagram', deliverable: 'Model anatomy notes' },
+  { week: 71, module: 'LLM data pipelines', focus: 'Cleaning, deduplication, tokenization', mode: 'read_diagram', deliverable: 'Dataset card' },
+  { week: 72, module: 'Fine-tuning', focus: 'SFT, LoRA, QLoRA, DoRA', mode: 'read_diagram', deliverable: 'Fine-tuning plan' },
+  { week: 73, module: 'Alignment', focus: 'RLHF, DPO, ORPO, GRPO', mode: 'read_diagram', deliverable: 'Preference eval plan' },
+  { week: 74, module: 'Distributed training', focus: 'DDP/FSDP, tensor/pipeline parallelism, ZeRO', mode: 'read_diagram', deliverable: 'Training architecture map' },
+  { week: 75, module: 'Vector search', focus: 'HNSW, IVF-PQ, product quantization', mode: 'deploy_benchmark', deliverable: 'Index benchmark' },
+  { week: 76, module: 'Retrieval patterns', focus: 'Hybrid search, query rewriting, chunking', mode: 'implement', deliverable: 'Retrieval lab' },
+  { week: 77, module: 'Retrieval fusion', focus: 'BM25 + dense + reranker, RRF', mode: 'implement', deliverable: 'Fusion service' },
+  { week: 78, module: 'Retrieval eval', focus: 'Query slices, macro metrics, regressions', mode: 'implement', deliverable: 'Slice evaluation report' },
+  { week: 79, module: 'Prompt systems', focus: 'Prompt template renderer, version registry', mode: 'implement', deliverable: 'Prompt management tool' },
+  { week: 80, module: 'Memory/context', focus: 'Conversation memory, context optimizer', mode: 'implement', deliverable: 'Memory service' },
+  { week: 81, module: 'Agent foundations', focus: 'ReAct, plan-execute, tool calling, guardrails', mode: 'implement', deliverable: 'Agent prototype' },
+  { week: 82, module: 'GPU performance', focus: 'Compute/memory/overhead regimes, FlashAttention', mode: 'read_diagram', deliverable: 'Performance primer notes' },
+  { week: 83, module: 'Inference arithmetic', focus: 'Roofline model, arithmetic intensity', mode: 'read_diagram', deliverable: 'Model intensity worksheet' },
+  { week: 84, module: 'PagedAttention/vLLM', focus: 'KV paging, block tables', mode: 'deploy_benchmark', deliverable: 'vLLM deployment' },
+  { week: 85, module: 'vLLM internals', focus: 'Scheduler, block manager, code paths', mode: 'read_diagram', deliverable: 'Internal anatomy notes' },
+  { week: 86, module: 'vLLM metrics', focus: 'Running/waiting requests, latency histograms', mode: 'read_diagram', deliverable: 'Metrics schema' },
+  { week: 87, module: 'Observability', focus: 'Prometheus/Grafana for serving', mode: 'deploy_benchmark', deliverable: 'Live inference dashboard' },
+  { week: 88, module: 'Benchmarking', focus: 'Request-rate sweeps, saturation points', mode: 'read_diagram', deliverable: 'Benchmark methodology doc' },
+  { week: 89, module: 'SGLang', focus: 'RadixAttention, prefix reuse', mode: 'deploy_benchmark', deliverable: 'SGLang comparison report' },
+  { week: 90, module: 'Scheduling', focus: 'Orca, continuous batching, chunked prefill', mode: 'read_diagram', deliverable: 'Scheduler comparison' },
+  { week: 91, module: 'Quantization', focus: 'FP8, AWQ, GPTQ, KV cache compression', mode: 'read_diagram', deliverable: 'Quality/throughput table' },
+  { week: 92, module: 'Speculative/long context', focus: 'Medusa, EAGLE, StreamingLLM, KV eviction', mode: 'read_diagram', deliverable: 'Latency/memory lab' },
+  { week: 93, module: 'Disaggregation', focus: 'DistServe, Splitwise, Mooncake, autoscaling', mode: 'read_diagram', deliverable: 'Disaggregated serving plan' },
+  { week: 94, module: 'Traffic routing', focus: 'Model router, kill switch, sticky rollout', mode: 'implement', deliverable: 'Router service' },
+  { week: 95, module: 'Safe observability', focus: 'PII redaction, end-to-end request tracing', mode: 'implement', deliverable: 'Trace + safe logs' },
+  { week: 96, module: 'Fan-out/streaming', focus: 'Partial failures, token stream multiplexing', mode: 'implement', deliverable: 'Resilient aggregator' },
+  { week: 97, module: 'Quotas/priority', focus: 'Token budgets, gateway prioritization', mode: 'implement', deliverable: 'Quota/priority service' },
+  { week: 98, module: 'Workflow execution', focus: 'DAG scheduler, idempotency', mode: 'implement', deliverable: 'Workflow engine' },
+  { week: 99, module: 'Fairness/HA', focus: 'Per-tenant limits, leader election', mode: 'implement', deliverable: 'Tenant limiter + HA lab' },
+  { week: 100, module: 'Async infrastructure', focus: 'Distributed work queue, config service', mode: 'implement', deliverable: 'Queue/config platform' },
+  { week: 101, module: 'Model lifecycle', focus: 'Health monitor, registry/promotion', mode: 'implement', deliverable: 'Model ops pipeline' },
+  { week: 102, module: 'Cost/safety/caching', focus: 'Semantic/embedding cache, injection detection, cost attribution', mode: 'implement', deliverable: 'Cost/safety platform' },
+  { week: 103, module: 'Capstone planning', focus: 'Requirements, architecture, eval plan', mode: 'read_diagram', deliverable: 'Capstone design doc' },
+  { week: 104, module: 'Capstone build I', focus: 'Core API, retrieval/agent flow', mode: 'implement', deliverable: 'Working prototype' },
+  { week: 105, module: 'Capstone build II', focus: 'Evaluation, observability, guardrails', mode: 'implement', deliverable: 'Monitored prototype' },
+  { week: 106, module: 'Capstone build III', focus: 'Load testing, optimization, cost tuning', mode: 'implement', deliverable: 'Performance report' },
+  { week: 107, module: 'Mock interview week', focus: 'System design, coding, behavioral simulations', mode: 'read_diagram', deliverable: 'Mock interview scorecard' },
+  { week: 108, module: 'Final review', focus: 'Portfolio, retrospective, job plan', mode: 'read_diagram', deliverable: 'Final portfolio + 30-day plan' },
+];
+
+/** Distribution of weekly modes across the 108 weeks. */
+export const MODE_COUNTS = WEEKS.reduce<Record<WeekMode, number>>(
+  (acc, w) => {
+    acc[w.mode] += 1;
+    return acc;
+  },
+  { implement: 0, read_diagram: 0, deploy_benchmark: 0 },
+);
+
+/** Weeks that require GPU access (the only deploy_benchmark weeks). */
+export const GPU_WEEKS = WEEKS.filter((w) => w.mode === 'deploy_benchmark').map((w) => w.week);
+
+/** Recovery weeks scheduled as deliberate buffer windows. */
+export const RECOVERY_AFTER = [6, 14, 22, 30, 38, 46, 54, 62, 70, 78, 86, 94, 102];

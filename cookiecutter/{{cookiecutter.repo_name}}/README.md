@@ -60,6 +60,25 @@ learners use selected aligned problems; the Auror track solves and explains all
 `09_interview/leetcode_darbar/TRACKER.csv`, use `make darbar=42` for evidence,
 and run `make auror` for the optional badge check.
 
+## GenAI agents track
+
+An 18-module agents specialisation (plus Module 7.5, Model Context Protocol,
+and the **Project Manus** agentic UI-automation capstone) scaffolds into
+`09_interview/agents/`. Open a module with `make agent=7.5` (or `make agent=18`).
+See `docs/agents_track.md` for the full track.
+
+The **bridge** in `docs/bridge.md` maps every bootcamp module to the specific
+tensor-to-tenant weeks that explain why it works under the hood — so the agents
+sprint and the 108-week arc are one ladder, not two courses. The ten agent
+papers (ReAct, Toolformer, DSPy, LangGraph, CRAG, MCP, Generative Agents,
+Reflexion, AutoGen, Kuzzu) are assigned to the Weeks 73–81 journals that
+explain them.
+
+Coming in without programming comfort? `docs/prerequisites.md` is the optional
+36-week on-ramp: nine resources in order (CS50x, Nand to Tetris, MIT 6.042J,
+Statistical Learning, and more). `docs/mandala.md` is the 16-mandala identity
+ladder the course is built around.
+
 ## Layout
 
 ```text
@@ -67,6 +86,10 @@ and run `make auror` for the optional badge check.
 ├── docs/                              # course map, programs, gates, remediation
 │   ├── programs.md                    # stackable program checkpoints
 │   ├── recovery_weeks.md              # recovery-window policy
+│   ├── prerequisites.md               # optional 36-week on-ramp
+│   ├── agents_track.md                # GenAI agents track (Modules 1-18 + MCP)
+│   ├── bridge.md                      # agents-bootcamp to arc bridge
+│   ├── mandala.md                     # 16-mandala identity ladder
 │   └── remediation/                   # one repair plan per gate
 ├── evidence/weeks/                    # implementation/result/explanation/retro
 ├── journal/
@@ -83,12 +106,15 @@ and run `make auror` for the optional badge check.
 ├── 06_inference/                      # Weeks 82-93
 ├── 07_platform/                       # Weeks 94-102
 ├── 08_capstone/                       # Weeks 103-108
+│   ├── manus/                          # Project Manus agentic UI automation
+│   └── openrouter/                     # Capstone 3 enterprise AI gateway
 ├── 09_interview/                      # continuous
 │   ├── system_design/                  # canonical Weeks 46-57 design + OOD track
 │   ├── leetcode_darbar/                # 548-slot optional interview tracker
-│   └── algorithmic_forge/              # core, supporting, archive, boss_fights
+│   ├── algorithmic_forge/              # core, supporting, archive, boss_fights
+│   └── agents/                         # one scaffold per agents module
 ├── portfolio/                          # Weeks 30, 69, and 108 release checklists
-└── scripts/                            # weekly, recovery, release, gate, progress
+└── scripts/                            # weekly, recovery, release, gate, progress, agents
 ```
 
 ## Weekly modes and time budget
@@ -248,6 +274,7 @@ make badge=30      # verify evidence and award the Foundations badge when eligib
 make forge=57      # prepare the Week 57 Algorithmic Forge artifact
 make design=54     # prepare a Week 54 system-design artifact
 make darbar=42     # prepare Darbar problem 42 evidence
+make agent=7.5     # open the Module 7.5 (MCP) agents scaffold
 make auror         # verify all 548 Darbar tracker rows are solved
 make progress      # print weekly completion dashboard
 make gate          # run the current milestone gate checker

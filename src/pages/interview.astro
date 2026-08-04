@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import {
+  CARL_STORIES,
+  WEEKLY_MINIMUMS,
+  INTERVIEW_FOCUS,
+  ROADMAP_TRACKS,
+  CAPSTONE_REQUIREMENTS,
+  COMPLETION_LEVELS,
+} from '../data/interview';
+---
+
+<BaseLayout title="Interview Preparation" description="The continuous interview preparation track of Tensor-to-Tenant." activeNav="resources">
+  <PageHeader
+    eyebrow="Interview preparation"
+    title="Prepared continuously, not at the end"
+    lead="Interview prep runs every single week of the course. A 176-item roadmap spans system design, coding, and behavioral preparation — and the capstone is a synthesis exam disguised as an interview question."
+    meta="176 roadmap items · 10 CARL stories · 3 completion levels"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <!-- Weekly minimums -->
+      <div class="callout callout--accent">
+        <strong>Every week, no exceptions</strong>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem">
+          {
+            WEEKLY_MINIMUMS.map((m) => <span class="chip chip--accent">{m}</span>)
+          }
+        </div>
+      </div>
+
+      <!-- Focus by weeks -->
+      <div class="kicker" style="margin-top:2rem">Focus by phase</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Weeks</th><th>Interview focus</th></tr></thead>
+          <tbody>
+            {
+              INTERVIEW_FOCUS.map((f) => (
+                <tr>
+                  <td class="mono" style="white-space:nowrap">{f.weeks}</td>
+                  <td>{f.focus}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CARL stories -->
+      <div class="kicker" style="margin-top:2.5rem">Behavioral track — CARL stories</div>
+      <p class="lead">
+        Ten stories in the CARL format — <strong>C</strong>ontext, <strong>A</strong>ction,
+        <strong>R</strong>esult, <strong>L</strong>earning — each refined during a specific window.
+      </p>
+      <div class="grid grid-2">
+        {
+          CARL_STORIES.map((c) => (
+            <div class="card" style="padding:0.85rem 1.05rem">
+              <div class="mono" style="font-size:0.78rem;color:var(--accent-2)">Weeks {c.weeks}</div>
+              <div style="font-weight:600">{c.story}</div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Roadmap tracks -->
+      <div class="kicker" style="margin-top:3rem">The 176-item roadmap</div>
+      {
+        ROADMAP_TRACKS.map((t) => (
+          <div style="margin-bottom:2.5rem">
+            <h3 style="display:flex;align-items:center;gap:0.6rem">
+              {t.name}
+              <span class="chip chip--violet">{t.items.length} items</span>
+            </h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Step</th><th>Item</th><th>Type</th><th>Completion</th></tr></thead>
+                <tbody>
+                  {
+                    t.items.map((i) => (
+                      <tr>
+                        <td class="mono" style="white-space:nowrap">{i.step}</td>
+                        <td style="min-width:220px">{i.item}</td>
+                        <td><span class="chip">{i.type}</span></td>
+                        <td class="mono" style="white-space:nowrap">{i.completion}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))
+      }
+
+      <!-- Capstone requirements -->
+      <div class="kicker" style="margin-top:2.5rem">Final capstone requirements</div>
+      <div class="grid grid-2">
+        {
+          CAPSTONE_REQUIREMENTS.map((c) => (
+            <div class="card">
+              <div class="card__title mono" style="font-family:var(--font-mono);font-size:0.95rem;color:var(--accent)">{c.area}</div>
+              <p>{c.requirement}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Completion levels -->
+      <div class="kicker" style="margin-top:2.5rem">Completion levels</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Level</th><th>Requires</th></tr></thead>
+          <tbody>
+            {
+              COMPLETION_LEVELS.map((c) => (
+                <tr>
+                  <td style="min-width:170px"><strong>{c.level}</strong></td>
+                  <td>{c.requires}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

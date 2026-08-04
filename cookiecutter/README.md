@@ -12,6 +12,11 @@ Running this cookiecutter generates a fresh, opinionated repo with:
 - **Algorithmic Forge spine** with Core, Supporting, Archive, and Boss-fight tiers mapped across all 108 weeks
 - **Canonical System Design track** for Weeks 46-57: foundations, distributed patterns, technology labs, case studies, and OOD/LLD
 - **Parallel Leetcode Darbar track** with a 548-slot tracker and optional Standard/Auror completion paths
+- **GenAI agents track** (`docs/agents_track.md` + `09_interview/agents/`): all 18 modules plus Module 7.5 (Model Context Protocol) and the Project Manus agentic UI-automation capstone under `08_capstone/manus/`
+- **The bridge** (`docs/bridge.md`): every agents-bootcamp module mapped to the tensor-to-tenant weeks that explain why it works under the hood
+- **Agent papers mapped into the journals**: ReAct, Toolformer, DSPy, LangGraph, CRAG, MCP, Generative Agents, Reflexion, AutoGen, and Kuzzu assigned to the Weeks 73-81 papers slots
+- **Prerequisites on-ramp** (`docs/prerequisites.md`): the optional 36-week lane (CS50x, Nand to Tetris, MIT 6.042J, Statistical Learning, and more) for learners who need fundamentals before Week 1
+- **Mandala identity ladder** (`docs/mandala.md`): the 16-mandala / 756-day identity arc
 - **Core + optional depth lanes** in every weekly journal, so advanced work remains available without blocking the core path
 - **Evidence tracking** for implementation, benchmarks/results, technical explanations, and retrospectives
 - **Sailboat retrospective ritual** in every weekly journal: destination, wind, anchor, rocks, boat position, and next heading
@@ -67,6 +72,7 @@ make badge=30      # verify evidence and award the Foundations badge when eligib
 make forge=57      # prepare the Week 57 Algorithmic Forge artifact
 make design=54     # prepare a Week 54 System Design artifact
 make darbar=42     # prepare Darbar problem 42 evidence
+make agent=7.5     # open the Module 7.5 (MCP) agents scaffold
 make auror         # verify the optional 548-problem Auror track
 make gate          # check the current milestone gate
 make progress      # dashboard of weekly completion
@@ -126,6 +132,10 @@ drill in the correct tier.
 │   ├── algorithmic_forge.md
 │   ├── system_design_track.md
 │   ├── leetcode_darbar.md
+│   ├── prerequisites.md
+│   ├── agents_track.md
+│   ├── bridge.md
+│   ├── mandala.md
 │   ├── sailboat_retro.md
 │   ├── milestone_gates.md
 │   ├── recovery_weeks.md
@@ -159,15 +169,19 @@ drill in the correct tier.
 ├── 05_llm/                # Weeks 70-81
 ├── 06_inference/          # Weeks 82-93
 ├── 07_platform/           # Weeks 94-102
-├── 08_capstone/           # Weeks 103-108 (three capstone paths)
+├── 08_capstone/           # Weeks 103-108 (three capstone paths + manus)
+│   ├── manus/              # Project Manus agentic UI automation
+│   └── openrouter/         # Capstone 3 enterprise AI gateway
 ├── 09_interview/          # continuous interview prep
-│   └── algorithmic_forge/ # core, supporting, archive, boss_fights
+│   ├── algorithmic_forge/ # core, supporting, archive, boss_fights
+│   └── agents/             # one scaffold per agents module (Modules 1-18 + MCP)
 ├── portfolio/              # release checklists for Weeks 30, 69, and 108
 └── scripts/
     ├── new_week.py         # also powers `make week=14`
     ├── recovery.py
     ├── remediate.py
     ├── release.py
+    ├── agents.py           # also powers `make agent=7.5`
     ├── milestone_gate.py
     └── progress.py
 ```
@@ -178,7 +192,8 @@ To modify the template itself:
 
 1. Edit files under `cookiecutter/{{cookiecutter.repo_name}}/`.
 2. To change the 108-week curriculum, edit the `PHASES` list in `cookiecutter/hooks/post_gen_project.py`. Update `PROGRAMS`, `RECOVERY_AFTER`, `FORGE_LANES`, or `FORGE_BOSSES` when changing checkpoints, recovery windows, or algorithmic treatment.
-3. Test locally:
+3. The prerequisites, agents track, bridge, agent papers, and mandala content live in the `PREREQUISITES`, `PREREQ_PLAN`, `AGENT_MODULES_CC`, `AGENT_BRIDGE_CC`, `BRIDGE_SUMMARY_CC`, `AGENT_PAPERS_CC`, `AGENT_PAPER_WEEKS`, and `MANDALAS_CC` constants in the same hook file. Their generators are `generate_prerequisites_scaffold`, `generate_agents_scaffold`, `generate_bridge_scaffold`, and `generate_mandala_scaffold`.
+4. Test locally:
 
 ```bash
 cookiecutter ./cookiecutter --no-input -o /tmp/t3-test

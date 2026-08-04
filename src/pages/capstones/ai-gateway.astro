@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const promises = [
+  { label: 'one API', desc: 'a normalized endpoint that hides provider-specific wire formats' },
+  { label: 'many models and providers', desc: 'a versioned registry of capabilities, regions, prices, and health' },
+  { label: 'policy-compliant routing', desc: 'filter by capability, region, data policy, allowlist, budget, and health' },
+  { label: 'reliable streaming and failover', desc: 'pre-token failover; post-token error, never silent replay' },
+  { label: 'tenant isolation and fair admission', desc: 'per-workspace budgets, concurrency, priority, fencing' },
+  { label: 'exact usage and cost evidence', desc: 'append-only idempotent ledger, deterministic settlement' },
+  { label: 'enterprise controls and operational trust', desc: 'SSO, guardrails, audit, SLAs, invoicing boundaries' },
+];
+
+const failureMatrix = [
+  ['Provider timeout before tokens', 'Retry/fail over within bounded retry budget'],
+  ['Provider disconnect after first token', 'Do not replay; emit stream error + partial-attempt event'],
+  ['No provider meets ZDR/region policy', 'Fail closed; explain rejected candidates'],
+  ['Duplicate idempotency key', 'Reconcile the original logical request'],
+  ['Workspace budget exhausted', 'Reject before provider dispatch'],
+  ['Tenant concurrency saturated', 'Queue, reject, or shed per priority policy'],
+  ['Leader lease expires mid-admission', 'Fencing prevents stale owner from committing'],
+  ['Provider price changes', 'New version for new decisions; old ledger stays reproducible'],
+  ['Malformed provider usage', 'Quarantine settlement and alert; never invent silent cost'],
+  ['PII appears in payload', 'Redact or reject before durable trace emission'],
+];
+
+const interviewQuestions = [
+  'Why is the gateway valuable if providers already expose APIs?',
+  'What must be strongly consistent, and what can be eventually consistent?',
+  'How do you prove a fallback did not violate data policy?',
+  'When is retrying a stream unsafe?',
+  'How do you prevent one tenant from buying all provider capacity?',
+  'How do you reconcile provider usage with customer invoices?',
+  'Which features should be bought from an identity, billing, or observability vendor?',
+];
+---
+
+<BaseLayout title="Capstone 3 — Enterprise Multi-Model AI Gateway" description="The OpenRouter-inspired enterprise AI gateway capstone." activeNav="capstones">
+  <div class="container" style="padding-top:2.5rem">
+    <nav style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1.5rem">
+      <a href="/capstones/">Capstones</a> / AI Gateway
+    </nav>
+
+    <header style="margin-bottom:2rem">
+      <div class="eyebrow">Capstone 3 · Weeks 103–108 · Alternative Final</div>
+      <h1>Enterprise Multi-Model AI Gateway</h1>
+      <p class="lead">
+        An OpenRouter-inspired final capstone: design and build the control plane, request plane, routing policy,
+        reliability layer, enterprise tenancy, and economics behind a unified multi-model AI gateway. Built with
+        mock providers from public documentation — it does not claim access to OpenRouter's private systems.
+      </p>
+    </header>
+
+    <h2>The promise</h2>
+    <div class="grid grid-2">
+      {
+        promises.map((p) => (
+          <div class="card">
+            <div class="card__title mono" style="font-family:var(--font-mono);font-size:0.95rem;color:var(--accent)">{p.label}</div>
+            <p>{p.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2>The capstone question</h2>
+    <blockquote class="callout">
+      Design an enterprise AI gateway that lets one application call hundreds of models through one API while
+      enforcing tenant policy, selecting a compliant provider, surviving provider failures, accounting for every
+      token, and producing an auditable operating picture.
+    </blockquote>
+
+    <h2>Minimum implementation</h2>
+    <p>
+      Build a local gateway simulator with at least three mock providers (cheap/slow, expensive/fast,
+      unreliable/policy-incompatible). Implement normalized requests, capability/policy filtering, explainable
+      versioned routing, stream-aware fallback, per-workspace budgets and per-tenant concurrency admission,
+      an idempotent usage/cost ledger, and PII-safe traces. Implement at least three of the seven components from
+      scratch; the rest may use small standard-library helpers.
+    </p>
+
+    <h2>Failure-injection matrix</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Failure</th><th>Expected behavior</th></tr></thead>
+        <tbody>
+          {failureMatrix.map((r) => (
+            <tr><td style="min-width:240px"><strong>{r[0]}</strong></td><td>{r[1]}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Staff defense</h2>
+    <ol style="color:var(--text-muted);font-size:0.95rem;line-height:1.9">
+      {
+        interviewQuestions.map((q) => <li>{q}</li>)
+      }
+    </ol>
+
+    <h2>Self-grading rubric — 24 points</h2>
+    <p>
+      Score each dimension 0–2 across product boundary, API normalization, registry, routing, data policy,
+      reliability, tenancy, accounting, observability, security, benchmark, and staff defense. A passing capstone
+      requires <strong>18/24</strong>, no zero in policy, reliability, tenancy, or accounting, and a complete
+      evidence bundle.
+    </p>
+
+    <h2>Boss extensions</h2>
+    <p>
+      Multi-region active-active routing · contextual bandit routing with rollback · dedicated-capacity
+      scheduler · BYOK key isolation · tool-call-aware routing · invoice reconciliation · OpenTelemetry-style
+      trace broadcasting · policy-aware semantic cache.
+    </p>
+
+    <div class="callout callout--violet">
+      <strong>This is the production-platform capstone</strong>
+      <p>
+        It takes vector.dot(), retrieval, queues, traces, cost attribution, inference scheduling, and leader
+        election — and turns them into a product someone could actually buy.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

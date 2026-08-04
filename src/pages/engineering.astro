@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { ENGINEERING_TASKS, PRACTICE_EXERCISES } from '../data/engineering';
+---
+
+<BaseLayout title="Engineering Tasks & Practice" description="30 engineering tasks and 40 timed practice drills in the Tensor-to-Tenant course." activeNav="curriculum">
+  <PageHeader
+    eyebrow="Engineering"
+    title="Build the primitives, then the platform"
+    lead="The engineering spine is made of 30 production-style implementation tasks — each with a problem statement, full description, and a detailed prompt — plus 40 timed drills (10–30 minutes each) to keep the fundamentals sharp."
+    meta="30 engineering tasks · 40 timed practice drills"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="kicker">Engineering tasks</div>
+      <h2>The 30 production-style implementations</h2>
+      <div class="grid grid-2">
+        {
+          ENGINEERING_TASKS.map((t) => (
+            <div class="card" style="padding:0.9rem 1.1rem">
+              <div class="mono" style="font-size:0.78rem;color:var(--accent);margin-bottom:0.25rem">Task {t.n}</div>
+              <div style="font-weight:600;font-size:0.95rem">{t.title}</div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="kicker" style="margin-top:3rem">Engineering practice</div>
+      <h2>40 timed drills</h2>
+      <p class="lead">
+        Retrieval, rate limiting, caching, chunking, PII, calibration, ranking metrics, batching,
+        resilience, sketches, routing, and concurrency — each drill is 10–30 minutes with a core
+        pattern and a clear target.
+      </p>
+      <div class="grid grid-2">
+        {
+          PRACTICE_EXERCISES.map((e) => (
+            <div class="card" style="padding:0.9rem 1.1rem">
+              <div class="mono" style="font-size:0.78rem;color:var(--accent-2);margin-bottom:0.25rem">Drill {e.n}</div>
+              <div style="font-weight:600;font-size:0.95rem">{e.title}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

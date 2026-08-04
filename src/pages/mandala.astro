@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { MANDALAS } from '../data/mandalas';
+---
+
+<BaseLayout title="Mandalas" description="The 16-mandala capability progression of Tensor-to-Tenant." activeNav="mandala">
+  <PageHeader
+    eyebrow="Mandalas"
+    title="756 days, sixteen identity shifts"
+    lead="A mandala is a 48-day cycle that ends with a capability you can prove. The 108-week course is 15 full mandalas plus a final 36-day graduation mandala — and every one of them changes who you are as an engineer."
+    meta="15 mandalas × 48 days + 36-day graduation mandala = 756 days"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2rem">
+        <img
+          src="/images/mandala.webp"
+          alt="The sixteen mandalas of the identity ladder"
+          width="480"
+          height="480"
+          loading="lazy"
+          style="max-width:min(480px,100%);height:auto;border-radius:50%;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.35)"
+        />
+      </div>
+
+      <!-- Identity ladder -->
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th class="num">#</th><th>Mandala</th><th>Weeks</th><th>Identity gained</th></tr>
+          </thead>
+          <tbody>
+            {
+              MANDALAS.map((m) => (
+                <tr>
+                  <td class="num mono">{m.id === 'final' ? '16' : m.id}</td>
+                  <td style="min-width:240px">{m.title}</td>
+                  <td class="mono">{m.weeks}</td>
+                  <td style="color:var(--accent-2)"><strong>{m.identity}</strong></td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Full breakdown -->
+      <div class="kicker" style="margin-top:2.5rem">Full breakdown</div>
+      {
+        MANDALAS.map((m) => (
+          <div class="card" style="margin:1rem 0;padding:1.5rem">
+            <div class="mono" style="font-size:0.78rem;color:var(--accent-2);text-transform:uppercase;letter-spacing:0.08em">
+              {m.id === 'final' ? 'Mandala 16 · Graduation' : `Mandala ${m.id}`} · {m.days} · {m.weeks}
+            </div>
+            <h2 style="margin:0.35rem 0">{m.title}</h2>
+            <p style="color:var(--accent)"><strong>{m.identity}</strong></p>
+            <p>{m.transformation}</p>
+            <div class="grid grid-2" style="margin-top:1rem">
+              <div>
+                <div class="kicker">Key topics</div>
+                <ul style="margin:0.4rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+                  {m.topics.map((t) => <li>{t}</li>)}
+                </ul>
+              </div>
+              <div>
+                <div class="kicker">Evidence to collect</div>
+                <ul style="margin:0.4rem 0;padding-left:1.2rem;color:var(--text-muted);font-size:0.92rem">
+                  {m.evidence.map((e) => <li>{e}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

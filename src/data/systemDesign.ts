@@ -1,0 +1,147 @@
+/**
+ * Canonical System Design track — Weeks 46–57.
+ * Transcribed from SYSTEM_DESIGN_TRACK.md.
+ */
+
+export interface DesignWeek {
+  week: number;
+  topic: string;
+  caseLab: string;
+  evidence: string;
+}
+
+export const DESIGN_WEEKS: DesignWeek[] = [
+  { week: 46, topic: 'Delivery framework, requirements, networking, numbers to know', caseLab: 'URL shortener / Bitly', evidence: 'Framed design + capacity sheet' },
+  { week: 47, topic: 'API design, data modeling, indexing, contracts', caseLab: 'LeetCode problem service', evidence: 'API and schema package' },
+  { week: 48, topic: 'Caching, sharding, consistent hashing, CAP', caseLab: 'Rate limiter + distributed cache', evidence: 'Design, key layout, failure table' },
+  { week: 49, topic: 'Replication, read/write scaling, contention', caseLab: 'News feed / Instagram', evidence: 'Read path, write path, consistency choice' },
+  { week: 50, topic: 'Large blobs, CDN, metadata, resumable work', caseLab: 'Dropbox / Google Docs', evidence: 'Storage design + recovery plan' },
+  { week: 51, topic: 'Queues, workflows, long-running tasks', caseLab: 'Job scheduler / Slack job queue', evidence: 'State machine + retry/idempotency plan' },
+  { week: 52, topic: 'Schema evolution, real-time updates, coordination', caseLab: 'WhatsApp / notification system', evidence: 'Contract migration + delivery semantics' },
+  { week: 53, topic: 'Search, proximity, crawling, ranking', caseLab: 'Yelp / FB post search / web crawler', evidence: 'Index and freshness design' },
+  { week: 54, topic: 'Messaging and social fan-out', caseLab: 'FB Live Comments / Tinder / Discord', evidence: 'Fan-out model + hot-key strategy' },
+  { week: 55, topic: 'Scheduling, scarcity, marketplace correctness', caseLab: 'Ticketmaster / Uber / local delivery / auction', evidence: 'Reservation invariant + contention test' },
+  { week: 56, topic: 'Streaming, analytics, and data infrastructure', caseLab: 'Ad clicks / metrics / Robinhood / Spotify data lake', evidence: 'Stream topology + watermark/replay notes' },
+  { week: 57, topic: 'Integrated architecture and interview boss', caseLab: 'ChatGPT / payment system / Figma multiplayer', evidence: 'Staff-level design review + trade-off defense' },
+];
+
+export const DESIGN_LOOP = [
+  { step: 'Frame', detail: 'requirements, users, SLOs, scale, privacy, and cost' },
+  { step: 'Shape', detail: 'APIs, data model, partitioning, indexes, caches, and queues' },
+  { step: 'Stress', detail: 'contention, failure modes, consistency, replay, recovery, and observability' },
+  { step: 'Extend', detail: 'the AI concern — embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution' },
+];
+
+export const DESIGN_TECH_CORE = [
+  'Redis', 'PostgreSQL', 'Kafka', 'Flink', 'API gateway', 'vector database',
+];
+
+export const DESIGN_TECH_SUPPORTING = [
+  'Elasticsearch', 'Cassandra', 'DynamoDB', 'ZooKeeper', 'time-series databases', 'big-data structures',
+];
+
+export const DESIGN_TECH_QUESTION =
+  'The question is never “memorize the tool”; it is “what guarantee does this tool provide, and what does it make harder?”';
+
+export interface DesignPattern {
+  pattern: string;
+  problem: string;
+  solution: string;
+}
+
+export const DESIGN_PATTERNS: DesignPattern[] = [
+  { pattern: 'Rate limiter', problem: 'One user or tenant floods the API', solution: 'Token bucket or sliding window; distributed counter for horizontal scale' },
+  { pattern: 'Caching (LRU, TTL)', problem: 'Repeat reads on the same keys', solution: 'Cache-aside with bounded size; TTL plus write-through/invalidation' },
+  { pattern: 'Consistent hashing', problem: 'Rehashing a hash table when nodes join/leave', solution: 'Hash ring so a membership change moves only a fraction of keys' },
+  { pattern: 'Read replicas', problem: 'Read traffic outpaces a single primary', solution: 'Primary for writes, replicas for reads; handle replication lag' },
+  { pattern: 'Queue + workers', problem: 'Slow or bursty async work', solution: 'Durable queue with consumer groups and retries with backoff' },
+  { pattern: 'Idempotency keys', problem: 'Client retries create duplicate effects', solution: 'Store request key and result; replay the original outcome' },
+  { pattern: 'Circuit breaker', problem: 'A downstream dependency is failing', solution: 'Open the circuit after a threshold, fail fast, then probe' },
+  { pattern: 'Feature flags', problem: 'Deploying risky code to everyone at once', solution: 'Dynamic flag rules with gradual rollout and kill switch' },
+  { pattern: 'Replication + leader election', problem: 'The sealer/scheduler must be a single writer', solution: 'Lease-based election with fencing so stale leaders cannot commit' },
+  { pattern: 'Append-only ledger', problem: 'Audit and billing require exact history', solution: 'Immutable event log; materialize dashboards separately' },
+];
+
+export const DESIGN_PATTERN_INDEX = {
+  foundations:
+    'Introduction, how to prepare, delivery framework, core concepts, key technologies, common patterns, networking essentials, API design, data modeling, and numbers to know.',
+  distributed:
+    'Caching, sharding, consistent hashing, CAP, database indexing, scaling reads, scaling writes, real-time updates, contention, multi-step processes, long-running tasks, large blobs, replication, schema evolution, and observability.',
+};
+
+export interface DesignFamily {
+  family: string;
+  cases: string;
+}
+
+export const DESIGN_FAMILIES: DesignFamily[] = [
+  { family: 'Storage and collaboration', cases: 'Dropbox, Google Docs, Discord message storage, Figma multiplayer' },
+  { family: 'Messaging and notifications', cases: 'WhatsApp, FB Live Comments, notification system, Slack job queue' },
+  { family: 'Search and retrieval', cases: 'Yelp, FB Post Search, proximity search, web crawler, ChatGPT' },
+  { family: 'Scheduling and logistics', cases: 'Job Scheduler, Uber, local delivery, Ticketmaster, online chess' },
+  { family: 'Streaming and analytics', cases: 'Ad Click Aggregator, Metrics Monitoring, Robinhood, Spotify Data Lake' },
+  { family: 'Marketplace and money', cases: 'Online Auction, Payment System, Shopify Inventory Reservations' },
+  { family: 'Social products', cases: 'FB News Feed, Instagram, Tinder, Strava, News Aggregator' },
+  { family: 'Platform primitives', cases: 'Bitly, Distributed Cache, Rate Limiter, YouTube, YouTube Top K, LeetCode, Price Tracking Service' },
+];
+
+export const DESIGN_CASES = [
+  { name: 'URL shortener', focuses: 'Hashing, ID generation, cache, 301 vs 302' },
+  { name: 'Dropbox', focuses: 'Blob storage, chunking, sync conflicts, metadata DB' },
+  { name: 'Ticketmaster', focuses: 'Hot-row contention, seat holds, payment idempotency' },
+  { name: 'News Feed', focuses: 'Fan-out on write vs read, ranking feed cache' },
+  { name: 'WhatsApp', focuses: 'Presence, message delivery, mobile constraints' },
+  { name: 'LeetCode judge', focuses: 'Sandboxing, queue, result correctness' },
+  { name: 'Uber', focuses: 'Geo-spatial indexing, dispatch, ETA aggregation' },
+  { name: 'Web crawler', focuses: 'Frontier, politeness, deduplication, fault tolerance' },
+  { name: 'Ad click aggregator', focuses: 'Streaming aggregation, windowing, at-least-once semantics' },
+  { name: 'Payments', focuses: 'Idempotency, ledger correctness, settlement' },
+];
+
+export const DESIGN_OOD = [
+  'Connect Four', 'Amazon Locker', 'Elevator', 'Parking Lot', 'File System',
+  'Movie Ticket Booking', 'Logging Service', 'Rate Limiter', 'Inventory Management',
+];
+
+export const DESIGN_OOD_CONTRACT =
+  'Each LLD artifact must state its invariants, ownership boundaries, concurrency policy, and extension points. The distributed design then explains how the single-process model changes when state is replicated or partitioned.';
+
+export interface DesignAiExtension {
+  base: string;
+  extension: string;
+}
+
+export const DESIGN_AI_EXTENSIONS: DesignAiExtension[] = [
+  { base: 'WhatsApp', extension: 'Semantic search, agent memory, PII-safe message retrieval' },
+  { base: 'Search / Yelp', extension: 'Hybrid BM25+dense retrieval, reranking, slice evaluation' },
+  { base: 'Job scheduler', extension: 'Tool-call DAGs, retries, cancellation, quota-aware admission' },
+  { base: 'ChatGPT', extension: 'Conversation storage, prompt registry, routing, KV cache, evaluation' },
+  { base: 'Streaming metrics', extension: 'Token/cost attribution, watermarking, late-event correction' },
+  { base: 'Payment / reservations', extension: 'Idempotency, exactly-once effects, auditability, contention' },
+  { base: 'Figma multiplayer', extension: 'Collaborative agent state, conflict resolution, presence' },
+  { base: 'Distributed cache', extension: 'Semantic and embedding cache with tenant isolation' },
+];
+
+export interface DesignCapability {
+  name: string;
+  description: string;
+}
+
+export const DESIGN_CAPABILITIES: DesignCapability[] = [
+  { name: 'Requirements & constraints', description: 'Clarify scale, SLOs, budget, and non-goals before proposing a stack' },
+  { name: 'API design', description: 'Resource-oriented contracts, pagination, idempotency, error shapes' },
+  { name: 'Data modeling', description: 'Relational vs document vs columnar; denormalization for reads' },
+  { name: 'Distributed patterns', description: 'Rate limiting, caching, queues, consistent hashing, replication, leader election' },
+  { name: 'Failure analysis', description: 'Identify single points of failure and design for partial outage' },
+  { name: 'Trade-off defense', description: 'Justify every choice: consistency, cost, complexity, operations' },
+];
+
+export const DESIGN_GATE5 = [
+  'requirements and SLOs',
+  'API and data model',
+  'partition, index, cache, queue, and replication choices',
+  'capacity estimates and a bottleneck plan',
+  'consistency, contention, idempotency, and failure semantics',
+  'observability, privacy, tenant isolation, and cost controls',
+  'one AI extension and a clear trade-off defense',
+];

@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<BaseLayout title="Sailboat Retrospective" description="The weekly human ritual of the Tensor-to-Tenant course." activeNav="resources">
+  <PageHeader
+    eyebrow="Sailboat Retrospective"
+    title="The weekly human ritual"
+    lead="The Sailboat turns a 108-week apprenticeship from a checklist into a navigable journey. Use it at the end of every week — keep answers short and concrete, and choose the next heading rather than writing a performance review."
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <!-- ASCII boat -->
+      <pre>{`                 Rocks
+           upcoming risks
+
+Wind  →       [ Boat ]       →  Island
+helpers       learner            capability
+
+                 Anchor
+             current drag`}</pre>
+
+      <div class="callout">
+        <strong>The four forces</strong>
+        <p>
+          The Island is your destination capability. The Wind is what helped progress — a concept,
+          person, tool, habit, or environment. The Anchor is what slowed you down. The Rocks are the
+          risks that could derail the next week.
+        </p>
+      </div>
+
+      <div class="kicker" style="margin-top:2rem">Weekly template</div>
+      <div class="card" style="padding:1.5rem">
+        <div class="mono" style="font-size:0.82rem;color:var(--accent);margin-bottom:1rem">Week ____ — Sailboat Retro</div>
+
+        <h3>Island / destination</h3>
+        <p style="color:var(--text-muted)">What capability am I trying to reach this week or phase?</p>
+        <div style="border-bottom:1px dashed var(--border);margin:1rem 0"></div>
+
+        <h3>Wind</h3>
+        <p style="color:var(--text-muted)">What helped progress? (Concept, person, tool, habit, or environment)</p>
+        <div style="border-bottom:1px dashed var(--border);margin:1rem 0"></div>
+
+        <h3>Anchor</h3>
+        <p style="color:var(--text-muted)">What slowed me down?</p>
+        <div style="border-bottom:1px dashed var(--border);margin:1rem 0"></div>
+
+        <h3>Rocks</h3>
+        <p style="color:var(--text-muted)">What could derail the next week?</p>
+        <div style="border-bottom:1px dashed var(--border);margin:1rem 0"></div>
+
+        <h3>Boat position</h3>
+        <p style="color:var(--text-muted)">Choose one: Ahead · On track · Drifting</p>
+        <div style="border-bottom:1px dashed var(--border);margin:1rem 0"></div>
+
+        <h3>Next heading</h3>
+        <p style="color:var(--text-muted)">What is the single most important adjustment for next week?</p>
+        <div style="border-bottom:1px dashed var(--border);margin:1rem 0"></div>
+
+        <h3>Course connection</h3>
+        <p style="color:var(--text-muted)">
+          Which layer did this week strengthen? Mathematics · Algorithms / Leetcode Darbar ·
+          Engineering primitives · Distributed systems / System Design · ML systems · LLM systems ·
+          Inference · Production platform · Staff judgment
+        </p>
+      </div>
+
+      <div class="callout callout--amber">
+        <strong>One sentence I can explain out loud</strong>
+        <p>
+          Every weekly retro ends with the commitment to be able to explain one thing out loud, from
+          memory, to a colleague. If you cannot, that is your next heading.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
