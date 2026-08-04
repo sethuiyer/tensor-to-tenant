@@ -331,116 +331,184 @@ The table below lists the **core deliverable** for every instructional week.
 The generated learner repo adds an optional depth lane and an evidence record
 to every journal entry.
 
-| Week | Module | Focus | Core deliverable |
-|---:|---|---|---|
-| 1 | Orientation and course OS | Course setup, tracker, repo, weekly template | Course dashboard + README |
-| 2 | Python engineering refresh | Typing, testing, async basics | CLI project skeleton with tests |
-| 3 | Numerical Python | NumPy, vectorization, broadcasting | Vector math utility library |
-| 4 | Reproducibility | Git, notebooks, experiment tracking | Reproducible notebook + Makefile |
-| 5 | Math diagnostic and induction | Linear algebra, probability, hypothesis choice, and generalization | Diagnostic report + gap map + paper lab |
-| 6 | Systems diagnostic | HTTP, Docker, APIs, Linux basics | Containerized hello-service |
-| 7 | Linear algebra I | Vector spaces, span, basis, dimension | Problem set + concept map |
-| 8 | Linear algebra II | Linear independence, rank, nullity | Solver exercises + notes |
-| 9 | Linear algebra III | Inner products, norms, dual norms | Norm/distance library |
-| 10 | Linear algebra IV | Orthogonality, projections, Gram-Schmidt | Projection demo |
-| 11 | Linear algebra V | Linear transformations, change of basis | Coordinate transform lab |
-| 12 | Linear algebra VI | Eigenvalues, eigenvectors, diagonalization | PCA-style mini lab |
-| 13 | Linear algebra VII | PSD matrices, quadratic forms, Rayleigh quotient | Proof + visualization |
-| 14 | Linear algebra VIII | SVD, pseudoinverse, low-rank approximation | Low-rank compression demo |
-| 15 | Numerical linear algebra I | Matrix norms, condition numbers, perturbation | Perturbation experiment |
-| 16 | Numerical linear algebra II | LU, QR, Cholesky decomposition | Decomposition library |
-| 17 | Numerical linear algebra III | Iterative solvers, power iteration, Krylov methods | Solver benchmark |
-| 18 | Numerical linear algebra IV | Randomized SVD, tensor notation | Randomized approximation lab |
-| 19 | Calculus I | Partial derivatives, gradients, directional derivatives | Gradient visualizer |
-| 20 | Calculus II | Jacobians, Hessians, Taylor approximations | Curvature lab |
-| 21 | Calculus III | Chain rule on computational graphs | Manual backprop worksheet |
-| 22 | Automatic differentiation | Forward/reverse mode, JVPs, VJPs | Tiny autodiff prototype |
-| 23 | Probability I | Probability spaces, conditioning, Bayes theorem | Probability problem set |
-| 24 | Probability II | Random variables, distributions, transformations | Simulation notebook |
-| 25 | Probability III | Random vectors, covariance, correlation | Covariance/correlation lab |
-| 26 | Probability IV | LLN, CLT, delta method | Monte Carlo convergence demo |
-| 27 | Statistics I | MLE, MAP, estimator bias/variance | Estimator comparison |
-| 28 | Statistics II | Hypothesis testing, p-values, Type I/II errors | Test implementation |
-| 29 | Statistics III | Confidence intervals, bootstrap, permutation tests | Bootstrap CI package |
-| 30 | Statistics IV | Power, MDE, sample size, multiple testing | Experiment-size calculator |
-| 31 | Retrieval math | Cosine similarity, exact KNN | Vector search mini-lab |
-| 32 | Top-K systems | Memory-bounded KNN, streaming Top-K | Heap-based Top-K service |
-| 33 | Ranking pipelines | Dynamic Top-K, two-stage retrieval/reranking | Reranking prototype |
-| 34 | Rate limiting I | Sliding-window and token bucket rate limiters | API limiter module |
-| 35 | Caching | LRU cache and TTL cache | Cache simulator with tests |
-| 36 | Text chunking | Token-aware and recursive sentence chunking | Chunking library |
-| 37 | PII handling | PII span merging, regex/NER detection | Redaction utility |
-| 38 | Calibration | Expected Calibration Error, Brier score | Reliability dashboard |
-| 39 | Ranking metrics | NDCG, MRR, Recall@K | Retrieval evaluator |
-| 40 | Batching | Thread-safe inference batcher | Concurrent batcher |
-| 41 | Resilience | Retry, exponential backoff, jitter, circuit breaker | Fault-tolerance kit |
-| 42 | Sketches | Count-Min Sketch, Bloom filter | Probabilistic data structures |
-| 43 | Cardinality/routing | HyperLogLog, consistent hashing | Distributed routing lab |
-| 44 | Load balancing | Weighted round robin, rendezvous hashing | Load balancer module |
-| 45 | IDs/traffic | Snowflake IDs, leaky bucket, sliding-window counter | Platform primitives lab |
-| 46 | System design framework | Requirements, constraints, API design | Design doc template |
-| 47 | Data and APIs | Data models, observability, contracts | API design exercise |
-| 48 | Rate limiting design | Token bucket, sliding windows at scale | Rate limiter design writeup |
-| 49 | Scaling reads/writes | Caching, replication, contention | Scaling pattern notes |
-| 50 | Large blobs | Storage, CDN, media pipelines | Blob storage design |
-| 51 | Workflow systems | Orchestration vs choreography | Workflow state design |
-| 52 | Schema evolution | Backward compatibility, contracts | Schema migration plan |
-| 53 | Case studies I | URL shortener, Dropbox | Two design docs |
-| 54 | Case studies II | Ticketmaster, News Feed | Two design docs |
-| 55 | Case studies III | WhatsApp, LeetCode | Two design docs |
-| 56 | Case studies IV | Uber, web crawler | Two design docs |
-| 57 | Case studies V | Ad click aggregator, payments | Trade-off analysis |
-| 58 | ML problem framing | Objectives, constraints, iterative development | ML project charter |
-| 59 | Data quality | Labeling, weak supervision, augmentation | Data quality checklist |
-| 60 | Leakage/contamination | Detection, eval tracking, versioning | Leakage audit |
-| 61 | Offline evaluation | Baselines, slices, confidence intervals | Eval harness |
-| 62 | Online evaluation | A/B tests, shadow deployment, canary, bandits | Rollout plan |
-| 63 | A/B calculator | Lift, z-score, p-value, confidence intervals | `analyze_ab_test` function |
-| 64 | Bootstrap methods | Paired bootstrap for model comparisons | `bootstrap_ci` package |
-| 65 | SRM detection | Sample-ratio mismatch, chi-square diagnostics | SRM detector |
-| 66 | Feature flags | Rules, rollouts, sticky assignment | Flag engine |
-| 67 | Experiment assignment | Deterministic assignment, namespaces | Assignment service |
-| 68 | Monitoring | Drift, observability, four-layer monitoring | Monitoring dashboard spec |
-| 69 | Production failures | Distribution shift, postmortems | Incident postmortem template |
-| 70 | LLM anatomy | Transformer, tokenizer, matmul | Model anatomy notes |
-| 71 | LLM data pipelines | Cleaning, deduplication, tokenization | Dataset card |
-| 72 | Fine-tuning | SFT, LoRA, QLoRA, DoRA | Fine-tuning plan |
-| 73 | Alignment | RLHF, DPO, ORPO, GRPO | Preference eval plan |
-| 74 | Distributed training | DDP/FSDP, tensor/pipeline parallelism, ZeRO | Training architecture map |
-| 75 | Vector search | HNSW, IVF-PQ, product quantization | Index benchmark |
-| 76 | Retrieval patterns | Hybrid search, query rewriting, chunking | Retrieval lab |
-| 77 | Retrieval fusion | BM25 + dense + reranker, RRF | Fusion service |
-| 78 | Retrieval eval | Query slices, macro metrics, regressions | Slice evaluation report |
-| 79 | Prompt systems | Prompt template renderer, version registry | Prompt management tool |
-| 80 | Memory/context | Conversation memory, context optimizer | Memory service |
-| 81 | Agent foundations | ReAct, plan-execute, tool calling, guardrails | Agent prototype |
-| 82 | GPU performance | Compute/memory/overhead regimes, FlashAttention | Performance primer notes |
-| 83 | Inference arithmetic | Roofline model, arithmetic intensity | Model intensity worksheet |
-| 84 | PagedAttention/vLLM | KV paging, block tables | vLLM deployment |
-| 85 | vLLM internals | Scheduler, block manager, code paths | Internal anatomy notes |
-| 86 | vLLM metrics | Running/waiting requests, latency histograms | Metrics schema |
-| 87 | Observability | Prometheus/Grafana for serving | Live inference dashboard |
-| 88 | Benchmarking | Request-rate sweeps, saturation points | Benchmark methodology doc |
-| 89 | SGLang | RadixAttention, prefix reuse | SGLang comparison report |
-| 90 | Scheduling | Orca, continuous batching, chunked prefill | Scheduler comparison |
-| 91 | Quantization | FP8, AWQ, GPTQ, KV cache compression | Quality/throughput table |
-| 92 | Speculative/long context | Medusa, EAGLE, StreamingLLM, KV eviction | Latency/memory lab |
-| 93 | Disaggregation | DistServe, Splitwise, Mooncake, autoscaling | Disaggregated serving plan |
-| 94 | Traffic routing | Model router, kill switch, sticky rollout | Router service |
-| 95 | Safe observability | PII redaction, end-to-end request tracing | Trace + safe logs |
-| 96 | Fan-out/streaming | Partial failures, token stream multiplexing | Resilient aggregator |
-| 97 | Quotas/priority | Token budgets, gateway prioritization | Quota/priority service |
-| 98 | Workflow execution | DAG scheduler, idempotency | Workflow engine |
-| 99 | Fairness/HA | Per-tenant limits, leader election | Tenant limiter + HA lab |
-| 100 | Async infrastructure | Distributed work queue, config service | Queue/config platform |
-| 101 | Model lifecycle | Health monitor, registry/promotion | Model ops pipeline |
-| 102 | Cost/safety/caching | Semantic/embedding cache, injection detection, cost attribution | Cost/safety platform |
-| 103 | Capstone planning | Requirements, architecture, eval plan | Capstone design doc |
-| 104 | Capstone build I | Core API, retrieval/agent flow | Working prototype |
-| 105 | Capstone build II | Evaluation, observability, guardrails | Monitored prototype |
-| 106 | Capstone build III | Load testing, optimization, cost tuning | Performance report |
-| 107 | Mock interview week | System design, coding, behavioral simulations | Mock interview scorecard |
-| 108 | Final review | Portfolio, retrospective, job plan | Final portfolio + 30-day plan |
+| Week | Module | Focus | Mode | Core deliverable |
+|---:|---|---|---|---|
+| 1 | Orientation and course OS | Course setup, tracker, repo, weekly template | implement | Course dashboard + README |
+| 2 | Python engineering refresh | Typing, testing, async basics | implement | CLI project skeleton with tests |
+| 3 | Numerical Python | NumPy, vectorization, broadcasting | implement | Vector math utility library |
+| 4 | Reproducibility | Git, notebooks, experiment tracking | implement | Reproducible notebook + Makefile |
+| 5 | Math diagnostic and induction | Linear algebra, probability, hypothesis choice, and generalization | implement | Diagnostic report + gap map + paper lab |
+| 6 | Systems diagnostic | HTTP, Docker, APIs, Linux basics | implement | Containerized hello-service |
+| 7 | Linear algebra I | Vector spaces, span, basis, dimension | implement | Problem set + concept map |
+| 8 | Linear algebra II | Linear independence, rank, nullity | implement | Solver exercises + notes |
+| 9 | Linear algebra III | Inner products, norms, dual norms | implement | Norm/distance library |
+| 10 | Linear algebra IV | Orthogonality, projections, Gram-Schmidt | implement | Projection demo |
+| 11 | Linear algebra V | Linear transformations, change of basis | implement | Coordinate transform lab |
+| 12 | Linear algebra VI | Eigenvalues, eigenvectors, diagonalization | implement | PCA-style mini lab |
+| 13 | Linear algebra VII | PSD matrices, quadratic forms, Rayleigh quotient | implement | Proof + visualization |
+| 14 | Linear algebra VIII | SVD, pseudoinverse, low-rank approximation | implement | Low-rank compression demo |
+| 15 | Numerical linear algebra I | Matrix norms, condition numbers, perturbation | implement | Perturbation experiment |
+| 16 | Numerical linear algebra II | LU, QR, Cholesky decomposition | implement | Decomposition library |
+| 17 | Numerical linear algebra III | Iterative solvers, power iteration, Krylov methods | implement | Solver benchmark |
+| 18 | Numerical linear algebra IV | Randomized SVD, tensor notation | implement | Randomized approximation lab |
+| 19 | Calculus I | Partial derivatives, gradients, directional derivatives | implement | Gradient visualizer |
+| 20 | Calculus II | Jacobians, Hessians, Taylor approximations | implement | Curvature lab |
+| 21 | Calculus III | Chain rule on computational graphs | implement | Manual backprop worksheet |
+| 22 | Automatic differentiation | Forward/reverse mode, JVPs, VJPs | implement | Tiny autodiff prototype |
+| 23 | Probability I | Probability spaces, conditioning, Bayes theorem | implement | Probability problem set |
+| 24 | Probability II | Random variables, distributions, transformations | implement | Simulation notebook |
+| 25 | Probability III | Random vectors, covariance, correlation | implement | Covariance/correlation lab |
+| 26 | Probability IV | LLN, CLT, delta method | implement | Monte Carlo convergence demo |
+| 27 | Statistics I | MLE, MAP, estimator bias/variance | implement | Estimator comparison |
+| 28 | Statistics II | Hypothesis testing, p-values, Type I/II errors | implement | Test implementation |
+| 29 | Statistics III | Confidence intervals, bootstrap, permutation tests | implement | Bootstrap CI package |
+| 30 | Statistics IV | Power, MDE, sample size, multiple testing | implement | Experiment-size calculator |
+| 31 | Retrieval math | Cosine similarity, exact KNN | implement | Vector search mini-lab |
+| 32 | Top-K systems | Memory-bounded KNN, streaming Top-K | implement | Heap-based Top-K service |
+| 33 | Ranking pipelines | Dynamic Top-K, two-stage retrieval/reranking | implement | Reranking prototype |
+| 34 | Rate limiting I | Sliding-window and token bucket rate limiters | implement | API limiter module |
+| 35 | Caching | LRU cache and TTL cache | implement | Cache simulator with tests |
+| 36 | Text chunking | Token-aware and recursive sentence chunking | implement | Chunking library |
+| 37 | PII handling | PII span merging, regex/NER detection | implement | Redaction utility |
+| 38 | Calibration | Expected Calibration Error, Brier score | implement | Reliability dashboard |
+| 39 | Ranking metrics | NDCG, MRR, Recall@K | implement | Retrieval evaluator |
+| 40 | Batching | Thread-safe inference batcher | implement | Concurrent batcher |
+| 41 | Resilience | Retry, exponential backoff, jitter, circuit breaker | implement | Fault-tolerance kit |
+| 42 | Sketches | Count-Min Sketch, Bloom filter | implement | Probabilistic data structures |
+| 43 | Cardinality/routing | HyperLogLog, consistent hashing | implement | Distributed routing lab |
+| 44 | Load balancing | Weighted round robin, rendezvous hashing | implement | Load balancer module |
+| 45 | IDs/traffic | Snowflake IDs, leaky bucket, sliding-window counter | implement | Platform primitives lab |
+| 46 | System design framework | Requirements, constraints, API design | read_diagram | Design doc template |
+| 47 | Data and APIs | Data models, observability, contracts | read_diagram | API design exercise |
+| 48 | Rate limiting design | Token bucket, sliding windows at scale | read_diagram | Rate limiter design writeup |
+| 49 | Scaling reads/writes | Caching, replication, contention | read_diagram | Scaling pattern notes |
+| 50 | Large blobs | Storage, CDN, media pipelines | read_diagram | Blob storage design |
+| 51 | Workflow systems | Orchestration vs choreography | read_diagram | Workflow state design |
+| 52 | Schema evolution | Backward compatibility, contracts | read_diagram | Schema migration plan |
+| 53 | Case studies I | URL shortener, Dropbox | read_diagram | Two design docs |
+| 54 | Case studies II | Ticketmaster, News Feed | read_diagram | Two design docs |
+| 55 | Case studies III | WhatsApp, LeetCode | read_diagram | Two design docs |
+| 56 | Case studies IV | Uber, web crawler | read_diagram | Two design docs |
+| 57 | Case studies V | Ad click aggregator, payments | read_diagram | Trade-off analysis |
+| 58 | ML problem framing | Objectives, constraints, iterative development | read_diagram | ML project charter |
+| 59 | Data quality | Labeling, weak supervision, augmentation | read_diagram | Data quality checklist |
+| 60 | Leakage/contamination | Detection, eval tracking, versioning | read_diagram | Leakage audit |
+| 61 | Offline evaluation | Baselines, slices, confidence intervals | implement | Eval harness |
+| 62 | Online evaluation | A/B tests, shadow deployment, canary, bandits | read_diagram | Rollout plan |
+| 63 | A/B calculator | Lift, z-score, p-value, confidence intervals | implement | `analyze_ab_test` function |
+| 64 | Bootstrap methods | Paired bootstrap for model comparisons | implement | `bootstrap_ci` package |
+| 65 | SRM detection | Sample-ratio mismatch, chi-square diagnostics | implement | SRM detector |
+| 66 | Feature flags | Rules, rollouts, sticky assignment | implement | Flag engine |
+| 67 | Experiment assignment | Deterministic assignment, namespaces | implement | Assignment service |
+| 68 | Monitoring | Drift, observability, four-layer monitoring | read_diagram | Monitoring dashboard spec |
+| 69 | Production failures | Distribution shift, postmortems | read_diagram | Incident postmortem template |
+| 70 | LLM anatomy | Transformer, tokenizer, matmul | read_diagram | Model anatomy notes |
+| 71 | LLM data pipelines | Cleaning, deduplication, tokenization | read_diagram | Dataset card |
+| 72 | Fine-tuning | SFT, LoRA, QLoRA, DoRA | read_diagram | Fine-tuning plan |
+| 73 | Alignment | RLHF, DPO, ORPO, GRPO | read_diagram | Preference eval plan |
+| 74 | Distributed training | DDP/FSDP, tensor/pipeline parallelism, ZeRO | read_diagram | Training architecture map |
+| 75 | Vector search | HNSW, IVF-PQ, product quantization | deploy_benchmark | Index benchmark |
+| 76 | Retrieval patterns | Hybrid search, query rewriting, chunking | implement | Retrieval lab |
+| 77 | Retrieval fusion | BM25 + dense + reranker, RRF | implement | Fusion service |
+| 78 | Retrieval eval | Query slices, macro metrics, regressions | implement | Slice evaluation report |
+| 79 | Prompt systems | Prompt template renderer, version registry | implement | Prompt management tool |
+| 80 | Memory/context | Conversation memory, context optimizer | implement | Memory service |
+| 81 | Agent foundations | ReAct, plan-execute, tool calling, guardrails | implement | Agent prototype |
+| 82 | GPU performance | Compute/memory/overhead regimes, FlashAttention | read_diagram | Performance primer notes |
+| 83 | Inference arithmetic | Roofline model, arithmetic intensity | read_diagram | Model intensity worksheet |
+| 84 | PagedAttention/vLLM | KV paging, block tables | deploy_benchmark | vLLM deployment |
+| 85 | vLLM internals | Scheduler, block manager, code paths | read_diagram | Internal anatomy notes |
+| 86 | vLLM metrics | Running/waiting requests, latency histograms | read_diagram | Metrics schema |
+| 87 | Observability | Prometheus/Grafana for serving | deploy_benchmark | Live inference dashboard |
+| 88 | Benchmarking | Request-rate sweeps, saturation points | read_diagram | Benchmark methodology doc |
+| 89 | SGLang | RadixAttention, prefix reuse | deploy_benchmark | SGLang comparison report |
+| 90 | Scheduling | Orca, continuous batching, chunked prefill | read_diagram | Scheduler comparison |
+| 91 | Quantization | FP8, AWQ, GPTQ, KV cache compression | read_diagram | Quality/throughput table |
+| 92 | Speculative/long context | Medusa, EAGLE, StreamingLLM, KV eviction | read_diagram | Latency/memory lab |
+| 93 | Disaggregation | DistServe, Splitwise, Mooncake, autoscaling | read_diagram | Disaggregated serving plan |
+| 94 | Traffic routing | Model router, kill switch, sticky rollout | implement | Router service |
+| 95 | Safe observability | PII redaction, end-to-end request tracing | implement | Trace + safe logs |
+| 96 | Fan-out/streaming | Partial failures, token stream multiplexing | implement | Resilient aggregator |
+| 97 | Quotas/priority | Token budgets, gateway prioritization | implement | Quota/priority service |
+| 98 | Workflow execution | DAG scheduler, idempotency | implement | Workflow engine |
+| 99 | Fairness/HA | Per-tenant limits, leader election | implement | Tenant limiter + HA lab |
+| 100 | Async infrastructure | Distributed work queue, config service | implement | Queue/config platform |
+| 101 | Model lifecycle | Health monitor, registry/promotion | implement | Model ops pipeline |
+| 102 | Cost/safety/caching | Semantic/embedding cache, injection detection, cost attribution | implement | Cost/safety platform |
+| 103 | Capstone planning | Requirements, architecture, eval plan | read_diagram | Capstone design doc |
+| 104 | Capstone build I | Core API, retrieval/agent flow | implement | Working prototype |
+| 105 | Capstone build II | Evaluation, observability, guardrails | implement | Monitored prototype |
+| 106 | Capstone build III | Load testing, optimization, cost tuning | implement | Performance report |
+| 107 | Mock interview week | System design, coding, behavioral simulations | read_diagram | Mock interview scorecard |
+| 108 | Final review | Portfolio, retrospective, job plan | read_diagram | Final portfolio + 30-day plan |
+
+---
+
+## Weekly modes
+
+The `Mode` column tells you what *kind* of deliverable a week expects. This
+matters because the same word — "deliverable" — has very different meanings
+across the 108 weeks. A learner who treats a `read_diagram` week like an
+`implement` week burns 25 hours and breaks the next two.
+
+| Mode | What you ship | Examples |
+|---|---|---|
+| `implement` | Working code you can run | LRU cache (W35), token bucket (W34), index benchmark (W75 only exception), `analyze_ab_test` (W63) |
+| `read_diagram` | A written document: design doc, trade-off note, comparison table, methodology doc | Two case-study design docs (W53–56), training architecture map (W74), inference cost model (W93) |
+| `deploy_benchmark` | A live deployment or benchmark run on a GPU | vLLM deployment (W84), live inference dashboard (W87), SGLang comparison (W89) |
+
+Distribution across the 108 weeks: **69 `implement`, 35 `read_diagram`, 4 `deploy_benchmark`**. The 4 `deploy_benchmark` weeks are Weeks 75, 84, 87, 89. They are the only weeks that *require* GPU access; everything else is either code or writing.
+
+---
+
+## Weekly time budget
+
+The course is sized at **10–15 hours per week**. That number hides two
+distinct cost buckets that every learner should know up front.
+
+```text
+15 hr/week total budget
+├── 6–8.5 hr   Fixed weekly overhead
+│              ├ 1–1.5  Coding drill (interview minimum)
+│              ├ 1.5–2  System design question or pattern
+│              ├ 0.5–1  Behavioral story refinement
+│              ├ 0.5    Technical explanation out loud
+│              ├ 1–1.5  Algorithmic Forge drill (Friday)
+│              └ 1–1.5  Sailboat retro + journal + evidence record
+└── 7–9 hr    Core topic work (this week's deliverable)
+```
+
+The trap to avoid: treating 15 hours as a soft target that lets you
+spend the whole thing on the core topic. **The 6–8.5 hour overhead is
+non-negotiable.** If you skip the Friday Forge drill for three weeks,
+your interview preparation silently degrades. If you skip the
+retrospectives, your evidence record thins and Gate 5 / Gate 6 / Gate 7
+become false positives.
+
+What survives 7–9 core-topic hours across all 108 weeks:
+
+- most Phase 1–4 primitives (`implement`) fit comfortably
+- most `read_diagram` weeks fit because they are about writing, not code
+- 4 `deploy_benchmark` weeks (75, 84, 87, 89) require **commodity GPU
+  access**; see [`docs/bottlenecks.md`](./cookiecutter/%7B%7Bcookiecutter.repo_name%7D%7D/docs/bottlenecks.md) for the Modal redirect if you don't have one
+
+What does not fit if you ignore the mode column:
+
+- Weeks 70–74 (LLM training + alignment) where the deliverables are
+  deliberately `read_diagram` and the silent implicit was "don't try to
+  reimplement DPO from scratch, write the eval plan instead."
+- Weeks 91–93 (quantization through disaggregation) where the
+  deliverables are comparison tables and architecture documents.
+
+If you find yourself 15+ hours into a `read_diagram` week and you are
+writing code, stop and write the document. If you are 8+ hours into an
+`implement` week with no running artifact, trim scope until it runs.
+
+The course also ships **planned recovery weeks** after Weeks 6, 14, 22, 30,
+38, 46, 54, 62, 70, 78, 86, 94, and 102. They are explicitly there to
+absorb the bottlenecks documented in `docs/bottlenecks.md` and to give
+you buffer for the week 60 binding constraint (1,620 cumulative hours of
+sustained part-time effort over 27 months). Use them.
 
 ---
 
@@ -541,16 +609,16 @@ gate does not erase prior work or require restarting the whole phase.
 
 | Gate | Week | Pass criteria | If blocked |
 |---:|---:|---|---|
-| 1 | 6 | Course repo · weekly tracker · Dockerized service · diagnostic report | Remediate orientation and systems setup |
-| 2 | 18 | Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines | Remediate linear/numerical algebra |
-| 3 | 30 | Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE | Remediate calculus/statistics; publish Foundations release |
-| 4 | 45 | Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing) | Remediate the missing primitive contracts/tests |
-| 5 | 57 | Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes | Remediate the weakest design pattern |
-| 6 | 69 | A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan | Remediate experimentation/MLOps; publish Engineering + Systems release |
-| 7 | 81 | RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype | Remediate the weakest LLM/RAG component |
-| 8 | 93 | Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding report, inference cost model | Remediate inference benchmarking and operations |
-| 9 | 102 | Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters | Remediate the missing platform capability |
-| 10 | 108 | Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan | Remediate the specific capstone/interview gap |
+| 1 | 6 | Course repo · weekly tracker · Dockerized service · diagnostic report | implement | Remediate orientation and systems setup |
+| 2 | 18 | Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines | implement | Remediate linear/numerical algebra |
+| 3 | 30 | Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE | implement | Remediate calculus/statistics; publish Foundations release |
+| 4 | 45 | Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing) | implement | Remediate the missing primitive contracts/tests |
+| 5 | 57 | Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes | implement | Remediate the weakest design pattern |
+| 6 | 69 | A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan | implement | Remediate experimentation/MLOps; publish Engineering + Systems release |
+| 7 | 81 | RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype | implement | Remediate the weakest LLM/RAG component |
+| 8 | 93 | Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding report, inference cost model | implement | Remediate inference benchmarking and operations |
+| 9 | 102 | Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters | implement | Remediate the missing platform capability |
+| 10 | 108 | Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan | implement | Remediate the specific capstone/interview gap |
 
 ---
 
@@ -1149,106 +1217,106 @@ The following blogs/articles are referenced in the course (especially in the inf
 
 | # | Step | Order / Topic | Category | Item |
 |---:|---|---|---|---|
-| 1 | Linear Algebra | Vector Spaces, Subspaces, Span, Basis & Dimension | Learning Module | Derive + Solve Problems |
-| 2 | Linear Algebra | Linear Independence, Rank & Nullity | Learning Module | Prove + Solve Problems |
-| 3 | Linear Algebra | Inner Products, Norms & Dual Norms | Learning Module | Derive + Implement |
-| 4 | Linear Algebra | Orthogonality, Projections & Gram-Schmidt | Learning Module | Derive + Implement |
-| 5 | Linear Algebra | Linear Transformations, Change of Basis & Coordinate Systems | Learning Module | Derive + Solve Problems |
-| 6 | Linear Algebra | Eigenvalues, Eigenvectors & Diagonalization | Learning Module | Derive + Implement |
-| 7 | Linear Algebra | Positive Semidefinite Matrices, Quadratic Forms & Rayleigh Quotients | Learning Module | Prove + Implement |
-| 8 | Linear Algebra | Singular Value Decomposition, Pseudoinverse & Low-Rank Approximation | Learning Module | Derive + Implement |
-| 9 | Numerical Linear Algebra | Matrix Norms, Operator Norms & Spectral Radius | Learning Module | Derive + Compute |
-| 10 | Numerical Linear Algebra | Condition Numbers & Perturbation Analysis | Learning Module | Derive + Experiment |
-| 11 | Numerical Linear Algebra | LU, QR & Cholesky Decomposition | Learning Module | Implement from Scratch |
-| 12 | Numerical Linear Algebra | Iterative Linear Solvers: Jacobi, Gauss-Seidel, Conjugate Gradient & GMRES | Learning Module | Implement + Benchmark |
-| 13 | Numerical Linear Algebra | Power Iteration, Lanczos Method & Krylov Subspaces | Learning Module | Derive + Implement |
-| 14 | Numerical Linear Algebra | Randomized SVD & Randomized Matrix Approximation | Learning Module | Derive + Implement |
-| 15 | Numerical Linear Algebra | Tensor Products, Tensor Contractions & Einstein Notation | Learning Module | Derive + Implement |
-| 16 | Calculus | Partial Derivatives, Gradients & Directional Derivatives | Learning Module | Derive + Solve Problems |
-| 17 | Calculus | Jacobian Matrices & Vector-Valued Differentiation | Learning Module | Derive + Implement |
-| 18 | Calculus | Hessian Matrices, Curvature & Second-Order Approximations | Learning Module | Derive + Visualize |
-| 19 | Calculus | Multivariable Taylor Series & Local Error Analysis | Learning Module | Derive + Apply |
-| 20 | Calculus | Chain Rule on Computational Graphs | Learning Module | Derive Backpropagation |
-| 21 | Automatic Differentiation | Forward Mode, Reverse Mode, JVPs & VJPs | Learning Module | Implement from Scratch |
-| 22 | Automatic Differentiation | Differentiating Softmax, Normalization, Attention & Cross-Entropy | Learning Module | Derive + Verify Numerically |
-| 23 | Optimization | Convex Sets, Convex Functions & Epigraphs | Learning Module | Prove + Solve Problems |
-| 24 | Optimization | Smoothness, Lipschitz Continuity & Strong Convexity | Learning Module | Derive Convergence Bounds |
-| 25 | Optimization | Gradient Descent & Convergence Rates | Learning Module | Derive + Implement |
-| 26 | Optimization | Stochastic Gradient Descent, Gradient Noise & Learning-Rate Schedules | Learning Module | Derive + Experiment |
-| 27 | Optimization | Momentum, Nesterov Acceleration, AdaGrad, RMSProp & Adam | Learning Module | Derive + Implement |
-| 28 | Optimization | Proximal Methods, Mirror Descent & Natural Gradient | Learning Module | Derive + Implement |
-| 29 | Optimization | Newton's Method, Quasi-Newton (BFGS) & Trust Regions | Learning Module | Derive + Implement |
-| 30 | Optimization | Constrained Optimization & KKT Conditions | Learning Module | Prove + Solve Problems |
-| 31 | Probability | Probability Spaces, σ-Algebras & Measure-Theoretic Foundations | Learning Module | Prove + Compute |
-| 32 | Probability | Conditional Probability, Independence & Bayes Theorem | Learning Module | Solve Problems |
-| 33 | Probability | Discrete & Continuous Random Variables, PMFs, PDFs, CDFs | Learning Module | Implement + Sample |
-| 34 | Probability | Common Distributions (Bernoulli, Binomial, Poisson, Gaussian, Exponential, Beta, Dirichlet) | Learning Module | Derive + Sample |
-| 35 | Probability | Joint, Marginal & Conditional Distributions; Law of Total Probability | Learning Module | Solve Problems |
-| 36 | Probability | Expectation, Variance, Covariance & Correlation | Learning Module | Derive + Compute |
-| 37 | Probability | Transformations of Random Variables & Jacobian Method | Learning Module | Derive + Implement |
-| 38 | Probability | Convergence Theorems: LLN, CLT & Delta Method | Learning Module | Simulate + Verify |
-| 39 | Statistics | MLE, MAP, Method of Moments & Estimator Properties | Learning Module | Derive + Compare |
-| 40 | Statistics | Bias–Variance Tradeoff & Mean Squared Error Decomposition | Learning Module | Derive + Experiment |
-| 41 | Statistics | Hypothesis Testing, p-Values, Type I/II Errors & Power | Learning Module | Implement Tests |
-| 42 | Statistics | Confidence Intervals & Bootstrap Resampling | Learning Module | Implement Bootstrap CI |
-| 43 | Statistics | Permutation Tests, Jackknife & Cross-Validation | Learning Module | Implement + Compare |
-| 44 | Statistics | Sample-Size Calculation, MDE & Power Analysis | Learning Module | Build Calculator |
-| 45 | Statistics | Bayesian Inference: Priors, Posteriors, Conjugacy & Credible Intervals | Learning Module | Derive + Sample |
-| 46 | Statistics | Multiple Testing, FDR & Bonferroni/BH Correction | Learning Module | Implement + Analyze |
-| 47 | Statistics | Causal Inference Basics: Confounding, Treatment Effects, ATE | Learning Module | Apply to Examples |
-| 48 | Statistics | Nonparametric Methods: KDE, Rank Tests, Spearman | Learning Module | Implement + Apply |
-| 49 | Experimentation | Experimental Design Principles & A/B Test Pitfalls | Learning Module | Design + Audit |
-| 50 | Information Theory | Entropy, Conditional Entropy, Joint Entropy & Chain Rule | Learning Module | Derive + Compute |
-| 51 | Information Theory | Mutual Information, KL Divergence & Jensen–Shannon Divergence | Learning Module | Derive + Compute |
-| 52 | Information Theory | Cross-Entropy Loss & Maximum Likelihood Equivalence | Learning Module | Derive + Implement |
-| 53 | Information Theory | Differential Entropy & KL for Continuous Distributions | Learning Module | Derive + Compute |
-| 54 | Information Theory | Source Coding Theorem, Huffman Coding & Compression | Learning Module | Implement + Analyze |
-| 55 | Information Theory | Channel Capacity, Noisy-Channel Coding Theorem | Learning Module | Derive + Explain |
-| 56 | Information Geometry | Fisher Information Metric & Natural Gradients | Learning Module | Derive + Apply |
-| 57 | Stochastic Processes | Markov Chains: Transition Matrices, Stationary Distributions | Learning Module | Simulate + Analyze |
-| 58 | Stochastic Processes | Poisson Processes & Birth–Death Processes | Learning Module | Simulate + Derive |
-| 59 | Stochastic Processes | Brownian Motion, Martingales & Optional Stopping | Learning Module | Derive + Simulate |
-| 60 | Queueing Theory | M/M/1, M/M/c, M/G/1 Queues & Little's Law | Learning Module | Derive + Simulate |
-| 61 | Queueing Theory | Network of Queues, Jackson Networks & Product Form | Learning Module | Simulate + Analyze |
-| 62 | Queueing Theory | Tail Probabilities, Heavy-Tailed Service Times & Hurst Exponent | Learning Module | Simulate + Analyze |
-| 63 | Queueing Theory | Tail-at-Scale, Hedged Requests & Tied Requests | Learning Module | Simulate + Analyze |
-| 64 | Queueing Theory | G/G/1 Approximations & Operational Laws | Learning Module | Derive + Apply |
-| 65 | High-Dimensional Geometry | Curse of Dimensionality & Concentration of Measure | Learning Module | Derive + Visualize |
-| 66 | High-Dimensional Geometry | Johnson–Lindenstrauss Lemma & Random Projections | Learning Module | Prove + Implement |
-| 67 | Randomized Algorithms | Reservoir Sampling, MinHash & SimHash | Learning Module | Implement + Analyze |
-| 68 | Randomized Algorithms | Locality-Sensitive Hashing (LSH) Families | Learning Module | Derive + Implement |
-| 69 | Streaming Mathematics | Count-Min Sketch & Bloom Filter Variants | Learning Module | Implement + Analyze |
-| 70 | Streaming Mathematics | HyperLogLog & Cardinality Estimation | Learning Module | Implement + Analyze |
-| 71 | Streaming Mathematics | Approximate Quantiles (GK, t-digest) & Sliding-Window Aggregates | Learning Module | Implement + Compare |
-| 72 | Graph Theory | Graph Representations, BFS/DFS, Topological Sort | Learning Module | Implement + Apply |
-| 73 | Graph Theory | Shortest Paths: Dijkstra, Bellman–Ford, Floyd–Warshall | Learning Module | Implement + Compare |
-| 74 | Graph Theory | Minimum Spanning Tree, Cuts & Flows | Learning Module | Implement + Apply |
-| 75 | Spectral Graph Theory | Laplacian Eigenmaps, Spectral Clustering & Graph Cuts | Learning Module | Derive + Implement |
-| 76 | Spectral Graph Theory | Random Walks, PageRank & Personalized PageRank | Learning Module | Derive + Implement |
-| 77 | Combinatorial Optimization | Matching, Covering, Set Packing & Knapsack Variants | Learning Module | Solve + Analyze |
-| 78 | Discrete Optimization | Integer Programming, Branch & Bound, Cutting Planes | Learning Module | Solve + Analyze |
-| 79 | Statistical Learning Theory | PAC Learning, VC Dimension & Sample Complexity Bounds | Learning Module | Prove + Analyze |
-| 80 | Statistical Learning Theory | Bias–Variance, Double Descent & Overparameterization | Learning Module | Derive + Experiment |
-| 81 | Statistical Learning Theory | Rademacher Complexity & Uniform Convergence | Learning Module | Derive + Analyze |
-| 82 | Statistical Learning Theory | Generalization Bounds for Neural Networks | Learning Module | Derive + Analyze |
-| 83 | Statistical Learning Theory | Implicit Regularization, Flat Minima & Generalization | Learning Module | Derive + Analyze |
-| 84 | Statistical Learning Theory | Information-Theoretic Generalization Bounds | Learning Module | Derive + Analyze |
-| 85 | Learning to Rank | Pairwise, Listwise & LambdaMART | Learning Module | Derive + Implement |
-| 86 | Online Learning | Multi-Armed Bandits: UCB, Thompson Sampling | Learning Module | Derive + Implement |
-| 87 | Bayesian Methods | Bayesian Linear/Logistic Regression & Gaussian Processes | Learning Module | Derive + Implement |
-| 88 | Bayesian Methods | Variational Inference & Mean-Field Approximations | Learning Module | Derive + Implement |
-| 89 | Latent Variable Models | EM Algorithm & Mixture Models | Learning Module | Derive + Implement |
-| 90 | Monte Carlo | Importance Sampling, Rejection Sampling & MCMC Basics | Learning Module | Derive + Implement |
-| 91 | Monte Carlo | Metropolis–Hastings & Gibbs Sampling | Learning Module | Derive + Implement |
-| 92 | Monte Carlo | Hamiltonian Monte Carlo & NUTS | Learning Module | Derive + Implement |
-| 93 | Variational Inference | ELBO, Reparameterization Trick & VAEs | Learning Module | Derive + Implement |
-| 94 | Bayesian Optimization | Gaussian Processes for Hyperparameter Tuning | Learning Module | Derive + Implement |
-| 95 | Distributed Systems Mathematics | Vector Clocks, Lamport Timestamps & Causal Ordering | Learning Module | Implement + Analyze |
-| 96 | Distributed Systems Mathematics | Quorum Systems, Majority Agreement & Paxos Intuition | Learning Module | Implement + Analyze |
-| 97 | Distributed Systems Mathematics | Consistent Hashing, Rendezvous Hashing & Virtual Nodes | Learning Module | Implement + Analyze |
-| 98 | Distributed Systems Mathematics | Gossip Protocols, Epidemic Spreading & Membership | Learning Module | Implement + Analyze |
-| 99 | Distributed Systems Mathematics | Semilattices, Monotonicity & CRDT Convergence | Learning Module | Prove + Implement |
-| 100 | Distributed Systems Mathematics | Consensus Safety, Liveness, Failure Models & Byzantine Thresholds | Learning Module | Study Proofs + Explain |
+| 1 | Linear Algebra | Vector Spaces, Subspaces, Span, Basis & Dimension | implement | Learning Module | Derive + Solve Problems |
+| 2 | Linear Algebra | Linear Independence, Rank & Nullity | implement | Learning Module | Prove + Solve Problems |
+| 3 | Linear Algebra | Inner Products, Norms & Dual Norms | implement | Learning Module | Derive + Implement |
+| 4 | Linear Algebra | Orthogonality, Projections & Gram-Schmidt | implement | Learning Module | Derive + Implement |
+| 5 | Linear Algebra | Linear Transformations, Change of Basis & Coordinate Systems | implement | Learning Module | Derive + Solve Problems |
+| 6 | Linear Algebra | Eigenvalues, Eigenvectors & Diagonalization | implement | Learning Module | Derive + Implement |
+| 7 | Linear Algebra | Positive Semidefinite Matrices, Quadratic Forms & Rayleigh Quotients | implement | Learning Module | Prove + Implement |
+| 8 | Linear Algebra | Singular Value Decomposition, Pseudoinverse & Low-Rank Approximation | implement | Learning Module | Derive + Implement |
+| 9 | Numerical Linear Algebra | Matrix Norms, Operator Norms & Spectral Radius | implement | Learning Module | Derive + Compute |
+| 10 | Numerical Linear Algebra | Condition Numbers & Perturbation Analysis | implement | Learning Module | Derive + Experiment |
+| 11 | Numerical Linear Algebra | LU, QR & Cholesky Decomposition | implement | Learning Module | Implement from Scratch |
+| 12 | Numerical Linear Algebra | Iterative Linear Solvers: Jacobi, Gauss-Seidel, Conjugate Gradient & GMRES | implement | Learning Module | Implement + Benchmark |
+| 13 | Numerical Linear Algebra | Power Iteration, Lanczos Method & Krylov Subspaces | implement | Learning Module | Derive + Implement |
+| 14 | Numerical Linear Algebra | Randomized SVD & Randomized Matrix Approximation | implement | Learning Module | Derive + Implement |
+| 15 | Numerical Linear Algebra | Tensor Products, Tensor Contractions & Einstein Notation | implement | Learning Module | Derive + Implement |
+| 16 | Calculus | Partial Derivatives, Gradients & Directional Derivatives | implement | Learning Module | Derive + Solve Problems |
+| 17 | Calculus | Jacobian Matrices & Vector-Valued Differentiation | implement | Learning Module | Derive + Implement |
+| 18 | Calculus | Hessian Matrices, Curvature & Second-Order Approximations | implement | Learning Module | Derive + Visualize |
+| 19 | Calculus | Multivariable Taylor Series & Local Error Analysis | implement | Learning Module | Derive + Apply |
+| 20 | Calculus | Chain Rule on Computational Graphs | implement | Learning Module | Derive Backpropagation |
+| 21 | Automatic Differentiation | Forward Mode, Reverse Mode, JVPs & VJPs | implement | Learning Module | Implement from Scratch |
+| 22 | Automatic Differentiation | Differentiating Softmax, Normalization, Attention & Cross-Entropy | implement | Learning Module | Derive + Verify Numerically |
+| 23 | Optimization | Convex Sets, Convex Functions & Epigraphs | implement | Learning Module | Prove + Solve Problems |
+| 24 | Optimization | Smoothness, Lipschitz Continuity & Strong Convexity | implement | Learning Module | Derive Convergence Bounds |
+| 25 | Optimization | Gradient Descent & Convergence Rates | implement | Learning Module | Derive + Implement |
+| 26 | Optimization | Stochastic Gradient Descent, Gradient Noise & Learning-Rate Schedules | implement | Learning Module | Derive + Experiment |
+| 27 | Optimization | Momentum, Nesterov Acceleration, AdaGrad, RMSProp & Adam | implement | Learning Module | Derive + Implement |
+| 28 | Optimization | Proximal Methods, Mirror Descent & Natural Gradient | implement | Learning Module | Derive + Implement |
+| 29 | Optimization | Newton's Method, Quasi-Newton (BFGS) & Trust Regions | implement | Learning Module | Derive + Implement |
+| 30 | Optimization | Constrained Optimization & KKT Conditions | implement | Learning Module | Prove + Solve Problems |
+| 31 | Probability | Probability Spaces, σ-Algebras & Measure-Theoretic Foundations | implement | Learning Module | Prove + Compute |
+| 32 | Probability | Conditional Probability, Independence & Bayes Theorem | implement | Learning Module | Solve Problems |
+| 33 | Probability | Discrete & Continuous Random Variables, PMFs, PDFs, CDFs | implement | Learning Module | Implement + Sample |
+| 34 | Probability | Common Distributions (Bernoulli, Binomial, Poisson, Gaussian, Exponential, Beta, Dirichlet) | implement | Learning Module | Derive + Sample |
+| 35 | Probability | Joint, Marginal & Conditional Distributions; Law of Total Probability | implement | Learning Module | Solve Problems |
+| 36 | Probability | Expectation, Variance, Covariance & Correlation | implement | Learning Module | Derive + Compute |
+| 37 | Probability | Transformations of Random Variables & Jacobian Method | implement | Learning Module | Derive + Implement |
+| 38 | Probability | Convergence Theorems: LLN, CLT & Delta Method | implement | Learning Module | Simulate + Verify |
+| 39 | Statistics | MLE, MAP, Method of Moments & Estimator Properties | implement | Learning Module | Derive + Compare |
+| 40 | Statistics | Bias–Variance Tradeoff & Mean Squared Error Decomposition | implement | Learning Module | Derive + Experiment |
+| 41 | Statistics | Hypothesis Testing, p-Values, Type I/II Errors & Power | implement | Learning Module | Implement Tests |
+| 42 | Statistics | Confidence Intervals & Bootstrap Resampling | implement | Learning Module | Implement Bootstrap CI |
+| 43 | Statistics | Permutation Tests, Jackknife & Cross-Validation | implement | Learning Module | Implement + Compare |
+| 44 | Statistics | Sample-Size Calculation, MDE & Power Analysis | implement | Learning Module | Build Calculator |
+| 45 | Statistics | Bayesian Inference: Priors, Posteriors, Conjugacy & Credible Intervals | implement | Learning Module | Derive + Sample |
+| 46 | Statistics | Multiple Testing, FDR & Bonferroni/BH Correction | read_diagram | Learning Module | Implement + Analyze |
+| 47 | Statistics | Causal Inference Basics: Confounding, Treatment Effects, ATE | read_diagram | Learning Module | Apply to Examples |
+| 48 | Statistics | Nonparametric Methods: KDE, Rank Tests, Spearman | read_diagram | Learning Module | Implement + Apply |
+| 49 | Experimentation | Experimental Design Principles & A/B Test Pitfalls | read_diagram | Learning Module | Design + Audit |
+| 50 | Information Theory | Entropy, Conditional Entropy, Joint Entropy & Chain Rule | read_diagram | Learning Module | Derive + Compute |
+| 51 | Information Theory | Mutual Information, KL Divergence & Jensen–Shannon Divergence | read_diagram | Learning Module | Derive + Compute |
+| 52 | Information Theory | Cross-Entropy Loss & Maximum Likelihood Equivalence | read_diagram | Learning Module | Derive + Implement |
+| 53 | Information Theory | Differential Entropy & KL for Continuous Distributions | read_diagram | Learning Module | Derive + Compute |
+| 54 | Information Theory | Source Coding Theorem, Huffman Coding & Compression | read_diagram | Learning Module | Implement + Analyze |
+| 55 | Information Theory | Channel Capacity, Noisy-Channel Coding Theorem | read_diagram | Learning Module | Derive + Explain |
+| 56 | Information Geometry | Fisher Information Metric & Natural Gradients | read_diagram | Learning Module | Derive + Apply |
+| 57 | Stochastic Processes | Markov Chains: Transition Matrices, Stationary Distributions | read_diagram | Learning Module | Simulate + Analyze |
+| 58 | Stochastic Processes | Poisson Processes & Birth–Death Processes | read_diagram | Learning Module | Simulate + Derive |
+| 59 | Stochastic Processes | Brownian Motion, Martingales & Optional Stopping | read_diagram | Learning Module | Derive + Simulate |
+| 60 | Queueing Theory | M/M/1, M/M/c, M/G/1 Queues & Little's Law | read_diagram | Learning Module | Derive + Simulate |
+| 61 | Queueing Theory | Network of Queues, Jackson Networks & Product Form | implement | Learning Module | Simulate + Analyze |
+| 62 | Queueing Theory | Tail Probabilities, Heavy-Tailed Service Times & Hurst Exponent | read_diagram | Learning Module | Simulate + Analyze |
+| 63 | Queueing Theory | Tail-at-Scale, Hedged Requests & Tied Requests | implement | Learning Module | Simulate + Analyze |
+| 64 | Queueing Theory | G/G/1 Approximations & Operational Laws | implement | Learning Module | Derive + Apply |
+| 65 | High-Dimensional Geometry | Curse of Dimensionality & Concentration of Measure | implement | Learning Module | Derive + Visualize |
+| 66 | High-Dimensional Geometry | Johnson–Lindenstrauss Lemma & Random Projections | implement | Learning Module | Prove + Implement |
+| 67 | Randomized Algorithms | Reservoir Sampling, MinHash & SimHash | implement | Learning Module | Implement + Analyze |
+| 68 | Randomized Algorithms | Locality-Sensitive Hashing (LSH) Families | read_diagram | Learning Module | Derive + Implement |
+| 69 | Streaming Mathematics | Count-Min Sketch & Bloom Filter Variants | read_diagram | Learning Module | Implement + Analyze |
+| 70 | Streaming Mathematics | HyperLogLog & Cardinality Estimation | read_diagram | Learning Module | Implement + Analyze |
+| 71 | Streaming Mathematics | Approximate Quantiles (GK, t-digest) & Sliding-Window Aggregates | read_diagram | Learning Module | Implement + Compare |
+| 72 | Graph Theory | Graph Representations, BFS/DFS, Topological Sort | read_diagram | Learning Module | Implement + Apply |
+| 73 | Graph Theory | Shortest Paths: Dijkstra, Bellman–Ford, Floyd–Warshall | read_diagram | Learning Module | Implement + Compare |
+| 74 | Graph Theory | Minimum Spanning Tree, Cuts & Flows | read_diagram | Learning Module | Implement + Apply |
+| 75 | Spectral Graph Theory | Laplacian Eigenmaps, Spectral Clustering & Graph Cuts | deploy_benchmark | Learning Module | Derive + Implement |
+| 76 | Spectral Graph Theory | Random Walks, PageRank & Personalized PageRank | implement | Learning Module | Derive + Implement |
+| 77 | Combinatorial Optimization | Matching, Covering, Set Packing & Knapsack Variants | implement | Learning Module | Solve + Analyze |
+| 78 | Discrete Optimization | Integer Programming, Branch & Bound, Cutting Planes | implement | Learning Module | Solve + Analyze |
+| 79 | Statistical Learning Theory | PAC Learning, VC Dimension & Sample Complexity Bounds | implement | Learning Module | Prove + Analyze |
+| 80 | Statistical Learning Theory | Bias–Variance, Double Descent & Overparameterization | implement | Learning Module | Derive + Experiment |
+| 81 | Statistical Learning Theory | Rademacher Complexity & Uniform Convergence | implement | Learning Module | Derive + Analyze |
+| 82 | Statistical Learning Theory | Generalization Bounds for Neural Networks | read_diagram | Learning Module | Derive + Analyze |
+| 83 | Statistical Learning Theory | Implicit Regularization, Flat Minima & Generalization | read_diagram | Learning Module | Derive + Analyze |
+| 84 | Statistical Learning Theory | Information-Theoretic Generalization Bounds | deploy_benchmark | Learning Module | Derive + Analyze |
+| 85 | Learning to Rank | Pairwise, Listwise & LambdaMART | read_diagram | Learning Module | Derive + Implement |
+| 86 | Online Learning | Multi-Armed Bandits: UCB, Thompson Sampling | read_diagram | Learning Module | Derive + Implement |
+| 87 | Bayesian Methods | Bayesian Linear/Logistic Regression & Gaussian Processes | deploy_benchmark | Learning Module | Derive + Implement |
+| 88 | Bayesian Methods | Variational Inference & Mean-Field Approximations | read_diagram | Learning Module | Derive + Implement |
+| 89 | Latent Variable Models | EM Algorithm & Mixture Models | deploy_benchmark | Learning Module | Derive + Implement |
+| 90 | Monte Carlo | Importance Sampling, Rejection Sampling & MCMC Basics | read_diagram | Learning Module | Derive + Implement |
+| 91 | Monte Carlo | Metropolis–Hastings & Gibbs Sampling | read_diagram | Learning Module | Derive + Implement |
+| 92 | Monte Carlo | Hamiltonian Monte Carlo & NUTS | read_diagram | Learning Module | Derive + Implement |
+| 93 | Variational Inference | ELBO, Reparameterization Trick & VAEs | read_diagram | Learning Module | Derive + Implement |
+| 94 | Bayesian Optimization | Gaussian Processes for Hyperparameter Tuning | implement | Learning Module | Derive + Implement |
+| 95 | Distributed Systems Mathematics | Vector Clocks, Lamport Timestamps & Causal Ordering | implement | Learning Module | Implement + Analyze |
+| 96 | Distributed Systems Mathematics | Quorum Systems, Majority Agreement & Paxos Intuition | implement | Learning Module | Implement + Analyze |
+| 97 | Distributed Systems Mathematics | Consistent Hashing, Rendezvous Hashing & Virtual Nodes | implement | Learning Module | Implement + Analyze |
+| 98 | Distributed Systems Mathematics | Gossip Protocols, Epidemic Spreading & Membership | implement | Learning Module | Implement + Analyze |
+| 99 | Distributed Systems Mathematics | Semilattices, Monotonicity & CRDT Convergence | implement | Learning Module | Prove + Implement |
+| 100 | Distributed Systems Mathematics | Consensus Safety, Liveness, Failure Models & Byzantine Thresholds | implement | Learning Module | Study Proofs + Explain |
 
 ### Engineering Implementation Tasks
 
@@ -1293,46 +1361,46 @@ The following blogs/articles are referenced in the course (especially in the inf
 
 | # | Problem | Core Pattern | Target |
 |---:|---|---|---|
-| 1 | Cosine similarity from scratch | NumPy / vector math | 10 min |
-| 2 | Exact KNN from scratch | Top-K + vectorization | 15 min |
-| 3 | Memory-bounded KNN | Chunking + heap | 20 min |
-| 4 | Streaming Top-K | Min-heap | 10 min |
-| 5 | Top-K with dynamic score updates | Heap + lazy deletion | 20 min |
-| 6 | Two-stage retrieval and reranking | Heap / partial sorting | 20 min |
-| 7 | Per-tenant sliding-window rate limiter | Hash map + deque | 15 min |
-| 8 | Token bucket rate limiter | Time arithmetic + state | 15 min |
-| 9 | LRU cache | Hash map + doubly linked list | 20 min |
-| 10 | LRU cache with TTL | LRU + expiration | 25 min |
-| 11 | Token-aware text chunking | Sliding window | 15 min |
-| 12 | Sentence-aware recursive chunking | Greedy splitting | 25 min |
-| 13 | Merge overlapping PII spans | Interval merging | 15 min |
-| 14 | Regex + NER PII detector | Span resolution + scoring | 25 min |
-| 15 | Expected Calibration Error | Binning + NumPy | 15 min |
-| 16 | Brier score and reliability data | Statistics + aggregation | 15 min |
-| 17 | NDCG, MRR and Recall@K | Ranking metrics | 20 min |
-| 18 | Thread-safe inference batcher | Queue + condition variable | 30 min |
-| 19 | Retry with exponential backoff and jitter | State + timing | 15 min |
-| 20 | Circuit breaker | State machine | 20 min |
-| 21 | Count-Min Sketch | Streaming data structures | 20 min |
-| 22 | Bloom Filter | Probabilistic data structures | 15 min |
-| 23 | HyperLogLog | Cardinality estimation | 25 min |
-| 24 | Consistent Hash Ring | Distributed systems | 20 min |
-| 25 | Weighted Round Robin Load Balancer | Scheduling | 20 min |
-| 26 | Rendezvous (Highest Random Weight) Hashing | Distributed routing | 25 min |
-| 27 | Distributed Unique ID Generator (Snowflake) | ID generation | 20 min |
-| 28 | Leaky Bucket Rate Limiter | Traffic shaping | 15 min |
-| 29 | Sliding Window Counter Rate Limiter | Time-series aggregation | 20 min |
-| 30 | Weighted Fair Queue Scheduler | Scheduling algorithms | 30 min |
-| 31 | Prefix Trie with Autocomplete | Trie + ranking | 20 min |
-| 32 | Inverted Index Builder | Information retrieval | 25 min |
-| 33 | BM25 Scoring from Scratch | Search ranking | 30 min |
-| 34 | SimHash Near-Duplicate Detection | Hashing | 25 min |
-| 35 | MinHash & Jaccard Estimation | Locality-sensitive hashing | 30 min |
-| 36 | Approximate Quantile Estimator (GK / t-digest concept) | Streaming statistics | 30 min |
-| 37 | Reservoir Sampling | Streaming algorithms | 20 min |
-| 38 | Producer–Consumer Queue | Concurrency | 20 min |
-| 39 | Thread Pool Executor | Concurrency primitives | 30 min |
-| 40 | Async Task Scheduler with Priority Queue | Scheduling + heap | 30 min |
+| 1 | Cosine similarity from scratch | NumPy / vector math | implement | 10 min |
+| 2 | Exact KNN from scratch | Top-K + vectorization | implement | 15 min |
+| 3 | Memory-bounded KNN | Chunking + heap | implement | 20 min |
+| 4 | Streaming Top-K | Min-heap | implement | 10 min |
+| 5 | Top-K with dynamic score updates | Heap + lazy deletion | implement | 20 min |
+| 6 | Two-stage retrieval and reranking | Heap / partial sorting | implement | 20 min |
+| 7 | Per-tenant sliding-window rate limiter | Hash map + deque | implement | 15 min |
+| 8 | Token bucket rate limiter | Time arithmetic + state | implement | 15 min |
+| 9 | LRU cache | Hash map + doubly linked list | implement | 20 min |
+| 10 | LRU cache with TTL | LRU + expiration | implement | 25 min |
+| 11 | Token-aware text chunking | Sliding window | implement | 15 min |
+| 12 | Sentence-aware recursive chunking | Greedy splitting | implement | 25 min |
+| 13 | Merge overlapping PII spans | Interval merging | implement | 15 min |
+| 14 | Regex + NER PII detector | Span resolution + scoring | implement | 25 min |
+| 15 | Expected Calibration Error | Binning + NumPy | implement | 15 min |
+| 16 | Brier score and reliability data | Statistics + aggregation | implement | 15 min |
+| 17 | NDCG, MRR and Recall@K | Ranking metrics | implement | 20 min |
+| 18 | Thread-safe inference batcher | Queue + condition variable | implement | 30 min |
+| 19 | Retry with exponential backoff and jitter | State + timing | implement | 15 min |
+| 20 | Circuit breaker | State machine | implement | 20 min |
+| 21 | Count-Min Sketch | Streaming data structures | implement | 20 min |
+| 22 | Bloom Filter | Probabilistic data structures | implement | 15 min |
+| 23 | HyperLogLog | Cardinality estimation | implement | 25 min |
+| 24 | Consistent Hash Ring | Distributed systems | implement | 20 min |
+| 25 | Weighted Round Robin Load Balancer | Scheduling | implement | 20 min |
+| 26 | Rendezvous (Highest Random Weight) Hashing | Distributed routing | implement | 25 min |
+| 27 | Distributed Unique ID Generator (Snowflake) | ID generation | implement | 20 min |
+| 28 | Leaky Bucket Rate Limiter | Traffic shaping | implement | 15 min |
+| 29 | Sliding Window Counter Rate Limiter | Time-series aggregation | implement | 20 min |
+| 30 | Weighted Fair Queue Scheduler | Scheduling algorithms | implement | 30 min |
+| 31 | Prefix Trie with Autocomplete | Trie + ranking | implement | 20 min |
+| 32 | Inverted Index Builder | Information retrieval | implement | 25 min |
+| 33 | BM25 Scoring from Scratch | Search ranking | implement | 30 min |
+| 34 | SimHash Near-Duplicate Detection | Hashing | implement | 25 min |
+| 35 | MinHash & Jaccard Estimation | Locality-sensitive hashing | implement | 30 min |
+| 36 | Approximate Quantile Estimator (GK / t-digest concept) | Streaming statistics | implement | 30 min |
+| 37 | Reservoir Sampling | Streaming algorithms | implement | 20 min |
+| 38 | Producer–Consumer Queue | Concurrency | implement | 20 min |
+| 39 | Thread Pool Executor | Concurrency primitives | implement | 30 min |
+| 40 | Async Task Scheduler with Priority Queue | Scheduling + heap | implement | 30 min |
 
 ### Interview Preparation Roadmap
 
