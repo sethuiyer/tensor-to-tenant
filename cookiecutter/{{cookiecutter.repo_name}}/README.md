@@ -110,6 +110,85 @@ Every week also ends with the **Sailboat retrospective** in
 one next heading. It is a navigation ritual inside the existing retro, not
 another assignment.
 
+## RPG layer (Tensor-to-Tenant character system)
+
+The repo ships an optional RPG character system that wraps the course OS. The
+math is real: **Ebbinghaus forgetting curve** `R(t) = exp(-t / S)` plus
+**Wozniak's SuperMemo SM-2** stability updates. Concepts you stop reviewing
+fade; concepts you rescue grow stronger.
+
+**How it works.** Each weekly journal seeds three concepts (title / focus /
+deliverable). The first `make status` walks `journal/weeks/`, extracts ~324
+concepts, and writes `journal/memory.json`. Every character save lives at
+`journal/character.json` and is git-tracked.
+
+**The classes** are tied to the `track` cookiecutter variable:
+
+| Track | Class title | Primary bonuses |
+|---|---|---|
+| `balanced` | Engineering Druid | none (generalist) |
+| `production-ai-platform` | Platform Paladin | +10% PLAT, +5% JUDG |
+| `llm-inference` | Inference Wizard | +10% INFER, +5% ALGO |
+| `rag-agents` | Retrieval Ranger | +10% ENG, +5% WIS |
+
+**The stats** are six attributes that grow as you ship work:
+
+| Stat | Backing domain |
+|---|---|
+| `WIS` | Math foundations (Weeks 7-30) |
+| `ALGO` | Algorithmic Forge + Leetcode Darbar |
+| `ENG` | Engineering primitives, RAG, agents (Weeks 31-45, 70-81) |
+| `INFER` | LLM inference (Weeks 82-93) |
+| `PLAT` | Production AI platform (Weeks 94-102) |
+| `JUDG` | System design, MLOps, behavioral (Weeks 46-57, 58-69) |
+
+**The four battle types:**
+
+1. **HALLWAY AMBUSH** -- triggered during `make status`. Picks the most
+   at-risk concept. Self-rate recall 0-5. Rescuing a fading memory pays a
+   1.5x XP multiplier; failing brings HP -5.
+2. **RESURRECTION DRILL** -- triggered when 3+ concepts hit LOST
+   (R < 0.10). Multi-question recovery.
+3. **MANDALA BARRIER** -- triggered at mandala boundaries. One pulled
+   concept per prior mandala, randomly selected. Pass to open the new
+   mandala normally.
+4. **WEEKLY FORGE** -- Friday drill that pulls the top-3 decaying
+   concepts from the current + prior week.
+
+**The four tiers of forgetting, in plain sight:**
+
+| Tier | R(t) | What it means |
+|---|---:|---|
+| `FRESH` | > 0.70 | Recently reviewed, no ambush |
+| `SETTLING` | 0.50-0.70 | Eligible if you want to review early |
+| `WANING` | 0.30-0.50 | Eligible for ambush |
+| `FADING` | 0.10-0.30 | Strong ambush candidate |
+| `LOST` | < 0.10 | Added to Resurrection Queue |
+
+**The XP curve.** Level `n -> n+1` costs `100n` XP. A perfect week
+(core 50 + forge 25 + retro 15 + depth 30 = 120 XP) plus ambush rewards
+puts the graduation learner at roughly L17 by Week 108.
+
+**HP and streaks.** You start at HP 100. Missing a core deliverable
+knocks HP -15. A recovery week restores +30 HP. Streaks track consecutive
+core-deliverable weeks for the "Iron Streak" achievement (12).
+
+**Quickstart:**
+
+```bash
+make status    # first run bootstraps character + memory; renders sheet
+make log       # log this week's XP manually (interview, behavioral bonus)
+make ambush=1  # trigger a hallway ambush against the most-at-risk concept
+make recall    # list concepts sorted by retention (most at risk first)
+make boss=18   # record a boss-fight reward (gate or capstone)
+make restore   # spend a recovery week (+HP, streak preserved)
+```
+
+The full reference is in `scripts/character.py` (docstrings) and
+`scripts/battle.py` (battle mechanics). Every battle is reproducible from
+`journal/memory.json`; every level is reproducible from `journal/character.json`.
+Both files are git-tracked so your character growth is part of the portfolio.
+
 Finish the core artifact first. Use remaining capacity for the optional depth
 lane; depth work raises the ceiling but does not decide whether the week counts.
 
@@ -117,6 +196,7 @@ lane; depth work raises the ceiling but does not decide whether the week counts.
 
 ```bash
 make init          # create venv, install deps
+make status        # render the RPG character sheet (boots memory DB on first run)
 make journal       # open this week's journal entry
 make week=14       # prepare/open a specific week and evidence scaffold
 make recovery=14   # prepare a recovery plan after Week 14
@@ -129,8 +209,23 @@ make darbar=42     # prepare Darbar problem 42 evidence
 make auror         # verify all 548 Darbar tracker rows are solved
 make progress      # print weekly completion dashboard
 make gate          # run the current milestone gate checker
+make ambush=1      # trigger a hallway recall ambush (forgetting-curve simulation)
+make recall        # list concepts sorted by current retention
+make boss=18       # record a gate/capstone boss-fight reward
+make restore       # spend a recovery week (+30 HP)
 make test          # pytest across engineering primitives
 ```
+
+## RPG layer
+
+The repo boots an RPG character system on first `make status`. Math is real
+(Ebbinghaus forgetting curve + Wozniak SM-2 stability updates). Concepts you
+stop reviewing fade through `FRESH -> SETTLING -> WANING -> FADING -> LOST`,
+and the **Hallway Ambush** triggers whenever a concept crosses WANING.
+
+See **RPG layer (Tensor-to-Tenant character system)** above for classes, stats,
+battle types, and the XP curve. Saves live in `journal/character.json` and
+`journal/memory.json` and are git-tracked.
 
 ## Capstone
 
