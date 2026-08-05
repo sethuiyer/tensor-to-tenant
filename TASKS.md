@@ -95,23 +95,6 @@ operational form of P‑principle 1.
 
 ## P1 — schema + tests + drift (this month)
 
-### T1.1 Pick the canonical schema format and tool
-
-- **Files:** new `schema/` directory at repo root; new `schema/README.md` design note.
-- **Decision (RESOLVED 2026-08):** **YAML files + Pydantic v2 models.**
-  - YAML is human‑diff‑friendly, survives without Python installed.
-  - Pydantic v2 gives validation + IDE autocomplete + JSON Schema export (which generates the TS types).
-  - The cookiecutter generator already imports Python; loading YAML in Pydantic is one import.
-  - The `schema/` directory already exists and uses YAML as the working format (per `schema/README.md`); this decision ratifies that choice rather than revisiting it.
-- **Sub‑questions (RESOLVED):**
-  - **Scope:** move only the *structured subset* into the schema (weeks/gates/mandalas/forge/darbar/agents/math/system-design/engineering/interview/resources). The free-form prose in `CAPSTONE.md` / `MANDALA.md` stays as authored Markdown files that reference the schema by ID.
-  - **Images:** live in `public/images/` and are linked from the site via `url()` — no duplication.
-- **Acceptance:** `schema/README.md` (already exists) declares the format. Pydantic v2 models land as part of T1.2 / T1.3 when the schema entities are written.
-
-> **Note for the executor:** this decision was pre-authorized because it is the obvious
-> default given the existing `schema/*.yaml` files. Do not re-litigate the format
-> choice; proceed directly to T1.2.
-
 ### T1.2 Define the schema entity set
 
 - **Files:** `schema/*.yaml` + `schema/models.py` (Pydantic).
@@ -588,11 +571,10 @@ lands, but for now the schema entry uses the generic name.
 
 **Phase 4 (optional hardening — only when Phase 3 is green or if edits resume):**
 
-Total: 14 execution items across 13 task headers (T1.4's two remaining sub-tasks e and f are listed separately; all other parent tasks are single-item).
+Total: 13 execution items across 12 task headers (T1.4's two remaining sub-tasks e and f are listed separately; all other parent tasks are single-item).
 
-**Active schema spine (7 items; T1.1 is pre-authorized so the executor does not stall):**
+**Active schema spine (6 items; T1.1 was resolved 2026-08 in commit `36f7c2a` — see ADR-001 in `docs/ARCHITECTURE.md` for the rationale):**
 
-- **T1.1** — schema format decision note (RESOLVED 2026-08: YAML + Pydantic v2; see task body)
 - **T1.2** — define schema entities (one YAML per surface)
 - **T1.3** — write the generators
 - **T1.4.e** — drift test
@@ -602,7 +584,7 @@ Total: 14 execution items across 13 task headers (T1.4's two remaining sub-tasks
 
 **Independent of schema (2 items; run in parallel with anything):**
 
-- **T1.12** — tool recommendation systems parallel track (blocks on T1.2's entity-set decision, not T1.1)
+- **T1.12** — tool recommendation systems parallel track (blocks on T1.2's entity-set decision)
 - **T2.5** — minimal site search (no schema dependency; ~1 hr)
 
 **Depth layer (5 items; all depend on T1.2 + T1.3):**
