@@ -25,6 +25,7 @@ const nav = [
   { href: '/leetcode-darbar/', label: 'Darbar', key: 'darbar' },
   { href: '/capstones/', label: 'Capstones', key: 'capstones' },
   { href: '/resources/', label: 'Resources', key: 'resources' },
+  { href: '/search/', label: 'Search', key: 'search' },
   { href: '/faq/', label: 'FAQ', key: 'faq' },
 ];
 ---
@@ -60,7 +61,7 @@ const nav = [
     </script>
   </head>
   <body>
-    <nav class="site-nav">
+    <nav class="site-nav" data-pagefind-ignore>
       <div class="site-nav__inner">
         <a class="brand" href={url('/')}>tensor<span>→</span>tenant</a>
         <div class="nav-links">
@@ -84,7 +85,7 @@ const nav = [
       <slot />
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" data-pagefind-ignore>
       <div class="site-footer__inner">
         <div>
           <strong>Tensor-to-Tenant</strong> · 108-week AI engineering apprenticeship
