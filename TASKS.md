@@ -98,14 +98,19 @@ operational form of P‑principle 1.
 ### T1.1 Pick the canonical schema format and tool
 
 - **Files:** new `schema/` directory at repo root; new `schema/README.md` design note.
-- **Decision needed:** **YAML files + Pydantic v2 models**, or **Python dataclasses only**, or **JSON Schema + generated TS**? Recommend **YAML + Pydantic v2**:
+- **Decision (RESOLVED 2026-08):** **YAML files + Pydantic v2 models.**
   - YAML is human‑diff‑friendly, survives without Python installed.
   - Pydantic v2 gives validation + IDE autocomplete + JSON Schema export (which generates the TS types).
   - The cookiecutter generator already imports Python; loading YAML in Pydantic is one import.
-- **Sub‑questions:**
-  - Do we move *all* content into the schema, or only the structured subset (weeks/gates/mandalas/forge/darbar/agents/math/system‑design/engineering/interview/resources)? Recommendation: **structured subset only**. The free‑form prose in `CAPSTONE.md` / `MANDALA.md` can stay as authored Markdown files that reference the schema by ID.
-  - Where do images live? `public/images/` and `dist/images/` should both be linked, not duplicated.
-- **Acceptance:** a `schema/README.md` design note that names the format, the validation tool, the migration path, and what *stays* authored Markdown.
+  - The `schema/` directory already exists and uses YAML as the working format (per `schema/README.md`); this decision ratifies that choice rather than revisiting it.
+- **Sub‑questions (RESOLVED):**
+  - **Scope:** move only the *structured subset* into the schema (weeks/gates/mandalas/forge/darbar/agents/math/system-design/engineering/interview/resources). The free-form prose in `CAPSTONE.md` / `MANDALA.md` stays as authored Markdown files that reference the schema by ID.
+  - **Images:** live in `public/images/` and are linked from the site via `url()` — no duplication.
+- **Acceptance:** `schema/README.md` (already exists) declares the format. Pydantic v2 models land as part of T1.2 / T1.3 when the schema entities are written.
+
+> **Note for the executor:** this decision was pre-authorized because it is the obvious
+> default given the existing `schema/*.yaml` files. Do not re-litigate the format
+> choice; proceed directly to T1.2.
 
 ### T1.2 Define the schema entity set
 
@@ -164,7 +169,26 @@ operational form of P‑principle 1.
 - **Detail:** once T1.3 + T1.4 land, the hand‑written arrays in `post_gen_project.py` (`PHASE_1..10`, `AGENT_MODULES_CC`, `BRIDGE_SUMMARY_CC`, `MANDALAS_CC`, `PREREQUISITES`, `PREREQ_PLAN`, `FORGE_LANES`, `FORGE_BOSSES`, `RECOVERY_AFTER`, `RELEASES`, `AGENT_PAPERS_CC`, `AGENT_PAPER_WEEKS`) and the hand‑written `src/data/*.ts` content become *generated* files.
 - **Acceptance:** no curriculum fact is written by hand in two places; the cookiecutter hook and the site both import from a single generated source.
 
+> **Coordination note for the executor:** the T1.13 audit
+> (`tools/audit.py`) verifies *hand-written* `src/data/*.ts` files
+> against the canonical markdown and schema. When T1.7 replaces those
+> hand-written files with *generated* ones, the generated output may
+> differ in wording from the originals (even whitespace) and the
+> audit's text-match assertions may start failing. **Re-run
+> `tools/audit.py` after T1.7 lands** and expect ~25 findings / 24
+> VERIFIED. If the count drops, the generator is producing output the
+> audit doesn't recognize — investigate before merging. The fix, if
+> needed, is to update the audit's expected text to match the
+> generator's output, not to suppress the check.
+
 ### T1.12 Parallel track — Tool recommendation systems (SEARCH.md + SNOWFLAKE.md)
+
+> **Dependency:** blocks on **T1.2** (the schema entity-set decision
+> defines how SEARCH/SNOWFLAKE get catalogued — specifically
+> `schema/deep_dives.yaml` per T1.12.j). T1.1 (format decision)
+> does *not* unblock T1.12 on its own; the entity-set decision is what
+> tells the executor how to model the track. Don't start T1.12 right
+> after T1.1 — wait for T1.2.
 
 > Local artifacts:
 > <SEARCH.md> · <SNOWFLAKE.md>. Both live in the repo root as of this
@@ -493,8 +517,21 @@ lands, but for now the schema entry uses the generic name.
 ### T2.5 Add a minimal site search
 
 - **Files:** new `src/pages/search.astro` or new `src/scripts/search-index.ts`.
-- **Detail:** with everything schema‑driven, a tiny static search over curriculum titles + module names + mandala titles becomes trivial. No need for Pagefind or Algolia — a `JSON` index built from the schema + an `<input>` + a `pageshow` filter is enough for a course of this size.
-- **Acceptance:** `/search/` renders, returns results for "Euler", "SVD", "PagedAttention", "MCP" within ~50 ms.
+- **Detail:** **independent of the schema spine** — does not block on T1.1–T1.7.
+  Two viable approaches:
+  - **Approach A (recommended, ~1 hr):** read directly from the existing
+    `src/data/*.ts` files at build time, build a JSON index, ship as
+    a tiny client-side filter. No external dependency.
+  - **Approach B (~30 min, lower polish):** skip the filter UI; ship a
+    `/search/` page that renders the index as a flat list with browser
+    `Ctrl+F` as the search mechanism.
+- **Acceptance:** `/search/` renders, returns results for "Euler", "SVD",
+  "PagedAttention", "MCP" within ~50 ms.
+
+> **Note for the executor:** this task was previously misclassified as
+> deferred. It is independent of the schema work and can run right now
+> in parallel with T1.1–T1.7. If a second executor is available, this
+> is the natural parallel work.
 
 ### T2.6 Build verification: schema → site → cookiecutter in one CI job
 
@@ -550,14 +587,31 @@ lands, but for now the schema entry uses the generic name.
   deferred until T1.3 makes the cookiecutter a true downstream consumer)
 
 **Phase 4 (optional hardening — only when Phase 3 is green or if edits resume):**
-- **T1.1** — schema format decision note (YAML + Pydantic v2 recommended)
+
+Total: 14 execution items across 13 task headers (T1.4's two remaining sub-tasks e and f are listed separately; all other parent tasks are single-item).
+
+**Active schema spine (7 items; T1.1 is pre-authorized so the executor does not stall):**
+
+- **T1.1** — schema format decision note (RESOLVED 2026-08: YAML + Pydantic v2; see task body)
 - **T1.2** — define schema entities (one YAML per surface)
 - **T1.3** — write the generators
-- **T1.4.e/f** — drift test + site build test
+- **T1.4.e** — drift test
+- **T1.4.f** — site build test
 - **T1.6** — drift check between schema and site
-- **T1.7** — eliminate hand-written sources
-- **T2.1–T2.6** — depth layer (schema-driven capstones, build-time validation,
-  bridge generation, schema-aware learning partner, site search, one CI job)
+- **T1.7** — eliminate hand-written sources (re-run audit after this lands)
+
+**Independent of schema (2 items; run in parallel with anything):**
+
+- **T1.12** — tool recommendation systems parallel track (blocks on T1.2's entity-set decision, not T1.1)
+- **T2.5** — minimal site search (no schema dependency; ~1 hr)
+
+**Depth layer (5 items; all depend on T1.2 + T1.3):**
+
+- **T2.1** — capstones schema-driven
+- **T2.2** — schema-validate site content at build time
+- **T2.3** — schema-driven bridge generation
+- **T2.4** — schema-aware `learning_partner.py`
+- **T2.6** — one CI job (depends on T2.2)
 
 > **Order matters:** T1.4.b/c/d are independent of each other and fast — the
 > only remaining "P0-ish" correctness work, and they protect the artifact a
