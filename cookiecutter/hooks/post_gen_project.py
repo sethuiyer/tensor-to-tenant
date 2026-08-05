@@ -2157,6 +2157,48 @@ def personalize_readme(root: Path, start: dt.date, student: str, gh: str, repo: 
     readme.write_text(text, encoding="utf-8")
 
 
+def _seed_memory_db(root: Path) -> None:
+    """Run concept_seed.py to populate journal/memory.json.
+
+    Runs from the repo root (not from scripts/) because concept_seed.py
+    uses relative paths for JOURNAL_DIR / MEMORY_FILE that must resolve
+    against the learner's repo, not against the scripts/ subdirectory.
+    Surfaces a clear error if concept_seed.py fails -- a missing
+    memory.json breaks the character.py RPG layer.
+    """
+    import subprocess
+
+    scripts_dir = root / "scripts"
+    if not (scripts_dir / "concept_seed.py").exists():
+        sys.stderr.write(
+            f"[t3] WARNING: concept_seed.py not found at {scripts_dir}; "
+            "journal/memory.json will not be seeded. The character.py RPG "
+            "layer depends on memory.json existing.\n"
+        )
+        return
+
+    result = subprocess.run(
+        [sys.executable, str(scripts_dir / "concept_seed.py")],
+        cwd=str(root),  # run from repo root so relative paths resolve
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        sys.stderr.write(
+            f"[t3] concept_seed.py failed (exit {result.returncode}):\n"
+            f"  stdout: {result.stdout}\n  stderr: {result.stderr}\n"
+        )
+        return
+
+    memory = root / "journal" / "memory.json"
+    if memory.exists():
+        sys.stdout.write(f"[t3] memory DB seeded: {memory.relative_to(root)}\n")
+    else:
+        sys.stderr.write(
+            "[t3] WARNING: concept_seed.py ran but journal/memory.json was not created.\n"
+        )
+
+
 def main() -> None:
     root = repo_root()
 
@@ -2230,6 +2272,9 @@ def main() -> None:
 
     sys.stdout.write("[t3] personalizing README...\n")
     personalize_readme(root, start, student, gh, repo)
+
+    sys.stdout.write("[t3] seeding journal/memory.json via concept_seed.py...\n")
+    _seed_memory_db(root)
 
     sys.stdout.write("[t3] done.\n")
 

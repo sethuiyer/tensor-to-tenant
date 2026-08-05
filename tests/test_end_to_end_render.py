@@ -158,14 +158,13 @@ class TestSeededMemory:
     Validates the integration: the post-gen hook ran concept_seed.py and
     produced a populated memory DB.
 
-    STATUS (T1.13 audit): the post-gen hook currently does NOT invoke
-    concept_seed.py. These tests are skipped until the gap is closed
-    (tracked in docs/AUDIT.md after T1.13 lands). The 4 tests below
-    document the *intended* behavior so they can be re-enabled when the
-    generator is fixed.
+    STATUS (T1.13 audit): the post-gen hook now invokes concept_seed.py
+    via _seed_memory_db(), seeded with the learner's repo root as CWD
+    so the relative paths in concept_seed.py resolve correctly. The
+    audit gap was closed in the same commit.
     """
 
-    MEMORY_GAP_FIXED = False  # T1.13 audit finding: flip when the generator is fixed.
+    MEMORY_GAP_FIXED = True  # T1.13 audit finding: closed.
 
     pytestmark = pytest.mark.skipif(
         not MEMORY_GAP_FIXED,
