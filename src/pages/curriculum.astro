@@ -46,6 +46,31 @@ const totalWeeks = WEEKS.length;
       <span><span class="chip chip--amber">GPU weeks</span> {GPU_WEEKS.join(', ')}</span>
     </div>
 
+    <!-- Phase 8 spotlight (revealed by the filter when Phase 8 is selected) -->
+    <section
+      id="phase-8-spotlight"
+      data-phase-show="8"
+      style="display:none;margin-bottom:1.5rem"
+    >
+      <div class="kicker">Phase 8 spotlight</div>
+      <h2>LLM inference &amp; performance engineering</h2>
+      <p class="lead" style="max-width:70ch">
+        Weeks 82–93 trace a single request through the entire serving stack — from
+        load balancer through PagedAttention, MoE routing, FlashAttention-backed MHA,
+        speculative decoding verification, sampled streaming, and metrics logging.
+        The amber callouts under each stage name the production seam that breaks it.
+        Same pipeline, eight zoom levels, twelve weeks.
+      </p>
+      <img
+        src={url('/images/serving-stack.webp')}
+        alt="LLM inference serving stack: User Request -> Load Balancer + Request Batching -> KV Cache Lookup (PagedAttention) -> MoE Expert Routing -> Multi-Head Attention (with FlashAttention) -> Speculative Decoding + Verification -> Response Streaming (Top-p / Top-k sampling) -> Metrics Logging (TTFT, TPOT, P99). Each stage labelled with the spine week that teaches it; each stage annotated with the production seam that breaks it."
+        width="1600"
+        height="800"
+        loading="lazy"
+        style="max-width:100%;height:auto;border-radius:10px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.35)"
+      />
+    </section>
+
     <!-- Table -->
     <div class="table-wrap">
       <table id="curriculum-table">
@@ -124,15 +149,23 @@ const totalWeeks = WEEKS.length;
 <script>
   const buttons = document.querySelectorAll('.phase-filter');
   const rows = document.querySelectorAll('#curriculum-table tbody tr');
+  const spotlights = document.querySelectorAll('[data-phase-show]');
+
+  function applyFilter(phase: string) {
+    rows.forEach((row) => {
+      row.style.display = phase === '0' || row.dataset.phase === phase ? '' : 'none';
+    });
+    spotlights.forEach((el) => {
+      const showFor = el.getAttribute('data-phase-show');
+      el.style.display = showFor === phase ? '' : 'none';
+    });
+  }
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
       buttons.forEach((b) => b.classList.remove('btn--primary'));
       btn.classList.add('btn--primary');
-      const phase = btn.dataset.phase;
-      rows.forEach((row) => {
-        row.style.display = phase === '0' || row.dataset.phase === phase ? '' : 'none';
-      });
+      applyFilter(btn.dataset.phase || '0');
     });
   });
   // Default: all phases active
