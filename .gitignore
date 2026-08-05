@@ -6,6 +6,13 @@ dist/
 # dependencies
 node_modules/
 
+# Python bytecode (cookiecutter scripts + any future Python in the repo)
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
 # logs
 npm-debug.log*
 yarn-debug.log*
