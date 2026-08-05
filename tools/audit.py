@@ -151,7 +151,12 @@ def verify_math_constants() -> list[dict]:
 
     # IDF smoothing alpha = 1.
     if search_path.exists():
-        if "commonly (1)" in search_text or "alpha=1" in search_text or r"\alpha}\s*\(\s*1\s*\)" in search_text:
+        if (
+            "commonly (1)" in search_text
+            or "commonly $1$" in search_text
+            or "alpha=1" in search_text
+            or r"\alpha}\s*\(\s*1\s*\)" in search_text
+        ):
             findings.append({
                 "claim": "IDF smoothing constant alpha = 1",
                 "verdict": "VERIFIED",
