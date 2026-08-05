@@ -1,0 +1,209 @@
+# Algorithmic Forge — the parallel Friday algorithmic spine.
+# Per T1.2 / T1.6: schema discipline. The Forge runs alongside the spine
+# every Friday; lanes are mapped to weeks 1-108.
+
+# ============================================================================
+# Tiers (4 levels)
+# ============================================================================
+
+- id: forge-tier-core
+  level: Core
+  treatment: Recurring Friday skill that directly supports the current phase
+  timebox: "45–90 min"
+  rule: Implement, test, explain complexity and trade-offs
+  tier: core
+  level_note: "1"
+  seam: weekly algorithmic drill
+  selection_rationale: >
+    Default tier. Core drills are the recurring Friday workout that
+    keeps algorithmic fluency aligned with the active phase.
+  load_bearing_for: []
+  cross_references: []
+
+- id: forge-tier-supporting
+  level: Supporting
+  treatment: Guided lab or one representative problem
+  timebox: "45–120 min"
+  rule: Attempt when relevant; record the result and what remains unclear
+  tier: core
+  level_note: "2"
+  seam: weekly algorithmic drill
+  selection_rationale: >
+    Guided depth when a phase benefits from extended practice on a
+    specific pattern. Not required for the weekly cadence.
+  load_bearing_for: []
+  cross_references: []
+
+- id: forge-tier-archive
+  level: Archive
+  treatment: Reference material for future use or unusual interview prompts
+  timebox: "0 min scheduled"
+  rule: No weekly obligation; promote it only when a project needs it
+  tier: core
+  level_note: "3"
+  seam: weekly algorithmic drill
+  selection_rationale: >
+    On-demand reference. Not in the weekly rotation; promoted when a
+    capstone or interview needs it.
+  load_bearing_for: []
+  cross_references: []
+
+- id: forge-tier-boss-fight
+  level: Boss fight
+  treatment: A selected advanced problem integrated with a gate or capstone
+  timebox: "2–3 hr"
+  rule: Complete the artifact, write the reasoning, and include a retrospective
+  tier: core
+  level_note: "3"
+  seam: weekly algorithmic drill
+  selection_rationale: >
+    Selected advanced problems integrated with milestone gates or
+    capstones. Ten scheduled boss fights across the 108 weeks.
+  load_bearing_for: ["capstone-1", "capstone-2"]
+  cross_references:
+    - { entity: capstones, capstone_id: 1, role: "Mo's algorithm required" }
+    - { entity: capstones, capstone_id: 2, role: "Euler + DSU on Tree optional" }
+
+# ============================================================================
+# Lanes (13 lanes mapped to week ranges)
+# ============================================================================
+
+- id: forge-lane-1-6
+  weeks: "1–6"
+  theme: Complexity, arrays, prefix sums, two pointers, binary search, bitmasks
+  tier: Core
+  artifact: Timed implementation drill with complexity note
+  seam: weekly algorithmic drill
+  load_bearing_for: [1, 6]
+  cross_references:
+    - { entity: phases, phase_id: phase-1, role: "covers orientation weeks" }
+
+- id: forge-lane-7-14
+  weeks: "7–14"
+  theme: Matrix multiplication, Gaussian elimination, matrix exponentiation, recurrences
+  tier: Core
+  artifact: From-scratch matrix or recurrence solver
+  seam: weekly algorithmic drill
+  load_bearing_for: [7, 14]
+  cross_references:
+    - { entity: phases, phase_id: phase-2, role: "linear algebra foundation" }
+
+- id: forge-lane-15-22
+  weeks: "15–22"
+  theme: Numerical methods, binary search on answer, ternary search, Newton iteration
+  tier: Supporting
+  artifact: Root-finding or optimization comparison
+  seam: weekly algorithmic drill
+  load_bearing_for: [15, 22]
+  cross_references:
+    - { entity: phases, phase_id: phase-2, role: "numerical linear algebra" }
+
+- id: forge-lane-23-30
+  weeks: "23–30"
+  theme: Probability simulation, expectation DP, combinatorics, inclusion-exclusion, number theory basics
+  tier: Core
+  artifact: Expectation/counting lab; Week 30 mini-contest
+  seam: weekly algorithmic drill
+  load_bearing_for: [23, 30]
+  cross_references:
+    - { entity: phases, phase_id: phase-3, role: "probability + statistics" }
+    - { entity: gates, gate_id: gate-3, role: "mini-contest before Foundations release" }
+
+- id: forge-lane-31-37
+  weeks: "31–37"
+  theme: Heaps, hashing, tries, linked structures, intervals, basic pattern matching
+  tier: Core
+  artifact: Retrieval/cache primitive plus timed data-structure drill
+  seam: weekly algorithmic drill
+  load_bearing_for: [31, 37]
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "engineering primitives" }
+
+- id: forge-lane-38-45
+  weeks: "38–45"
+  theme: Fenwick, segment trees, range queries, sketches, DSU, randomized hashing
+  tier: Core
+  artifact: Range-query or routing primitive; Week 45 mini-contest
+  seam: weekly algorithmic drill
+  load_bearing_for: [38, 45]
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "engineering primitives late phase" }
+    - { entity: gates, gate_id: gate-4, role: "mini-contest at gate 4" }
+
+- id: forge-lane-46-52
+  weeks: "46–52"
+  theme: Graph representation, BFS/DFS, SCC, topological sort, shortest paths
+  tier: Core
+  artifact: Dependency graph or routing implementation
+  seam: weekly algorithmic drill
+  load_bearing_for: [46, 52]
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "system design foundation" }
+
+- id: forge-lane-53-57
+  weeks: "53–57"
+  theme: MST, Euler paths, max flow, min-cost flow, matching
+  tier: "Core / Supporting"
+  artifact: Resource-allocation design; Week 57 graph boss fight
+  seam: weekly algorithmic drill
+  load_bearing_for: [53, 57]
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "case study phase" }
+    - { entity: gates, gate_id: gate-5, role: "graph boss fight at gate 5" }
+
+- id: forge-lane-58-69
+  weeks: "58–69"
+  theme: DP, greedy, bitmask DP, probability DP, experiment assignment
+  tier: Core
+  artifact: Evaluation or assignment tool with algorithmic analysis
+  seam: weekly algorithmic drill
+  load_bearing_for: [58, 69]
+  cross_references:
+    - { entity: phases, phase_id: phase-6, role: "MLOps phase" }
+    - { entity: gates, gate_id: gate-6, role: "MLOps boss fight" }
+
+- id: forge-lane-70-81
+  weeks: "70–81"
+  theme: KMP, Aho–Corasick, trie retrieval, sequence DP, suffix-array survey
+  tier: "Core / Supporting"
+  artifact: Pattern detector or retrieval index; Week 81 string boss
+  seam: weekly algorithmic drill
+  load_bearing_for: [70, 81]
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG" }
+    - { entity: gates, gate_id: gate-7, role: "string boss at gate 7" }
+
+- id: forge-lane-82-93
+  weeks: "82–93"
+  theme: Priority scheduling, interval allocation, capacity search, randomized load balancing
+  tier: "Core / Supporting"
+  artifact: Scheduler benchmark; Week 93 inference boss
+  seam: weekly algorithmic drill
+  load_bearing_for: [82, 93]
+  cross_references:
+    - { entity: phases, phase_id: phase-8, role: "inference phase" }
+    - { entity: gates, gate_id: gate-8, role: "inference boss at gate 8" }
+
+- id: forge-lane-94-102
+  weeks: "94–102"
+  theme: Euler indexing, subtree aggregation, DSU on Tree, HLD survey
+  tier: "Supporting / Boss"
+  artifact: Tenant-tree query lab; Week 102 platform boss
+  seam: weekly algorithmic drill
+  load_bearing_for: [94, 102]
+  cross_references:
+    - { entity: phases, phase_id: phase-9, role: "platform phase" }
+    - { entity: gates, gate_id: gate-9, role: "platform tree boss" }
+
+- id: forge-lane-103-108
+  weeks: "103–108"
+  theme: Mo's algorithm, capstone integration, tree forensics
+  tier: Boss fights
+  artifact: Capstone 1 required; Capstone 2 optional at Week 108
+  seam: weekly algorithmic drill
+  load_bearing_for: [103, 108, "capstone-1", "capstone-2"]
+  cross_references:
+    - { entity: phases, phase_id: phase-10, role: "capstone phase" }
+    - { entity: capstones, capstone_id: 1, role: "required capstone" }
+    - { entity: capstones, capstone_id: 2, role: "optional capstone" }
+    - { entity: gates, gate_id: gate-10, role: "final release gate" }

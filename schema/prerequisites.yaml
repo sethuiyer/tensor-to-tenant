@@ -1,0 +1,173 @@
+# Prerequisite on-ramp: optional 36-week lane for learners without
+# engineering/comfort foundations. Per T1.2: schema discipline.
+
+# ============================================================================
+# Prerequisite resources (9)
+# ============================================================================
+
+- id: prereq-google-like-a-pro-—-advanced-search-operators
+  title: "Google Like a Pro — Advanced Search Operators"
+  url: "https://www.youtube.com/watch?v=BRiNw490Eq0"
+  focus: "Finding the right source, fast"
+  weeks: "W1–2"
+  outcome: "Self-serve research: filter, scope, and verify results instead of hoping Google guesses right."
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+- id: prereq-
+  title: ""
+  url: ""
+  focus: ""
+  weeks: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp"
+
+
+# ============================================================================
+# 36-week budget plan (8 phases)
+# ============================================================================
+
+- id: prereq-plan-w1–2
+  weeks: "W1–2"
+  title: "Learning how to learn"
+  resources: "['Google Like a Pro', 'How To Read Documentation', 'Git for Beginners']"
+  outcome: "Search and docs fluency plus version control — the self-serve skills every later week compounds."
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"
+
+- id: prereq-plan-
+  weeks: ""
+  title: ""
+  resources: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"
+
+- id: prereq-plan-
+  weeks: ""
+  title: ""
+  resources: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"
+
+- id: prereq-plan-
+  weeks: ""
+  title: ""
+  resources: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"
+
+- id: prereq-plan-
+  weeks: ""
+  title: ""
+  resources: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"
+
+- id: prereq-plan-
+  weeks: ""
+  title: ""
+  resources: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"
+
+- id: prereq-plan-
+  weeks: ""
+  title: ""
+  resources: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"
+
+- id: prereq-plan-
+  weeks: ""
+  title: ""
+  resources: ""
+  outcome: ""
+  tier: optional
+  level: 1
+  seam: "on-ramp phase"

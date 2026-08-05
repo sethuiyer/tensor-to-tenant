@@ -1,0 +1,672 @@
+# Engineering primitives: 30 production-style implementations + 40 timed drills.
+# Per T1.2: schema discipline with id / tier / level / seam /
+# cross_references. Phase 4 (Engineering Micro-Projects) anchors these.
+
+# ============================================================================
+# Engineering tasks (30)
+# ============================================================================
+
+- id: eng-task-1
+  number: 1
+  title: "Implementation of retrieval engine with cosine similarity"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+- id: eng-task-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
+
+
+# ============================================================================
+# Practice exercises (40 timed drills)
+# ============================================================================
+
+- id: practice-1
+  number: 1
+  title: "Vector dot product using native Python vs NumPy"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+
+- id: practice-None
+  number: None
+  title: ""
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }

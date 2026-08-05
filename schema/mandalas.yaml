@@ -1,0 +1,274 @@
+# The 16-mandala identity progression.
+# 15 full mandalas (48 days each) + 1 graduation mandala = 16 entries.
+# Per T1.2 / T1.6: schema discipline with id / tier / level / seam /
+# cross_references. Each mandala is a load-bearing identity shift.
+
+- id: mandala-1
+  number: 1
+  days: "Days 1–48"
+  weeks: "Weeks 1–7"
+  title: "Build the learner’s operating system"
+  identity: "Disciplined learner"
+  transformation: >
+    They stop being someone “planning to study AI” and become someone with a functioning learning and engineering system.
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+    - "Python engineering, typing, testing and async fundamentals"
+    - "NumPy, vectorization and broadcasting"
+    - "Git, notebooks, Makefiles and reproducible experiments"
+    - "Docker, HTTP, APIs and Linux basics"
+    - "Personal mathematics and systems diagnostics"
+    - "Weekly journals, evidence tracking and retrospectives"
+    - "Vector spaces, span, basis and dimension"
+  evidence:
+    - "course dashboard and repository"
+    - "tested CLI project"
+    - "numerical utility library"
+    - "reproducible notebook"
+    - "diagnostic gap map"
+    - "containerized service"
+    - "first mathematics problem set"
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }
+
+- id: mandala-
+  number: 
+  days: ""
+  weeks: ""
+  title: ""
+  identity: ""
+  transformation: >
+    
+  tier: core
+  level: 2
+  seam: "identity progression"
+  topics:
+  evidence:
+  cross_references:
+    - { entity: weeks, role: "identity shift window" }

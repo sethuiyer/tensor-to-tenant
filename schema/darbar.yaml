@@ -1,0 +1,310 @@
+# Leetcode Darbar - parallel timed problem-solving lane.
+# Per T1.2 / T1.6: schema discipline with tier / level / seam /
+# cross_references on each entry. Darbar is parallel to the spine,
+# not part of it (Auror track is optional).
+
+- id: darbar-catalog
+  title: LeetCode Darbar
+  url: https://aninokuma.codeberg.page/leetcode-darbar/
+  total_slots: 548
+  difficulty_breakdown:
+    easy: 255
+    medium: 240
+    hard: 53
+  tagline: 548 hand-crafted picks covering the full data-structure and algorithm spectrum.
+  tier: optional
+  level: 2
+  seam: parallel interview lane
+  selection_rationale: Parallel, timed, problem-solving lane. The 108-week core never depends on Darbar; Auror track is opt-in
+    depth. Standard learners solve 3-5 problems per week aligned to the active phase.
+  load_bearing_for: []
+  cross_references:
+  - track: forge
+    role: shares algorithmic depth
+  - track: darbar
+    role: self-paced interview prep
+- id: darbar-pattern-timed-routing
+  name: Timed routing
+  weeks: 1-15
+  slots: 1-120
+  tips: Two-pointer scanning, map-based lookups, prefix products, interval merging
+  warmup: LeetCode-style easy problems (15 min each)
+  core: Data-structure and string/array basics under a clock
+  exam: Weekly timed block, 3-5 problems in 60 minutes
+  tier: core
+  level: 1
+  seam: parallel interview lane
+  selection_rationale: First block. Sets the weekly cadence (3-5 problems per week) and builds the timed-block habit before
+    the spine introduces more demanding material.
+  load_bearing_for:
+  - 1
+  - 15
+  cross_references:
+  - entity: phases
+    phase_id: phase-1
+    role: covers weeks 1-6
+  - entity: phases
+    phase_id: phase-2
+    role: covers weeks 7-15
+- id: darbar-pattern-state-machines
+  name: State machines and simulations
+  weeks: 16-30
+  slots: 121-200
+  tips: Transition tables, cycle detection in simulation, stack/queue state
+  warmup: Simulation and state-transition drills
+  core: Problems whose solution is a disciplined state machine
+  exam: 2-3 state-machine problems in 60 minutes
+  tier: core
+  level: 2
+  seam: parallel interview lane
+  selection_rationale: Covers the second spine phase (math) while training the discipline of modeling a process as a state
+    machine - directly useful for the inference and platform weeks later.
+  load_bearing_for:
+  - 16
+  - 30
+  cross_references:
+  - entity: phases
+    phase_id: phase-2
+    role: covers weeks 16-18
+  - entity: phases
+    phase_id: phase-3
+    role: covers weeks 19-30
+- id: darbar-pattern-tree-graph
+  name: Tree and graph fluency
+  weeks: 31-45
+  slots: 201-280
+  tips: DFS/BFS patterns, subtree invariants, shortest-path frames, topo order
+  warmup: Tree traversals and adjacency-list graph walks
+  core: Tree and graph problems across difficulty bands
+  exam: Tree+graph block with one design flavored problem
+  tier: core
+  level: 2
+  seam: parallel interview lane
+  selection_rationale: Aligns with the engineering primitives phase (W31-45). Top-K, sketches, and routing primitives all
+    use tree/graph patterns. The Capstone 2 (tree forensics) sits downstream.
+  load_bearing_for:
+  - 31
+  - 45
+  - capstone-2
+  cross_references:
+  - entity: phases
+    phase_id: phase-4
+    role: covers weeks 31-45
+  - entity: capstones
+    capstone_id: 2
+    role: feeds Capstone 2 tree forensics
+- id: darbar-pattern-data-structures
+  name: Data-structure mastery
+  weeks: 46-60
+  slots: 281-360
+  tips: Heaps, Fenwick/segment trees, tries, DSU, balanced structures
+  warmup: Standard-library structure drills
+  core: Problems that pick the right structure by workload shape
+  exam: Structure-selection exam with 2-3 advanced problems
+  tier: core
+  level: 2
+  seam: parallel interview lane
+  selection_rationale: Aligns with the system design weeks. Right-structure-by-workload is exactly the design judgment the
+    system design case studies test.
+  load_bearing_for:
+  - 46
+  - 60
+  cross_references:
+  - entity: phases
+    phase_id: phase-5
+    role: covers weeks 46-57
+  - entity: phases
+    phase_id: phase-6
+    role: covers weeks 58-60
+- id: darbar-pattern-advanced-fusion
+  name: Advanced and interview fusion
+  weeks: 61-90
+  slots: 361-470
+  tips: DP, greedy, sliding-window optimizations, offline queries
+  warmup: Classic DP and greedy patterns
+  core: Fusion problems that combine two or more techniques
+  exam: Mixed 4-problem block mirroring a real interview
+  tier: core
+  level: 3
+  seam: parallel interview lane
+  selection_rationale: Covers MLOps + LLM training + early inference weeks. The fusion framing directly mirrors real Staff-level
+    interview rounds where problems cross two domains.
+  load_bearing_for:
+  - 61
+  - 90
+  cross_references:
+  - entity: phases
+    phase_id: phase-6
+    role: covers weeks 61-69
+  - entity: phases
+    phase_id: phase-7
+    role: covers weeks 70-81
+  - entity: phases
+    phase_id: phase-8
+    role: covers weeks 82-90
+- id: darbar-pattern-mock-gauntlet
+  name: Mock and personal gauntlet
+  weeks: 91-108
+  slots: 471-548
+  tips: Full mock interviews, random pick from all patterns, time pressure
+  warmup: Two-problem blocks (45 min)
+  core: Company-tagged and previously missed problems
+  exam: Full mock interviews scored on a rubric
+  tier: core
+  level: 3
+  seam: parallel interview lane
+  selection_rationale: Capstone phase. Full mock interviews and rubric scoring prepare the learner for the W107 mock interview
+    week and the post-graduation job-search loop.
+  load_bearing_for:
+  - 91
+  - 108
+  - 107
+  cross_references:
+  - entity: phases
+    phase_id: phase-8
+    role: covers weeks 91-93
+  - entity: phases
+    phase_id: phase-9
+    role: covers weeks 94-102
+  - entity: phases
+    phase_id: phase-10
+    role: covers weeks 103-108
+  - entity: weeks
+    week: 107
+    role: feeds mock interview week
+- id: darbar-triangulation-heap
+  concept: Heap
+  speed: Top-K and scheduler problems
+  depth: Heap invariants and adversarial streams
+  artifact: Streaming Top-K / inference batching
+  tier: core
+  level: 2
+  seam: data structures
+  cross_references:
+  - entity: weeks
+    week: 32
+    role: feeds Top-K systems week
+  - entity: weeks
+    week: 90
+    role: feeds MoE scheduling
+- id: darbar-triangulation-trees
+  concept: Trees
+  speed: Traversal, LCA, tree DP
+  depth: Euler Tour, HLD, DSU on Tree
+  artifact: Agent-execution forensics
+  tier: core
+  level: 3
+  seam: data structures
+  cross_references:
+  - entity: capstones
+    capstone_id: 2
+    role: Capstone 2 tree forensics
+- id: darbar-triangulation-graphs
+  concept: Graphs
+  speed: BFS/DFS and shortest paths
+  depth: SCC, flow, matching, min-cost flow
+  artifact: Workflow and routing platform
+  tier: core
+  level: 3
+  seam: data structures
+  cross_references:
+  - entity: weeks
+    week: 98
+    role: feeds workflow execution
+  - entity: capstones
+    capstone_id: 3
+    role: feeds gateway routing
+- id: darbar-triangulation-strings
+  concept: Strings
+  speed: Prefix matching and tries
+  depth: KMP, Aho-Corasick, suffix structures
+  artifact: PII detector / retrieval index
+  tier: core
+  level: 2
+  seam: data structures
+  cross_references:
+  - entity: weeks
+    week: 37
+    role: feeds PII handling
+  - entity: weeks
+    week: 77
+    role: feeds retrieval fusion
+- id: darbar-triangulation-hashing
+  concept: Hashing
+  speed: Frequency and lookup patterns
+  depth: Consistent/rendezvous hashing
+  artifact: Tenant-aware routing and caches
+  tier: core
+  level: 2
+  seam: data structures
+  cross_references:
+  - entity: weeks
+    week: 43
+    role: feeds cardinality/routing
+- id: darbar-pacing-1-6
+  weeks: 1-6
+  emphasis: Arrays, strings, hash tables, stacks, queues, searching/sorting
+  production: Python engineering, APIs, diagnostics
+- id: darbar-pacing-7-30
+  weeks: 7-30
+  emphasis: Math, bit manipulation, divide and conquer, recursion, backtracking
+  production: Linear algebra, probability, statistics, optimization
+- id: darbar-pacing-31-45
+  weeks: 31-45
+  emphasis: Heaps, linked lists, tries, range queries, hashing
+  production: Retrieval, Top-K, caching, sketches, routing
+- id: darbar-pacing-46-57
+  weeks: 46-57
+  emphasis: Graphs, trees, greedy, DSU, range queries
+  production: System design, workflows, sharding, scheduling
+- id: darbar-pacing-58-69
+  weeks: 58-69
+  emphasis: Dynamic programming, greedy, math, probability
+  production: Experiment assignment, rollouts, monitoring
+- id: darbar-pacing-70-81
+  weeks: 70-81
+  emphasis: Strings, tries, graphs, sequence DP
+  production: Tokenization, retrieval, agents, guardrails
+- id: darbar-pacing-82-102
+  weeks: 82-102
+  emphasis: Heaps, priority queues, graphs, trees, range queries
+  production: Inference schedulers, quotas, queues, tenant fairness
+- id: darbar-pacing-103-108
+  weeks: 103-108
+  emphasis: Mixed timed sets and mock interviews
+  production: Mo's traces, Euler/DSU boss, portfolio defense
+
+- id: darbar-operating-rule
+  rules:
+  - 'Mon-Thu: one catalog problem per day'
+  - 'Fri: one timed problem or contest set'
+  - 'Weekend: review, editorial rewrite, or recovery'
+- id: darbar-categories
+  categories:
+  - array
+  - backtracking
+  - bit manipulation
+  - divide and conquer
+  - dynamic programming
+  - graphs
+  - greedy
+  - hash table
+  - heap
+  - linked list
+  - math
+  - queue
+  - range query
+  - recursion
+  - searching and sorting
+  - stack
+  - string
+  - trees
+  - trie
+- id: darbar-principles
+  principles:
+  - 'Rigor with sanity: prioritize problems that force the phase algorithms.'
+  - 'Timer on, then review: solve under a clock, then study the editorial regardless of outcome.'
+  - 'Evidence per slot: one file that proves the attempt, the solution, and the complexity note.'
+  - 'Patterns before volume: mastery is choosing the right tool for the workload, not memorizing solutions.'
+  - 'Mock pressure from week one: the timed block is a permanent part of the ritual.'
+  - 'Auror track is optional: the 548-slot catalog is depth; the 108-week path never depends on it.'

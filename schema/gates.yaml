@@ -1,0 +1,255 @@
+# Milestone gates — blocking checkpoints, not decorative progress markers.
+# Per T1.2 / T1.6: every entry has selection_rationale + level + seam +
+# cross_references. Drift check verifies schema matches src/data/gates.ts
+# at the byte-for-byte level after T1.7 lands.
+
+# ============================================================================
+# Programs (3 stackable releases)
+# ============================================================================
+
+- id: foundations
+  name: Foundations
+  weeks: W1–30
+  release_week: 30
+  release: Math, numerical routines, and experimentation toolkit
+  tier: core
+  level: 1
+  seam: stackable credentialing
+  selection_rationale: >
+    First of three stackable releases. W1–30 covers the math spine
+    (linear algebra, numerical methods, calculus, autodiff, probability,
+    statistics, basic experimentation) plus the engineering primitive
+    intro. The release at W30 is the first "you can prove something"
+    moment — math foundations, a numerical toolkit, an experimentation
+    workflow. A learner who ships this and stops is genuinely more
+    capable than 90% of ML engineers.
+  load_bearing_for: [30, "gate-3"]
+  cross_references:
+    - { entity: gates, gate_id: 3, role: "release gate" }
+    - { entity: weeks, week_range: "1-30", role: "scope" }
+
+- id: engineering_systems
+  name: Engineering + Systems
+  weeks: W31–69
+  release_week: 69
+  release: Tested primitives, system designs, MLOps tools, and postmortem
+  tier: core
+  level: 2
+  seam: stackable credentialing
+  selection_rationale: >
+    Second stackable release. W31–69 covers engineering primitives,
+    system design weeks, ML lifecycle and MLOps. The release at W69
+    is the "you can ship a production ML system" moment — primitives
+    with tests, design docs, an experimentation tool, monitoring. A
+    learner who ships this can hold a Staff-level conversation about
+    system trade-offs.
+  load_bearing_for: [69, "gate-6"]
+  cross_references:
+    - { entity: gates, gate_id: 6, role: "release gate" }
+    - { entity: weeks, week_range: "31-69", role: "scope" }
+
+- id: llm_platform
+  name: LLM Platform
+  weeks: W70–108
+  release_week: 108
+  release: LLM/RAG work, inference benchmark, platform layer, and capstone
+  tier: core
+  level: 3
+  seam: stackable credentialing
+  selection_rationale: >
+    Third and capstone stackable release. W70–108 covers LLM training
+    and RAG, inference performance engineering, production AI platform
+    engineering, and the three-capstone arc. The release at W108 is
+    "you can build and defend a multi-tenant LLM gateway." This is
+    the destination the curriculum is built for.
+  load_bearing_for: [108, "gate-10"]
+  cross_references:
+    - { entity: gates, gate_id: 10, role: "release gate" }
+    - { entity: weeks, week_range: "70-108", role: "scope" }
+    - { entity: capstones, role: "synthesis" }
+
+# ============================================================================
+# Gates (10 blocking checkpoints)
+# ============================================================================
+
+- id: gate-1
+  gate: 1
+  week: 6
+  criteria: Course repo · weekly tracker · Dockerized service · diagnostic report
+  remediation: Remediate orientation and systems setup
+  tier: core
+  level: 1
+  seam: orientation
+  selection_rationale: >
+    End of Phase 1 (Orientation, Tooling, Diagnostics). A learner who
+    can't get a containerized hello-world running by W6 doesn't have
+    the engineering substrate for the rest of the curriculum. This
+    gate catches environment / tooling problems early before they
+    compound into deeper confusion.
+  load_bearing_for: [6]
+  cross_references:
+    - { entity: weeks, week: 6, role: "exit criterion" }
+
+- id: gate-2
+  gate: 2
+  week: 18
+  criteria: Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines
+  remediation: Remediate linear/numerical algebra
+  tier: core
+  level: 1
+  seam: math foundations
+  selection_rationale: >
+    End of Phase 2 (Mathematical Foundations I). The math spine is
+    load-bearing for every downstream week: gradients in W22, PCA-style
+    experiments in W12, conditioning intuition in W84+. A learner who
+    can't explain these concepts from scratch doesn't have the substrate
+    for the inference, LLM, and platform weeks.
+  load_bearing_for: [18, 22, 84]
+  cross_references:
+    - { entity: weeks, week: 18, role: "exit criterion" }
+
+- id: gate-3
+  gate: 3
+  week: 30
+  criteria: Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE
+  remediation: Remediate calculus/statistics; publish Foundations release
+  tier: core
+  level: 1
+  seam: math foundations
+  selection_rationale: >
+    End of Phase 3 (Mathematical Foundations II) AND release of the
+    Foundations program (W1–30). This is the first "publishable
+    release" moment. After this gate, the learner can frame and answer
+    empirical questions correctly — the prerequisite for any ML work.
+  load_bearing_for: [30, "foundations-release"]
+  cross_references:
+    - { entity: weeks, week: 30, role: "exit criterion" }
+    - { entity: programs, program_id: foundations, role: "release gate" }
+
+- id: gate-4
+  gate: 4
+  week: 45
+  criteria: Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing)
+  remediation: Remediate the missing primitive contracts/tests
+  tier: core
+  level: 2
+  seam: engineering primitives
+  selection_rationale: >
+    End of Phase 4 (Engineering Micro-Projects). The 11 engineering
+    primitives are the load-bearing vocabulary for every system-design
+    week after this. A learner who hasn't implemented them can't
+    design systems that use them. This gate ensures the implementations
+    exist and have tests.
+  load_bearing_for: [45]
+  cross_references:
+    - { entity: weeks, week: 45, role: "exit criterion" }
+    - { entity: engineering, role: "all primitives" }
+
+- id: gate-5
+  gate: 5
+  week: 57
+  criteria: Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes
+  remediation: Remediate the weakest design pattern
+  tier: core
+  level: 2
+  seam: system design
+  selection_rationale: >
+    End of Phase 5 (System Design & Distributed Systems Fundamentals,
+    W46–57). This is the canonical interview-prep window. After this
+    gate, the learner can produce a defensible design doc under time
+    pressure — the load-bearing skill for Staff-level interviews.
+  load_bearing_for: [57]
+  cross_references:
+    - { entity: weeks, week: 57, role: "exit criterion" }
+    - { entity: system_design, role: "all weeks" }
+
+- id: gate-6
+  gate: 6
+  week: 69
+  criteria: A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan
+  remediation: Remediate experimentation/MLOps; publish Engineering + Systems release
+  tier: core
+  level: 2
+  seam: MLOps
+  selection_rationale: >
+    End of Phase 6 (ML Lifecycle, Experimentation, MLOps) AND release of
+    the Engineering + Systems program (W31–69). This gate ensures
+    "trustworthy evidence" — the learner can run an experiment and
+    distinguish a real signal from noise, which is the prerequisite
+    for any production ML change.
+  load_bearing_for: [69, "engineering-systems-release"]
+  cross_references:
+    - { entity: weeks, week: 69, role: "exit criterion" }
+    - { entity: programs, program_id: engineering_systems, role: "release gate" }
+
+- id: gate-7
+  gate: 7
+  week: 81
+  criteria: RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype
+  remediation: Remediate the weakest LLM/RAG component
+  tier: core
+  level: 3
+  seam: RAG
+  selection_rationale: >
+    End of Phase 7 (LLM Training, RAG, Agents, Evaluation, W70–81). This
+    is the first "you can ship an LLM product" gate. A learner who
+    can build a RAG pipeline, evaluate it by slice, and articulate
+    where it breaks has the production-ready LLM substrate.
+  load_bearing_for: [81]
+  cross_references:
+    - { entity: weeks, week: 81, role: "exit criterion" }
+
+- id: gate-8
+  gate: 8
+  week: 93
+  criteria: Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding report, inference cost model
+  remediation: Remediate inference benchmarking and operations
+  tier: core
+  level: 3
+  seam: inference operations
+  selection_rationale: >
+    End of Phase 8 (LLM Inference & Performance Engineering, W82–93).
+    This gate is the "you can serve a model in production" moment.
+    The deliverable list (vLLM/SGLang deploy, benchmark methodology,
+    quantization report, inference cost model) is exactly what a Staff
+    inference engineer is expected to produce.
+  load_bearing_for: [93]
+  cross_references:
+    - { entity: weeks, week: 93, role: "exit criterion" }
+
+- id: gate-9
+  gate: 9
+  week: 102
+  criteria: "Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters"
+  remediation: Remediate the missing platform capability
+  tier: core
+  level: 3
+  seam: production AI platform
+  selection_rationale: >
+    End of Phase 9 (Production AI Platform Engineering, W94–102). This
+    is the "you can ship a multi-tenant LLM platform" gate. Without
+    these capabilities, the Capstone 3 gateway is a toy, not a product.
+  load_bearing_for: [102, "capstone-3"]
+  cross_references:
+    - { entity: weeks, week: 102, role: "exit criterion" }
+    - { entity: capstones, capstone_id: 3, role: "prerequisite" }
+
+- id: gate-10
+  gate: 10
+  week: 108
+  criteria: Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan
+  remediation: Remediate the specific capstone/interview gap
+  tier: core
+  level: 3
+  seam: graduation
+  selection_rationale: >
+    End of Phase 10 (Capstone, Portfolio, Interview Readiness, W103–108)
+    AND release of the LLM Platform program (W70–108). This is the
+    "you're done with the apprenticeship" gate. The deliverables
+    (capstone done, portfolio published, mocks passed, 30-day plan) are
+    the proof of completion.
+  load_bearing_for: [108, "llm-platform-release"]
+  cross_references:
+    - { entity: weeks, week: 108, role: "exit criterion" }
+    - { entity: programs, program_id: llm_platform, role: "release gate" }
+    - { entity: capstones, role: "completion" }

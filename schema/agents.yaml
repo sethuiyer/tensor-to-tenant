@@ -1,0 +1,223 @@
+# GenAI Agents curriculum: 18 modules + Module 7.5 (MCP) + Manus capstone.
+# Per T1.2: schema discipline. Maps onto Phase 7 (LLM training + RAG + agents).
+
+# ============================================================================
+# Agent modules (18 + 1 MCP)
+# ============================================================================
+
+- id: agent-module-1
+  module_id: "1"
+  title: "Exploring the Generative AI Universe"
+  topics:
+    - "Fundamentals of Generative AI: Models, Parameters, Embeddings"
+    - "The GenAI Universe: Components, Key Players, Ecosystem Overview"
+    - "Introduction to Prompt Engineering Techniques"
+    - "Basics of Retrieval Augmented Generation (RAG) and its applications"
+    - "Introduction to AI Agents and their applications"
+  outcomes:
+    - "Explain the foundational concepts of generative AI models"
+    - "Identify key components in the GenAI ecosystem"
+    - "Apply basic prompt engineering techniques"
+    - "Understand RAG systems and their applications"
+    - "Describe the role and potential of AI agents"
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+- id: agent-module-
+  module_id: ""
+  title: ""
+  topics:
+  tier: core
+  level: 2
+  seam: "GenAI agents"
+  cross_references:
+    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
+
+
+# ============================================================================
+# Project Manus capstone
+# ============================================================================
+
+- id: project-manus
+  title: "Project Manus - Agentic UI Automation"
+  vision: >
+    
+  architecture:
+  features:
+  challenges:
+  tier: core
+  level: 3
+  seam: "agent capstone"

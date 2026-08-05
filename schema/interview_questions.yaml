@@ -26,10 +26,10 @@
     memory+GPU-estimation problem (ttc_throughput_cost_under_slo's
     sibling) supplies the calculation.
   acceptable_answers_skeleton:
-    - "State the FP16 weights memory: 70B × 2 bytes = 140 GB."
-    - "Add KV cache memory using the MHA/MQA/GQA/MLA formulas (TTI)." pattern:
-    - "Add activation memory per request × concurrency target."
-    - "Divide by per-GPU memory budget (H100 80GB, A100 40GB, etc.)."
+    - "State the FP16 weights memory: 70B times 2 bytes equals 140 GB."
+    - "Add KV cache memory using the MHA/MQA/GQA/MLA formulas."
+    - "Add activation memory per request times concurrency target."
+    - "Divide by per-GPU memory budget (H100 80GB, A100 40GB, etc)."
     - "State the minimum count, then double for tensor-parallel overhead."
   cross_references:
     - { week: 93, role: "primary load-bearing week" }
