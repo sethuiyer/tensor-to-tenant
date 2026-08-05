@@ -74,6 +74,15 @@ papers (ReAct, Toolformer, DSPy, LangGraph, CRAG, MCP, Generative Agents,
 Reflexion, AutoGen, Kuzzu) are assigned to the Weeks 73–81 journals that
 explain them.
 
+## Tool recommendation systems (optional parallel deep-dive)
+
+The recommender track runs alongside Forge, Darbar, and Agents. Read
+`09_interview/recommender/SEARCH.md` first for Level 2 recommendation math,
+then `SNOWFLAKE.md` for the Level 3 production implementation. Use
+`progress.md` for the 41 section checkboxes and record the failure mode and
+metric each signal needs in production; optional exercises live in the
+`exercises/` directory. `make status` reports its completion percentage.
+
 Coming in without programming comfort? `docs/prerequisites.md` is the optional
 36-week on-ramp: nine resources in order (CS50x, Nand to Tetris, MIT 6.042J,
 Statistical Learning, and more). `docs/mandala.md` is the 16-mandala identity
@@ -112,7 +121,8 @@ ladder the course is built around.
 │   ├── system_design/                  # canonical Weeks 46-57 design + OOD track
 │   ├── leetcode_darbar/                # 548-slot optional interview tracker
 │   ├── algorithmic_forge/              # core, supporting, archive, boss_fights
-│   └── agents/                         # one scaffold per agents module
+│   ├── agents/                         # one scaffold per agents module
+│   └── recommender/                     # paired SEARCH.md → SNOWFLAKE.md deep-dive
 ├── portfolio/                          # Weeks 30, 69, and 108 release checklists
 └── scripts/                            # weekly, recovery, release, gate, progress, agents
 ```

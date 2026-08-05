@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Tool recommendation pipeline</title>
+  <desc id="desc">Query and metadata signals flow through embedding, lexical, and graph scoring, then normalization and dynamic filtering produce explainable ranked tools.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#171329"/><stop offset="1" stop-color="#111827"/></linearGradient>
+    <linearGradient id="violet" x1="0" x2="1"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="amber" x1="0" x2="1"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+    <style>
+      .box{fill:#1e293b;stroke:#475569;stroke-width:2}.theory{stroke:#8b5cf6}.prod{stroke:#f59e0b}.txt{fill:#e2e8f0;font:600 16px Inter,Arial,sans-serif}.small{fill:#94a3b8;font:13px Inter,Arial,sans-serif}.line{fill:none;stroke:#94a3b8;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="900" height="430" rx="24" fill="url(#bg)"/>
+  <text x="42" y="43" class="txt" font-size="20">Multi-signal recommender</text>
+  <text x="42" y="67" class="small">no single signal wins · the combination wins</text>
+  <rect x="42" y="111" width="155" height="72" rx="12" class="box theory"/>
+  <text x="119" y="139" text-anchor="middle" class="txt">Query + intent</text><text x="119" y="162" text-anchor="middle" class="small">text · type · policy</text>
+  <rect x="42" y="239" width="155" height="72" rx="12" class="box theory"/>
+  <text x="119" y="267" text-anchor="middle" class="txt">Tool metadata</text><text x="119" y="290" text-anchor="middle" class="small">edges · tokens · types</text>
+  <path d="M197 147 H240" class="line"/><path d="M197 275 H220 Q240 275 240 223" class="line"/>
+  <rect x="240" y="126" width="175" height="129" rx="12" class="box theory"/>
+  <text x="327" y="155" text-anchor="middle" class="txt">Signal scores</text><text x="327" y="181" text-anchor="middle" class="small">cosine + pooling</text><text x="327" y="201" text-anchor="middle" class="small">IDF + type affinity</text><text x="327" y="221" text-anchor="middle" class="small">graph + hop decay</text>
+  <path d="M415 190 H465" class="line"/>
+  <rect x="465" y="126" width="175" height="129" rx="12" class="box prod"/>
+  <text x="552" y="155" text-anchor="middle" class="txt">Normalize + combine</text><text x="552" y="181" text-anchor="middle" class="small">weighted Adamic–Adar</text><text x="552" y="201" text-anchor="middle" class="small">min–max normalization</text><text x="552" y="221" text-anchor="middle" class="small">telemetry reranking</text>
+  <path d="M640 190 H690" class="line"/>
+  <rect x="690" y="126" width="168" height="129" rx="12" class="box prod"/>
+  <text x="774" y="155" text-anchor="middle" class="txt">Serve + explain</text><text x="774" y="181" text-anchor="middle" class="small">percentile noise floor</text><text x="774" y="201" text-anchor="middle" class="small">Cortex Search</text><text x="774" y="221" text-anchor="middle" class="small">ranked tools + reasons</text>
+  <path d="M774 255 V325" class="line"/>
+  <rect x="600" y="325" width="258" height="60" rx="12" class="box prod"/>
+  <text x="729" y="351" text-anchor="middle" class="txt">Streams + Tasks refresh</text><text x="729" y="372" text-anchor="middle" class="small">incremental graph / index updates</text>
+  <text x="42" y="383" class="small">Level 2 math</text><rect x="126" y="374" width="12" height="12" rx="3" fill="url(#violet)"/><text x="155" y="383" class="small">Level 3 production seam</text><rect x="300" y="374" width="12" height="12" rx="3" fill="url(#amber)"/>
+</svg>

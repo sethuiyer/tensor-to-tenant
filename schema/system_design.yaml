@@ -1,471 +1,594 @@
 # System design track (Weeks 46-57): canonical interview prep.
-# Per T1.2: schema discipline with id / tier / level / seam /
-# cross_references. Phase 5 anchors the system design weeks.
-
-# ============================================================================
-# Design weeks (Weeks 46-57)
-# ============================================================================
-
+# Generated metadata view; edit schema fields then run tools/generate.py.
 - id: design-week-46
   week: 46
-  topic: "Delivery framework, requirements, networking, numbers to know"
-  case_lab: "URL shortener / Bitly"
-  evidence: "Framed design + capacity sheet"
+  topic: Delivery framework, requirements, networking, numbers to know
+  case_lab: URL shortener / Bitly
+  evidence: Framed design + capacity sheet
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 46; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: 46, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 46
+    role: spine alignment
+- id: design-week-47
+  week: 47
+  topic: API design, data modeling, indexing, contracts
+  case_lab: LeetCode problem service
+  evidence: API and schema package
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 47; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 47
+    role: spine alignment
+- id: design-week-48
+  week: 48
+  topic: Caching, sharding, consistent hashing, CAP
+  case_lab: Rate limiter + distributed cache
+  evidence: Design, key layout, failure table
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 48; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 48
+    role: spine alignment
+- id: design-week-49
+  week: 49
+  topic: Replication, read/write scaling, contention
+  case_lab: News feed / Instagram
+  evidence: Read path, write path, consistency choice
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 49; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 49
+    role: spine alignment
+- id: design-week-50
+  week: 50
+  topic: Large blobs, CDN, metadata, resumable work
+  case_lab: Dropbox / Google Docs
+  evidence: Storage design + recovery plan
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 50; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 50
+    role: spine alignment
+- id: design-week-51
+  week: 51
+  topic: Queues, workflows, long-running tasks
+  case_lab: Job scheduler / Slack job queue
+  evidence: State machine + retry/idempotency plan
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 51; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 51
+    role: spine alignment
+- id: design-week-52
+  week: 52
+  topic: Schema evolution, real-time updates, coordination
+  case_lab: WhatsApp / notification system
+  evidence: Contract migration + delivery semantics
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 52; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 52
+    role: spine alignment
+- id: design-week-53
+  week: 53
+  topic: Search, proximity, crawling, ranking
+  case_lab: Yelp / FB post search / web crawler
+  evidence: Index and freshness design
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 53; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 53
+    role: spine alignment
+- id: design-week-54
+  week: 54
+  topic: Messaging and social fan-out
+  case_lab: FB Live Comments / Tinder / Discord
+  evidence: Fan-out model + hot-key strategy
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 54; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 54
+    role: spine alignment
+- id: design-week-55
+  week: 55
+  topic: Scheduling, scarcity, marketplace correctness
+  case_lab: Ticketmaster / Uber / local delivery / auction
+  evidence: Reservation invariant + contention test
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 55; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 55
+    role: spine alignment
+- id: design-week-56
+  week: 56
+  topic: Streaming, analytics, and data infrastructure
+  case_lab: Ad clicks / metrics / Robinhood / Spotify data lake
+  evidence: Stream topology + watermark/replay notes
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 56; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-- id: design-week-None
-  week: None
-  topic: ""
-  case_lab: ""
-  evidence: ""
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 56
+    role: spine alignment
+- id: design-week-57
+  week: 57
+  topic: Integrated architecture and interview boss
+  case_lab: ChatGPT / payment system / Figma multiplayer
+  evidence: Staff-level design review + trade-off defense
   tier: core
   level: 2
-  seam: "system design"
+  seam: system design
+  selection_rationale: System design case week 57; practice requirements, trade-offs, and failure modes.
   cross_references:
-    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
-    - { entity: weeks, week: None, role: "spine alignment" }
-
-
-# ============================================================================
-# Four-layer design loop
-# ============================================================================
-
+  - entity: phases
+    phase_id: phase-5
+    role: lives in Phase 5
+  - entity: weeks
+    week: 57
+    role: spine alignment
 - id: design-loop-frame
-  step: "Frame"
-  detail: "requirements, users, SLOs, scale, privacy, and cost"
+  step: Frame
+  detail: requirements, users, SLOs, scale, privacy, and cost
   tier: core
   level: 2
-  seam: "system design methodology"
-
-- id: design-loop-
-  step: ""
-  detail: ""
+  seam: system design methodology
+  selection_rationale: Reusable layer in the four-step design loop.
+- id: design-loop-shape
+  step: Shape
+  detail: APIs, data model, partitioning, indexes, caches, and queues
   tier: core
   level: 2
-  seam: "system design methodology"
-
-- id: design-loop-
-  step: ""
-  detail: ""
+  seam: system design methodology
+  selection_rationale: Reusable layer in the four-step design loop.
+- id: design-loop-stress
+  step: Stress
+  detail: contention, failure modes, consistency, replay, recovery, and observability
   tier: core
   level: 2
-  seam: "system design methodology"
-
-- id: design-loop-
-  step: ""
-  detail: ""
+  seam: system design methodology
+  selection_rationale: Reusable layer in the four-step design loop.
+- id: design-loop-extend
+  step: Extend
+  detail: the AI concern — embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution
   tier: core
   level: 2
-  seam: "system design methodology"
-
-
-# ============================================================================
-# Design patterns (canonical library)
-# ============================================================================
-
+  seam: system design methodology
+  selection_rationale: Reusable layer in the four-step design loop.
+- id: design-tech-core
+  technologies:
+  - Redis
+  - PostgreSQL
+  - Kafka
+  - Flink
+  - API gateway
+  - vector database
+  tier: core
+  level: 2
+  seam: system design technology map
+  selection_rationale: Core technologies for design trade-off fluency.
+- id: design-tech-supporting
+  technologies:
+  - Elasticsearch
+  - Cassandra
+  - DynamoDB
+  - ZooKeeper
+  - time-series databases
+  - big-data structures
+  tier: core
+  level: 2
+  seam: system design technology map
+  selection_rationale: Supporting technologies for design trade-off fluency.
 - id: design-pattern-rate-limiter
-  pattern: "Rate limiter"
-  problem: "One user or tenant floods the API"
-  solution: "Token bucket or sliding window; distributed counter for horizontal scale"
+  pattern: Rate limiter
+  problem: One user or tenant floods the API
+  solution: Token bucket or sliding window; distributed counter for horizontal scale
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-caching-lru-ttl
+  pattern: Caching (LRU, TTL)
+  problem: Repeat reads on the same keys
+  solution: Cache-aside with bounded size; TTL plus write-through/invalidation
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-consistent-hashing
+  pattern: Consistent hashing
+  problem: Rehashing a hash table when nodes join/leave
+  solution: Hash ring so a membership change moves only a fraction of keys
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-read-replicas
+  pattern: Read replicas
+  problem: Read traffic outpaces a single primary
+  solution: Primary for writes, replicas for reads; handle replication lag
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-queue-+-workers
+  pattern: Queue + workers
+  problem: Slow or bursty async work
+  solution: Durable queue with consumer groups and retries with backoff
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-idempotency-keys
+  pattern: Idempotency keys
+  problem: Client retries create duplicate effects
+  solution: Store request key and result; replay the original outcome
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-circuit-breaker
+  pattern: Circuit breaker
+  problem: A downstream dependency is failing
+  solution: Open the circuit after a threshold, fail fast, then probe
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-feature-flags
+  pattern: Feature flags
+  problem: Deploying risky code to everyone at once
+  solution: Dynamic flag rules with gradual rollout and kill switch
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-replication-+-leader-election
+  pattern: Replication + leader election
+  problem: The sealer/scheduler must be a single writer
+  solution: Lease-based election with fencing so stale leaders cannot commit
   tier: core
   level: 2
-  seam: "design patterns"
-
-- id: design-pattern-
-  pattern: ""
-  problem: ""
-  solution: ""
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-append-only-ledger
+  pattern: Append-only ledger
+  problem: Audit and billing require exact history
+  solution: Immutable event log; materialize dashboards separately
   tier: core
   level: 2
-  seam: "design patterns"
-
-
-# ============================================================================
-# Case studies (deep-dives)
-# ============================================================================
-
-- id: design-case-url-shortener
-  name: "URL shortener"
-  focuses: "Hashing, ID generation, cache, 301 vs 302"
+  seam: design patterns
+  selection_rationale: Canonical pattern for system-design trade-off practice.
+- id: design-pattern-index-foundations
+  name: foundations
+  summary: Introduction, how to prepare, delivery framework, core concepts, key technologies, common patterns, networking
+    essentials, API design, data modeling, and numbers to know.
   tier: core
   level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
+  seam: design pattern taxonomy
+  selection_rationale: Index into the canonical design pattern library.
+- id: design-pattern-index-distributed
+  name: distributed
+  summary: Caching, sharding, consistent hashing, CAP, database indexing, scaling reads, scaling writes, real-time updates,
+    contention, multi-step processes, long-running tasks, large blobs, replication, schema evolution, and observability.
   tier: core
   level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-- id: design-case-
-  name: ""
-  focuses: ""
-  tier: core
-  level: 2
-  seam: "case study"
-
-
-# ============================================================================
-# Case-study families
-# ============================================================================
-
+  seam: design pattern taxonomy
+  selection_rationale: Index into the canonical design pattern library.
 - id: design-family-storage-and-collaboration
-  family: "Storage and collaboration"
-  cases: "Dropbox, Google Docs, Discord message storage, Figma multiplayer"
+  family: Storage and collaboration
+  cases: Dropbox, Google Docs, Discord message storage, Figma multiplayer
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-- id: design-family-
-  family: ""
-  cases: ""
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-family-messaging-and-notifications
+  family: Messaging and notifications
+  cases: WhatsApp, FB Live Comments, notification system, Slack job queue
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-- id: design-family-
-  family: ""
-  cases: ""
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-family-search-and-retrieval
+  family: Search and retrieval
+  cases: Yelp, FB Post Search, proximity search, web crawler, ChatGPT
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-- id: design-family-
-  family: ""
-  cases: ""
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-family-scheduling-and-logistics
+  family: Scheduling and logistics
+  cases: Job Scheduler, Uber, local delivery, Ticketmaster, online chess
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-- id: design-family-
-  family: ""
-  cases: ""
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-family-streaming-and-analytics
+  family: Streaming and analytics
+  cases: Ad Click Aggregator, Metrics Monitoring, Robinhood, Spotify Data Lake
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-- id: design-family-
-  family: ""
-  cases: ""
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-family-marketplace-and-money
+  family: Marketplace and money
+  cases: Online Auction, Payment System, Shopify Inventory Reservations
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-- id: design-family-
-  family: ""
-  cases: ""
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-family-social-products
+  family: Social products
+  cases: FB News Feed, Instagram, Tinder, Strava, News Aggregator
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-- id: design-family-
-  family: ""
-  cases: ""
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-family-platform-primitives
+  family: Platform primitives
+  cases: Bitly, Distributed Cache, Rate Limiter, YouTube, YouTube Top K, LeetCode, Price Tracking Service
   tier: core
   level: 2
-  seam: "case-study taxonomy"
-
-
-# ============================================================================
-# OOD / LLD problems (Thursday implementation variant)
-# ============================================================================
-
-
-# ============================================================================
-# AI extensions (one per base design)
-# ============================================================================
-
+  seam: case-study taxonomy
+  selection_rationale: Case-study family that groups reusable system trade-offs.
+- id: design-case-url-shortener
+  name: URL shortener
+  focuses: Hashing, ID generation, cache, 301 vs 302
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-dropbox
+  name: Dropbox
+  focuses: Blob storage, chunking, sync conflicts, metadata DB
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-ticketmaster
+  name: Ticketmaster
+  focuses: Hot-row contention, seat holds, payment idempotency
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-news-feed
+  name: News Feed
+  focuses: Fan-out on write vs read, ranking feed cache
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-whatsapp
+  name: WhatsApp
+  focuses: Presence, message delivery, mobile constraints
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-leetcode-judge
+  name: LeetCode judge
+  focuses: Sandboxing, queue, result correctness
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-uber
+  name: Uber
+  focuses: Geo-spatial indexing, dispatch, ETA aggregation
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-web-crawler
+  name: Web crawler
+  focuses: Frontier, politeness, deduplication, fault tolerance
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-ad-click-aggregator
+  name: Ad click aggregator
+  focuses: Streaming aggregation, windowing, at-least-once semantics
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: design-case-payments
+  name: Payments
+  focuses: Idempotency, ledger correctness, settlement
+  tier: core
+  level: 2
+  seam: case study
+  selection_rationale: Case study for timed design practice.
+- id: ood-problems
+  problems:
+  - Connect Four
+  - Amazon Locker
+  - Elevator
+  - Parking Lot
+  - File System
+  - Movie Ticket Booking
+  - Logging Service
+  - Rate Limiter
+  - Inventory Management
+  tier: core
+  level: 2
+  seam: object-oriented design
+  selection_rationale: Thursday implementation variants for design fluency.
 - id: ai-extension-whatsapp
-  base: "WhatsApp"
-  extension: "Semantic search, agent memory, PII-safe message retrieval"
+  base: WhatsApp
+  extension: Semantic search, agent memory, PII-safe message retrieval
   tier: core
   level: 3
-  seam: "design + AI"
-
-- id: ai-extension-
-  base: ""
-  extension: ""
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: ai-extension-search-/-yelp
+  base: Search / Yelp
+  extension: Hybrid BM25+dense retrieval, reranking, slice evaluation
   tier: core
   level: 3
-  seam: "design + AI"
-
-- id: ai-extension-
-  base: ""
-  extension: ""
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: ai-extension-job-scheduler
+  base: Job scheduler
+  extension: Tool-call DAGs, retries, cancellation, quota-aware admission
   tier: core
   level: 3
-  seam: "design + AI"
-
-- id: ai-extension-
-  base: ""
-  extension: ""
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: ai-extension-chatgpt
+  base: ChatGPT
+  extension: Conversation storage, prompt registry, routing, KV cache, evaluation
   tier: core
   level: 3
-  seam: "design + AI"
-
-- id: ai-extension-
-  base: ""
-  extension: ""
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: ai-extension-streaming-metrics
+  base: Streaming metrics
+  extension: Token/cost attribution, watermarking, late-event correction
   tier: core
   level: 3
-  seam: "design + AI"
-
-- id: ai-extension-
-  base: ""
-  extension: ""
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: ai-extension-payment-/-reservations
+  base: Payment / reservations
+  extension: Idempotency, exactly-once effects, auditability, contention
   tier: core
   level: 3
-  seam: "design + AI"
-
-- id: ai-extension-
-  base: ""
-  extension: ""
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: ai-extension-figma-multiplayer
+  base: Figma multiplayer
+  extension: Collaborative agent state, conflict resolution, presence
   tier: core
   level: 3
-  seam: "design + AI"
-
-- id: ai-extension-
-  base: ""
-  extension: ""
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: ai-extension-distributed-cache
+  base: Distributed cache
+  extension: Semantic and embedding cache with tenant isolation
   tier: core
   level: 3
-  seam: "design + AI"
+  seam: design + AI
+  selection_rationale: AI extension that exposes the seam between a classic system and an AI system.
+- id: design-capability-requirements-and-constraints
+  name: Requirements & constraints
+  description: Clarify scale, SLOs, budget, and non-goals before proposing a stack
+  tier: core
+  level: 2
+  seam: system design capability
+  selection_rationale: Capability measured by the Gate 5 design review.
+- id: design-capability-api-design
+  name: API design
+  description: Resource-oriented contracts, pagination, idempotency, error shapes
+  tier: core
+  level: 2
+  seam: system design capability
+  selection_rationale: Capability measured by the Gate 5 design review.
+- id: design-capability-data-modeling
+  name: Data modeling
+  description: Relational vs document vs columnar; denormalization for reads
+  tier: core
+  level: 2
+  seam: system design capability
+  selection_rationale: Capability measured by the Gate 5 design review.
+- id: design-capability-distributed-patterns
+  name: Distributed patterns
+  description: Rate limiting, caching, queues, consistent hashing, replication, leader election
+  tier: core
+  level: 2
+  seam: system design capability
+  selection_rationale: Capability measured by the Gate 5 design review.
+- id: design-capability-failure-analysis
+  name: Failure analysis
+  description: Identify single points of failure and design for partial outage
+  tier: core
+  level: 2
+  seam: system design capability
+  selection_rationale: Capability measured by the Gate 5 design review.
+- id: design-capability-trade-off-defense
+  name: Trade-off defense
+  description: 'Justify every choice: consistency, cost, complexity, operations'
+  tier: core
+  level: 2
+  seam: system design capability
+  selection_rationale: Capability measured by the Gate 5 design review.
+- id: design-gate-5
+  criteria:
+  - requirements and SLOs
+  - API and data model
+  - partition, index, cache, queue, and replication choices
+  - capacity estimates and a bottleneck plan
+  - consistency, contention, idempotency, and failure semantics
+  - observability, privacy, tenant isolation, and cost controls
+  - one AI extension and a clear trade-off defense
+  tier: core
+  level: 2
+  seam: system design gate
+  selection_rationale: Gate 5 acceptance rubric for system design.

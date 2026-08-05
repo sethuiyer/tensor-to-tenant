@@ -19,6 +19,12 @@ Today these three are hand-written and drift silently. The schema is the
 single source of truth that generators (T1.3) read from to produce (2)
 and (3), and that drift checks (T1.6) verify against (1).
 
+`source_data.yaml` and `cookiecutter.yaml` are generated migration fixtures.
+They retain legacy exports that were not represented by the first entity pass;
+edit the entity YAML files, then run `python3 tools/generate.py`. The generator
+merges modeled entity fields over those fixtures and refuses malformed spine
+IDs/ranges before writing any output.
+
 ## P-principles applied
 
 Every entry in any entity file must pass:
@@ -52,7 +58,7 @@ Every entry in any entity file must pass:
 | `interview.yaml` | CARL stories + 176-item roadmap | Coming with T1.2 |
 | `interview_questions.yaml` | Level 3 question bank (T1.11) | T1.11 (landing Phase 2) |
 | `implementation_exercises.yaml` | TensorTonic catalog + Pattern C prerequisites | T1.10 (landing Phase 2) |
-| `deep_dives.yaml` | Parallel-track pair registry (T1.12) | Reserved for T1.12 |
+| `deep_dives.yaml` | Parallel-track pair registry (T1.12) | T1.12 (theory + production pairs) |
 | `prerequisites.yaml` | 9-resource on-ramp | Coming with T1.2 |
 
 ## Schema discipline is enforced in three places

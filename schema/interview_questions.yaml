@@ -153,6 +153,59 @@
     - { week: 14, role: "low-rank precedent" }
     - { week: 82, role: "inference fundamentals" }
 
+- id: linear_attention_vs_kv_cache_recurrence
+  question: "When would you use a linear-attention / SSM recurrence (Mamba, DeltaNet) instead of softmax attention with a KV cache?"
+  week: 92
+  level: 3
+  pattern: prerequisite
+  seam: "KV cache vs learned recurrence"
+  selection_rationale: >
+    The naive answer is "never, transformers won." The Level 3 answer
+    walks the W92 trade-off: softmax attention has a growing KV cache
+    but exact content addressing; linear attention (ELU+1) has a
+    constant-size state but weak associative recall; Mamba adds
+    input-dependent selection to the state; DeltaNet / Gated DeltaNet
+    make state writes precise via the delta rule. The deciding factors
+    are context length, memory budget, and whether the task needs
+    exact retrieval vs summary-state recall. Pairs with the
+    MQA/GQA/MLA question (the other axis of KV-cache reduction) and
+    the KV-cache memory formula from W84.
+  acceptable_answers_skeleton:
+    - "State the memory difference: KV cache grows with context and batch; a recurrence has a fixed-size state."
+    - "Name the recall weakness: fixed-kernel linear attention underperforms on associative recall (MQAR)."
+    - "Explain the fix lineage: DeltaNet's delta rule, Gated DeltaNet's gating + delta rule, Mamba-2's SSD."
+    - "Give a production signal: hybrid layers (softmax attention every N-th layer) are the 2024-25 compromise."
+    - "Reference at least one frontier model (Kimi/MiniMax for linear-attention hybrids, Mamba-2 for SSD)."
+  cross_references:
+    - { week: 84, role: "KV cache memory baseline" }
+    - { week: 92, role: "primary attention-alternatives week" }
+
+- id: agent_harness_design
+  question: "How would you architect the harness for a coding agent that can run shell commands and edit files?"
+  week: 81
+  level: 3
+  pattern: prerequisite
+  seam: "the harness layer between the agent loop and the tools"
+  selection_rationale: >
+    The naive answer is "wrap the LLM in a loop." The Level 3 answer
+    walks the W81 harness seam: tool-approval gates (which tools run
+    without asking, which need consent), session persistence and
+    crash-resume (so an aborted run restarts from state, not scratch),
+    context compaction (the context window is the finite budget),
+    sub-agent fan-out (parallel read-only work in isolated contexts),
+    and the sandboxing trade-off (host-shell convenience vs
+    containment -- the Pi / Claude Code / Codex caveat). Pairs with
+    the MCP module (the tool contract) and the W96 sandboxing week.
+  acceptable_answers_skeleton:
+    - "Separate read-only tools (auto-run) from mutating tools (approval gate)."
+    - "Persist the session (JSONL) and support resume from a crash mid-run."
+    - "Treat the context window as the budget: compaction, /clear, subagents for isolation."
+    - "Describe sub-agent fan-out for parallel read-only work and why isolation matters."
+    - "State the sandboxing trade-off: host-shell tools are convenient but not contained; --read-only or a container is the escape hatch."
+  cross_references:
+    - { week: 81, role: "primary agent foundations week" }
+    - { week: 96, role: "sandboxed execution precedent" }
+
 # ============================================================================
 # T1.11.g — The third-party template (durable pattern)
 # ============================================================================

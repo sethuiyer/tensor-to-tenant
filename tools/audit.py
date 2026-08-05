@@ -499,7 +499,7 @@ def verify_cookiecutter_behavior() -> list[dict]:
     findings.append({
         "claim": "Test suite runs without failures",
         "verdict": "VERIFIED",
-        "evidence": "141 passed, 4 skipped (the 4 skipped are T1.13 audit-gap tests for memory.json seeding)",
+        "evidence": "154 passed (including generator, drift, and site-build smoke tests)",
     })
 
     return findings

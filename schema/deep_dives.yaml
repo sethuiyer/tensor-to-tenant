@@ -1,0 +1,114 @@
+# Parallel deep-dive tracks (T1.12).
+#
+# Unlike the 108-week spine, entries here are opt-in reading units.  A
+# parallel track is only admitted when a theory artifact is paired with a
+# production artifact that demonstrates where the theory breaks.
+#
+# Pair invariants enforced by tests/tools:
+#   * parallel_track entries have theory + production primary_artifacts;
+#   * production artifacts point at their theory prerequisite;
+#   * local paths resolve from the repository root; and
+#   * every artifact has the metadata needed by the site and scaffold.
+
+- id: tool_recommendation_systems
+  title: "Tool Recommendation Systems"
+  short_name: recommender
+  parallel_track: true
+  primary_artifacts:
+    - { id: search_md, path: "SEARCH.md", role: theory }
+    - { id: snowflake_md, path: "SNOWFLAKE.md", role: production }
+  pair_enforcement: strict
+  tier: optional
+  level: 2
+  seam: "multi-signal recommendation over graph + embedding + metadata"
+  selection_rationale: >-
+    The pair is the seam philosophy applied to recommendation systems.
+    SEARCH.md introduces the elegant math (graph traversal, hop decay,
+    Adamic-Adar, IDF, type affinity, dynamic thresholds, and multi-signal
+    combination) at Level 2. SNOWFLAKE.md implements that same theory in
+    production Snowflake SQL and exposes where the math dies on contact with
+    AI_EMBED permissions, recursive-CTE cycle prevention, Cortex Search
+    latency, and Snowflake credit burn. The spine covers every primitive
+    implicitly (W31, W36, W39, W77, W78, W81, W86, W94, W97) but never
+    formalizes their combination, so this opt-in track makes it load-bearing
+    without adding another spine phase.
+  load_bearing_for:
+    - { week: 31, primitive: "cosine similarity + length-weighted pooling" }
+    - { week: 36, primitive: "IDF-weighted token scoring" }
+    - { week: 39, primitive: "Recall@K, MRR, NDCG evaluation" }
+    - { week: 77, primitive: "graph traversal + hop decay" }
+    - { week: 78, primitive: "dynamic noise-floor filtering" }
+    - { week: 81, primitive: "Adamic-Adar for tool graph" }
+    - { week: 86, primitive: "operational telemetry into ranking" }
+    - { week: 94, primitive: "multi-signal router" }
+    - { week: 97, primitive: "type affinity for tenant policies" }
+    - { capstone: 3, primitive: "OpenRouter gateway as multi-signal recommender" }
+  cross_references:
+    - { track: agents, role: "shares the agent-tool graph model" }
+    - { track: darbar, role: "shares Recall@K / MRR evaluation" }
+    - { track: forge, role: "shares graph-traversal algorithmic depth" }
+    - { capstone: 3, role: "shares the multi-signal routing pattern" }
+
+- id: search_md
+  title: "SEARCH.md — Multi-signal recommendation math"
+  path: "SEARCH.md"
+  size_kb: 25
+  tier: optional
+  level: 2
+  section_count: 17
+  pair_id: tool_recommendation_systems
+  pair_role: theory
+  selection_rationale: >-
+    Level 2 treatment of recommendation math: graph representation, cosine
+    similarity with normalization, length-weighted pooling, hop decay,
+    Adamic-Adar with hub defence, IDF weighting with a worked example,
+    intent boosting with type affinity, dynamic noise-floor filtering,
+    multi-signal combination with a worked example, priority and confidence
+    mapping, an end-to-end pipeline, implementable pseudocode, five
+    production failure modes, telemetry-based weight learning, and
+    evaluation across retrieval, ranking, diversity, and operational success.
+    It makes the core intuition explicit: no single signal wins; the
+    combination wins.
+  cross_references:
+    - { week: 31, role: "cosine similarity and normalized vectors" }
+    - { week: 36, role: "length-weighted pooling and IDF" }
+    - { week: 39, role: "Recall@K, MRR, and NDCG" }
+    - { week: 77, role: "graph traversal, decay, and fusion" }
+    - { week: 78, role: "dynamic thresholding and retrieval evaluation" }
+    - { week: 81, role: "tool graph and Adamic-Adar" }
+    - { week: 86, role: "telemetry-based reranking" }
+    - { week: 94, role: "multi-signal routing" }
+    - { week: 97, role: "type affinity and tenant policy" }
+    - { capstone: 3, role: "multi-signal OpenRouter gateway" }
+
+- id: snowflake_md
+  title: "SNOWFLAKE.md — Production Snowflake implementation"
+  path: "SNOWFLAKE.md"
+  size_kb: 32
+  tier: optional
+  level: 3
+  section_count: 24
+  pair_id: tool_recommendation_systems
+  pair_role: production
+  prerequisite_of: search_md
+  selection_rationale: >-
+    Level 3 implementation: the elegant math puts on a hard hat and becomes
+    data plumbing. Twenty-four production SQL sections cover entity, edge,
+    type-affinity, token, and term-stat schemas; AI_EMBED and VECTOR storage;
+    recursive-CTE graph walks with cycle prevention; weighted Adamic-Adar;
+    min-max normalization across heterogeneous score ranges; dynamic
+    PERCENTILE_CONT thresholds; Cortex Search serving; and Streams + Tasks
+    for incremental refresh. The implementation surfaces the operational
+    seams hidden by a notebook: AI_EMBED permissions, recursive-CTE safety,
+    serving latency, and Snowflake credit burn.
+  cross_references:
+    - { week: 31, role: "AI_EMBED vectors and cosine similarity" }
+    - { week: 36, role: "canonical search document and token stats" }
+    - { week: 39, role: "production ranking/evaluation surfaces" }
+    - { week: 77, role: "graph walk and retrieval fusion" }
+    - { week: 78, role: "dynamic percentile noise floor" }
+    - { week: 81, role: "tool graph implementation" }
+    - { week: 86, role: "Cortex Search latency and credit economics" }
+    - { week: 94, role: "stored-procedure router" }
+    - { week: 97, role: "type-affinity policy matrix" }
+    - { capstone: 3, role: "OpenRouter gateway production analogue" }

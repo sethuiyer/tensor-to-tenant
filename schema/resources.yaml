@@ -440,6 +440,177 @@
     - { paper_id: mopd_multi_teacher_on_policy_distillation, role: "primary_source" }
 
 # ============================================================================
+# W92 attention alternatives — KV cache vs learned recurrence
+# ============================================================================
+# The W82-W92 inference spine is built on quadratic-attention serving
+# (KV cache, paging, FlashAttention). This section adds the sub-quadratic
+# lineage the serving stack is increasingly benchmarked against:
+# linear attention (ELU+1) -> selective SSMs (Mamba) -> delta-rule
+# learning (DeltaNet/Gated DeltaNet) -> KDA/Kimi Linear. All entries are
+# load-bearing on W92, the long-context week where the KV cache is the
+# bottleneck and the recurrence trade-off is the Level 3 seam.
+
+- id: linear_attention_transformers_are_rnns
+  title: "Transformers are RNNs: Fast Autoregressive Transformers with Linear Attention"
+  venue: "ICML"
+  year: 2020
+  url: "https://arxiv.org/abs/2006.16236"
+  tier: core
+  level: 3
+  seam: "quadratic KV cache vs constant-state recurrence"
+  selection_rationale: >
+    The root of the attention-alternatives lineage. Casts softmax
+    attention as a recurrent state update with a kernelized (ELU+1)
+    feature map, giving an O(1)-state inference instead of a growing
+    KV cache. W92's "KV cache vs learned recurrence" frame starts
+    here: the trade-off is memory per token vs expressive recall.
+    Cross-checks the roofline intuition from W83 and the KV memory
+    formula from W84.
+  load_bearing_for: [92]
+  cross_references:
+    - { week: 83, role: "arithmetic-intensity baseline" }
+    - { week: 84, role: "KV cache memory baseline" }
+    - { week: 92, role: "primary attention-alternatives week" }
+
+- id: mamba_selective_state_spaces
+  title: "Mamba: Linear-Time Sequence Modeling with Selective State Spaces"
+  venue: "arXiv"
+  year: 2023
+  url: "https://arxiv.org/abs/2312.00752"
+  tier: core
+  level: 3
+  seam: "fixed-parameter recurrence vs input-dependent selection"
+  selection_rationale: >
+    The selective state-space model that made the recurrence family
+    competitive with transformers on real language modeling. The key
+    move is input-dependent selection of the state dynamics --
+    content-adaptive forgetting that a fixed linear-attention kernel
+    cannot express. W92's comparison: softmax attention has a growing
+    KV cache but perfect content addressing; Mamba has a fixed-size
+    state but selection. This is the "know when it breaks" seam for
+    the whole class.
+  load_bearing_for: [92]
+  cross_references:
+    - { week: 82, role: "memory-bound inference regime" }
+    - { week: 92, role: "primary attention-alternatives week" }
+
+- id: transformers_are_ssms_mamba2
+  title: "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality"
+  venue: "arXiv"
+  year: 2024
+  url: "https://arxiv.org/abs/2405.21060"
+  tier: core
+  level: 3
+  seam: "the attention/SSM duality"
+  selection_rationale: >
+    The SSD (structured state-space duality) result that unifies
+    attention and state-space models as two views of the same matrix
+    algebra, and gives Mamba-2 its hardware-efficient chunked
+    algorithms. This is the theoretical bridge W92 needs: it turns
+    "linear attention vs KV cache" from an either/or into a
+    continuum, and it is the substrate Gated DeltaNet builds on.
+    Pairs with the DeltaNet and Gated DeltaNet entries in this
+    section.
+  load_bearing_for: [92]
+  cross_references:
+    - { week: 92, role: "primary attention-alternatives week" }
+
+- id: deltanet_delta_rule
+  title: "Parallelizing Linear Transformers with the Delta Rule over Sequence Length"
+  venue: "NeurIPS"
+  year: 2024
+  url: "https://arxiv.org/abs/2406.06484"
+  tier: core
+  level: 3
+  seam: "additive writes vs delta-rule writes in the recurrence state"
+  selection_rationale: >
+    DeltaNet replaces the additive outer-product write of linear
+    attention with a delta rule (a least-squares write), so the
+    recurrent state learns to overwrite rather than accumulate -- the
+    difference between a bag-of-vectors and a working memory. The
+    paper also gives the chunkwise parallel training algorithm that
+    makes the family scalable, and it directly fixes the
+    associative-recall weakness of plain linear attention. Direct
+    ancestor of Gated DeltaNet.
+  load_bearing_for: [92]
+  cross_references:
+    - { week: 92, role: "primary attention-alternatives week" }
+
+- id: gated_deltanet_mamba2
+  title: "Gated Delta Networks: Improving Mamba2 with Delta Rule"
+  venue: "ICLR"
+  year: 2025
+  url: "https://arxiv.org/abs/2412.06464"
+  tier: core
+  level: 3
+  seam: "gating (rapid erasure) + delta rule (precise writes) as complementary"
+  selection_rationale: >
+    The synthesis that combines Mamba-2's gating/decay with
+    DeltaNet's delta-rule writes, and the architecture the worklog
+    lineage labels the step before KDA/Kimi Linear. Gating gives
+    rapid memory erasure; the delta rule gives targeted memory
+    modification; together they close the gap to softmax attention
+    on in-context retrieval and long-context tasks. This is the
+    frontier benchmark for the "KV cache vs learned recurrence"
+    question at W92.
+  load_bearing_for: [92]
+  cross_references:
+    - { week: 92, role: "primary attention-alternatives week" }
+
+# ============================================================================
+# W81 agent harness — the layer between the loop and the tools
+# ============================================================================
+# The agents track (ReAct, MCP, LangGraph/AutoGen/CrewAI) teaches the agent
+# loop, the tool contract, and multi-agent orchestration. This section adds
+# the production harness layer that coding agents (Claude Code, Codex, Pi)
+# are built on: tool-approval gates, session persistence/resume, context
+# compaction, sub-agent fan-out, and the sandboxing trade-off. Load-bearing
+# on W81 (agent foundations).
+
+- id: building_effective_agents_anthropic
+  title: "Building Effective Agents"
+  venue: "Anthropic (essay)"
+  year: 2024
+  url: "https://www.anthropic.com/engineering/building-effective-agents"
+  tier: core
+  level: 3
+  seam: "workflows vs agents, and the harness that runs the loop"
+  selection_rationale: >
+    The canonical essay on agent design. Draws the workflows-vs-agents
+    distinction (deterministic code paths vs model-directed tool use)
+    and the composable patterns (prompt chaining, routing,
+    parallelization, orchestrator-workers, evaluator-optimizer) that
+    the W81 harness framing builds on. Grounds the harness primitives
+    -- approval gates, sub-agent fan-out, context budget -- in a
+    "simplest thing that works" discipline rather than framework
+    maxims.
+  load_bearing_for: [81]
+  cross_references:
+    - { week: 81, role: "primary agent foundations week" }
+
+- id: claude_code_best_practices_agentic_coding
+  title: "Claude Code: Best Practices for Agentic Coding"
+  venue: "Anthropic (engineering)"
+  year: 2025
+  url: "https://www.anthropic.com/engineering/claude-code-best-practices"
+  tier: core
+  level: 3
+  seam: "the coding-agent harness: approval gates, session state, context budget, sandboxing"
+  selection_rationale: >
+    The most direct treatment of the coding-agent harness as a
+    production object: curated tool allowlists and approval gates,
+    subagents with isolated context windows, context as the finite
+    budget (`/clear`, compaction), session workflows (explore -> plan
+    -> code -> commit), and the sandboxing caveat
+    (`--dangerously-skip-permissions` should run in a container).
+    Pairs with the harness primitives a Pi/Codex-style tool exposes.
+    The concrete instance of the W81 harness layer.
+  load_bearing_for: [81]
+  cross_references:
+    - { week: 81, role: "primary agent foundations week" }
+    - { week: 96, role: "sandboxed execution precedent" }
+
+# ============================================================================
 # T1.8.d — Archive (NOT integrated into the spine)
 # ============================================================================
 # These are kept in the digest, not the spine. Documented in TASKS.md

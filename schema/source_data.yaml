@@ -1,0 +1,3590 @@
+# GENERATED MIGRATION FIXTURE — do not edit; retained exports are migrated into entity schemas.
+agents:
+  AGENT_MODULES:
+  - id: '1'
+    title: Exploring the Generative AI Universe
+    topics:
+    - 'Fundamentals of Generative AI: Models, Parameters, Embeddings'
+    - 'The GenAI Universe: Components, Key Players, Ecosystem Overview'
+    - Introduction to Prompt Engineering Techniques
+    - Basics of Retrieval Augmented Generation (RAG) and its applications
+    - Introduction to AI Agents and their applications
+    outcomes:
+    - Explain the foundational concepts of generative AI models
+    - Identify key components in the GenAI ecosystem
+    - Apply basic prompt engineering techniques
+    - Understand RAG systems and their applications
+    - Describe the role and potential of AI agents
+  - id: '2'
+    title: AI Agent Prototyping (No-Code Introduction)
+    topics:
+    - 'Understanding AI Agents: Workings and Use Cases'
+    - Features of Agent Development with Code-Free Tools
+    - Building Simple to Advanced AI Agents with NoCode platforms
+    - Customizing and Deploying AI Agents using NoCode tools
+    sections:
+    - label: Key Concepts
+      items:
+      - Flowise, Zapier AI and other no-code platforms
+      - Agent capabilities without programming
+      - Deployment strategies for no-code agents
+  - id: '3'
+    title: Coding Essentials for AI Programming
+    topics:
+    - 'Core Python skills for AI: Advanced data structures, async programming, error handling'
+    - Data processing from CSV/JSON files using Python (Pandas, Polars)
+    - SQL and Python frameworks for database management
+    - Interacting with APIs in Python
+    - Prompting LLMs programmatically
+    - Building AI applications with web frameworks
+    - Introduction to popular tools and frameworks for building AI Agents
+    sections:
+    - label: Technologies Covered
+      items:
+      - Python 3.10+
+      - Pandas, Polars
+      - DuckDB, SQLModel
+      - Flask/FastAPI
+      - CrewAI, AutoGen, LangGraph, LangChain
+  - id: '4'
+    title: Introduction to LangChain
+    topics:
+    - 'Core LangChain components: LLMs, Model I/O, Parsers, and Chains'
+    - Mastering LangChain Expression Language (LCEL)
+    - Creating efficient prompt templates and output parsers
+    - Developing conversational applications
+    - Implementing advanced LCEL chains
+    sections:
+    - label: Key Features
+      items:
+      - LLM abstraction layer
+      - Prompt templates and output parsing
+      - Chains for sequential processing
+      - Memory management for conversations
+  - id: '5'
+    title: Prompt Engineering Essentials
+    topics:
+    - Core principles of crafting effective prompts
+    - Exploration of popular prompt engineering patterns
+    - Hands-on experience with industry-specific use cases
+    - The art of conversational prompting
+    - 'Advanced prompting techniques: Chain of Thought, Self Consistency'
+    - Exploring prompts with external tools
+    sections:
+    - label: Patterns Covered
+      items:
+      - Persona-based prompting
+      - Flipped Interaction
+      - N-shot prompting
+      - Meta Language Prompting
+      - Chain of Thought (CoT)
+      - Self Consistency
+  - id: '6'
+    title: RAG Systems Essentials
+    topics:
+    - Document loading and processing techniques
+    - Document chunking strategies
+    - The role of vector databases in RAG systems
+    - Tools for connecting to vector databases
+    - Differentiating vector databases from other DB types
+    - Mastering retrieval strategies
+    - Connecting Vector DBs to LLMs
+    - Common problems and mitigation strategies
+    sections:
+    - label: Key Concepts
+      items:
+      - PDF, Word, multimodal document processing
+      - Recursive character, token-based, semantic chunking
+      - ChromaDB, Weaviate, LanceDB integration
+      - Semantic search, hybrid search, multi-query retrieval
+      - Hallucination mitigation techniques
+  - id: '7'
+    title: Building AI Agents from Scratch & Graph-RAG
+    topics:
+    - 'Structure of an AI agent: Prompts, Tools, and LLMs'
+    - Building a simple ReAct style AI Agent
+    - Building an AI Agent based on the Reflection pattern
+    - 'Extended Study: Graph RAG and Hybrid RAG Workshop'
+    sections:
+    - label: Workshop Components
+      items:
+      - Environment setup using uv package manager
+      - Graph Construction with crud.py logic
+      - Entity & relationship extraction with LlamaIndex
+      - Traditional RAG via vector search
+      - Graph RAG with Cypher queries
+      - Hybrid RAG with reranking
+  - id: '7.5'
+    title: Model Context Protocol (MCP)
+    theme: USB-C for LLMs — because if your agent can't plug into arbitrary tools and data securely, it's just cosplaying
+      autonomy.
+    topics:
+    - Integrate MCP to create interoperable, pluggable AI agents
+    - Develop MCP Servers that expose local data or tools to LLMs
+    - Develop MCP Clients that talk to MCP servers
+    - Build secure bridges between LangGraph/AutoGen agents and external systems
+    - Use MCP Inspector to debug and validate real-time tool access
+    sections:
+    - label: Core Concepts
+      items:
+      - MCP Host, Client, Server architecture
+      - Local Resource and Remote Service integration
+      - Transport Layer standardization
+      - Secure tool/data access for LLMs
+    labs:
+    - 'Lab 7.5.1: Build a quote-server MCP server'
+    - 'Lab 7.5.2: Build a Claude-accessible RAG system via MCP'
+  - id: '8'
+    title: Implementing ReAct Agents with LangChain
+    topics:
+    - 'The ReAct Framework: Core Principles and Loop Mechanics'
+    - Building a Simple ReAct Style Agent with Tool Use
+    - Adding Conversational Memory to the ReAct Agent
+    - Extending for Real-World Scenarios with Multi-User Support
+    sections:
+    - label: Key Components
+      items:
+      - Thought-Action-Observation loop
+      - AgentExecutor in LangChain
+      - Custom tools with @tool decorator
+      - ConversationBufferMemory and variants
+      - Session ID management for multi-user support
+  - id: '9'
+    title: Building Agents with LangGraph
+    topics:
+    - 'Introduction to LangGraph: Beyond Sequential Chains'
+    - Key Components of LangGraph
+    - Architecting Components for Real-World AI Agents
+    - Understanding State Management and Cyclical Execution
+    sections:
+    - label: Key Features
+      items:
+      - StateGraph for explicit state management
+      - Nodes and Edges for control flow
+      - Conditional edges for dynamic routing
+      - MessageGraph for chat applications
+      - Persistence with checkpointers
+  - id: '10'
+    title: Building Agents with AutoGen
+    topics:
+    - 'Introduction to AutoGen: Multi-Agent Conversation'
+    - Key Components of AutoGen
+    - Architecting Multi-Agent Collaboration
+    - Managing Conversation Flow and Task Completion
+    sections:
+    - label: Core Classes
+      items:
+      - ConversableAgent base class
+      - AssistantAgent for LLM-powered agents
+      - UserProxyAgent for human/code execution
+      - GroupChat and GroupChatManager
+  - id: '11'
+    title: Building Agents with CrewAI
+    topics:
+    - 'Introduction to CrewAI: Orchestrating Agent Crews'
+    - Key Components of CrewAI
+    - Architecting Role-Based Agent Collaboration
+    - Understanding Task Execution and Crew Dynamics
+    sections:
+    - label: Key Concepts
+      items:
+      - Agent roles, goals, backstories
+      - Task decomposition and dependencies
+      - Sequential and hierarchical processes
+      - Tool delegation and integration
+  - id: '12'
+    title: Agentic AI Design Patterns
+    topics:
+    - The Need for Design Patterns in Agentic AI
+    - Deep Dive into Core Agentic AI Design Patterns
+    - Exploration of Other Relevant Patterns and Best Practices
+    - Best Practices in Agentic System Design
+    sections:
+    - label: Patterns Covered
+      items:
+      - Reflection Pattern
+      - Tool Use Pattern
+      - Planning Pattern
+      - Multi-Agent Pattern
+      - Task Delegation Pattern
+      - Human-in-the-Loop Pattern
+  - id: '13'
+    title: Advanced LangGraph Agents
+    topics:
+    - Utilizing Built-ins for ReAct Style Agents
+    - Building ReAct Agents from Scratch
+    - Extending Agents for Multi-User Conversations
+    - Building Reflection and Multi-Agent Systems
+    sections:
+    - label: Advanced Features
+      items:
+      - Stateful agents with checkpointers
+      - Prepared statements for performance
+      - Reflection loops for self-correction
+      - Multi-agent coordination patterns
+  - id: '14'
+    title: Advanced AutoGen Agents
+    topics:
+    - Exploring Advanced Agentic Designs
+    - Building Industry-Relevant Agentic Systems
+    - Constructing Code Execution, Refinement, and Testing Systems
+    - Prototyping Agents using AutoGen Studio
+    - Extending for Multi-User Conversations
+    sections:
+    - label: Advanced Concepts
+      items:
+      - Hierarchical agent structures
+      - Dynamic group chats
+      - Function calling at scale
+      - Human-in-the-loop patterns
+      - AutoGen Studio for rapid prototyping
+  - id: '15'
+    title: Advanced CrewAI Agents
+    topics:
+    - Building Complex Collaborating Agent Crews
+    - Exploring Advanced Agentic Designs
+    - Building Industry-Relevant Agentic Systems
+    - Learning Frameworks for Multi-Agent Systems
+    sections:
+    - label: Key Features
+      items:
+      - Advanced composition techniques
+      - Hierarchical crews with delegation
+      - Iterative refinement loops
+      - Conditional task execution
+      - Dynamic tool generation
+  - id: '16'
+    title: Agentic RAG using LangGraph
+    topics:
+    - Research on Agentic RAG Systems
+    - Building Corrective RAG Systems
+    - Extending to Self-Reflective RAG Systems
+    - Implementing Self-Route RAG Logic
+    sections:
+    - label: Advanced RAG Techniques
+      items:
+      - Corrective RAG (CRAG) with self-correction loops
+      - Self-Reflective RAG with confidence scoring
+      - Self-Route RAG with adaptive query routing
+      - Query reformulation mechanisms
+  - id: '17'
+    title: Stanford DSPy
+    theme: Compilers for LLMs — stop fiddling with prompts. Start engineering self-optimizing AI programs.
+    topics:
+    - Design and implement DSPy Signatures
+    - Construct DSPy Modules for complex pipelines
+    - Utilize DSPy Optimizers to automatically tune prompts
+    - Implement DSPy Assertions to enforce constraints
+    - Build sophisticated RAG and agentic systems
+    sections:
+    - label: Core Components
+      items:
+      - Signatures for declarative task specification
+      - Modules (Predict, ChainOfThought, Retrieve)
+      - Optimizers (BootstrapFewShot, MIPRO, COPRO)
+      - Assertions for computational constraints
+      - RetrieverModels for optimized RAG
+    labs:
+    - 'Lab 17.1: Smart Summarizer with DSPy'
+    - 'Lab 17.2: DSPy-Powered RAG System'
+  - id: '18'
+    title: Kùzu Deep Dive
+    theme: The Embedded Rocket-Ship for Graph RAG
+    topics:
+    - Kùzu Architecture Crash-Course
+    - 'Hands-On: Spin & Query'
+    - Prepared Statements & Cypher Reuse
+    - Kùzu-Wasm (browser + edge)
+    - 'Interop Pipelines: Arrow & External Scans'
+    - Graph Algorithms (Built-in & Extension)
+    - Concurrency & Embedded Server
+    - 'Integration Pattern: "Graph-First RAG"'
+    sections:
+    - label: Key Features
+      items:
+      - Columnar disk store with compression
+      - CSR adjacency indices for efficient joins
+      - Vectorised + factorised executor
+      - Embedded in-process design
+      - Cypher support with MATCH, OPTIONAL, aggregations
+      - ACID transactions and MVCC
+    labs:
+    - 'Lab 18.3.1: LangChain CypherQueryTool with prepared statements'
+    - 'Lab 18.5.1: Interop with Arrow and external data sources'
+    - 'Lab 18.6.1: Influencer-Finder Agent'
+    - 'Lab 18.7.1: Concurrency and embedded server'
+    - 'Lab 18.8.1: Graph-First RAG integration'
+  AGENT_BRIDGES:
+  - module: '1'
+    title: Exploring the Generative AI Universe
+    gap: Module 1 gives you the *what*. tensor-to-tenant gives you the *why* — the math in Weeks 7–10, the primitives in Weeks
+      31–33, and the production LLM/RAG work in Weeks 70–81.
+    rows:
+    - concept: Embeddings & what a model "is"
+      weeks: Weeks 7–10
+      insight: Linear algebra and vector geometry that actually produce embeddings — the math under the vocabulary.
+    - concept: Model parameters & training intuition
+      weeks: Weeks 31–33
+      insight: Engineering micro-projects where you build ML primitives from scratch; parameters stop being magic.
+    - concept: RAG at a high level
+      weeks: Week 70
+      insight: The LLM+RAG phase starts here; you build retrieval pipelines rather than hear a definition.
+    - concept: AI agents overview
+      weeks: Weeks 79, 81
+      insight: The agents weeks where the "agent" label gets an actual implementation.
+  - module: '2'
+    title: AI Agent Prototyping (No-Code Introduction)
+    gap: The no-code drag-and-drop hides the machine. Week 6 shows you the shape, Week 51 shows you the deployment reality,
+      and Week 81 shows you the compiled version.
+    rows:
+    - concept: What an agent does (no-code view)
+      weeks: Week 6
+      insight: Orientation weeks where you diagnose tooling and the shape of an agent loop before writing code.
+    - concept: Deployment strategies for no-code agents
+      weeks: Week 51
+      insight: 'Distributed systems: how services actually get deployed and connected.'
+    - concept: Agent capabilities without programming
+      weeks: Week 81
+      insight: The agents phase — you now know what those drag-and-drop nodes compile to.
+  - module: '3'
+    title: Coding Essentials for AI Programming
+    gap: Coding essentials give you the vocabulary. Weeks 2–4, 47, 52, and 81 show you what the vocabulary actually compiles
+      to.
+    rows:
+    - concept: Python data structures, async & error handling
+      weeks: Weeks 2–4
+      insight: The tooling phase where you implement the primitives those frameworks wrap.
+    - concept: SQL & database frameworks
+      weeks: Week 47
+      insight: 'System design: data modeling, schema, and storage engines.'
+    - concept: Interacting with APIs
+      weeks: Week 52
+      insight: 'Distributed patterns: request/response, contracts, and failure handling.'
+    - concept: Web frameworks & agent tooling
+      weeks: Week 81
+      insight: The agents phase where those Flask/FastAPI skills become agent tool servers.
+  - module: '4'
+    title: Introduction to LangChain
+    gap: LangChain gives you chains. Weeks 37, 79–80, and 98 give you the composition, state, and production discipline those
+      chains need.
+    rows:
+    - concept: LCEL & composable chains
+      weeks: Week 37
+      insight: 'Engineering primitives: composing small, testable units — the same discipline as pipeline composition.'
+    - concept: Model I/O & the LLM abstraction
+      weeks: Week 79
+      insight: 'The LLM/RAG phase: you build the abstraction and understand its cost.'
+    - concept: Memory & conversational apps
+      weeks: Week 80
+      insight: RAG and memory systems — state management under the hood.
+    - concept: Chains in production
+      weeks: Week 98
+      insight: 'Production AI platform: multi-tenant accounting and reliability for LLM pipelines.'
+  - module: '5'
+    title: Prompt Engineering Essentials
+    gap: Prompting is the surface. Weeks 5, 61, 73, and 79 explain why the surface behaves the way it does.
+    rows:
+    - concept: Prompt patterns & persona
+      weeks: Week 5
+      insight: 'Hypothesis choice: how you phrase an experiment changes the result.'
+    - concept: Chain of Thought
+      weeks: Week 73
+      insight: LLM training/RAG — why reasoning traces work, from the model’s perspective.
+    - concept: Self Consistency
+      weeks: Week 61
+      insight: 'Experimentation and evaluation: sampling, variance, and aggregation.'
+    - concept: Prompting with external tools
+      weeks: Week 79
+      insight: 'Agents week: tool-calling contracts and the ReAct loop.'
+  - module: '6'
+    title: RAG Systems Essentials
+    gap: RAG modules show you retrieval. Weeks 31–33 and 75–78 show you the index, the pipeline, and the failure modes.
+    rows:
+    - concept: Vector databases
+      weeks: Weeks 31–33
+      insight: Build embedding/vector primitives from scratch — you stop trusting the index and build one.
+    - concept: Chunking & document processing
+      weeks: Week 36
+      insight: 'ML micro-projects: tokenization and preprocessing with measurable trade-offs.'
+    - concept: Retrieval strategies
+      weeks: Weeks 75–78
+      insight: 'The RAG weeks: retrieval pipelines, hybrid search, and evaluation at depth.'
+    - concept: Hallucination mitigation
+      weeks: Weeks 75–78
+      insight: Grounding, attribution, and evaluation — the why behind CRAG and self-RAG.
+  - module: '7'
+    title: Building AI Agents from Scratch & Graph-RAG
+    gap: Building agents from scratch teaches the loop. Weeks 37, 73, 77, 81 and the Forge’s graph theory teach the structure
+      that makes the loop correct.
+    rows:
+    - concept: ReAct loop from scratch
+      weeks: Week 37
+      insight: 'Engineering primitives: the loop as a concrete, testable program.'
+    - concept: Reflection pattern
+      weeks: Week 73
+      insight: 'LLM evaluation: self-critique and feedback loops.'
+    - concept: Graph RAG with Cypher
+      weeks: Week 77
+      insight: Graph retrieval — and the Algorithmic Forge graph-theory spine underneath.
+    - concept: Entity & relationship extraction
+      weeks: Week 81
+      insight: 'Agents phase: knowledge structuring for multi-step reasoning.'
+  - module: '7.5'
+    title: Model Context Protocol (MCP)
+    gap: MCP standardizes the plug. Weeks 47, 76–77, 87, 98, and 102 build the contract, security, and platform layers the
+      plug lives in.
+    rows:
+    - concept: MCP Host / Client / Server architecture
+      weeks: Week 47
+      insight: 'Distributed systems: contracts, transports, and service boundaries.'
+    - concept: Secure tool/data access
+      weeks: Weeks 76–77
+      insight: 'RAG/agents: how tools authenticate, scope, and audit.'
+    - concept: Transport layer standardization
+      weeks: Week 87
+      insight: 'Inference/performance: protocol and interface engineering.'
+    - concept: MCP in production
+      weeks: Weeks 98, 102
+      insight: 'Platform: multi-tenant tool access, rate limiting, and observability.'
+  - module: '8'
+    title: Implementing ReAct Agents with LangChain
+    gap: The ReAct framework wires the loop. Weeks 80–81, 90, 98, and 99 give it sessions, scale, and tenancy.
+    rows:
+    - concept: Thought-Action-Observation loop
+      weeks: Week 80
+      insight: 'The RAG/agents phase: the loop as a system you can measure.'
+    - concept: Multi-user support & session ID management
+      weeks: Week 81
+      insight: Session state and isolation for concurrent users.
+    - concept: Tool use at scale
+      weeks: Week 90
+      insight: 'Inference/performance: tool-calling throughput and latency.'
+    - concept: ReAct in production
+      weeks: Weeks 98, 99
+      insight: 'Platform: multi-tenant agents, quotas, accounting.'
+  - module: '9'
+    title: Building Agents with LangGraph
+    gap: LangGraph makes state explicit. Weeks 51, 81, 97–98, and 100 teach you state machines, routing, and durable recovery.
+    rows:
+    - concept: StateGraph & state management
+      weeks: Week 51
+      insight: 'Distributed systems: explicit state and state transitions.'
+    - concept: Conditional edges & routing
+      weeks: Week 81
+      insight: 'Agents phase: routing logic and control flow in agent systems.'
+    - concept: Persistence with checkpointers
+      weeks: Week 97
+      insight: 'Platform: durable state and failure recovery.'
+    - concept: Cyclical execution
+      weeks: Weeks 98, 100
+      insight: Production agent platforms and capstones.
+  - module: '10'
+    title: Building Agents with AutoGen
+    gap: AutoGen wires conversations. Weeks 81, 96, 98–99, and 100 give you the coordination and execution discipline.
+    rows:
+    - concept: Multi-agent conversation
+      weeks: Week 81
+      insight: 'Agents phase: how agents coordinate and hand off.'
+    - concept: GroupChat & GroupChatManager
+      weeks: Week 96
+      insight: 'Platform: orchestration, scheduling, and conversation routing.'
+    - concept: Code execution & UserProxyAgent
+      weeks: Weeks 98, 99
+      insight: 'Platform: sandboxed execution and human-in-the-loop.'
+    - concept: Collaboration at scale
+      weeks: Week 100
+      insight: 'Capstones: coordination protocols for real workloads.'
+  - module: '11'
+    title: Building Agents with CrewAI
+    gap: CrewAI organizes roles. Weeks 96–99 give you authorization, orchestration, and delegation at platform scale.
+    rows:
+    - concept: Role-based crews
+      weeks: Week 96
+      insight: 'Platform: role/authorization models for agent systems.'
+    - concept: Task decomposition & dependencies
+      weeks: Week 97
+      insight: 'Platform: workflow and DAG orchestration.'
+    - concept: Sequential & hierarchical processes
+      weeks: Week 98
+      insight: 'Platform: process design and failure domains.'
+    - concept: Tool delegation & integration
+      weeks: Week 99
+      insight: 'Platform: scoped tool access and accountability.'
+  - module: '12'
+    title: Agentic AI Design Patterns
+    gap: Patterns are the vocabulary of agentic design. Weeks 57, 62, 73–74, 81, 98–99 show you where each pattern is load-bearing.
+    rows:
+    - concept: Reflection Pattern
+      weeks: Week 73
+      insight: 'LLM evaluation: self-critique, feedback, and iterative refinement.'
+    - concept: Planning Pattern
+      weeks: Week 74
+      insight: 'LLM/RAG: plan-and-execute architectures.'
+    - concept: Human-in-the-Loop Pattern
+      weeks: Week 57
+      insight: 'System design: human approval flows and reliability.'
+    - concept: Multi-Agent & Task Delegation
+      weeks: Weeks 81, 98–99
+      insight: 'Agents + platform: coordination and task delegation.'
+  - module: '13'
+    title: Advanced LangGraph Agents
+    gap: Advanced LangGraph is where the framework meets systems. Weeks 52, 73, 88, 99–100 give it planning, measurement,
+      and durability.
+    rows:
+    - concept: Prepared statements for performance
+      weeks: Week 52
+      insight: 'System design: query planning and prepared execution.'
+    - concept: Reflection loops for self-correction
+      weeks: Week 73
+      insight: 'LLM evaluation: self-correction under measurement.'
+    - concept: Stateful agents with checkpointers
+      weeks: Week 88
+      insight: 'Inference/performance: state persistence cost.'
+    - concept: Multi-agent coordination patterns
+      weeks: Weeks 99, 100
+      insight: Platform + capstones.
+  - module: '14'
+    title: Advanced AutoGen Agents
+    gap: Advanced AutoGen scales the conversation. Weeks 62, 96–97, 99, 101 give it hierarchy, sandboxing, and studio-grade
+      iteration.
+    rows:
+    - concept: Hierarchical agent structures
+      weeks: Week 62
+      insight: 'MLOps: layered orchestration and environments.'
+    - concept: Code execution, refinement & testing
+      weeks: Week 96
+      insight: 'Platform: sandboxing and test harnesses.'
+    - concept: Dynamic group chats
+      weeks: Week 97
+      insight: 'Platform: conversation scheduling.'
+    - concept: AutoGen Studio prototyping
+      weeks: Weeks 99, 101
+      insight: 'Platform/capstones: rapid iteration on real systems.'
+  - module: '15'
+    title: Advanced CrewAI Agents
+    gap: Advanced CrewAI composes crews. Weeks 73, 97–99, 102 give you the branching, refinement, and tooling discipline.
+    rows:
+    - concept: Hierarchical crews with delegation
+      weeks: Week 73
+      insight: 'LLM phase: delegation structures for reasoning work.'
+    - concept: Conditional task execution
+      weeks: Week 97
+      insight: 'Platform: workflow branching and state.'
+    - concept: Iterative refinement loops
+      weeks: Week 98
+      insight: 'Platform: feedback-driven execution.'
+    - concept: Dynamic tool generation
+      weeks: Weeks 99, 102
+      insight: 'Platform/capstones: self-describing tool interfaces.'
+  - module: '16'
+    title: Agentic RAG using LangGraph
+    gap: Agentic RAG adds the loop. Weeks 38, 73, 76–78 show you routing, reformulation, and evaluation that make the loop
+      trustworthy.
+    rows:
+    - concept: Corrective RAG (CRAG)
+      weeks: Weeks 76–77
+      insight: 'The RAG weeks: correctness loops grounded in evaluation.'
+    - concept: Self-Reflective RAG
+      weeks: Week 78
+      insight: 'RAG: confidence scoring and self-assessment.'
+    - concept: Self-Route RAG logic
+      weeks: Week 38
+      insight: 'Engineering micro-projects: routing logic as a primitive.'
+    - concept: Query reformulation
+      weeks: Week 73
+      insight: 'LLM evaluation: rewrite-and-retrieve trade-offs.'
+  - module: '17'
+    title: Stanford DSPy
+    gap: DSPy compiles prompts. Weeks 22, 38, 61, 76–79, and 81 turn prompting from a craft into an optimization problem.
+    rows:
+    - concept: Signatures & Modules
+      weeks: Week 22
+      insight: 'Math foundations: declarative composition and types.'
+    - concept: Optimizers (BootstrapFewShot, MIPRO, COPRO)
+      weeks: Weeks 38, 61
+      insight: 'Experimentation: automated search over prompts as a measurable optimization.'
+    - concept: Assertions for constraints
+      weeks: Weeks 76–78
+      insight: 'RAG/agents: enforced constraints and evaluation.'
+    - concept: DSPy pipelines & agents
+      weeks: Weeks 79, 81
+      insight: 'Agents phase: compiled, self-optimizing agent programs.'
+  - module: '18'
+    title: Kùzu Deep Dive
+    gap: Kùzu is a graph rocket. Weeks 52, 75, 98, 100 plus the Forge’s graph spine and Capstone 2 give you the storage, indexing,
+      and algorithm theory under the hood.
+    rows:
+    - concept: Columnar disk store & compression
+      weeks: Week 52
+      insight: 'System design: storage engines and indexing.'
+    - concept: CSR adjacency indices
+      weeks: Week 75
+      insight: 'Graph retrieval: how graph joins stay fast.'
+    - concept: Cypher & graph-first RAG
+      weeks: Week 98
+      insight: 'Platform: graph-powered retrieval at scale.'
+    - concept: Graph algorithms & concurrency
+      weeks: Weeks 100 · Forge · Capstone 2
+      insight: The Forge graph-theory spine and the tree-forensics capstone.
+  BRIDGE_SUMMARY:
+  - module: Module 1
+    weeks: Weeks 7–10, 31–33, 70, 79, 81
+  - module: Module 2
+    weeks: Weeks 6, 51, 81
+  - module: Module 3
+    weeks: Weeks 2–4, 47, 52, 81
+  - module: Module 4
+    weeks: Weeks 37, 79, 80, 98
+  - module: Module 5
+    weeks: Weeks 5, 61, 73, 79
+  - module: Module 6
+    weeks: Weeks 31–33, 36, 75–78
+  - module: Module 7
+    weeks: Weeks 37, 73, 77, 81 + Algorithmic Forge graph theory
+  - module: Module 7.5
+    weeks: Weeks 47, 76–77, 87, 98, 102
+  - module: Module 8
+    weeks: Weeks 80, 81, 90, 98, 99
+  - module: Module 9
+    weeks: Weeks 51, 81, 97, 98, 100
+  - module: Module 10
+    weeks: Weeks 81, 96, 98, 99, 100
+  - module: Module 11
+    weeks: Weeks 96, 97, 98, 99
+  - module: Module 12
+    weeks: Weeks 57, 62, 73–74, 81, 98, 99
+  - module: Module 13
+    weeks: Weeks 52, 73, 88, 99, 100
+  - module: Module 14
+    weeks: Weeks 62, 96, 97, 99, 101
+  - module: Module 15
+    weeks: Weeks 73, 97, 98, 99, 102
+  - module: Module 16
+    weeks: Weeks 38, 73, 76–78
+  - module: Module 17
+    weeks: Weeks 22, 38, 61, 76–79, 81
+  - module: Module 18
+    weeks: Weeks 52, 75, 98, 100 + Algorithmic Forge, Capstone 2
+  BRIDGE_PITCH:
+    quote: Do Modules 1–18 + Manus capstone in 16 weeks. You'll be an agent builder who can ship. Then, when you hit the ceiling
+      — when your RAG pipeline breaks at 10k QPS, when your AutoGen crew deadlocks, when your DSPy optimizer converges to
+      garbage — tensor-to-tenant is waiting. Weeks 22, 38, 57, 75, 88, 98, 99, 102. That's where the ceiling becomes a floor.
+    tag: This is the bridge. Not a merge. A ladder.
+  MANUS_CAPSTONE:
+    title: Project Manus - Agentic UI Automation
+    vision: Develop a sophisticated AI agent capable of understanding and autonomously operating both web-based GUIs and CLIs
+      to achieve complex, multi-step user goals.
+    features:
+    - LLM-driven decision-making for action selection and planning
+    - Sophisticated message management for internal state
+    - Advanced web browser automation with DOM understanding
+    - Robust terminal emulation with WebSocket interaction
+    - Text editing capabilities for configuration files
+    - Server infrastructure with API endpoints
+    - Comprehensive logging and telemetry
+    architecture:
+    - Central Orchestration Service
+    - Modular Tool Interface
+    - Browser Interaction Module (Playwright/Selenium)
+    - Terminal Interaction Module
+    - State Management with LangGraph
+    - Prompt Engineering / DSPy Signatures
+    learningFocus: Integration of all course concepts including LangChain, LangGraph, AutoGen, CrewAI, DSPy, MCP, and Kùzu.
+    challenges:
+    - Robust DOM interpretation without brittle selectors
+    - State management across different tools
+    - Error recovery in complex workflows
+    - Adaptation to UI changes
+    - Security considerations for UI automation
+    evaluation:
+    - Correctness and completeness of task execution
+    - Robustness and error handling capabilities
+    - Code quality and architectural design
+    - Integration of course concepts
+    - Presentation and documentation quality
+    extensions:
+    - Multi-user support with session isolation
+    - Integration with Model Context Protocol
+    - Self-optimization using DSPy
+    - Knowledge graph integration with Kùzu
+    - Advanced planning and reflection mechanisms
+    stack:
+    - LangGraph
+    - DSPy
+    - MCP
+    - Kùzu
+    - Playwright/Selenium
+darbar:
+  DARBAR_PATTERNS:
+  - name: Timed routing
+    weeks: 1–15
+    slots: 1–120
+    tips: Two-pointer scanning, map-based lookups, prefix products, interval merging
+    warmup: LeetCode-style easy problems (15 min each)
+    core: Data-structure and string/array basics under a clock
+    exam: Weekly timed block, 3–5 problems in 60 minutes
+  - name: State machines & simulations
+    weeks: 16–30
+    slots: 121–200
+    tips: Transition tables, cycle detection in simulation, stack/queue state
+    warmup: Simulation and state-transition drills
+    core: Problems whose solution is a disciplined state machine
+    exam: 2–3 state-machine problems in 60 minutes
+  - name: Tree & graph fluency
+    weeks: 31–45
+    slots: 201–280
+    tips: DFS/BFS patterns, subtree invariants, shortest-path frames, topo order
+    warmup: Tree traversals and adjacency-list graph walks
+    core: Tree and graph problems across difficulty bands
+    exam: Tree+graph block with one design flavored problem
+  - name: Data-structure mastery
+    weeks: 46–60
+    slots: 281–360
+    tips: Heaps, Fenwick/segment trees, tries, DSU, balanced structures
+    warmup: Standard-library structure drills
+    core: Problems that pick the right structure by workload shape
+    exam: Structure-selection exam with 2–3 advanced problems
+  - name: Advanced & interview fusion
+    weeks: 61–90
+    slots: 361–470
+    tips: DP, greedy, sliding-window optimizations, offline queries
+    warmup: Classic DP and greedy patterns
+    core: Fusion problems that combine two or more techniques
+    exam: Mixed 4-problem block mirroring a real interview
+  - name: Mock & personal gauntlet
+    weeks: 91–108
+    slots: 471–548
+    tips: Full mock interviews, random pick from all patterns, time pressure
+    warmup: Two-problem blocks (45 min)
+    core: Company-tagged and previously missed problems
+    exam: Full mock interviews scored on a rubric
+  DARBAR_PACING:
+    totalSlots: 548
+    standardTarget: One “Standard” solve path to keep the 108-week core viable.
+    aurorTarget: Solve, explain, and timebox all 548 catalog slots.
+    weeklyCadence: 3–5 problems per week across the pattern blocks.
+  DARBAR_CATALOG:
+    easy: 255
+    medium: 240
+    hard: 53
+    tagline: 548 hand-crafted picks covering the full data-structure and algorithm spectrum.
+    link: https://aninokuma.codeberg.page/leetcode-darbar/
+  DARBAR_PACING_MAP:
+  - weeks: 1–6
+    emphasis: Arrays, strings, hash tables, stacks, queues, searching/sorting
+    production: Python engineering, APIs, diagnostics
+  - weeks: 7–30
+    emphasis: Math, bit manipulation, divide and conquer, recursion, backtracking
+    production: Linear algebra, probability, statistics, optimization
+  - weeks: 31–45
+    emphasis: Heaps, linked lists, tries, range queries, hashing
+    production: Retrieval, Top-K, caching, sketches, routing
+  - weeks: 46–57
+    emphasis: Graphs, trees, greedy, DSU, range queries
+    production: System design, workflows, sharding, scheduling
+  - weeks: 58–69
+    emphasis: Dynamic programming, greedy, math, probability
+    production: Experiment assignment, rollouts, monitoring
+  - weeks: 70–81
+    emphasis: Strings, tries, graphs, sequence DP
+    production: Tokenization, retrieval, agents, guardrails
+  - weeks: 82–102
+    emphasis: Heaps, priority queues, graphs, trees, range queries
+    production: Inference schedulers, quotas, queues, tenant fairness
+  - weeks: 103–108
+    emphasis: Mixed timed sets and mock interviews
+    production: Mo's traces, Euler/DSU boss, portfolio defense
+  DARBAR_TRIANGULATION:
+  - concept: Heap
+    speed: Top-K and scheduler problems
+    depth: Heap invariants and adversarial streams
+    artifact: Streaming Top-K / inference batching
+  - concept: Trees
+    speed: Traversal, LCA, tree DP
+    depth: Euler Tour, HLD, DSU on Tree
+    artifact: Agent-execution forensics
+  - concept: Graphs
+    speed: BFS/DFS and shortest paths
+    depth: SCC, flow, matching, min-cost flow
+    artifact: Workflow and routing platform
+  - concept: Strings
+    speed: Prefix matching and tries
+    depth: KMP, Aho-Corasick, suffix structures
+    artifact: PII detector / retrieval index
+  - concept: Hashing
+    speed: Frequency and lookup patterns
+    depth: Consistent/rendezvous hashing
+    artifact: Tenant-aware routing and caches
+  DARBAR_OPERATING_RULE:
+  - 'Mon–Thu: one catalog problem per day'
+  - 'Fri: one timed problem or contest set'
+  - 'Weekend: review, editorial rewrite, or recovery'
+  DARBAR_CATEGORIES:
+  - array
+  - backtracking
+  - bit manipulation
+  - divide and conquer
+  - dynamic programming
+  - graphs
+  - greedy
+  - hash table
+  - heap
+  - linked list
+  - math
+  - queue
+  - range query
+  - recursion
+  - searching and sorting
+  - stack
+  - string
+  - trees
+  - trie
+  DARBAR_PRINCIPLES:
+  - 'Rigor with sanity: prioritize problems that force the phase’s algorithms.'
+  - 'Timer on, then review: solve under a clock, then study the editorial regardless of outcome.'
+  - 'Evidence per slot: one file that proves the attempt, the solution, and the complexity note.'
+  - 'Patterns before volume: mastery is choosing the right tool for the workload, not memorizing solutions.'
+  - 'Mock pressure from week one: the timed block is a permanent part of the ritual.'
+  - 'Auror track is optional: the 548-slot catalog is depth; the 108-week path never depends on it.'
+deepDives:
+  TOOL_RECOMMENDATION_SYSTEMS:
+    crossReferences:
+    - role: shares the agent-tool graph model
+      track: agents
+    - role: shares Recall@K / MRR evaluation
+      track: darbar
+    - role: shares graph-traversal algorithmic depth
+      track: forge
+    - capstone: 3
+      role: shares the multi-signal routing pattern
+    id: tool_recommendation_systems
+    level: 2
+    loadBearingFor:
+    - primitive: cosine similarity + length-weighted pooling
+      role: retrieval math
+      week: 31
+    - primitive: IDF-weighted token scoring
+      role: chunk and lexical scoring
+      week: 36
+    - primitive: Recall@K, MRR, NDCG evaluation
+      role: ranking metrics
+      week: 39
+    - primitive: graph traversal + hop decay
+      role: retrieval patterns
+      week: 77
+    - primitive: dynamic noise-floor filtering
+      role: retrieval evaluation
+      week: 78
+    - primitive: Adamic-Adar for tool graph
+      role: agent foundations
+      week: 81
+    - primitive: operational telemetry into ranking
+      role: monitoring
+      week: 86
+    - primitive: multi-signal router
+      role: traffic routing
+      week: 94
+    - primitive: type affinity for tenant policies
+      role: quotas and priority
+      week: 97
+    - capstone: 3
+      primitive: OpenRouter gateway as multi-signal recommender
+      role: capstone integration
+    pairEnforcement: strict
+    parallelTrack: true
+    primaryArtifacts:
+    - SEARCH
+    - SNOWFLAKE
+    seam: multi-signal recommendation over graph + embedding + metadata
+    selectionRationale: The pair is the seam philosophy applied to recommendation systems. SEARCH.md introduces the elegant
+      math (graph traversal, hop decay, Adamic-Adar, IDF, type affinity, dynamic thresholds, and multi-signal combination)
+      at Level 2. SNOWFLAKE.md implements that same theory in production Snowflake SQL and exposes where the math dies on
+      contact with AI_EMBED permissions, recursive-CTE cycle prevention, Cortex Search latency, and Snowflake credit burn.
+      The spine covers every primitive implicitly (W31, W36, W39, W77, W78, W81, W86, W94, W97) but never formalizes their
+      combination, so this opt-in track makes it load-bearing without adding another spine phase.
+    shortName: recommender
+    tier: optional
+    title: Tool Recommendation Systems
+  DEEP_DIVES:
+  - TOOL_RECOMMENDATION_SYSTEMS
+engineering:
+  ENGINEERING_TASKS:
+  - n: 1
+    title: Implementation of retrieval engine with cosine similarity
+  - n: 2
+    title: Implementation of exact top-k selection
+  - n: 3
+    title: Heap-based top-k with fixed memory
+  - n: 4
+    title: Implementation of retrieval reranker
+  - n: 5
+    title: Two-stage retrieval pipeline with reranker
+  - n: 6
+    title: Dynamic top-k with mutable scores
+  - n: 7
+    title: Sliding window rate limiter
+  - n: 8
+    title: Token bucket rate limiter
+  - n: 9
+    title: Distributed rate limiter using Redis
+  - n: 10
+    title: LRU cache with O(1) operations
+  - n: 11
+    title: TTL cache
+  - n: 12
+    title: Cache simulator with hit-ratio and stall-time statistics
+  - n: 13
+    title: Text chunker with sentence awareness
+  - n: 14
+    title: Token-aware chunker
+  - n: 15
+    title: PII span merging and regex/NER detection
+  - n: 16
+    title: Redaction utility with PII spans
+  - n: 17
+    title: Brier score and reliability diagrams
+  - n: 18
+    title: Expected calibration error
+  - n: 19
+    title: NDCG, MRR, Recall@K retrieval evaluation
+  - n: 20
+    title: Thread-safe inference batcher
+  - n: 21
+    title: Retry with exponential backoff and jitter
+  - n: 22
+    title: Circuit breaker
+  - n: 23
+    title: Count-Min Sketch
+  - n: 24
+    title: Bloom filter
+  - n: 25
+    title: HyperLogLog
+  - n: 26
+    title: Consistent hashing
+  - n: 27
+    title: Weighted load balancer
+  - n: 28
+    title: Snowflake ID generation
+  - n: 29
+    title: Leaky bucket rate limiter
+  - n: 30
+    title: Sliding-window counter (global)
+  PRACTICE_EXERCISES:
+  - n: 1
+    title: Vector dot product using native Python vs NumPy
+  - n: 2
+    title: Parallel dot product with multiprocessing and shared memory
+  - n: 3
+    title: Thread-safe vector addition with locks
+  - n: 4
+    title: Thread-safe vector addition with atomic operations
+  - n: 5
+    title: Concurrent dictionary with counters
+  - n: 6
+    title: Concurrent counters with Redis
+  - n: 7
+    title: Implement a semaphore
+  - n: 8
+    title: Reader-writer lock
+  - n: 9
+    title: Producer-consumer queue with condition variables
+  - n: 10
+    title: Work queue with channel semantics
+  - n: 11
+    title: Token bucket rate limiter
+  - n: 12
+    title: Sliding window rate limiter with timestamp list
+  - n: 13
+    title: Sliding window rate limiter with counter + timestamp
+  - n: 14
+    title: LRU cache
+  - n: 15
+    title: TTL cache
+  - n: 16
+    title: Randomized load balancer
+  - n: 17
+    title: Round-robin load balancer
+  - n: 18
+    title: Weighted round-robin load balancer
+  - n: 19
+    title: Rendezvous hashing
+  - n: 20
+    title: Consistent hashing
+  - n: 21
+    title: PII redactor
+  - n: 22
+    title: PII detector with spans
+  - n: 23
+    title: Batch processor with queue
+  - n: 24
+    title: Batch processor with reservation and timeout
+  - n: 25
+    title: Retry wrapper with exponential backoff
+  - n: 26
+    title: Retry wrapper with circuit breaker
+  - n: 27
+    title: Count-Min Sketch
+  - n: 28
+    title: Bloom filter
+  - n: 29
+    title: HyperLogLog
+  - n: 30
+    title: Snowflake ID generator
+  - n: 31
+    title: KNN with cosine similarity
+  - n: 32
+    title: KNN with euclidean distance
+  - n: 33
+    title: Two-stage retrieval with reranker
+  - n: 34
+    title: Stream top-k with heap
+  - n: 35
+    title: Chunker with fixed-size windows
+  - n: 36
+    title: Chunker with sentence awareness
+  - n: 37
+    title: Token-aware chunker
+  - n: 38
+    title: LRU cache with TTL
+  - n: 39
+    title: Thread-safe LRU cache
+  - n: 40
+    title: Concurrent batch processor with timeout
+forge:
+  FORGE_TIERS:
+  - level: Core
+    treatment: Recurring Friday skill that directly supports the current phase
+    timebox: 45–90 min
+    rule: Implement, test, explain complexity and trade-offs
+  - level: Supporting
+    treatment: Guided lab or one representative problem
+    timebox: 45–120 min
+    rule: Attempt when relevant; record the result and what remains unclear
+  - level: Archive
+    treatment: Reference material for future use or unusual interview prompts
+    timebox: 0 min scheduled
+    rule: No weekly obligation; promote it only when a project needs it
+  - level: Boss fight
+    treatment: A selected advanced problem integrated with a gate or capstone
+    timebox: 2–3 hr
+    rule: Complete the artifact, write the reasoning, and include a retrospective
+  FORGE_LANES:
+  - weeks: 1–6
+    theme: Complexity, arrays, prefix sums, two pointers, binary search, bitmasks
+    tier: Core
+    artifact: Timed implementation drill with complexity note
+  - weeks: 7–14
+    theme: Matrix multiplication, Gaussian elimination, matrix exponentiation, recurrences
+    tier: Core
+    artifact: From-scratch matrix or recurrence solver
+  - weeks: 15–22
+    theme: Numerical methods, binary search on answer, ternary search, Newton iteration
+    tier: Supporting
+    artifact: Root-finding or optimization comparison
+  - weeks: 23–30
+    theme: Probability simulation, expectation DP, combinatorics, inclusion-exclusion, number theory basics
+    tier: Core
+    artifact: Expectation/counting lab; Week 30 mini-contest
+  - weeks: 31–37
+    theme: Heaps, hashing, tries, linked structures, intervals, basic pattern matching
+    tier: Core
+    artifact: Retrieval/cache primitive plus timed data-structure drill
+  - weeks: 38–45
+    theme: Fenwick, segment trees, range queries, sketches, DSU, randomized hashing
+    tier: Core
+    artifact: Range-query or routing primitive; Week 45 mini-contest
+  - weeks: 46–52
+    theme: Graph representation, BFS/DFS, SCC, topological sort, shortest paths
+    tier: Core
+    artifact: Dependency graph or routing implementation
+  - weeks: 53–57
+    theme: MST, Euler paths, max flow, min-cost flow, matching
+    tier: Core / Supporting
+    artifact: Resource-allocation design; Week 57 graph boss fight
+  - weeks: 58–69
+    theme: DP, greedy, bitmask DP, probability DP, experiment assignment
+    tier: Core
+    artifact: Evaluation or assignment tool with algorithmic analysis
+  - weeks: 70–81
+    theme: KMP, Aho–Corasick, trie retrieval, sequence DP, suffix-array survey
+    tier: Core / Supporting
+    artifact: Pattern detector or retrieval index; Week 81 string boss
+  - weeks: 82–93
+    theme: Priority scheduling, interval allocation, capacity search, randomized load balancing
+    tier: Core / Supporting
+    artifact: Scheduler benchmark; Week 93 inference boss
+  - weeks: 94–102
+    theme: Euler indexing, subtree aggregation, DSU on Tree, HLD survey
+    tier: Supporting / Boss
+    artifact: Tenant-tree query lab; Week 102 platform boss
+  - weeks: 103–108
+    theme: Mo’s algorithm, capstone integration, tree forensics
+    tier: Boss fights
+    artifact: Capstone 1 required; Capstone 2 optional at Week 108
+  FORGE_BOSSES:
+  - name: Week 18 — Numerical matrix boss
+    description: Gaussian elimination, matrix exponentiation, or randomized SVD with numerical-stability notes.
+  - name: Week 30 — Foundations mini-contest
+    description: Expectation DP, combinatorics, modular arithmetic, and one optimization search problem.
+  - name: Week 45 — Data-structure mini-contest
+    description: Fenwick/segment tree, DSU, hashing, and a range-query workload.
+  - name: Week 57 — Graph/flow boss
+    description: Euler indexing plus a flow or matching formulation for scheduling/resource allocation.
+  - name: Week 69 — MLOps algorithm boss
+    description: Experiment assignment, greedy rollout, or bandit allocation with a correctness and trade-off report.
+  - name: Week 81 — String/agent boss
+    description: Aho–Corasick tool/prompt detector or sequence-DP planner.
+  - name: Week 93 — Inference boss
+    description: Priority scheduling, interval allocation, and binary search on capacity backed by a benchmark.
+  - name: Week 102 — Platform tree boss
+    description: Euler Tour plus DSU-on-Tree subtree analytics, used as preparation for Capstone 2.
+  - name: Weeks 103–108 — Capstone 1
+    description: Mo’s algorithm over immutable LLM traces — the required algorithmic capstone.
+  - name: Week 108 optional — Capstone 2
+    description: Euler Tour + DSU on Tree over agent execution trees. Extra depth credit, not required for the LLM Platform
+      badge.
+  FORGE_COVERAGE:
+  - area: Complexity, arrays, prefix sums, binary search, greedy
+    treatment: Core
+    lands: Weeks 1–6 and recurring
+  - area: Matrix operations, Gaussian elimination, exponentiation, recurrences
+    treatment: Core
+    lands: Weeks 7–18
+  - area: Probability, expectation DP, combinatorics, modular arithmetic, gcd/sieve
+    treatment: Core
+    lands: Weeks 23–30 and Weeks 58–69
+  - area: Heaps, hashing, tries, Fenwick trees, segment trees, DSU
+    treatment: Core
+    lands: Weeks 31–45
+  - area: BFS/DFS, SCCs, topological sort, shortest paths
+    treatment: Core
+    lands: Weeks 46–52
+  - area: MST, Euler paths, flows, matching
+    treatment: Core concepts; selected Boss fights
+    lands: Weeks 53–57
+  - area: Dynamic programming and state-space reduction
+    treatment: Core
+    lands: Weeks 58–69
+  - area: KMP, Aho–Corasick, retrieval-oriented string matching
+    treatment: Core
+    lands: Weeks 70–81
+  - area: Suffix arrays, suffix trees, suffix automata
+    treatment: Supporting / Archive
+    lands: Weeks 70–81; project-driven promotion
+  - area: Scheduling, interval structures, randomized algorithms, capacity search
+    treatment: Core / Supporting
+    lands: Weeks 82–102
+  - area: Euler Tour, DSU on Tree, Mo’s algorithm
+    treatment: Boss fights
+    lands: Weeks 103–108
+  - area: Computational geometry
+    treatment: Supporting basics; Archive advanced
+    lands: Weeks 1–30 and project-driven
+  - area: HLD, dynamic trees, Link-Cut Trees, exotic contest structures
+    treatment: Archive / Boss fight
+    lands: Capstone extensions only
+gates:
+  GATES:
+  - gate: 1
+    week: 6
+    criteria: Course repo · weekly tracker · Dockerized service · diagnostic report
+    remediation: Remediate orientation and systems setup
+  - gate: 2
+    week: 18
+    criteria: Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines
+    remediation: Remediate linear/numerical algebra
+  - gate: 3
+    week: 30
+    criteria: Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE
+    remediation: Remediate calculus/statistics; publish Foundations release
+  - gate: 4
+    week: 45
+    criteria: Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience,
+      sketches, routing)
+    remediation: Remediate the missing primitive contracts/tests
+  - gate: 5
+    week: 57
+    criteria: Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes
+    remediation: Remediate the weakest design pattern
+  - gate: 6
+    week: 69
+    criteria: A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan
+    remediation: Remediate experimentation/MLOps; publish Engineering + Systems release
+  - gate: 7
+    week: 81
+    criteria: RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype
+    remediation: Remediate the weakest LLM/RAG component
+  - gate: 8
+    week: 93
+    criteria: Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding
+      report, inference cost model
+    remediation: Remediate inference benchmarking and operations
+  - gate: 9
+    week: 102
+    criteria: 'Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry,
+      cost attribution, safety filters'
+    remediation: Remediate the missing platform capability
+  - gate: 10
+    week: 108
+    criteria: Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan
+    remediation: Remediate the specific capstone/interview gap
+  PROGRAMS:
+  - name: Foundations
+    weeks: W1–30
+    releaseWeek: 30
+    release: Math, numerical routines, and experimentation toolkit
+  - name: Engineering + Systems
+    weeks: W31–69
+    releaseWeek: 69
+    release: Tested primitives, system designs, MLOps tools, and postmortem
+  - name: LLM Platform
+    weeks: W70–108
+    releaseWeek: 108
+    release: LLM/RAG work, inference benchmark, platform layer, and capstone
+interview:
+  CARL_STORIES:
+  - story: Scope
+    weeks: 1–10
+  - story: Ownership
+    weeks: 11–20
+  - story: Ambiguity
+    weeks: 21–30
+  - story: Perseverance
+    weeks: 31–40
+  - story: Conflict resolution
+    weeks: 41–50
+  - story: Growth
+    weeks: 51–60
+  - story: Communication
+    weeks: 61–70
+  - story: Leadership
+    weeks: 71–80
+  - story: Technical trade-offs
+    weeks: 81–90
+  - story: Production incident
+    weeks: 91–108
+  WEEKLY_MINIMUMS:
+  - 1 coding drill
+  - 1 system design question or pattern
+  - 1 behavioral story refinement
+  - 1 technical explanation out loud
+  INTERVIEW_FOCUS:
+  - weeks: 1–30
+    focus: Technical communication and basic problem solving
+  - weeks: 31–45
+    focus: Coding patterns and implementation drills
+  - weeks: 46–57
+    focus: System design case studies
+  - weeks: 58–69
+    focus: ML/MLOps/experimentation interview questions
+  - weeks: 70–81
+    focus: LLM/RAG/agent system design
+  - weeks: 82–93
+    focus: LLM inference and performance questions
+  - weeks: 94–102
+    focus: Production AI platform design
+  - weeks: 103–108
+    focus: Full mock interviews
+  ROADMAP_TRACKS:
+  - name: System Design
+    count: 28
+    items:
+    - step: Reading
+      item: What is the system design interview?
+      type: Article
+      completion: Read
+    - step: Reading
+      item: How to prepare for system design interviews
+      type: Article
+      completion: Read
+    - step: Learning
+      item: Learn the delivery framework
+      type: Lesson
+      completion: Complete
+    - step: Concepts
+      item: Study core system design concepts
+      type: Lesson
+      completion: Complete
+    - step: Technologies
+      item: Learn key technologies
+      type: Lesson
+      completion: Complete
+    - step: Problems
+      item: Top 10 Common Problems
+      type: Reading
+      completion: Read
+    - step: Case Study
+      item: Design a URL Shortener
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design Dropbox
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design Ticketmaster
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design FB News Feed
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design WhatsApp
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design LeetCode
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design Uber
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design a Web Crawler
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design an Ad Click Aggregator
+      type: Design Exercise
+      completion: Complete
+    - step: Case Study
+      item: Design Facebook’s Post Search
+      type: Design Exercise
+      completion: Complete
+    - step: Pattern
+      item: Real-time Updates
+      type: Pattern
+      completion: Complete
+    - step: Pattern
+      item: Dealing with Contention
+      type: Pattern
+      completion: Complete
+    - step: Pattern
+      item: Multi-step Processes
+      type: Pattern
+      completion: Complete
+    - step: Pattern
+      item: Scaling Reads
+      type: Pattern
+      completion: Complete
+    - step: Pattern
+      item: Scaling Writes
+      type: Pattern
+      completion: Complete
+    - step: Pattern
+      item: Handling Large Blobs
+      type: Pattern
+      completion: Complete
+    - step: Pattern
+      item: Managing Long Running Tasks
+      type: Pattern
+      completion: Complete
+    - step: Practice
+      item: Complete 3 easy guided practices
+      type: Milestone
+      completion: 3 Completed
+    - step: Practice
+      item: Complete 3 medium guided practices
+      type: Milestone
+      completion: 3 Completed
+    - step: Practice
+      item: Complete 2 hard guided practices
+      type: Milestone
+      completion: 2 Completed
+    - step: Practice
+      item: Complete 3 easy guided practices (retry)
+      type: Milestone
+      completion: 3 Completed
+  - name: Coding
+    count: 20
+    items:
+    - step: Algorithm
+      item: Two Pointers
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Sliding Window
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Intervals
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Stack
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Linked List
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Binary Search
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Heap
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Depth-First Search
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Breadth-First Search
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Backtracking
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Graphs
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Dynamic Programming
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Greedy Algorithms
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Trie
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Prefix Sum
+      type: Topic
+      completion: Complete
+    - step: Algorithm
+      item: Matrices
+      type: Topic
+      completion: Complete
+    - step: Practice
+      item: Grind75
+      type: Question Set
+      completion: Complete
+    - step: Practice
+      item: 50+ Company Tagged Questions
+      type: Question Set
+      completion: 50 Completed
+    - step: Mock
+      item: Blank Editor + Think Aloud
+      type: Practice
+      completion: 5–7 Sessions
+  - name: Behavioral
+    count: 15
+    items:
+    - step: Reading
+      item: Why the behavioral interview matters
+      type: Article
+      completion: Read
+    - step: Reading
+      item: Decode what questions are really asking
+      type: Article
+      completion: Read
+    - step: Story
+      item: Scope
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Ownership
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Ambiguity
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Perseverance
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Conflict resolution
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Growth
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Communication
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Leadership
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Technical trade-offs
+      type: Story
+      completion: Prepared
+    - step: Story
+      item: Production incident
+      type: Story
+      completion: Prepared
+    - step: Mock
+      item: 'Mock interview #1'
+      type: Mock Interview
+      completion: 1 Completed
+    - step: Mock
+      item: 'Mock interview #2'
+      type: Mock Interview
+      completion: 1 Completed
+    - step: Mock
+      item: 'Mock interview #3'
+      type: Mock Interview
+      completion: 1 Completed
+  CAPSTONE_REQUIREMENTS:
+  - area: Product
+    requirement: Clear user problem, defined scope, working end-to-end flow
+  - area: Architecture
+    requirement: API design, data model, retrieval/model flow, failure handling, tenant isolation
+  - area: Evaluation
+    requirement: Offline metrics, online or simulated metrics, slice-based evaluation, error analysis
+  - area: Observability
+    requirement: Logs, metrics, traces, dashboards, alert thresholds
+  - area: Cost
+    requirement: Token usage, latency, cache hit rate, cost per request or per million tokens
+  - area: Safety
+    requirement: Prompt injection defenses, PII redaction, guardrails, abuse prevention
+  - area: Portfolio
+    requirement: Public repo, architecture diagram, benchmark report, demo video, design doc, interview summary
+  COMPLETION_LEVELS:
+  - level: Foundations
+    requires: Core work shipped for Weeks 1–30, Gate 3 passed, Foundations portfolio release published
+  - level: Engineering + Systems
+    requires: Core work shipped for Weeks 31–69, Gate 6 passed, Engineering + Systems release published
+  - level: LLM Platform
+    requires: Core work shipped for Weeks 70–108, Gate 10 passed, final portfolio release published
+  - level: Auror (optional)
+    requires: One program release plus all 548 Darbar entries solved and explained, required Forge spine, and both capstone
+      boss artifacts attempted
+mandalas:
+  MANDALAS:
+  - id: '1'
+    title: Build the learner’s operating system
+    days: Days 1–48
+    weeks: Weeks 1–7
+    identity: Disciplined learner
+    topics:
+    - Python engineering, typing, testing and async fundamentals
+    - NumPy, vectorization and broadcasting
+    - Git, notebooks, Makefiles and reproducible experiments
+    - Docker, HTTP, APIs and Linux basics
+    - Personal mathematics and systems diagnostics
+    - Weekly journals, evidence tracking and retrospectives
+    - Vector spaces, span, basis and dimension
+    evidence:
+    - course dashboard and repository
+    - tested CLI project
+    - numerical utility library
+    - reproducible notebook
+    - diagnostic gap map
+    - containerized service
+    - first mathematics problem set
+    transformation: They stop being someone “planning to study AI” and become someone with a functioning learning and engineering
+      system.
+  - id: '2'
+    title: Learn the geometry beneath intelligence
+    days: Days 49–96
+    weeks: Weeks 7–14
+    identity: Linear-algebra thinker
+    topics:
+    - Linear independence, rank and nullity
+    - Inner products and dual norms
+    - Orthogonality and projections, Gram–Schmidt
+    - Coordinate transformations
+    - Eigenvalues and diagonalization
+    - PSD matrices and quadratic forms, Rayleigh quotients
+    - SVD, pseudoinverse and low-rank approximation
+    evidence:
+    - projection and coordinate-transformation labs
+    - PCA-style experiment
+    - quadratic-form visualization
+    - low-rank compression demo
+    transformation: Embeddings, attention and matrix models stop looking like mystical equations. The learner can reason geometrically.
+  - id: '3'
+    title: Numerical computation and differentiation
+    days: Days 97–144
+    weeks: Weeks 14–21
+    identity: Numerical programmer
+    topics:
+    - Matrix norms and conditioning, perturbation analysis
+    - LU, QR and Cholesky
+    - Iterative solvers, power iteration and Krylov methods
+    - Randomized SVD, tensor notation
+    - Partial and directional derivatives
+    - Gradients, Jacobians and Hessians, Taylor approximations
+    - Chain rule on computational graphs
+    evidence:
+    - numerical decomposition library
+    - solver benchmarks
+    - perturbation experiment
+    - randomized approximation lab
+    - gradient and curvature visualizers
+    - manual backpropagation worksheet
+    transformation: They begin understanding not only whether an algorithm is mathematically correct, but whether it is numerically
+      sane.
+  - id: '4'
+    title: Probability, autodiff and statistical inference
+    days: Days 145–192
+    weeks: Weeks 21–28
+    identity: Statistical reasoner
+    topics:
+    - Computational graphs, forward/reverse-mode autodiff, JVPs and VJPs
+    - Probability spaces, conditional probability and Bayes
+    - Random variables and distributions
+    - Covariance and correlation
+    - LLN, CLT and delta method
+    - MLE and MAP, estimator bias and variance
+    - Hypothesis testing, Type I and Type II errors
+    evidence:
+    - tiny autodiff engine
+    - probability simulations
+    - covariance analysis
+    - Monte Carlo convergence demo
+    - estimator comparison
+    - statistical-test implementation
+    transformation: They can explain why training and evaluation procedures work — not merely import them.
+  - id: '5'
+    title: Experimentation meets retrieval
+    days: Days 193–240
+    weeks: Weeks 28–35
+    identity: Retrieval and experimentation builder
+    topics:
+    - p-values, confidence intervals, bootstrap and permutation tests
+    - power, MDE and sample-size calculations, multiple-testing correction
+    - cosine similarity, exact and memory-bounded KNN
+    - streaming Top-K and dynamically changing scores
+    - two-stage retrieval and reranking
+    - sliding-window and token-bucket rate limiting
+    - LRU and TTL caching
+    evidence:
+    - bootstrap CI package
+    - experiment-size calculator
+    - vector-search mini-lab
+    - Top-K service
+    - reranking prototype
+    - rate-limiter module
+    - cache simulator
+    transformation: They can now build the primitives behind search, experimentation and traffic control.
+  - id: '6'
+    title: Production reliability and measurable AI
+    days: Days 241–288
+    weeks: Weeks 35–42
+    identity: Reliability-minded engineer
+    topics:
+    - text and sentence-aware chunking
+    - PII span merging, regex and NER-based redaction
+    - Expected Calibration Error, Brier score and reliability diagrams
+    - NDCG, MRR and Recall@K
+    - thread-safe inference batching
+    - retries, exponential backoff and jitter, circuit breakers
+    - Count-Min Sketch and Bloom filters
+    evidence:
+    - chunking library
+    - safe redaction utility
+    - calibration dashboard
+    - retrieval evaluator
+    - concurrent batcher
+    - fault-tolerance toolkit
+    - probabilistic data structures
+    transformation: They stop thinking only about model output and start thinking about trust, failure, observability and
+      operational behavior.
+  - id: '7'
+    title: Distributed primitives and design reasoning
+    days: Days 289–336
+    weeks: Weeks 42–48
+    identity: Distributed-systems implementer
+    topics:
+    - HyperLogLog, consistent hashing, rendezvous hashing
+    - weighted load balancing, distributed unique IDs
+    - leaky-bucket and sliding-window counters
+    - requirements and constraint gathering, APIs and data modelling
+    - observability, rate limiting at distributed scale
+    evidence:
+    - cardinality estimator
+    - routing lab
+    - load-balancer module
+    - platform-primitives library
+    - system-design document template
+    - first complete design exercises
+    transformation: They can move from implementing one process to reasoning about many machines.
+  - id: '8'
+    title: Classic distributed systems
+    days: Days 337–384
+    weeks: Weeks 49–55
+    identity: System designer
+    topics:
+    - scaling reads and writes, caching and replication, contention
+    - large blob storage and CDNs
+    - orchestration versus choreography, workflow-state ownership
+    - backward-compatible schema evolution
+    - URL shorteners, Dropbox, Ticketmaster, News Feed, WhatsApp, LeetCode-style judges
+    evidence:
+    - scaling-pattern notes
+    - blob-storage design
+    - workflow-state architecture
+    - schema-migration plan
+    - multiple end-to-end design documents
+    transformation: They stop naming technologies and start defending architecture.
+  - id: '9'
+    title: From system design to ML product science
+    days: Days 385–432
+    weeks: Weeks 55–62
+    identity: ML systems practitioner
+    topics:
+    - Uber and web crawlers, ad-click aggregation, payments
+    - business-objective formulation, model-versus-non-model decisions
+    - labeling and weak supervision, data augmentation
+    - leakage and contamination, experiment tracking and versioning
+    - baselines, slice-based offline evaluation, confidence intervals
+    - shadow and canary deployment, bandits
+    evidence:
+    - ML project charter
+    - data-quality checklist
+    - leakage audit
+    - evaluation harness
+    - rollout plan
+    transformation: They learn that a production ML system begins with a decision and a dataset — not with model training.
+  - id: '10'
+    title: Build a mature experimentation platform
+    days: Days 433–480
+    weeks: Weeks 62–69
+    identity: Experimentation engineer
+    topics:
+    - A/B-test significance calculation, absolute and relative lift
+    - pooled standard errors, confidence intervals
+    - paired bootstrap model comparison
+    - Sample-Ratio Mismatch detection, chi-square diagnostics
+    - feature-flag engines, deterministic sticky assignment
+    - monitoring and drift detection, production incident analysis
+    evidence:
+    - analyze_ab_test
+    - bootstrap comparison package
+    - SRM detector
+    - feature-flag service
+    - experiment-assignment service
+    - monitoring specification
+    - incident postmortem
+    transformation: They can distinguish “the metric increased” from “we have trustworthy evidence that the product improved.”
+  - id: '11'
+    title: Train, align and retrieve with LLMs
+    days: Days 481–528
+    weeks: Weeks 69–76
+    identity: LLM training and retrieval engineer
+    topics:
+    - transformer and tokenizer anatomy, training-data cleaning and deduplication
+    - SFT, LoRA, QLoRA and DoRA
+    - RLHF, DPO, ORPO and GRPO
+    - DDP and FSDP, tensor and pipeline parallelism, ZeRO
+    - HNSW, IVF-PQ and product quantization
+    - hybrid retrieval, query rewriting, parent–child and multi-vector retrieval
+    evidence:
+    - model-anatomy notes
+    - dataset card
+    - fine-tuning plan
+    - preference-evaluation plan
+    - distributed-training architecture
+    - vector-index benchmark
+    - retrieval lab
+    transformation: They understand the whole upstream and retrieval lifecycle rather than treating the LLM as a remote magic
+      endpoint.
+  - id: '12'
+    title: RAG, agents and inference foundations
+    days: Days 529–576
+    weeks: Weeks 76–83
+    identity: RAG and agent engineer
+    topics:
+    - BM25 + dense + reranker fusion, Reciprocal Rank Fusion
+    - evaluation by query slice
+    - prompt templates and version registries
+    - conversation and long-term memory, context-window optimization
+    - ReAct, plan-and-execute, tool calling, agent guardrails
+    - GPU compute-, memory- and overhead-bound regimes, FlashAttention
+    - roofline models and arithmetic intensity
+    evidence:
+    - retrieval-fusion service
+    - regression report
+    - prompt-management tool
+    - memory service
+    - agent prototype
+    - GPU performance primer
+    - arithmetic-intensity worksheet
+    transformation: They can build an agent and explain where its latency, errors, context and cost come from.
+  - id: '13'
+    title: Become an inference systems engineer
+    days: Days 577–624
+    weeks: Weeks 83–90
+    identity: Inference performance engineer
+    topics:
+    - PagedAttention, KV-cache block tables, vLLM deployment
+    - scheduler and block-manager internals, running/waiting metrics
+    - latency histograms, Prometheus and Grafana
+    - request-rate sweeps and saturation analysis
+    - SGLang, RadixAttention and prefix reuse
+    - Orca-style continuous batching, chunked prefill
+    evidence:
+    - live vLLM deployment
+    - internal architecture notes
+    - metrics schema
+    - serving dashboard
+    - benchmark methodology
+    - vLLM/SGLang comparison
+    - scheduling report
+    transformation: They can diagnose inference rather than simply complain that it is slow.
+  - id: '14'
+    title: Advanced serving and reliable routing
+    days: Days 625–672
+    weeks: Weeks 90–96
+    identity: Serving and routing engineer
+    topics:
+    - continuous batching trade-offs, FP8, AWQ and GPTQ
+    - KV-cache compression, speculative decoding, Medusa and EAGLE
+    - StreamingLLM and KV eviction
+    - DistServe, Splitwise and Mooncake, prefill/decode disaggregation
+    - model routing, canary assignment and kill switches
+    - PII-safe traces and logs, async fan-out, partial failures, token-stream multiplexing
+    evidence:
+    - quality-versus-throughput benchmark
+    - latency and memory lab
+    - disaggregated serving architecture
+    - model-router service
+    - safe tracing layer
+    - resilient aggregator
+    transformation: They can optimize not just a model, but a multi-provider inference service.
+  - id: '15'
+    title: Build the enterprise AI platform
+    days: Days 673–720
+    weeks: Weeks 97–103
+    identity: Multi-tenant AI platform engineer
+    topics:
+    - distributed token budgets, request prioritization
+    - DAG workflow execution, idempotency
+    - per-tenant concurrency limits, leader election
+    - distributed work queues, dynamic configuration
+    - model health monitoring, registries and promotion
+    - semantic and embedding caches, prompt-injection detection
+    - exact cost attribution, capstone architecture planning
+    evidence:
+    - quota and priority service
+    - workflow engine
+    - tenant limiter
+    - HA lab
+    - queue/configuration platform
+    - model-operations pipeline
+    - cost/safety platform
+    - complete capstone design document
+    transformation: This is where “tensor” finally becomes “tenant.”
+  - id: final
+    title: Graduation — portfolio, capstone and interview readiness
+    days: Days 721–756
+    weeks: Weeks 103–108
+    identity: Portfolio-backed Staff AI Systems candidate
+    topics:
+    - complete the capstone core API
+    - build the retrieval or agent flow
+    - install evaluation, tracing and guardrails
+    - run load and failure tests, tune latency and cost
+    - produce architecture and benchmark reports
+    - complete coding, system-design and behavioral mocks
+    - publish the portfolio, perform a full retrospective
+    - create a 30-day career plan
+    evidence:
+    - repository, traces, benchmarks, design documents and failure tests
+    - published portfolio release
+    - mock-interview scorecard
+    - 30-day job-search plan
+    transformation: They no longer need to tell someone they “know AI systems.” They can provide the repository, traces, benchmarks,
+      design documents and failure tests.
+math:
+  MATH_TRACKS:
+  - id: 1
+    name: Mathematical Foundations
+    range: Modules 1–10
+    description: Set theory, proofs, information and measure-theoretic foundations.
+    modules:
+    - n: 1
+      title: Notations and structures
+      focus: Sets, functions, sequences, big-O
+    - n: 2
+      title: Probability and combinatorics
+      focus: Counting, pigeonhole, discrete probability
+    - n: 3
+      title: Proofs and structures
+      focus: Induction, proof by contradiction, well-ordering
+    - n: 4
+      title: Information and probability I
+      focus: Entropy, conditional entropy, mutual information
+    - n: 5
+      title: Information and probability II
+      focus: KL divergence, MDL, Pinsker, data processing
+    - n: 6
+      title: Topology and metric spaces I
+      focus: Open/closed sets, continuity, compactness
+    - n: 7
+      title: Topology and metric spaces II
+      focus: Metrics, completeness, Banach space, contraction
+    - n: 8
+      title: Measure and integration I
+      focus: Sigma-algebras, measures, measurable functions
+    - n: 9
+      title: Measure and integration II
+      focus: Lebesgue integral, convergence theorems
+    - n: 10
+      title: Functional analysis
+      focus: Normed spaces, bounded linear operators, spectra
+  - id: 2
+    name: Numerical Methods & Applied Analysis
+    range: Modules 11–20
+    description: Floating-point reality, conditioning, factorization and iterative methods.
+    modules:
+    - n: 11
+      title: Floating point arithmetic
+      focus: IEEE 754, rounding, ulp, cancellation
+    - n: 12
+      title: Numerical conditioning
+      focus: Condition numbers, stability, error
+    - n: 13
+      title: Root finding and optimization
+      focus: Bisection, Newton, quasi-Newton
+    - n: 14
+      title: Interpolation and approximation
+      focus: Polynomials, splines, least squares
+    - n: 15
+      title: Numerical integration
+      focus: Quadrature, adaptivity, high-dimensional
+    - n: 16
+      title: Eigenvalues and iterative methods
+      focus: Power iteration, Lanczos, shift-invert
+    - n: 17
+      title: SVD and matrix factorizations
+      focus: LU, QR, Cholesky, SVD, rank
+    - n: 18
+      title: Dense vs sparse methods
+      focus: Storage, bandwidth, iterative solvers
+    - n: 19
+      title: Krylov methods
+      focus: CG, GMRES, preconditioning
+    - n: 20
+      title: Randomized numerical linear algebra
+      focus: Random projection, randomized SVD
+  - id: 3
+    name: Calculus, Probabilities & Statistics
+    range: Modules 21–30
+    description: Differentiation, optimization, probability and the classical inference toolkit.
+    modules:
+    - n: 21
+      title: Automatic differentiation
+      focus: Reverse-mode, Jacobian-vector products, vector-Jacobian products
+    - n: 22
+      title: Unconstrained optimization
+      focus: Gradient descent, momentum, adaptive methods
+    - n: 23
+      title: Constrained optimization
+      focus: Lagrange multipliers, KKT, convex duality
+    - n: 24
+      title: Convex analysis
+      focus: Convex sets, functions, subgradients
+    - n: 25
+      title: Probability theory
+      focus: Random variables, expectations, variance
+    - n: 26
+      title: Distributions and moments
+      focus: Bernoulli, Gaussian, exponential, Poisson, moments
+    - n: 27
+      title: Multivariate probability
+      focus: Covariance, correlation, joint/marginal/conditional
+    - n: 28
+      title: Limit theorems
+      focus: LLN, CLT, delta method
+    - n: 29
+      title: Statistical inference
+      focus: MLE, MAP, estimators, bias/variance
+    - n: 30
+      title: Hypothesis testing
+      focus: p-values, Type I/II errors, power, MDE
+  - id: 4
+    name: Experimentation & Analytics
+    range: Modules 31–40
+    description: The quantitative machinery behind trustworthy product experiments.
+    modules:
+    - n: 31
+      title: Experimental design
+      focus: Randomization, control, blocking
+    - n: 32
+      title: Sampling and resampling
+      focus: Bootstrap, permutation, jackknife
+    - n: 33
+      title: Confidence intervals
+      focus: Construction, interpretation, coverage
+    - n: 34
+      title: Multiple testing
+      focus: Bonferroni, FDR, q-values
+    - n: 35
+      title: Bayesian inference
+      focus: Priors, posteriors, conjugate, credible intervals
+    - n: 36
+      title: Regression analysis
+      focus: Linear/logistic, GLM, residuals
+    - n: 37
+      title: Causal inference
+      focus: Potential outcomes, confounding, DAGs
+    - n: 38
+      title: Sequential analysis
+      focus: Group sequential, alpha spending, peeking
+    - n: 39
+      title: A/B testing fundamentals
+      focus: Absolute/relative lift, pooled variance
+    - n: 40
+      title: Modern ML metrics
+      focus: Calibration, NDCG, AUC, fairness
+  - id: 5
+    name: ML Theory & Foundation Models
+    range: Modules 41–50
+    description: Learning theory and the mathematics of modern foundation models.
+    modules:
+    - n: 41
+      title: Learning theory
+      focus: PAC learning, bias-variance, VC dimension
+    - n: 42
+      title: Empirical risk minimization
+      focus: Loss functions, regularization, generalization
+    - n: 43
+      title: Optimization in ML
+      focus: SGD, mini-batch, convergence
+    - n: 44
+      title: Kernel methods
+      focus: Kernels, SVM, RKHS
+    - n: 45
+      title: Probabilistic graphical models
+      focus: Bayes nets, Markov, inference
+    - n: 46
+      title: Bayesian deep learning
+      focus: Uncertainty, dropout, VI, ensembles
+    - n: 47
+      title: Representation learning
+      focus: Autoencoders, contrastive learning
+    - n: 48
+      title: Transformer theory
+      focus: Attention, positional encodings, scaling
+    - n: 49
+      title: Scaling laws
+      focus: Compute, data, parameters
+    - n: 50
+      title: Emergent behavior
+      focus: Zero-shot, few-shot, capabilities, limitations
+  - id: 6
+    name: Distributed Systems Mathematics
+    range: Modules 51–60
+    description: Hashing, consensus, consistency and causality for distributed systems.
+    modules:
+    - n: 51
+      title: Complexity and cost models
+      focus: Amortized analysis, communication cost
+    - n: 52
+      title: Hash functions
+      focus: Consistent hashing, minhash, SimHash
+    - n: 53
+      title: Routing and load balancing
+      focus: Weighted round robin, rendezvous hashing
+    - n: 54
+      title: Consensus and leader election
+      focus: Paxos, Raft, leader lease
+    - n: 55
+      title: Vector clocks and causality
+      focus: Happens-before, concurrent events
+    - n: 56
+      title: CRDTs and state merging
+      focus: LWW, G-Counters, conflict resolution
+    - n: 57
+      title: Quorums and replication
+      focus: Read/write quorums, quorum intersection
+    - n: 58
+      title: Distributed transactions
+      focus: Two-phase commit, saga, idempotency
+    - n: 59
+      title: Gossip protocols
+      focus: Failure detection, epidemic broadcast
+    - n: 60
+      title: Distributed consistency
+      focus: Linearizability, sequential, eventual, CAP
+  - id: 7
+    name: Applied Probability for Inference
+    range: Modules 61–70
+    description: Queueing, processes, sketches and tail behavior behind serving systems.
+    modules:
+    - n: 61
+      title: Queueing theory
+      focus: M/M/1, M/M/c, Little’s law, tail behavior
+    - n: 62
+      title: Renewal theory
+      focus: Renewal processes, residual life
+    - n: 63
+      title: Markov processes
+      focus: Discrete/continuous time, stationarity
+    - n: 64
+      title: Poisson processes
+      focus: Arrivals, thinning, superposition
+    - n: 65
+      title: Branching processes
+      focus: Galton–Watson, extinction probability
+    - n: 66
+      title: Statistical process control
+      focus: Control charts, CUSUM
+    - n: 67
+      title: Randomized algorithms
+      focus: Sampling, hashing, load balancing
+    - n: 68
+      title: Tail bounds
+      focus: Markov, Chebyshev, Chernoff, Hoeffding
+    - n: 69
+      title: Streaming and sketching
+      focus: Count-Min, HyperLogLog, t-digest
+    - n: 70
+      title: Heavy hitters
+      focus: Misra-Gries, Space-Saving
+  - id: 8
+    name: Optimization & Inference
+    range: Modules 71–80
+    description: Convex and discrete optimization, graph algorithms and approximation.
+    modules:
+    - n: 71
+      title: Convex optimization
+      focus: Duality, interior point, KKT
+    - n: 72
+      title: Non-convex optimization
+      focus: Saddle points, landscape, heuristics
+    - n: 73
+      title: Linear and integer programming
+      focus: Simplex, LP relaxation, branch and bound
+    - n: 74
+      title: Dynamic programming
+      focus: Optimal substructure, state design
+    - n: 75
+      title: Network flows
+      focus: Max flow, min cut, min cost flow
+    - n: 76
+      title: Greedy algorithms
+      focus: Exchange arguments, matroids
+    - n: 77
+      title: Graph algorithms
+      focus: Shortest paths, MST, Euler tour
+    - n: 78
+      title: Advanced graph structures
+      focus: Euler Tour Trees, heavy-light decomposition
+    - n: 79
+      title: Spectral methods
+      focus: Graph Laplacians, eigenvectors
+    - n: 80
+      title: Approximation algorithms
+      focus: NP-hardness, approximation ratios
+  - id: 9
+    name: Information, Inference & AI Foundations
+    range: Modules 81–90
+    description: Information theory, decision theory, RL and generative modeling.
+    modules:
+    - n: 81
+      title: Information theory
+      focus: Entropy, mutual information, channel capacity
+    - n: 82
+      title: Statistical learning theory
+      focus: Generalization, Rademacher complexity
+    - n: 83
+      title: Bayesian statistics
+      focus: Priors, posteriors, computation, MCMC
+    - n: 84
+      title: Decision theory
+      focus: Utility, expected utility, minimax
+    - n: 85
+      title: Game theory
+      focus: Nash equilibria, zero-sum games
+    - n: 86
+      title: Reinforcement learning
+      focus: MDPs, value iteration, Q-learning
+    - n: 87
+      title: Sequential decision making
+      focus: Bandits, exploration/exploitation
+    - n: 88
+      title: Generative modeling
+      focus: VAEs, GANs, diffusion
+    - n: 89
+      title: Causal inference II
+      focus: Instrumental variables, do-calculus
+    - n: 90
+      title: Fairness and safety
+      focus: Bias, fairness metrics, alignment, robustness
+  - id: 10
+    name: Production AI Systems & Advanced Inference
+    range: Modules 91–100
+    description: Scheduling, cost, reliability and the cutting edge of inference systems.
+    modules:
+    - n: 91
+      title: Scheduling
+      focus: Priority queues, fair scheduling, work stealing
+    - n: 92
+      title: Autoscaling and capacity
+      focus: Utilization, SLO-based scaling, throttling
+    - n: 93
+      title: Cost modeling
+      focus: Hardware cost, efficiency, pricing
+    - n: 94
+      title: Reliability engineering
+      focus: SLOs, error budgets, SLA, incident response
+    - n: 95
+      title: Advanced inference
+      focus: KV cache, paging, continuous batching
+    - n: 96
+      title: Advanced quantization
+      focus: FP8, AWQ, GPTQ, KV-cache quantization
+    - n: 97
+      title: Speculative decoding
+      focus: Draft models, verification, acceptance rates
+    - n: 98
+      title: Long context
+      focus: RoPE, eviction, memory compression
+    - n: 99
+      title: Distributed inference
+      focus: Prefill/decode disaggregation, expert parallelism
+    - n: 100
+      title: Advanced parallel training
+      focus: Tensor, pipeline, expert parallelism
+prerequisites:
+  PREREQUISITE_RESOURCES:
+  - title: Google Like a Pro — Advanced Search Operators
+    url: https://www.youtube.com/watch?v=BRiNw490Eq0
+    focus: Finding the right source, fast
+    weeks: W1–2
+    outcome: 'Self-serve research: filter, scope, and verify results instead of hoping Google guesses right.'
+  - title: How To Read Documentation For Beginners
+    url: https://www.youtube.com/watch?v=SWr6NW2osqc
+    focus: Reading docs as a skill
+    weeks: W1–2
+    outcome: Navigate any framework docs — quickstarts, references, and changelogs — without a tutorial.
+  - title: Git for Beginners
+    url: https://www.youtube.com/watch?v=vwj89i2FmG0
+    focus: Version control fluency
+    weeks: W1–2
+    outcome: Commit, branch, merge, and recover — the tooling habit every weekly artifact depends on.
+  - title: CS50x 2024 Lectures
+    url: https://www.youtube.com/playlist?list=PLhQjrBD2T381WAHyx1pq-sBfykqMBI7V4
+    focus: Computer science fundamentals
+    weeks: W1–6
+    outcome: C, memory, algorithms, data structures, and web — the shared vocabulary of the whole course.
+  - title: Nand to Tetris
+    url: https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
+    focus: A computer from first principles
+    weeks: W7–10
+    outcome: Build a working computer from NAND gates up — assembler, VM, compiler, OS — and a Tetris game.
+  - title: MIT 6.042J — Mathematics for Computer Science
+    url: https://www.youtube.com/playlist?list=PLB7540DEDD482705B
+    focus: Discrete mathematics
+    weeks: W11–16
+    outcome: Proofs, induction, counting, probability, and graphs — the reasoning the course front-loads in Weeks 7–30.
+  - title: YACR — Programming Paradigms Explained
+    url: https://codeberg.org/aninokuma/YACR#programming-paradigms-explained-procedural-functional-object-oriented-and-let-it-crash
+    focus: Programming paradigms
+    weeks: W17–18
+    outcome: Procedural, functional, object-oriented, and let-it-crash thinking — and why each exists.
+  - title: Statistical Learning with Python
+    url: https://www.youtube.com/playlist?list=PLoROMvodv4rPP6braWoRt5UCXYZ71GZIQ
+    focus: Statistics and ML foundations
+    weeks: W19–28
+    outcome: Supervised and unsupervised learning from the data side — the empirical backbone of every ML week.
+  - title: Software Engineering at Google
+    url: https://abseil.io/resources/swe-book
+    focus: Engineering culture and practice
+    weeks: W29–32
+    outcome: How teams design, test, review, and ship at scale — the professional layer under the technical arc.
+  PREREQUISITE_36_WEEKS:
+  - weeks: W1–2
+    title: Learning how to learn
+    resources:
+    - Google Like a Pro
+    - How To Read Documentation
+    - Git for Beginners
+    outcome: Search and docs fluency plus version control — the self-serve skills every later week compounds.
+  - weeks: W3–6
+    title: Computer science foundations
+    resources:
+    - CS50x Lectures 1–6
+    outcome: C, memory, and algorithms — the vocabulary of computation the course assumes at Week 1.
+  - weeks: W7–10
+    title: A computer from first principles
+    resources:
+    - Nand to Tetris
+    outcome: From NAND gates to a CPU, compiler, and OS — nothing is magic anymore.
+  - weeks: W11–16
+    title: Mathematics for computer science
+    resources:
+    - MIT 6.042J
+    outcome: Proofs, induction, counting, probability, and graphs — the exact reasoning Weeks 7–30 rely on.
+  - weeks: W17–18
+    title: Programming paradigms
+    resources:
+    - YACR
+    outcome: Procedural, functional, OO, and let-it-crash — the lenses behind every framework you will read.
+  - weeks: W19–28
+    title: Statistical learning
+    resources:
+    - Statistical Learning with Python
+    outcome: Supervised and unsupervised learning — the empirical core of the ML and evaluation weeks.
+  - weeks: W29–32
+    title: Software engineering at scale
+    resources:
+    - Software Engineering at Google
+    outcome: Design docs, testing, code review, and ownership — the discipline that makes weekly artifacts professional.
+  - weeks: W33–36
+    title: Synthesis project
+    resources:
+    - All of the above
+    outcome: Consolidate everything into one working project — then Week 1 of the arc starts on solid ground.
+resources:
+  YOUTUBE_PLAYLISTS:
+  - title: 20 AI Concepts Explained in 40 Minutes
+    url: https://www.youtube.com/watch?v=7QisFjITGlI
+  - title: Distilling an LLM into a 150M-parameter model | AGI Tamer
+    url: https://www.youtube.com/watch?v=3SZSDKEZqoA
+  - title: Learn Snowflake with ONE Project
+    url: https://www.youtube.com/watch?v=cSOTxxvqwyE
+  - title: Airbnb End-To-End Data Engineering Project (For Beginners) | DBT + Snowflake + AWS
+    url: https://www.youtube.com/watch?v=MdkLh1UC3IQ
+  - title: End-to-End Hotel Booking Data Engineering Project in Snowflake
+    url: https://www.youtube.com/watch?v=DUNk4GPZ9bw
+  - title: Statistics for Data Science (A/B Testing Interview Questions in Tech Companies)
+    url: https://www.youtube.com/watch?v=jrvY43-c_UM
+  - title: A/B Testing in Data Science Interviews by a Google Data Scientist | DataInterview
+    url: https://www.youtube.com/watch?v=qjKAqMSD4Vw
+  - title: Increasing Sales through A/B Testing (with Tinder Sr. Data Science Mgr)
+    url: https://www.youtube.com/watch?v=cggcQbNC4-k
+  - title: 'AI Engineer Interview Guide (2026): Questions, System Design, Coding, RAG, Portfolio'
+    url: https://www.youtube.com/watch?v=2t-ls6ekA8E
+  - title: ML System Design & MLOps For Beginners
+    url: https://www.youtube.com/watch?v=OYvlznJ4IZQ
+  - title: Agent AI System Design Explained in 27 Minutes
+    url: https://www.youtube.com/watch?v=XVlt94Lemus
+  - title: AI Agents Explained in 14 Minutes (The Complete Guide)
+    url: https://www.youtube.com/watch?v=ruA_EYARCNg
+  - title: 'Multi-Agent AI Systems Explained: The Complete Guide'
+    url: https://www.youtube.com/watch?v=mwN75EiGfCE
+  - title: FULL Data Science Mock Interview | SQL, Statistics, Business
+    url: https://www.youtube.com/watch?v=TZMdEg1ZoIo
+  - title: Learn Snowflake – Full 1-Hour Crash Course for Complete Beginners
+    url: https://www.youtube.com/watch?v=-zBbij9rrEI
+  BOOKS_READING_LIST:
+  - book: Designing ML Systems
+    pages: 118–132
+    topic: Labeling, natural labels, weak supervision
+  - book: Designing ML Systems
+    pages: 149–156
+    topic: Data augmentation, synthetic-to-real gaps
+  - book: Designing ML Systems
+    pages: 224–247
+    topic: Deployment, batch vs online, compression
+  - book: Designing ML Systems
+    pages: 267–290
+    topic: Production failures, distribution shift, monitoring
+  - book: Practical MLOps
+    pages: 181–204
+    topic: Logging, observability, model monitoring, drift
+  - book: Acing System Design
+    pages: 203–226
+    topic: Rate limiting, token bucket, sliding windows
+  - book: ML Interviews
+    pages: 176–189
+    topic: Live coding, thinking aloud, edge cases
+  - book: Designing ML Systems
+    pages: 174–180
+    topic: Data leakage, contamination detection
+  - book: Designing ML Systems
+    pages: 182–195
+    topic: Evaluation, experiment tracking, versioning
+  - book: Designing ML Systems
+    pages: 203–217
+    topic: Baselines, offline evaluation, slices, CIs
+  - book: Designing ML Systems
+    pages: 316–325
+    topic: A/B testing, shadow deployment, canary, bandits
+  - book: ML Interviews
+    pages: 163–170
+    topic: Metrics — Recall@K, MRR, NDCG trade-offs
+  - book: Acing System Design
+    pages: 277–296
+    topic: Search architecture, candidate generation, freshness
+  - book: ML Interviews
+    pages: 117–122
+    topic: Recommender systems refresher
+  - book: Acing System Design
+    pages: 56–79
+    topic: Requirements, trade-offs, API, data model, observability
+  - book: Acing System Design
+    pages: 86–107
+    topic: Scalability, latency, privacy, tenant isolation
+  - book: Designing ML Systems
+    pages: 52–76
+    topic: Business objectives, constraints, iterative development
+  - book: Software Architecture
+    pages: 317–339
+    topic: Orchestration vs choreography, workflow state ownership
+  - book: Software Architecture
+    pages: 383–397
+    topic: Contracts, schema evolution, backward compatibility
+  - book: Software Architecture
+    pages: 417–433
+    topic: Trade-off analysis, MECE reasoning, bottom line over evidence
+  - book: System Design
+    pages: 191–195
+    topic: Interview method checklist — read night before
+  - book: Practical MLOps
+    pages: 181–204
+    topic: Four-layer monitoring framework
+  - book: ML Interviews
+    pages: 222–239
+    topic: Monitoring, MLOps, system design questions
+  RESEARCH_PAPERS:
+  - paper: The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest
+    venue: arXiv 2301.12987v4 (2024)
+    topic: Induction, weakness, description length, and generalization
+    url: https://arxiv.org/abs/2301.12987v4
+  - paper: PagedAttention / vLLM
+    venue: SOSP 2023
+    topic: KV cache paging
+    url: https://arxiv.org/abs/2309.06180
+  - paper: Orca
+    venue: OSDI 2022
+    topic: Continuous batching
+    url: https://www.usenix.org/conference/osdi22/presentation/yu
+  - paper: SGLang
+    venue: NeurIPS 2024
+    topic: RadixAttention, prefix reuse
+    url: https://arxiv.org/abs/2312.07104
+  - paper: SARATHI / Sarathi-Serve
+    venue: OSDI 2024
+    topic: Chunked prefill
+    url: https://arxiv.org/abs/2308.16369
+  - paper: DistServe
+    venue: OSDI 2024
+    topic: Prefill/decode disaggregation
+    url: https://arxiv.org/abs/2403.02310
+  - paper: Splitwise
+    venue: ISCA 2024
+    topic: Phase splitting across GPU types
+    url: https://www.usenix.org/conference/osdi24/presentation/zhong-yinmin
+  - paper: Mooncake
+    venue: FAST 2025
+    topic: KV-cache-centric serving
+    url: https://arxiv.org/abs/2311.18677
+  - paper: StreamingLLM
+    venue: ICLR 2024
+    topic: Attention sinks, long context
+    url: https://arxiv.org/abs/2407.00079
+  - paper: EAGLE
+    venue: arXiv
+    topic: Speculative sampling
+    url: https://arxiv.org/abs/2309.17453
+  - paper: FlashAttention
+    venue: NeurIPS 2022
+    topic: IO-aware attention
+    url: https://arxiv.org/abs/2401.15077
+  - paper: FlashAttention-2
+    venue: ICLR 2024
+    topic: Faster attention kernels
+    url: ''
+  - paper: FlashAttention-3
+    venue: —
+    topic: Hopper-optimized attention
+    url: ''
+  - paper: Transformers are RNNs (Linear Attention)
+    venue: ICML 2020
+    topic: Linear attention, ELU+1 feature map
+    url: https://arxiv.org/abs/2006.16236
+  - paper: Mamba
+    venue: arXiv 2023
+    topic: Selective state spaces, linear-time sequence modeling
+    url: https://arxiv.org/abs/2312.00752
+  - paper: Transformers are SSMs (Mamba-2)
+    venue: arXiv 2024
+    topic: Structured state space duality
+    url: https://arxiv.org/abs/2405.21060
+  - paper: DeltaNet
+    venue: NeurIPS 2024
+    topic: Delta-rule linear attention
+    url: https://arxiv.org/abs/2406.06484
+  - paper: Gated DeltaNet
+    venue: ICLR 2025
+    topic: Gated delta rule over Mamba-2
+    url: https://arxiv.org/abs/2412.06464
+  - paper: Ring Attention
+    venue: ICLR 2024
+    topic: Long-context distributed attention
+    url: ''
+  - paper: Infini-attention
+    venue: NeurIPS 2024
+    topic: Infinite context
+    url: ''
+  - paper: KIVI
+    venue: ICML 2024
+    topic: KV cache quantization
+    url: ''
+  - paper: H2O
+    venue: NeurIPS 2023
+    topic: Heavy hitter KV eviction
+    url: ''
+  - paper: SnapKV
+    venue: NeurIPS 2024
+    topic: KV cache compression
+    url: ''
+  - paper: MInference
+    venue: NeurIPS 2024
+    topic: Dynamic sparse attention
+    url: ''
+  - paper: Medusa
+    venue: ICML 2024
+    topic: Multi-head speculative decoding
+    url: ''
+  - paper: SpecInfer
+    venue: SIGMOD 2024
+    topic: Speculative inference
+    url: ''
+  - paper: Lookahead Decoding
+    venue: ACL 2024
+    topic: Faster decoding
+    url: ''
+  - paper: TensorRT-LLM
+    venue: NVIDIA
+    topic: Production inference optimization
+    url: ''
+  - paper: DeepSpeed-Inference
+    venue: Microsoft
+    topic: High-performance inference
+    url: ''
+  - paper: FasterTransformer
+    venue: NVIDIA
+    topic: Transformer inference
+    url: ''
+  - paper: Megatron-LM
+    venue: SC 2019
+    topic: Large-scale transformer training
+    url: ''
+  - paper: DeepSpeed
+    venue: KDD 2020
+    topic: ZeRO optimizer
+    url: ''
+  - paper: ZeRO
+    venue: SC 2020
+    topic: Optimizer state partitioning
+    url: ''
+  - paper: ZeRO-Infinity
+    venue: SC 2021
+    topic: Extreme-scale training
+    url: ''
+  - paper: FSDP
+    venue: PyTorch
+    topic: Fully Sharded Data Parallel
+    url: ''
+  - paper: Switch Transformer
+    venue: JMLR
+    topic: Mixture of Experts
+    url: ''
+  - paper: GShard
+    venue: ICLR 2021
+    topic: Sparse expert scaling
+    url: ''
+  - paper: DeepSeekMoE
+    venue: arXiv
+    topic: Modern MoE architecture
+    url: ''
+  - paper: COMET
+    venue: arXiv 2502.19811
+    topic: Fine-grained computation-communication overlap for MoE
+    url: https://arxiv.org/abs/2502.19811
+  - paper: LoRA
+    venue: ICLR 2022
+    topic: Parameter-efficient fine-tuning
+    url: ''
+  - paper: QLoRA
+    venue: NeurIPS 2023
+    topic: 4-bit fine-tuning
+    url: ''
+  - paper: DoRA
+    venue: ICML 2024
+    topic: Weight decomposition tuning
+    url: ''
+  - paper: RLHF
+    venue: NeurIPS 2022
+    topic: Human feedback alignment
+    url: ''
+  - paper: Direct Preference Optimization (DPO)
+    venue: NeurIPS 2023
+    topic: Preference optimization
+    url: ''
+  - paper: ORPO
+    venue: ICLR 2024
+    topic: Odds-ratio preference optimization
+    url: ''
+  - paper: ColBERT
+    venue: SIGIR 2020
+    topic: Late interaction retrieval
+    url: ''
+  - paper: ColBERTv2
+    venue: NAACL 2022
+    topic: Efficient retrieval
+    url: ''
+  - paper: HyDE
+    venue: ACL 2023
+    topic: Hypothetical document retrieval
+    url: ''
+  - paper: RAPTOR
+    venue: arXiv 2024
+    topic: Hierarchical RAG
+    url: ''
+  - paper: GraphRAG
+    venue: Microsoft
+    topic: Graph retrieval
+    url: ''
+  - paper: Self-RAG
+    venue: ICLR 2024
+    topic: Self-reflective retrieval
+    url: ''
+  - paper: CRAG
+    venue: NeurIPS 2024
+    topic: Corrective retrieval augmentation
+    url: ''
+  AGENT_PAPERS:
+  - paper: 'ReAct: Synergizing Reasoning and Acting in Language Models'
+    topic: Foundation of ReAct agents
+    url: https://arxiv.org/abs/2210.03629
+    venue: arXiv 2210.03629
+  - paper: 'Toolformer: Language Models Can Teach Themselves to Use Tools'
+    topic: Self-supervised tool-use agents
+    url: https://arxiv.org/abs/2302.04761
+    venue: arXiv 2302.04761
+  - paper: 'DSPy: Compiling Declarative Language Model Calls'
+    topic: Programming LMs, self-improving pipelines
+    url: https://arxiv.org/abs/2310.03714
+    venue: arXiv 2310.03714
+  - paper: 'LangGraph: Multi-Agent Workflows'
+    topic: Graph-based orchestration, cycles, human-in-the-loop
+    url: https://python.langchain.com/docs/langgraph
+    venue: LangChain Docs
+  - paper: Corrective RAG (CRAG)
+    topic: Self-correcting retrieval loops
+    url: https://arxiv.org/abs/2401.06999
+    venue: arXiv 2401.06999
+  - paper: Model Context Protocol (MCP) Specification
+    topic: Standardized tool/data access for LLMs
+    url: https://www.modelcontext.org/
+    venue: Model Context
+  - paper: 'Generative Agents: Interactive Simulacra of Human Behavior'
+    topic: Simulating multi-agent societies
+    url: https://arxiv.org/abs/2304.03442
+    venue: arXiv 2304.03442
+  - paper: 'Reflexion: Language Agents with Verbal Reinforcement Learning'
+    topic: Self-verbalization and strategy updates
+    url: https://arxiv.org/abs/2303.11366
+    venue: arXiv 2303.11366
+  - paper: 'AutoGen: Enabling Next-Gen Multi-Agent Applications'
+    topic: Collaborative protocol design
+    url: https://www.microsoft.com/en-us/research/project/autogen/
+    venue: Microsoft Research
+  - paper: 'Kùzu: An Embedded Property Graph Database'
+    topic: Architecture and performance of Kùzu
+    url: https://kuzudb.com/blog
+    venue: Kùzu
+  BLOG_ARTICLES:
+  - title: The shift to distributed LLM inference (BentoML)
+    url: https://www.bentoml.com/blog/the-shift-to-distributed-llm-inference
+  - title: Collective operations (Aleksa Gordić)
+    url: http://www.aleksagordic.com/blog/collective-operations
+  - title: ELI5 FlashAttention (Aleksa Gordić)
+    url: https://gordicaleksa.medium.com/eli5-flash-attention-5c44017022ad
+  - title: vLLM (Aleksa Gordić)
+    url: https://www.aleksagordic.com/blog/vllm
+  - title: Matmul (Aleksa Gordić)
+    url: https://www.aleksagordic.com/blog/matmul
+  - title: Transformer (Aleksa Gordić)
+    url: https://www.aleksagordic.com/blog/transformer
+  - title: Making Deep Learning Go Brrrr From First Principles (Horace He)
+    url: https://horace.io/brrr_intro.html
+  - title: Stanford CS336 Spring 2025 lectures
+    url: https://github.com/stanford-cs336/spring2025-lectures
+  - title: GPU MODE Lecture 22 — Hacker’s Guide to Speculative Decoding
+    url: https://www.youtube.com/watch?v=6OBtO9niT00
+  - title: Transformer Inference Arithmetic (kipply)
+    url: https://kipp.ly/transformer-inference-arithmetic/
+  - title: Databricks — LLM Inference Performance Engineering
+    url: https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices
+  - title: PagedAttention announcement (vLLM blog)
+    url: https://blog.vllm.ai/2023/06/20/vllm.html
+  - title: vLLM on Modal
+    url: https://modal.com/docs/examples/vllm_inference
+  - title: 'vLLM Office Hours 22: Intro to vLLM V1'
+    url: https://www.youtube.com/watch?v=jmzIvQZCLZM
+  - title: vLLM V1 architecture
+    url: https://blog.vllm.ai/2025/01/27/v1-alpha-release.html
+  - title: Anatomy of a High-Throughput Inference System
+    url: https://blog.vllm.ai/2025/09/05/anatomy-of-vllm.html
+  - title: vLLM repo
+    url: https://github.com/vllm-project/vllm
+  - title: vLLM V1 metrics design doc
+    url: https://docs.vllm.ai/en/latest/design/v1/metrics/
+  - title: Prometheus/Grafana example (vLLM)
+    url: https://docs.vllm.ai/en/latest/examples/online_serving/prometheus_grafana/
+  - title: NVIDIA benchmarking fundamentals
+    url: https://developer.nvidia.com/blog/llm-inference-benchmarking-fundamental-concepts/
+  - title: How to Benchmark LLM Engines (Modal)
+    url: https://modal.com/llm-almanac/how-to-benchmark
+  - title: GuideLLM intro talk
+    url: https://www.youtube.com/watch?v=0ZVu0A4wWQg
+  - title: GuideLLM repo
+    url: https://github.com/vllm-project/guidellm
+  - title: vLLM bench serve CLI
+    url: https://docs.vllm.ai/en/latest/benchmarking/cli/
+  - title: Triton perf_analyzer
+    url: https://github.com/triton-inference-server/perf_analyzer
+  - title: Practical strategies for vLLM performance tuning (Red Hat)
+    url: https://developers.redhat.com/articles/2026/03/03/practical-strategies-vllm-performance-tuning
+  - title: Lilian Weng — Inference Optimization survey
+    url: https://lilianweng.github.io/posts/2023-01-10-inference-optimization/
+  - title: vLLM quantization docs
+    url: https://docs.vllm.ai/en/latest/features/quantization/
+  - title: QLoRA talk (Tim Dettmers)
+    url: https://www.youtube.com/watch?v=9wNAgpX6z_4
+  - title: vLLM production stack
+    url: https://github.com/vllm-project/production-stack
+  - title: KServe autoscaling for vLLM with KEDA (Red Hat)
+    url: https://developers.redhat.com/articles/2025/09/23/how-set-kserve-autoscaling-vllm-keda
+  - title: LLM Inference Economics from First Principles (TensorEconomics)
+    url: https://www.tensoreconomics.com/p/llm-inference-economics-from-first
+  - title: DigitalOcean — LLM Inference Cost
+    url: https://www.digitalocean.com/community/tutorials/llm-inference-cost
+  - title: Character.AI — Optimizing AI Inference
+    url: https://blog.character.ai/optimizing-ai-inference-at-character-ai-2/
+  - title: 'NVIDIA — Mastering LLM Techniques: Inference Optimization'
+    url: https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/
+  - title: SGLang intro (Lianmin Zheng)
+    url: https://www.youtube.com/watch?v=Ny4xxErgFgQ
+  - title: SGLang v0.4 zero-overhead scheduler
+    url: https://lmsys.org/blog/2024-12-04-sglang-v0-4/
+  - title: RadixAttention / SGLang blog
+    url: https://lmsys.org/blog/2024-01-17-sglang/
+  - title: SGLang docs
+    url: https://docs.sglang.io
+  - title: Warp Decode — better MoE model inference (Cursor)
+    url: https://cursor.com/blog/warp-decode
+  - title: Mixture-of-Kittens — deterministic MoE megakernel for NVL72s (Cursor)
+    url: https://cursor.com/blog/mixture-of-kittens
+systemDesign:
+  DESIGN_WEEKS:
+  - week: 46
+    topic: Delivery framework, requirements, networking, numbers to know
+    caseLab: URL shortener / Bitly
+    evidence: Framed design + capacity sheet
+  - week: 47
+    topic: API design, data modeling, indexing, contracts
+    caseLab: LeetCode problem service
+    evidence: API and schema package
+  - week: 48
+    topic: Caching, sharding, consistent hashing, CAP
+    caseLab: Rate limiter + distributed cache
+    evidence: Design, key layout, failure table
+  - week: 49
+    topic: Replication, read/write scaling, contention
+    caseLab: News feed / Instagram
+    evidence: Read path, write path, consistency choice
+  - week: 50
+    topic: Large blobs, CDN, metadata, resumable work
+    caseLab: Dropbox / Google Docs
+    evidence: Storage design + recovery plan
+  - week: 51
+    topic: Queues, workflows, long-running tasks
+    caseLab: Job scheduler / Slack job queue
+    evidence: State machine + retry/idempotency plan
+  - week: 52
+    topic: Schema evolution, real-time updates, coordination
+    caseLab: WhatsApp / notification system
+    evidence: Contract migration + delivery semantics
+  - week: 53
+    topic: Search, proximity, crawling, ranking
+    caseLab: Yelp / FB post search / web crawler
+    evidence: Index and freshness design
+  - week: 54
+    topic: Messaging and social fan-out
+    caseLab: FB Live Comments / Tinder / Discord
+    evidence: Fan-out model + hot-key strategy
+  - week: 55
+    topic: Scheduling, scarcity, marketplace correctness
+    caseLab: Ticketmaster / Uber / local delivery / auction
+    evidence: Reservation invariant + contention test
+  - week: 56
+    topic: Streaming, analytics, and data infrastructure
+    caseLab: Ad clicks / metrics / Robinhood / Spotify data lake
+    evidence: Stream topology + watermark/replay notes
+  - week: 57
+    topic: Integrated architecture and interview boss
+    caseLab: ChatGPT / payment system / Figma multiplayer
+    evidence: Staff-level design review + trade-off defense
+  DESIGN_LOOP:
+  - step: Frame
+    detail: requirements, users, SLOs, scale, privacy, and cost
+  - step: Shape
+    detail: APIs, data model, partitioning, indexes, caches, and queues
+  - step: Stress
+    detail: contention, failure modes, consistency, replay, recovery, and observability
+  - step: Extend
+    detail: the AI concern — embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution
+  DESIGN_TECH_CORE:
+  - Redis
+  - PostgreSQL
+  - Kafka
+  - Flink
+  - API gateway
+  - vector database
+  DESIGN_TECH_SUPPORTING:
+  - Elasticsearch
+  - Cassandra
+  - DynamoDB
+  - ZooKeeper
+  - time-series databases
+  - big-data structures
+  DESIGN_PATTERNS:
+  - pattern: Rate limiter
+    problem: One user or tenant floods the API
+    solution: Token bucket or sliding window; distributed counter for horizontal scale
+  - pattern: Caching (LRU, TTL)
+    problem: Repeat reads on the same keys
+    solution: Cache-aside with bounded size; TTL plus write-through/invalidation
+  - pattern: Consistent hashing
+    problem: Rehashing a hash table when nodes join/leave
+    solution: Hash ring so a membership change moves only a fraction of keys
+  - pattern: Read replicas
+    problem: Read traffic outpaces a single primary
+    solution: Primary for writes, replicas for reads; handle replication lag
+  - pattern: Queue + workers
+    problem: Slow or bursty async work
+    solution: Durable queue with consumer groups and retries with backoff
+  - pattern: Idempotency keys
+    problem: Client retries create duplicate effects
+    solution: Store request key and result; replay the original outcome
+  - pattern: Circuit breaker
+    problem: A downstream dependency is failing
+    solution: Open the circuit after a threshold, fail fast, then probe
+  - pattern: Feature flags
+    problem: Deploying risky code to everyone at once
+    solution: Dynamic flag rules with gradual rollout and kill switch
+  - pattern: Replication + leader election
+    problem: The sealer/scheduler must be a single writer
+    solution: Lease-based election with fencing so stale leaders cannot commit
+  - pattern: Append-only ledger
+    problem: Audit and billing require exact history
+    solution: Immutable event log; materialize dashboards separately
+  DESIGN_PATTERN_INDEX:
+    foundations: Introduction, how to prepare, delivery framework, core concepts, key technologies, common patterns, networking
+      essentials, API design, data modeling, and numbers to know.
+    distributed: Caching, sharding, consistent hashing, CAP, database indexing, scaling reads, scaling writes, real-time updates,
+      contention, multi-step processes, long-running tasks, large blobs, replication, schema evolution, and observability.
+  DESIGN_FAMILIES:
+  - family: Storage and collaboration
+    cases: Dropbox, Google Docs, Discord message storage, Figma multiplayer
+  - family: Messaging and notifications
+    cases: WhatsApp, FB Live Comments, notification system, Slack job queue
+  - family: Search and retrieval
+    cases: Yelp, FB Post Search, proximity search, web crawler, ChatGPT
+  - family: Scheduling and logistics
+    cases: Job Scheduler, Uber, local delivery, Ticketmaster, online chess
+  - family: Streaming and analytics
+    cases: Ad Click Aggregator, Metrics Monitoring, Robinhood, Spotify Data Lake
+  - family: Marketplace and money
+    cases: Online Auction, Payment System, Shopify Inventory Reservations
+  - family: Social products
+    cases: FB News Feed, Instagram, Tinder, Strava, News Aggregator
+  - family: Platform primitives
+    cases: Bitly, Distributed Cache, Rate Limiter, YouTube, YouTube Top K, LeetCode, Price Tracking Service
+  DESIGN_CASES:
+  - name: URL shortener
+    focuses: Hashing, ID generation, cache, 301 vs 302
+  - name: Dropbox
+    focuses: Blob storage, chunking, sync conflicts, metadata DB
+  - name: Ticketmaster
+    focuses: Hot-row contention, seat holds, payment idempotency
+  - name: News Feed
+    focuses: Fan-out on write vs read, ranking feed cache
+  - name: WhatsApp
+    focuses: Presence, message delivery, mobile constraints
+  - name: LeetCode judge
+    focuses: Sandboxing, queue, result correctness
+  - name: Uber
+    focuses: Geo-spatial indexing, dispatch, ETA aggregation
+  - name: Web crawler
+    focuses: Frontier, politeness, deduplication, fault tolerance
+  - name: Ad click aggregator
+    focuses: Streaming aggregation, windowing, at-least-once semantics
+  - name: Payments
+    focuses: Idempotency, ledger correctness, settlement
+  DESIGN_OOD:
+  - Connect Four
+  - Amazon Locker
+  - Elevator
+  - Parking Lot
+  - File System
+  - Movie Ticket Booking
+  - Logging Service
+  - Rate Limiter
+  - Inventory Management
+  DESIGN_AI_EXTENSIONS:
+  - base: WhatsApp
+    extension: Semantic search, agent memory, PII-safe message retrieval
+  - base: Search / Yelp
+    extension: Hybrid BM25+dense retrieval, reranking, slice evaluation
+  - base: Job scheduler
+    extension: Tool-call DAGs, retries, cancellation, quota-aware admission
+  - base: ChatGPT
+    extension: Conversation storage, prompt registry, routing, KV cache, evaluation
+  - base: Streaming metrics
+    extension: Token/cost attribution, watermarking, late-event correction
+  - base: Payment / reservations
+    extension: Idempotency, exactly-once effects, auditability, contention
+  - base: Figma multiplayer
+    extension: Collaborative agent state, conflict resolution, presence
+  - base: Distributed cache
+    extension: Semantic and embedding cache with tenant isolation
+  DESIGN_CAPABILITIES:
+  - name: Requirements & constraints
+    description: Clarify scale, SLOs, budget, and non-goals before proposing a stack
+  - name: API design
+    description: Resource-oriented contracts, pagination, idempotency, error shapes
+  - name: Data modeling
+    description: Relational vs document vs columnar; denormalization for reads
+  - name: Distributed patterns
+    description: Rate limiting, caching, queues, consistent hashing, replication, leader election
+  - name: Failure analysis
+    description: Identify single points of failure and design for partial outage
+  - name: Trade-off defense
+    description: 'Justify every choice: consistency, cost, complexity, operations'
+  DESIGN_GATE5:
+  - requirements and SLOs
+  - API and data model
+  - partition, index, cache, queue, and replication choices
+  - capacity estimates and a bottleneck plan
+  - consistency, contention, idempotency, and failure semantics
+  - observability, privacy, tenant isolation, and cost controls
+  - one AI extension and a clear trade-off defense
+weeks:
+  PHASES:
+  - id: 1
+    weeks: 1–6
+    theme: Orientation, tooling, and diagnostics
+    start: 1
+    end: 6
+  - id: 2
+    weeks: 7–18
+    theme: 'Mathematical foundations I: linear algebra & numerical methods'
+    start: 7
+    end: 18
+  - id: 3
+    weeks: 19–30
+    theme: 'Mathematical foundations II: calculus, autodiff, probability, statistics'
+    start: 19
+    end: 30
+  - id: 4
+    weeks: 31–45
+    theme: Engineering micro-projects and applied ML primitives
+    start: 31
+    end: 45
+  - id: 5
+    weeks: 46–57
+    theme: System design and distributed systems fundamentals
+    start: 46
+    end: 57
+  - id: 6
+    weeks: 58–69
+    theme: ML lifecycle, experimentation, and MLOps
+    start: 58
+    end: 69
+  - id: 7
+    weeks: 70–81
+    theme: LLM training, RAG, agents, and evaluation
+    start: 70
+    end: 81
+  - id: 8
+    weeks: 82–93
+    theme: LLM inference and performance engineering
+    start: 82
+    end: 93
+  - id: 9
+    weeks: 94–102
+    theme: Production AI platform engineering
+    start: 94
+    end: 102
+  - id: 10
+    weeks: 103–108
+    theme: Capstone, portfolio, and interview readiness
+    start: 103
+    end: 108
+  WEEKS:
+  - week: 1
+    module: Orientation and course OS
+    focus: Course setup, tracker, repo, weekly template
+    mode: implement
+    deliverable: Course dashboard + README
+  - week: 2
+    module: Python engineering refresh
+    focus: Typing, testing, async basics
+    mode: implement
+    deliverable: CLI project skeleton with tests
+  - week: 3
+    module: Numerical Python
+    focus: NumPy, vectorization, broadcasting
+    mode: implement
+    deliverable: Vector math utility library
+  - week: 4
+    module: Reproducibility
+    focus: Git, notebooks, experiment tracking
+    mode: implement
+    deliverable: Reproducible notebook + Makefile
+  - week: 5
+    module: Math diagnostic and induction
+    focus: Linear algebra, probability, hypothesis choice, and generalization
+    mode: implement
+    deliverable: Diagnostic report + gap map + paper lab
+  - week: 6
+    module: Systems diagnostic
+    focus: HTTP, Docker, APIs, Linux basics
+    mode: implement
+    deliverable: Containerized hello-service
+  - week: 7
+    module: Linear algebra I
+    focus: Vector spaces, span, basis, dimension
+    mode: implement
+    deliverable: Problem set + concept map
+  - week: 8
+    module: Linear algebra II
+    focus: Linear independence, rank, nullity
+    mode: implement
+    deliverable: Solver exercises + notes
+  - week: 9
+    module: Linear algebra III
+    focus: Inner products, norms, dual norms
+    mode: implement
+    deliverable: Norm/distance library
+  - week: 10
+    module: Linear algebra IV
+    focus: Orthogonality, projections, Gram-Schmidt
+    mode: implement
+    deliverable: Projection demo
+  - week: 11
+    module: Linear algebra V
+    focus: Linear transformations, change of basis
+    mode: implement
+    deliverable: Coordinate transform lab
+  - week: 12
+    module: Linear algebra VI
+    focus: Eigenvalues, eigenvectors, diagonalization
+    mode: implement
+    deliverable: PCA-style mini lab
+  - week: 13
+    module: Linear algebra VII
+    focus: PSD matrices, quadratic forms, Rayleigh quotient
+    mode: implement
+    deliverable: Proof + visualization
+  - week: 14
+    module: Linear algebra VIII
+    focus: SVD, pseudoinverse, low-rank approximation
+    mode: implement
+    deliverable: Low-rank compression demo
+  - week: 15
+    module: Numerical linear algebra I
+    focus: Matrix norms, condition numbers, perturbation
+    mode: implement
+    deliverable: Perturbation experiment
+  - week: 16
+    module: Numerical linear algebra II
+    focus: LU, QR, Cholesky decomposition
+    mode: implement
+    deliverable: Decomposition library
+  - week: 17
+    module: Numerical linear algebra III
+    focus: Iterative solvers, power iteration, Krylov methods
+    mode: implement
+    deliverable: Solver benchmark
+  - week: 18
+    module: Numerical linear algebra IV
+    focus: Randomized SVD, tensor notation
+    mode: implement
+    deliverable: Randomized approximation lab
+  - week: 19
+    module: Calculus I
+    focus: Partial derivatives, gradients, directional derivatives
+    mode: implement
+    deliverable: Gradient visualizer
+  - week: 20
+    module: Calculus II
+    focus: Jacobians, Hessians, Taylor approximations
+    mode: implement
+    deliverable: Curvature lab
+  - week: 21
+    module: Calculus III
+    focus: Chain rule on computational graphs
+    mode: implement
+    deliverable: Manual backprop worksheet
+  - week: 22
+    module: Automatic differentiation
+    focus: Forward/reverse mode, JVPs, VJPs
+    mode: implement
+    deliverable: Tiny autodiff prototype
+  - week: 23
+    module: Probability I
+    focus: Probability spaces, conditioning, Bayes theorem
+    mode: implement
+    deliverable: Probability problem set
+  - week: 24
+    module: Probability II
+    focus: Random variables, distributions, transformations
+    mode: implement
+    deliverable: Simulation notebook
+  - week: 25
+    module: Probability III
+    focus: Random vectors, covariance, correlation
+    mode: implement
+    deliverable: Covariance/correlation lab
+  - week: 26
+    module: Probability IV
+    focus: LLN, CLT, delta method
+    mode: implement
+    deliverable: Monte Carlo convergence demo
+  - week: 27
+    module: Statistics I
+    focus: MLE, MAP, estimator bias/variance
+    mode: implement
+    deliverable: Estimator comparison
+  - week: 28
+    module: Statistics II
+    focus: Hypothesis testing, p-values, Type I/II errors
+    mode: implement
+    deliverable: Test implementation
+  - week: 29
+    module: Statistics III
+    focus: Confidence intervals, bootstrap, permutation tests
+    mode: implement
+    deliverable: Bootstrap CI package
+  - week: 30
+    module: Statistics IV
+    focus: Power, MDE, sample size, multiple testing
+    mode: implement
+    deliverable: Experiment-size calculator
+  - week: 31
+    module: Retrieval math
+    focus: Cosine similarity, exact KNN
+    mode: implement
+    deliverable: Vector search mini-lab
+  - week: 32
+    module: Top-K systems
+    focus: Memory-bounded KNN, streaming Top-K
+    mode: implement
+    deliverable: Heap-based Top-K service
+  - week: 33
+    module: Ranking pipelines
+    focus: Dynamic Top-K, two-stage retrieval/reranking
+    mode: implement
+    deliverable: Reranking prototype
+  - week: 34
+    module: Rate limiting I
+    focus: Sliding-window and token bucket rate limiters
+    mode: implement
+    deliverable: API limiter module
+  - week: 35
+    module: Caching
+    focus: LRU cache and TTL cache
+    mode: implement
+    deliverable: Cache simulator with tests
+  - week: 36
+    module: Text chunking
+    focus: Token-aware and recursive sentence chunking
+    mode: implement
+    deliverable: Chunking library
+  - week: 37
+    module: PII handling
+    focus: PII span merging, regex/NER detection
+    mode: implement
+    deliverable: Redaction utility
+  - week: 38
+    module: Calibration
+    focus: Expected Calibration Error, Brier score
+    mode: implement
+    deliverable: Reliability dashboard
+  - week: 39
+    module: Ranking metrics
+    focus: NDCG, MRR, Recall@K
+    mode: implement
+    deliverable: Retrieval evaluator
+  - week: 40
+    module: Batching
+    focus: Thread-safe inference batcher
+    mode: implement
+    deliverable: Concurrent batcher
+  - week: 41
+    module: Resilience
+    focus: Retry, exponential backoff, jitter, circuit breaker
+    mode: implement
+    deliverable: Fault-tolerance kit
+  - week: 42
+    module: Sketches
+    focus: Count-Min Sketch, Bloom filter
+    mode: implement
+    deliverable: Probabilistic data structures
+  - week: 43
+    module: Cardinality/routing
+    focus: HyperLogLog, consistent hashing
+    mode: implement
+    deliverable: Distributed routing lab
+  - week: 44
+    module: Load balancing
+    focus: Weighted round robin, rendezvous hashing
+    mode: implement
+    deliverable: Load balancer module
+  - week: 45
+    module: IDs/traffic
+    focus: Snowflake IDs, leaky bucket, sliding-window counter
+    mode: implement
+    deliverable: Platform primitives lab
+  - week: 46
+    module: System design framework
+    focus: Requirements, constraints, API design
+    mode: read_diagram
+    deliverable: Design doc template
+  - week: 47
+    module: Data and APIs
+    focus: Data models, observability, contracts
+    mode: read_diagram
+    deliverable: API design exercise
+  - week: 48
+    module: Rate limiting design
+    focus: Token bucket, sliding windows at scale
+    mode: read_diagram
+    deliverable: Rate limiter design writeup
+  - week: 49
+    module: Scaling reads/writes
+    focus: Caching, replication, contention
+    mode: read_diagram
+    deliverable: Scaling pattern notes
+  - week: 50
+    module: Large blobs
+    focus: Storage, CDN, media pipelines
+    mode: read_diagram
+    deliverable: Blob storage design
+  - week: 51
+    module: Workflow systems
+    focus: Orchestration vs choreography
+    mode: read_diagram
+    deliverable: Workflow state design
+  - week: 52
+    module: Schema evolution
+    focus: Backward compatibility, contracts
+    mode: read_diagram
+    deliverable: Schema migration plan
+  - week: 53
+    module: Case studies I
+    focus: URL shortener, Dropbox
+    mode: read_diagram
+    deliverable: Two design docs
+  - week: 54
+    module: Case studies II
+    focus: Ticketmaster, News Feed
+    mode: read_diagram
+    deliverable: Two design docs
+  - week: 55
+    module: Case studies III
+    focus: WhatsApp, LeetCode
+    mode: read_diagram
+    deliverable: Two design docs
+  - week: 56
+    module: Case studies IV
+    focus: Uber, web crawler
+    mode: read_diagram
+    deliverable: Two design docs
+  - week: 57
+    module: Case studies V
+    focus: Ad click aggregator, payments
+    mode: read_diagram
+    deliverable: Trade-off analysis
+  - week: 58
+    module: ML problem framing
+    focus: Objectives, constraints, iterative development
+    mode: read_diagram
+    deliverable: ML project charter
+  - week: 59
+    module: Data quality
+    focus: Labeling, weak supervision, augmentation
+    mode: read_diagram
+    deliverable: Data quality checklist
+  - week: 60
+    module: Leakage/contamination
+    focus: Detection, eval tracking, versioning
+    mode: read_diagram
+    deliverable: Leakage audit
+  - week: 61
+    module: Offline evaluation
+    focus: Baselines, slices, confidence intervals
+    mode: implement
+    deliverable: Eval harness
+  - week: 62
+    module: Online evaluation
+    focus: A/B tests, shadow deployment, canary, bandits
+    mode: read_diagram
+    deliverable: Rollout plan
+  - week: 63
+    module: A/B calculator
+    focus: Lift, z-score, p-value, confidence intervals
+    mode: implement
+    deliverable: analyze_ab_test function
+  - week: 64
+    module: Bootstrap methods
+    focus: Paired bootstrap for model comparisons
+    mode: implement
+    deliverable: bootstrap_ci package
+  - week: 65
+    module: SRM detection
+    focus: Sample-ratio mismatch, chi-square diagnostics
+    mode: implement
+    deliverable: SRM detector
+  - week: 66
+    module: Feature flags
+    focus: Rules, rollouts, sticky assignment
+    mode: implement
+    deliverable: Flag engine
+  - week: 67
+    module: Experiment assignment
+    focus: Deterministic assignment, namespaces
+    mode: implement
+    deliverable: Assignment service
+  - week: 68
+    module: Monitoring
+    focus: Drift, observability, four-layer monitoring
+    mode: read_diagram
+    deliverable: Monitoring dashboard spec
+  - week: 69
+    module: Production failures
+    focus: Distribution shift, postmortems
+    mode: read_diagram
+    deliverable: Incident postmortem template
+  - week: 70
+    module: LLM anatomy
+    focus: Transformer, tokenizer, matmul
+    mode: read_diagram
+    deliverable: Model anatomy notes
+  - week: 71
+    module: LLM data pipelines
+    focus: Cleaning, deduplication, tokenization
+    mode: read_diagram
+    deliverable: Dataset card
+  - week: 72
+    module: Fine-tuning
+    focus: SFT, LoRA, QLoRA, DoRA
+    mode: read_diagram
+    deliverable: Fine-tuning plan
+  - week: 73
+    module: Alignment
+    focus: RLHF, DPO, ORPO, GRPO
+    mode: read_diagram
+    deliverable: Preference eval plan
+  - week: 74
+    module: Distributed training
+    focus: DDP/FSDP, tensor/pipeline parallelism, ZeRO
+    mode: read_diagram
+    deliverable: Training architecture map
+  - week: 75
+    module: Vector search
+    focus: HNSW, IVF-PQ, product quantization
+    mode: deploy_benchmark
+    deliverable: Index benchmark
+  - week: 76
+    module: Retrieval patterns
+    focus: Hybrid search, query rewriting, chunking
+    mode: implement
+    deliverable: Retrieval lab
+  - week: 77
+    module: Retrieval fusion
+    focus: BM25 + dense + reranker, RRF
+    mode: implement
+    deliverable: Fusion service
+  - week: 78
+    module: Retrieval eval
+    focus: Query slices, macro metrics, regressions
+    mode: implement
+    deliverable: Slice evaluation report
+  - week: 79
+    module: Prompt systems
+    focus: Prompt template renderer, version registry
+    mode: implement
+    deliverable: Prompt management tool
+  - week: 80
+    module: Memory/context
+    focus: Conversation memory, context optimizer
+    mode: implement
+    deliverable: Memory service
+  - week: 81
+    module: Agent foundations
+    focus: ReAct, plan-execute, tool calling, guardrails; agent harness (tool-approval gates, session persistence/resume,
+      context compaction, sub-agent fan-out, sandboxing vs host-shell)
+    mode: implement
+    deliverable: Agent prototype
+  - week: 82
+    module: GPU performance
+    focus: Compute/memory/overhead regimes, FlashAttention
+    mode: read_diagram
+    deliverable: Performance primer notes
+  - week: 83
+    module: Inference arithmetic
+    focus: Roofline model, arithmetic intensity
+    mode: read_diagram
+    deliverable: Model intensity worksheet
+  - week: 84
+    module: PagedAttention/vLLM
+    focus: KV paging, block tables
+    mode: deploy_benchmark
+    deliverable: vLLM deployment
+  - week: 85
+    module: vLLM internals
+    focus: Scheduler, block manager, code paths
+    mode: read_diagram
+    deliverable: Internal anatomy notes
+  - week: 86
+    module: vLLM metrics
+    focus: Running/waiting requests, latency histograms
+    mode: read_diagram
+    deliverable: Metrics schema
+  - week: 87
+    module: Observability
+    focus: Prometheus/Grafana for serving
+    mode: deploy_benchmark
+    deliverable: Live inference dashboard
+  - week: 88
+    module: Benchmarking
+    focus: Request-rate sweeps from 1 to 1000+ concurrent, saturation-point identification at each step
+    mode: read_diagram
+    deliverable: Benchmark methodology doc + one published optimization benchmark (vLLM or SGLang config; public gist or blog
+      post)
+  - week: 89
+    module: SGLang
+    focus: RadixAttention, prefix reuse
+    mode: deploy_benchmark
+    deliverable: SGLang comparison report + one published vLLM-vs-SGLang benchmark comparing the W84 and W89 pipeline configs
+  - week: 90
+    module: Scheduling & MoE Execution
+    focus: Orca, continuous batching, chunked prefill, MoE all-to-all routing, Warp Decode, COMET overlap
+    mode: read_diagram
+    deliverable: MoE overlap schedule design doc + latency-hiding simulator
+  - week: 91
+    module: Quantization
+    focus: FP8, AWQ, GPTQ, KV cache compression; INT4 (per-channel, per-group, block-wise) and BitNet-style 1.58-bit frontier
+    mode: read_diagram
+    deliverable: Quality/throughput table with INT4 row (QLoRA 4-bit normal-float as the production-ready path; BitNet as
+      the research frontier)
+  - week: 92
+    module: Long context & attention alternatives
+    focus: Medusa, EAGLE, StreamingLLM, KV eviction; linear attention (ELU+1), state-space (Mamba), delta-rule (DeltaNet/Gated
+      DeltaNet), KDA/Kimi Linear; KV cache vs learned recurrence
+    mode: read_diagram
+    deliverable: Latency/memory lab
+  - week: 93
+    module: Disaggregation
+    focus: DistServe, Splitwise, Mooncake, autoscaling; Kubernetes topology (KServe + KEDA + HPA) and edge deployment (ONNX,
+      TensorRT-LLM, WebLLM) as alternative topologies
+    mode: read_diagram
+    deliverable: 'Disaggregated serving plan + depth-mode sub-deliverable: deploy the W84 pipeline to K8s with HPA-driven
+      autoscaling on a synthetic spike AND port one vLLM config to ONNX/TensorRT-LLM for edge benchmarking (Modal A10 fallback
+      if no edge hardware)'
+  - week: 94
+    module: Traffic routing
+    focus: Model router, kill switch, sticky rollout
+    mode: implement
+    deliverable: Router service
+  - week: 95
+    module: Safe observability
+    focus: PII redaction, end-to-end request tracing
+    mode: implement
+    deliverable: Trace + safe logs
+  - week: 96
+    module: Fan-out/streaming
+    focus: Partial failures, token stream multiplexing
+    mode: implement
+    deliverable: Resilient aggregator
+  - week: 97
+    module: Quotas/priority
+    focus: Token budgets, gateway prioritization
+    mode: implement
+    deliverable: Quota/priority service
+  - week: 98
+    module: Workflow execution
+    focus: DAG scheduler, idempotency
+    mode: implement
+    deliverable: Workflow engine
+  - week: 99
+    module: Fairness/HA
+    focus: Per-tenant limits, leader election
+    mode: implement
+    deliverable: Tenant limiter + HA lab
+  - week: 100
+    module: Async infrastructure
+    focus: Distributed work queue, config service
+    mode: implement
+    deliverable: Queue/config platform
+  - week: 101
+    module: Model lifecycle
+    focus: Health monitor, registry/promotion
+    mode: implement
+    deliverable: Model ops pipeline
+  - week: 102
+    module: Cost/safety/caching
+    focus: Semantic/embedding cache, injection detection, cost attribution
+    mode: implement
+    deliverable: Cost/safety platform
+  - week: 103
+    module: Capstone planning
+    focus: Requirements, architecture, eval plan
+    mode: read_diagram
+    deliverable: Capstone design doc
+  - week: 104
+    module: Capstone build I
+    focus: Core API, retrieval/agent flow
+    mode: implement
+    deliverable: Working prototype
+  - week: 105
+    module: Capstone build II
+    focus: Evaluation, observability, guardrails
+    mode: implement
+    deliverable: Monitored prototype
+  - week: 106
+    module: Capstone build III
+    focus: Load testing, optimization, cost tuning
+    mode: implement
+    deliverable: Performance report
+  - week: 107
+    module: Mock interview week
+    focus: System design, coding, behavioral simulations
+    mode: read_diagram
+    deliverable: Mock interview scorecard
+  - week: 108
+    module: Final review
+    focus: Portfolio, retrospective, job plan
+    mode: read_diagram
+    deliverable: Final portfolio + 30-day plan
+  RECOVERY_AFTER:
+  - 6
+  - 14
+  - 22
+  - 30
+  - 38
+  - 46
+  - 54
+  - 62
+  - 70
+  - 78
+  - 86
+  - 94
+  - 102

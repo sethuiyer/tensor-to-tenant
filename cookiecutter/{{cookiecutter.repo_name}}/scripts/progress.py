@@ -9,6 +9,7 @@ from __future__ import annotations
 import datetime as dt
 import csv
 import re
+import sys
 from pathlib import Path
 
 
@@ -24,6 +25,7 @@ EVIDENCE_FIELDS = (
     "Retrospective / learning note",
 )
 DARBAR_TRACKER = Path("09_interview/leetcode_darbar/TRACKER.csv")
+RECOMMENDER_PROGRESS = Path("09_interview/recommender/progress.md")
 
 
 def _counts(section: str) -> tuple[int, int]:
@@ -56,7 +58,21 @@ def _darbar_counts() -> tuple[int, int]:
     return sum(row.get("Status", "").strip().lower() in solved for row in rows), len(rows)
 
 
+def _recommender_counts() -> tuple[int, int]:
+    """Count checked reading sections in the paired recommender scaffold."""
+    if not RECOMMENDER_PROGRESS.exists():
+        return 0, 0
+    text = RECOMMENDER_PROGRESS.read_text(encoding="utf-8")
+    return _counts(text)
+
+
 def main() -> None:
+    if "--recommender-only" in sys.argv:
+        done, total = _recommender_counts()
+        pct = (done / total * 100.0) if total else 0.0
+        print(f"Recommender: {done}/{total} -- {pct:.1f}% (optional paired deep-dive)")
+        return
+
     if not JOURNAL.exists():
         print(f"No journal directory at {JOURNAL} -- run from the repo root.")
         raise SystemExit(1)
@@ -128,6 +144,9 @@ def main() -> None:
     darbar_done, darbar_total = _darbar_counts()
     darbar_pct = (darbar_done / darbar_total * 100.0) if darbar_total else 0.0
     print(f"Leetcode Darbar: {darbar_done}/{darbar_total} -- {darbar_pct:.1f}% (optional Auror lane)")
+    recommender_done, recommender_total = _recommender_counts()
+    recommender_pct = (recommender_done / recommender_total * 100.0) if recommender_total else 0.0
+    print(f"Recommender: {recommender_done}/{recommender_total} -- {recommender_pct:.1f}% (optional paired deep-dive)")
     print("\nPrograms:")
     for program in ("Foundations", "Engineering + Systems", "LLM Platform"):
         done, total = program_totals.get(program, [0, 0])

@@ -1,113 +1,402 @@
-# Mastery-level mathematics curriculum: 100 modules across 10 tracks.
-# Per T1.2: schema discipline with id / tier / level / seam /
-# cross_references. Phase 2-3 anchor the math weeks (W7-30).
-
+# Mastery-Level Mathematics Curriculum — 100 modules in 10 tracks.
+# Generated metadata view; edit schema fields then run tools/generate.py.
 - id: math-track-1
   track_number: 1
-  name: "Mathematical Foundations"
-  range: "Modules 1–10"
-  description: "Set theory, proofs, information and measure-theoretic foundations."
+  name: Mathematical Foundations
+  range: Modules 1–10
+  description: Set theory, proofs, information and measure-theoretic foundations.
+  modules:
+  - n: 1
+    title: Notations and structures
+    focus: Sets, functions, sequences, big-O
+  - n: 2
+    title: Probability and combinatorics
+    focus: Counting, pigeonhole, discrete probability
+  - n: 3
+    title: Proofs and structures
+    focus: Induction, proof by contradiction, well-ordering
+  - n: 4
+    title: Information and probability I
+    focus: Entropy, conditional entropy, mutual information
+  - n: 5
+    title: Information and probability II
+    focus: KL divergence, MDL, Pinsker, data processing
+  - n: 6
+    title: Topology and metric spaces I
+    focus: Open/closed sets, continuity, compactness
+  - n: 7
+    title: Topology and metric spaces II
+    focus: Metrics, completeness, Banach space, contraction
+  - n: 8
+    title: Measure and integration I
+    focus: Sigma-algebras, measures, measurable functions
+  - n: 9
+    title: Measure and integration II
+    focus: Lebesgue integral, convergence theorems
+  - n: 10
+    title: Functional analysis
+    focus: Normed spaces, bounded linear operators, spectra
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 1 supplies load-bearing foundations for the spine.
+- id: math-track-2
+  track_number: 2
+  name: Numerical Methods & Applied Analysis
+  range: Modules 11–20
+  description: Floating-point reality, conditioning, factorization and iterative methods.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 11
+    title: Floating point arithmetic
+    focus: IEEE 754, rounding, ulp, cancellation
+  - n: 12
+    title: Numerical conditioning
+    focus: Condition numbers, stability, error
+  - n: 13
+    title: Root finding and optimization
+    focus: Bisection, Newton, quasi-Newton
+  - n: 14
+    title: Interpolation and approximation
+    focus: Polynomials, splines, least squares
+  - n: 15
+    title: Numerical integration
+    focus: Quadrature, adaptivity, high-dimensional
+  - n: 16
+    title: Eigenvalues and iterative methods
+    focus: Power iteration, Lanczos, shift-invert
+  - n: 17
+    title: SVD and matrix factorizations
+    focus: LU, QR, Cholesky, SVD, rank
+  - n: 18
+    title: Dense vs sparse methods
+    focus: Storage, bandwidth, iterative solvers
+  - n: 19
+    title: Krylov methods
+    focus: CG, GMRES, preconditioning
+  - n: 20
+    title: Randomized numerical linear algebra
+    focus: Random projection, randomized SVD
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 2 supplies load-bearing foundations for the spine.
+- id: math-track-3
+  track_number: 3
+  name: Calculus, Probabilities & Statistics
+  range: Modules 21–30
+  description: Differentiation, optimization, probability and the classical inference toolkit.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 21
+    title: Automatic differentiation
+    focus: Reverse-mode, Jacobian-vector products, vector-Jacobian products
+  - n: 22
+    title: Unconstrained optimization
+    focus: Gradient descent, momentum, adaptive methods
+  - n: 23
+    title: Constrained optimization
+    focus: Lagrange multipliers, KKT, convex duality
+  - n: 24
+    title: Convex analysis
+    focus: Convex sets, functions, subgradients
+  - n: 25
+    title: Probability theory
+    focus: Random variables, expectations, variance
+  - n: 26
+    title: Distributions and moments
+    focus: Bernoulli, Gaussian, exponential, Poisson, moments
+  - n: 27
+    title: Multivariate probability
+    focus: Covariance, correlation, joint/marginal/conditional
+  - n: 28
+    title: Limit theorems
+    focus: LLN, CLT, delta method
+  - n: 29
+    title: Statistical inference
+    focus: MLE, MAP, estimators, bias/variance
+  - n: 30
+    title: Hypothesis testing
+    focus: p-values, Type I/II errors, power, MDE
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 3 supplies load-bearing foundations for the spine.
+- id: math-track-4
+  track_number: 4
+  name: Experimentation & Analytics
+  range: Modules 31–40
+  description: The quantitative machinery behind trustworthy product experiments.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 31
+    title: Experimental design
+    focus: Randomization, control, blocking
+  - n: 32
+    title: Sampling and resampling
+    focus: Bootstrap, permutation, jackknife
+  - n: 33
+    title: Confidence intervals
+    focus: Construction, interpretation, coverage
+  - n: 34
+    title: Multiple testing
+    focus: Bonferroni, FDR, q-values
+  - n: 35
+    title: Bayesian inference
+    focus: Priors, posteriors, conjugate, credible intervals
+  - n: 36
+    title: Regression analysis
+    focus: Linear/logistic, GLM, residuals
+  - n: 37
+    title: Causal inference
+    focus: Potential outcomes, confounding, DAGs
+  - n: 38
+    title: Sequential analysis
+    focus: Group sequential, alpha spending, peeking
+  - n: 39
+    title: A/B testing fundamentals
+    focus: Absolute/relative lift, pooled variance
+  - n: 40
+    title: Modern ML metrics
+    focus: Calibration, NDCG, AUC, fairness
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 4 supplies load-bearing foundations for the spine.
+- id: math-track-5
+  track_number: 5
+  name: ML Theory & Foundation Models
+  range: Modules 41–50
+  description: Learning theory and the mathematics of modern foundation models.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 41
+    title: Learning theory
+    focus: PAC learning, bias-variance, VC dimension
+  - n: 42
+    title: Empirical risk minimization
+    focus: Loss functions, regularization, generalization
+  - n: 43
+    title: Optimization in ML
+    focus: SGD, mini-batch, convergence
+  - n: 44
+    title: Kernel methods
+    focus: Kernels, SVM, RKHS
+  - n: 45
+    title: Probabilistic graphical models
+    focus: Bayes nets, Markov, inference
+  - n: 46
+    title: Bayesian deep learning
+    focus: Uncertainty, dropout, VI, ensembles
+  - n: 47
+    title: Representation learning
+    focus: Autoencoders, contrastive learning
+  - n: 48
+    title: Transformer theory
+    focus: Attention, positional encodings, scaling
+  - n: 49
+    title: Scaling laws
+    focus: Compute, data, parameters
+  - n: 50
+    title: Emergent behavior
+    focus: Zero-shot, few-shot, capabilities, limitations
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 5 supplies load-bearing foundations for the spine.
+- id: math-track-6
+  track_number: 6
+  name: Distributed Systems Mathematics
+  range: Modules 51–60
+  description: Hashing, consensus, consistency and causality for distributed systems.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 51
+    title: Complexity and cost models
+    focus: Amortized analysis, communication cost
+  - n: 52
+    title: Hash functions
+    focus: Consistent hashing, minhash, SimHash
+  - n: 53
+    title: Routing and load balancing
+    focus: Weighted round robin, rendezvous hashing
+  - n: 54
+    title: Consensus and leader election
+    focus: Paxos, Raft, leader lease
+  - n: 55
+    title: Vector clocks and causality
+    focus: Happens-before, concurrent events
+  - n: 56
+    title: CRDTs and state merging
+    focus: LWW, G-Counters, conflict resolution
+  - n: 57
+    title: Quorums and replication
+    focus: Read/write quorums, quorum intersection
+  - n: 58
+    title: Distributed transactions
+    focus: Two-phase commit, saga, idempotency
+  - n: 59
+    title: Gossip protocols
+    focus: Failure detection, epidemic broadcast
+  - n: 60
+    title: Distributed consistency
+    focus: Linearizability, sequential, eventual, CAP
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 6 supplies load-bearing foundations for the spine.
+- id: math-track-7
+  track_number: 7
+  name: Applied Probability for Inference
+  range: Modules 61–70
+  description: Queueing, processes, sketches and tail behavior behind serving systems.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 61
+    title: Queueing theory
+    focus: M/M/1, M/M/c, Little’s law, tail behavior
+  - n: 62
+    title: Renewal theory
+    focus: Renewal processes, residual life
+  - n: 63
+    title: Markov processes
+    focus: Discrete/continuous time, stationarity
+  - n: 64
+    title: Poisson processes
+    focus: Arrivals, thinning, superposition
+  - n: 65
+    title: Branching processes
+    focus: Galton–Watson, extinction probability
+  - n: 66
+    title: Statistical process control
+    focus: Control charts, CUSUM
+  - n: 67
+    title: Randomized algorithms
+    focus: Sampling, hashing, load balancing
+  - n: 68
+    title: Tail bounds
+    focus: Markov, Chebyshev, Chernoff, Hoeffding
+  - n: 69
+    title: Streaming and sketching
+    focus: Count-Min, HyperLogLog, t-digest
+  - n: 70
+    title: Heavy hitters
+    focus: Misra-Gries, Space-Saving
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 7 supplies load-bearing foundations for the spine.
+- id: math-track-8
+  track_number: 8
+  name: Optimization & Inference
+  range: Modules 71–80
+  description: Convex and discrete optimization, graph algorithms and approximation.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 71
+    title: Convex optimization
+    focus: Duality, interior point, KKT
+  - n: 72
+    title: Non-convex optimization
+    focus: Saddle points, landscape, heuristics
+  - n: 73
+    title: Linear and integer programming
+    focus: Simplex, LP relaxation, branch and bound
+  - n: 74
+    title: Dynamic programming
+    focus: Optimal substructure, state design
+  - n: 75
+    title: Network flows
+    focus: Max flow, min cut, min cost flow
+  - n: 76
+    title: Greedy algorithms
+    focus: Exchange arguments, matroids
+  - n: 77
+    title: Graph algorithms
+    focus: Shortest paths, MST, Euler tour
+  - n: 78
+    title: Advanced graph structures
+    focus: Euler Tour Trees, heavy-light decomposition
+  - n: 79
+    title: Spectral methods
+    focus: Graph Laplacians, eigenvectors
+  - n: 80
+    title: Approximation algorithms
+    focus: NP-hardness, approximation ratios
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 8 supplies load-bearing foundations for the spine.
+- id: math-track-9
+  track_number: 9
+  name: Information, Inference & AI Foundations
+  range: Modules 81–90
+  description: Information theory, decision theory, RL and generative modeling.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 81
+    title: Information theory
+    focus: Entropy, mutual information, channel capacity
+  - n: 82
+    title: Statistical learning theory
+    focus: Generalization, Rademacher complexity
+  - n: 83
+    title: Bayesian statistics
+    focus: Priors, posteriors, computation, MCMC
+  - n: 84
+    title: Decision theory
+    focus: Utility, expected utility, minimax
+  - n: 85
+    title: Game theory
+    focus: Nash equilibria, zero-sum games
+  - n: 86
+    title: Reinforcement learning
+    focus: MDPs, value iteration, Q-learning
+  - n: 87
+    title: Sequential decision making
+    focus: Bandits, exploration/exploitation
+  - n: 88
+    title: Generative modeling
+    focus: VAEs, GANs, diffusion
+  - n: 89
+    title: Causal inference II
+    focus: Instrumental variables, do-calculus
+  - n: 90
+    title: Fairness and safety
+    focus: Bias, fairness metrics, alignment, robustness
   tier: core
   level: 1
-  seam: "math foundations"
+  seam: math foundations
+  selection_rationale: Math track 9 supplies load-bearing foundations for the spine.
+- id: math-track-10
+  track_number: 10
+  name: Production AI Systems & Advanced Inference
+  range: Modules 91–100
+  description: Scheduling, cost, reliability and the cutting edge of inference systems.
   modules:
-  cross_references:
-
-- id: math-track-None
-  track_number: None
-  name: ""
-  range: ""
-  description: ""
+  - n: 91
+    title: Scheduling
+    focus: Priority queues, fair scheduling, work stealing
+  - n: 92
+    title: Autoscaling and capacity
+    focus: Utilization, SLO-based scaling, throttling
+  - n: 93
+    title: Cost modeling
+    focus: Hardware cost, efficiency, pricing
+  - n: 94
+    title: Reliability engineering
+    focus: SLOs, error budgets, SLA, incident response
+  - n: 95
+    title: Advanced inference
+    focus: KV cache, paging, continuous batching
+  - n: 96
+    title: Advanced quantization
+    focus: FP8, AWQ, GPTQ, KV-cache quantization
+  - n: 97
+    title: Speculative decoding
+    focus: Draft models, verification, acceptance rates
+  - n: 98
+    title: Long context
+    focus: RoPE, eviction, memory compression
+  - n: 99
+    title: Distributed inference
+    focus: Prefill/decode disaggregation, expert parallelism
+  - n: 100
+    title: Advanced parallel training
+    focus: Tensor, pipeline, expert parallelism
   tier: core
   level: 1
-  seam: "math foundations"
-  modules:
-  cross_references:
+  seam: math foundations
+  selection_rationale: Math track 10 supplies load-bearing foundations for the spine.

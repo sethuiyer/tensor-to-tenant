@@ -1,672 +1,862 @@
 # Engineering primitives: 30 production-style implementations + 40 timed drills.
-# Per T1.2: schema discipline with id / tier / level / seam /
-# cross_references. Phase 4 (Engineering Micro-Projects) anchors these.
-
-# ============================================================================
-# Engineering tasks (30)
-# ============================================================================
-
+# Generated metadata view; edit schema fields then run tools/generate.py.
 - id: eng-task-1
   number: 1
-  title: "Implementation of retrieval engine with cosine similarity"
+  title: Implementation of retrieval engine with cosine similarity
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 1.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-2
+  number: 2
+  title: Implementation of exact top-k selection
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 2.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-3
+  number: 3
+  title: Heap-based top-k with fixed memory
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 3.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-4
+  number: 4
+  title: Implementation of retrieval reranker
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 4.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-5
+  number: 5
+  title: Two-stage retrieval pipeline with reranker
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 5.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-6
+  number: 6
+  title: Dynamic top-k with mutable scores
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 6.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-7
+  number: 7
+  title: Sliding window rate limiter
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 7.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-8
+  number: 8
+  title: Token bucket rate limiter
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 8.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-9
+  number: 9
+  title: Distributed rate limiter using Redis
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 9.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-10
+  number: 10
+  title: LRU cache with O(1) operations
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 10.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-11
+  number: 11
+  title: TTL cache
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 11.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-12
+  number: 12
+  title: Cache simulator with hit-ratio and stall-time statistics
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 12.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-13
+  number: 13
+  title: Text chunker with sentence awareness
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 13.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-14
+  number: 14
+  title: Token-aware chunker
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 14.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-15
+  number: 15
+  title: PII span merging and regex/NER detection
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 15.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-16
+  number: 16
+  title: Redaction utility with PII spans
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 16.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-17
+  number: 17
+  title: Brier score and reliability diagrams
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 17.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-18
+  number: 18
+  title: Expected calibration error
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 18.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-19
+  number: 19
+  title: NDCG, MRR, Recall@K retrieval evaluation
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 19.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-20
+  number: 20
+  title: Thread-safe inference batcher
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 20.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-21
+  number: 21
+  title: Retry with exponential backoff and jitter
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 21.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-22
+  number: 22
+  title: Circuit breaker
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 22.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-23
+  number: 23
+  title: Count-Min Sketch
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 23.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-24
+  number: 24
+  title: Bloom filter
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 24.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-25
+  number: 25
+  title: HyperLogLog
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 25.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-26
+  number: 26
+  title: Consistent hashing
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 26.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-27
+  number: 27
+  title: Weighted load balancer
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 27.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-28
+  number: 28
+  title: Snowflake ID generation
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 28.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-29
+  number: 29
+  title: Leaky bucket rate limiter
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 29.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-- id: eng-task-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
+- id: eng-task-30
+  number: 30
+  title: Sliding-window counter (global)
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives
+  selection_rationale: Implement engineering primitive task 30.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-    - { entity: gates, gate_id: gate-4, role: "verified at gate 4" }
-
-
-# ============================================================================
-# Practice exercises (40 timed drills)
-# ============================================================================
-
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+  - entity: gates
+    gate_id: gate-4
+    role: verified at gate 4
 - id: practice-1
   number: 1
-  title: "Vector dot product using native Python vs NumPy"
+  title: Vector dot product using native Python vs NumPy
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 1 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-2
+  number: 2
+  title: Parallel dot product with multiprocessing and shared memory
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 2 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-3
+  number: 3
+  title: Thread-safe vector addition with locks
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 3 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-4
+  number: 4
+  title: Thread-safe vector addition with atomic operations
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 4 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-5
+  number: 5
+  title: Concurrent dictionary with counters
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 5 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-6
+  number: 6
+  title: Concurrent counters with Redis
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 6 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-7
+  number: 7
+  title: Implement a semaphore
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 7 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-8
+  number: 8
+  title: Reader-writer lock
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 8 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-9
+  number: 9
+  title: Producer-consumer queue with condition variables
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 9 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-10
+  number: 10
+  title: Work queue with channel semantics
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 10 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-11
+  number: 11
+  title: Token bucket rate limiter
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 11 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-12
+  number: 12
+  title: Sliding window rate limiter with timestamp list
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 12 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-13
+  number: 13
+  title: Sliding window rate limiter with counter + timestamp
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 13 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-14
+  number: 14
+  title: LRU cache
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 14 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-15
+  number: 15
+  title: TTL cache
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 15 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-16
+  number: 16
+  title: Randomized load balancer
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 16 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-17
+  number: 17
+  title: Round-robin load balancer
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 17 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-18
+  number: 18
+  title: Weighted round-robin load balancer
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 18 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-19
+  number: 19
+  title: Rendezvous hashing
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 19 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-20
+  number: 20
+  title: Consistent hashing
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 20 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-21
+  number: 21
+  title: PII redactor
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 21 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-22
+  number: 22
+  title: PII detector with spans
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 22 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-23
+  number: 23
+  title: Batch processor with queue
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 23 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-24
+  number: 24
+  title: Batch processor with reservation and timeout
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 24 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-25
+  number: 25
+  title: Retry wrapper with exponential backoff
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 25 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-26
+  number: 26
+  title: Retry wrapper with circuit breaker
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 26 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-27
+  number: 27
+  title: Count-Min Sketch
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 27 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-28
+  number: 28
+  title: Bloom filter
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 28 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-29
+  number: 29
+  title: HyperLogLog
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 29 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-30
+  number: 30
+  title: Snowflake ID generator
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 30 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-31
+  number: 31
+  title: KNN with cosine similarity
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 31 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-32
+  number: 32
+  title: KNN with euclidean distance
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 32 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-33
+  number: 33
+  title: Two-stage retrieval with reranker
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 33 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-34
+  number: 34
+  title: Stream top-k with heap
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 34 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-35
+  number: 35
+  title: Chunker with fixed-size windows
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 35 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-36
+  number: 36
+  title: Chunker with sentence awareness
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 36 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-37
+  number: 37
+  title: Token-aware chunker
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 37 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-38
+  number: 38
+  title: LRU cache with TTL
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 38 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-39
+  number: 39
+  title: Thread-safe LRU cache
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 39 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
-
-- id: practice-None
-  number: None
-  title: ""
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
+- id: practice-40
+  number: 40
+  title: Concurrent batch processor with timeout
   tier: core
   level: 2
-  seam: "engineering primitives"
+  seam: engineering primitives drill
+  selection_rationale: Timed implementation drill 40 for Phase 4 fluency.
   cross_references:
-    - { entity: phases, phase_id: phase-4, role: "lives in Phase 4" }
+  - entity: phases
+    phase_id: phase-4
+    role: lives in Phase 4
