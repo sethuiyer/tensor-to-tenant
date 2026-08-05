@@ -95,26 +95,6 @@ operational form of P‑principle 1.
 
 ## P1 — schema + tests + drift (this month)
 
-### T1.2 Define the schema entity set
-
-- **Files:** `schema/*.yaml` + `schema/models.py` (Pydantic).
-- **Initial entities (one YAML file per entity type):**
-  - `phases.yaml` — 10 phases
-  - `weeks.yaml` — 108 weekly entries with `{week, phase, module, focus, mode, deliverable, forge_tier, forge_topic, recovery_after?}`
-  - `gates.yaml` — 10 milestone gates
-  - `programs.yaml` — 3 stackable programs
-  - `mandalas.yaml` — 16 mandalas
-  - `math_tracks.yaml` — 10 tracks × 10 modules
-  - `forge.yaml` — lanes + bosses + coverage matrix
-  - `darbar.yaml` — patterns + catalog summary + categories
-  - `engineering.yaml` — 30 tasks + 40 drills
-  - `system_design.yaml` — weeks + patterns + families + cases
-  - `agents.yaml` — 18 modules + 7.5 + bridge rows + Manus capstone
-  - `interview.yaml` — CARL stories + 176‑item roadmap + completion levels
-  - `resources.yaml` — videos/books/papers/blogs
-  - `prerequisites.yaml` — 9 resources + 36‑week plan
-- **Acceptance:** every `src/data/*.ts` file has a corresponding `schema/*.yaml` source. Pydantic models validate the YAML at import time.
-
 ### T1.3 Write the generators (schema → site + cookiecutter)
 
 - **Files:** new `tools/generate.py` (or `scripts/build_site.py` + `scripts/build_cookiecutter.py`).
@@ -497,25 +477,6 @@ lands, but for now the schema entry uses the generic name.
 - **Detail:** the partner's system prompt is the `AGENTS.md` content. If `AGENTS.md` references week IDs or gate IDs, they should be validated against the schema at cookiecutter generation time — currently the prompt references weeks like "Week 14" without any check that "Week 14" is a valid week in the schema.
 - **Acceptance:** a build‑time assertion confirms every referenced week/gate ID in `AGENTS.md` exists in the schema.
 
-### T2.5 Add a minimal site search
-
-- **Files:** new `src/pages/search.astro` or new `src/scripts/search-index.ts`.
-- **Detail:** **independent of the schema spine** — does not block on T1.1–T1.7.
-  Two viable approaches:
-  - **Approach A (recommended, ~1 hr):** read directly from the existing
-    `src/data/*.ts` files at build time, build a JSON index, ship as
-    a tiny client-side filter. No external dependency.
-  - **Approach B (~30 min, lower polish):** skip the filter UI; ship a
-    `/search/` page that renders the index as a flat list with browser
-    `Ctrl+F` as the search mechanism.
-- **Acceptance:** `/search/` renders, returns results for "Euler", "SVD",
-  "PagedAttention", "MCP" within ~50 ms.
-
-> **Note for the executor:** this task was previously misclassified as
-> deferred. It is independent of the schema work and can run right now
-> in parallel with T1.1–T1.7. If a second executor is available, this
-> is the natural parallel work.
-
 ### T2.6 Build verification: schema → site → cookiecutter in one CI job
 
 - **Files:** extend `test.yml`.
@@ -571,23 +532,26 @@ lands, but for now the schema entry uses the generic name.
 
 **Phase 4 (optional hardening — only when Phase 3 is green or if edits resume):**
 
-Total: 13 execution items across 12 task headers (T1.4's two remaining sub-tasks e and f are listed separately; all other parent tasks are single-item).
+**Completed within Phase 4 (since last trim):**
 
-**Active schema spine (6 items; T1.1 was resolved 2026-08 in commit `36f7c2a` — see ADR-001 in `docs/ARCHITECTURE.md` for the rationale):**
+- T1.2 — define schema entities (commit `b9f1bd2`: 14 YAML files, ~444 entries)
+- T2.5 — minimal site search (commit `002df84`: Pagefind index + `/search/` page; landed by another agent)
 
-- **T1.2** — define schema entities (one YAML per surface)
+Total: 11 execution items across 10 task headers (T1.4's two remaining sub-tasks e and f are listed separately; all other parent tasks are single-item).
+
+**Active schema spine (5 items; T1.1 was resolved 2026-08 in commit `36f7c2a` — see ADR-001 in `docs/ARCHITECTURE.md` for the rationale):**
+
 - **T1.3** — write the generators
 - **T1.4.e** — drift test
 - **T1.4.f** — site build test
 - **T1.6** — drift check between schema and site
 - **T1.7** — eliminate hand-written sources (re-run audit after this lands)
 
-**Independent of schema (2 items; run in parallel with anything):**
+**Independent of schema (1 item; run in parallel with anything):**
 
-- **T1.12** — tool recommendation systems parallel track (blocks on T1.2's entity-set decision)
-- **T2.5** — minimal site search (no schema dependency; ~1 hr)
+- **T1.12** — tool recommendation systems parallel track (no longer blocked on T1.2 — schema entity-set decision is in. Blocks on T1.3 if we want `schema/deep_dives.yaml` to be generated rather than hand-authored.)
 
-**Depth layer (5 items; all depend on T1.2 + T1.3):**
+**Depth layer (5 items; all depend on T1.3):**
 
 - **T2.1** — capstones schema-driven
 - **T2.2** — schema-validate site content at build time
