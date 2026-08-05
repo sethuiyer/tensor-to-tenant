@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: tensor-to-tenant documentation
+    url: https://sethuiyer.github.io/tensor-to-tenant/
+    about: Curriculum site with the full 108-week arc, gate structure, and mandala progression.
+  - name: Independent technical audit (T1.13)
+    url: https://github.com/sethuiyer/tensor-to-tenant/blob/main/docs/AUDIT.md
+    about: Per-claim audit with verdicts. Use to check whether an issue is already flagged.
