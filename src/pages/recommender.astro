@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { TOOL_RECOMMENDATION_SYSTEMS } from '../data/deepDives';
+import { SITE, url } from '../config';
+
+interface Props {
+  title?: string;
+}
+
+const track = TOOL_RECOMMENDATION_SYSTEMS;
+const theory = track.primaryArtifacts.find((artifact) => artifact.pairRole === 'theory');
+const production = track.primaryArtifacts.find((artifact) => artifact.pairRole === 'production');
+const artifactUrl = (path: string) => `${SITE.github}/blob/main/${path}`;
+const referenceLabel = (reference: (typeof track.crossReferences)[number]) =>
+  reference.week ? `W${reference.week}` : `Capstone ${reference.capstone}`;
+---
+
+<BaseLayout
+  title={track.title}
+  description="An optional paired deep-dive: recommendation-system math in SEARCH.md, followed by its production Snowflake implementation."
+  activeNav="recommender"
+>
+  <PageHeader
+    eyebrow="Optional parallel track"
+    title="Tool recommendation systems"
+    lead="Build a recommender that combines semantic similarity, graph structure, lexical evidence, intent, and telemetry — then watch the elegant equations meet production Snowflake."
+    meta="2 artifacts · Level 2 → Level 3 · strict paired reading"
+  />
+
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="callout callout--violet">
+        <strong>Read the pair in order</strong>
+        <p>
+          This track sits alongside the 108-week spine rather than adding another phase. Read the theory first;
+          the production artifact assumes its equations and makes their operational seams visible.
+        </p>
+        <div class="grid grid-2" style="margin-top:1rem">
+          <div class="card" style="padding:1rem">
+            <div class="kicker">1 · Level 2 · theory</div>
+            <h3 style="margin-top:0.35rem">{theory?.title}</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem">~{theory?.sizeKb} KB · {theory?.sectionCount} numbered sections · ~2 hr full read</p>
+            {theory && <a class="chip chip--violet" href={artifactUrl(theory.path)} target="_blank" rel="noopener noreferrer">Open {theory.path} ↗</a>}
+          </div>
+          <div class="card" style="padding:1rem">
+            <div class="kicker">2 · Level 3 · production</div>
+            <h3 style="margin-top:0.35rem">{production?.title}</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem">~{production?.sizeKb} KB · {production?.sectionCount} numbered sections · ~3 hr full read</p>
+            {production && <a class="chip chip--amber" href={artifactUrl(production.path)} target="_blank" rel="noopener noreferrer">Open {production.path} ↗</a>}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:2rem">
+        {track.primaryArtifacts.map((artifact) => (
+          <article class="card" style="padding:1.35rem">
+            <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+              <span class:list={['chip', artifact.pairRole === 'theory' ? 'chip--violet' : 'chip--amber']}>
+                {artifact.pairRole === 'theory' ? 'Theory · Level 2' : 'Production · Level 3'}
+              </span>
+              <span class="mono" style="font-size:0.78rem;color:var(--text-muted)">{artifact.path}</span>
+            </div>
+            <h2 style="font-size:1.2rem;margin-top:0.85rem">{artifact.title}</h2>
+            <p style="color:var(--text-muted);font-size:0.92rem">{artifact.selectionRationale}</p>
+            {artifact.prerequisiteOf && (
+              <p class="mono" style="font-size:0.78rem;color:var(--accent-2)">
+                prerequisite: {artifact.prerequisiteOf}
+              </p>
+            )}
+            <a href={artifactUrl(artifact.path)} target="_blank" rel="noopener noreferrer" style="font-size:0.9rem">Read the artifact ↗</a>
+          </article>
+        ))}
+      </div>
+
+      <div class="kicker" style="margin-top:3rem">The production seam</div>
+      <h2>Where recommendation math becomes a platform</h2>
+      <div class="grid grid-2" style="align-items:center">
+        <div>
+          <p class="lead" style="font-size:0.98rem">
+            The same score needs graph-cycle guards, heterogeneous-score normalization, dynamic thresholds,
+            incremental refresh, and a serving path that does not consume the warehouse budget. That is why the
+            production reading is mandatory after the theory, not an interchangeable implementation note.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.45rem">
+            {['AI_EMBED + VECTOR', 'recursive CTE + cycle guard', 'weighted Adamic–Adar', 'PERCENTILE_CONT', 'Streams + Tasks', 'Cortex Search'].map((label) => <span class="chip chip--accent">{label}</span>)}
+          </div>
+        </div>
+        <div class="card" style="padding:0.75rem">
+          <img src={url('/recommender-pipeline.svg')} alt="Recommendation pipeline from query signals through graph and embedding scores to explainable ranked tools" loading="lazy" style="width:100%;height:auto" />
+        </div>
+      </div>
+
+      <div class="kicker" style="margin-top:3rem">Cross-reference map</div>
+      <p style="color:var(--text-muted);max-width:68ch">
+        Each primitive below is already load-bearing elsewhere. The recommender track makes the combination explicit.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Spine / capstone</th><th>Load-bearing primitive</th><th>Why it connects</th></tr></thead>
+          <tbody>
+            {track.loadBearingFor.map((reference) => (
+              <tr>
+                <td class="mono" style="white-space:nowrap">{referenceLabel(reference)}</td>
+                <td><strong>{reference.primitive}</strong></td>
+                <td>{reference.role}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout" style="margin-top:2rem">
+        <strong>Optional depth, strict order</strong>
+        <p style="color:var(--text-muted);font-size:0.95rem">
+          SEARCH.md can stand alone as general recommendation math. SNOWFLAKE.md is deliberately marked as a
+          prerequisite-of-SEARCH pair member: do not start with its SQL. Log one checkbox per section in the learner
+          scaffold and record the production failure you would monitor for each signal.
+        </p>
+        <a href={url('/curriculum/')} style="color:inherit">Return to the 108-week spine →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

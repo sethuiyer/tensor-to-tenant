@@ -1,0 +1,10 @@
+[project]
+name = "tensor-to-tenant-site-tools"
+version = "0.1.0"
+description = "Schema generators and structural checks for the Tensor-to-Tenant curriculum site"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

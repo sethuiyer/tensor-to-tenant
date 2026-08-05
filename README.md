@@ -31,10 +31,11 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
 7. [Algorithmic Forge](#algorithmic-forge)
 8. [System Design Track](#system-design-track)
 9. [Leetcode Darbar](#leetcode-darbar)
-10. [Sailboat Retrospective](#sailboat-retrospective)
-11. [The bridge to the agent-building bootcamp](#the-bridge-to-the-agent-building-bootcamp)
-12. [Full 108-Week Curriculum](#full-108-week-curriculum)
-13. [Phase Details](#phase-details)
+10. [Tool Recommendation Systems](#tool-recommendation-systems)
+11. [Sailboat Retrospective](#sailboat-retrospective)
+12. [The bridge to the agent-building bootcamp](#the-bridge-to-the-agent-building-bootcamp)
+13. [Full 108-Week Curriculum](#full-108-week-curriculum)
+14. [Phase Details](#phase-details)
    - [Phase 1 — Orientation, Tooling, Diagnostics (Weeks 1–6)](#phase-1--orientation-tooling-and-diagnostics--weeks-16)
    - [Phase 2 — Mathematical Foundations I (Weeks 7–18)](#phase-2--mathematical-foundations-i--weeks-718)
    - [Phase 3 — Mathematical Foundations II (Weeks 19–30)](#phase-3--mathematical-foundations-ii--weeks-1930)
@@ -45,8 +46,8 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
    - [Phase 8 — LLM Inference & Performance Engineering (Weeks 82–93)](#phase-8--llm-inference-and-performance-engineering--weeks-8293)
    - [Phase 9 — Production AI Platform Engineering (Weeks 94–102)](#phase-9--production-ai-platform-engineering--weeks-94102)
    - [Phase 10 — Capstone, Portfolio & Interview Readiness (Weeks 103–108)](#phase-10--capstone-portfolio-and-interview-readiness--weeks-103108)
-14. [Milestone Gates](#milestone-gates)
-15. [Source Material Mapping](#source-material-mapping)
+15. [Milestone Gates](#milestone-gates)
+16. [Source Material Mapping](#source-material-mapping)
    - [Math Curriculum Path](#math-curriculum-path)
    - [Engineering Implementation Tasks](#engineering-implementation-tasks)
    - [Engineering Practice Exercises](#engineering-practice-exercises)
@@ -54,19 +55,19 @@ tenant     — multi-tenant isolation, admission, fairness (CAPSTONE)
    - [ML Systems & MLOps Reading](#ml-systems--mlops-reading)
    - [LLM Inference Papers & Systems](#llm-inference-papers--systems)
    - [LLM Training, RAG, Agents & Evaluation](#llm-training-rag-agents--evaluation)
-16. [Weekly Template & Repo Structure](#weekly-template--repo-structure)
-17. [Interview Preparation Integration](#interview-preparation-integration)
-18. [Behavioral Interview Track (CARL Stories)](#behavioral-interview-track-carl-stories)
-19. [Final Capstone Requirements](#final-capstone-requirements)
-20. [Completion Criteria](#completion-criteria)
-21. [Final Capstone Artifact](#final-capstone-artifact)
-22. [Reference Resources](#reference-resources)
+17. [Weekly Template & Repo Structure](#weekly-template--repo-structure)
+18. [Interview Preparation Integration](#interview-preparation-integration)
+19. [Behavioral Interview Track (CARL Stories)](#behavioral-interview-track-carl-stories)
+20. [Final Capstone Requirements](#final-capstone-requirements)
+21. [Completion Criteria](#completion-criteria)
+22. [Final Capstone Artifact](#final-capstone-artifact)
+23. [Reference Resources](#reference-resources)
     - [YouTube Playlists](#youtube-playlists)
     - [Books & Reading List](#books--reading-list)
     - [Research Papers](#research-papers)
     - [Blog & Article URLs](#blog--article-urls)
     - [Interview Preparation Roadmap](#interview-preparation-roadmap)
-23. [Repository Layout](#repository-layout)
+24. [Repository Layout](#repository-layout)
 
 ---
 
@@ -363,6 +364,21 @@ Darbar never overrides a core deliverable or blocking gate. A solved problem
 needs an explanation, final complexity, and a link to the production concept it
 reinforces. Generated repos expose `make darbar=42`, `make progress`, and the
 optional `make auror` verifier.
+
+## Tool Recommendation Systems
+
+The recommender is an **optional parallel deep-dive**, alongside Forge, Darbar,
+and Agents — not a new spine phase. It is a strict Level 2 → Level 3 pair:
+
+1. [`SEARCH.md`](./SEARCH.md) derives semantic, graph, lexical, intent, and
+   telemetry signals for multi-signal tool ranking.
+2. [`SNOWFLAKE.md`](./SNOWFLAKE.md) implements the same equations with
+   `AI_EMBED`, recursive CTEs, Cortex Search, and Streams + Tasks, exposing
+   the permissions, latency, cycle, and credit seams.
+
+The learner-repo scaffold lives at `09_interview/recommender/`; use its
+section checklist to record both the math and the production failure mode it
+introduces.
 
 ## Sailboat Retrospective
 
@@ -722,7 +738,7 @@ to every journal entry.
 | 78 | Retrieval eval | Query slices, macro metrics, regressions | implement | Slice evaluation report |
 | 79 | Prompt systems | Prompt template renderer, version registry | implement | Prompt management tool |
 | 80 | Memory/context | Conversation memory, context optimizer | implement | Memory service |
-| 81 | Agent foundations | ReAct, plan-execute, tool calling, guardrails | implement | Agent prototype |
+| 81 | Agent foundations | ReAct, plan-execute, tool calling, guardrails; agent harness (tool-approval gates, session persistence/resume, context compaction, sub-agent fan-out, sandboxing vs host-shell) | implement | Agent prototype |
 | 82 | GPU performance | Compute/memory/overhead regimes, FlashAttention | read_diagram | Performance primer notes |
 | 83 | Inference arithmetic | Roofline model, arithmetic intensity | read_diagram | Model intensity worksheet |
 | 84 | PagedAttention/vLLM | KV paging, block tables | deploy_benchmark | vLLM deployment |
@@ -733,7 +749,7 @@ to every journal entry.
 | 89 | SGLang | RadixAttention, prefix reuse | deploy_benchmark | SGLang comparison report |
 | 90 | Scheduling & MoE Execution | Orca, continuous batching, chunked prefill, MoE all-to-all routing, Warp Decode, COMET overlap | read_diagram | MoE overlap schedule design doc + latency-hiding simulator |
 | 91 | Quantization | FP8, AWQ, GPTQ, KV cache compression | read_diagram | Quality/throughput table |
-| 92 | Speculative/long context | Medusa, EAGLE, StreamingLLM, KV eviction | read_diagram | Latency/memory lab |
+| 92 | Long context & attention alternatives | Medusa, EAGLE, StreamingLLM, KV eviction; linear attention (ELU+1), state-space (Mamba), delta-rule (DeltaNet/Gated DeltaNet), KDA/Kimi Linear; KV cache vs learned recurrence | read_diagram | Latency/memory lab |
 | 93 | Disaggregation | DistServe, Splitwise, Mooncake, autoscaling | read_diagram | Disaggregated serving plan |
 | 94 | Traffic routing | Model router, kill switch, sticky rollout | implement | Router service |
 | 95 | Safe observability | PII redaction, end-to-end request tracing | implement | Trace + safe logs |
@@ -881,7 +897,7 @@ Business objectives, constraints, labeling, weak supervision, augmentation, leak
 
 ### Phase 7 — LLM Training, RAG, Agents, and Evaluation (Weeks 70–81)
 
-Transformer architecture, tokenization, data pipelines, dedup, SFT/LoRA/QLoRA/DoRA, RLHF/DPO/ORPO/GRPO, distributed training (DDP/FSDP/tensor/pipeline/ZeRO), vector DBs (HNSW, IVF-PQ), hybrid search, query rewriting, chunking, retrieval fusion, retrieval evaluation, prompt management, memory, agent architectures (ReAct, plan-execute).
+Transformer architecture, tokenization, data pipelines, dedup, SFT/LoRA/QLoRA/DoRA, RLHF/DPO/ORPO/GRPO, distributed training (DDP/FSDP/tensor/pipeline/ZeRO), vector DBs (HNSW, IVF-PQ), hybrid search, query rewriting, chunking, retrieval fusion, retrieval evaluation, prompt management, memory, agent architectures (ReAct, plan-execute), agent harness (tool-approval gates, session resume, context compaction, sub-agent fan-out, sandboxing).
 
 ### Phase 8 — LLM Inference and Performance Engineering (Weeks 82–93)
 
@@ -1443,6 +1459,11 @@ genuinely demanding.
 | FlashAttention | NeurIPS 2022 | IO-aware attention | https://arxiv.org/abs/2401.15077 |
 | FlashAttention-2 | ICLR 2024 | Faster attention kernels | — |
 | FlashAttention-3 | — | Hopper-optimized attention | — |
+| Transformers are RNNs (Linear Attention) | ICML 2020 | Linear attention, ELU+1 feature map | https://arxiv.org/abs/2006.16236 |
+| Mamba | arXiv 2023 | Selective state spaces, linear-time sequence modeling | https://arxiv.org/abs/2312.00752 |
+| Transformers are SSMs (Mamba-2) | arXiv 2024 | Structured state space duality | https://arxiv.org/abs/2405.21060 |
+| DeltaNet | NeurIPS 2024 | Delta-rule linear attention | https://arxiv.org/abs/2406.06484 |
+| Gated DeltaNet | ICLR 2025 | Gated delta rule over Mamba-2 | https://arxiv.org/abs/2412.06464 |
 | Ring Attention | ICLR 2024 | Long-context distributed attention | — |
 | Infini-attention | NeurIPS 2024 | Infinite context | — |
 | KIVI | ICML 2024 | KV cache quantization | — |

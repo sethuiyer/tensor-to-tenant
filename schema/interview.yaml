@@ -1,253 +1,484 @@
-# Interview preparation: continuous track, CARL stories, 176-item roadmap.
-# Per T1.2: schema discipline. Runs parallel to the 108-week spine.
-
-# ============================================================================
-# CARL behavioral stories (10)
-# ============================================================================
-
+# Interview preparation: continuous track, CARL stories, and the 176-item roadmap.
+# Generated metadata view; edit schema fields then run tools/generate.py.
 - id: carl-scope
-  story: "Scope"
-  weeks: "1–10"
+  story: Scope
+  weeks: 1–10
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-ownership
+  story: Ownership
+  weeks: 11–20
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-ambiguity
+  story: Ambiguity
+  weeks: 21–30
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-perseverance
+  story: Perseverance
+  weeks: 31–40
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-conflict-resolution
+  story: Conflict resolution
+  weeks: 41–50
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-growth
+  story: Growth
+  weeks: 51–60
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-communication
+  story: Communication
+  weeks: 61–70
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-leadership
+  story: Leadership
+  weeks: 71–80
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-technical-trade-offs
+  story: Technical trade-offs
+  weeks: 81–90
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-- id: carl-
-  story: ""
-  weeks: ""
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: carl-production-incident
+  story: Production incident
+  weeks: 91–108
   tier: core
   level: 2
-  seam: "behavioral interview prep"
-
-
-# ============================================================================
-# Interview focus by phase
-# ============================================================================
-
+  seam: behavioral interview prep
+  selection_rationale: CARL story slot aligned to the continuous interview lane.
+- id: interview-weekly-minimums
+  rules:
+  - 1 coding drill
+  - 1 system design question or pattern
+  - 1 behavioral story refinement
+  - 1 technical explanation out loud
+  tier: core
+  level: 1
+  seam: weekly cadence
+  selection_rationale: Minimum weekly practice keeps interview readiness continuous.
 - id: interview-focus-1–30
-  weeks: "1–30"
-  focus: "Technical communication and basic problem solving"
+  weeks: 1–30
+  focus: Technical communication and basic problem solving
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-- id: interview-focus-
-  weeks: ""
-  focus: ""
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
+- id: interview-focus-31–45
+  weeks: 31–45
+  focus: Coding patterns and implementation drills
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-- id: interview-focus-
-  weeks: ""
-  focus: ""
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
+- id: interview-focus-46–57
+  weeks: 46–57
+  focus: System design case studies
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-- id: interview-focus-
-  weeks: ""
-  focus: ""
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
+- id: interview-focus-58–69
+  weeks: 58–69
+  focus: ML/MLOps/experimentation interview questions
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-- id: interview-focus-
-  weeks: ""
-  focus: ""
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
+- id: interview-focus-70–81
+  weeks: 70–81
+  focus: LLM/RAG/agent system design
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-- id: interview-focus-
-  weeks: ""
-  focus: ""
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
+- id: interview-focus-82–93
+  weeks: 82–93
+  focus: LLM inference and performance questions
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-- id: interview-focus-
-  weeks: ""
-  focus: ""
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
+- id: interview-focus-94–102
+  weeks: 94–102
+  focus: Production AI platform design
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-- id: interview-focus-
-  weeks: ""
-  focus: ""
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
+- id: interview-focus-103–108
+  weeks: 103–108
+  focus: Full mock interviews
   tier: core
   level: 2
-  seam: "phase-aligned interview prep"
-
-
-# ============================================================================
-# 176-item interview roadmap (3 tracks)
-# ============================================================================
-
+  seam: phase-aligned interview prep
+  selection_rationale: Interview focus aligned to the corresponding spine phase.
 - id: roadmap-track-system-design
-  name: "System Design"
-  count: 108
+  name: System Design
+  count: 28
+  items:
+  - step: Reading
+    item: What is the system design interview?
+    type: Article
+    completion: Read
+  - step: Reading
+    item: How to prepare for system design interviews
+    type: Article
+    completion: Read
+  - step: Learning
+    item: Learn the delivery framework
+    type: Lesson
+    completion: Complete
+  - step: Concepts
+    item: Study core system design concepts
+    type: Lesson
+    completion: Complete
+  - step: Technologies
+    item: Learn key technologies
+    type: Lesson
+    completion: Complete
+  - step: Problems
+    item: Top 10 Common Problems
+    type: Reading
+    completion: Read
+  - step: Case Study
+    item: Design a URL Shortener
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design Dropbox
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design Ticketmaster
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design FB News Feed
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design WhatsApp
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design LeetCode
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design Uber
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design a Web Crawler
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design an Ad Click Aggregator
+    type: Design Exercise
+    completion: Complete
+  - step: Case Study
+    item: Design Facebook’s Post Search
+    type: Design Exercise
+    completion: Complete
+  - step: Pattern
+    item: Real-time Updates
+    type: Pattern
+    completion: Complete
+  - step: Pattern
+    item: Dealing with Contention
+    type: Pattern
+    completion: Complete
+  - step: Pattern
+    item: Multi-step Processes
+    type: Pattern
+    completion: Complete
+  - step: Pattern
+    item: Scaling Reads
+    type: Pattern
+    completion: Complete
+  - step: Pattern
+    item: Scaling Writes
+    type: Pattern
+    completion: Complete
+  - step: Pattern
+    item: Handling Large Blobs
+    type: Pattern
+    completion: Complete
+  - step: Pattern
+    item: Managing Long Running Tasks
+    type: Pattern
+    completion: Complete
+  - step: Practice
+    item: Complete 3 easy guided practices
+    type: Milestone
+    completion: 3 Completed
+  - step: Practice
+    item: Complete 3 medium guided practices
+    type: Milestone
+    completion: 3 Completed
+  - step: Practice
+    item: Complete 2 hard guided practices
+    type: Milestone
+    completion: 2 Completed
+  - step: Practice
+    item: Complete 3 easy guided practices (retry)
+    type: Milestone
+    completion: 3 Completed
   tier: core
   level: 2
-  seam: "interview prep roadmap"
+  seam: interview prep roadmap
+  selection_rationale: Structured roadmap track for interview completion evidence.
+- id: roadmap-track-coding
+  name: Coding
+  count: 20
   items:
-
-- id: roadmap-track-
-  name: ""
-  count: 0
+  - step: Algorithm
+    item: Two Pointers
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Sliding Window
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Intervals
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Stack
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Linked List
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Binary Search
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Heap
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Depth-First Search
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Breadth-First Search
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Backtracking
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Graphs
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Dynamic Programming
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Greedy Algorithms
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Trie
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Prefix Sum
+    type: Topic
+    completion: Complete
+  - step: Algorithm
+    item: Matrices
+    type: Topic
+    completion: Complete
+  - step: Practice
+    item: Grind75
+    type: Question Set
+    completion: Complete
+  - step: Practice
+    item: 50+ Company Tagged Questions
+    type: Question Set
+    completion: 50 Completed
+  - step: Mock
+    item: Blank Editor + Think Aloud
+    type: Practice
+    completion: 5–7 Sessions
   tier: core
   level: 2
-  seam: "interview prep roadmap"
+  seam: interview prep roadmap
+  selection_rationale: Structured roadmap track for interview completion evidence.
+- id: roadmap-track-behavioral
+  name: Behavioral
+  count: 15
   items:
-
-- id: roadmap-track-
-  name: ""
-  count: 0
+  - step: Reading
+    item: Why the behavioral interview matters
+    type: Article
+    completion: Read
+  - step: Reading
+    item: Decode what questions are really asking
+    type: Article
+    completion: Read
+  - step: Story
+    item: Scope
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Ownership
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Ambiguity
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Perseverance
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Conflict resolution
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Growth
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Communication
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Leadership
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Technical trade-offs
+    type: Story
+    completion: Prepared
+  - step: Story
+    item: Production incident
+    type: Story
+    completion: Prepared
+  - step: Mock
+    item: 'Mock interview #1'
+    type: Mock Interview
+    completion: 1 Completed
+  - step: Mock
+    item: 'Mock interview #2'
+    type: Mock Interview
+    completion: 1 Completed
+  - step: Mock
+    item: 'Mock interview #3'
+    type: Mock Interview
+    completion: 1 Completed
   tier: core
   level: 2
-  seam: "interview prep roadmap"
-  items:
-
-
-# ============================================================================
-# Final capstone requirements (7 dimensions)
-# ============================================================================
-
+  seam: interview prep roadmap
+  selection_rationale: Structured roadmap track for interview completion evidence.
 - id: capstone-req-product
-  area: "Product"
-  requirement: "Clear user problem, defined scope, working end-to-end flow"
+  area: Product
+  requirement: Clear user problem, defined scope, working end-to-end flow
   tier: core
   level: 3
-  seam: "capstone completion"
-
-- id: capstone-req-
-  area: ""
-  requirement: ""
+  seam: capstone completion
+  selection_rationale: Capstone requirement dimension used for final review.
+- id: capstone-req-architecture
+  area: Architecture
+  requirement: API design, data model, retrieval/model flow, failure handling, tenant isolation
   tier: core
   level: 3
-  seam: "capstone completion"
-
-- id: capstone-req-
-  area: ""
-  requirement: ""
+  seam: capstone completion
+  selection_rationale: Capstone requirement dimension used for final review.
+- id: capstone-req-evaluation
+  area: Evaluation
+  requirement: Offline metrics, online or simulated metrics, slice-based evaluation, error analysis
   tier: core
   level: 3
-  seam: "capstone completion"
-
-- id: capstone-req-
-  area: ""
-  requirement: ""
+  seam: capstone completion
+  selection_rationale: Capstone requirement dimension used for final review.
+- id: capstone-req-observability
+  area: Observability
+  requirement: Logs, metrics, traces, dashboards, alert thresholds
   tier: core
   level: 3
-  seam: "capstone completion"
-
-- id: capstone-req-
-  area: ""
-  requirement: ""
+  seam: capstone completion
+  selection_rationale: Capstone requirement dimension used for final review.
+- id: capstone-req-cost
+  area: Cost
+  requirement: Token usage, latency, cache hit rate, cost per request or per million tokens
   tier: core
   level: 3
-  seam: "capstone completion"
-
-- id: capstone-req-
-  area: ""
-  requirement: ""
+  seam: capstone completion
+  selection_rationale: Capstone requirement dimension used for final review.
+- id: capstone-req-safety
+  area: Safety
+  requirement: Prompt injection defenses, PII redaction, guardrails, abuse prevention
   tier: core
   level: 3
-  seam: "capstone completion"
-
-- id: capstone-req-
-  area: ""
-  requirement: ""
+  seam: capstone completion
+  selection_rationale: Capstone requirement dimension used for final review.
+- id: capstone-req-portfolio
+  area: Portfolio
+  requirement: Public repo, architecture diagram, benchmark report, demo video, design doc, interview summary
   tier: core
   level: 3
-  seam: "capstone completion"
-
-
-# ============================================================================
-# Completion levels (4 tiers, including optional Auror)
-# ============================================================================
-
+  seam: capstone completion
+  selection_rationale: Capstone requirement dimension used for final review.
 - id: completion-level-foundations
-  level: "Foundations"
-  requires: "Core work shipped for Weeks 1–30, Gate 3 passed, Foundations portfolio release published"
+  level: Foundations
+  requires: Core work shipped for Weeks 1–30, Gate 3 passed, Foundations portfolio release published
   tier: core
-  level_note: "3"
-  seam: "graduation"
-
-- id: completion-level-
-  level: ""
-  requires: ""
+  level_note: 3
+  seam: graduation
+  selection_rationale: Completion badge criterion for the interview and portfolio lane.
+- id: completion-level-engineering-+-systems
+  level: Engineering + Systems
+  requires: Core work shipped for Weeks 31–69, Gate 6 passed, Engineering + Systems release published
   tier: core
-  level_note: "3"
-  seam: "graduation"
-
-- id: completion-level-
-  level: ""
-  requires: ""
+  level_note: 3
+  seam: graduation
+  selection_rationale: Completion badge criterion for the interview and portfolio lane.
+- id: completion-level-llm-platform
+  level: LLM Platform
+  requires: Core work shipped for Weeks 70–108, Gate 10 passed, final portfolio release published
   tier: core
-  level_note: "3"
-  seam: "graduation"
-
-- id: completion-level-
-  level: ""
-  requires: ""
+  level_note: 3
+  seam: graduation
+  selection_rationale: Completion badge criterion for the interview and portfolio lane.
+- id: completion-level-auror-optional
+  level: Auror (optional)
+  requires: One program release plus all 548 Darbar entries solved and explained, required Forge spine, and both capstone
+    boss artifacts attempted
   tier: core
-  level_note: "3"
-  seam: "graduation"
+  level_note: 3
+  seam: graduation
+  selection_rationale: Completion badge criterion for the interview and portfolio lane.

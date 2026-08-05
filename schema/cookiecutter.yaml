@@ -1,0 +1,120 @@
+# GENERATED MIGRATION FIXTURE — do not edit; retained exports are migrated into entity schemas.
+ENGINEERING_PRIMITIVES:
+- - retrieval
+  - Cosine similarity, KNN, Top-K, reranking, chunking fusion
+- - rate_limiting
+  - Token bucket, sliding window, leaky bucket
+- - caching
+  - LRU, TTL, semantic, embedding cache
+- - chunking
+  - Token-aware, recursive, sentence-aware
+- - pii
+  - PII span merging, regex/NER redaction
+- - metrics
+  - Recall@K, MRR, NDCG, ECE, Brier
+- - batching
+  - Thread-safe inference batcher
+- - resilience
+  - Retry/backoff, circuit breaker
+- - sketches
+  - Count-Min, Bloom, HyperLogLog
+- - routing
+  - Consistent hashing, load balancing
+- - ids
+  - Snowflake IDs, traffic shaping
+INTERVIEW_DRILLS:
+- - system_design
+  - URL shortener, rate limiter, Dropbox, WhatsApp, Uber, payments, ...
+- - coding
+  - Two pointers, sliding window, DP, graphs, Mo's algorithm, ...
+- - behavioral
+  - Scope, ownership, ambiguity, perseverance, growth, leadership, ...
+- - mocks
+  - Mock interview scorecards and retro notes
+AGENT_PAPER_WEEKS:
+  73:
+  - 7
+  77:
+  - 4
+  - 9
+  79:
+  - 1
+  - 2
+  80:
+  - 6
+  81:
+  - 0
+  - 3
+  - 5
+  - 8
+DARBAR_TOTAL: 548
+DARBAR_DIFFICULTIES: 255 Easy, 240 Medium, 53 Hard
+DARBAR_CATEGORIES:
+- array
+- backtracking
+- bit manipulation
+- divide and conquer
+- dynamic programming
+- graphs
+- greedy
+- hash table
+- heap
+- linked list
+- math
+- queue
+- range query
+- recursion
+- searching and sorting
+- stack
+- string
+- trees
+- trie
+SYSTEM_DESIGN_WEEKS:
+- - 46
+  - Delivery framework, networking, numbers
+  - Bitly / URL shortener
+  - Framed design + capacity sheet
+- - 47
+  - API design, data modeling, indexes, contracts
+  - LeetCode problem service
+  - API and schema package
+- - 48
+  - Caching, sharding, consistent hashing, CAP
+  - Rate limiter + distributed cache
+  - Design, key layout, failure table
+- - 49
+  - Replication, read/write scaling, contention
+  - News Feed / Instagram
+  - Read path, write path, consistency choice
+- - 50
+  - Large blobs, CDN, metadata, resumable work
+  - Dropbox / Google Docs
+  - Storage design + recovery plan
+- - 51
+  - Queues, workflows, long-running tasks
+  - Job Scheduler / Slack job queue
+  - State machine + retry/idempotency plan
+- - 52
+  - Schema evolution, real-time updates, coordination
+  - WhatsApp / notification system
+  - Contract migration + delivery semantics
+- - 53
+  - Search, proximity, crawling, ranking
+  - Yelp / FB Post Search / web crawler
+  - Index and freshness design
+- - 54
+  - Messaging and social fan-out
+  - FB Live Comments / Tinder / Discord
+  - Fan-out model + hot-key strategy
+- - 55
+  - Scheduling, scarcity, marketplace correctness
+  - Ticketmaster / Uber / local delivery / auction
+  - Reservation invariant + contention test
+- - 56
+  - Streaming, analytics, data infrastructure
+  - Ad clicks / metrics / Robinhood / Spotify
+  - Stream topology + watermark/replay notes
+- - 57
+  - Integrated architecture and interview boss
+  - ChatGPT / payments / Figma multiplayer
+  - Staff-level design review + trade-off defense

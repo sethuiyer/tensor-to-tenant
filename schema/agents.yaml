@@ -1,223 +1,1137 @@
-# GenAI Agents curriculum: 18 modules + Module 7.5 (MCP) + Manus capstone.
-# Per T1.2: schema discipline. Maps onto Phase 7 (LLM training + RAG + agents).
-
-# ============================================================================
-# Agent modules (18 + 1 MCP)
-# ============================================================================
-
+# GenAI Agents curriculum: 19 modules, bridge rows, and Project Manus.
+# Generated from the migrated typed view; edit entity fields then run tools/generate.py.
 - id: agent-module-1
-  module_id: "1"
-  title: "Exploring the Generative AI Universe"
+  module_id: '1'
+  title: Exploring the Generative AI Universe
   topics:
-    - "Fundamentals of Generative AI: Models, Parameters, Embeddings"
-    - "The GenAI Universe: Components, Key Players, Ecosystem Overview"
-    - "Introduction to Prompt Engineering Techniques"
-    - "Basics of Retrieval Augmented Generation (RAG) and its applications"
-    - "Introduction to AI Agents and their applications"
+  - 'Fundamentals of Generative AI: Models, Parameters, Embeddings'
+  - 'The GenAI Universe: Components, Key Players, Ecosystem Overview'
+  - Introduction to Prompt Engineering Techniques
+  - Basics of Retrieval Augmented Generation (RAG) and its applications
+  - Introduction to AI Agents and their applications
   outcomes:
-    - "Explain the foundational concepts of generative AI models"
-    - "Identify key components in the GenAI ecosystem"
-    - "Apply basic prompt engineering techniques"
-    - "Understand RAG systems and their applications"
-    - "Describe the role and potential of AI agents"
+  - Explain the foundational concepts of generative AI models
+  - Identify key components in the GenAI ecosystem
+  - Apply basic prompt engineering techniques
+  - Understand RAG systems and their applications
+  - Describe the role and potential of AI agents
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 1 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-2
+  module_id: '2'
+  title: AI Agent Prototyping (No-Code Introduction)
   topics:
+  - 'Understanding AI Agents: Workings and Use Cases'
+  - Features of Agent Development with Code-Free Tools
+  - Building Simple to Advanced AI Agents with NoCode platforms
+  - Customizing and Deploying AI Agents using NoCode tools
+  sections:
+  - label: Key Concepts
+    items:
+    - Flowise, Zapier AI and other no-code platforms
+    - Agent capabilities without programming
+    - Deployment strategies for no-code agents
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 2 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-3
+  module_id: '3'
+  title: Coding Essentials for AI Programming
   topics:
+  - 'Core Python skills for AI: Advanced data structures, async programming, error handling'
+  - Data processing from CSV/JSON files using Python (Pandas, Polars)
+  - SQL and Python frameworks for database management
+  - Interacting with APIs in Python
+  - Prompting LLMs programmatically
+  - Building AI applications with web frameworks
+  - Introduction to popular tools and frameworks for building AI Agents
+  sections:
+  - label: Technologies Covered
+    items:
+    - Python 3.10+
+    - Pandas, Polars
+    - DuckDB, SQLModel
+    - Flask/FastAPI
+    - CrewAI, AutoGen, LangGraph, LangChain
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 3 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-4
+  module_id: '4'
+  title: Introduction to LangChain
   topics:
+  - 'Core LangChain components: LLMs, Model I/O, Parsers, and Chains'
+  - Mastering LangChain Expression Language (LCEL)
+  - Creating efficient prompt templates and output parsers
+  - Developing conversational applications
+  - Implementing advanced LCEL chains
+  sections:
+  - label: Key Features
+    items:
+    - LLM abstraction layer
+    - Prompt templates and output parsing
+    - Chains for sequential processing
+    - Memory management for conversations
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 4 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-5
+  module_id: '5'
+  title: Prompt Engineering Essentials
   topics:
+  - Core principles of crafting effective prompts
+  - Exploration of popular prompt engineering patterns
+  - Hands-on experience with industry-specific use cases
+  - The art of conversational prompting
+  - 'Advanced prompting techniques: Chain of Thought, Self Consistency'
+  - Exploring prompts with external tools
+  sections:
+  - label: Patterns Covered
+    items:
+    - Persona-based prompting
+    - Flipped Interaction
+    - N-shot prompting
+    - Meta Language Prompting
+    - Chain of Thought (CoT)
+    - Self Consistency
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 5 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-6
+  module_id: '6'
+  title: RAG Systems Essentials
   topics:
+  - Document loading and processing techniques
+  - Document chunking strategies
+  - The role of vector databases in RAG systems
+  - Tools for connecting to vector databases
+  - Differentiating vector databases from other DB types
+  - Mastering retrieval strategies
+  - Connecting Vector DBs to LLMs
+  - Common problems and mitigation strategies
+  sections:
+  - label: Key Concepts
+    items:
+    - PDF, Word, multimodal document processing
+    - Recursive character, token-based, semantic chunking
+    - ChromaDB, Weaviate, LanceDB integration
+    - Semantic search, hybrid search, multi-query retrieval
+    - Hallucination mitigation techniques
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 6 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-7
+  module_id: '7'
+  title: Building AI Agents from Scratch & Graph-RAG
   topics:
+  - 'Structure of an AI agent: Prompts, Tools, and LLMs'
+  - Building a simple ReAct style AI Agent
+  - Building an AI Agent based on the Reflection pattern
+  - 'Extended Study: Graph RAG and Hybrid RAG Workshop'
+  sections:
+  - label: Workshop Components
+    items:
+    - Environment setup using uv package manager
+    - Graph Construction with crud.py logic
+    - Entity & relationship extraction with LlamaIndex
+    - Traditional RAG via vector search
+    - Graph RAG with Cypher queries
+    - Hybrid RAG with reranking
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 7 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-7.5
+  module_id: '7.5'
+  title: Model Context Protocol (MCP)
+  theme: USB-C for LLMs — because if your agent can't plug into arbitrary tools and data securely, it's just cosplaying autonomy.
   topics:
+  - Integrate MCP to create interoperable, pluggable AI agents
+  - Develop MCP Servers that expose local data or tools to LLMs
+  - Develop MCP Clients that talk to MCP servers
+  - Build secure bridges between LangGraph/AutoGen agents and external systems
+  - Use MCP Inspector to debug and validate real-time tool access
+  sections:
+  - label: Core Concepts
+    items:
+    - MCP Host, Client, Server architecture
+    - Local Resource and Remote Service integration
+    - Transport Layer standardization
+    - Secure tool/data access for LLMs
+  labs:
+  - 'Lab 7.5.1: Build a quote-server MCP server'
+  - 'Lab 7.5.2: Build a Claude-accessible RAG system via MCP'
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 7.5 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-8
+  module_id: '8'
+  title: Implementing ReAct Agents with LangChain
   topics:
+  - 'The ReAct Framework: Core Principles and Loop Mechanics'
+  - Building a Simple ReAct Style Agent with Tool Use
+  - Adding Conversational Memory to the ReAct Agent
+  - Extending for Real-World Scenarios with Multi-User Support
+  sections:
+  - label: Key Components
+    items:
+    - Thought-Action-Observation loop
+    - AgentExecutor in LangChain
+    - Custom tools with @tool decorator
+    - ConversationBufferMemory and variants
+    - Session ID management for multi-user support
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 8 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-9
+  module_id: '9'
+  title: Building Agents with LangGraph
   topics:
+  - 'Introduction to LangGraph: Beyond Sequential Chains'
+  - Key Components of LangGraph
+  - Architecting Components for Real-World AI Agents
+  - Understanding State Management and Cyclical Execution
+  sections:
+  - label: Key Features
+    items:
+    - StateGraph for explicit state management
+    - Nodes and Edges for control flow
+    - Conditional edges for dynamic routing
+    - MessageGraph for chat applications
+    - Persistence with checkpointers
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 9 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-10
+  module_id: '10'
+  title: Building Agents with AutoGen
   topics:
+  - 'Introduction to AutoGen: Multi-Agent Conversation'
+  - Key Components of AutoGen
+  - Architecting Multi-Agent Collaboration
+  - Managing Conversation Flow and Task Completion
+  sections:
+  - label: Core Classes
+    items:
+    - ConversableAgent base class
+    - AssistantAgent for LLM-powered agents
+    - UserProxyAgent for human/code execution
+    - GroupChat and GroupChatManager
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 10 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-11
+  module_id: '11'
+  title: Building Agents with CrewAI
   topics:
+  - 'Introduction to CrewAI: Orchestrating Agent Crews'
+  - Key Components of CrewAI
+  - Architecting Role-Based Agent Collaboration
+  - Understanding Task Execution and Crew Dynamics
+  sections:
+  - label: Key Concepts
+    items:
+    - Agent roles, goals, backstories
+    - Task decomposition and dependencies
+    - Sequential and hierarchical processes
+    - Tool delegation and integration
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 11 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-12
+  module_id: '12'
+  title: Agentic AI Design Patterns
   topics:
+  - The Need for Design Patterns in Agentic AI
+  - Deep Dive into Core Agentic AI Design Patterns
+  - Exploration of Other Relevant Patterns and Best Practices
+  - Best Practices in Agentic System Design
+  sections:
+  - label: Patterns Covered
+    items:
+    - Reflection Pattern
+    - Tool Use Pattern
+    - Planning Pattern
+    - Multi-Agent Pattern
+    - Task Delegation Pattern
+    - Human-in-the-Loop Pattern
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 12 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-13
+  module_id: '13'
+  title: Advanced LangGraph Agents
   topics:
+  - Utilizing Built-ins for ReAct Style Agents
+  - Building ReAct Agents from Scratch
+  - Extending Agents for Multi-User Conversations
+  - Building Reflection and Multi-Agent Systems
+  sections:
+  - label: Advanced Features
+    items:
+    - Stateful agents with checkpointers
+    - Prepared statements for performance
+    - Reflection loops for self-correction
+    - Multi-agent coordination patterns
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 13 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-14
+  module_id: '14'
+  title: Advanced AutoGen Agents
   topics:
+  - Exploring Advanced Agentic Designs
+  - Building Industry-Relevant Agentic Systems
+  - Constructing Code Execution, Refinement, and Testing Systems
+  - Prototyping Agents using AutoGen Studio
+  - Extending for Multi-User Conversations
+  sections:
+  - label: Advanced Concepts
+    items:
+    - Hierarchical agent structures
+    - Dynamic group chats
+    - Function calling at scale
+    - Human-in-the-loop patterns
+    - AutoGen Studio for rapid prototyping
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 14 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-15
+  module_id: '15'
+  title: Advanced CrewAI Agents
   topics:
+  - Building Complex Collaborating Agent Crews
+  - Exploring Advanced Agentic Designs
+  - Building Industry-Relevant Agentic Systems
+  - Learning Frameworks for Multi-Agent Systems
+  sections:
+  - label: Key Features
+    items:
+    - Advanced composition techniques
+    - Hierarchical crews with delegation
+    - Iterative refinement loops
+    - Conditional task execution
+    - Dynamic tool generation
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 15 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-16
+  module_id: '16'
+  title: Agentic RAG using LangGraph
   topics:
+  - Research on Agentic RAG Systems
+  - Building Corrective RAG Systems
+  - Extending to Self-Reflective RAG Systems
+  - Implementing Self-Route RAG Logic
+  sections:
+  - label: Advanced RAG Techniques
+    items:
+    - Corrective RAG (CRAG) with self-correction loops
+    - Self-Reflective RAG with confidence scoring
+    - Self-Route RAG with adaptive query routing
+    - Query reformulation mechanisms
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 16 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-17
+  module_id: '17'
+  title: Stanford DSPy
+  theme: Compilers for LLMs — stop fiddling with prompts. Start engineering self-optimizing AI programs.
   topics:
+  - Design and implement DSPy Signatures
+  - Construct DSPy Modules for complex pipelines
+  - Utilize DSPy Optimizers to automatically tune prompts
+  - Implement DSPy Assertions to enforce constraints
+  - Build sophisticated RAG and agentic systems
+  sections:
+  - label: Core Components
+    items:
+    - Signatures for declarative task specification
+    - Modules (Predict, ChainOfThought, Retrieve)
+    - Optimizers (BootstrapFewShot, MIPRO, COPRO)
+    - Assertions for computational constraints
+    - RetrieverModels for optimized RAG
+  labs:
+  - 'Lab 17.1: Smart Summarizer with DSPy'
+  - 'Lab 17.2: DSPy-Powered RAG System'
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 17 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-- id: agent-module-
-  module_id: ""
-  title: ""
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-module-18
+  module_id: '18'
+  title: Kùzu Deep Dive
+  theme: The Embedded Rocket-Ship for Graph RAG
   topics:
+  - Kùzu Architecture Crash-Course
+  - 'Hands-On: Spin & Query'
+  - Prepared Statements & Cypher Reuse
+  - Kùzu-Wasm (browser + edge)
+  - 'Interop Pipelines: Arrow & External Scans'
+  - Graph Algorithms (Built-in & Extension)
+  - Concurrency & Embedded Server
+  - 'Integration Pattern: "Graph-First RAG"'
+  sections:
+  - label: Key Features
+    items:
+    - Columnar disk store with compression
+    - CSR adjacency indices for efficient joins
+    - Vectorised + factorised executor
+    - Embedded in-process design
+    - Cypher support with MATCH, OPTIONAL, aggregations
+    - ACID transactions and MVCC
+  labs:
+  - 'Lab 18.3.1: LangChain CypherQueryTool with prepared statements'
+  - 'Lab 18.5.1: Interop with Arrow and external data sources'
+  - 'Lab 18.6.1: Influencer-Finder Agent'
+  - 'Lab 18.7.1: Concurrency and embedded server'
+  - 'Lab 18.8.1: Graph-First RAG integration'
   tier: core
   level: 2
-  seam: "GenAI agents"
+  seam: GenAI agents
+  selection_rationale: Module 18 is the structured agent-building lane mapped to Phase 7.
   cross_references:
-    - { entity: phases, phase_id: phase-7, role: "LLM training + RAG + agents" }
-
-
-# ============================================================================
-# Project Manus capstone
-# ============================================================================
-
+  - entity: phases
+    phase_id: phase-7
+    role: LLM training + RAG + agents
+- id: agent-bridge-1
+  module: '1'
+  title: Exploring the Generative AI Universe
+  gap: Module 1 gives you the *what*. tensor-to-tenant gives you the *why* — the math in Weeks 7–10, the primitives in Weeks
+    31–33, and the production LLM/RAG work in Weeks 70–81.
+  rows:
+  - concept: Embeddings & what a model "is"
+    weeks: Weeks 7–10
+    insight: Linear algebra and vector geometry that actually produce embeddings — the math under the vocabulary.
+  - concept: Model parameters & training intuition
+    weeks: Weeks 31–33
+    insight: Engineering micro-projects where you build ML primitives from scratch; parameters stop being magic.
+  - concept: RAG at a high level
+    weeks: Week 70
+    insight: The LLM+RAG phase starts here; you build retrieval pipelines rather than hear a definition.
+  - concept: AI agents overview
+    weeks: Weeks 79, 81
+    insight: The agents weeks where the "agent" label gets an actual implementation.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 1 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '1'
+- id: agent-bridge-2
+  module: '2'
+  title: AI Agent Prototyping (No-Code Introduction)
+  gap: The no-code drag-and-drop hides the machine. Week 6 shows you the shape, Week 51 shows you the deployment reality,
+    and Week 81 shows you the compiled version.
+  rows:
+  - concept: What an agent does (no-code view)
+    weeks: Week 6
+    insight: Orientation weeks where you diagnose tooling and the shape of an agent loop before writing code.
+  - concept: Deployment strategies for no-code agents
+    weeks: Week 51
+    insight: 'Distributed systems: how services actually get deployed and connected.'
+  - concept: Agent capabilities without programming
+    weeks: Week 81
+    insight: The agents phase — you now know what those drag-and-drop nodes compile to.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 2 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '2'
+- id: agent-bridge-3
+  module: '3'
+  title: Coding Essentials for AI Programming
+  gap: Coding essentials give you the vocabulary. Weeks 2–4, 47, 52, and 81 show you what the vocabulary actually compiles
+    to.
+  rows:
+  - concept: Python data structures, async & error handling
+    weeks: Weeks 2–4
+    insight: The tooling phase where you implement the primitives those frameworks wrap.
+  - concept: SQL & database frameworks
+    weeks: Week 47
+    insight: 'System design: data modeling, schema, and storage engines.'
+  - concept: Interacting with APIs
+    weeks: Week 52
+    insight: 'Distributed patterns: request/response, contracts, and failure handling.'
+  - concept: Web frameworks & agent tooling
+    weeks: Week 81
+    insight: The agents phase where those Flask/FastAPI skills become agent tool servers.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 3 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '3'
+- id: agent-bridge-4
+  module: '4'
+  title: Introduction to LangChain
+  gap: LangChain gives you chains. Weeks 37, 79–80, and 98 give you the composition, state, and production discipline those
+    chains need.
+  rows:
+  - concept: LCEL & composable chains
+    weeks: Week 37
+    insight: 'Engineering primitives: composing small, testable units — the same discipline as pipeline composition.'
+  - concept: Model I/O & the LLM abstraction
+    weeks: Week 79
+    insight: 'The LLM/RAG phase: you build the abstraction and understand its cost.'
+  - concept: Memory & conversational apps
+    weeks: Week 80
+    insight: RAG and memory systems — state management under the hood.
+  - concept: Chains in production
+    weeks: Week 98
+    insight: 'Production AI platform: multi-tenant accounting and reliability for LLM pipelines.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 4 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '4'
+- id: agent-bridge-5
+  module: '5'
+  title: Prompt Engineering Essentials
+  gap: Prompting is the surface. Weeks 5, 61, 73, and 79 explain why the surface behaves the way it does.
+  rows:
+  - concept: Prompt patterns & persona
+    weeks: Week 5
+    insight: 'Hypothesis choice: how you phrase an experiment changes the result.'
+  - concept: Chain of Thought
+    weeks: Week 73
+    insight: LLM training/RAG — why reasoning traces work, from the model’s perspective.
+  - concept: Self Consistency
+    weeks: Week 61
+    insight: 'Experimentation and evaluation: sampling, variance, and aggregation.'
+  - concept: Prompting with external tools
+    weeks: Week 79
+    insight: 'Agents week: tool-calling contracts and the ReAct loop.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 5 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '5'
+- id: agent-bridge-6
+  module: '6'
+  title: RAG Systems Essentials
+  gap: RAG modules show you retrieval. Weeks 31–33 and 75–78 show you the index, the pipeline, and the failure modes.
+  rows:
+  - concept: Vector databases
+    weeks: Weeks 31–33
+    insight: Build embedding/vector primitives from scratch — you stop trusting the index and build one.
+  - concept: Chunking & document processing
+    weeks: Week 36
+    insight: 'ML micro-projects: tokenization and preprocessing with measurable trade-offs.'
+  - concept: Retrieval strategies
+    weeks: Weeks 75–78
+    insight: 'The RAG weeks: retrieval pipelines, hybrid search, and evaluation at depth.'
+  - concept: Hallucination mitigation
+    weeks: Weeks 75–78
+    insight: Grounding, attribution, and evaluation — the why behind CRAG and self-RAG.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 6 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '6'
+- id: agent-bridge-7
+  module: '7'
+  title: Building AI Agents from Scratch & Graph-RAG
+  gap: Building agents from scratch teaches the loop. Weeks 37, 73, 77, 81 and the Forge’s graph theory teach the structure
+    that makes the loop correct.
+  rows:
+  - concept: ReAct loop from scratch
+    weeks: Week 37
+    insight: 'Engineering primitives: the loop as a concrete, testable program.'
+  - concept: Reflection pattern
+    weeks: Week 73
+    insight: 'LLM evaluation: self-critique and feedback loops.'
+  - concept: Graph RAG with Cypher
+    weeks: Week 77
+    insight: Graph retrieval — and the Algorithmic Forge graph-theory spine underneath.
+  - concept: Entity & relationship extraction
+    weeks: Week 81
+    insight: 'Agents phase: knowledge structuring for multi-step reasoning.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 7 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '7'
+- id: agent-bridge-7.5
+  module: '7.5'
+  title: Model Context Protocol (MCP)
+  gap: MCP standardizes the plug. Weeks 47, 76–77, 87, 98, and 102 build the contract, security, and platform layers the plug
+    lives in.
+  rows:
+  - concept: MCP Host / Client / Server architecture
+    weeks: Week 47
+    insight: 'Distributed systems: contracts, transports, and service boundaries.'
+  - concept: Secure tool/data access
+    weeks: Weeks 76–77
+    insight: 'RAG/agents: how tools authenticate, scope, and audit.'
+  - concept: Transport layer standardization
+    weeks: Week 87
+    insight: 'Inference/performance: protocol and interface engineering.'
+  - concept: MCP in production
+    weeks: Weeks 98, 102
+    insight: 'Platform: multi-tenant tool access, rate limiting, and observability.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 7.5 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '7.5'
+- id: agent-bridge-8
+  module: '8'
+  title: Implementing ReAct Agents with LangChain
+  gap: The ReAct framework wires the loop. Weeks 80–81, 90, 98, and 99 give it sessions, scale, and tenancy.
+  rows:
+  - concept: Thought-Action-Observation loop
+    weeks: Week 80
+    insight: 'The RAG/agents phase: the loop as a system you can measure.'
+  - concept: Multi-user support & session ID management
+    weeks: Week 81
+    insight: Session state and isolation for concurrent users.
+  - concept: Tool use at scale
+    weeks: Week 90
+    insight: 'Inference/performance: tool-calling throughput and latency.'
+  - concept: ReAct in production
+    weeks: Weeks 98, 99
+    insight: 'Platform: multi-tenant agents, quotas, accounting.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 8 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '8'
+- id: agent-bridge-9
+  module: '9'
+  title: Building Agents with LangGraph
+  gap: LangGraph makes state explicit. Weeks 51, 81, 97–98, and 100 teach you state machines, routing, and durable recovery.
+  rows:
+  - concept: StateGraph & state management
+    weeks: Week 51
+    insight: 'Distributed systems: explicit state and state transitions.'
+  - concept: Conditional edges & routing
+    weeks: Week 81
+    insight: 'Agents phase: routing logic and control flow in agent systems.'
+  - concept: Persistence with checkpointers
+    weeks: Week 97
+    insight: 'Platform: durable state and failure recovery.'
+  - concept: Cyclical execution
+    weeks: Weeks 98, 100
+    insight: Production agent platforms and capstones.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 9 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '9'
+- id: agent-bridge-10
+  module: '10'
+  title: Building Agents with AutoGen
+  gap: AutoGen wires conversations. Weeks 81, 96, 98–99, and 100 give you the coordination and execution discipline.
+  rows:
+  - concept: Multi-agent conversation
+    weeks: Week 81
+    insight: 'Agents phase: how agents coordinate and hand off.'
+  - concept: GroupChat & GroupChatManager
+    weeks: Week 96
+    insight: 'Platform: orchestration, scheduling, and conversation routing.'
+  - concept: Code execution & UserProxyAgent
+    weeks: Weeks 98, 99
+    insight: 'Platform: sandboxed execution and human-in-the-loop.'
+  - concept: Collaboration at scale
+    weeks: Week 100
+    insight: 'Capstones: coordination protocols for real workloads.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 10 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '10'
+- id: agent-bridge-11
+  module: '11'
+  title: Building Agents with CrewAI
+  gap: CrewAI organizes roles. Weeks 96–99 give you authorization, orchestration, and delegation at platform scale.
+  rows:
+  - concept: Role-based crews
+    weeks: Week 96
+    insight: 'Platform: role/authorization models for agent systems.'
+  - concept: Task decomposition & dependencies
+    weeks: Week 97
+    insight: 'Platform: workflow and DAG orchestration.'
+  - concept: Sequential & hierarchical processes
+    weeks: Week 98
+    insight: 'Platform: process design and failure domains.'
+  - concept: Tool delegation & integration
+    weeks: Week 99
+    insight: 'Platform: scoped tool access and accountability.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 11 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '11'
+- id: agent-bridge-12
+  module: '12'
+  title: Agentic AI Design Patterns
+  gap: Patterns are the vocabulary of agentic design. Weeks 57, 62, 73–74, 81, 98–99 show you where each pattern is load-bearing.
+  rows:
+  - concept: Reflection Pattern
+    weeks: Week 73
+    insight: 'LLM evaluation: self-critique, feedback, and iterative refinement.'
+  - concept: Planning Pattern
+    weeks: Week 74
+    insight: 'LLM/RAG: plan-and-execute architectures.'
+  - concept: Human-in-the-Loop Pattern
+    weeks: Week 57
+    insight: 'System design: human approval flows and reliability.'
+  - concept: Multi-Agent & Task Delegation
+    weeks: Weeks 81, 98–99
+    insight: 'Agents + platform: coordination and task delegation.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 12 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '12'
+- id: agent-bridge-13
+  module: '13'
+  title: Advanced LangGraph Agents
+  gap: Advanced LangGraph is where the framework meets systems. Weeks 52, 73, 88, 99–100 give it planning, measurement, and
+    durability.
+  rows:
+  - concept: Prepared statements for performance
+    weeks: Week 52
+    insight: 'System design: query planning and prepared execution.'
+  - concept: Reflection loops for self-correction
+    weeks: Week 73
+    insight: 'LLM evaluation: self-correction under measurement.'
+  - concept: Stateful agents with checkpointers
+    weeks: Week 88
+    insight: 'Inference/performance: state persistence cost.'
+  - concept: Multi-agent coordination patterns
+    weeks: Weeks 99, 100
+    insight: Platform + capstones.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 13 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '13'
+- id: agent-bridge-14
+  module: '14'
+  title: Advanced AutoGen Agents
+  gap: Advanced AutoGen scales the conversation. Weeks 62, 96–97, 99, 101 give it hierarchy, sandboxing, and studio-grade
+    iteration.
+  rows:
+  - concept: Hierarchical agent structures
+    weeks: Week 62
+    insight: 'MLOps: layered orchestration and environments.'
+  - concept: Code execution, refinement & testing
+    weeks: Week 96
+    insight: 'Platform: sandboxing and test harnesses.'
+  - concept: Dynamic group chats
+    weeks: Week 97
+    insight: 'Platform: conversation scheduling.'
+  - concept: AutoGen Studio prototyping
+    weeks: Weeks 99, 101
+    insight: 'Platform/capstones: rapid iteration on real systems.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 14 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '14'
+- id: agent-bridge-15
+  module: '15'
+  title: Advanced CrewAI Agents
+  gap: Advanced CrewAI composes crews. Weeks 73, 97–99, 102 give you the branching, refinement, and tooling discipline.
+  rows:
+  - concept: Hierarchical crews with delegation
+    weeks: Week 73
+    insight: 'LLM phase: delegation structures for reasoning work.'
+  - concept: Conditional task execution
+    weeks: Week 97
+    insight: 'Platform: workflow branching and state.'
+  - concept: Iterative refinement loops
+    weeks: Week 98
+    insight: 'Platform: feedback-driven execution.'
+  - concept: Dynamic tool generation
+    weeks: Weeks 99, 102
+    insight: 'Platform/capstones: self-describing tool interfaces.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 15 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '15'
+- id: agent-bridge-16
+  module: '16'
+  title: Agentic RAG using LangGraph
+  gap: Agentic RAG adds the loop. Weeks 38, 73, 76–78 show you routing, reformulation, and evaluation that make the loop trustworthy.
+  rows:
+  - concept: Corrective RAG (CRAG)
+    weeks: Weeks 76–77
+    insight: 'The RAG weeks: correctness loops grounded in evaluation.'
+  - concept: Self-Reflective RAG
+    weeks: Week 78
+    insight: 'RAG: confidence scoring and self-assessment.'
+  - concept: Self-Route RAG logic
+    weeks: Week 38
+    insight: 'Engineering micro-projects: routing logic as a primitive.'
+  - concept: Query reformulation
+    weeks: Week 73
+    insight: 'LLM evaluation: rewrite-and-retrieve trade-offs.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 16 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '16'
+- id: agent-bridge-17
+  module: '17'
+  title: Stanford DSPy
+  gap: DSPy compiles prompts. Weeks 22, 38, 61, 76–79, and 81 turn prompting from a craft into an optimization problem.
+  rows:
+  - concept: Signatures & Modules
+    weeks: Week 22
+    insight: 'Math foundations: declarative composition and types.'
+  - concept: Optimizers (BootstrapFewShot, MIPRO, COPRO)
+    weeks: Weeks 38, 61
+    insight: 'Experimentation: automated search over prompts as a measurable optimization.'
+  - concept: Assertions for constraints
+    weeks: Weeks 76–78
+    insight: 'RAG/agents: enforced constraints and evaluation.'
+  - concept: DSPy pipelines & agents
+    weeks: Weeks 79, 81
+    insight: 'Agents phase: compiled, self-optimizing agent programs.'
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 17 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '17'
+- id: agent-bridge-18
+  module: '18'
+  title: Kùzu Deep Dive
+  gap: Kùzu is a graph rocket. Weeks 52, 75, 98, 100 plus the Forge’s graph spine and Capstone 2 give you the storage, indexing,
+    and algorithm theory under the hood.
+  rows:
+  - concept: Columnar disk store & compression
+    weeks: Week 52
+    insight: 'System design: storage engines and indexing.'
+  - concept: CSR adjacency indices
+    weeks: Week 75
+    insight: 'Graph retrieval: how graph joins stay fast.'
+  - concept: Cypher & graph-first RAG
+    weeks: Week 98
+    insight: 'Platform: graph-powered retrieval at scale.'
+  - concept: Graph algorithms & concurrency
+    weeks: Weeks 100 · Forge · Capstone 2
+    insight: The Forge graph-theory spine and the tree-forensics capstone.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: Bridge Module 18 to the implementation spine.
+  cross_references:
+  - entity: agents
+    module_id: '18'
+- id: bridge-summary-module-1
+  module: Module 1
+  weeks: Weeks 7–10, 31–33, 70, 79, 81
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-2
+  module: Module 2
+  weeks: Weeks 6, 51, 81
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-3
+  module: Module 3
+  weeks: Weeks 2–4, 47, 52, 81
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-4
+  module: Module 4
+  weeks: Weeks 37, 79, 80, 98
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-5
+  module: Module 5
+  weeks: Weeks 5, 61, 73, 79
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-6
+  module: Module 6
+  weeks: Weeks 31–33, 36, 75–78
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-7
+  module: Module 7
+  weeks: Weeks 37, 73, 77, 81 + Algorithmic Forge graph theory
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-7.5
+  module: Module 7.5
+  weeks: Weeks 47, 76–77, 87, 98, 102
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-8
+  module: Module 8
+  weeks: Weeks 80, 81, 90, 98, 99
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-9
+  module: Module 9
+  weeks: Weeks 51, 81, 97, 98, 100
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-10
+  module: Module 10
+  weeks: Weeks 81, 96, 98, 99, 100
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-11
+  module: Module 11
+  weeks: Weeks 96, 97, 98, 99
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-12
+  module: Module 12
+  weeks: Weeks 57, 62, 73–74, 81, 98, 99
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-13
+  module: Module 13
+  weeks: Weeks 52, 73, 88, 99, 100
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-14
+  module: Module 14
+  weeks: Weeks 62, 96, 97, 99, 101
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-15
+  module: Module 15
+  weeks: Weeks 73, 97, 98, 99, 102
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-16
+  module: Module 16
+  weeks: Weeks 38, 73, 76–78
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-17
+  module: Module 17
+  weeks: Weeks 22, 38, 61, 76–79, 81
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-summary-module-18
+  module: Module 18
+  weeks: Weeks 52, 75, 98, 100 + Algorithmic Forge, Capstone 2
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge summary
+  selection_rationale: Compact cross-reference summary for the bridge view.
+- id: bridge-pitch
+  quote: Do Modules 1–18 + Manus capstone in 16 weeks. You'll be an agent builder who can ship. Then, when you hit the ceiling
+    — when your RAG pipeline breaks at 10k QPS, when your AutoGen crew deadlocks, when your DSPy optimizer converges to garbage
+    — tensor-to-tenant is waiting. Weeks 22, 38, 57, 75, 88, 98, 99, 102. That's where the ceiling becomes a floor.
+  tag: This is the bridge. Not a merge. A ladder.
+  tier: core
+  level: 2
+  seam: agent-to-spine bridge
+  selection_rationale: The bridge thesis connecting the parallel agent lane to the 108-week spine.
 - id: project-manus
-  title: "Project Manus - Agentic UI Automation"
-  vision: >
-    
-  architecture:
+  title: Project Manus — Agentic UI Automation
+  vision: Develop a sophisticated AI agent capable of understanding and autonomously operating both web-based GUIs and CLIs
+    to achieve complex, multi-step user goals.
   features:
+  - LLM-driven decision-making for action selection and planning
+  - Sophisticated message management for internal state
+  - Advanced web browser automation with DOM understanding
+  - Robust terminal emulation with WebSocket interaction
+  - Text editing capabilities for configuration files
+  - Server infrastructure with API endpoints
+  - Comprehensive logging and telemetry
+  architecture:
+  - Central Orchestration Service
+  - Modular Tool Interface
+  - Browser Interaction Module (Playwright/Selenium)
+  - Terminal Interaction Module
+  - State Management with LangGraph
+  - Prompt Engineering / DSPy Signatures
+  learningFocus: Integration of all course concepts including LangChain, LangGraph, AutoGen, CrewAI, DSPy, MCP, and Kùzu.
   challenges:
+  - Robust DOM interpretation without brittle selectors
+  - State management across different tools
+  - Error recovery in complex workflows
+  - Adaptation to UI changes
+  - Security considerations for UI automation
+  evaluation:
+  - Correctness and completeness of task execution
+  - Robustness and error handling capabilities
+  - Code quality and architectural design
+  - Integration of course concepts
+  - Presentation and documentation quality
+  extensions:
+  - Multi-user support with session isolation
+  - Integration with Model Context Protocol
+  - Self-optimization using DSPy
+  - Knowledge graph integration with Kùzu
+  - Advanced planning and reflection mechanisms
+  stack:
+  - LangGraph
+  - DSPy
+  - MCP
+  - Kùzu
+  - Playwright/Selenium
   tier: core
   level: 3
-  seam: "agent capstone"
+  seam: agent capstone
+  selection_rationale: Synthesis capstone for the agent specialization.

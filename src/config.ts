@@ -21,5 +21,5 @@ export const SITE = {
   darbar: 'https://aninokuma.codeberg.page/leetcode-darbar/',
   cookiecutter: 'https://github.com/sethuiyer/tensor-to-tenant/tree/main/cookiecutter',
   duration: '108 weeks · 10–15 hrs/week',
-  programs: ['Foundations (W1–30)', 'Engineering + Systems (W31–69)', 'LLM Platform (W70–108)'],
+  programs: ['Foundations (W1–30)', 'Engineering + Systems (W31–69)', 'LLM Platform (W70–108)', 'Recommender'],
 };

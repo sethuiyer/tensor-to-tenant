@@ -117,11 +117,13 @@ progress: ## Print weekly completion dashboard.
 rpg-init: ## Bootstrap character + memory from journals.
 	@$(PY) scripts/character.py init
 
-status: ## Render the full RPG character sheet.
+status: ## Render the full RPG character sheet and parallel-track status.
 	@$(PY) scripts/character.py status
+	@$(PY) scripts/progress.py --recommender-only
 
 _status:
 	@$(PY) scripts/character.py status
+	@$(PY) scripts/progress.py --recommender-only
 
 log: ## Log this week's XP manually (interactive).
 	@$(PY) scripts/character.py log

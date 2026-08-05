@@ -95,7 +95,7 @@ operational form of P‑principle 1.
 
 ## P1 — schema + tests + drift (this month)
 
-### T1.3 Write the generators (schema → site + cookiecutter)
+### T1.3 Write the generators (schema → site + cookiecutter) — DONE
 
 - **Files:** new `tools/generate.py` (or `scripts/build_site.py` + `scripts/build_cookiecutter.py`).
 - **Detail:** generators that read `schema/*.yaml` and emit:
@@ -104,7 +104,7 @@ operational form of P‑principle 1.
   3. (optional) Markdown sections that include schema‑derived tables — useful for the `ALGORITHMIC_FORGE.md` lane map and the `README.md` "Full 108‑Week Curriculum" table
 - **Acceptance:** running `python tools/generate.py` regenerates all of the above from `schema/*.yaml` byte‑for‑byte equivalent to current `src/data/*.ts` (the drift test in T1.4 enforces this going forward).
 
-### T1.4 Add the test suite
+### T1.4 Add the test suite — DONE
 
 - **Files:** new `tests/` at repo root; new `pyproject.toml` at repo root (separate from the cookiecutter's).
 - **Sub‑tasks:**
@@ -115,7 +115,7 @@ operational form of P‑principle 1.
   - **T1.4.f** — **site build test**: `npm run build` must succeed. Astro emits to `dist/`; check for any broken `url()` references.
 - **Acceptance:** `pytest` exits 0 from the repo root, no skipped tests, ≥ 80% line coverage on the cookiecutter's pure‑Python modules.
 
-### T1.6 Drift check between canonical curriculum and website
+### T1.6 Drift check between canonical curriculum and website — DONE
 
 - **Files:** `tests/test_drift.py`, possibly a new `tools/drift_report.py`.
 - **Detail:** for each curriculum fact that appears on the site AND in the schema, assert equality. The site is the rendered output of the schema, so the check is structural, not visual:
@@ -126,7 +126,7 @@ operational form of P‑principle 1.
   - The 108 count, the 10‑phase count, the 10‑gate count, the 3‑program count are all consistent.
 - **Acceptance:** a CI job fails when you add a new week without bumping `MODE_COUNTS` in `weeks.ts`, or when you rename a phase ID without updating its dependents.
 
-### T1.7 Eliminate the old hand‑written data sources
+### T1.7 Eliminate the old hand‑written data sources — DONE
 
 - **Files:** `src/data/*.ts` (rewrite), `cookiecutter/hooks/post_gen_project.py` (replace constants with import from generated module).
 - **Detail:** once T1.3 + T1.4 land, the hand‑written arrays in `post_gen_project.py` (`PHASE_1..10`, `AGENT_MODULES_CC`, `BRIDGE_SUMMARY_CC`, `MANDALAS_CC`, `PREREQUISITES`, `PREREQ_PLAN`, `FORGE_LANES`, `FORGE_BOSSES`, `RECOVERY_AFTER`, `RELEASES`, `AGENT_PAPERS_CC`, `AGENT_PAPER_WEEKS`) and the hand‑written `src/data/*.ts` content become *generated* files.
@@ -144,7 +144,7 @@ operational form of P‑principle 1.
 > needed, is to update the audit's expected text to match the
 > generator's output, not to suppress the check.
 
-### T1.12 Parallel track — Tool recommendation systems (SEARCH.md + SNOWFLAKE.md)
+### T1.12 Parallel track — Tool recommendation systems (SEARCH.md + SNOWFLAKE.md) — DONE
 
 > **Dependency:** blocks on **T1.2** (the schema entity-set decision
 > defines how SEARCH/SNOWFLAKE get catalogued — specifically

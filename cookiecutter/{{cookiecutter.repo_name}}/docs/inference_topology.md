@@ -62,7 +62,7 @@ User Request                │ Load Balancer +          │
 | KV Cache Lookup (PagedAttention) | W84 (PagedAttention), W85 (vLLM internals) | vLLM deployment |
 | MoE Expert Routing | W90 (MoE + Warp Decode + COMET) | MoE overlap design doc |
 | Multi-Head Attention (with FlashAttention) | W82 (GPU performance), W83 (Roofline) | FlashAttention knowledge |
-| Speculative Decoding Verification | W92 (Medusa, EAGLE, StreamingLLM) | Latency/memory lab |
+| Speculative Decoding Verification | W92 (Medusa, EAGLE, StreamingLLM, KV eviction; linear attention/SSM alternatives) | Latency/memory lab |
 | Response Streaming (with sampling) | W73 (alignment/sampling), W81 (agents) | Sampling logic |
 | Metrics Logging (TTFT, TPOT, P99) | W86 (vLLM metrics), W87 (Prometheus/Grafana) | Live dashboard |
 

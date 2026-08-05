@@ -1,274 +1,451 @@
 # The 16-mandala identity progression.
-# 15 full mandalas (48 days each) + 1 graduation mandala = 16 entries.
-# Per T1.2 / T1.6: schema discipline with id / tier / level / seam /
-# cross_references. Each mandala is a load-bearing identity shift.
+# Generated source fields are mirrored from src/data/mandalas.ts during schema migration.
 
 - id: mandala-1
-  number: 1
-  days: "Days 1–48"
-  weeks: "Weeks 1–7"
-  title: "Build the learner’s operating system"
-  identity: "Disciplined learner"
-  transformation: >
-    They stop being someone “planning to study AI” and become someone with a functioning learning and engineering system.
+  number: '1'
+  days: Days 1–48
+  weeks: Weeks 1–7
+  title: Build the learner’s operating system
+  identity: Disciplined learner
+  transformation: They stop being someone “planning to study AI” and become someone with a functioning learning and engineering
+    system.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
-    - "Python engineering, typing, testing and async fundamentals"
-    - "NumPy, vectorization and broadcasting"
-    - "Git, notebooks, Makefiles and reproducible experiments"
-    - "Docker, HTTP, APIs and Linux basics"
-    - "Personal mathematics and systems diagnostics"
-    - "Weekly journals, evidence tracking and retrospectives"
-    - "Vector spaces, span, basis and dimension"
+  - Python engineering, typing, testing and async fundamentals
+  - NumPy, vectorization and broadcasting
+  - Git, notebooks, Makefiles and reproducible experiments
+  - Docker, HTTP, APIs and Linux basics
+  - Personal mathematics and systems diagnostics
+  - Weekly journals, evidence tracking and retrospectives
+  - Vector spaces, span, basis and dimension
   evidence:
-    - "course dashboard and repository"
-    - "tested CLI project"
-    - "numerical utility library"
-    - "reproducible notebook"
-    - "diagnostic gap map"
-    - "containerized service"
-    - "first mathematics problem set"
+  - course dashboard and repository
+  - tested CLI project
+  - numerical utility library
+  - reproducible notebook
+  - diagnostic gap map
+  - containerized service
+  - first mathematics problem set
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-2
+  number: '2'
+  days: Days 49–96
+  weeks: Weeks 7–14
+  title: Learn the geometry beneath intelligence
+  identity: Linear-algebra thinker
+  transformation: Embeddings, attention and matrix models stop looking like mystical equations. The learner can reason geometrically.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - Linear independence, rank and nullity
+  - Inner products and dual norms
+  - Orthogonality and projections, Gram–Schmidt
+  - Coordinate transformations
+  - Eigenvalues and diagonalization
+  - PSD matrices and quadratic forms, Rayleigh quotients
+  - SVD, pseudoinverse and low-rank approximation
   evidence:
+  - projection and coordinate-transformation labs
+  - PCA-style experiment
+  - quadratic-form visualization
+  - low-rank compression demo
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-3
+  number: '3'
+  days: Days 97–144
+  weeks: Weeks 14–21
+  title: Numerical computation and differentiation
+  identity: Numerical programmer
+  transformation: They begin understanding not only whether an algorithm is mathematically correct, but whether it is numerically
+    sane.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - Matrix norms and conditioning, perturbation analysis
+  - LU, QR and Cholesky
+  - Iterative solvers, power iteration and Krylov methods
+  - Randomized SVD, tensor notation
+  - Partial and directional derivatives
+  - Gradients, Jacobians and Hessians, Taylor approximations
+  - Chain rule on computational graphs
   evidence:
+  - numerical decomposition library
+  - solver benchmarks
+  - perturbation experiment
+  - randomized approximation lab
+  - gradient and curvature visualizers
+  - manual backpropagation worksheet
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-4
+  number: '4'
+  days: Days 145–192
+  weeks: Weeks 21–28
+  title: Probability, autodiff and statistical inference
+  identity: Statistical reasoner
+  transformation: They can explain why training and evaluation procedures work — not merely import them.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - Computational graphs, forward/reverse-mode autodiff, JVPs and VJPs
+  - Probability spaces, conditional probability and Bayes
+  - Random variables and distributions
+  - Covariance and correlation
+  - LLN, CLT and delta method
+  - MLE and MAP, estimator bias and variance
+  - Hypothesis testing, Type I and Type II errors
   evidence:
+  - tiny autodiff engine
+  - probability simulations
+  - covariance analysis
+  - Monte Carlo convergence demo
+  - estimator comparison
+  - statistical-test implementation
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-5
+  number: '5'
+  days: Days 193–240
+  weeks: Weeks 28–35
+  title: Experimentation meets retrieval
+  identity: Retrieval and experimentation builder
+  transformation: They can now build the primitives behind search, experimentation and traffic control.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - p-values, confidence intervals, bootstrap and permutation tests
+  - power, MDE and sample-size calculations, multiple-testing correction
+  - cosine similarity, exact and memory-bounded KNN
+  - streaming Top-K and dynamically changing scores
+  - two-stage retrieval and reranking
+  - sliding-window and token-bucket rate limiting
+  - LRU and TTL caching
   evidence:
+  - bootstrap CI package
+  - experiment-size calculator
+  - vector-search mini-lab
+  - Top-K service
+  - reranking prototype
+  - rate-limiter module
+  - cache simulator
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-6
+  number: '6'
+  days: Days 241–288
+  weeks: Weeks 35–42
+  title: Production reliability and measurable AI
+  identity: Reliability-minded engineer
+  transformation: They stop thinking only about model output and start thinking about trust, failure, observability and operational
+    behavior.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - text and sentence-aware chunking
+  - PII span merging, regex and NER-based redaction
+  - Expected Calibration Error, Brier score and reliability diagrams
+  - NDCG, MRR and Recall@K
+  - thread-safe inference batching
+  - retries, exponential backoff and jitter, circuit breakers
+  - Count-Min Sketch and Bloom filters
   evidence:
+  - chunking library
+  - safe redaction utility
+  - calibration dashboard
+  - retrieval evaluator
+  - concurrent batcher
+  - fault-tolerance toolkit
+  - probabilistic data structures
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-7
+  number: '7'
+  days: Days 289–336
+  weeks: Weeks 42–48
+  title: Distributed primitives and design reasoning
+  identity: Distributed-systems implementer
+  transformation: They can move from implementing one process to reasoning about many machines.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - HyperLogLog, consistent hashing, rendezvous hashing
+  - weighted load balancing, distributed unique IDs
+  - leaky-bucket and sliding-window counters
+  - requirements and constraint gathering, APIs and data modelling
+  - observability, rate limiting at distributed scale
   evidence:
+  - cardinality estimator
+  - routing lab
+  - load-balancer module
+  - platform-primitives library
+  - system-design document template
+  - first complete design exercises
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-8
+  number: '8'
+  days: Days 337–384
+  weeks: Weeks 49–55
+  title: Classic distributed systems
+  identity: System designer
+  transformation: They stop naming technologies and start defending architecture.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - scaling reads and writes, caching and replication, contention
+  - large blob storage and CDNs
+  - orchestration versus choreography, workflow-state ownership
+  - backward-compatible schema evolution
+  - URL shorteners, Dropbox, Ticketmaster, News Feed, WhatsApp, LeetCode-style judges
   evidence:
+  - scaling-pattern notes
+  - blob-storage design
+  - workflow-state architecture
+  - schema-migration plan
+  - multiple end-to-end design documents
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-9
+  number: '9'
+  days: Days 385–432
+  weeks: Weeks 55–62
+  title: From system design to ML product science
+  identity: ML systems practitioner
+  transformation: They learn that a production ML system begins with a decision and a dataset — not with model training.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - Uber and web crawlers, ad-click aggregation, payments
+  - business-objective formulation, model-versus-non-model decisions
+  - labeling and weak supervision, data augmentation
+  - leakage and contamination, experiment tracking and versioning
+  - baselines, slice-based offline evaluation, confidence intervals
+  - shadow and canary deployment, bandits
   evidence:
+  - ML project charter
+  - data-quality checklist
+  - leakage audit
+  - evaluation harness
+  - rollout plan
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-10
+  number: '10'
+  days: Days 433–480
+  weeks: Weeks 62–69
+  title: Build a mature experimentation platform
+  identity: Experimentation engineer
+  transformation: They can distinguish “the metric increased” from “we have trustworthy evidence that the product improved.”
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - A/B-test significance calculation, absolute and relative lift
+  - pooled standard errors, confidence intervals
+  - paired bootstrap model comparison
+  - Sample-Ratio Mismatch detection, chi-square diagnostics
+  - feature-flag engines, deterministic sticky assignment
+  - monitoring and drift detection, production incident analysis
   evidence:
+  - analyze_ab_test
+  - bootstrap comparison package
+  - SRM detector
+  - feature-flag service
+  - experiment-assignment service
+  - monitoring specification
+  - incident postmortem
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-11
+  number: '11'
+  days: Days 481–528
+  weeks: Weeks 69–76
+  title: Train, align and retrieve with LLMs
+  identity: LLM training and retrieval engineer
+  transformation: They understand the whole upstream and retrieval lifecycle rather than treating the LLM as a remote magic
+    endpoint.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - transformer and tokenizer anatomy, training-data cleaning and deduplication
+  - SFT, LoRA, QLoRA and DoRA
+  - RLHF, DPO, ORPO and GRPO
+  - DDP and FSDP, tensor and pipeline parallelism, ZeRO
+  - HNSW, IVF-PQ and product quantization
+  - hybrid retrieval, query rewriting, parent–child and multi-vector retrieval
   evidence:
+  - model-anatomy notes
+  - dataset card
+  - fine-tuning plan
+  - preference-evaluation plan
+  - distributed-training architecture
+  - vector-index benchmark
+  - retrieval lab
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-12
+  number: '12'
+  days: Days 529–576
+  weeks: Weeks 76–83
+  title: RAG, agents and inference foundations
+  identity: RAG and agent engineer
+  transformation: They can build an agent and explain where its latency, errors, context and cost come from.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - BM25 + dense + reranker fusion, Reciprocal Rank Fusion
+  - evaluation by query slice
+  - prompt templates and version registries
+  - conversation and long-term memory, context-window optimization
+  - ReAct, plan-and-execute, tool calling, agent guardrails
+  - GPU compute-, memory- and overhead-bound regimes, FlashAttention
+  - roofline models and arithmetic intensity
   evidence:
+  - retrieval-fusion service
+  - regression report
+  - prompt-management tool
+  - memory service
+  - agent prototype
+  - GPU performance primer
+  - arithmetic-intensity worksheet
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-13
+  number: '13'
+  days: Days 577–624
+  weeks: Weeks 83–90
+  title: Become an inference systems engineer
+  identity: Inference performance engineer
+  transformation: They can diagnose inference rather than simply complain that it is slow.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - PagedAttention, KV-cache block tables, vLLM deployment
+  - scheduler and block-manager internals, running/waiting metrics
+  - latency histograms, Prometheus and Grafana
+  - request-rate sweeps and saturation analysis
+  - SGLang, RadixAttention and prefix reuse
+  - Orca-style continuous batching, chunked prefill
   evidence:
+  - live vLLM deployment
+  - internal architecture notes
+  - metrics schema
+  - serving dashboard
+  - benchmark methodology
+  - vLLM/SGLang comparison
+  - scheduling report
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-14
+  number: '14'
+  days: Days 625–672
+  weeks: Weeks 90–96
+  title: Advanced serving and reliable routing
+  identity: Serving and routing engineer
+  transformation: They can optimize not just a model, but a multi-provider inference service.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - continuous batching trade-offs, FP8, AWQ and GPTQ
+  - KV-cache compression, speculative decoding, Medusa and EAGLE
+  - StreamingLLM and KV eviction
+  - DistServe, Splitwise and Mooncake, prefill/decode disaggregation
+  - model routing, canary assignment and kill switches
+  - PII-safe traces and logs, async fan-out, partial failures, token-stream multiplexing
   evidence:
+  - quality-versus-throughput benchmark
+  - latency and memory lab
+  - disaggregated serving architecture
+  - model-router service
+  - safe tracing layer
+  - resilient aggregator
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-15
+  number: '15'
+  days: Days 673–720
+  weeks: Weeks 97–103
+  title: Build the enterprise AI platform
+  identity: Multi-tenant AI platform engineer
+  transformation: This is where “tensor” finally becomes “tenant.”
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - distributed token budgets, request prioritization
+  - DAG workflow execution, idempotency
+  - per-tenant concurrency limits, leader election
+  - distributed work queues, dynamic configuration
+  - model health monitoring, registries and promotion
+  - semantic and embedding caches, prompt-injection detection
+  - exact cost attribution, capstone architecture planning
   evidence:
+  - quota and priority service
+  - workflow engine
+  - tenant limiter
+  - HA lab
+  - queue/configuration platform
+  - model-operations pipeline
+  - cost/safety platform
+  - complete capstone design document
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
-
-- id: mandala-
-  number: 
-  days: ""
-  weeks: ""
-  title: ""
-  identity: ""
-  transformation: >
-    
+  - entity: weeks
+    role: identity shift window
+- id: mandala-final
+  number: final
+  days: Days 721–756
+  weeks: Weeks 103–108
+  title: Graduation — portfolio, capstone and interview readiness
+  identity: Portfolio-backed Staff AI Systems candidate
+  transformation: They no longer need to tell someone they “know AI systems.” They can provide the repository, traces, benchmarks,
+    design documents and failure tests.
   tier: core
   level: 2
-  seam: "identity progression"
+  seam: identity progression
   topics:
+  - complete the capstone core API
+  - build the retrieval or agent flow
+  - install evaluation, tracing and guardrails
+  - run load and failure tests, tune latency and cost
+  - produce architecture and benchmark reports
+  - complete coding, system-design and behavioral mocks
+  - publish the portfolio, perform a full retrospective
+  - create a 30-day career plan
   evidence:
+  - repository, traces, benchmarks, design documents and failure tests
+  - published portfolio release
+  - mock-interview scorecard
+  - 30-day job-search plan
   cross_references:
-    - { entity: weeks, role: "identity shift window" }
+  - entity: weeks
+    role: identity shift window

@@ -1243,7 +1243,7 @@
   week: 81
   phase: 7
   module: "Agent foundations"
-  focus: "ReAct, plan-execute, tool calling, guardrails"
+  focus: "ReAct, plan-execute, tool calling, guardrails; agent harness (tool-approval gates, session persistence/resume, context compaction, sub-agent fan-out, sandboxing vs host-shell)"
   mode: implement
   deliverable: "Agent prototype"
   tier: core
@@ -1387,8 +1387,8 @@
 - id: week-092
   week: 92
   phase: 8
-  module: "Speculative/long context"
-  focus: "Medusa, EAGLE, StreamingLLM, KV eviction"
+  module: "Long context & attention alternatives"
+  focus: "Medusa, EAGLE, StreamingLLM, KV eviction; linear attention (ELU+1), state-space (Mamba), delta-rule (DeltaNet/Gated DeltaNet), KDA/Kimi Linear; KV cache vs learned recurrence"
   mode: read_diagram
   deliverable: "Latency/memory lab"
   tier: core

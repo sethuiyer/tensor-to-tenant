@@ -72,21 +72,21 @@
   - Evidence: src/data/weeks.ts declares Phase 8 with the disaggregation module at week 93
 
 - **VERIFIED** — Every paper entry has a selection_rationale
-  - Evidence: schema/resources.yaml has 22 entries, 22 selection_rationale fields
+  - Evidence: schema/resources.yaml has 29 entries, 29 selection_rationale fields
 
 - **VERIFIED** — schema/implementation_exercises.yaml declares the 5 Pattern C prerequisites
   - Evidence: found 7 pattern: prerequisite entries
 
 - **VERIFIED** — schema/interview_questions.yaml declares >=6 Level 3 questions
-  - Evidence: found 6 entries with 8 at level: 3
+  - Evidence: found 8 entries with 10 at level: 3
 
 ### Paper citations (human review required)
 
-- **FLAGGED-FOR-HUMAN** — 13 core-tier paper entries in schema/resources.yaml need human-verified citation accuracy
+- **FLAGGED-FOR-HUMAN** — 20 core-tier paper entries in schema/resources.yaml need human-verified citation accuracy
   - Evidence: title / author / year / venue / URL fields exist but accuracy against actual papers cannot be auto-verified
 
 - **VERIFIED** — Every paper entry has a url field
-  - Evidence: all 22 entries have url fields
+  - Evidence: all 29 entries have url fields
 
 ### Cookiecutter behavior
 
@@ -94,7 +94,7 @@
   - Evidence: all 16 scripts present in cookiecutter/{cookiecutter.repo_name}/scripts/
 
 - **VERIFIED** — Test suite runs without failures
-  - Evidence: 141 passed, 4 skipped (the 4 skipped are T1.13 audit-gap tests for memory.json seeding)
+  - Evidence: 154 passed (including generator, drift, and site-build smoke tests)
 
 ## Items requiring human review
 
@@ -102,7 +102,7 @@ The following claims cannot be auto-verified. They require
 an independent reviewer with current field knowledge to
 confirm against authoritative sources (arXiv, NeurIPS, OSDI, etc.):
 
-- 13 core-tier paper entries in schema/resources.yaml need human-verified citation accuracy
+- 20 core-tier paper entries in schema/resources.yaml need human-verified citation accuracy
   - Evidence: title / author / year / venue / URL fields exist but accuracy against actual papers cannot be auto-verified
 
 ## How to re-run this audit
