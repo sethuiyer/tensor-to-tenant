@@ -1,0 +1,466 @@
+# Canonical resource list for tensor-to-tenant.
+#
+# Schema discipline (T1.8 / T1.8.e / T1.8.f / T1.8.g / T1.8.h / T1.8.i):
+#   - Every entry has a non-empty `selection_rationale` (P-principle 2).
+#   - Every entry has `tier: core|optional|archive`.
+#   - Every entry has `level: 1|2|3` (Level 3 = know-when-breaks).
+#   - Every entry has `week` placement (or `null` for prerequisites).
+#   - Every entry has `seam` (which structural seam it exposes).
+#   - Every entry has `cross_references` pointing at load-bearing weeks.
+#   - Drift check (T1.6) fails CI if any required field is missing.
+#
+# Paper discovery process: T1.8.a is the initial 12-paper mandatory
+# spine. T1.8.g adds MOPD as the training-domain instance of
+# P-principle 3. T1.8.i resolves the first pending entry. New entries
+# follow the same flow (T1.8.h).
+
+# ============================================================================
+# T1.8.a — Core additions (12 papers, mandatory spine)
+# ============================================================================
+
+- id: beyond_self_knowledge_uncertainty_propagation
+  title: "Beyond Self-Knowledge: Propagating Uncertainty Across Reasoning and Retrieval in LLMs"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "calibration -> uncertainty -> retrieval routing -> cost/quality"
+  selection_rationale: >
+    A beautiful bridge spanning four of the seam-philosophy's recurring
+    seams in a single paper. Calibration (W38) becomes uncertainty (W38),
+    which drives retrieval routing (W76), which trades off cost against
+    quality. Reinforces that local confidence is not the same as
+    global answer reliability. Direct cross-cutting insight for the
+    RAG evaluation weeks (W76-W78).
+  load_bearing_for: [38, 76, 78]
+  cross_references:
+    - { week: 38, role: "calibration prerequisite" }
+    - { week: 76, role: "retrieval routing" }
+    - { week: 78, role: "retrieval eval connection" }
+
+- id: dynamic_exploration_graph_ann
+  title: "Dynamic Exploration Graph: Efficient NN Search in Evolving Multimedia Datasets"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "static ANN index assumptions meet evolving corpora"
+  selection_rationale: >
+    The current ANN material in the curriculum (HNSW, IVF-PQ) is mostly
+    static-index thinking. Production corpora insert, delete, and evolve
+    continuously. This paper exposes the seam: the algorithmic
+    assumptions of HNSW-like structures break under continuous
+    modification, requiring a different index structure.
+  load_bearing_for: [75]
+  cross_references:
+    - { week: 75, role: "primary_index_concern" }
+
+- id: qasp_query_adaptive_vector_search
+  title: "QASP: Query-Adaptive Robust Vector Search Policy"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "fixed ef_search hides query-level variance"
+  selection_rationale: >
+    Fixed ANN parameters (ef_search, nprobe) hide query-level variance
+    and force a single recall/latency trade-off across all queries.
+    QASP forces per-query adaptation, which is the same shape as the
+    slice-based evaluation discipline the curriculum teaches at W39
+    and W78. Benchmark deliverables should compare fixed vs adaptive
+    by query-difficulty slice.
+  load_bearing_for: [75]
+  cross_references:
+    - { week: 75, role: "primary_index_concern" }
+    - { week: 39, role: "slice-evaluation precedent" }
+    - { week: 78, role: "slice-evaluation precedent" }
+
+- id: hierarchical_bm25_billion_scale
+  title: "Hierarchical BM25: Lexical Search at Billion-Document Scale"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "lexical retrieval becomes a distributed-systems problem at scale"
+  selection_rationale: >
+    At small scale, BM25 is a textbook formula. At billion-document
+    scale it becomes a serious distributed-systems problem: index
+    architecture, approximate top-k, latency economics. Pure
+    tensor-to-tenant: the formula (W14) -> index architecture (W47) ->
+    approximate top-k (W75) -> latency economics (W86).
+  load_bearing_for: [75]
+  cross_references:
+    - { week: 14, role: "math foundation" }
+    - { week: 47, role: "index architecture precedent" }
+    - { week: 75, role: "primary_index_concern" }
+    - { week: 86, role: "latency economics" }
+
+- id: tools_are_not_islands_hyperedge
+  title: "Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "pointwise tool retrieval vs structured tool-set retrieval"
+  selection_rationale: >
+    Most tool-retrieval systems rank tools independently, but many tasks
+    require compatible sets of tools working together. Conceptual upgrade
+    from pointwise retrieval to structured (hypergraph) retrieval.
+    Capstone 3 (AI gateway) and Week 81 (agent foundations) rely on this
+    lens: a tool that's relevant in isolation may not be relevant as
+    part of a useful toolset.
+  load_bearing_for: [81, "capstone-3"]
+  cross_references:
+    - { week: 81, role: "agent foundations" }
+    - { capstone: 3, role: "AI gateway tool routing" }
+
+- id: verification_without_sufficiency
+  title: "Verification Without Sufficiency: Per-Chunk Filtering Fails on Multi-Hop RAG, and Decomposition Repairs It"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "RAG chunk relevance vs answer sufficiency"
+  selection_rationale: >
+    Independently "good" chunks may be collectively insufficient for a
+    multi-hop answer. Attacks a structurally common but flawed RAG
+    pattern (per-chunk filtering then composition). The curriculum's
+    deepest Level-3 demonstration in the RAG weeks. Must-add.
+  load_bearing_for: [78]
+  cross_references:
+    - { week: 78, role: "primary eval concern" }
+    - { week: 76, role: "retrieval pattern precedent" }
+    - { week: 77, role: "retrieval fusion precedent" }
+
+- id: triple_robustness_rag_analysis
+  title: "A Triple-Robustness Analysis of RAG for Multi-Hop Requirements Traceability"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "eval robustness across embedder/judge/corpus"
+  selection_rationale: >
+    Varying embedder, judge, and corpus while holding architecture
+    fixed shows why papers reach contradictory conclusions. Reinforces
+    the curriculum's eval-discipline thesis (W78, W61): a single
+    architecture-eval pair is not a robustness result. Deliverable is
+    a small robustness matrix per query slice.
+  load_bearing_for: [78]
+  cross_references:
+    - { week: 78, role: "primary eval concern" }
+    - { week: 61, role: "offline eval precedent" }
+    - { week: 68, role: "monitoring precedent" }
+
+- id: diagnosing_long_horizon_search_agents
+  title: "Diagnosing Search Behavior and Failure Modes in Long-Horizon Search Agents"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "agent trajectory quality vs final-answer accuracy"
+  selection_rationale: >
+    Most agent papers report final-answer accuracy. This paper examines
+    the search trajectory itself: whether additional search actually
+    helps, when agents waste search, when they stop too early. The
+    deliverable is annotating one agent trajectory for query
+    reformulation quality, document relevance, wasted search, and
+    stopping behavior.
+  load_bearing_for: [78, 81]
+  cross_references:
+    - { week: 78, role: "agent eval" }
+    - { week: 81, role: "agent foundations" }
+
+- id: graph_native_bitemporal_memory
+  title: "A Graph-Native Bitemporal Memory Store for Conversational AI Agents"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "memory fidelity vs local temporal correctness"
+  selection_rationale: >
+    Bitemporal memory (valid time vs transaction time) is a serious
+    production concept: when something was true, when the system
+    learned it, how corrections and history are represented. Far better
+    than another vector-memory demo. Pairs with Reproducing LightMem
+    (below) as a comparative reading: architectural ambition vs
+    empirical baseline.
+  load_bearing_for: [80]
+  cross_references:
+    - { week: 80, role: "primary memory concern" }
+
+- id: reproducing_lightmem_naive_rag_baseline
+  title: "Reproducing LightMem: Naive RAG Is Just as Good for Memory Management"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "memory system complexity vs measured performance gain"
+  selection_rationale: >
+    Bennett's-razor check on memory architecture: does the complex
+    memory system explain enough extra performance to justify its
+    specificity and operational cost? Pairs with the graph-native
+    paper as a comparative reading unit.
+  load_bearing_for: [80]
+  cross_references:
+    - { week: 80, role: "comparative reading with bitemporal memory" }
+
+- id: deep_agentic_search_repo_qa
+  title: "Deep Agentic Search for Repository-Level Code Question Answering: An Empirical Study"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "pre-indexed semantic retrieval vs active grep-style exploration"
+  selection_rationale: >
+    Compares two search strategies for code repositories: pre-indexed
+    semantic retrieval vs active grep-style exploration. Exactly the
+    design trade-off the cookiecutter project (and Project Manus)
+    embodies. Useful for the AI learning partner and coding-agent track.
+  load_bearing_for: [81, "project-manus"]
+  cross_references:
+    - { week: 81, role: "agent foundations" }
+    - { project: "manus", role: "agent UI automation" }
+
+- id: fetch_then_explore_persistent_workspace
+  title: "Fetch-then-Explore: Decoupling Selection from Extraction over a Persistent Workspace for Search Agents"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "retrieval-extraction coupling in agent search"
+  selection_rationale: >
+    Clean architectural pattern: find resource -> preserve resource ->
+    inspect later. Better than binding retrieval and extraction into
+    one ephemeral tool call. Project Manus's browser+terminal design
+    benefits from this separation.
+  load_bearing_for: [81, "project-manus"]
+  cross_references:
+    - { week: 81, role: "agent foundations" }
+    - { project: "manus", role: "agent UI automation" }
+
+- id: raguard_layered_defense
+  title: "RAGuard: A Layered Defense Framework for RAG Systems Against Data Poisoning"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: core
+  level: 3
+  seam: "corpus poisoning and prompt injection in production RAG"
+  selection_rationale: >
+    Expands prompt-injection safety into corpus poisoning, evidence
+    manipulation, and retrieval-layer defenses. Connects the Week 102
+    safety capstone to the Week 78 eval philosophy: defense is not
+    a single check, it's a layered architecture.
+  load_bearing_for: [78, 102]
+  cross_references:
+    - { week: 78, role: "eval connection" }
+    - { week: 102, role: "primary safety concern" }
+
+# ============================================================================
+# T1.8.c — Optional deep dives (8 papers, depth mode / resource list)
+# ============================================================================
+
+- id: join_indices_search_engines
+  title: "Join Indices for Search Engines"
+  venue: "Lucene / OpenSearch engineering"
+  year: 2024
+  url: ""
+  tier: optional
+  level: 3
+  seam: "cross-index joins without full re-index"
+  selection_rationale: >
+    Practical depth for Lucene/OpenSearch work. Useful for Weeks 47/52/75
+    supporting reading. One-line prompt: how do Lucene/OpenSearch
+    handle cross-index joins without a full re-index?
+  load_bearing_for: []
+  cross_references:
+    - { week: 47, role: "data modeling precedent" }
+    - { week: 52, role: "schema evolution precedent" }
+    - { week: 75, role: "index architecture depth" }
+
+- id: token_native_storage
+  title: "Token-Native Storage"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: optional
+  level: 2
+  seam: "tokenizer-versioned storage as a system design primitive"
+  selection_rationale: >
+    Provocative systems idea. Labeled read-and-critique, not
+    foundational truth. Prompt: which layers benefit from token-native
+    storage, and what breaks when tokenizer versions change?
+  load_bearing_for: []
+  cross_references:
+    - { week: 71, role: "tokenization pipeline" }
+
+- id: tevatron_meets_megatron
+  title: "Tevatron Meets Megatron"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: optional
+  level: 2
+  seam: "distributed reranker training"
+  selection_rationale: >
+    Distributed reranker training. Toolkit-specific and
+    hardware-dependent; optional rather than core because the
+    trade-off only pays off at scale.
+  load_bearing_for: [74]
+  cross_references:
+    - { week: 74, role: "distributed training depth" }
+
+- id: kamr_knowledge_aligned_multihop
+  title: "KAMR: Knowledge-Aligned Multi-hop Retrieval"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: optional
+  level: 3
+  seam: "multi-hop retrieval vs single-hop with graph layer"
+  selection_rationale: >
+    Multi-hop retrieval depth. How does multi-hop retrieval differ from
+    single-hop once the graph layer is in the loop?
+  load_bearing_for: [77, 78]
+  cross_references:
+    - { week: 77, role: "retrieval fusion depth" }
+    - { week: 78, role: "eval depth" }
+
+- id: structured_memory_edge_lms_ssm
+  title: "Structured Memory for Edge Language Models via O(1) SSM State Injection"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: optional
+  level: 3
+  seam: "long-context inference vs persistent memory at the edge"
+  selection_rationale: >
+    Bridge between long-context inference and persistent memory at the
+    edge. Useful boss reading for Week 80/92, not core.
+  load_bearing_for: [80, 92]
+  cross_references:
+    - { week: 80, role: "memory depth" }
+    - { week: 92, role: "long-context depth" }
+
+- id: structured_knowledge_infrastructure_dsd
+  title: "A Structured Knowledge Infrastructure for Domain-Specific Data Asset Discovery"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: optional
+  level: 3
+  seam: "generic RAG on schema-heavy enterprise assets"
+  selection_rationale: >
+    Exposes how weak generic RAG can be on schema-heavy enterprise
+    assets. Good Week 76 case study.
+  load_bearing_for: [76]
+  cross_references:
+    - { week: 76, role: "retrieval patterns depth" }
+
+- id: hindsearch_trajectory_hindsight
+  title: "HindSearch: Trajectory-Level Hindsight Critique"
+  venue: "arXiv"
+  year: 2024
+  url: ""
+  tier: optional
+  level: 3
+  seam: "extracting learning signal from failed agent searches"
+  selection_rationale: >
+    Advanced agent-training reading. Extracts learning signal from
+    failed searches, which is the curriculum's gap between eval (W73)
+    and agent training (W81).
+  load_bearing_for: [73, 81]
+  cross_references:
+    - { week: 73, role: "alignment eval connection" }
+    - { week: 81, role: "agent foundations depth" }
+
+- id: mopd_multi_teacher_on_policy_distillation
+  title: "Multi-teacher On-Policy Distillation (MOPD): Capability Integration for Frontier-Scale LLMs"
+  venue: "arXiv 2606.30406"
+  year: 2026
+  url: "https://arxiv.org/abs/2606.30406"
+  tier: optional
+  level: 3
+  seam: "multi-domain post-training integration"
+  selection_rationale: >
+    MOPD exposes the seam between per-domain RL specialization and
+    integrated capability: independent domain experts do not naturally
+    compose into a globally capable student. The paper's response
+    (on-policy distillation with token-level teacher feedback, plus
+    decoupled parallel teacher development) is a structurally
+    interesting answer that extends the local-not-global thesis into
+    the post-training domain. Industrial-scale deployment in
+    MiMo-V2-Flash makes the seam real rather than theoretical. The
+    "specialised teachers -> unified student" pattern recurs across
+    the curriculum (microservices, multi-tenant platforms,
+    multi-agent orchestration, multi-provider gateways); this paper
+    is its training-domain instance.
+  load_bearing_for: [73, "capstone-3"]
+  cross_references:
+    - { week: 73, role: "alignment" }
+    - { week: 81, role: "multi-agent orchestration analogy" }
+    - { week: 94, role: "multi-provider routing analogy" }
+    - { week: 102, role: "per-tenant admission analogy" }
+    - { capstone: 3, role: "MOPD-for-models as gateway capstone" }
+
+# ============================================================================
+# T1.8.i — Resolved video companion (companion to MOPD)
+# ============================================================================
+
+- id: mopd_video_explainer_ai_research_roundup
+  title: "MOPD: Merging LLM Capabilities via Distillation"
+  url: "https://www.youtube.com/watch?v=i_cQ_aWu2UU"
+  channel: "AI research roundup"
+  duration_seconds: 265
+  year: 2026
+  tier: optional
+  level: 2
+  seam: "multi-domain post-training integration"
+  selection_rationale: >
+    4m25s visual companion to the MOPD paper (see
+    mopd_multi_teacher_on_policy_distillation). Low-friction entry
+    point for learners who prefer a video overview before reading the
+    paper. Reading order: watch this (~5 min) -> read the MOPD paper
+    (~30 min) -> write the cross-cutting-pattern deliverable. Not a
+    substitute for the paper; Level 2 explainer, not Level 3.
+    Companion cross-reference, not standalone spine.
+  cross_references:
+    - { paper_id: mopd_multi_teacher_on_policy_distillation, role: "primary_source" }
+
+# ============================================================================
+# T1.8.d — Archive (NOT integrated into the spine)
+# ============================================================================
+# These are kept in the digest, not the spine. Documented in TASKS.md
+# T1.8.d. Do not add to schema without an explicit promotion decision
+# (default answer is no per P-principle 2).
+#
+#   - Bekko Embedding
+#   - RareSense
+#   - Hierarchical Financial RAG
+#   - Hyperbolic RAG for Edge
+#   - GLM-RAG
+#   - Hypothetical Prompt Embeddings
+#   - TabRank
+#   - MediaWiki Code2Code Search
+#   - AskChem
+#   - Scientific inspiration retrieval
+#   - Formula understanding
+#   - Dutch hybrid retrieval
+#   - Multilingual disentangled retrieval
+#   - UEmbed
+#   - VLM relevance judging
+#   - GoldenRetriever (keep in frontier/security appendix only;
+#     homomorphic encrypted retrieval is intellectually valuable but
+#     too specialized and cryptographically expensive for core).
