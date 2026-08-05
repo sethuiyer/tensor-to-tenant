@@ -1,0 +1,163 @@
+# Level 3 interview question bank for tensor-to-tenant.
+#
+# Per T1.11: every question has `level: 3` (know-when-it-breaks),
+# a non-empty `acceptable_answers_skeleton` (defense criterion),
+# `cross_references` pointing at load-bearing weeks or capstones,
+# and `selection_rationale` explaining why it earns its slot.
+#
+# Drift check (T1.11.e) fails if any entry is missing these fields or
+# if `level: 3` is paired with an empty `acceptable_answers_skeleton`.
+
+# ============================================================================
+# The 5 "Cost Optimization Expert" outcomes (T1.11.a.2)
+# ============================================================================
+
+- id: how_many_gpus_to_serve_70b
+  question: "How many GPUs do you need to serve a 70B model?"
+  week: 93
+  level: 3
+  pattern: prerequisite
+  seam: "GPU memory budgeting"
+  selection_rationale: >
+    The naive answer is "use the formula; ~140 GB of weights at FP16
+    needs 2x H100 80GB." The Level 3 answer involves the KV cache
+    memory (depends on context length), activation memory, and
+    expert/tensor parallelism overhead. The TensorTonic
+    memory+GPU-estimation problem (ttc_throughput_cost_under_slo's
+    sibling) supplies the calculation.
+  acceptable_answers_skeleton:
+    - "State the FP16 weights memory: 70B × 2 bytes = 140 GB."
+    - "Add KV cache memory using the MHA/MQA/GQA/MLA formulas (TTI)." pattern:
+    - "Add activation memory per request × concurrency target."
+    - "Divide by per-GPU memory budget (H100 80GB, A100 40GB, etc.)."
+    - "State the minimum count, then double for tensor-parallel overhead."
+  cross_references:
+    - { week: 93, role: "primary load-bearing week" }
+    - { capstone: 3, role: "gateway capacity planning" }
+
+- id: int4_quantization_worth_it
+  question: "Is INT4 quantization worth the accuracy loss?"
+  week: 91
+  level: 3
+  pattern: prerequisite
+  seam: "quantization quality trade-off"
+  selection_rationale: >
+    The naive answer is "it depends." The Level 3 answer involves
+    whether the model is sensitive to weight precision (LLMs generally
+    less so than smaller models), whether KV cache quantization is
+    also being applied (compounding errors), whether the task is
+    short-context or long-context, and whether QLoRA's normal-float
+    is being used vs straight INT4. Maps to the T1.9 INT4 paragraph
+    added to W91.
+  acceptable_answers_skeleton:
+    - "Quantify the per-channel vs per-group vs block-wise distinction (TTI pattern)."
+    - "State the BitNet 1.58-bit research frontier."
+    - "Distinguish weight quantization from KV cache quantization (compounding errors)."
+    - "Identify the QLoRA path (4-bit normal-float) as production-ready."
+  cross_references:
+    - { week: 91, role: "primary quantization week" }
+
+- id: when_to_use_mqa_vs_gqa_vs_mla
+  question: "When would you choose MQA, GQA, or MLA for a new model?"
+  week: 83
+  level: 3
+  pattern: prerequisite
+  seam: "KV cache attention variant selection"
+  selection_rationale: >
+    The naive answer is "use the latest paper." The Level 3 answer
+    involves memory budget, context length target, and quality
+    tolerance per token. MQA is cheapest per token but quality-degrades
+    at long context; GQA is the production compromise; MLA is the
+    low-rank-compression path that buys long context at higher
+    per-step compute. Maps directly to the SVD/low-rank insight from
+    W14.
+  acceptable_answers_skeleton:
+    - "State the memory formula for each variant."
+    - "Identify which variant trades memory for compute and vice versa."
+    - "Reference at least one production model per variant (PaLM for MQA, LLaMA-2/3 for GQA, DeepSeek-V2 for MLA)."
+    - "Pick a variant for a given (context length, memory budget, quality tolerance) triple."
+  cross_references:
+    - { week: 14, role: "low-rank matrix factorization precedent" }
+    - { week: 82, role: "inference fundamentals" }
+    - { week: 84, role: "KV cache sizing" }
+
+- id: throughput_under_latency_slo
+  question: "How do you maximize throughput under a latency SLO?"
+  week: 93
+  level: 3
+  pattern: prerequisite
+  seam: "production AI platform economics"
+  selection_rationale: >
+    The naive answer is "tune the batch size." The Level 3 answer
+    involves continuous batching (W90), chunked prefill, KV cache
+    management (W84), routing policy (W94), per-tenant concurrency
+    limits (W99), and the cost model that ties them together.
+    Capstone 3's success criterion is exactly this optimization
+    problem; pre-loading at W93 means the capstone isn't a surprise.
+  acceptable_answers_skeleton:
+    - "Identify the SLO target (p50, p95, p99)."
+    - "State the levers: batch size, prefix cache hit rate, KV eviction policy, model routing."
+    - "Name the simulation primitive that lets you measure the trade-off (TensorTonic ttc_throughput_cost_under_slo)."
+    - "Identify per-tenant admission control as the fairness-vs-throughput knob."
+  cross_references:
+    - { week: 93, role: "primary load-bearing week" }
+    - { capstone: 3, role: "gateway success criterion" }
+
+- id: kv_cache_memory_tradeoffs
+  question: "What are the memory trade-offs of different KV cache sizes?"
+  week: 84
+  level: 3
+  pattern: prerequisite
+  seam: "KV cache sizing"
+  selection_rationale: >
+    The naive answer is "KV cache grows with context length." The
+    Level 3 answer involves the per-attention-variant formula (MHA vs
+    MQA vs GQA vs MLA), the impact of batch size on KV cache memory,
+    the PagedAttention block allocation (vs contiguous allocation),
+    and the long-context trade-off (StreamingLLM, H2O, SnapKV).
+  acceptable_answers_skeleton:
+    - "State the KV cache memory formula per attention variant."
+    - "Identify which parameters grow linearly vs quadratically with context length."
+    - "Distinguish contiguous allocation from PagedAttention block allocation."
+    - "Name at least two eviction policies (StreamingLLM, H2O, SnapKV) and their trade-offs."
+  cross_references:
+    - { week: 84, role: "primary KV cache week" }
+    - { week: 92, role: "long-context eviction policies" }
+
+# ============================================================================
+# The DeepSeek MLA question (T1.11.a.3)
+# ============================================================================
+# The single most interesting Level 3 question in any third-party
+# checklist. Cross-week insight that connects SVD (W14) to production
+# architectural choice (W82).
+
+- id: why_deepseek_mla_not_gqa
+  question: "Why did DeepSeek use MLA instead of GQA?"
+  week: 83
+  level: 3
+  pattern: prerequisite
+  seam: "low-rank compression as architectural choice"
+  selection_rationale: >
+    The single most interesting Level 3 question in any third-party
+    checklist. The answer reveals that MLA is SVD/low-rank compression
+    applied to the KV cache -- the same matrix factorization insight
+    from W14 reappearing as a production architectural decision in
+    W82. Cross-week insight earns its own question entry.
+  acceptable_answers_skeleton:
+    - "MLA compresses the KV cache into a low-rank latent."
+    - "The same pattern as SVD / low-rank approximation from W14."
+    - "Trade-off: lower memory per token, higher per-step compute for reconstruction."
+    - "Wins for long-context workloads where memory dominates."
+    - "Reference DeepSeek-V2 paper directly."
+  cross_references:
+    - { week: 14, role: "low-rank precedent" }
+    - { week: 82, role: "inference fundamentals" }
+
+# ============================================================================
+# T1.11.g — The third-party template (durable pattern)
+# ============================================================================
+# Not a question — a marker that the third-party template
+# ("Useful (integrate) / Fluff (exclude with reasoning) / Useful-but-not-yet")
+# is the durable ingestion pattern for future practitioner checklists.
+# Future artifacts: job description clusters, conference talk outlines,
+# learner feedback, market surveys. All flow through the same template.

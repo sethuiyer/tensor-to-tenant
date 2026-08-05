@@ -1,0 +1,141 @@
+# Canonical implementation-exercise registry for tensor-to-tenant.
+#
+# Per T1.10: 199 curated implementation problems organized into 6
+# interview assessments, mapped onto the inference and LLM training
+# weeks (W70-W93). Three integration patterns per problem:
+#   - pattern: reference (default; logged in evidence, does not gate)
+#   - pattern: depth (replaces or strengthens the week's deliverable)
+#   - pattern: prerequisite (load-bearing for downstream weeks)
+#
+# Schema discipline: every entry has selection_rationale, week,
+# pattern, tier, level, seam, and cross_references. Drift check
+# (T1.6) fails on missing fields.
+
+# ============================================================================
+# Top-level catalog entry
+# ============================================================================
+
+- id: tensortonic_ml_coding_challenges
+  title: "TensorTonic — ML Coding Challenges"
+  url: "https://www.tensortonic.com/problems"
+  catalog_size: 199
+  assessments_url: "https://www.tensortonic.com/assessments"
+  research_url: "https://www.tensortonic.com/research?paper=transformer"
+  tier: optional
+  level: 2
+  seam: "implementation primitives for inference and LLM systems"
+  selection_rationale: >
+    199 curated implementation problems organized into 6 interview
+    assessments that map almost 1:1 onto the inference and LLM training
+    weeks (W70-W93). The seam it closes: the curriculum currently jumps
+    from "understand SVD / gradients / attention math" (W7-W22)
+    directly to "deploy vLLM" (W84) with a thin W82-W83 primer. The
+    middle -- the ~30 small implementations that make the vLLM
+    deployment legible -- is missing. This resource is that middle.
+    Same P2 philosophy applied to exercises: every implementation
+    builds a muscle the course actually uses later, not a textbook
+    demo.
+  load_bearing_for: [70, 82, 83, 84, 86, 89, 90, 91, 92, 93, "capstone-3"]
+  cross_references:
+    - { week: 70, role: "transformer anatomy primitives" }
+    - { week: 82, role: "attention variants + FlashAttention" }
+    - { week: 83, role: "roofline analysis" }
+    - { week: 84, role: "KV cache + PagedAttention" }
+    - { week: 86, role: "serving metrics computation" }
+    - { week: 89, role: "prefix cache (RadixAttention)" }
+    - { week: 90, role: "MoE + batching + chunked prefill" }
+    - { week: 91, role: "quantization variants" }
+    - { week: 92, role: "speculative decoding + sampling" }
+    - { week: 93, role: "parallelism + disaggregation" }
+    - { capstone: 3, role: "AI gateway implementation muscle" }
+
+# ============================================================================
+# Per-problem promotion examples (the five Pattern C prerequisites)
+# ============================================================================
+# These five are promoted to `pattern: prerequisite` because downstream
+# weeks depend on them. The remaining ~194 problems land in the catalog
+# as `pattern: reference` until individual contributors promote them
+# (T1.10.b process).
+
+- id: ttc_kv_cache_memory
+  problem_url: "https://www.tensortonic.com/problems/kv-cache-memory"
+  title: "Calculate KV Cache Memory for MHA, MQA, GQA, and MLA"
+  week: 84
+  pattern: prerequisite
+  tier: core
+  level: 2
+  seam: "KV cache sizing"
+  selection_rationale: >
+    The exact memory math that vLLM, SGLang, and Capstone 3's gateway
+    all depend on. Without this, "PagedAttention manages the KV cache"
+    is a magic phrase. With it, "PagedAttention divides the KV cache
+    into blocks of B tokens, multiplied by the per-attention-variant
+    memory formula" is mechanical.
+  load_bearing_for: [84, 85, 86, 89, 92, 93, "capstone-3"]
+
+- id: ttc_flashattention_online_softmax
+  problem_url: "https://www.tensortonic.com/problems/flashattention-online-softmax"
+  title: "Implement FlashAttention with Online Softmax"
+  week: 82
+  pattern: prerequisite
+  tier: core
+  level: 3
+  seam: "attention memory hierarchy"
+  selection_rationale: >
+    The online softmax trick is the entire reason FlashAttention exists.
+    Implementing it locally makes "FlashAttention is IO-aware" a
+    sentence you can defend, not a sentence you can quote.
+  load_bearing_for: [82, 84, 90]
+
+- id: ttc_continuous_batching_sim
+  problem_url: "https://www.tensortonic.com/problems/continuous-batching-sim"
+  title: "Simulate Continuous Batching"
+  week: 90
+  pattern: prerequisite
+  tier: core
+  level: 2
+  seam: "batching schedulers"
+  selection_rationale: >
+    Continuous batching (Orca-style) is W90's headline topic. A
+    200-line simulator that takes a request stream and produces a
+    schedule makes "continuous batching" a measurable concept instead
+    of a magic phrase. The same simulator is the scaffold for the W90
+    deliverable.
+  load_bearing_for: [90, 93]
+
+- id: ttc_throughput_cost_under_slo
+  problem_url: "https://www.tensortonic.com/problems/throughput-cost-slo"
+  title: "Optimize Throughput and Cost Under a Latency SLO"
+  week: 93
+  pattern: prerequisite
+  tier: core
+  level: 3
+  seam: "production AI platform economics"
+  selection_rationale: >
+    Capstone 3's success criterion is "tenant isolation, exact cost
+    attribution, sub-X p95 latency." Pre-loading this optimization
+    problem at W93 means the learner arrives at the capstone already
+    having felt the tradeoff.
+  load_bearing_for: [93, "capstone-3"]
+
+- id: ttc_rope
+  problem_url: "https://www.tensortonic.com/problems/rope"
+  title: "Implement Rotary Position Embeddings for Decoding"
+  week: 82
+  pattern: prerequisite
+  tier: core
+  level: 2
+  seam: "rotary position embeddings for inference"
+  selection_rationale: >
+    Every modern transformer uses RoPE (or a variant). Without it, the
+    inference weeks have unexplained rotation logic in attention
+    scores. Implementing it locally makes "RoPE is applied to Q and K
+    per head per token" mechanical.
+  load_bearing_for: [82, 83, 84, 92]
+
+# ============================================================================
+# Section index (for cookiecutter scaffold generation)
+# ============================================================================
+# The 6 assessments map to cookiecutter 09_interview/implementation_exercises/
+# subdirectories. Each subdirectory is a markdown index generated from
+# this entity file.
