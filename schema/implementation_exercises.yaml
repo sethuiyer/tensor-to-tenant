@@ -1,6 +1,6 @@
 # Canonical implementation-exercise registry for tensor-to-tenant.
 #
-# Per T1.10: 199 curated implementation problems organized into 6
+# Per T1.10: 200 curated implementation problems organized into 6
 # interview assessments, mapped onto the inference and LLM training
 # weeks (W70-W93). Three integration patterns per problem:
 #   - pattern: reference (default; logged in evidence, does not gate)
@@ -18,14 +18,14 @@
 - id: tensortonic_ml_coding_challenges
   title: "TensorTonic — ML Coding Challenges"
   url: "https://www.tensortonic.com/problems"
-  catalog_size: 199
+  catalog_size: 200
   assessments_url: "https://www.tensortonic.com/assessments"
   research_url: "https://www.tensortonic.com/research?paper=transformer"
   tier: optional
   level: 2
   seam: "implementation primitives for inference and LLM systems"
   selection_rationale: >
-    199 curated implementation problems organized into 6 interview
+    200 curated implementation problems organized into 6 interview
     assessments that map almost 1:1 onto the inference and LLM training
     weeks (W70-W93). The seam it closes: the curriculum currently jumps
     from "understand SVD / gradients / attention math" (W7-W22)
