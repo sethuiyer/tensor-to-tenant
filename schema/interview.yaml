@@ -1,0 +1,253 @@
+# Interview preparation: continuous track, CARL stories, 176-item roadmap.
+# Per T1.2: schema discipline. Runs parallel to the 108-week spine.
+
+# ============================================================================
+# CARL behavioral stories (10)
+# ============================================================================
+
+- id: carl-scope
+  story: "Scope"
+  weeks: "1–10"
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+- id: carl-
+  story: ""
+  weeks: ""
+  tier: core
+  level: 2
+  seam: "behavioral interview prep"
+
+
+# ============================================================================
+# Interview focus by phase
+# ============================================================================
+
+- id: interview-focus-1–30
+  weeks: "1–30"
+  focus: "Technical communication and basic problem solving"
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+- id: interview-focus-
+  weeks: ""
+  focus: ""
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+- id: interview-focus-
+  weeks: ""
+  focus: ""
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+- id: interview-focus-
+  weeks: ""
+  focus: ""
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+- id: interview-focus-
+  weeks: ""
+  focus: ""
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+- id: interview-focus-
+  weeks: ""
+  focus: ""
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+- id: interview-focus-
+  weeks: ""
+  focus: ""
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+- id: interview-focus-
+  weeks: ""
+  focus: ""
+  tier: core
+  level: 2
+  seam: "phase-aligned interview prep"
+
+
+# ============================================================================
+# 176-item interview roadmap (3 tracks)
+# ============================================================================
+
+- id: roadmap-track-system-design
+  name: "System Design"
+  count: 108
+  tier: core
+  level: 2
+  seam: "interview prep roadmap"
+  items:
+
+- id: roadmap-track-
+  name: ""
+  count: 0
+  tier: core
+  level: 2
+  seam: "interview prep roadmap"
+  items:
+
+- id: roadmap-track-
+  name: ""
+  count: 0
+  tier: core
+  level: 2
+  seam: "interview prep roadmap"
+  items:
+
+
+# ============================================================================
+# Final capstone requirements (7 dimensions)
+# ============================================================================
+
+- id: capstone-req-product
+  area: "Product"
+  requirement: "Clear user problem, defined scope, working end-to-end flow"
+  tier: core
+  level: 3
+  seam: "capstone completion"
+
+- id: capstone-req-
+  area: ""
+  requirement: ""
+  tier: core
+  level: 3
+  seam: "capstone completion"
+
+- id: capstone-req-
+  area: ""
+  requirement: ""
+  tier: core
+  level: 3
+  seam: "capstone completion"
+
+- id: capstone-req-
+  area: ""
+  requirement: ""
+  tier: core
+  level: 3
+  seam: "capstone completion"
+
+- id: capstone-req-
+  area: ""
+  requirement: ""
+  tier: core
+  level: 3
+  seam: "capstone completion"
+
+- id: capstone-req-
+  area: ""
+  requirement: ""
+  tier: core
+  level: 3
+  seam: "capstone completion"
+
+- id: capstone-req-
+  area: ""
+  requirement: ""
+  tier: core
+  level: 3
+  seam: "capstone completion"
+
+
+# ============================================================================
+# Completion levels (4 tiers, including optional Auror)
+# ============================================================================
+
+- id: completion-level-foundations
+  level: "Foundations"
+  requires: "Core work shipped for Weeks 1–30, Gate 3 passed, Foundations portfolio release published"
+  tier: core
+  level_note: "3"
+  seam: "graduation"
+
+- id: completion-level-
+  level: ""
+  requires: ""
+  tier: core
+  level_note: "3"
+  seam: "graduation"
+
+- id: completion-level-
+  level: ""
+  requires: ""
+  tier: core
+  level_note: "3"
+  seam: "graduation"
+
+- id: completion-level-
+  level: ""
+  requires: ""
+  tier: core
+  level_note: "3"
+  seam: "graduation"

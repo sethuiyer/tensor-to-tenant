@@ -1,0 +1,1788 @@
+# Curriculum spine: 108 weeks across 10 phases.
+# Per T1.2 / T1.6: each week has id + phase + module + focus +
+# mode + deliverable. Schema discipline applied: level (1/2/3),
+# seam (which structural seam it addresses), cross_references (to
+# gate and phase).
+
+# ============================================================================
+# Phases
+# ============================================================================
+
+- id: phase-1
+  number: 1
+  weeks: "1–6"
+  theme: "Orientation, tooling, and diagnostics"
+  start: 1
+  end: 6
+  tier: core
+  level: 1
+  seam: "orientation"
+  selection_rationale: >
+    Phase 1 of the 10-phase spine. 
+    Orientation week — every learner enters here. The seam is 'getting the engineering substrate working before any math shows up.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-1 }
+    - { entity: weeks, role: "week range", range: "1-6" }
+    - { entity: programs, role: "in program", program_id: foundations }
+
+- id: phase-2
+  number: 2
+  weeks: "7–18"
+  theme: "Mathematical foundations I: linear algebra & numerical methods"
+  start: 7
+  end: 18
+  tier: core
+  level: 1
+  seam: "math foundations"
+  selection_rationale: >
+    Phase 2 of the 10-phase spine. 
+    Math foundations. The seam is 'you cannot ship production ML without calculus, linear algebra, and statistics in your hands.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-2 }
+    - { entity: weeks, role: "week range", range: "7-18" }
+    - { entity: programs, role: "in program", program_id: foundations }
+
+- id: phase-3
+  number: 3
+  weeks: "19–30"
+  theme: "Mathematical foundations II: calculus, autodiff, probability, statistics"
+  start: 19
+  end: 30
+  tier: core
+  level: 1
+  seam: "math foundations"
+  selection_rationale: >
+    Phase 3 of the 10-phase spine. 
+    Math foundations. The seam is 'you cannot ship production ML without calculus, linear algebra, and statistics in your hands.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-3 }
+    - { entity: weeks, role: "week range", range: "19-30" }
+    - { entity: programs, role: "in program", program_id: foundations }
+
+- id: phase-4
+  number: 4
+  weeks: "31–45"
+  theme: "Engineering micro-projects and applied ML primitives"
+  start: 31
+  end: 45
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  selection_rationale: >
+    Phase 4 of the 10-phase spine. 
+    Engineering primitives. The seam is 'the vocabulary every system-design week assumes you have implemented.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-4 }
+    - { entity: weeks, role: "week range", range: "31-45" }
+    - { entity: programs, role: "in program", program_id: engineering_systems }
+
+- id: phase-5
+  number: 5
+  weeks: "46–57"
+  theme: "System design and distributed systems fundamentals"
+  start: 46
+  end: 57
+  tier: core
+  level: 2
+  seam: "system design"
+  selection_rationale: >
+    Phase 5 of the 10-phase spine. 
+    System design fundamentals. The seam is 'the case studies that prep you for Staff-level interviews.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-5 }
+    - { entity: weeks, role: "week range", range: "46-57" }
+    - { entity: programs, role: "in program", program_id: engineering_systems }
+
+- id: phase-6
+  number: 6
+  weeks: "58–69"
+  theme: "ML lifecycle, experimentation, and MLOps"
+  start: 58
+  end: 69
+  tier: core
+  level: 2
+  seam: "MLOps"
+  selection_rationale: >
+    Phase 6 of the 10-phase spine. 
+    MLOps. The seam is 'trustworthy evidence — experiments, monitoring, postmortems.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-6 }
+    - { entity: weeks, role: "week range", range: "58-69" }
+    - { entity: programs, role: "in program", program_id: engineering_systems }
+
+- id: phase-7
+  number: 7
+  weeks: "70–81"
+  theme: "LLM training, RAG, agents, and evaluation"
+  start: 70
+  end: 81
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  selection_rationale: >
+    Phase 7 of the 10-phase spine. 
+    LLM training + RAG + agents. The seam is 'you can ship an LLM product, not just call an API.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-7 }
+    - { entity: weeks, role: "week range", range: "70-81" }
+    - { entity: programs, role: "in program", program_id: llm_platform }
+
+- id: phase-8
+  number: 8
+  weeks: "82–93"
+  theme: "LLM inference and performance engineering"
+  start: 82
+  end: 93
+  tier: core
+  level: 3
+  seam: "inference operations"
+  selection_rationale: >
+    Phase 8 of the 10-phase spine. 
+    LLM inference. The seam is 'you can serve a model in production — not just prompt one.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-8 }
+    - { entity: weeks, role: "week range", range: "82-93" }
+    - { entity: programs, role: "in program", program_id: llm_platform }
+
+- id: phase-9
+  number: 9
+  weeks: "94–102"
+  theme: "Production AI platform engineering"
+  start: 94
+  end: 102
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  selection_rationale: >
+    Phase 9 of the 10-phase spine. 
+    Production AI platform. The seam is 'multi-tenant, fair, observable, cost-attributed.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-9 }
+    - { entity: weeks, role: "week range", range: "94-102" }
+    - { entity: programs, role: "in program", program_id: llm_platform }
+
+- id: phase-10
+  number: 10
+  weeks: "103–108"
+  theme: "Capstone, portfolio, and interview readiness"
+  start: 103
+  end: 108
+  tier: core
+  level: 3
+  seam: "graduation"
+  selection_rationale: >
+    Phase 10 of the 10-phase spine. 
+    Capstone, portfolio, and interview readiness. The seam is 'proof of completion — code, design docs, benchmarks.'
+  cross_references:
+    - { entity: gates, role: "release gate", gate_id: gate-10 }
+    - { entity: weeks, role: "week range", range: "103-108" }
+    - { entity: programs, role: "in program", program_id: llm_platform }
+
+
+# ============================================================================
+# Weeks (108 entries)
+# ============================================================================
+
+- id: week-001
+  week: 1
+  phase: 1
+  module: "Orientation and course OS"
+  focus: "Course setup, tracker, repo, weekly template"
+  mode: implement
+  deliverable: "Course dashboard + README"
+  tier: core
+  level: 1
+  seam: "orientation"
+  cross_references:
+    - { entity: phases, phase_id: phase-1 }
+
+- id: week-002
+  week: 2
+  phase: 1
+  module: "Python engineering refresh"
+  focus: "Typing, testing, async basics"
+  mode: implement
+  deliverable: "CLI project skeleton with tests"
+  tier: core
+  level: 1
+  seam: "orientation"
+  cross_references:
+    - { entity: phases, phase_id: phase-1 }
+
+- id: week-003
+  week: 3
+  phase: 1
+  module: "Numerical Python"
+  focus: "NumPy, vectorization, broadcasting"
+  mode: implement
+  deliverable: "Vector math utility library"
+  tier: core
+  level: 1
+  seam: "orientation"
+  cross_references:
+    - { entity: phases, phase_id: phase-1 }
+
+- id: week-004
+  week: 4
+  phase: 1
+  module: "Reproducibility"
+  focus: "Git, notebooks, experiment tracking"
+  mode: implement
+  deliverable: "Reproducible notebook + Makefile"
+  tier: core
+  level: 1
+  seam: "orientation"
+  cross_references:
+    - { entity: phases, phase_id: phase-1 }
+
+- id: week-005
+  week: 5
+  phase: 1
+  module: "Math diagnostic and induction"
+  focus: "Linear algebra, probability, hypothesis choice, and generalization"
+  mode: implement
+  deliverable: "Diagnostic report + gap map + paper lab"
+  tier: core
+  level: 1
+  seam: "orientation"
+  cross_references:
+    - { entity: phases, phase_id: phase-1 }
+
+- id: week-006
+  week: 6
+  phase: 1
+  module: "Systems diagnostic"
+  focus: "HTTP, Docker, APIs, Linux basics"
+  mode: implement
+  deliverable: "Containerized hello-service"
+  tier: core
+  level: 1
+  seam: "orientation"
+  cross_references:
+    - { entity: phases, phase_id: phase-1 }
+    - { entity: gates, gate_id: gate-1, role: "exit criterion" }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-007
+  week: 7
+  phase: 2
+  module: "Linear algebra I"
+  focus: "Vector spaces, span, basis, dimension"
+  mode: implement
+  deliverable: "Problem set + concept map"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-008
+  week: 8
+  phase: 2
+  module: "Linear algebra II"
+  focus: "Linear independence, rank, nullity"
+  mode: implement
+  deliverable: "Solver exercises + notes"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-009
+  week: 9
+  phase: 2
+  module: "Linear algebra III"
+  focus: "Inner products, norms, dual norms"
+  mode: implement
+  deliverable: "Norm/distance library"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-010
+  week: 10
+  phase: 2
+  module: "Linear algebra IV"
+  focus: "Orthogonality, projections, Gram-Schmidt"
+  mode: implement
+  deliverable: "Projection demo"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-011
+  week: 11
+  phase: 2
+  module: "Linear algebra V"
+  focus: "Linear transformations, change of basis"
+  mode: implement
+  deliverable: "Coordinate transform lab"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-012
+  week: 12
+  phase: 2
+  module: "Linear algebra VI"
+  focus: "Eigenvalues, eigenvectors, diagonalization"
+  mode: implement
+  deliverable: "PCA-style mini lab"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-013
+  week: 13
+  phase: 2
+  module: "Linear algebra VII"
+  focus: "PSD matrices, quadratic forms, Rayleigh quotient"
+  mode: implement
+  deliverable: "Proof + visualization"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-014
+  week: 14
+  phase: 2
+  module: "Linear algebra VIII"
+  focus: "SVD, pseudoinverse, low-rank approximation"
+  mode: implement
+  deliverable: "Low-rank compression demo"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-015
+  week: 15
+  phase: 2
+  module: "Numerical linear algebra I"
+  focus: "Matrix norms, condition numbers, perturbation"
+  mode: implement
+  deliverable: "Perturbation experiment"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-016
+  week: 16
+  phase: 2
+  module: "Numerical linear algebra II"
+  focus: "LU, QR, Cholesky decomposition"
+  mode: implement
+  deliverable: "Decomposition library"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-017
+  week: 17
+  phase: 2
+  module: "Numerical linear algebra III"
+  focus: "Iterative solvers, power iteration, Krylov methods"
+  mode: implement
+  deliverable: "Solver benchmark"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+
+- id: week-018
+  week: 18
+  phase: 2
+  module: "Numerical linear algebra IV"
+  focus: "Randomized SVD, tensor notation"
+  mode: implement
+  deliverable: "Randomized approximation lab"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-2 }
+    - { entity: gates, gate_id: gate-2, role: "exit criterion" }
+
+- id: week-019
+  week: 19
+  phase: 3
+  module: "Calculus I"
+  focus: "Partial derivatives, gradients, directional derivatives"
+  mode: implement
+  deliverable: "Gradient visualizer"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-020
+  week: 20
+  phase: 3
+  module: "Calculus II"
+  focus: "Jacobians, Hessians, Taylor approximations"
+  mode: implement
+  deliverable: "Curvature lab"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-021
+  week: 21
+  phase: 3
+  module: "Calculus III"
+  focus: "Chain rule on computational graphs"
+  mode: implement
+  deliverable: "Manual backprop worksheet"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-022
+  week: 22
+  phase: 3
+  module: "Automatic differentiation"
+  focus: "Forward/reverse mode, JVPs, VJPs"
+  mode: implement
+  deliverable: "Tiny autodiff prototype"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-023
+  week: 23
+  phase: 3
+  module: "Probability I"
+  focus: "Probability spaces, conditioning, Bayes theorem"
+  mode: implement
+  deliverable: "Probability problem set"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-024
+  week: 24
+  phase: 3
+  module: "Probability II"
+  focus: "Random variables, distributions, transformations"
+  mode: implement
+  deliverable: "Simulation notebook"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-025
+  week: 25
+  phase: 3
+  module: "Probability III"
+  focus: "Random vectors, covariance, correlation"
+  mode: implement
+  deliverable: "Covariance/correlation lab"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-026
+  week: 26
+  phase: 3
+  module: "Probability IV"
+  focus: "LLN, CLT, delta method"
+  mode: implement
+  deliverable: "Monte Carlo convergence demo"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-027
+  week: 27
+  phase: 3
+  module: "Statistics I"
+  focus: "MLE, MAP, estimator bias/variance"
+  mode: implement
+  deliverable: "Estimator comparison"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-028
+  week: 28
+  phase: 3
+  module: "Statistics II"
+  focus: "Hypothesis testing, p-values, Type I/II errors"
+  mode: implement
+  deliverable: "Test implementation"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-029
+  week: 29
+  phase: 3
+  module: "Statistics III"
+  focus: "Confidence intervals, bootstrap, permutation tests"
+  mode: implement
+  deliverable: "Bootstrap CI package"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+
+- id: week-030
+  week: 30
+  phase: 3
+  module: "Statistics IV"
+  focus: "Power, MDE, sample size, multiple testing"
+  mode: implement
+  deliverable: "Experiment-size calculator"
+  tier: core
+  level: 1
+  seam: "math foundations"
+  cross_references:
+    - { entity: phases, phase_id: phase-3 }
+    - { entity: gates, gate_id: gate-3, role: "exit criterion" }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-031
+  week: 31
+  phase: 4
+  module: "Retrieval math"
+  focus: "Cosine similarity, exact KNN"
+  mode: implement
+  deliverable: "Vector search mini-lab"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-032
+  week: 32
+  phase: 4
+  module: "Top-K systems"
+  focus: "Memory-bounded KNN, streaming Top-K"
+  mode: implement
+  deliverable: "Heap-based Top-K service"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-033
+  week: 33
+  phase: 4
+  module: "Ranking pipelines"
+  focus: "Dynamic Top-K, two-stage retrieval/reranking"
+  mode: implement
+  deliverable: "Reranking prototype"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-034
+  week: 34
+  phase: 4
+  module: "Rate limiting I"
+  focus: "Sliding-window and token bucket rate limiters"
+  mode: implement
+  deliverable: "API limiter module"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-035
+  week: 35
+  phase: 4
+  module: "Caching"
+  focus: "LRU cache and TTL cache"
+  mode: implement
+  deliverable: "Cache simulator with tests"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-036
+  week: 36
+  phase: 4
+  module: "Text chunking"
+  focus: "Token-aware and recursive sentence chunking"
+  mode: implement
+  deliverable: "Chunking library"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-037
+  week: 37
+  phase: 4
+  module: "PII handling"
+  focus: "PII span merging, regex/NER detection"
+  mode: implement
+  deliverable: "Redaction utility"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-038
+  week: 38
+  phase: 4
+  module: "Calibration"
+  focus: "Expected Calibration Error, Brier score"
+  mode: implement
+  deliverable: "Reliability dashboard"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-039
+  week: 39
+  phase: 4
+  module: "Ranking metrics"
+  focus: "NDCG, MRR, Recall@K"
+  mode: implement
+  deliverable: "Retrieval evaluator"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-040
+  week: 40
+  phase: 4
+  module: "Batching"
+  focus: "Thread-safe inference batcher"
+  mode: implement
+  deliverable: "Concurrent batcher"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-041
+  week: 41
+  phase: 4
+  module: "Resilience"
+  focus: "Retry, exponential backoff, jitter, circuit breaker"
+  mode: implement
+  deliverable: "Fault-tolerance kit"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-042
+  week: 42
+  phase: 4
+  module: "Sketches"
+  focus: "Count-Min Sketch, Bloom filter"
+  mode: implement
+  deliverable: "Probabilistic data structures"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-043
+  week: 43
+  phase: 4
+  module: "Cardinality/routing"
+  focus: "HyperLogLog, consistent hashing"
+  mode: implement
+  deliverable: "Distributed routing lab"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-044
+  week: 44
+  phase: 4
+  module: "Load balancing"
+  focus: "Weighted round robin, rendezvous hashing"
+  mode: implement
+  deliverable: "Load balancer module"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+
+- id: week-045
+  week: 45
+  phase: 4
+  module: "IDs/traffic"
+  focus: "Snowflake IDs, leaky bucket, sliding-window counter"
+  mode: implement
+  deliverable: "Platform primitives lab"
+  tier: core
+  level: 2
+  seam: "engineering primitives"
+  cross_references:
+    - { entity: phases, phase_id: phase-4 }
+    - { entity: gates, gate_id: gate-4, role: "exit criterion" }
+
+- id: week-046
+  week: 46
+  phase: 5
+  module: "System design framework"
+  focus: "Requirements, constraints, API design"
+  mode: read_diagram
+  deliverable: "Design doc template"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-047
+  week: 47
+  phase: 5
+  module: "Data and APIs"
+  focus: "Data models, observability, contracts"
+  mode: read_diagram
+  deliverable: "API design exercise"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-048
+  week: 48
+  phase: 5
+  module: "Rate limiting design"
+  focus: "Token bucket, sliding windows at scale"
+  mode: read_diagram
+  deliverable: "Rate limiter design writeup"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-049
+  week: 49
+  phase: 5
+  module: "Scaling reads/writes"
+  focus: "Caching, replication, contention"
+  mode: read_diagram
+  deliverable: "Scaling pattern notes"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-050
+  week: 50
+  phase: 5
+  module: "Large blobs"
+  focus: "Storage, CDN, media pipelines"
+  mode: read_diagram
+  deliverable: "Blob storage design"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-051
+  week: 51
+  phase: 5
+  module: "Workflow systems"
+  focus: "Orchestration vs choreography"
+  mode: read_diagram
+  deliverable: "Workflow state design"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-052
+  week: 52
+  phase: 5
+  module: "Schema evolution"
+  focus: "Backward compatibility, contracts"
+  mode: read_diagram
+  deliverable: "Schema migration plan"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-053
+  week: 53
+  phase: 5
+  module: "Case studies I"
+  focus: "URL shortener, Dropbox"
+  mode: read_diagram
+  deliverable: "Two design docs"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-054
+  week: 54
+  phase: 5
+  module: "Case studies II"
+  focus: "Ticketmaster, News Feed"
+  mode: read_diagram
+  deliverable: "Two design docs"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-055
+  week: 55
+  phase: 5
+  module: "Case studies III"
+  focus: "WhatsApp, LeetCode"
+  mode: read_diagram
+  deliverable: "Two design docs"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-056
+  week: 56
+  phase: 5
+  module: "Case studies IV"
+  focus: "Uber, web crawler"
+  mode: read_diagram
+  deliverable: "Two design docs"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+
+- id: week-057
+  week: 57
+  phase: 5
+  module: "Case studies V"
+  focus: "Ad click aggregator, payments"
+  mode: read_diagram
+  deliverable: "Trade-off analysis"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5 }
+    - { entity: gates, gate_id: gate-5, role: "exit criterion" }
+
+- id: week-058
+  week: 58
+  phase: 6
+  module: "ML problem framing"
+  focus: "Objectives, constraints, iterative development"
+  mode: read_diagram
+  deliverable: "ML project charter"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-059
+  week: 59
+  phase: 6
+  module: "Data quality"
+  focus: "Labeling, weak supervision, augmentation"
+  mode: read_diagram
+  deliverable: "Data quality checklist"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-060
+  week: 60
+  phase: 6
+  module: "Leakage/contamination"
+  focus: "Detection, eval tracking, versioning"
+  mode: read_diagram
+  deliverable: "Leakage audit"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-061
+  week: 61
+  phase: 6
+  module: "Offline evaluation"
+  focus: "Baselines, slices, confidence intervals"
+  mode: implement
+  deliverable: "Eval harness"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-062
+  week: 62
+  phase: 6
+  module: "Online evaluation"
+  focus: "A/B tests, shadow deployment, canary, bandits"
+  mode: read_diagram
+  deliverable: "Rollout plan"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-063
+  week: 63
+  phase: 6
+  module: "A/B calculator"
+  focus: "Lift, z-score, p-value, confidence intervals"
+  mode: implement
+  deliverable: "analyze_ab_test function"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-064
+  week: 64
+  phase: 6
+  module: "Bootstrap methods"
+  focus: "Paired bootstrap for model comparisons"
+  mode: implement
+  deliverable: "bootstrap_ci package"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-065
+  week: 65
+  phase: 6
+  module: "SRM detection"
+  focus: "Sample-ratio mismatch, chi-square diagnostics"
+  mode: implement
+  deliverable: "SRM detector"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-066
+  week: 66
+  phase: 6
+  module: "Feature flags"
+  focus: "Rules, rollouts, sticky assignment"
+  mode: implement
+  deliverable: "Flag engine"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-067
+  week: 67
+  phase: 6
+  module: "Experiment assignment"
+  focus: "Deterministic assignment, namespaces"
+  mode: implement
+  deliverable: "Assignment service"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-068
+  week: 68
+  phase: 6
+  module: "Monitoring"
+  focus: "Drift, observability, four-layer monitoring"
+  mode: read_diagram
+  deliverable: "Monitoring dashboard spec"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+
+- id: week-069
+  week: 69
+  phase: 6
+  module: "Production failures"
+  focus: "Distribution shift, postmortems"
+  mode: read_diagram
+  deliverable: "Incident postmortem template"
+  tier: core
+  level: 2
+  seam: "MLOps"
+  cross_references:
+    - { entity: phases, phase_id: phase-6 }
+    - { entity: gates, gate_id: gate-6, role: "exit criterion" }
+
+- id: week-070
+  week: 70
+  phase: 7
+  module: "LLM anatomy"
+  focus: "Transformer, tokenizer, matmul"
+  mode: read_diagram
+  deliverable: "Model anatomy notes"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-071
+  week: 71
+  phase: 7
+  module: "LLM data pipelines"
+  focus: "Cleaning, deduplication, tokenization"
+  mode: read_diagram
+  deliverable: "Dataset card"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-072
+  week: 72
+  phase: 7
+  module: "Fine-tuning"
+  focus: "SFT, LoRA, QLoRA, DoRA"
+  mode: read_diagram
+  deliverable: "Fine-tuning plan"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-073
+  week: 73
+  phase: 7
+  module: "Alignment"
+  focus: "RLHF, DPO, ORPO, GRPO"
+  mode: read_diagram
+  deliverable: "Preference eval plan"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-074
+  week: 74
+  phase: 7
+  module: "Distributed training"
+  focus: "DDP/FSDP, tensor/pipeline parallelism, ZeRO"
+  mode: read_diagram
+  deliverable: "Training architecture map"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-075
+  week: 75
+  phase: 7
+  module: "Vector search"
+  focus: "HNSW, IVF-PQ, product quantization"
+  mode: deploy_benchmark
+  deliverable: "Index benchmark"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-076
+  week: 76
+  phase: 7
+  module: "Retrieval patterns"
+  focus: "Hybrid search, query rewriting, chunking"
+  mode: implement
+  deliverable: "Retrieval lab"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-077
+  week: 77
+  phase: 7
+  module: "Retrieval fusion"
+  focus: "BM25 + dense + reranker, RRF"
+  mode: implement
+  deliverable: "Fusion service"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-078
+  week: 78
+  phase: 7
+  module: "Retrieval eval"
+  focus: "Query slices, macro metrics, regressions"
+  mode: implement
+  deliverable: "Slice evaluation report"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-079
+  week: 79
+  phase: 7
+  module: "Prompt systems"
+  focus: "Prompt template renderer, version registry"
+  mode: implement
+  deliverable: "Prompt management tool"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-080
+  week: 80
+  phase: 7
+  module: "Memory/context"
+  focus: "Conversation memory, context optimizer"
+  mode: implement
+  deliverable: "Memory service"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+
+- id: week-081
+  week: 81
+  phase: 7
+  module: "Agent foundations"
+  focus: "ReAct, plan-execute, tool calling, guardrails"
+  mode: implement
+  deliverable: "Agent prototype"
+  tier: core
+  level: 2
+  seam: "LLM systems"
+  cross_references:
+    - { entity: phases, phase_id: phase-7 }
+    - { entity: gates, gate_id: gate-7, role: "exit criterion" }
+
+- id: week-082
+  week: 82
+  phase: 8
+  module: "GPU performance"
+  focus: "Compute/memory/overhead regimes, FlashAttention"
+  mode: read_diagram
+  deliverable: "Performance primer notes"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-083
+  week: 83
+  phase: 8
+  module: "Inference arithmetic"
+  focus: "Roofline model, arithmetic intensity"
+  mode: read_diagram
+  deliverable: "Model intensity worksheet"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-084
+  week: 84
+  phase: 8
+  module: "PagedAttention/vLLM"
+  focus: "KV paging, block tables"
+  mode: deploy_benchmark
+  deliverable: "vLLM deployment"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-085
+  week: 85
+  phase: 8
+  module: "vLLM internals"
+  focus: "Scheduler, block manager, code paths"
+  mode: read_diagram
+  deliverable: "Internal anatomy notes"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-086
+  week: 86
+  phase: 8
+  module: "vLLM metrics"
+  focus: "Running/waiting requests, latency histograms"
+  mode: read_diagram
+  deliverable: "Metrics schema"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-087
+  week: 87
+  phase: 8
+  module: "Observability"
+  focus: "Prometheus/Grafana for serving"
+  mode: deploy_benchmark
+  deliverable: "Live inference dashboard"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-088
+  week: 88
+  phase: 8
+  module: "Benchmarking"
+  focus: "Request-rate sweeps from 1 to 1000+ concurrent, saturation-point identification at each step"
+  mode: read_diagram
+  deliverable: "Benchmark methodology doc + one published optimization benchmark (vLLM or SGLang config; public gist or blog post)"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-089
+  week: 89
+  phase: 8
+  module: "SGLang"
+  focus: "RadixAttention, prefix reuse"
+  mode: deploy_benchmark
+  deliverable: "SGLang comparison report + one published vLLM-vs-SGLang benchmark comparing the W84 and W89 pipeline configs"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-090
+  week: 90
+  phase: 8
+  module: "Scheduling & MoE Execution"
+  focus: "Orca, continuous batching, chunked prefill, MoE all-to-all routing, Warp Decode, COMET overlap"
+  mode: read_diagram
+  deliverable: "MoE overlap schedule design doc + latency-hiding simulator"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-091
+  week: 91
+  phase: 8
+  module: "Quantization"
+  focus: "FP8, AWQ, GPTQ, KV cache compression; INT4 (per-channel, per-group, block-wise) and BitNet-style 1.58-bit frontier"
+  mode: read_diagram
+  deliverable: "Quality/throughput table with INT4 row (QLoRA 4-bit normal-float as the production-ready path; BitNet as the research frontier)"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-092
+  week: 92
+  phase: 8
+  module: "Speculative/long context"
+  focus: "Medusa, EAGLE, StreamingLLM, KV eviction"
+  mode: read_diagram
+  deliverable: "Latency/memory lab"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+
+- id: week-093
+  week: 93
+  phase: 8
+  module: "Disaggregation"
+  focus: "DistServe, Splitwise, Mooncake, autoscaling; Kubernetes topology (KServe + KEDA + HPA) and edge deployment (ONNX, TensorRT-LLM, WebLLM) as alternative topologies"
+  mode: read_diagram
+  deliverable: "Disaggregated serving plan + depth-mode sub-deliverable: deploy the W84 pipeline to K8s with HPA-driven autoscaling on a synthetic spike AND port one vLLM config to ONNX/TensorRT-LLM for edge benchmarking (Modal A10 fallback if no edge hardware)"
+  tier: core
+  level: 3
+  seam: "inference operations"
+  cross_references:
+    - { entity: phases, phase_id: phase-8 }
+    - { entity: gates, gate_id: gate-8, role: "exit criterion" }
+
+- id: week-094
+  week: 94
+  phase: 9
+  module: "Traffic routing"
+  focus: "Model router, kill switch, sticky rollout"
+  mode: implement
+  deliverable: "Router service"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-095
+  week: 95
+  phase: 9
+  module: "Safe observability"
+  focus: "PII redaction, end-to-end request tracing"
+  mode: implement
+  deliverable: "Trace + safe logs"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+
+- id: week-096
+  week: 96
+  phase: 9
+  module: "Fan-out/streaming"
+  focus: "Partial failures, token stream multiplexing"
+  mode: implement
+  deliverable: "Resilient aggregator"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+
+- id: week-097
+  week: 97
+  phase: 9
+  module: "Quotas/priority"
+  focus: "Token budgets, gateway prioritization"
+  mode: implement
+  deliverable: "Quota/priority service"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+
+- id: week-098
+  week: 98
+  phase: 9
+  module: "Workflow execution"
+  focus: "DAG scheduler, idempotency"
+  mode: implement
+  deliverable: "Workflow engine"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+
+- id: week-099
+  week: 99
+  phase: 9
+  module: "Fairness/HA"
+  focus: "Per-tenant limits, leader election"
+  mode: implement
+  deliverable: "Tenant limiter + HA lab"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+
+- id: week-100
+  week: 100
+  phase: 9
+  module: "Async infrastructure"
+  focus: "Distributed work queue, config service"
+  mode: implement
+  deliverable: "Queue/config platform"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+
+- id: week-101
+  week: 101
+  phase: 9
+  module: "Model lifecycle"
+  focus: "Health monitor, registry/promotion"
+  mode: implement
+  deliverable: "Model ops pipeline"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+
+- id: week-102
+  week: 102
+  phase: 9
+  module: "Cost/safety/caching"
+  focus: "Semantic/embedding cache, injection detection, cost attribution"
+  mode: implement
+  deliverable: "Cost/safety platform"
+  tier: core
+  level: 3
+  seam: "production AI platform"
+  cross_references:
+    - { entity: phases, phase_id: phase-9 }
+    - { entity: gates, gate_id: gate-9, role: "exit criterion" }
+    - { entity: weeks, role: "recovery_after" }
+
+- id: week-103
+  week: 103
+  phase: 10
+  module: "Capstone planning"
+  focus: "Requirements, architecture, eval plan"
+  mode: read_diagram
+  deliverable: "Capstone design doc"
+  tier: core
+  level: 3
+  seam: "graduation"
+  cross_references:
+    - { entity: phases, phase_id: phase-10 }
+
+- id: week-104
+  week: 104
+  phase: 10
+  module: "Capstone build I"
+  focus: "Core API, retrieval/agent flow"
+  mode: implement
+  deliverable: "Working prototype"
+  tier: core
+  level: 3
+  seam: "graduation"
+  cross_references:
+    - { entity: phases, phase_id: phase-10 }
+
+- id: week-105
+  week: 105
+  phase: 10
+  module: "Capstone build II"
+  focus: "Evaluation, observability, guardrails"
+  mode: implement
+  deliverable: "Monitored prototype"
+  tier: core
+  level: 3
+  seam: "graduation"
+  cross_references:
+    - { entity: phases, phase_id: phase-10 }
+
+- id: week-106
+  week: 106
+  phase: 10
+  module: "Capstone build III"
+  focus: "Load testing, optimization, cost tuning"
+  mode: implement
+  deliverable: "Performance report"
+  tier: core
+  level: 3
+  seam: "graduation"
+  cross_references:
+    - { entity: phases, phase_id: phase-10 }
+
+- id: week-107
+  week: 107
+  phase: 10
+  module: "Mock interview week"
+  focus: "System design, coding, behavioral simulations"
+  mode: read_diagram
+  deliverable: "Mock interview scorecard"
+  tier: core
+  level: 3
+  seam: "graduation"
+  cross_references:
+    - { entity: phases, phase_id: phase-10 }
+
+- id: week-108
+  week: 108
+  phase: 10
+  module: "Final review"
+  focus: "Portfolio, retrospective, job plan"
+  mode: read_diagram
+  deliverable: "Final portfolio + 30-day plan"
+  tier: core
+  level: 3
+  seam: "graduation"
+  cross_references:
+    - { entity: phases, phase_id: phase-10 }
+    - { entity: gates, gate_id: gate-10, role: "exit criterion" }
+
+
+# ============================================================================
+# Recovery weeks (deliberate buffer windows)
+# ============================================================================
+
+- id: recovery-after-week-6
+  after_week: 6
+  phase: 1
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 6 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 6, role: "recovery after" }
+
+- id: recovery-after-week-14
+  after_week: 14
+  phase: 2
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 14 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 14, role: "recovery after" }
+
+- id: recovery-after-week-22
+  after_week: 22
+  phase: 3
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 22 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 22, role: "recovery after" }
+
+- id: recovery-after-week-30
+  after_week: 30
+  phase: 3
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 30 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 30, role: "recovery after" }
+
+- id: recovery-after-week-38
+  after_week: 38
+  phase: 4
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 38 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 38, role: "recovery after" }
+
+- id: recovery-after-week-46
+  after_week: 46
+  phase: 5
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 46 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 46, role: "recovery after" }
+
+- id: recovery-after-week-54
+  after_week: 54
+  phase: 5
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 54 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 54, role: "recovery after" }
+
+- id: recovery-after-week-62
+  after_week: 62
+  phase: 6
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 62 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 62, role: "recovery after" }
+
+- id: recovery-after-week-70
+  after_week: 70
+  phase: 7
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 70 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 70, role: "recovery after" }
+
+- id: recovery-after-week-78
+  after_week: 78
+  phase: 7
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 78 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 78, role: "recovery after" }
+
+- id: recovery-after-week-86
+  after_week: 86
+  phase: 8
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 86 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 86, role: "recovery after" }
+
+- id: recovery-after-week-94
+  after_week: 94
+  phase: 9
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 94 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 94, role: "recovery after" }
+
+- id: recovery-after-week-102
+  after_week: 102
+  phase: 9
+  tier: core
+  level: 1
+  seam: "recovery"
+  selection_rationale: >
+    Deliberate buffer after week 102 so the learner can consolidate, remediate failed gates, or rest. Recovery weeks are generated, not additional topics.
+  cross_references:
+    - { entity: weeks, week: 102, role: "recovery after" }
+
+
+# ============================================================================
+# GPU weeks (the only deploy_benchmark mode entries)
+# ============================================================================
+
+- id: gpu-week-75
+  week: 75
+  module: "Vector search"
+  cross_references:
+    - { entity: weeks, week: 75 }
+
+- id: gpu-week-84
+  week: 84
+  module: "PagedAttention/vLLM"
+  cross_references:
+    - { entity: weeks, week: 84 }
+
+- id: gpu-week-87
+  week: 87
+  module: "Observability"
+  cross_references:
+    - { entity: weeks, week: 87 }
+
+- id: gpu-week-89
+  week: 89
+  module: "SGLang"
+  cross_references:
+    - { entity: weeks, week: 89 }

@@ -1,0 +1,113 @@
+# Mastery-level mathematics curriculum: 100 modules across 10 tracks.
+# Per T1.2: schema discipline with id / tier / level / seam /
+# cross_references. Phase 2-3 anchor the math weeks (W7-30).
+
+- id: math-track-1
+  track_number: 1
+  name: "Mathematical Foundations"
+  range: "Modules 1–10"
+  description: "Set theory, proofs, information and measure-theoretic foundations."
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:
+
+- id: math-track-None
+  track_number: None
+  name: ""
+  range: ""
+  description: ""
+  tier: core
+  level: 1
+  seam: "math foundations"
+  modules:
+  cross_references:

@@ -1,0 +1,471 @@
+# System design track (Weeks 46-57): canonical interview prep.
+# Per T1.2: schema discipline with id / tier / level / seam /
+# cross_references. Phase 5 anchors the system design weeks.
+
+# ============================================================================
+# Design weeks (Weeks 46-57)
+# ============================================================================
+
+- id: design-week-46
+  week: 46
+  topic: "Delivery framework, requirements, networking, numbers to know"
+  case_lab: "URL shortener / Bitly"
+  evidence: "Framed design + capacity sheet"
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: 46, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+- id: design-week-None
+  week: None
+  topic: ""
+  case_lab: ""
+  evidence: ""
+  tier: core
+  level: 2
+  seam: "system design"
+  cross_references:
+    - { entity: phases, phase_id: phase-5, role: "lives in Phase 5" }
+    - { entity: weeks, week: None, role: "spine alignment" }
+
+
+# ============================================================================
+# Four-layer design loop
+# ============================================================================
+
+- id: design-loop-frame
+  step: "Frame"
+  detail: "requirements, users, SLOs, scale, privacy, and cost"
+  tier: core
+  level: 2
+  seam: "system design methodology"
+
+- id: design-loop-
+  step: ""
+  detail: ""
+  tier: core
+  level: 2
+  seam: "system design methodology"
+
+- id: design-loop-
+  step: ""
+  detail: ""
+  tier: core
+  level: 2
+  seam: "system design methodology"
+
+- id: design-loop-
+  step: ""
+  detail: ""
+  tier: core
+  level: 2
+  seam: "system design methodology"
+
+
+# ============================================================================
+# Design patterns (canonical library)
+# ============================================================================
+
+- id: design-pattern-rate-limiter
+  pattern: "Rate limiter"
+  problem: "One user or tenant floods the API"
+  solution: "Token bucket or sliding window; distributed counter for horizontal scale"
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+- id: design-pattern-
+  pattern: ""
+  problem: ""
+  solution: ""
+  tier: core
+  level: 2
+  seam: "design patterns"
+
+
+# ============================================================================
+# Case studies (deep-dives)
+# ============================================================================
+
+- id: design-case-url-shortener
+  name: "URL shortener"
+  focuses: "Hashing, ID generation, cache, 301 vs 302"
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+- id: design-case-
+  name: ""
+  focuses: ""
+  tier: core
+  level: 2
+  seam: "case study"
+
+
+# ============================================================================
+# Case-study families
+# ============================================================================
+
+- id: design-family-storage-and-collaboration
+  family: "Storage and collaboration"
+  cases: "Dropbox, Google Docs, Discord message storage, Figma multiplayer"
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+- id: design-family-
+  family: ""
+  cases: ""
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+- id: design-family-
+  family: ""
+  cases: ""
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+- id: design-family-
+  family: ""
+  cases: ""
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+- id: design-family-
+  family: ""
+  cases: ""
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+- id: design-family-
+  family: ""
+  cases: ""
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+- id: design-family-
+  family: ""
+  cases: ""
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+- id: design-family-
+  family: ""
+  cases: ""
+  tier: core
+  level: 2
+  seam: "case-study taxonomy"
+
+
+# ============================================================================
+# OOD / LLD problems (Thursday implementation variant)
+# ============================================================================
+
+
+# ============================================================================
+# AI extensions (one per base design)
+# ============================================================================
+
+- id: ai-extension-whatsapp
+  base: "WhatsApp"
+  extension: "Semantic search, agent memory, PII-safe message retrieval"
+  tier: core
+  level: 3
+  seam: "design + AI"
+
+- id: ai-extension-
+  base: ""
+  extension: ""
+  tier: core
+  level: 3
+  seam: "design + AI"
+
+- id: ai-extension-
+  base: ""
+  extension: ""
+  tier: core
+  level: 3
+  seam: "design + AI"
+
+- id: ai-extension-
+  base: ""
+  extension: ""
+  tier: core
+  level: 3
+  seam: "design + AI"
+
+- id: ai-extension-
+  base: ""
+  extension: ""
+  tier: core
+  level: 3
+  seam: "design + AI"
+
+- id: ai-extension-
+  base: ""
+  extension: ""
+  tier: core
+  level: 3
+  seam: "design + AI"
+
+- id: ai-extension-
+  base: ""
+  extension: ""
+  tier: core
+  level: 3
+  seam: "design + AI"
+
+- id: ai-extension-
+  base: ""
+  extension: ""
+  tier: core
+  level: 3
+  seam: "design + AI"
