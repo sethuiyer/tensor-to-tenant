@@ -422,18 +422,18 @@ def verify_paper_citations() -> list[dict]:
     if resources_yaml.exists():
         text = resources_yaml.read_text(encoding="utf-8")
         ids = re.findall(r"-\s+id:\s+(\S+)", text)
-        missing_url = []
+        blocks = {}
         for paper_id in ids:
-            # Find the block for this id (next 50 lines or until next `- id:`).
+            # Find the block for this id (up to the next `- id:` line).
             block_match = re.search(
                 rf"-\s+id:\s+{re.escape(paper_id)}\s*\n(.*?)(?=\n-\s+id:|\Z)",
                 text,
                 re.DOTALL,
             )
             if block_match:
-                block = block_match.group(1)
-                if "url:" not in block:
-                    missing_url.append(paper_id)
+                blocks[paper_id] = block_match.group(1)
+
+        missing_url = [pid for pid, b in blocks.items() if "url:" not in b]
         if missing_url:
             findings.append({
                 "claim": "Every paper entry has a url field",
@@ -445,6 +445,29 @@ def verify_paper_citations() -> list[dict]:
                 "claim": "Every paper entry has a url field",
                 "verdict": "VERIFIED",
                 "evidence": f"all {len(ids)} entries have url fields",
+            })
+
+        # Core-tier entries are load-bearing, so an empty url is a real gap
+        # (the T1.13 review class where 13 core entries shipped with url: ""),
+        # not a stylistic choice. Guard against regression.
+        empty_url_core = []
+        for pid, b in blocks.items():
+            tier = re.search(r"\btier:\s*(\S+)", b)
+            url = re.search(r"\burl:\s*\"([^\"]*)\"", b)
+            if tier and tier.group(1) == "core" and (not url or url.group(1) == ""):
+                empty_url_core.append(pid)
+        if empty_url_core:
+            findings.append({
+                "claim": "Every core-tier paper entry has a non-empty url",
+                "verdict": "FLAGGED",
+                "evidence": f"empty url in core entries: {', '.join(empty_url_core[:5])}{'...' if len(empty_url_core) > 5 else ''}",
+            })
+        else:
+            core_count = sum(1 for b in blocks.values() if re.search(r"\btier:\s*core", b))
+            findings.append({
+                "claim": "Every core-tier paper entry has a non-empty url",
+                "verdict": "VERIFIED",
+                "evidence": f"all {core_count} core-tier entries have non-empty urls",
             })
 
     return findings

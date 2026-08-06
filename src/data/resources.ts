@@ -139,6 +139,8 @@ export const AGENT_PAPERS: AgentPaper[] = [
   { paper: 'Reflexion: Language Agents with Verbal Reinforcement Learning', venue: 'arXiv 2303.11366', topic: 'Self-verbalization and strategy updates', url: 'https://arxiv.org/abs/2303.11366' },
   { paper: 'AutoGen: Enabling Next-Gen Multi-Agent Applications', venue: 'Microsoft Research', topic: 'Collaborative protocol design', url: 'https://www.microsoft.com/en-us/research/project/autogen/' },
   { paper: 'Kùzu: An Embedded Property Graph Database', venue: 'Kùzu', topic: 'Architecture and performance of Kùzu', url: 'https://kuzudb.com/blog' },
+  { paper: 'Building Effective Agents', venue: 'Anthropic 2024', topic: 'Workflows vs agents, harness design patterns', url: 'https://www.anthropic.com/engineering/building-effective-agents' },
+  { paper: 'Best Practices for Claude Code', venue: 'Anthropic (engineering)', topic: 'Coding-agent harness: approval gates, session state, context budget, sandboxing', url: 'https://code.claude.com/docs/en/best-practices' },
 ];
 
 export interface BlogLink {

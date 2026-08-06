@@ -2,12 +2,12 @@
   "algorithm": "sha256",
   "files": {
     "cookiecutter/hooks/curriculum_generated.py": {
-      "bytes": 63514,
-      "sha256": "10808faf06add6e29a9a5f55ed2791eaebc62a2f1b1fc999ab6c957609dc1ca5"
+      "bytes": 63888,
+      "sha256": "34698af3ac96525e9872b48a7d7eb36040af4843f4106333fa5b667acce8ca4d"
     },
     "cookiecutter/{{cookiecutter.repo_name}}/.curriculum_generated.py": {
-      "bytes": 63514,
-      "sha256": "10808faf06add6e29a9a5f55ed2791eaebc62a2f1b1fc999ab6c957609dc1ca5"
+      "bytes": 63888,
+      "sha256": "34698af3ac96525e9872b48a7d7eb36040af4843f4106333fa5b667acce8ca4d"
     },
     "src/data/agents.ts": {
       "bytes": 33238,
@@ -54,8 +54,8 @@
       "sha256": "5a2885c512a5008dd2132bbe2c9205d5e56b581a172bdecc065df3db0560442e"
     },
     "src/data/resources.ts": {
-      "bytes": 17438,
-      "sha256": "8eba7d9ffd37f4866419c3da7a80229d841f415f141d4b7cf9e3130255d38d60"
+      "bytes": 17858,
+      "sha256": "fb87c53ddccc8ffebe8e8985856117a876ea304ff5ce84c52878114e96188ed9"
     },
     "src/data/systemDesign.ts": {
       "bytes": 10026,

@@ -2,7 +2,8 @@
 
 > Living document. Re‑prioritize as work lands.
 > Everything below was identified during the 2026‑01 deep‑research pass.
-> Sprint for tomorrow = **T1.4.b/c/d + T1.13** (see Suggested execution order).
+> All tracked tasks are complete (2026-08-06). This doc now carries only the
+> durable principles, the phase log, and the out-of-scope decisions.
 
 ---
 
@@ -93,13 +94,6 @@ operational form of P‑principle 1.
 
 ---
 
-## P1 — schema + tests + drift (this month)
-
-
----
-
----
-
 ## Status
 
 **All tracked tasks done as of 2026-08-06.** Schema spine + depth layer
@@ -118,8 +112,9 @@ Phase log:
   - `3eed1cc` T2.1-T2.4 + T2.6
 
 **Remaining work** (none tracked in this doc): see `docs/AUDIT.md` for the
-1 FLAGGED-FOR-HUMAN item (paper citation accuracy), and
-`docs/ARCHITECTURE.md` ADRs for deferred decisions (L100 cap fix,
+1 FLAGGED-FOR-HUMAN item (all 20 core-tier paper citations human-verified
+2026-08; the flag stays because the audit cannot auto-verify live accuracy),
+and `docs/ARCHITECTURE.md` ADRs for deferred decisions (L100 cap fix,
 cookiecutter extraction, schema formalization with Pydantic v2).
 
 
@@ -133,6 +128,6 @@ cookiecutter extraction, schema formalization with Pydantic v2).
 
 ---
 
-*Last updated: 2026‑08 (execution order reprioritized — content frozen).*
+*Last updated: 2026‑08 (all tracked tasks complete — content frozen).*
 *Owner: @sethuiyer.*
-*Status: ready for sprint planning.*
+*Status: closed.*
