@@ -394,7 +394,15 @@ AGENT_PAPERS_CC = [('ReAct: Synergizing Reasoning and Acting in Language Models'
  ('Kùzu: An Embedded Property Graph Database',
   'Kùzu',
   'Architecture and performance of Kùzu',
-  'https://kuzudb.com/blog')]
+  'https://kuzudb.com/blog'),
+ ('Building Effective Agents',
+  'Anthropic 2024',
+  'Workflows vs agents, harness design patterns',
+  'https://www.anthropic.com/engineering/building-effective-agents'),
+ ('Best Practices for Claude Code',
+  'Anthropic (engineering)',
+  'Coding-agent harness: approval gates, session state, context budget, sandboxing',
+  'https://code.claude.com/docs/en/best-practices')]
 
 AGENT_PAPER_WEEKS = {73: [7], 77: [4, 9], 79: [1, 2], 80: [6], 81: [0, 3, 5, 8]}
 

@@ -21,8 +21,8 @@
 - id: beyond_self_knowledge_uncertainty_propagation
   title: "Beyond Self-Knowledge: Propagating Uncertainty Across Reasoning and Retrieval in LLMs"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2607.25600"
   tier: core
   level: 3
   seam: "calibration -> uncertainty -> retrieval routing -> cost/quality"
@@ -40,10 +40,10 @@
     - { week: 78, role: "retrieval eval connection" }
 
 - id: dynamic_exploration_graph_ann
-  title: "Dynamic Exploration Graph: Efficient NN Search in Evolving Multimedia Datasets"
-  venue: "arXiv"
-  year: 2024
-  url: ""
+  title: "Dynamic Exploration Graph: A Novel Approach for Efficient Nearest Neighbor Search in Evolving Multimedia Datasets"
+  venue: "MMM 2025 (LNCS)"
+  year: 2025
+  url: "https://doi.org/10.1007/978-981-96-2054-8_25"
   tier: core
   level: 3
   seam: "static ANN index assumptions meet evolving corpora"
@@ -60,8 +60,8 @@
 - id: qasp_query_adaptive_vector_search
   title: "QASP: Query-Adaptive Robust Vector Search Policy"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2607.29606"
   tier: core
   level: 3
   seam: "fixed ef_search hides query-level variance"
@@ -81,8 +81,8 @@
 - id: hierarchical_bm25_billion_scale
   title: "Hierarchical BM25: Lexical Search at Billion-Document Scale"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2608.00229"
   tier: core
   level: 3
   seam: "lexical retrieval becomes a distributed-systems problem at scale"
@@ -102,8 +102,8 @@
 - id: tools_are_not_islands_hyperedge
   title: "Tools Are Not Islands: Set-Level Tool Retrieval for LLM Agents via Query-Conditioned Hyperedge Prediction"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2607.25718"
   tier: core
   level: 3
   seam: "pointwise tool retrieval vs structured tool-set retrieval"
@@ -122,8 +122,8 @@
 - id: verification_without_sufficiency
   title: "Verification Without Sufficiency: Per-Chunk Filtering Fails on Multi-Hop RAG, and Decomposition Repairs It"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2608.00585"
   tier: core
   level: 3
   seam: "RAG chunk relevance vs answer sufficiency"
@@ -139,10 +139,10 @@
     - { week: 77, role: "retrieval fusion precedent" }
 
 - id: triple_robustness_rag_analysis
-  title: "A Triple-Robustness Analysis of RAG for Multi-Hop Requirements Traceability"
+  title: "A Triple-Robustness Analysis of Retrieval-Augmented Generation for Multi-Hop Requirements Traceability"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2608.00705"
   tier: core
   level: 3
   seam: "eval robustness across embedder/judge/corpus"
@@ -161,8 +161,8 @@
 - id: diagnosing_long_horizon_search_agents
   title: "Diagnosing Search Behavior and Failure Modes in Long-Horizon Search Agents"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2608.01913"
   tier: core
   level: 3
   seam: "agent trajectory quality vs final-answer accuracy"
@@ -181,8 +181,8 @@
 - id: graph_native_bitemporal_memory
   title: "A Graph-Native Bitemporal Memory Store for Conversational AI Agents"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2607.26520"
   tier: core
   level: 3
   seam: "memory fidelity vs local temporal correctness"
@@ -200,8 +200,8 @@
 - id: reproducing_lightmem_naive_rag_baseline
   title: "Reproducing LightMem: Naive RAG Is Just as Good for Memory Management"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2607.29104"
   tier: core
   level: 3
   seam: "memory system complexity vs measured performance gain"
@@ -217,8 +217,8 @@
 - id: deep_agentic_search_repo_qa
   title: "Deep Agentic Search for Repository-Level Code Question Answering: An Empirical Study"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2608.01507"
   tier: core
   level: 3
   seam: "pre-indexed semantic retrieval vs active grep-style exploration"
@@ -235,8 +235,8 @@
 - id: fetch_then_explore_persistent_workspace
   title: "Fetch-then-Explore: Decoupling Selection from Extraction over a Persistent Workspace for Search Agents"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2608.02097"
   tier: core
   level: 3
   seam: "retrieval-extraction coupling in agent search"
@@ -251,10 +251,10 @@
     - { project: "manus", role: "agent UI automation" }
 
 - id: raguard_layered_defense
-  title: "RAGuard: A Layered Defense Framework for RAG Systems Against Data Poisoning"
+  title: "RAGuard: A Layered Defense Framework for Retrieval-Augmented Generation Systems Against Data Poisoning"
   venue: "arXiv"
-  year: 2024
-  url: ""
+  year: 2026
+  url: "https://arxiv.org/abs/2607.26339"
   tier: core
   level: 3
   seam: "corpus poisoning and prompt injection in production RAG"
@@ -589,10 +589,10 @@
     - { week: 81, role: "primary agent foundations week" }
 
 - id: claude_code_best_practices_agentic_coding
-  title: "Claude Code: Best Practices for Agentic Coding"
+  title: "Best Practices for Claude Code"
   venue: "Anthropic (engineering)"
   year: 2025
-  url: "https://www.anthropic.com/engineering/claude-code-best-practices"
+  url: "https://code.claude.com/docs/en/best-practices"
   tier: core
   level: 3
   seam: "the coding-agent harness: approval gates, session state, context budget, sandboxing"

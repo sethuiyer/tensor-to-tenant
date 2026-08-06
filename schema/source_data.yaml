@@ -2696,6 +2696,14 @@ resources:
     topic: Architecture and performance of Kùzu
     url: https://kuzudb.com/blog
     venue: Kùzu
+  - paper: 'Building Effective Agents'
+    topic: Workflows vs agents, harness design patterns
+    url: https://www.anthropic.com/engineering/building-effective-agents
+    venue: Anthropic 2024
+  - paper: 'Best Practices for Claude Code'
+    topic: 'Coding-agent harness: approval gates, session state, context budget, sandboxing'
+    url: https://code.claude.com/docs/en/best-practices
+    venue: Anthropic (engineering)
   BLOG_ARTICLES:
   - title: The shift to distributed LLM inference (BentoML)
     url: https://www.bentoml.com/blog/the-shift-to-distributed-llm-inference
