@@ -2721,6 +2721,8 @@ resources:
     url: https://horace.io/brrr_intro.html
   - title: Stanford CS336 Spring 2025 lectures
     url: https://github.com/stanford-cs336/spring2025-lectures
+  - title: CS336 Lecture 5 (Percy Liang, Tatsunori Hashimoto)
+    url: https://www.youtube.com/watch?v=fcgPYo3OtV0
   - title: GPU MODE Lecture 22 — Hacker’s Guide to Speculative Decoding
     url: https://www.youtube.com/watch?v=6OBtO9niT00
   - title: Transformer Inference Arithmetic (kipply)
