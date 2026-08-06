@@ -42,7 +42,7 @@ export const DESIGN_TECH_SUPPORTING = [
 ];
 
 export const DESIGN_TECH_QUESTION =
-  'The question is never “memorize the tool”; it is “what guarantee does this tool provide, and what does it make harder?”';
+  'For each tool, state the guarantee it provides and the trade-off it introduces.';
 
 export interface DesignPattern {
   pattern: string;

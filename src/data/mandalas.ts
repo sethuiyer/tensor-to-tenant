@@ -19,13 +19,13 @@ export interface Mandala {
 export const MANDALAS: Mandala[] = [
   {
     id: '1',
-    title: 'Build the learner’s operating system',
+    title: 'Build a reliable learning system',
     days: 'Days 1–48',
     weeks: 'Weeks 1–7',
     identity: 'Disciplined learner',
     topics: ['Python engineering, typing, testing and async fundamentals', 'NumPy, vectorization and broadcasting', 'Git, notebooks, Makefiles and reproducible experiments', 'Docker, HTTP, APIs and Linux basics', 'Personal mathematics and systems diagnostics', 'Weekly journals, evidence tracking and retrospectives', 'Vector spaces, span, basis and dimension'],
     evidence: ['course dashboard and repository', 'tested CLI project', 'numerical utility library', 'reproducible notebook', 'diagnostic gap map', 'containerized service', 'first mathematics problem set'],
-    transformation: 'They stop being someone “planning to study AI” and become someone with a functioning learning and engineering system.',
+    transformation: 'They replace vague plans to study AI with a working weekly process.',
   },
   {
     id: '2',
@@ -115,7 +115,7 @@ export const MANDALAS: Mandala[] = [
     identity: 'Experimentation engineer',
     topics: ['A/B-test significance calculation, absolute and relative lift', 'pooled standard errors, confidence intervals', 'paired bootstrap model comparison', 'Sample-Ratio Mismatch detection, chi-square diagnostics', 'feature-flag engines, deterministic sticky assignment', 'monitoring and drift detection, production incident analysis'],
     evidence: ['analyze_ab_test', 'bootstrap comparison package', 'SRM detector', 'feature-flag service', 'experiment-assignment service', 'monitoring specification', 'incident postmortem'],
-    transformation: 'They can distinguish “the metric increased” from “we have trustworthy evidence that the product improved.”',
+    transformation: 'They can tell when a metric moved and when the evidence supports changing the product.',
   },
   {
     id: '11',

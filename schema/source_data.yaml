@@ -1567,7 +1567,7 @@ interview:
 mandalas:
   MANDALAS:
   - id: '1'
-    title: Build the learner’s operating system
+    title: Build a reliable learning system
     days: Days 1–48
     weeks: Weeks 1–7
     identity: Disciplined learner
@@ -1587,8 +1587,7 @@ mandalas:
     - diagnostic gap map
     - containerized service
     - first mathematics problem set
-    transformation: They stop being someone “planning to study AI” and become someone with a functioning learning and engineering
-      system.
+    transformation: They replace vague plans to study AI with a working weekly process.
   - id: '2'
     title: Learn the geometry beneath intelligence
     days: Days 49–96
@@ -1771,7 +1770,7 @@ mandalas:
     - experiment-assignment service
     - monitoring specification
     - incident postmortem
-    transformation: They can distinguish “the metric increased” from “we have trustworthy evidence that the product improved.”
+    transformation: They can tell when a metric moved and when the evidence supports changing the product.
   - id: '11'
     title: Train, align and retrieve with LLMs
     days: Days 481–528

@@ -162,7 +162,7 @@ export const CAPSTONES: Capstone[] = [
     "subtitle": "Euler Tour + DSU on Tree",
     "weeks": "Week 108 · optional",
     "image": "/images/capstone_tree_nightmare_forensics.webp",
-    "description": "The optional Week 108 boss fight. If Capstone 1 was forensics over a flat log, this is forensics over a forest of agent execution trees. Combine systems design with esoteric tree algorithms for exact subtree queries.",
+    "description": "The optional Week 108 boss fight. If Capstone 1 was forensics over a flat log, this is forensics over a forest of agent execution trees. Combine systems design with tree algorithms for exact subtree queries.",
     "points": [
       "Forest assembly, reorder buffers, cycle detection",
       "Euler Tour to flatten subtree → range",
