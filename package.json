@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "python3 tools/generate.py --check",
+    "prebuild": "python3 tools/validate_schema.py && python3 tools/sync_partner_prompt.py && python3 tools/generate_capstones.py --check && python3 tools/generate.py --check && python3 tools/drift_report.py",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"

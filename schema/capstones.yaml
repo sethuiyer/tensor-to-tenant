@@ -1,0 +1,171 @@
+# Structured capstone catalog (T2.1).
+#
+# The long-form CAPSTONE*.md files remain the canonical narrative.  This file
+# owns the small, machine-readable artifacts that are rendered by the site and
+# checked by tools/generate_capstones.py.  Keep prose in the Markdown files;
+# keep examples, matrices, and page cards here so they have one source of truth.
+
+- id: capstone-1
+  number: 1
+  slug: trace-forensics
+  kind: required
+  chip: Required
+  chip_class: chip--ok
+  title: "Capstone 1 — Multi-Tenant LLM Trace Forensics"
+  subtitle: "Mo's Algorithm over immutable trace segments"
+  weeks: "Weeks 103–108"
+  image: /images/capstone_trace_forensics_infographic.webp
+  description: >-
+    A staff-level system design + coding capstone. Build the observability and
+    forensics platform for a large multi-tenant LLM gateway, then answer exact
+    batch forensic queries over immutable event segments with Mo's algorithm.
+    The required algorithmic capstone.
+  points:
+    - "High-throughput ingestion, PII safety"
+    - "Immutable segments, watermarks, correction deltas"
+    - "Mo's algorithm + frequency buckets"
+    - "Exact vs approximate mergeability"
+    - "24-point self-grading rubric"
+  prose_source: CAPSTONE.md
+  artifact_type: mos_range_query
+  events:
+    - { model_id: 1, is_error: true, tokens: 100 }
+    - { model_id: 2, is_error: false, tokens: 50 }
+    - { model_id: 1, is_error: true, tokens: 200 }
+    - { model_id: 3, is_error: true, tokens: 10 }
+    - { model_id: 2, is_error: true, tokens: 70 }
+    - { model_id: 1, is_error: false, tokens: 10 }
+  queries:
+    - [0, 4]
+    - [1, 5]
+  expected:
+    - { top_error_model: 1, count: 2, distinct: 3, wasted: 380 }
+    - { top_error_model: 2, count: 1, distinct: 2, wasted: 80 }
+
+- id: capstone-2
+  number: 2
+  slug: tree-forensics
+  kind: optional
+  chip: Boss fight
+  chip_class: chip--amber
+  title: "Capstone 2 — Agent Execution Forensics"
+  subtitle: "Euler Tour + DSU on Tree"
+  weeks: "Week 108 · optional"
+  image: /images/capstone_tree_nightmare_forensics.webp
+  description: >-
+    The optional Week 108 boss fight. If Capstone 1 was forensics over a flat
+    log, this is forensics over a forest of agent execution trees. Combine
+    systems design with esoteric tree algorithms for exact subtree queries.
+  points:
+    - "Forest assembly, reorder buffers, cycle detection"
+    - "Euler Tour to flatten subtree → range"
+    - "DSU on Tree (sack / keep-heavy)"
+    - "Reversible aggregates + mode tie-breaks"
+    - "Not required for the LLM Platform badge"
+  prose_source: CAPSTONE2_EULER_DSU.md
+  artifact_type: euler_dsu_subtree_query
+  tree:
+    root: 0
+    nodes:
+      - { id: 0, tool_id: 1, is_error: true, tokens: 100 }
+      - { id: 1, tool_id: 2, is_error: false, tokens: 50 }
+      - { id: 2, tool_id: 1, is_error: true, tokens: 200 }
+      - { id: 3, tool_id: 3, is_error: true, tokens: 10 }
+      - { id: 4, tool_id: 2, is_error: true, tokens: 70 }
+    children:
+      - [1, 2]
+      - []
+      - [3, 4]
+      - []
+      - []
+  queries: [0, 2]
+  expected:
+    - { top_error_tool: 1, top_error_count: 2, distinct_error_tools: 3, wasted_tokens: 380 }
+    - { top_error_tool: 1, top_error_count: 1, distinct_error_tools: 3, wasted_tokens: 280 }
+
+- id: capstone-3
+  number: 3
+  slug: ai-gateway
+  kind: alternative
+  chip: Gateway
+  chip_class: chip--violet
+  title: "Capstone 3 — Enterprise Multi-Model AI Gateway"
+  subtitle: "OpenRouter-inspired control + request plane"
+  weeks: "Weeks 103–108 · alternative"
+  image: /images/capstone3_enterprise_ai_gateway.webp
+  description: >-
+    An OpenRouter-inspired final capstone: design and build the control plane,
+    request plane, routing policy, reliability layer, enterprise tenancy, and
+    economics behind a unified multi-model AI gateway.
+  points:
+    - "One API → many models and providers"
+    - "Policy-compliant, explainable routing"
+    - "Stream-safe failover, idempotency, admission"
+    - "Append-only usage and cost ledger"
+    - "24-point rubric, PII-safe observability"
+  prose_source: CAPSTONE3_OPENROUTER.md
+  artifact_type: enterprise_gateway
+  promises:
+    - { label: one API, desc: "a normalized endpoint that hides provider-specific wire formats" }
+    - { label: many models and providers, desc: "a versioned registry of capabilities, regions, prices, and health" }
+    - { label: policy-compliant routing, desc: "filter by capability, region, data policy, allowlist, budget, and health" }
+    - { label: reliable streaming and failover, desc: "pre-token failover; post-token error, never silent replay" }
+    - { label: tenant isolation and fair admission, desc: "per-workspace budgets, concurrency, priority, fencing" }
+    - { label: exact usage and cost evidence, desc: "append-only idempotent ledger, deterministic settlement" }
+    - { label: enterprise controls and operational trust, desc: "SSO, guardrails, audit, SLAs, invoicing boundaries" }
+  failure_matrix:
+    - id: provider-timeout-before-tokens
+      failure: Provider timeout before tokens
+      expected_behavior: Retry/fail over within bounded retry budget
+    - id: provider-disconnect-after-first-token
+      failure: Provider disconnect after first token
+      expected_behavior: Do not transparently replay; emit stream error and partial-attempt event
+    - id: no-compliant-provider
+      failure: No provider meets ZDR/region policy
+      expected_behavior: Fail closed; explain rejected candidates
+    - id: duplicate-idempotency-key
+      failure: Duplicate idempotency key
+      expected_behavior: Return/reconcile the original logical request according to contract
+    - id: workspace-budget-exhausted
+      failure: Workspace budget exhausted
+      expected_behavior: Reject before provider dispatch
+    - id: tenant-concurrency-saturated
+      failure: Tenant concurrency saturated
+      expected_behavior: Queue, reject, or shed according to priority policy
+    - id: leader-lease-expires-mid-admission
+      failure: Leader lease expires mid-admission
+      expected_behavior: Fencing prevents stale owner from committing admission
+    - id: provider-price-changes
+      failure: Provider price changes
+      expected_behavior: New version applies to new decisions; old ledger remains reproducible
+    - id: malformed-provider-usage
+      failure: Malformed provider usage
+      expected_behavior: Quarantine settlement and alert; never invent silent cost
+    - id: pii-appears-in-payload
+      failure: PII appears in payload
+      expected_behavior: Redact or reject before durable trace emission
+  interview_questions:
+    - "Why is the gateway valuable if providers already expose APIs?"
+    - "What must be strongly consistent, and what can be eventually consistent?"
+    - "How do you prove a fallback did not violate data policy?"
+    - "When is retrying a stream unsafe?"
+    - "How do you prevent one tenant from buying all provider capacity?"
+    - "How do you reconcile provider usage with customer invoices?"
+    - "Which features should be bought from an identity, billing, or observability vendor?"
+  rubric:
+    points: 24
+    dimensions:
+      - product boundary
+      - API normalization
+      - registry
+      - routing
+      - data policy
+      - reliability
+      - tenancy
+      - accounting
+      - observability
+      - security
+      - benchmark
+      - staff defense
+    scoring: "Score each dimension 0–2."
+    passing: "18/24, no zero in policy, reliability, tenancy, or accounting, and a complete evidence bundle."

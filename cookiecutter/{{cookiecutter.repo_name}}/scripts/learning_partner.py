@@ -30,7 +30,7 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Iterable, Optional
 
 
 # --------------------------------------------------------------------------
@@ -49,6 +49,198 @@ README = Path("README.md")
 
 WEEK_RE = re.compile(r"week_(\d{1,3})\.md")
 START_DATE_RE = re.compile(r"Start date\*\*:\s*(\d{4}-\d{2}-\d{2})")
+
+# AGENTS.md is prose, so references are deliberately limited to unambiguous
+# ``Week 14``/``Weeks 70-81`` and ``Gate 7`` forms.  Placeholders such as
+# ``week_NNN`` and generic words such as "weekly" are not references.  The
+# parser also accepts the canonical schema IDs (``week-014``/``gate-7``).
+_WEEK_REFERENCE_RE = re.compile(
+    r"(?<![A-Za-z0-9])"
+    r"(?P<label>weeks?|w)"
+    r"(?:\s*[_-]?\s*)"
+    r"(?P<start>\d{1,3})"
+    r"(?:\s*(?P<range>to|through|[-–—])\s*(?P<end>\d{1,3}))?"
+    r"(?!\d)",
+    re.IGNORECASE,
+)
+_GATE_REFERENCE_RE = re.compile(
+    r"(?<![A-Za-z0-9])"
+    r"(?P<label>gates?|g)"
+    r"(?:\s*[_-]?\s*)"
+    r"(?P<start>\d{1,2})"
+    r"(?:\s*(?P<range>to|through|[-–—])\s*(?P<end>\d{1,2}))?"
+    r"(?!\d)",
+    re.IGNORECASE,
+)
+
+
+class PartnerPromptValidationError(ValueError):
+    """Raised when AGENTS.md points at a missing schema week or gate."""
+
+
+# More discoverable aliases for callers that do not know the implementation's
+# historical name.  Keep the exception specific so build and cookiecutter
+# errors can be caught without swallowing unrelated failures.
+PromptReferenceError = PartnerPromptValidationError
+
+
+def _reference_numbers(
+    match: re.Match[str], *, kind: str, text: str
+) -> list[int]:
+    """Expand one week/gate match into normalized integer IDs.
+
+    A range is expanded rather than checking just its endpoints: a schema
+    missing a week in the middle of ``Weeks 10-12`` must fail too.  Reversed
+    ranges are malformed prompt references and get a useful source error.
+    """
+    start = int(match.group("start"))
+    end_raw = match.group("end")
+    if end_raw is None:
+        return [start]
+    end = int(end_raw)
+    if end < start:
+        line = text.count("\n", 0, match.start()) + 1
+        raise PartnerPromptValidationError(
+            f"AGENTS.md line {line}: invalid {kind} range {match.group(0)!r} "
+            f"(range end {end} is before start {start})"
+        )
+    # The schema is intentionally small (108 weeks, ten gates); refuse an
+    # accidental enormous range instead of allocating unboundedly on bad prose.
+    if end - start > 1000:
+        line = text.count("\n", 0, match.start()) + 1
+        raise PartnerPromptValidationError(
+            f"AGENTS.md line {line}: {kind} range {match.group(0)!r} is too large"
+        )
+    return list(range(start, end + 1))
+
+
+def _collect_prompt_references(
+    text: str,
+) -> tuple[dict[int, list[int]], dict[str, list[int]]]:
+    """Return referenced week numbers and canonical gate IDs with line numbers."""
+    weeks: dict[int, list[int]] = {}
+    gates: dict[str, list[int]] = {}
+    for match in _WEEK_REFERENCE_RE.finditer(text):
+        for number in _reference_numbers(match, kind="week", text=text):
+            line = text.count("\n", 0, match.start()) + 1
+            weeks.setdefault(number, []).append(line)
+    for match in _GATE_REFERENCE_RE.finditer(text):
+        for number in _reference_numbers(match, kind="gate", text=text):
+            line = text.count("\n", 0, match.start()) + 1
+            gates.setdefault(f"gate-{number}", []).append(line)
+    return weeks, gates
+
+
+def extract_prompt_references(text: str) -> dict[str, set[Any]]:
+    """Extract normalized references from an AGENTS.md prompt.
+
+    The returned mapping has integer week numbers and canonical gate IDs, for
+    example ``{"weeks": {14}, "gates": {"gate-7"}}``.  It is intentionally
+    independent of the schema so callers can validate source templates and
+    generated projects with the same parser.
+    """
+    weeks, gates = _collect_prompt_references(text)
+    return {"weeks": set(weeks), "gates": set(gates)}
+
+
+# ``extract_agents_references`` is the name used by the build helper and is
+# kept as a small public alias for scripts that read naturally.
+extract_agents_references = extract_prompt_references
+
+
+def _normalize_week_id(value: Any) -> int:
+    if isinstance(value, bool):
+        raise ValueError(f"invalid schema week ID {value!r}")
+    if isinstance(value, int):
+        return value
+    raw = str(value).strip().lower()
+    match = re.fullmatch(r"(?:week[-_ ]?)?(\d{1,3})", raw)
+    if not match:
+        raise ValueError(f"invalid schema week ID {value!r}")
+    return int(match.group(1))
+
+
+def _normalize_gate_id(value: Any) -> str:
+    if isinstance(value, bool):
+        raise ValueError(f"invalid schema gate ID {value!r}")
+    raw = str(value).strip().lower()
+    match = re.fullmatch(r"(?:gate[-_ ]?)?(\d{1,2})", raw)
+    if not match:
+        raise ValueError(f"invalid schema gate ID {value!r}")
+    return f"gate-{int(match.group(1))}"
+
+
+def validate_agents_references(
+    text: str,
+    week_ids: Iterable[Any],
+    gate_ids: Iterable[Any],
+    *,
+    source: str | Path = "AGENTS.md",
+) -> None:
+    """Assert all numbered AGENTS.md references exist in schema IDs.
+
+    ``week_ids`` and ``gate_ids`` are explicit inputs so this function remains
+    stdlib-only in the learner repo (which does not ship the source YAML).
+    Build tooling passes IDs loaded from ``schema/weeks.yaml`` and
+    ``schema/gates.yaml``; the post-generation hook passes the generated
+    adapter's constants.  Errors include the prompt path, line, missing ID,
+    and a compact view of the schema's known IDs.
+    """
+    if not isinstance(text, str):
+        raise TypeError("AGENTS.md prompt must be text")
+    try:
+        valid_weeks = {_normalize_week_id(value) for value in week_ids}
+        valid_gates = {_normalize_gate_id(value) for value in gate_ids}
+    except (TypeError, ValueError) as error:
+        raise PartnerPromptValidationError(
+            f"invalid schema IDs while validating {source}: {error}"
+        ) from error
+
+    referenced_weeks, referenced_gates = _collect_prompt_references(text)
+    missing_weeks = sorted(set(referenced_weeks) - valid_weeks)
+    missing_gates = sorted(set(referenced_gates) - valid_gates)
+    if not missing_weeks and not missing_gates:
+        return
+
+    source_name = str(source)
+    details: list[str] = []
+    if missing_weeks:
+        week_details = ", ".join(
+            f"week-{number:03d} (line {referenced_weeks[number][0]})"
+            for number in missing_weeks
+        )
+        known = _format_known_numbers(valid_weeks, prefix="week")
+        details.append(f"unknown week reference(s): {week_details}; known: {known}")
+    if missing_gates:
+        gate_details = ", ".join(
+            f"{gate_id} (line {referenced_gates[gate_id][0]})"
+            for gate_id in missing_gates
+        )
+        known = _format_known_numbers(
+            {int(gate.removeprefix("gate-")) for gate in valid_gates},
+            prefix="gate",
+        )
+        details.append(f"unknown gate reference(s): {gate_details}; known: {known}")
+    raise PartnerPromptValidationError(f"{source_name}: " + "; ".join(details))
+
+
+def _format_known_numbers(numbers: set[int], *, prefix: str) -> str:
+    """Format known schema IDs compactly while retaining clear diagnostics."""
+    if not numbers:
+        return "<none>"
+    ordered = sorted(numbers)
+    if prefix == "week" and ordered == list(range(1, 109)):
+        return "week-001..week-108"
+    if prefix == "gate" and ordered == list(range(1, 11)):
+        return "gate-1..gate-10"
+    return ", ".join(
+        f"{prefix}-{number:03d}" if prefix == "week" else f"{prefix}-{number}"
+        for number in ordered
+    )
+
+
+# Alias used by a few callers/tests; the behavior and error type are identical.
+validate_prompt_references = validate_agents_references
 
 
 def _now() -> dt.date:

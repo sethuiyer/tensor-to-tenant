@@ -48,6 +48,53 @@ def repo_root() -> Path:
     return Path(os.environ.get("PROJECT_DIR", ".")).resolve()
 
 
+def validate_learning_partner_prompt(root: Path) -> None:
+    """Validate the rendered AGENTS.md against schema IDs in the adapter.
+
+    The learner repo does not include ``schema/*.yaml``.  The generated
+    adapter therefore carries the canonical IDs needed by the same validator
+    used by ``tools/sync_partner_prompt.py`` at source-build time.
+    """
+    agents_path = root / "AGENTS.md"
+    script_path = root / "scripts" / "learning_partner.py"
+    if not agents_path.exists():
+        raise RuntimeError(
+            "learning partner prompt validation failed: missing rendered AGENTS.md "
+            f"at {agents_path}"
+        )
+    if not script_path.exists():
+        raise RuntimeError(
+            "learning partner prompt validation failed: missing rendered validator "
+            f"at {script_path}"
+        )
+    if "WEEK_IDS" not in globals() or "GATE_IDS" not in globals():
+        raise RuntimeError(
+            "learning partner prompt validation failed: generated adapter is missing "
+            "WEEK_IDS/GATE_IDS; run tools/generate.py"
+        )
+
+    spec = importlib.util.spec_from_file_location("learning_partner_validator", script_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"cannot import learning partner validator: {script_path}")
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+        module.validate_agents_references(
+            agents_path.read_text(encoding="utf-8"),
+            WEEK_IDS,
+            GATE_IDS,
+            source=agents_path,
+        )
+    except Exception as error:
+        raise RuntimeError(
+            f"learning partner prompt validation failed for {agents_path}: {error}"
+        ) from error
+
+
+# Backward-compatible concise name for callers/tests.
+validate_partner_prompt = validate_learning_partner_prompt
+
+
 def monday_of(week_idx: int, start: dt.date) -> dt.date:
     return start + dt.timedelta(days=7 * (week_idx - 1))
 
@@ -1507,6 +1554,9 @@ def _seed_memory_db(root: Path) -> None:
 
 def main() -> None:
     root = repo_root()
+
+    sys.stdout.write("[t3] validating learning-partner prompt references...\n")
+    validate_learning_partner_prompt(root)
 
     start_raw = os.environ.get(
         "COOKIECUTTER_START_DATE",

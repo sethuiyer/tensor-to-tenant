@@ -453,31 +453,31 @@ specific implementation; the track is a pattern.
 This decision can be revisited when T2.6's schema-validation work
 lands, but for now the schema entry uses the generic name.
 
-### T2.1 Make the capstones also schema‑driven where possible
+### T2.1 Make the capstones also schema‑driven where possible — DONE
 
 - **Files:** new `schema/capstones/*.yaml`, possibly generated into `src/pages/capstones/*.astro` frontmatter.
 - **Detail:** the three capstones have structured artifacts (the Mo's coding problem has `events`, `queries`, `expected`; the DSU problem has `tree`, `queries`, `expected`; the AI gateway has `failure_matrix`, `interview_questions`, `rubric`). These could be schema entries that drive both the prose‑heavy `CAPSTONE*.md` files (cross‑referenced) and the page‑level tables.
 - **Acceptance:** the failure‑injection matrix in Capstone 3 is generated from a YAML list, not hand‑written twice in `CAPSTONE3_OPENROUTER.md` and `src/pages/capstones/ai-gateway.astro`.
 
-### T2.2 Schema‑validate the site content at build time
+### T2.2 Schema‑validate the site content at build time — DONE
 
 - **Files:** add a prebuild step to `package.json`.
 - **Detail:** run `tools/generate.py` as a prebuild step in `npm run build`. Fail the build if the schema doesn't round‑trip through the generators cleanly. This means a stale `src/data/*.ts` is *impossible* — Astro always builds from freshly generated files.
 - **Acceptance:** `npm run build` runs the generators first, fails loudly if the schema is invalid, and emits a `dist/` derived from the validated schema.
 
-### T2.3 Schema‑driven bridge generation
+### T2.3 Schema‑driven bridge generation — DONE
 
 - **Files:** `schema/agents.yaml` extends with bridge rows.
 - **Detail:** the `AGENT_BRIDGE_CC` table in `post_gen_project.py` and the `AGENT_BRIDGES` array in `src/data/agents.ts` are 1:1 duplicates of each other and of the rendering on `/agents/`. Pull all of them into the schema.
 - **Acceptance:** adding a new agent module + 4 bridge rows in `schema/agents.yaml` regenerates the cookiecutter, the site data, and the rendered `/agents/` page from one edit.
 
-### T2.4 A schema‑aware `learning_partner.py`
+### T2.4 A schema‑aware `learning_partner.py` — DONE
 
 - **Files:** the cookiecutter's `learning_partner.py` (already shipped), plus optional new `tools/sync_partner_prompt.py`.
 - **Detail:** the partner's system prompt is the `AGENTS.md` content. If `AGENTS.md` references week IDs or gate IDs, they should be validated against the schema at cookiecutter generation time — currently the prompt references weeks like "Week 14" without any check that "Week 14" is a valid week in the schema.
 - **Acceptance:** a build‑time assertion confirms every referenced week/gate ID in `AGENTS.md` exists in the schema.
 
-### T2.6 Build verification: schema → site → cookiecutter in one CI job
+### T2.6 Build verification: schema → site → cookiecutter in one CI job — DONE
 
 - **Files:** extend `test.yml`.
 - **Detail:** the pipeline becomes `validate schema → generate site data → build site → generate cookiecutter data → render cookiecutter in /tmp → pytest → diff against snapshots`. If any step fails, the PR is red.

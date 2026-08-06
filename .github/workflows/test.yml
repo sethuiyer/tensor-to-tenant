@@ -1,10 +1,8 @@
 name: Tests
 
-# Runs the test harness on every push to any branch and every PR.
-# Currently scoped to the cookiecutter generator's pure-Python
-# primitives (TASKS.md T1.4.a). Expands as T1.4.b–f land.
+# One end-to-end quality gate: schema -> generated views -> Astro -> Cookiecutter -> tests.
 
-on:
+"on":
   push:
     branches: [main, "agent/**"]
   pull_request:
@@ -13,14 +11,13 @@ on:
 permissions:
   contents: read
 
-# Same concurrency policy as deploy.yml: do not cancel in-progress runs.
 concurrency:
   group: tests
   cancel-in-progress: false
 
 jobs:
-  generator-tests:
-    name: Cookiecutter generator tests
+  quality:
+    name: Schema, site, and Cookiecutter quality gate
     runs-on: ubuntu-latest
 
     steps:
@@ -32,32 +29,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install pytest
+      - name: Install Python test and schema dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pytest pytest-cov
-
-      - name: Run tests
-        run: python -m pytest tests/ -v --tb=short
-
-      - name: Coverage report
-        if: success()
-        run: |
-          python -m pytest tests/ \
-            --cov=cookiecutter \
-            --cov-report=term-missing \
-            --cov-report=xml \
-            -q 2>/dev/null || true
-
-  # Site-build smoke check. Cheap insurance that the Astro build
-  # hasn't broken since the last deploy. Expands to full schema drift
-  # once T1.6 lands.
-  site-build:
-    name: Astro site build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+          python -m pip install pyyaml pytest pytest-cov cookiecutter
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -65,10 +40,37 @@ jobs:
           node-version: "24"
           cache: npm
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: npm ci
 
-      - name: Build site
+      - name: Validate canonical schema
+        run: python tools/validate_schema.py
+
+      - name: Generate and verify deterministic views
+        run: |
+          python tools/generate_capstones.py
+          python tools/generate.py
+          git diff --exit-code -- \
+            src/data \
+            CAPSTONE3_OPENROUTER.md \
+            cookiecutter/hooks/curriculum_generated.py \
+            cookiecutter/'"'"'{{cookiecutter.repo_name}}'"'"'/.curriculum_generated.py
+
+      - name: Build Astro site and run structural drift checks
         run: npm run build
 
-  # When both jobs above exist, they run in parallel.
+      - name: Render Cookiecutter artifact
+        run: |
+          output_dir="$(mktemp -d)"
+          cookiecutter cookiecutter --no-input --output-dir "$output_dir"
+          test -d "$output_dir/tensor-to-tenant-journal"
+
+      - name: Run Python tests
+        run: python -m pytest tests/ -v --tb=short
+
+      - name: Re-check schema/site drift
+        run: python tools/drift_report.py
+
+      - name: Coverage report
+        if: success()
+        run: python -m pytest tests/ --cov=cookiecutter --cov-report=term-missing --cov-report=xml
