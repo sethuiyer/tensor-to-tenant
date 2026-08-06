@@ -396,6 +396,8 @@ matrix below.
 
 ## Failure-injection matrix
 
+<!-- generated: capstone-3-failure-matrix:start -->
+
 | Failure | Expected behavior |
 |---|---|
 | Provider timeout before tokens | Retry/fail over within bounded retry budget |
@@ -408,6 +410,8 @@ matrix below.
 | Provider price changes | New version applies to new decisions; old ledger remains reproducible |
 | Malformed provider usage | Quarantine settlement and alert; never invent silent cost |
 | PII appears in payload | Redact or reject before durable trace emission |
+
+<!-- generated: capstone-3-failure-matrix:end -->
 
 # Part 3 — Evidence and portfolio release
 

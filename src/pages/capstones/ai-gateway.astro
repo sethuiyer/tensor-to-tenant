@@ -1,39 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { url } from '../../config';
+import { CAPSTONE_3 } from '../../data/capstones';
 
-const promises = [
-  { label: 'one API', desc: 'a normalized endpoint that hides provider-specific wire formats' },
-  { label: 'many models and providers', desc: 'a versioned registry of capabilities, regions, prices, and health' },
-  { label: 'policy-compliant routing', desc: 'filter by capability, region, data policy, allowlist, budget, and health' },
-  { label: 'reliable streaming and failover', desc: 'pre-token failover; post-token error, never silent replay' },
-  { label: 'tenant isolation and fair admission', desc: 'per-workspace budgets, concurrency, priority, fencing' },
-  { label: 'exact usage and cost evidence', desc: 'append-only idempotent ledger, deterministic settlement' },
-  { label: 'enterprise controls and operational trust', desc: 'SSO, guardrails, audit, SLAs, invoicing boundaries' },
-];
-
-const failureMatrix = [
-  ['Provider timeout before tokens', 'Retry/fail over within bounded retry budget'],
-  ['Provider disconnect after first token', 'Do not replay; emit stream error + partial-attempt event'],
-  ['No provider meets ZDR/region policy', 'Fail closed; explain rejected candidates'],
-  ['Duplicate idempotency key', 'Reconcile the original logical request'],
-  ['Workspace budget exhausted', 'Reject before provider dispatch'],
-  ['Tenant concurrency saturated', 'Queue, reject, or shed per priority policy'],
-  ['Leader lease expires mid-admission', 'Fencing prevents stale owner from committing'],
-  ['Provider price changes', 'New version for new decisions; old ledger stays reproducible'],
-  ['Malformed provider usage', 'Quarantine settlement and alert; never invent silent cost'],
-  ['PII appears in payload', 'Redact or reject before durable trace emission'],
-];
-
-const interviewQuestions = [
-  'Why is the gateway valuable if providers already expose APIs?',
-  'What must be strongly consistent, and what can be eventually consistent?',
-  'How do you prove a fallback did not violate data policy?',
-  'When is retrying a stream unsafe?',
-  'How do you prevent one tenant from buying all provider capacity?',
-  'How do you reconcile provider usage with customer invoices?',
-  'Which features should be bought from an identity, billing, or observability vendor?',
-];
+// Structured examples are generated from schema/capstones.yaml. Keep the
+// surrounding explanation here: the Markdown spec remains prose-heavy.
+const promises = CAPSTONE_3.promises ?? [];
+const failureMatrix = CAPSTONE_3.failureMatrix ?? [];
+const interviewQuestions = CAPSTONE_3.interviewQuestions ?? [];
 ---
 
 <BaseLayout title="Capstone 3 — Enterprise Multi-Model AI Gateway" description="The OpenRouter-inspired enterprise AI gateway capstone." activeNav="capstones">
@@ -86,7 +60,7 @@ const interviewQuestions = [
         <thead><tr><th>Failure</th><th>Expected behavior</th></tr></thead>
         <tbody>
           {failureMatrix.map((r) => (
-            <tr><td style="min-width:240px"><strong>{r[0]}</strong></td><td>{r[1]}</td></tr>
+            <tr><td style="min-width:240px"><strong>{r.failure}</strong></td><td>{r.expectedBehavior}</td></tr>
           ))}
         </tbody>
       </table>

@@ -60,6 +60,7 @@ Every entry in any entity file must pass:
 | `implementation_exercises.yaml` | TensorTonic catalog + Pattern C prerequisites | T1.10 (landing Phase 2) |
 | `deep_dives.yaml` | Parallel-track pair registry (T1.12) | T1.12 (theory + production pairs) |
 | `prerequisites.yaml` | 9-resource on-ramp | Coming with T1.2 |
+| `capstones.yaml` | Three capstone page cards and structured artifacts | T2.1 |
 
 ## Schema discipline is enforced in three places
 

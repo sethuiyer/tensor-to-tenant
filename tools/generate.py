@@ -314,6 +314,69 @@ def _validate_ids(records: list[dict[str, Any]], path: Path, *, prefix: str | No
         seen.add(identifier)
 
 
+def _agent_module_ref(value: Any) -> str:
+    """Return the stable module key used by site and cookiecutter views.
+
+    Bridge-summary records use the display form ``Module 7`` while bridge
+    records use the machine-facing form ``7``.  Keeping this conversion in
+    one place makes validation and overlaying work for either form (and for
+    future modules such as ``7.5``).
+    """
+    text = str(value).strip()
+    if text.lower().startswith("module "):
+        return text[7:].strip()
+    return text
+
+
+def _validate_agents_schema(records: list[dict[str, Any]], path: Path) -> None:
+    """Validate references shared by the three bridge exports.
+
+    ``source_data.yaml`` is a migration fixture, so checking only duplicate
+    record IDs is not enough: a newly-added bridge can otherwise silently
+    disappear when its module key does not match the legacy TypeScript view.
+    These checks keep the bridge, summary, and pitch rows usable by both
+    renderers without imposing a fixed number of modules or rows.
+    """
+    module_rows = [row for row in records if str(row.get("id", "")).startswith("agent-module-")]
+    module_ids: set[str] = set()
+    for index, row in enumerate(module_rows):
+        module_id = row.get("module_id")
+        if module_id in (None, ""):
+            raise _schema_error(path, f"agent module record {row.get('id')!r} has no module_id")
+        ref = _agent_module_ref(module_id)
+        if ref in module_ids:
+            raise _schema_error(path, f"duplicate agent module_id {module_id!r}")
+        module_ids.add(ref)
+        for field in ("title", "topics"):
+            if row.get(field) in (None, "") or (field == "topics" and not isinstance(row.get(field), list)):
+                raise _schema_error(path, f"agent module record {row.get('id')!r} has invalid {field}")
+
+    bridge_rows = [row for row in records if str(row.get("id", "")).startswith("agent-bridge-")]
+    for row in bridge_rows:
+        module = row.get("module", row.get("module_id"))
+        ref = _agent_module_ref(module) if module not in (None, "") else ""
+        if not ref or ref not in module_ids:
+            raise _schema_error(path, f"bridge {row.get('id')!r} references unknown module {module!r}")
+        rows = row.get("rows")
+        if not isinstance(rows, list) or not rows:
+            raise _schema_error(path, f"bridge {row.get('id')!r} must contain at least one row")
+        for row_index, bridge_row in enumerate(rows):
+            if not isinstance(bridge_row, dict):
+                raise _schema_error(path, f"bridge {row.get('id')!r} row {row_index} is not a mapping")
+            missing = [field for field in ("concept", "weeks", "insight") if bridge_row.get(field) in (None, "")]
+            if missing:
+                raise _schema_error(path, f"bridge {row.get('id')!r} row {row_index} is missing {', '.join(missing)}")
+
+    summary_rows = [row for row in records if str(row.get("id", "")).startswith("bridge-summary-")]
+    for row in summary_rows:
+        module = row.get("module")
+        ref = _agent_module_ref(module) if module not in (None, "") else ""
+        if not ref or ref not in module_ids:
+            raise _schema_error(path, f"bridge summary {row.get('id')!r} references unknown module {module!r}")
+        if row.get("weeks") in (None, ""):
+            raise _schema_error(path, f"bridge summary {row.get('id')!r} has no weeks")
+
+
 def _validate_curriculum_schema() -> None:
     """Fail before writing anything when the spine schema is inconsistent."""
     weeks_path = SCHEMA_DIR / "weeks.yaml"
@@ -412,6 +475,8 @@ def _validate_curriculum_schema() -> None:
                 continue
             meaningful.append(row)
         _validate_ids(meaningful, entity_path)
+        if entity_name == "agents.yaml":
+            _validate_agents_schema(meaningful, entity_path)
 
     deep_path = SCHEMA_DIR / "deep_dives.yaml"
     if deep_path.exists():
@@ -423,6 +488,116 @@ def _validate_curriculum_schema() -> None:
             roles = {artifact.get("role") for artifact in artifacts}
             if roles != {"theory", "production"}:
                 raise _schema_error(deep_path, f"{track['id']} must have theory and production artifacts")
+
+def _apply_agent_schema_overrides(
+    effective: dict[str, dict[str, Any]], agents_schema: list[dict[str, Any]]
+) -> None:
+    """Overlay all agent-track exports from ``agents.yaml``.
+
+    The first schema migration used ``source_data.yaml`` as a compatibility
+    snapshot and only updated rows that already existed there.  That made a
+    new module/bridge appear to be accepted while silently dropping it from
+    ``AGENT_BRIDGES`` and ``AGENT_BRIDGE_CC``.  Agent modules, bridge rows,
+    summaries, and the pitch are now materialized from their schema records;
+    existing snapshot rows are used only to retain legacy fields while a
+    record is being migrated.
+    """
+    agents_target = effective.setdefault("agents", {})
+
+    source_modules = agents_target.get("AGENT_MODULES", [])
+    module_by_id = {
+        _agent_module_ref(item.get("id")): item
+        for item in source_modules
+        if isinstance(item, dict) and item.get("id") not in (None, "")
+    }
+    modules: list[dict[str, Any]] = []
+    module_fields = ("title", "theme", "topics", "outcomes", "sections", "labs")
+    for row in agents_schema:
+        identifier = str(row.get("id", ""))
+        if not identifier.startswith("agent-module-"):
+            continue
+        module_id = row.get("module_id")
+        if module_id in (None, ""):
+            # Validation reports the actionable error in normal generation;
+            # ignoring it here keeps this adapter safe for direct callers.
+            continue
+        ref = _agent_module_ref(module_id)
+        target = copy.deepcopy(module_by_id.get(ref, {}))
+        target["id"] = ref
+        for field in module_fields:
+            if field in row:
+                value = row[field]
+                if value is None:
+                    target.pop(field, None)
+                else:
+                    target[field] = copy.deepcopy(value)
+            elif field in target:
+                # Optional fields removed from the canonical row must not
+                # survive from the migration snapshot.
+                target.pop(field, None)
+        modules.append(target)
+    if modules:
+        agents_target["AGENT_MODULES"] = modules
+
+    source_bridges = agents_target.get("AGENT_BRIDGES", [])
+    bridge_by_module = {
+        _agent_module_ref(item.get("module")): item
+        for item in source_bridges
+        if isinstance(item, dict) and item.get("module") not in (None, "")
+    }
+    bridges: list[dict[str, Any]] = []
+    for row in agents_schema:
+        identifier = str(row.get("id", ""))
+        if not identifier.startswith("agent-bridge-"):
+            continue
+        module = row.get("module", row.get("module_id"))
+        if module in (None, ""):
+            continue
+        ref = _agent_module_ref(module)
+        previous = bridge_by_module.get(ref, {})
+        bridge = {
+            "module": ref,
+            "title": row.get("title", previous.get("title", "")),
+            "gap": row.get("gap", previous.get("gap", "")),
+            "rows": [],
+        }
+        bridge_rows = row.get("rows", previous.get("rows", []))
+        for bridge_row in bridge_rows or []:
+            if not isinstance(bridge_row, dict):
+                continue
+            bridge["rows"].append(
+                {
+                    field: copy.deepcopy(bridge_row.get(field, ""))
+                    for field in ("concept", "weeks", "insight")
+                }
+            )
+        bridges.append(bridge)
+    if bridges:
+        agents_target["AGENT_BRIDGES"] = bridges
+
+    summary_rows = [
+        row
+        for row in agents_schema
+        if str(row.get("id", "")).startswith("bridge-summary-")
+    ]
+    if summary_rows:
+        agents_target["BRIDGE_SUMMARY"] = [
+            {
+                "module": row.get("module", ""),
+                "weeks": row.get("weeks", ""),
+            }
+            for row in summary_rows
+        ]
+
+    pitch_rows = [row for row in agents_schema if row.get("id") == "bridge-pitch"]
+    if pitch_rows:
+        previous_pitch = agents_target.get("BRIDGE_PITCH", {})
+        pitch = {
+            "quote": pitch_rows[0].get("quote", previous_pitch.get("quote", "")),
+            "tag": pitch_rows[0].get("tag", previous_pitch.get("tag", "")),
+        }
+        agents_target["BRIDGE_PITCH"] = pitch
+
 
 def _apply_schema_overrides(source: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
     """Overlay canonical entity fields onto the compatibility snapshot.
@@ -513,13 +688,8 @@ def _apply_schema_overrides(source: dict[str, dict[str, Any]]) -> dict[str, dict
                     target[target_field] = row[source_field]
 
     agents_schema = _records(_load_yaml(SCHEMA_DIR / "agents.yaml"))
-    merge_rows(
-        "agents",
-        "AGENT_MODULES",
-        [{**row, "id": row.get("module_id")} for row in agents_schema if re.fullmatch(r"agent-module-(?:\d+(?:\.5)?)", str(row.get("id", "")))],
-        "id",
-        {"id": "id", "title": "title", "theme": "theme", "topics": "topics", "outcomes": "outcomes", "sections": "sections", "labs": "labs"},
-    )
+    _apply_agent_schema_overrides(effective, agents_schema)
+
     for row in agents_schema:
         if row.get("id") == "project-manus" and isinstance(effective.get("agents", {}).get("MANUS_CAPSTONE"), dict):
             target = effective["agents"]["MANUS_CAPSTONE"]
@@ -530,21 +700,6 @@ def _apply_schema_overrides(source: dict[str, dict[str, Any]]) -> dict[str, dict
             }.items():
                 if source_field in row and row[source_field] not in (None, "", []):
                     target[target_field] = row[source_field]
-
-    for row in agents_schema:
-        identifier = str(row.get("id", ""))
-        if identifier.startswith("agent-bridge-") and row.get("module"):
-            for target in effective.get("agents", {}).get("AGENT_BRIDGES", []):
-                if str(target.get("module")) == str(row["module"]):
-                    target.update({k: row[k] for k in ("title", "gap", "rows") if k in row})
-        elif identifier.startswith("bridge-summary-") and row.get("module"):
-            for target in effective.get("agents", {}).get("BRIDGE_SUMMARY", []):
-                if target.get("module") == row["module"]:
-                    target["weeks"] = row.get("weeks", target.get("weeks", ""))
-        elif identifier == "bridge-pitch":
-            pitch_target = effective.get("agents", {}).get("BRIDGE_PITCH")
-            if isinstance(pitch_target, dict):
-                pitch_target.update({k: row[k] for k in ("quote", "tag") if k in row})
 
     mandala_rows = _records(_load_yaml(SCHEMA_DIR / "mandalas.yaml"))
     for row in mandala_rows:
@@ -790,6 +945,34 @@ def _hook_values(effective: dict[str, dict[str, Any]], cookie: dict[str, Any]) -
     ]
 
     gate_schema = _records(_load_yaml(SCHEMA_DIR / "gates.yaml"))
+    # Keep canonical IDs in the adapter so the rendered cookiecutter hook can
+    # validate AGENTS.md without copying the source schema into learner repos.
+    # Week IDs are schema IDs (week-001), while gate IDs retain gate-1 style;
+    # GATE_WEEKS supplies the useful gate -> exit-week relationship.
+    week_ids = tuple(
+        str(record["id"])
+        for record in sorted(
+            _records(_load_yaml(SCHEMA_DIR / "weeks.yaml")),
+            key=lambda item: int(_number(item.get("week", 0)))
+            if item.get("week") is not None
+            else -1,
+        )
+        if _valid_id(record, "week-") and record.get("week") is not None
+    )
+    gate_records = [
+        record
+        for record in gate_schema
+        if _valid_id(record, "gate-") and record.get("gate") is not None
+    ]
+    gate_ids = tuple(
+        str(record["id"])
+        for record in sorted(gate_records, key=lambda item: int(_number(item["gate"])))
+    )
+    gate_weeks = {
+        str(record["id"]): int(_number(record["week"]))
+        for record in sorted(gate_records, key=lambda item: int(_number(item["gate"])))
+        if record.get("week") is not None
+    }
     programs = [record for record in gate_schema if record.get("release_week") is not None]
     program_tuples = [
         (
@@ -875,6 +1058,9 @@ def _hook_values(effective: dict[str, dict[str, Any]], cookie: dict[str, Any]) -
     values.update(
         {
             "PHASES": phase_tuples,
+            "WEEK_IDS": week_ids,
+            "GATE_IDS": gate_ids,
+            "GATE_WEEKS": gate_weeks,
             "PROGRAMS": program_tuples,
             "RECOVERY_AFTER": weeks.get("RECOVERY_AFTER", []),
             "RELEASES": releases,

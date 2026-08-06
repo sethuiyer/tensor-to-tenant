@@ -2,16 +2,20 @@
   "algorithm": "sha256",
   "files": {
     "cookiecutter/hooks/curriculum_generated.py": {
-      "bytes": 61777,
-      "sha256": "f70f0f63ec93a313b1e13418951cf4629a315a59cd1b7c7457eff9f0eb06ee52"
+      "bytes": 63514,
+      "sha256": "10808faf06add6e29a9a5f55ed2791eaebc62a2f1b1fc999ab6c957609dc1ca5"
     },
     "cookiecutter/{{cookiecutter.repo_name}}/.curriculum_generated.py": {
-      "bytes": 61777,
-      "sha256": "f70f0f63ec93a313b1e13418951cf4629a315a59cd1b7c7457eff9f0eb06ee52"
+      "bytes": 63514,
+      "sha256": "10808faf06add6e29a9a5f55ed2791eaebc62a2f1b1fc999ab6c957609dc1ca5"
     },
     "src/data/agents.ts": {
       "bytes": 33238,
       "sha256": "5a636a50d521c5e066f3cabde60199cf7fa316853bef07873bc59ef9ece37ee2"
+    },
+    "src/data/capstones.ts": {
+      "bytes": 10644,
+      "sha256": "6ca141c76e3b13ef9e5eb1c1053b4a6a6a0526aaab09af36fcde52bea1e2f675"
     },
     "src/data/darbar.ts": {
       "bytes": 6186,
