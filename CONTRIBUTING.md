@@ -20,6 +20,7 @@ contract:
 | `src/data/*.ts` and `src/pages/*.astro` | Site code | See "Site code" below. |
 | `cookiecutter/` and its subdirectories | Learner-repo generator | See "Generator code" below. |
 | `TASKS.md`, `CONTRIBUTING.md`, `CODEOWNERS`, `.github/` | Project meta | Should match the schema discipline in TASKS.md. |
+| `docs/*.md` | Documentation index, architecture, migration notes, and reader-facing policy | Keep structured facts in `schema/`; use docs for rationale, routing, and operating contracts. |
 | `SEARCH.md`, `SNOWFLAKE.md`, `ML_CODING_CHALLENGES.md`, future `*.md` deep-dives | Parallel-track content | See "Deep-dives" below. |
 
 ---

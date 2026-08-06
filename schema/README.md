@@ -1,23 +1,23 @@
 # Tensor-to-Tenant canonical schema
 
-> **Status:** provisional format. Formal decision lands in T1.1.
-> Working assumption: **YAML** files + (eventually) Pydantic v2 validation
-> + JSON Schema export to TypeScript types. See TASKS.md § T1.1 for the
-> design space.
+> **Status:** schema-backed generation is landed; the YAML format remains
+> provisional until the deferred Pydantic/JSON-Schema decision is made.
+> Structured curriculum facts live here; narrative specifications and teaching
+> briefs remain in Markdown; site and cookiecutter views are generated sinks.
 
 ## Why a schema at all
 
-Curriculum content lives in three places that must stay in sync:
+Curriculum information has two intentional authoring surfaces:
 
-1. **Markdown prose** (`CAPSTONE.md`, `MANDALA.md`, etc.) — the canonical
-   narrative.
-2. **Site data** (`src/data/*.ts`) — what the Astro site renders.
-3. **Cookiecutter constants** (`cookiecutter/hooks/post_gen_project.py`) —
-   what the learner-repo generator emits.
+1. **Structured facts** (`schema/*.yaml`) — weeks, gates, resources, modules,
+   mappings, and metadata; this is the source for generated views.
+2. **Narrative artifacts** (root Markdown and focused `docs/*.md`) — rationale,
+   specifications, teaching briefs, templates, and deep dives that are not
+   useful as typed row data.
 
-Today these three are hand-written and drift silently. The schema is the
-single source of truth that generators (T1.3) read from to produce (2)
-and (3), and that drift checks (T1.6) verify against (1).
+The generated site data (`src/data/*.ts`) and generated learner-repo docs/constants
+are downstream sinks. Do not hand-edit them or create a second Markdown copy of
+a structured catalog.
 
 `source_data.yaml` and `cookiecutter.yaml` are generated migration fixtures.
 They retain legacy exports that were not represented by the first entity pass;
@@ -45,21 +45,21 @@ Every entry in any entity file must pass:
 | File | Contents | Status |
 |---|---|---|
 | `resources.yaml` | Papers, videos, books, blogs, agent papers | T1.8 + T1.8.g + T1.8.h + T1.8.i (landed Phase 2) |
-| `weeks.yaml` | 108-week spine, one entry per week | Coming with T1.2 |
-| `gates.yaml` | 10 milestone gates | Coming with T1.2 |
-| `programs.yaml` | 3 stackable programs | Coming with T1.2 |
-| `mandalas.yaml` | 16 mandalas | Coming with T1.2 |
-| `math.yaml` | 100-module math curriculum | Coming with T1.2 |
-| `forge.yaml` | Algorithmic Forge lanes/bosses | Coming with T1.2 |
-| `darbar.yaml` | Leetcode Darbar catalog summary | Coming with T1.2 |
-| `engineering.yaml` | 30 engineering tasks + 40 drills | Coming with T1.2 |
-| `system_design.yaml` | Weeks 46–57 design track | Coming with T1.2 |
-| `agents.yaml` | 18 agent modules + bridges + Manus | Coming with T1.2 |
-| `interview.yaml` | CARL stories + 176-item roadmap | Coming with T1.2 |
+| `weeks.yaml` | 108-week spine, one entry per week | Landed in schema-backed generation |
+| `gates.yaml` | 10 milestone gates | Landed in schema-backed generation |
+| `gates.yaml` | 3 stackable programs + 10 milestone gates | Landed in schema-backed generation |
+| `mandalas.yaml` | 16 mandalas | Landed in schema-backed generation |
+| `math.yaml` | 100-module math curriculum | Landed in schema-backed generation |
+| `forge.yaml` | Algorithmic Forge lanes/bosses | Landed in schema-backed generation |
+| `darbar.yaml` | Leetcode Darbar catalog summary | Landed in schema-backed generation |
+| `engineering.yaml` | 30 engineering tasks + 40 drills | Landed in schema-backed generation |
+| `system_design.yaml` | Weeks 46–57 design track | Landed in schema-backed generation |
+| `agents.yaml` | 18 agent modules + bridges + Manus | Landed in schema-backed generation |
+| `interview.yaml` | CARL stories + 176-item roadmap | Landed in schema-backed generation |
 | `interview_questions.yaml` | Level 3 question bank (T1.11) | T1.11 (landing Phase 2) |
 | `implementation_exercises.yaml` | TensorTonic catalog + Pattern C prerequisites | T1.10 (landing Phase 2) |
 | `deep_dives.yaml` | Parallel-track pair registry (T1.12) | T1.12 (theory + production pairs) |
-| `prerequisites.yaml` | 9-resource on-ramp | Coming with T1.2 |
+| `prerequisites.yaml` | 9-resource on-ramp | Landed in schema-backed generation |
 | `capstones.yaml` | Three capstone page cards and structured artifacts | T2.1 |
 
 ## Schema discipline is enforced in three places
@@ -81,13 +81,13 @@ Every entry in any entity file must pass:
 - IDs use `snake_case` and must be unique within their entity file.
 - Cross-references use the `id` of the target entity, not its path.
 
-## Pydantic v2 (when T1.1 lands)
+## Pydantic v2 (deferred decision)
 
-Each entity file will have a sibling `models.py` that defines a
+If adopted, each entity file will have a sibling `models.py` that defines a
 Pydantic v2 model for the entity type, with validators that enforce
 the discipline above. Loading any entity file will validate it at
 import time. JSON Schema export from Pydantic will generate the
 TypeScript types for `src/data/*.ts`.
 
-Until that lands, the schema files are documentation plus a CI
-contract enforced by drift-check tests (T1.6).
+Until that decision lands, the YAML files plus generator/validation tools are
+the contract enforced by drift-check tests.

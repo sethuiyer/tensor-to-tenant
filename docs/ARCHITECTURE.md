@@ -32,12 +32,13 @@ constraints on top of YAML.
 
 ## ADR-002: Source-of-truth architecture (single schema, multiple sinks)
 
-**Status:** T1.2 / T1.3 / T1.7 in flight.
+**Status:** accepted; schema generation and drift checks are landed.
 
-**Decision:** `schema/*.yaml` is canonical. `src/data/*.ts` and
-`cookiecutter/hooks/post_gen_project.py` constants are *generated*
-sinks. The site renders from the generated TS; the cookiecutter
-generator imports from the generated Python.
+**Decision:** `schema/*.yaml` is canonical for structured curriculum facts.
+`src/data/*.ts` and generated cookiecutter views are downstream sinks. The
+site renders from generated TS; the cookiecutter generator imports generated
+Python. Root Markdown is reserved for narrative rationale, specifications,
+templates, and deep dives—not a second copy of the structured catalogs.
 
 **Alternatives considered:**
 - Hand-edit both surfaces in sync (current state; drift-prone)
@@ -160,10 +161,9 @@ These are queued for future ADR entries:
 - **Cookiecutter Jinja syntax** — currently uses `{{ var }}`. Is this
   the right shape for the generator when it's emitted from a Python
   script?
-- **README length** — currently 1,865 lines. Some content is
-  duplicated between README and TASKS.md (the "what's the arc"
-  section appears in both). Worth deduplicating, or worth preserving
-  the README's standalone-readable property?
+- **README length** — resolved in the 2026 rewrite: `README.md` is the
+  action-first launchpad; unique rationale and operating policy live in
+  `docs/`, while structured catalogs remain schema/site-backed.
 
 ---
 
