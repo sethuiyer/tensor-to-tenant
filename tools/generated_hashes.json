@@ -2,20 +2,20 @@
   "algorithm": "sha256",
   "files": {
     "cookiecutter/hooks/curriculum_generated.py": {
-      "bytes": 63855,
-      "sha256": "667d5470192c5ea00435b23bf11ef71691b6936e2e72bfe47c7c2cf7ba766e96"
+      "bytes": 63757,
+      "sha256": "c06aaa56b47d10a4d8755d7e811f02a810e1e61a74c3e5b0b0f90f6b0165cb15"
     },
     "cookiecutter/{{cookiecutter.repo_name}}/.curriculum_generated.py": {
-      "bytes": 63855,
-      "sha256": "667d5470192c5ea00435b23bf11ef71691b6936e2e72bfe47c7c2cf7ba766e96"
+      "bytes": 63757,
+      "sha256": "c06aaa56b47d10a4d8755d7e811f02a810e1e61a74c3e5b0b0f90f6b0165cb15"
     },
     "src/data/agents.ts": {
       "bytes": 30895,
       "sha256": "4fa23a06c668ca8328239cbc5c5c62ff7ae089d464ae606d825e433dc7ba935a"
     },
     "src/data/capstones.ts": {
-      "bytes": 10638,
-      "sha256": "f29a7e33ada49d3bff015440043e13f37b42f044145e42b8df598b7e16d3cc76"
+      "bytes": 10629,
+      "sha256": "0c988cd8cf2a31da3f5440973bea6fc32f1ccff937990d7dd9d786f49520a805"
     },
     "src/data/darbar.ts": {
       "bytes": 6172,
@@ -42,8 +42,8 @@
       "sha256": "80c1ac24ea1216b15b124dc86f6dd2f049929b9c27a6ab233fe56dabd337d221"
     },
     "src/data/mandalas.ts": {
-      "bytes": 13742,
-      "sha256": "6d509732162e2563e9ca533abfcf31a802d8316af1749c05560adb81a77961a5"
+      "bytes": 13654,
+      "sha256": "651b2d1084c98f4cf54a2c5dbf64884d017186786ce648d7671be3d149a4e871"
     },
     "src/data/math.ts": {
       "bytes": 12218,
@@ -58,8 +58,8 @@
       "sha256": "505530dbd130d1603de02d1c23ba974a3e24e1efaf5ff96735eb8780dd4d27da"
     },
     "src/data/systemDesign.ts": {
-      "bytes": 10022,
-      "sha256": "4c7c8cf3d64536e70931b2b26dfe6146d9233bbea4872e53ddc16e77f7ad6922"
+      "bytes": 9974,
+      "sha256": "0c4649142e0270cebd03fa81e422c8aeaf2d35e2b24270d98a17c568057ee689"
     },
     "src/data/weeks.ts": {
       "bytes": 19665,

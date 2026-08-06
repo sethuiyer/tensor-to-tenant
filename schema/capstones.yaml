@@ -55,7 +55,7 @@
   description: >-
     The optional Week 108 boss fight. If Capstone 1 was forensics over a flat
     log, this is forensics over a forest of agent execution trees. Combine
-    systems design with esoteric tree algorithms for exact subtree queries.
+    systems design with tree algorithms for exact subtree queries.
   points:
     - "Forest assembly, reorder buffers, cycle detection"
     - "Euler Tour to flatten subtree → range"

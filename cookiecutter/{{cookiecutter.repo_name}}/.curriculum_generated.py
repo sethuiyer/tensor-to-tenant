@@ -609,11 +609,10 @@ INTERVIEW_DRILLS = [['system_design', 'URL shortener, rate limiter, Dropbox, Wha
  ['mocks', 'Mock interview scorecards and retro notes']]
 
 MANDALAS_CC = [('1',
-  'Build the learner’s operating system',
+  'Build a reliable learning system',
   'Weeks 1–7',
   'Disciplined learner',
-  'They stop being someone “planning to study AI” and become someone with a functioning learning and '
-  'engineering system.'),
+  'They replace vague plans to study AI with a working weekly process.'),
  ('2',
   'Learn the geometry beneath intelligence',
   'Weeks 7–14',
@@ -659,8 +658,7 @@ MANDALAS_CC = [('1',
   'Build a mature experimentation platform',
   'Weeks 62–69',
   'Experimentation engineer',
-  'They can distinguish “the metric increased” from “we have trustworthy evidence that the product '
-  'improved.”'),
+  'They can tell when a metric moved and when the evidence supports changing the product.'),
  ('11',
   'Train, align and retrieve with LLMs',
   'Weeks 69–76',

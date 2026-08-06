@@ -1,0 +1,203 @@
+Population: 558 prose sentences
+Sample: 200 sentences, page-balanced, seed 20260325
+
+001. [agents/index.html] Building a Simple ReAct Style Agent with Tool Use
+002. [agents/index.html] Explain the foundational concepts of generative AI models
+003. [agents/index.html] Features of Agent Development with Code-Free Tools
+004. [agents/index.html] Sophisticated message management for internal state
+005. [agents/index.html] Then, when you hit the ceiling - when your RAG pipeline breaks at 10k QPS, when your AutoGen crew deadlocks, when your DSPy optimizer converges to garbage - tensor-to-tenant is waiting.
+006. [agents/index.html] This course continues with the harder parts: throughput, deadlocks, optimization failures, and tenancy.
+007. [agents/index.html] Understanding AI Agents: Workings and Use Cases
+008. [agents/index.html] Weeks 47, 76–77, 87, 98, and 102 build the contract, security, and platform layers the plug lives in.
+009. [agents/index.html] Weeks 57, 62, 73–74, 81, 98–99 show you where each pattern is load-bearing.
+010. [algorithmic-forge/index.html] A learner is never blocked from the next phase by optional depth work.
+011. [algorithmic-forge/index.html] Aho–Corasick tool/prompt detector or sequence-DP planner.
+012. [algorithmic-forge/index.html] Boss fights are selected gate or capstone extensions.
+013. [algorithmic-forge/index.html] Euler Tour plus DSU-on-Tree subtree analytics, used as preparation for Capstone 2.
+014. [algorithmic-forge/index.html] Euler indexing plus a flow or matching formulation for scheduling/resource allocation.
+015. [algorithmic-forge/index.html] Extra depth credit, not required for the LLM Platform badge.
+016. [algorithmic-forge/index.html] Priority scheduling, interval allocation, and binary search on capacity backed by a benchmark.
+017. [algorithmic-forge/index.html] Recurring Friday skill that directly supports the current phase
+018. [algorithmic-forge/index.html] The Algorithmic Forge is the parallel algorithmic spine of the course.
+019. [capstones/ai-gateway/index.html] A passing capstone requires 18/24 , no zero in policy, reliability, tenancy, or accounting, and a complete evidence bundle.
+020. [capstones/ai-gateway/index.html] How do you reconcile provider usage with customer invoices?
+021. [capstones/ai-gateway/index.html] Implement at least three of the seven components from scratch; the rest may use small standard-library helpers.
+022. [capstones/ai-gateway/index.html] What must be strongly consistent, and what can be eventually consistent?
+023. [capstones/ai-gateway/index.html] a normalized endpoint that hides provider-specific wire formats
+024. [capstones/ai-gateway/index.html] a versioned registry of capabilities, regions, prices, and health
+025. [capstones/ai-gateway/index.html] append-only idempotent ledger, deterministic settlement
+026. [capstones/ai-gateway/index.html] per-workspace budgets, concurrency, priority, fencing
+027. [capstones/ai-gateway/index.html] pre-token failover; post-token error, never silent replay
+028. [capstones/index.html] A staff-level system design + coding capstone.
+029. [capstones/index.html] An OpenRouter-inspired final capstone: design and build the control plane, request plane, routing policy, reliability layer, enterprise tenancy, and economics behind a unified multi-model AI gateway.
+030. [capstones/index.html] Combine systems design with tree algorithms for exact subtree queries.
+031. [capstones/index.html] Each capstone traces back to specific weeks, and the final task is to explain and defend the design under pressure.
+032. [capstones/index.html] Euler Tour + DSU on Tree · Week 108 · optional
+033. [capstones/index.html] Forest assembly, reorder buffers, cycle detection
+034. [capstones/index.html] If Capstone 1 was forensics over a flat log, this is forensics over a forest of agent execution trees.
+035. [capstones/index.html] Mo's Algorithm over immutable trace segments · Weeks 103–108
+036. [capstones/index.html] OpenRouter-inspired control + request plane · Weeks 103–108 · alternative
+037. [capstones/trace-forensics/index.html] 0–9 not ready; 10–17 getting there; 18–23 solid; 24 hire on the spot.
+038. [capstones/trace-forensics/index.html] 26 points across system design (12) and coding (12–14).
+039. [capstones/trace-forensics/index.html] A staff-level system design + coding capstone: build the observability and forensics platform for a large multi-tenant LLM gateway, then answer exact batch forensic queries with Mo’s algorithm.
+040. [capstones/trace-forensics/index.html] Engineers need to answer: between event sequence 1M and 5M, which model had the most errors?
+041. [capstones/trace-forensics/index.html] Events leave the SDK already redacted, validated and deduped, then enter the durable log.
+042. [capstones/trace-forensics/index.html] Every request to the gateway produces a structured trace event.
+043. [capstones/trace-forensics/index.html] For a tenant, what were the distinct failing models in this window?
+044. [capstones/trace-forensics/index.html] Mo’s reorders the queries so adjacent queries reuse the current range state - O((N+Q)·√N·log N) instead of O(N·Q).
+045. [capstones/trace-forensics/index.html] Query latency, scan volume, cache hit rate, seal lag, reorder occupancy, correction rate, quota consumption - the system observes itself.
+046. [capstones/tree-forensics/index.html] Engineers need exact subtree forensics: which tool failed the most under this node?
+047. [capstones/tree-forensics/index.html] Execution tree → subtree → Euler interval → DSU on Tree.
+048. [capstones/tree-forensics/index.html] Flatten once via an Euler Tour so every subtree is a contiguous range [tin, tout], then answer queries over an array.
+049. [capstones/tree-forensics/index.html] Mutable tree → static preprocessing invalid → dynamic structures.
+050. [capstones/tree-forensics/index.html] Path query → different workload → different machinery.
+051. [capstones/tree-forensics/index.html] Q offline queries; for each node u return: top_error_tool (max error count, ties → smallest tool_id), top_error_count, distinct_error_tools, wasted_tokens.
+052. [capstones/tree-forensics/index.html] This extends Capstone 1 from a flat event log to a forest of agent execution trees.
+053. [capstones/tree-forensics/index.html] You will combine systems design with tree algorithms and exact subtree queries.
+054. [capstones/tree-forensics/index.html] Your LLM gateway now serves ReAct / Plan-Execute agents.
+055. [curriculum/index.html] 100-module mathematics curriculum → · 30 engineering tasks + 40 practice drills →
+056. [curriculum/index.html] After these weeks the course pauses new content so you can consolidate, remediate gates, or rest.
+057. [curriculum/index.html] LLM/RAG work, inference benchmark, platform layer, and capstone
+058. [curriculum/index.html] Math, numerical routines, and experimentation toolkit
+059. [curriculum/index.html] Same pipeline, eight zoom levels, twelve weeks.
+060. [curriculum/index.html] Tested primitives, system designs, MLOps tools, and postmortem
+061. [curriculum/index.html] There is no attendance-based completion - each week produces evidence.
+062. [curriculum/index.html] They are generated as part of the rhythm - a recovery week is never an additional topic.
+063. [curriculum/index.html] Weeks 82–93 trace a single request through the entire serving stack - from load balancer through PagedAttention, MoE routing, FlashAttention-backed MHA, speculative decoding verification, sampled streaming, and metrics logging.
+064. [engineering/index.html] Retrieval, rate limiting, caching, chunking, PII, calibration, ranking metrics, batching, resilience, sketches, routing, and concurrency - each drill is 10–30 minutes with a core pattern and a clear target.
+065. [engineering/index.html] The engineering spine is made of 30 production-style implementation tasks - each with a problem statement, full description, and a detailed prompt - plus 40 timed drills (10–30 minutes each) to keep the fundamentals sharp.
+066. [faq/index.html] A working comfort with programming helps, because Week 1 starts you implementing.
+067. [faq/index.html] And realistically, implementation always takes more time than we think.
+068. [faq/index.html] How is progress measured if not by attendance?
+069. [faq/index.html] It never becomes a hidden prerequisite for the core path.
+070. [faq/index.html] Start with the curriculum or scaffold your own learner repo with the cookiecutter .
+071. [faq/index.html] The course is built as an apprenticeship with three stackable stopping points - Foundations (Weeks 1–30), Engineering + Systems (Weeks 31–69), and LLM Platform (Weeks 70–108) - and each one ends in a publishable release.
+072. [faq/index.html] The full path adds the LLM platform work and the capstone.
+073. [faq/index.html] The weekly budget is 10–15 hours, but if you go deep - from-scratch implementations, benchmarks, failure analysis - each week can take longer.
+074. [faq/index.html] You are not expected to spend every evening grinding.
+075. [gates/index.html] A failed gate pauses new content until the learner completes a targeted remediation plan and submits the missing evidence.
+076. [gates/index.html] At every level, completion means evidence exists: code, a benchmark or result, a design/technical explanation, and a retrospective.
+077. [gates/index.html] LLM/RAG work, inference benchmark, platform layer, and capstone
+078. [gates/index.html] Math, numerical routines, and experimentation toolkit
+079. [gates/index.html] Optional depth work raises the ceiling but is never required for the core checkpoint.
+080. [gates/index.html] Tested primitives, system designs, MLOps tools, and postmortem
+081. [index.html] A timed problem-solving lane with a 548-slot tracker and optional Standard/Auror completion paths.
+082. [index.html] Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing)
+083. [index.html] Concurrency, isolation and fairness are part of the first primitives, not a demo-day afterthought.
+084. [index.html] Course repo · weekly tracker · Dockerized service · diagnostic report
+085. [index.html] LLM/RAG work, inference benchmark, platform layer, and capstone
+086. [index.html] Math, numerical routines, and experimentation toolkit
+087. [index.html] RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype
+088. [index.html] Sixteen mandalas turn the course into an identity ladder: each 48-day cycle ends with a capability you can prove.
+089. [index.html] Tested primitives, system designs, MLOps tools, and postmortem
+090. [interview/index.html] A 176-item roadmap covers system design, coding, and behavioral preparation.
+091. [interview/index.html] API design, data model, retrieval/model flow, failure handling, tenant isolation
+092. [interview/index.html] Clear user problem, defined scope, working end-to-end flow
+093. [interview/index.html] Logs, metrics, traces, dashboards, alert thresholds
+094. [interview/index.html] Offline metrics, online or simulated metrics, slice-based evaluation, error analysis
+095. [interview/index.html] Public repo, architecture diagram, benchmark report, demo video, design doc, interview summary
+096. [interview/index.html] Ten stories in the CARL format - C ontext, A ction, R esult, L earning - each refined during a specific window.
+097. [interview/index.html] The capstone then pulls those skills together in an interview-style exercise.
+098. [interview/index.html] Token usage, latency, cache hit rate, cost per request or per million tokens
+099. [leetcode-darbar/index.html] Auror track is optional: the 548-slot catalog is depth; the 108-week path never depends on it.
+100. [leetcode-darbar/index.html] Evidence per slot: one file that proves the attempt, the solution, and the complexity note.
+101. [leetcode-darbar/index.html] Mock pressure from week one: the timed block is a permanent part of the ritual.
+102. [leetcode-darbar/index.html] Patterns before volume: mastery is choosing the right tool for the workload, not memorizing solutions.
+103. [leetcode-darbar/index.html] The Darbar builds coding fluency through six pattern blocks and 548 total slots, with optional Standard and Auror completion paths.
+104. [leetcode-darbar/index.html] The catalog is organized across the full data-structure and algorithm spectrum:
+105. [leetcode-darbar/index.html] The emphasis shifts with the phase of the course, and each set points to a production concept.
+106. [leetcode-darbar/index.html] Timer on, then review: solve under a clock, then study the editorial regardless of outcome.
+107. [leetcode-darbar/index.html] Weekend: review, editorial rewrite, or recovery
+108. [mandala/index.html] A production ML system begins with a decision and a dataset, rather than model training alone.
+109. [mandala/index.html] Computational graphs, forward/reverse-mode autodiff, JVPs and VJPs
+110. [mandala/index.html] Expected Calibration Error, Brier score and reliability diagrams
+111. [mandala/index.html] They can build an agent and explain where its latency, errors, context and cost come from.
+112. [mandala/index.html] cosine similarity, exact and memory-bounded KNN
+113. [mandala/index.html] distributed work queues, dynamic configuration
+114. [mandala/index.html] p-values, confidence intervals, bootstrap and permutation tests
+115. [mandala/index.html] power, MDE and sample-size calculations, multiple-testing correction
+116. [math/index.html] Floating-point reality, conditioning, factorization and iterative methods.
+117. [math/index.html] Hashing, consensus, consistency and causality for distributed systems.
+118. [math/index.html] Information theory, decision theory, RL and generative modeling.
+119. [math/index.html] Nearly every entry is a learning module to derive, prove, implement and explain - not a lecture to watch.
+120. [math/index.html] One hundred modules cover analysis, numerical methods, probability and statistics, experimentation, ML theory, distributed systems, inference, and production AI.
+121. [math/index.html] Scheduling, cost, reliability and the cutting edge of inference systems.
+122. [math/index.html] Set theory, proofs, information and measure-theoretic foundations.
+123. [math/index.html] The proof of mastery is the artifact you can hand over.
+124. [phases/1/index.html] 1 - Course repo · weekly tracker · Dockerized service · diagnostic report
+125. [phases/1/index.html] Build a reliable learning system - you become a Disciplined learner .
+126. [phases/1/index.html] Remediation: Remediate orientation and systems setup
+127. [phases/1/index.html] They replace vague plans to study AI with a working weekly process.
+128. [phases/10/index.html] 10 - Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan
+129. [phases/10/index.html] Build the enterprise AI platform - you become a Multi-tenant AI platform engineer .
+130. [phases/10/index.html] Remediation: Remediate the specific capstone/interview gap
+131. [phases/10/index.html] This is where “tensor” finally becomes “tenant.”
+132. [phases/2/index.html] 2 - Explain eigenvalues, SVD, norms, condition numbers; implement basic numerical routines
+133. [phases/2/index.html] Build a reliable learning system - you become a Disciplined learner .
+134. [phases/2/index.html] Remediation: Remediate linear/numerical algebra
+135. [phases/2/index.html] They replace vague plans to study AI with a working weekly process.
+136. [phases/3/index.html] 3 - Derive basic gradients; explain MLE/MAP; implement hypothesis tests + bootstrap CIs; explain power/MDE
+137. [phases/3/index.html] Numerical computation and differentiation - you become a Numerical programmer .
+138. [phases/3/index.html] Remediation: Remediate calculus/statistics; publish Foundations release
+139. [phases/3/index.html] They learn to ask whether an algorithm is mathematically correct and numerically sane.
+140. [phases/4/index.html] 4 - Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing)
+141. [phases/4/index.html] Experimentation meets retrieval - you become a Retrieval and experimentation builder .
+142. [phases/4/index.html] Remediation: Remediate the missing primitive contracts/tests
+143. [phases/4/index.html] They can now build the primitives behind search, experimentation and traffic control.
+144. [phases/5/index.html] 5 - Completed system design case studies with requirements, API, data model, scaling, trade-offs, failure modes
+145. [phases/5/index.html] Distributed primitives and design reasoning - you become a Distributed-systems implementer .
+146. [phases/5/index.html] Remediation: Remediate the weakest design pattern
+147. [phases/5/index.html] They can move from implementing one process to reasoning about many machines.
+148. [phases/6/index.html] 6 - A/B analysis tool, bootstrap tool, SRM detector, feature flag engine, experiment assignment, monitoring plan
+149. [phases/6/index.html] A production ML system begins with a decision and a dataset, rather than model training alone.
+150. [phases/6/index.html] From system design to ML product science - you become a ML systems practitioner .
+151. [phases/6/index.html] Remediation: Remediate experimentation/MLOps; publish Engineering + Systems release
+152. [phases/7/index.html] 7 - RAG retrieval pipeline, retrieval evaluation report, prompt system, memory system, agent prototype
+153. [phases/7/index.html] Remediation: Remediate the weakest LLM/RAG component
+154. [phases/7/index.html] They understand the whole upstream and retrieval lifecycle rather than treating the LLM as a remote magic endpoint.
+155. [phases/7/index.html] Train, align and retrieve with LLMs - you become a LLM training and retrieval engineer .
+156. [phases/8/index.html] 8 - Deployed vLLM or SGLang, benchmark methodology, observability dashboard, quantization report, speculative decoding report, inference cost model
+157. [phases/8/index.html] RAG, agents and inference foundations - you become a RAG and agent engineer .
+158. [phases/8/index.html] Remediation: Remediate inference benchmarking and operations
+159. [phases/8/index.html] They can build an agent and explain where its latency, errors, context and cost come from.
+160. [phases/9/index.html] 9 - Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters
+161. [phases/9/index.html] Advanced serving and reliable routing - you become a Serving and routing engineer .
+162. [phases/9/index.html] Remediation: Remediate the missing platform capability
+163. [phases/9/index.html] They can optimize a model and a multi-provider inference service.
+164. [prerequisites/index.html] Build a working computer from NAND gates up - assembler, VM, compiler, OS - and a Tetris game.
+165. [prerequisites/index.html] C, memory, algorithms, data structures, and web - the shared vocabulary of the whole course.
+166. [prerequisites/index.html] How teams design, test, review, and ship at scale - the professional layer under the technical arc.
+167. [prerequisites/index.html] Navigate any framework docs - quickstarts, references, and changelogs - without a tutorial.
+168. [prerequisites/index.html] Procedural, functional, object-oriented, and let-it-crash thinking - and why each exists.
+169. [prerequisites/index.html] Self-serve research: filter, scope, and verify results instead of hoping Google guesses right.
+170. [prerequisites/index.html] Take it if you need it; skip it if you don't.
+171. [prerequisites/index.html] This course starts at Week 1 assuming working programming comfort.
+172. [recommender/index.html] Build a recommender that combines semantic similarity, graph structure, lexical evidence, intent, and telemetry, then test the design in production Snowflake.
+173. [recommender/index.html] Each primitive below is already load-bearing elsewhere.
+174. [recommender/index.html] Log one checkbox per section in the learner scaffold and record the production failure you would monitor for each signal.
+175. [recommender/index.html] SEARCH.md can stand alone as general recommendation math.
+176. [recommender/index.html] SNOWFLAKE.md is deliberately marked as a prerequisite-of-SEARCH pair member: do not start with its SQL.
+177. [recommender/index.html] The recommender track makes the combination explicit.
+178. [recommender/index.html] The same score needs graph-cycle guards, heterogeneous-score normalization, dynamic thresholds, incremental refresh, and a serving path that does not consume the warehouse budget.
+179. [recommender/index.html] This track sits alongside the 108-week spine rather than adding another phase.
+180. [resources/index.html] The anchors for the GenAI agents track: ReAct, tool-use, DSPy, MCP, corrective RAG, and Graph-RAG.
+181. [resources/index.html] The course curates a focused set of videos, books, research papers, and engineering blogs.
+182. [resources/index.html] There is an optional 36-week prerequisite lane: CS50x, Nand to Tetris, MIT 6.042J, Statistical Learning, Git, search and docs fluency, programming paradigms, and Software Engineering at Google, in the order to take them, with a week-by-week budget.
+183. [resources/index.html] These are the anchors for the weekly modules and the inference-performance weeks in particular.
+184. [sailboat/index.html] Every weekly retro ends with the commitment to be able to explain one thing out loud, from memory, to a colleague.
+185. [sailboat/index.html] Mathematics · Algorithms / Leetcode Darbar · Engineering primitives · Distributed systems / System Design · ML systems · LLM systems · Inference · Production platform · Staff judgment
+186. [sailboat/index.html] The Rocks are the risks that could derail the next week.
+187. [sailboat/index.html] The Sailboat turns a 108-week apprenticeship from a checklist into a navigable journey.
+188. [sailboat/index.html] The Wind is what helped progress - a concept, person, tool, habit, or environment.
+189. [sailboat/index.html] Use it at the end of every week - keep answers short and concrete, and choose the next heading rather than writing a performance review.
+190. [sailboat/index.html] What capability am I trying to reach this week or phase?
+191. [sailboat/index.html] What is the single most important adjustment for next week?
+192. [search/index.html] Every page is indexed at build time - curriculum, mathematics, engineering, system design, agents, mandalas, the forge, the Darbar, and the capstones.
+193. [system-design/index.html] By Week 57 you must be able to choose a case from any family and, under interview time pressure, produce:
+194. [system-design/index.html] Each LLD artifact must state its invariants, ownership boundaries, concurrency policy, and extension points.
+195. [system-design/index.html] For each tool, state the guarantee it provides and the trade-off it introduces.
+196. [system-design/index.html] Geo-spatial indexing, dispatch, ETA aggregation
+197. [system-design/index.html] Hot-row contention, seat holds, payment idempotency
+198. [system-design/index.html] Object-oriented design runs as the Thursday implementation/interview variant - practice correctness, coordination, scarcity, OOP concepts, design principles, and patterns.
+199. [system-design/index.html] System design is a first-class phase of the course - not an afterthought.
+200. [system-design/index.html] observability, privacy, tenant isolation, and cost controls

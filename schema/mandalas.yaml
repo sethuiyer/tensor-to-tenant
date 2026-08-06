@@ -5,10 +5,9 @@
   number: '1'
   days: Days 1–48
   weeks: Weeks 1–7
-  title: Build the learner’s operating system
+  title: Build a reliable learning system
   identity: Disciplined learner
-  transformation: They stop being someone “planning to study AI” and become someone with a functioning learning and engineering
-    system.
+  transformation: They replace vague plans to study AI with a working weekly process.
   tier: core
   level: 2
   seam: identity progression
@@ -255,7 +254,7 @@
   weeks: Weeks 62–69
   title: Build a mature experimentation platform
   identity: Experimentation engineer
-  transformation: They can distinguish “the metric increased” from “we have trustworthy evidence that the product improved.”
+  transformation: They can tell when a metric moved and when the evidence supports changing the product.
   tier: core
   level: 2
   seam: identity progression
