@@ -46,7 +46,6 @@ Every entry in any entity file must pass:
 |---|---|---|
 | `resources.yaml` | Papers, videos, books, blogs, agent papers | T1.8 + T1.8.g + T1.8.h + T1.8.i (landed Phase 2) |
 | `weeks.yaml` | 108-week spine, one entry per week | Landed in schema-backed generation |
-| `gates.yaml` | 10 milestone gates | Landed in schema-backed generation |
 | `gates.yaml` | 3 stackable programs + 10 milestone gates | Landed in schema-backed generation |
 | `mandalas.yaml` | 16 mandalas | Landed in schema-backed generation |
 | `math.yaml` | 100-module math curriculum | Landed in schema-backed generation |
