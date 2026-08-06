@@ -30,7 +30,7 @@ const relatedGate = GATES.find((g) => g.week === phase.end);
 ---
 
 <BaseLayout
-  title={`Phase ${phase.id} — ${phase.theme}`}
+  title={`Phase ${phase.id} - ${phase.theme}`}
   description={`Phase ${phase.id} of the Tensor-to-Tenant curriculum: ${phase.theme}`}
   activeNav="curriculum"
 >
@@ -76,7 +76,7 @@ const relatedGate = GATES.find((g) => g.week === phase.end);
       relatedGate && (
         <div class="callout callout--amber">
           <strong>Milestone gate at the end of this phase</strong>
-          <p>{relatedGate.gate} — {relatedGate.criteria}</p>
+          <p>{relatedGate.gate} - {relatedGate.criteria}</p>
           <p style="margin-top:0.5rem"><em>Remediation:</em> {relatedGate.remediation}</p>
         </div>
       )
@@ -86,7 +86,7 @@ const relatedGate = GATES.find((g) => g.week === phase.end);
       relatedMandala && (
         <div class="callout callout--violet">
           <strong>Related mandala</strong>
-          <p>{relatedMandala.title} — you become a <em>{relatedMandala.identity}</em>.</p>
+          <p>{relatedMandala.title} - you become a <em>{relatedMandala.identity}</em>.</p>
           <p style="margin-top:0.5rem">{relatedMandala.transformation}</p>
         </div>
       )

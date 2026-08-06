@@ -1,0 +1,103 @@
+Population: 558 prose sentences
+Sample: 100 sentences, seed 20260324
+
+001. [agents/index.html] Build secure bridges between LangGraph/AutoGen agents and external systems
+002. [agents/index.html] Corrective RAG (CRAG) with self-correction loops
+003. [agents/index.html] Correctness and completeness of task execution
+004. [agents/index.html] Cypher support with MATCH, OPTIONAL, aggregations
+005. [agents/index.html] Develop a sophisticated AI agent capable of understanding and autonomously operating both web-based GUIs and CLIs to achieve complex, multi-step user goals.
+006. [agents/index.html] Exploration of popular prompt engineering patterns
+007. [agents/index.html] Hands-on experience with industry-specific use cases
+008. [agents/index.html] Identify key components in the GenAI ecosystem
+009. [agents/index.html] Introduction to LangGraph: Beyond Sequential Chains
+010. [agents/index.html] It takes the LLM/RAG work of the later phases and turns it into agents that can share tools and state safely.
+011. [agents/index.html] Local Resource and Remote Service integration
+012. [agents/index.html] Robust DOM interpretation without brittle selectors
+013. [agents/index.html] Start engineering self-optimizing AI programs.
+014. [agents/index.html] Utilize DSPy Optimizers to automatically tune prompts
+015. [agents/index.html] Weeks 38, 73, 76–78 show you routing, reformulation, and evaluation that make the loop trustworthy.
+016. [agents/index.html] Weeks 47, 76–77, 87, 98, and 102 build the contract, security, and platform layers the plug lives in.
+017. [agents/index.html] Weeks 5, 61, 73, and 79 explain why the surface behaves the way it does.
+018. [agents/index.html] Weeks 51, 81, 97–98, and 100 teach you state machines, routing, and durable recovery.
+019. [agents/index.html] Weeks 57, 62, 73–74, 81, 98–99 show you where each pattern is load-bearing.
+020. [agents/index.html] tensor-to-tenant gives you the *why* - the math in Weeks 7–10, the primitives in Weeks 31–33, and the production LLM/RAG work in Weeks 70–81.
+021. [algorithmic-forge/index.html] A learner is never blocked from the next phase by optional depth work.
+022. [algorithmic-forge/index.html] Every Friday you sharpen a skill that supports the current phase - with four tiers so depth never blocks the core path.
+023. [algorithmic-forge/index.html] Expectation DP, combinatorics, modular arithmetic, and one optimization search problem.
+024. [algorithmic-forge/index.html] Recurring Friday skill that directly supports the current phase
+025. [capstones/ai-gateway/index.html] Implement normalized requests, capability/policy filtering, explainable versioned routing, stream-aware fallback, per-workspace budgets and per-tenant concurrency admission, an idempotent usage/cost ledger, and PII-safe traces.
+026. [capstones/ai-gateway/index.html] What must be strongly consistent, and what can be eventually consistent?
+027. [capstones/ai-gateway/index.html] Why is the gateway valuable if providers already expose APIs?
+028. [capstones/ai-gateway/index.html] a versioned registry of capabilities, regions, prices, and health
+029. [capstones/index.html] A staff-level system design + coding capstone.
+030. [capstones/index.html] Combine systems design with esoteric tree algorithms for exact subtree queries.
+031. [capstones/trace-forensics/index.html] A staff-level system design + coding capstone: build the observability and forensics platform for a large multi-tenant LLM gateway, then answer exact batch forensic queries with Mo’s algorithm.
+032. [capstones/trace-forensics/index.html] Columnar, partitioned by time + tenant + shard, immutable segments, and a metadata catalog with sketch summaries as first-class citizens.
+033. [capstones/trace-forensics/index.html] Engineers need to answer: between event sequence 1M and 5M, which model had the most errors?
+034. [capstones/trace-forensics/index.html] Every request to the gateway produces a structured trace event.
+035. [capstones/trace-forensics/index.html] Interactive scan+prune, offline batch with Mo’s algorithm, and approximate sketch execution.
+036. [capstones/trace-forensics/index.html] Target 18+ before scheduling a mock interview.
+037. [capstones/trace-forensics/index.html] The hard part is maintaining the current mode with reversible add/remove, frequency buckets, and tie-breaking on the original ID.
+038. [capstones/tree-forensics/index.html] For a batch of offline subtree queries on the same tree, DSU on Tree (sack / keep-heavy) gives O(N log N + Q).
+039. [capstones/tree-forensics/index.html] If keep=false, all of subtree(u) is removed before returning.
+040. [curriculum/index.html] LLM/RAG work, inference benchmark, platform layer, and capstone
+041. [engineering/index.html] The engineering spine is made of 30 production-style implementation tasks - each with a problem statement, full description, and a detailed prompt - plus 40 timed drills (10–30 minutes each) to keep the fundamentals sharp.
+042. [faq/index.html] A 108-week design also means every abstraction is grounded in mathematics first, so nothing is skipped or hand-waved.
+043. [faq/index.html] Each program checkpoint (Weeks 30, 69, 108) is verified against a blocking milestone gate and a portfolio release checklist before the badge is awarded.
+044. [faq/index.html] The 548 catalog entries (255 Easy, 240 Medium, 53 Hard) are selected problems covering the data-structure and algorithm spectrum, and they are tracked separately from the core course.
+045. [faq/index.html] The pace is deliberately flexible so slower learners are never discouraged: the core lane is a minimum viable weekly artifact, and recovery windows are built in after Weeks 6, 14, 22, 30, 38, 46, 54, 62, 70, 78, 86, 94 and 102 as sanctioned catch-up or rest weeks.
+046. [faq/index.html] The template shows the course structure with your own dates stamped in.
+047. [faq/index.html] The weekly budget is 10–15 hours, but if you go deep - from-scratch implementations, benchmarks, failure analysis - each week can take longer.
+048. [faq/index.html] Yes, but nobody needs to treat 108 weeks as one giant commitment.
+049. [faq/index.html] You answer a few prompts (repo name, your name, start date, effort hours, optional Docker, and a track weighting), and it generates all 108 weekly journal entries, the phase folders, engineering-primitive stubs, capstone scaffolding, the Darbar tracker, recovery plans, milestone-gate scaffolds, portfolio release checklists, and helper scripts.
+050. [faq/index.html] You can stop at any checkpoint with something real to show.
+051. [faq/index.html] You keep your job, health, family, hobbies, and responsibilities - and gradually turn ordinary weeks into evidence of professional growth.
+052. [gates/index.html] LLM/RAG work, inference benchmark, platform layer, and capstone
+053. [index.html] A production ML system begins with a decision and a dataset, rather than model training alone.
+054. [index.html] Completed all engineering primitives (retrieval, rate limiting, caching, chunking, PII, metrics, resilience, sketches, routing)
+055. [index.html] Completed capstone, published portfolio, passed mock interviews, behavioral stories, 30-day job-search plan
+056. [index.html] Embeddings, attention and matrix models become geometric objects.
+057. [index.html] Sixteen mandalas turn the course into an identity ladder: each 48-day cycle ends with a capability you can prove.
+058. [index.html] They can explain why training and evaluation procedures work instead of treating them as imports.
+059. [index.html] They can move from implementing one process to reasoning about many machines.
+060. [index.html] They can now build the primitives behind search, experimentation and traffic control.
+061. [index.html] They learn to ask whether an algorithm is mathematically correct and numerically sane.
+062. [index.html] To start, use the course's cookiecutter: one command scaffolds a complete learner repository with all 108 weekly journals stamped with your start date, the phase folders, engineering primitives, the Darbar tracker, milestone gates, portfolio checklists, and helper scripts.
+063. [interview/index.html] A 176-item roadmap covers system design, coding, and behavioral preparation.
+064. [leetcode-darbar/index.html] Solve, explain, and timebox all 548 catalog slots.
+065. [leetcode-darbar/index.html] The Darbar builds coding fluency through six pattern blocks and 548 total slots, with optional Standard and Auror completion paths.
+066. [leetcode-darbar/index.html] The Darbar is tracked independently so standard learners can keep the 108-week path viable while Auror learners can solve and explain all 548 catalog slots.
+067. [mandala/index.html] Expected Calibration Error, Brier score and reliability diagrams
+068. [mandala/index.html] Python engineering, typing, testing and async fundamentals
+069. [mandala/index.html] SVD, pseudoinverse and low-rank approximation
+070. [mandala/index.html] They can distinguish “the metric increased” from “we have trustworthy evidence that the product improved.”
+071. [mandala/index.html] They can explain why training and evaluation procedures work instead of treating them as imports.
+072. [mandala/index.html] They can move from implementing one process to reasoning about many machines.
+073. [mandala/index.html] conversation and long-term memory, context-window optimization
+074. [mandala/index.html] distributed token budgets, request prioritization
+075. [mandala/index.html] repository, traces, benchmarks, design documents and failure tests
+076. [mandala/index.html] transformer and tokenizer anatomy, training-data cleaning and deduplication
+077. [mandala/index.html] weighted load balancing, distributed unique IDs
+078. [math/index.html] Differentiation, optimization, probability and the classical inference toolkit.
+079. [math/index.html] Hashing, consensus, consistency and causality for distributed systems.
+080. [math/index.html] The proof of mastery is the artifact you can hand over.
+081. [phases/4/index.html] Experimentation meets retrieval - you become a Retrieval and experimentation builder .
+082. [phases/4/index.html] They can now build the primitives behind search, experimentation and traffic control.
+083. [phases/5/index.html] Remediation: Remediate the weakest design pattern
+084. [phases/5/index.html] They can move from implementing one process to reasoning about many machines.
+085. [phases/9/index.html] 9 - Working production AI platform: router, quotas, tracing, logging, idempotency, work queue, model registry, cost attribution, safety filters
+086. [phases/9/index.html] Advanced serving and reliable routing - you become a Serving and routing engineer .
+087. [phases/9/index.html] They can optimize a model and a multi-provider inference service.
+088. [prerequisites/index.html] C, memory, algorithms, data structures, and web - the shared vocabulary of the whole course.
+089. [prerequisites/index.html] Commit, branch, merge, and recover - the tooling habit every weekly artifact depends on.
+090. [prerequisites/index.html] The 36-week lane puts mathematics first and engineering practice second, which matches the order of the main course.
+091. [recommender/index.html] This track sits alongside the 108-week spine rather than adding another phase.
+092. [resources/index.html] There is an optional 36-week prerequisite lane: CS50x, Nand to Tetris, MIT 6.042J, Statistical Learning, Git, search and docs fluency, programming paradigms, and Software Engineering at Google, in the order to take them, with a week-by-week budget.
+093. [sailboat/index.html] The Rocks are the risks that could derail the next week.
+094. [search/index.html] Every page is indexed at build time - curriculum, mathematics, engineering, system design, agents, mandalas, the forge, the Darbar, and the capstones.
+095. [system-design/index.html] By Week 57 you must be able to choose a case from any family and, under interview time pressure, produce:
+096. [system-design/index.html] Relational vs document vs columnar; denormalization for reads
+097. [system-design/index.html] Ten of the families are worked in depth across the twelve weeks.
+098. [system-design/index.html] The case list is intentionally larger than twelve weeks: each week has one core case plus adjacent cases for comparison, mock interviews, or optional depth.
+099. [system-design/index.html] Use one technology as the concrete substrate for the design pattern.
+100. [system-design/index.html] the AI concern - embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution

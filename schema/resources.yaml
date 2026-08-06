@@ -15,7 +15,7 @@
 # follow the same flow (T1.8.h).
 
 # ============================================================================
-# T1.8.a — Core additions (12 papers, mandatory spine)
+# T1.8.a - Core additions (12 papers, mandatory spine)
 # ============================================================================
 
 - id: beyond_self_knowledge_uncertainty_propagation
@@ -269,7 +269,7 @@
     - { week: 102, role: "primary safety concern" }
 
 # ============================================================================
-# T1.8.c — Optional deep dives (8 papers, depth mode / resource list)
+# T1.8.c - Optional deep dives (8 papers, depth mode / resource list)
 # ============================================================================
 
 - id: join_indices_search_engines
@@ -416,7 +416,7 @@
     - { capstone: 3, role: "MOPD-for-models as gateway capstone" }
 
 # ============================================================================
-# T1.8.i — Resolved video companion (companion to MOPD)
+# T1.8.i - Resolved video companion (companion to MOPD)
 # ============================================================================
 
 - id: mopd_video_explainer_ai_research_roundup
@@ -440,7 +440,7 @@
     - { paper_id: mopd_multi_teacher_on_policy_distillation, role: "primary_source" }
 
 # ============================================================================
-# W92 attention alternatives — KV cache vs learned recurrence
+# W92 attention alternatives - KV cache vs learned recurrence
 # ============================================================================
 # The W82-W92 inference spine is built on quadratic-attention serving
 # (KV cache, paging, FlashAttention). This section adds the sub-quadratic
@@ -558,7 +558,7 @@
     - { week: 92, role: "primary attention-alternatives week" }
 
 # ============================================================================
-# W81 agent harness — the layer between the loop and the tools
+# W81 agent harness - the layer between the loop and the tools
 # ============================================================================
 # The agents track (ReAct, MCP, LangGraph/AutoGen/CrewAI) teaches the agent
 # loop, the tool contract, and multi-agent orchestration. This section adds
@@ -611,7 +611,7 @@
     - { week: 96, role: "sandboxed execution precedent" }
 
 # ============================================================================
-# T1.8.d — Archive (NOT integrated into the spine)
+# T1.8.d - Archive (NOT integrated into the spine)
 # ============================================================================
 # These are kept in the digest, not the spine. Documented in TASKS.md
 # T1.8.d. Do not add to schema without an explicit promotion decision

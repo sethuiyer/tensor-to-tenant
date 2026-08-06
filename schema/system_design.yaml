@@ -215,7 +215,7 @@
   selection_rationale: Reusable layer in the four-step design loop.
 - id: design-loop-extend
   step: Extend
-  detail: the AI concern — embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution
+  detail: the AI concern - embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution
   tier: core
   level: 2
   seam: system design methodology

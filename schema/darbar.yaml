@@ -11,7 +11,7 @@
     easy: 255
     medium: 240
     hard: 53
-  tagline: 548 hand-crafted picks covering the full data-structure and algorithm spectrum.
+  tagline: 548 selected problems covering the full data-structure and algorithm spectrum.
   tier: optional
   level: 2
   seam: parallel interview lane

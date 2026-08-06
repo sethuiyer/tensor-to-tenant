@@ -59,7 +59,7 @@ const CROSS_REFERENCES: DeepDiveReference[] = [
 
 const SEARCH: DeepDiveArtifact = {
   id: 'search_md',
-  title: 'SEARCH.md — Multi-signal recommendation math',
+  title: 'SEARCH.md - Multi-signal recommendation math',
   path: 'SEARCH.md',
   sizeKb: 25,
   tier: 'optional',
@@ -74,7 +74,7 @@ const SEARCH: DeepDiveArtifact = {
 
 const SNOWFLAKE: DeepDiveArtifact = {
   id: 'snowflake_md',
-  title: 'SNOWFLAKE.md — Production Snowflake implementation',
+  title: 'SNOWFLAKE.md - Production Snowflake implementation',
   path: 'SNOWFLAKE.md',
   sizeKb: 32,
   tier: 'optional',

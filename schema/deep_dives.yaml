@@ -50,7 +50,7 @@
     - { capstone: 3, role: "shares the multi-signal routing pattern" }
 
 - id: search_md
-  title: "SEARCH.md — Multi-signal recommendation math"
+  title: "SEARCH.md - Multi-signal recommendation math"
   path: "SEARCH.md"
   size_kb: 25
   tier: optional
@@ -82,7 +82,7 @@
     - { capstone: 3, role: "multi-signal OpenRouter gateway" }
 
 - id: snowflake_md
-  title: "SNOWFLAKE.md — Production Snowflake implementation"
+  title: "SNOWFLAKE.md - Production Snowflake implementation"
   path: "SNOWFLAKE.md"
   size_kb: 32
   tier: optional

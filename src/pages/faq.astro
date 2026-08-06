@@ -7,18 +7,18 @@ const faqs = [
   {
     q: '108 weeks is too slow for me. Is that realistic?',
     a: [
-      'The 108-week figure is a ceiling, not a race. The course is built as an apprenticeship with three stackable stopping points — Foundations (Weeks 1–30), Engineering + Systems (Weeks 31–69), and LLM Platform (Weeks 70–108) — and each one ends in a publishable release. You can stop at any checkpoint with something real to show.',
+      'The 108-week figure is a ceiling, not a race. The course is built as an apprenticeship with three stackable stopping points - Foundations (Weeks 1–30), Engineering + Systems (Weeks 31–69), and LLM Platform (Weeks 70–108) - and each one ends in a publishable release. You can stop at any checkpoint with something real to show.',
       'The pace is deliberately flexible so slower learners are never discouraged: the core lane is a minimum viable weekly artifact, and recovery windows are built in after Weeks 6, 14, 22, 30, 38, 46, 54, 62, 70, 78, 86, 94 and 102 as sanctioned catch-up or rest weeks.',
-      'And realistically, implementation always takes more time than we think. The weekly budget is 10–15 hours, but if you go deep — from-scratch implementations, benchmarks, failure analysis — each week can take longer. That is expected and fine. A 108-week design also means every abstraction is grounded in mathematics first, so nothing is skipped or hand-waved.',
+      'And realistically, implementation always takes more time than we think. The weekly budget is 10–15 hours, but if you go deep - from-scratch implementations, benchmarks, failure analysis - each week can take longer. That is expected and fine. A 108-week design also means every abstraction is grounded in mathematics first, so nothing is skipped or hand-waved.',
     ],
   },
   {
     q: 'Why is it an apprenticeship? Why not a bootcamp?',
     a: [
-      'Because you are not asked to temporarily stop living and become a full-time student. You keep your job, health, family, hobbies, and responsibilities — and gradually turn ordinary weeks into evidence of professional growth. At roughly 15 hours per week, the intended rhythm is about two hours on weekdays with room to redistribute effort: before work, after dinner, or in longer weekend blocks. You are not expected to spend every evening grinding.',
+      'Because you are not asked to temporarily stop living and become a full-time student. You keep your job, health, family, hobbies, and responsibilities - and gradually turn ordinary weeks into evidence of professional growth. At roughly 15 hours per week, the intended rhythm is about two hours on weekdays with room to redistribute effort: before work, after dinner, or in longer weekend blocks. You are not expected to spend every evening grinding.',
       'The course explicitly includes recovery windows, scoped weekly modes, time logs, retrospectives, and multiple portfolio exits because real adults occasionally get sick, travel, change jobs, care for family, or simply have a terrible month. That is apprenticeship logic: learning is integrated into life rather than isolated from it.',
-      'The Sailboat Retro matters here too. Every week it forces you to ask: What accelerated me? What became an anchor? What risk is approaching? Is my workload sustainable? What should I deliberately drop next cycle? That is not motivational decoration. It teaches capacity planning for your own life — the same judgment required when planning engineering work.',
-      'It is long because it refuses the bootcamp fantasy that mathematical maturity, systems judgment, production instincts, and Staff-level breadth can be compressed into twelve frantic weeks. A real apprentice does not merely learn the craft. They learn how to keep practising the craft for decades without setting their entire life on fire.',
+      'The Sailboat Retro matters here too. Every week it forces you to ask: What accelerated me? What became an anchor? What risk is approaching? Is my workload sustainable? What should I deliberately drop next cycle? That is not motivational decoration. It teaches capacity planning for your own life - the same judgment required when planning engineering work.',
+      'It is long because mathematical maturity, systems judgment, production instincts, and Staff-level breadth take time to build. A real apprentice learns the craft and learns how to keep practising it when life gets busy.',
     ],
   },
   {
@@ -27,33 +27,33 @@ const faqs = [
       'The course ships a Cookiecutter template that scaffolds a complete learner repository in seconds. You answer a few prompts (repo name, your name, start date, effort hours, optional Docker, and a track weighting), and it generates all 108 weekly journal entries, the phase folders, engineering-primitive stubs, capstone scaffolding, the Darbar tracker, recovery plans, milestone-gate scaffolds, portfolio release checklists, and helper scripts.',
       'One command starts the whole thing:',
       'cookiecutter gh:sethuiyer/tensor-to-tenant',
-      'Then everyday work is just make commands: `make journal`, `make week=14`, `make design=54`, `make darbar=42`, `make gate`, `make progress`, and `make badge=30` to verify a release. The template is the fastest way to see the course structure with your own dates stamped in.',
+      'Then everyday work is just make commands: `make journal`, `make week=14`, `make design=54`, `make darbar=42`, `make gate`, `make progress`, and `make badge=30` to verify a release. The template shows the course structure with your own dates stamped in.',
     ],
   },
   {
     q: 'Do I have to complete all three programs?',
     a: [
-      'No. The course is explicitly designed so that someone can complete Foundations, Engineering + Systems, or LLM Platform and stop with a credible, independently publishable release. The optional depth lane — proofs, from-scratch work, benchmarks, boss-fight capstones, the full Darbar catalog — raises the ceiling, but it never decides whether you are allowed to continue.',
+      'No. The course is explicitly designed so that someone can complete Foundations, Engineering + Systems, or LLM Platform and stop with a credible, independently publishable release. The optional depth lane - proofs, from-scratch work, benchmarks, boss-fight capstones, the full Darbar catalog - raises the ceiling, but it never decides whether you are allowed to continue.',
       'Completion is evidence-based, not attendance-based. Each program checkpoint (Weeks 30, 69, 108) is verified against a blocking milestone gate and a portfolio release checklist before the badge is awarded.',
     ],
   },
   {
     q: 'Do I need a GPU or expensive hardware?',
     a: [
-      'No. The course has dedicated GPU weeks for training and inference, but it is designed to work without owning hardware. There is a documented Modal redirect — a serverless GPU path — so the exact benchmark and inference work can run remotely. Everything else (math, engineering primitives, system design, interviews, agents) is standard hardware friendly.',
+      'No. The course has dedicated GPU weeks for training and inference, but it is designed to work without owning hardware. There is a documented Modal redirect - a serverless GPU path - so the exact benchmark and inference work can run remotely. Everything else (math, engineering primitives, system design, interviews, agents) is standard hardware friendly.',
     ],
   },
   {
     q: 'Is the Leetcode Darbar required?',
     a: [
-      'No — it is a parallel, optional lane. The 548 catalog entries (255 Easy, 240 Medium, 53 Hard) are hand-crafted picks covering essentially the whole data-structure and algorithm spectrum, and they are tracked separately from the core course. The Standard path solves an aligned set most weeks; the optional Auror path solves, explains, and timeboxes all 548. It never becomes a hidden prerequisite for the core path.',
+      'No - it is a parallel, optional lane. The 548 catalog entries (255 Easy, 240 Medium, 53 Hard) are selected problems covering the data-structure and algorithm spectrum, and they are tracked separately from the core course. The Standard path solves an aligned set most weeks; the optional Auror path solves, explains, and timeboxes all 548. It never becomes a hidden prerequisite for the core path.',
       'link:The live Leetcode Darbar catalog|https://aninokuma.codeberg.page/leetcode-darbar/',
     ],
   },
   {
     q: 'How is progress measured if not by attendance?',
     a: [
-      'Every core week records four kinds of evidence: an implementation, a benchmark or result, a technical explanation, and a retrospective. Milestone gates are blocking — a failed gate pauses new content until a targeted remediation plan is completed. Ten gates plus portfolio releases turn the course into a sequence of verifiable checkpoints rather than a video queue.',
+      'Every core week records four kinds of evidence: an implementation, a benchmark or result, a technical explanation, and a retrospective. Milestone gates are blocking - a failed gate pauses new content until a targeted remediation plan is completed. Ten gates plus portfolio releases turn the course into a sequence of verifiable checkpoints rather than a video queue.',
     ],
   },
   {
@@ -65,17 +65,8 @@ const faqs = [
   {
     q: 'Can someone actually finish this? The whole arc?',
     a: [
-      'Yes — and the design assumes it. This is an apprenticeship with three stackable releases, not an impossible gauntlet. Map the full journey — the optional 36-week on-ramp plus the 108-week arc — and it is 144 weeks: 1,008 days. That is the number the story runs on. Here is what it looks like when someone actually walks it.',
-      'Day 1 — they don\u2019t know what a terminal is. `ls` and `cd` feel like magic spells. They break their PATH variable twice. They learn to fix it.',
-      'Day 48 — the first mandala completes. They have built a CPU from NAND gates and can explain how a computer actually works. They write Python that doesn\u2019t crash, and they do their first Sailboat Retro: the anchor is impostor syndrome; the wind is the week the ALU finally worked. They don\u2019t know it yet, but they just learned the most important skill — recovering from confusion without quitting.',
-      'Day 240 — the Foundations release ships. They can derive the SVD, implement bootstrap confidence intervals, and explain why a condition number matters. The person who didn\u2019t know `ls` now writes proofs about positive semidefinite matrices. They publish it on GitHub. It gets three stars. One of them is from the course author.',
-      'Day 480 — the Engineering + Systems release ships. Rate limiters, Bloom filters, a tiny autodiff engine, consistent hashing with virtual nodes. They have designed WhatsApp, Dropbox, and a payment system with capacity math and failure modes, and they can look at a design diagram and see the seams — where the cache expires, where the queue backs up, where tenant isolation breaks. Their behavioral story bank has ten CARL stories, including the production incident where their own SRM detector caught a bug in their own experiment assignment service.',
-      'Day 720 — they have deployed vLLM on Modal, benchmarked quantization methods, and can explain PagedAttention on a whiteboard. Week 91 was rough: the FP8/AWQ/GPTQ comparison took 22 hours instead of 9. The drift note says: \u201cUnderestimated how long model downloading takes. Next time, pre-pull images.\u201d They are learning things no course teaches.',
-      'Day 960 — the production AI platform ships: router, quotas, tracing, idempotency, work queues, a per-tenant concurrency limiter with leader election, cost attribution, prompt injection detection. It is not a slide deck — it is running code they can curl. In a mock interview, asked to design a notification system, they accidentally describe a fan-out architecture with partial-failure handling that makes the interviewer pause and say, \u201c\u2026you\u2019ve built this before, haven\u2019t you?\u201d',
-      'Day 1,008 — graduation. The final Sailboat Retro: the island is staff-level AI platform engineer; the wind is the learning partner that caught their blind spots at Weeks 74 and 91; the anchor is the week Modal ran out of credits; the rocks are job-market timing, which stops mattering because they have evidence. Boat position: docked. The capstone is an OpenRouter-inspired enterprise AI gateway. The repo hits Hacker News and someone comments, \u201cThis is absurd. Nobody finishes this.\u201d Their drift notes say otherwise.',
-      'The thing nobody talks about: after 1,008 days of weekly retrospectives they don\u2019t just know AI engineering — they know themselves. What work drains them, what problems make them lose track of time, what their actual capacity is rather than what they wish it was. The Sailboat Retro didn\u2019t just track progress; it built self-awareness as a muscle. That is the thing a bootcamp cannot give you. That is the thing only showing up for 1,008 days can produce.',
-      'And in the interview, when asked about a complex technical challenge sustained over a long period, they don\u2019t know where to start — the LRU cache from Week 35, the leader election from Week 99, the Week 5 paper lab that changed how they think about generalization. They pick one, tell the story, and reference the evidence: the code, the benchmark, the design doc, the drift note. The portfolio speaks before they do.',
-      'Someone is going to read this and think, \u201cI could be that person.\u201d They would be right. The map is built and the days are waiting. It cannot promise the destination — only that every step has already been marked.',
+      'Yes, but nobody needs to treat 108 weeks as one giant commitment. The course has releases at Weeks 30, 69 and 108, and each one is meant to stand on its own. Finish Foundations and you have a real numerical toolkit. Finish Engineering + Systems and you have tested production primitives, system designs and an operations story. The full path adds the LLM platform work and the capstone.',
+      'The honest answer is that consistency matters more than heroic study sessions. Some weeks will go badly. That is why the course has recovery windows and a minimum viable weekly artifact. If you can keep returning to the work, 108 weeks is long but possible. If you cannot, stopping at Week 30 or Week 69 is still a useful outcome.',
     ],
   },
 ];
@@ -85,7 +76,7 @@ const faqs = [
   <PageHeader
     eyebrow="FAQ"
     title="Questions people actually ask"
-    lead="Pace, hardware, the cookiecutter, and how completion really works — straight answers before you commit to the arc."
+    lead="Pace, hardware, the cookiecutter, and how completion really works - straight answers before you commit to the arc."
     meta="108 weeks · 3 stackable programs · 10–15 hrs/week"
   />
 
@@ -127,7 +118,7 @@ const faqs = [
       <div class="callout callout--violet" style="margin-top:2rem">
         <strong>Still have questions?</strong>
         <p>
-          The full source — curriculum, mandalas, forge, capstones, and the cookiecutter template — is open on
+          The full source - curriculum, mandalas, forge, capstones, and the cookiecutter template - is open on
           <a href={SITE.github} target="_blank" rel="noopener noreferrer"> GitHub</a>. Start with the
           <a href={url('/curriculum/')}> curriculum</a> or scaffold your own learner repo with the
           <a href={SITE.cookiecutter} target="_blank" rel="noopener noreferrer"> cookiecutter</a>.

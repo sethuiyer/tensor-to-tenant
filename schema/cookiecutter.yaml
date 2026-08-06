@@ -1,4 +1,4 @@
-# GENERATED MIGRATION FIXTURE — do not edit; retained exports are migrated into entity schemas.
+# GENERATED MIGRATION FIXTURE - do not edit; retained exports are migrated into entity schemas.
 ENGINEERING_PRIMITIVES:
 - - retrieval
   - Cosine similarity, KNN, Top-K, reranking, chunking fusion
