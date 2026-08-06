@@ -179,7 +179,7 @@
 - id: agent-module-7.5
   module_id: '7.5'
   title: Model Context Protocol (MCP)
-  theme: USB-C for LLMs — because if your agent can't plug into arbitrary tools and data securely, it's just cosplaying autonomy.
+  theme: USB-C for LLMs - because if your agent can't plug into arbitrary tools and data securely, it's just cosplaying autonomy.
   topics:
   - Integrate MCP to create interoperable, pluggable AI agents
   - Develop MCP Servers that expose local data or tools to LLMs
@@ -303,7 +303,7 @@
   title: Agentic AI Design Patterns
   topics:
   - The Need for Design Patterns in Agentic AI
-  - Deep Dive into Core Agentic AI Design Patterns
+  - Core agentic AI design patterns
   - Exploration of Other Relevant Patterns and Best Practices
   - Best Practices in Agentic System Design
   sections:
@@ -421,7 +421,7 @@
 - id: agent-module-17
   module_id: '17'
   title: Stanford DSPy
-  theme: Compilers for LLMs — stop fiddling with prompts. Start engineering self-optimizing AI programs.
+  theme: Compilers for LLMs - stop fiddling with prompts. Start engineering self-optimizing AI programs.
   topics:
   - Design and implement DSPy Signatures
   - Construct DSPy Modules for complex pipelines
@@ -486,12 +486,12 @@
 - id: agent-bridge-1
   module: '1'
   title: Exploring the Generative AI Universe
-  gap: Module 1 gives you the *what*. tensor-to-tenant gives you the *why* — the math in Weeks 7–10, the primitives in Weeks
+  gap: Module 1 gives you the *what*. tensor-to-tenant gives you the *why* - the math in Weeks 7–10, the primitives in Weeks
     31–33, and the production LLM/RAG work in Weeks 70–81.
   rows:
   - concept: Embeddings & what a model "is"
     weeks: Weeks 7–10
-    insight: Linear algebra and vector geometry that actually produce embeddings — the math under the vocabulary.
+    insight: Linear algebra and vector geometry that actually produce embeddings - the math under the vocabulary.
   - concept: Model parameters & training intuition
     weeks: Weeks 31–33
     insight: Engineering micro-projects where you build ML primitives from scratch; parameters stop being magic.
@@ -522,7 +522,7 @@
     insight: 'Distributed systems: how services actually get deployed and connected.'
   - concept: Agent capabilities without programming
     weeks: Week 81
-    insight: The agents phase — you now know what those drag-and-drop nodes compile to.
+    insight: The agents phase - you now know what those drag-and-drop nodes compile to.
   tier: core
   level: 2
   seam: agent-to-spine bridge
@@ -563,13 +563,13 @@
   rows:
   - concept: LCEL & composable chains
     weeks: Week 37
-    insight: 'Engineering primitives: composing small, testable units — the same discipline as pipeline composition.'
+    insight: 'Engineering primitives: composing small, testable units - the same discipline as pipeline composition.'
   - concept: Model I/O & the LLM abstraction
     weeks: Week 79
     insight: 'The LLM/RAG phase: you build the abstraction and understand its cost.'
   - concept: Memory & conversational apps
     weeks: Week 80
-    insight: RAG and memory systems — state management under the hood.
+    insight: RAG and memory systems - state management under the hood.
   - concept: Chains in production
     weeks: Week 98
     insight: 'Production AI platform: multi-tenant accounting and reliability for LLM pipelines.'
@@ -590,7 +590,7 @@
     insight: 'Hypothesis choice: how you phrase an experiment changes the result.'
   - concept: Chain of Thought
     weeks: Week 73
-    insight: LLM training/RAG — why reasoning traces work, from the model’s perspective.
+    insight: LLM training/RAG - why reasoning traces work, from the model’s perspective.
   - concept: Self Consistency
     weeks: Week 61
     insight: 'Experimentation and evaluation: sampling, variance, and aggregation.'
@@ -611,7 +611,7 @@
   rows:
   - concept: Vector databases
     weeks: Weeks 31–33
-    insight: Build embedding/vector primitives from scratch — you stop trusting the index and build one.
+    insight: Build embedding/vector primitives from scratch - you stop trusting the index and build one.
   - concept: Chunking & document processing
     weeks: Week 36
     insight: 'ML micro-projects: tokenization and preprocessing with measurable trade-offs.'
@@ -620,7 +620,7 @@
     insight: 'The RAG weeks: retrieval pipelines, hybrid search, and evaluation at depth.'
   - concept: Hallucination mitigation
     weeks: Weeks 75–78
-    insight: Grounding, attribution, and evaluation — the why behind CRAG and self-RAG.
+    insight: Grounding, attribution, and evaluation - the why behind CRAG and self-RAG.
   tier: core
   level: 2
   seam: agent-to-spine bridge
@@ -642,7 +642,7 @@
     insight: 'LLM evaluation: self-critique and feedback loops.'
   - concept: Graph RAG with Cypher
     weeks: Week 77
-    insight: Graph retrieval — and the Algorithmic Forge graph-theory spine underneath.
+    insight: Graph retrieval - and the Algorithmic Forge graph-theory spine underneath.
   - concept: Entity & relationship extraction
     weeks: Week 81
     insight: 'Agents phase: knowledge structuring for multi-step reasoning.'
@@ -1080,15 +1080,15 @@
   selection_rationale: Compact cross-reference summary for the bridge view.
 - id: bridge-pitch
   quote: Do Modules 1–18 + Manus capstone in 16 weeks. You'll be an agent builder who can ship. Then, when you hit the ceiling
-    — when your RAG pipeline breaks at 10k QPS, when your AutoGen crew deadlocks, when your DSPy optimizer converges to garbage
-    — tensor-to-tenant is waiting. Weeks 22, 38, 57, 75, 88, 98, 99, 102. That's where the ceiling becomes a floor.
+    - when your RAG pipeline breaks at 10k QPS, when your AutoGen crew deadlocks, when your DSPy optimizer converges to garbage
+    - tensor-to-tenant is waiting. Weeks 22, 38, 57, 75, 88, 98, 99, 102. That's where the ceiling becomes a floor.
   tag: This is the bridge. Not a merge. A ladder.
   tier: core
   level: 2
   seam: agent-to-spine bridge
   selection_rationale: The bridge thesis connecting the parallel agent lane to the 108-week spine.
 - id: project-manus
-  title: Project Manus — Agentic UI Automation
+  title: Project Manus - Agentic UI Automation
   vision: Develop a sophisticated AI agent capable of understanding and autonomously operating both web-based GUIs and CLIs
     to achieve complex, multi-step user goals.
   features:

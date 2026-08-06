@@ -12,7 +12,7 @@ export const SITE = {
   name: 'Tensor-to-Tenant',
   short: 'tensor-to-tenant',
   tagline:
-    'A production-oriented learning path that turns you into an AI / software engineer who can build, evaluate, deploy, and operate ML and LLM systems — and pass the interviews that get you hired to do it.',
+    'A production-oriented learning path that turns you into an AI / software engineer who can build, evaluate, deploy, and operate ML and LLM systems - and pass the interviews that get you hired to do it.',
   description:
     '108-week AI engineering apprenticeship covering mathematics, algorithms, ML systems, LLM inference, production AI platforms, and interview readiness.',
   url: 'https://sethuiyer.github.io/tensor-to-tenant',

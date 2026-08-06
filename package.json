@@ -7,8 +7,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "python3 tools/validate_schema.py && python3 tools/sync_partner_prompt.py && python3 tools/generate_capstones.py --check && python3 tools/generate.py --check && python3 tools/drift_report.py",
+    "prebuild": "python3 tools/validate_schema.py && python3 tools/sync_partner_prompt.py && python3 tools/generate_capstones.py --check && python3 tools/generate.py --check && python3 tools/drift_report.py && python3 tools/editorial_lint.py",
     "build": "astro build && pagefind --site dist",
+    "lint:editorial": "python3 tools/editorial_lint.py",
+    "editorial:sample": "python3 tools/sample_editorial_sentences.py",
     "preview": "astro preview",
     "astro": "astro"
   },

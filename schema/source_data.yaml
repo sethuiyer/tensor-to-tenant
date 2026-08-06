@@ -1,4 +1,4 @@
-# GENERATED MIGRATION FIXTURE — do not edit; retained exports are migrated into entity schemas.
+# GENERATED MIGRATION FIXTURE - do not edit; retained exports are migrated into entity schemas.
 agents:
   AGENT_MODULES:
   - id: '1'
@@ -116,7 +116,7 @@ agents:
       - Hybrid RAG with reranking
   - id: '7.5'
     title: Model Context Protocol (MCP)
-    theme: USB-C for LLMs — because if your agent can't plug into arbitrary tools and data securely, it's just cosplaying
+    theme: USB-C for LLMs - because if your agent can't plug into arbitrary tools and data securely, it's just cosplaying
       autonomy.
     topics:
     - Integrate MCP to create interoperable, pluggable AI agents
@@ -196,7 +196,7 @@ agents:
     title: Agentic AI Design Patterns
     topics:
     - The Need for Design Patterns in Agentic AI
-    - Deep Dive into Core Agentic AI Design Patterns
+    - Core agentic AI design patterns
     - Exploration of Other Relevant Patterns and Best Practices
     - Best Practices in Agentic System Design
     sections:
@@ -269,7 +269,7 @@ agents:
       - Query reformulation mechanisms
   - id: '17'
     title: Stanford DSPy
-    theme: Compilers for LLMs — stop fiddling with prompts. Start engineering self-optimizing AI programs.
+    theme: Compilers for LLMs - stop fiddling with prompts. Start engineering self-optimizing AI programs.
     topics:
     - Design and implement DSPy Signatures
     - Construct DSPy Modules for complex pipelines
@@ -317,12 +317,12 @@ agents:
   AGENT_BRIDGES:
   - module: '1'
     title: Exploring the Generative AI Universe
-    gap: Module 1 gives you the *what*. tensor-to-tenant gives you the *why* — the math in Weeks 7–10, the primitives in Weeks
+    gap: Module 1 gives you the *what*. tensor-to-tenant gives you the *why* - the math in Weeks 7–10, the primitives in Weeks
       31–33, and the production LLM/RAG work in Weeks 70–81.
     rows:
     - concept: Embeddings & what a model "is"
       weeks: Weeks 7–10
-      insight: Linear algebra and vector geometry that actually produce embeddings — the math under the vocabulary.
+      insight: Linear algebra and vector geometry that actually produce embeddings - the math under the vocabulary.
     - concept: Model parameters & training intuition
       weeks: Weeks 31–33
       insight: Engineering micro-projects where you build ML primitives from scratch; parameters stop being magic.
@@ -345,7 +345,7 @@ agents:
       insight: 'Distributed systems: how services actually get deployed and connected.'
     - concept: Agent capabilities without programming
       weeks: Week 81
-      insight: The agents phase — you now know what those drag-and-drop nodes compile to.
+      insight: The agents phase - you now know what those drag-and-drop nodes compile to.
   - module: '3'
     title: Coding Essentials for AI Programming
     gap: Coding essentials give you the vocabulary. Weeks 2–4, 47, 52, and 81 show you what the vocabulary actually compiles
@@ -370,13 +370,13 @@ agents:
     rows:
     - concept: LCEL & composable chains
       weeks: Week 37
-      insight: 'Engineering primitives: composing small, testable units — the same discipline as pipeline composition.'
+      insight: 'Engineering primitives: composing small, testable units - the same discipline as pipeline composition.'
     - concept: Model I/O & the LLM abstraction
       weeks: Week 79
       insight: 'The LLM/RAG phase: you build the abstraction and understand its cost.'
     - concept: Memory & conversational apps
       weeks: Week 80
-      insight: RAG and memory systems — state management under the hood.
+      insight: RAG and memory systems - state management under the hood.
     - concept: Chains in production
       weeks: Week 98
       insight: 'Production AI platform: multi-tenant accounting and reliability for LLM pipelines.'
@@ -389,7 +389,7 @@ agents:
       insight: 'Hypothesis choice: how you phrase an experiment changes the result.'
     - concept: Chain of Thought
       weeks: Week 73
-      insight: LLM training/RAG — why reasoning traces work, from the model’s perspective.
+      insight: LLM training/RAG - why reasoning traces work, from the model’s perspective.
     - concept: Self Consistency
       weeks: Week 61
       insight: 'Experimentation and evaluation: sampling, variance, and aggregation.'
@@ -402,7 +402,7 @@ agents:
     rows:
     - concept: Vector databases
       weeks: Weeks 31–33
-      insight: Build embedding/vector primitives from scratch — you stop trusting the index and build one.
+      insight: Build embedding/vector primitives from scratch - you stop trusting the index and build one.
     - concept: Chunking & document processing
       weeks: Week 36
       insight: 'ML micro-projects: tokenization and preprocessing with measurable trade-offs.'
@@ -411,7 +411,7 @@ agents:
       insight: 'The RAG weeks: retrieval pipelines, hybrid search, and evaluation at depth.'
     - concept: Hallucination mitigation
       weeks: Weeks 75–78
-      insight: Grounding, attribution, and evaluation — the why behind CRAG and self-RAG.
+      insight: Grounding, attribution, and evaluation - the why behind CRAG and self-RAG.
   - module: '7'
     title: Building AI Agents from Scratch & Graph-RAG
     gap: Building agents from scratch teaches the loop. Weeks 37, 73, 77, 81 and the Forge’s graph theory teach the structure
@@ -425,7 +425,7 @@ agents:
       insight: 'LLM evaluation: self-critique and feedback loops.'
     - concept: Graph RAG with Cypher
       weeks: Week 77
-      insight: Graph retrieval — and the Algorithmic Forge graph-theory spine underneath.
+      insight: Graph retrieval - and the Algorithmic Forge graph-theory spine underneath.
     - concept: Entity & relationship extraction
       weeks: Week 81
       insight: 'Agents phase: knowledge structuring for multi-step reasoning.'
@@ -667,8 +667,8 @@ agents:
     weeks: Weeks 52, 75, 98, 100 + Algorithmic Forge, Capstone 2
   BRIDGE_PITCH:
     quote: Do Modules 1–18 + Manus capstone in 16 weeks. You'll be an agent builder who can ship. Then, when you hit the ceiling
-      — when your RAG pipeline breaks at 10k QPS, when your AutoGen crew deadlocks, when your DSPy optimizer converges to
-      garbage — tensor-to-tenant is waiting. Weeks 22, 38, 57, 75, 88, 98, 99, 102. That's where the ceiling becomes a floor.
+      - when your RAG pipeline breaks at 10k QPS, when your AutoGen crew deadlocks, when your DSPy optimizer converges to
+      garbage - tensor-to-tenant is waiting. Weeks 22, 38, 57, 75, 88, 98, 99, 102. That's where the ceiling becomes a floor.
     tag: This is the bridge. Not a merge. A ladder.
   MANUS_CAPSTONE:
     title: Project Manus - Agentic UI Automation
@@ -767,7 +767,7 @@ darbar:
     easy: 255
     medium: 240
     hard: 53
-    tagline: 548 hand-crafted picks covering the full data-structure and algorithm spectrum.
+    tagline: 548 selected problems covering the full data-structure and algorithm spectrum.
     link: https://aninokuma.codeberg.page/leetcode-darbar/
   DARBAR_PACING_MAP:
   - weeks: 1–6
@@ -1122,25 +1122,25 @@ forge:
     tier: Boss fights
     artifact: Capstone 1 required; Capstone 2 optional at Week 108
   FORGE_BOSSES:
-  - name: Week 18 — Numerical matrix boss
+  - name: Week 18 - Numerical matrix boss
     description: Gaussian elimination, matrix exponentiation, or randomized SVD with numerical-stability notes.
-  - name: Week 30 — Foundations mini-contest
+  - name: Week 30 - Foundations mini-contest
     description: Expectation DP, combinatorics, modular arithmetic, and one optimization search problem.
-  - name: Week 45 — Data-structure mini-contest
+  - name: Week 45 - Data-structure mini-contest
     description: Fenwick/segment tree, DSU, hashing, and a range-query workload.
-  - name: Week 57 — Graph/flow boss
+  - name: Week 57 - Graph/flow boss
     description: Euler indexing plus a flow or matching formulation for scheduling/resource allocation.
-  - name: Week 69 — MLOps algorithm boss
+  - name: Week 69 - MLOps algorithm boss
     description: Experiment assignment, greedy rollout, or bandit allocation with a correctness and trade-off report.
-  - name: Week 81 — String/agent boss
+  - name: Week 81 - String/agent boss
     description: Aho–Corasick tool/prompt detector or sequence-DP planner.
-  - name: Week 93 — Inference boss
+  - name: Week 93 - Inference boss
     description: Priority scheduling, interval allocation, and binary search on capacity backed by a benchmark.
-  - name: Week 102 — Platform tree boss
+  - name: Week 102 - Platform tree boss
     description: Euler Tour plus DSU-on-Tree subtree analytics, used as preparation for Capstone 2.
-  - name: Weeks 103–108 — Capstone 1
-    description: Mo’s algorithm over immutable LLM traces — the required algorithmic capstone.
-  - name: Week 108 optional — Capstone 2
+  - name: Weeks 103–108 - Capstone 1
+    description: Mo’s algorithm over immutable LLM traces - the required algorithmic capstone.
+  - name: Week 108 optional - Capstone 2
     description: Euler Tour + DSU on Tree over agent execution trees. Extra depth credit, not required for the LLM Platform
       badge.
   FORGE_COVERAGE:
@@ -1607,7 +1607,7 @@ mandalas:
     - PCA-style experiment
     - quadratic-form visualization
     - low-rank compression demo
-    transformation: Embeddings, attention and matrix models stop looking like mystical equations. The learner can reason geometrically.
+    transformation: Embeddings, attention and matrix models become geometric objects. The learner can reason about them.
   - id: '3'
     title: Numerical computation and differentiation
     days: Days 97–144
@@ -1628,8 +1628,7 @@ mandalas:
     - randomized approximation lab
     - gradient and curvature visualizers
     - manual backpropagation worksheet
-    transformation: They begin understanding not only whether an algorithm is mathematically correct, but whether it is numerically
-      sane.
+    transformation: They learn to ask whether an algorithm is mathematically correct and numerically sane.
   - id: '4'
     title: Probability, autodiff and statistical inference
     days: Days 145–192
@@ -1650,7 +1649,7 @@ mandalas:
     - Monte Carlo convergence demo
     - estimator comparison
     - statistical-test implementation
-    transformation: They can explain why training and evaluation procedures work — not merely import them.
+    transformation: They can explain why training and evaluation procedures work instead of treating them as imports.
   - id: '5'
     title: Experimentation meets retrieval
     days: Days 193–240
@@ -1751,7 +1750,7 @@ mandalas:
     - leakage audit
     - evaluation harness
     - rollout plan
-    transformation: They learn that a production ML system begins with a decision and a dataset — not with model training.
+    transformation: A production ML system begins with a decision and a dataset, rather than model training alone.
   - id: '10'
     title: Build a mature experimentation platform
     days: Days 433–480
@@ -1857,7 +1856,7 @@ mandalas:
     - model-router service
     - safe tracing layer
     - resilient aggregator
-    transformation: They can optimize not just a model, but a multi-provider inference service.
+    transformation: They can optimize a model and a multi-provider inference service.
   - id: '15'
     title: Build the enterprise AI platform
     days: Days 673–720
@@ -1882,7 +1881,7 @@ mandalas:
     - complete capstone design document
     transformation: This is where “tensor” finally becomes “tenant.”
   - id: final
-    title: Graduation — portfolio, capstone and interview readiness
+    title: Graduation - portfolio, capstone and interview readiness
     days: Days 721–756
     weeks: Weeks 103–108
     identity: Portfolio-backed Staff AI Systems candidate
@@ -2256,7 +2255,7 @@ math:
       focus: Tensor, pipeline, expert parallelism
 prerequisites:
   PREREQUISITE_RESOURCES:
-  - title: Google Like a Pro — Advanced Search Operators
+  - title: Google Like a Pro - Advanced Search Operators
     url: https://www.youtube.com/watch?v=BRiNw490Eq0
     focus: Finding the right source, fast
     weeks: W1–2
@@ -2265,42 +2264,42 @@ prerequisites:
     url: https://www.youtube.com/watch?v=SWr6NW2osqc
     focus: Reading docs as a skill
     weeks: W1–2
-    outcome: Navigate any framework docs — quickstarts, references, and changelogs — without a tutorial.
+    outcome: Navigate any framework docs - quickstarts, references, and changelogs - without a tutorial.
   - title: Git for Beginners
     url: https://www.youtube.com/watch?v=vwj89i2FmG0
     focus: Version control fluency
     weeks: W1–2
-    outcome: Commit, branch, merge, and recover — the tooling habit every weekly artifact depends on.
+    outcome: Commit, branch, merge, and recover - the tooling habit every weekly artifact depends on.
   - title: CS50x 2024 Lectures
     url: https://www.youtube.com/playlist?list=PLhQjrBD2T381WAHyx1pq-sBfykqMBI7V4
     focus: Computer science fundamentals
     weeks: W1–6
-    outcome: C, memory, algorithms, data structures, and web — the shared vocabulary of the whole course.
+    outcome: C, memory, algorithms, data structures, and web - the shared vocabulary of the whole course.
   - title: Nand to Tetris
     url: https://www.youtube.com/playlist?list=PLrDd_kMiAuNmSb-CKWQqq9oBFN_KNMTaI
     focus: A computer from first principles
     weeks: W7–10
-    outcome: Build a working computer from NAND gates up — assembler, VM, compiler, OS — and a Tetris game.
-  - title: MIT 6.042J — Mathematics for Computer Science
+    outcome: Build a working computer from NAND gates up - assembler, VM, compiler, OS - and a Tetris game.
+  - title: MIT 6.042J - Mathematics for Computer Science
     url: https://www.youtube.com/playlist?list=PLB7540DEDD482705B
     focus: Discrete mathematics
     weeks: W11–16
-    outcome: Proofs, induction, counting, probability, and graphs — the reasoning the course front-loads in Weeks 7–30.
-  - title: YACR — Programming Paradigms Explained
+    outcome: Proofs, induction, counting, probability, and graphs - the reasoning the course front-loads in Weeks 7–30.
+  - title: YACR - Programming Paradigms Explained
     url: https://codeberg.org/aninokuma/YACR#programming-paradigms-explained-procedural-functional-object-oriented-and-let-it-crash
     focus: Programming paradigms
     weeks: W17–18
-    outcome: Procedural, functional, object-oriented, and let-it-crash thinking — and why each exists.
+    outcome: Procedural, functional, object-oriented, and let-it-crash thinking - and why each exists.
   - title: Statistical Learning with Python
     url: https://www.youtube.com/playlist?list=PLoROMvodv4rPP6braWoRt5UCXYZ71GZIQ
     focus: Statistics and ML foundations
     weeks: W19–28
-    outcome: Supervised and unsupervised learning from the data side — the empirical backbone of every ML week.
+    outcome: Supervised and unsupervised learning from the data side - the empirical backbone of every ML week.
   - title: Software Engineering at Google
     url: https://abseil.io/resources/swe-book
     focus: Engineering culture and practice
     weeks: W29–32
-    outcome: How teams design, test, review, and ship at scale — the professional layer under the technical arc.
+    outcome: How teams design, test, review, and ship at scale - the professional layer under the technical arc.
   PREREQUISITE_36_WEEKS:
   - weeks: W1–2
     title: Learning how to learn
@@ -2308,42 +2307,42 @@ prerequisites:
     - Google Like a Pro
     - How To Read Documentation
     - Git for Beginners
-    outcome: Search and docs fluency plus version control — the self-serve skills every later week compounds.
+    outcome: Search and docs fluency plus version control - the self-serve skills every later week compounds.
   - weeks: W3–6
     title: Computer science foundations
     resources:
     - CS50x Lectures 1–6
-    outcome: C, memory, and algorithms — the vocabulary of computation the course assumes at Week 1.
+    outcome: C, memory, and algorithms - the vocabulary of computation the course assumes at Week 1.
   - weeks: W7–10
     title: A computer from first principles
     resources:
     - Nand to Tetris
-    outcome: From NAND gates to a CPU, compiler, and OS — nothing is magic anymore.
+    outcome: From NAND gates to a CPU, compiler, and OS - nothing is magic anymore.
   - weeks: W11–16
     title: Mathematics for computer science
     resources:
     - MIT 6.042J
-    outcome: Proofs, induction, counting, probability, and graphs — the exact reasoning Weeks 7–30 rely on.
+    outcome: Proofs, induction, counting, probability, and graphs - the exact reasoning Weeks 7–30 rely on.
   - weeks: W17–18
     title: Programming paradigms
     resources:
     - YACR
-    outcome: Procedural, functional, OO, and let-it-crash — the lenses behind every framework you will read.
+    outcome: Procedural, functional, OO, and let-it-crash - the lenses behind every framework you will read.
   - weeks: W19–28
     title: Statistical learning
     resources:
     - Statistical Learning with Python
-    outcome: Supervised and unsupervised learning — the empirical core of the ML and evaluation weeks.
+    outcome: Supervised and unsupervised learning - the empirical core of the ML and evaluation weeks.
   - weeks: W29–32
     title: Software engineering at scale
     resources:
     - Software Engineering at Google
-    outcome: Design docs, testing, code review, and ownership — the discipline that makes weekly artifacts professional.
+    outcome: Design docs, testing, code review, and ownership - the discipline that makes weekly artifacts professional.
   - weeks: W33–36
     title: Synthesis project
     resources:
     - All of the above
-    outcome: Consolidate everything into one working project — then Week 1 of the arc starts on solid ground.
+    outcome: Consolidate everything into one working project - then Week 1 of the arc starts on solid ground.
 resources:
   YOUTUBE_PLAYLISTS:
   - title: 20 AI Concepts Explained in 40 Minutes
@@ -2412,7 +2411,7 @@ resources:
     topic: A/B testing, shadow deployment, canary, bandits
   - book: ML Interviews
     pages: 163–170
-    topic: Metrics — Recall@K, MRR, NDCG trade-offs
+    topic: Metrics - Recall@K, MRR, NDCG trade-offs
   - book: Acing System Design
     pages: 277–296
     topic: Search architecture, candidate generation, freshness
@@ -2439,7 +2438,7 @@ resources:
     topic: Trade-off analysis, MECE reasoning, bottom line over evidence
   - book: System Design
     pages: 191–195
-    topic: Interview method checklist — read night before
+    topic: Interview method checklist - read night before
   - book: Practical MLOps
     pages: 181–204
     topic: Four-layer monitoring framework
@@ -2496,7 +2495,7 @@ resources:
     topic: Faster attention kernels
     url: ''
   - paper: FlashAttention-3
-    venue: —
+    venue: '-'
     topic: Hopper-optimized attention
     url: ''
   - paper: Transformers are RNNs (Linear Attention)
@@ -2723,11 +2722,11 @@ resources:
     url: https://github.com/stanford-cs336/spring2025-lectures
   - title: CS336 Lecture 5 (Percy Liang, Tatsunori Hashimoto)
     url: https://www.youtube.com/watch?v=fcgPYo3OtV0
-  - title: GPU MODE Lecture 22 — Hacker’s Guide to Speculative Decoding
+  - title: GPU MODE Lecture 22 - Hacker’s Guide to Speculative Decoding
     url: https://www.youtube.com/watch?v=6OBtO9niT00
   - title: Transformer Inference Arithmetic (kipply)
     url: https://kipp.ly/transformer-inference-arithmetic/
-  - title: Databricks — LLM Inference Performance Engineering
+  - title: Databricks - LLM Inference Performance Engineering
     url: https://www.databricks.com/blog/llm-inference-performance-engineering-best-practices
   - title: PagedAttention announcement (vLLM blog)
     url: https://blog.vllm.ai/2023/06/20/vllm.html
@@ -2759,7 +2758,7 @@ resources:
     url: https://github.com/triton-inference-server/perf_analyzer
   - title: Practical strategies for vLLM performance tuning (Red Hat)
     url: https://developers.redhat.com/articles/2026/03/03/practical-strategies-vllm-performance-tuning
-  - title: Lilian Weng — Inference Optimization survey
+  - title: Lilian Weng - Inference Optimization survey
     url: https://lilianweng.github.io/posts/2023-01-10-inference-optimization/
   - title: vLLM quantization docs
     url: https://docs.vllm.ai/en/latest/features/quantization/
@@ -2771,11 +2770,11 @@ resources:
     url: https://developers.redhat.com/articles/2025/09/23/how-set-kserve-autoscaling-vllm-keda
   - title: LLM Inference Economics from First Principles (TensorEconomics)
     url: https://www.tensoreconomics.com/p/llm-inference-economics-from-first
-  - title: DigitalOcean — LLM Inference Cost
+  - title: DigitalOcean - LLM Inference Cost
     url: https://www.digitalocean.com/community/tutorials/llm-inference-cost
-  - title: Character.AI — Optimizing AI Inference
+  - title: Character.AI - Optimizing AI Inference
     url: https://blog.character.ai/optimizing-ai-inference-at-character-ai-2/
-  - title: 'NVIDIA — Mastering LLM Techniques: Inference Optimization'
+  - title: 'NVIDIA - Mastering LLM Techniques: Inference Optimization'
     url: https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/
   - title: SGLang intro (Lianmin Zheng)
     url: https://www.youtube.com/watch?v=Ny4xxErgFgQ
@@ -2785,9 +2784,9 @@ resources:
     url: https://lmsys.org/blog/2024-01-17-sglang/
   - title: SGLang docs
     url: https://docs.sglang.io
-  - title: Warp Decode — better MoE model inference (Cursor)
+  - title: Warp Decode - better MoE model inference (Cursor)
     url: https://cursor.com/blog/warp-decode
-  - title: Mixture-of-Kittens — deterministic MoE megakernel for NVL72s (Cursor)
+  - title: Mixture-of-Kittens - deterministic MoE megakernel for NVL72s (Cursor)
     url: https://cursor.com/blog/mixture-of-kittens
 systemDesign:
   DESIGN_WEEKS:
@@ -2847,7 +2846,7 @@ systemDesign:
   - step: Stress
     detail: contention, failure modes, consistency, replay, recovery, and observability
   - step: Extend
-    detail: the AI concern — embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution
+    detail: the AI concern - embeddings, retrieval, inference routing, agent memory, evaluation, safety, or cost attribution
   DESIGN_TECH_CORE:
   - Redis
   - PostgreSQL

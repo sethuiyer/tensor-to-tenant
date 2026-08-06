@@ -37,7 +37,7 @@
   weeks: Weeks 7–14
   title: Learn the geometry beneath intelligence
   identity: Linear-algebra thinker
-  transformation: Embeddings, attention and matrix models stop looking like mystical equations. The learner can reason geometrically.
+  transformation: Embeddings, attention and matrix models become geometric objects. The learner can reason about them.
   tier: core
   level: 2
   seam: identity progression
@@ -63,8 +63,7 @@
   weeks: Weeks 14–21
   title: Numerical computation and differentiation
   identity: Numerical programmer
-  transformation: They begin understanding not only whether an algorithm is mathematically correct, but whether it is numerically
-    sane.
+  transformation: They learn to ask whether an algorithm is mathematically correct and numerically sane.
   tier: core
   level: 2
   seam: identity progression
@@ -92,7 +91,7 @@
   weeks: Weeks 21–28
   title: Probability, autodiff and statistical inference
   identity: Statistical reasoner
-  transformation: They can explain why training and evaluation procedures work — not merely import them.
+  transformation: They can explain why training and evaluation procedures work instead of treating them as imports.
   tier: core
   level: 2
   seam: identity progression
@@ -230,7 +229,7 @@
   weeks: Weeks 55–62
   title: From system design to ML product science
   identity: ML systems practitioner
-  transformation: They learn that a production ML system begins with a decision and a dataset — not with model training.
+  transformation: A production ML system begins with a decision and a dataset, rather than model training alone.
   tier: core
   level: 2
   seam: identity progression
@@ -370,7 +369,7 @@
   weeks: Weeks 90–96
   title: Advanced serving and reliable routing
   identity: Serving and routing engineer
-  transformation: They can optimize not just a model, but a multi-provider inference service.
+  transformation: They can optimize a model and a multi-provider inference service.
   tier: core
   level: 2
   seam: identity progression
@@ -425,7 +424,7 @@
   number: final
   days: Days 721–756
   weeks: Weeks 103–108
-  title: Graduation — portfolio, capstone and interview readiness
+  title: Graduation - portfolio, capstone and interview readiness
   identity: Portfolio-backed Staff AI Systems candidate
   transformation: They no longer need to tell someone they “know AI systems.” They can provide the repository, traces, benchmarks,
     design documents and failure tests.

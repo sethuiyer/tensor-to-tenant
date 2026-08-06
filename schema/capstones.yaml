@@ -11,7 +11,7 @@
   kind: required
   chip: Required
   chip_class: chip--ok
-  title: "Capstone 1 — Multi-Tenant LLM Trace Forensics"
+  title: "Capstone 1 - Multi-Tenant LLM Trace Forensics"
   subtitle: "Mo's Algorithm over immutable trace segments"
   weeks: "Weeks 103–108"
   image: /images/capstone_trace_forensics_infographic.webp
@@ -48,7 +48,7 @@
   kind: optional
   chip: Boss fight
   chip_class: chip--amber
-  title: "Capstone 2 — Agent Execution Forensics"
+  title: "Capstone 2 - Agent Execution Forensics"
   subtitle: "Euler Tour + DSU on Tree"
   weeks: "Week 108 · optional"
   image: /images/capstone_tree_nightmare_forensics.webp
@@ -89,7 +89,7 @@
   kind: alternative
   chip: Gateway
   chip_class: chip--violet
-  title: "Capstone 3 — Enterprise Multi-Model AI Gateway"
+  title: "Capstone 3 - Enterprise Multi-Model AI Gateway"
   subtitle: "OpenRouter-inspired control + request plane"
   weeks: "Weeks 103–108 · alternative"
   image: /images/capstone3_enterprise_ai_gateway.webp

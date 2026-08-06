@@ -2,68 +2,68 @@
   "algorithm": "sha256",
   "files": {
     "cookiecutter/hooks/curriculum_generated.py": {
-      "bytes": 63888,
-      "sha256": "34698af3ac96525e9872b48a7d7eb36040af4843f4106333fa5b667acce8ca4d"
+      "bytes": 63855,
+      "sha256": "667d5470192c5ea00435b23bf11ef71691b6936e2e72bfe47c7c2cf7ba766e96"
     },
     "cookiecutter/{{cookiecutter.repo_name}}/.curriculum_generated.py": {
-      "bytes": 63888,
-      "sha256": "34698af3ac96525e9872b48a7d7eb36040af4843f4106333fa5b667acce8ca4d"
+      "bytes": 63855,
+      "sha256": "667d5470192c5ea00435b23bf11ef71691b6936e2e72bfe47c7c2cf7ba766e96"
     },
     "src/data/agents.ts": {
-      "bytes": 33238,
-      "sha256": "5a636a50d521c5e066f3cabde60199cf7fa316853bef07873bc59ef9ece37ee2"
+      "bytes": 30895,
+      "sha256": "4fa23a06c668ca8328239cbc5c5c62ff7ae089d464ae606d825e433dc7ba935a"
     },
     "src/data/capstones.ts": {
-      "bytes": 10644,
-      "sha256": "6ca141c76e3b13ef9e5eb1c1053b4a6a6a0526aaab09af36fcde52bea1e2f675"
+      "bytes": 10638,
+      "sha256": "f29a7e33ada49d3bff015440043e13f37b42f044145e42b8df598b7e16d3cc76"
     },
     "src/data/darbar.ts": {
-      "bytes": 6186,
-      "sha256": "ffce2994b58c6bbffbd2f7e3a59f1370a618c853e820a8a88f3073ff2bd73dfa"
+      "bytes": 6172,
+      "sha256": "bc12f2690479da416191c4ceaaaeb5acca7bea9859939fe5c6d7e7cdeb57ab57"
     },
     "src/data/deepDives.ts": {
-      "bytes": 5770,
-      "sha256": "64bf983a2035dd0292affd166d7cac56ae605786e6695d3caafa61b6aee49f48"
+      "bytes": 5766,
+      "sha256": "5b198c5d4ff524f8e696a90461bdcba803d4496bd360bb3cbd1d434f1c6e102a"
     },
     "src/data/engineering.ts": {
-      "bytes": 4181,
-      "sha256": "46026fce5f42e7ec97138c5a7602c693a69bbb9120076efb9fb3dac4a5c2abc2"
+      "bytes": 4179,
+      "sha256": "fd9341712bb336d0eda152779694348d4cddd6c9ea839d2c3243053a92242a2a"
     },
     "src/data/forge.ts": {
-      "bytes": 7025,
-      "sha256": "223b1679672e187dc526a6b7f101ef303b5564d9db767df5db5f0e53ed0ec94d"
+      "bytes": 7001,
+      "sha256": "789664c9e2c4fc0652d52882fbd2d22e256bd425f808c48dc6d6b8b4c6a5ad91"
     },
     "src/data/gates.ts": {
-      "bytes": 3014,
-      "sha256": "706d1ea6672248031c27c1b7cab44bd8c046bf130aa36292f807527efdd09d50"
+      "bytes": 3012,
+      "sha256": "814b2ef0ea66fc6fcb79b5317066d9d0bc47893a3066f9bf546fbaf6a14d667c"
     },
     "src/data/interview.ts": {
-      "bytes": 9692,
-      "sha256": "4afcaf343138b2180fcfb05419ed0333ea8e61e365604d9ab5ebab108b302f94"
+      "bytes": 9690,
+      "sha256": "80c1ac24ea1216b15b124dc86f6dd2f049929b9c27a6ab233fe56dabd337d221"
     },
     "src/data/mandalas.ts": {
-      "bytes": 15339,
-      "sha256": "c28b67398db039b60621e661b6e0e4d9ece79e1b334a50d426b1b669b6662fac"
+      "bytes": 13742,
+      "sha256": "6d509732162e2563e9ca533abfcf31a802d8316af1749c05560adb81a77961a5"
     },
     "src/data/math.ts": {
-      "bytes": 12220,
-      "sha256": "767f74a1177b8491f03ba380c35bc35116cba4a4e7bbe53f04978026bfbdffc1"
+      "bytes": 12218,
+      "sha256": "44fde01e9743ca390e6c093974348d294eb10f7d3a8013aed701ce99e9ad5a1a"
     },
     "src/data/prerequisites.ts": {
-      "bytes": 5244,
-      "sha256": "5a2885c512a5008dd2132bbe2c9205d5e56b581a172bdecc065df3db0560442e"
+      "bytes": 5200,
+      "sha256": "3c85a27a632fbbdcbd5294f2e8279ada8ec35a86b284f0967cc52beff13b03cf"
     },
     "src/data/resources.ts": {
-      "bytes": 17883,
-      "sha256": "e286c30b74082948f5389af2702867ac996d9144b48ea63530a229dd35282d1b"
+      "bytes": 17861,
+      "sha256": "505530dbd130d1603de02d1c23ba974a3e24e1efaf5ff96735eb8780dd4d27da"
     },
     "src/data/systemDesign.ts": {
-      "bytes": 10026,
-      "sha256": "a97a9185f8ed964796e87c8650de782d93313c9b702ac5248b173c4a9d0a6db0"
+      "bytes": 10022,
+      "sha256": "4c7c8cf3d64536e70931b2b26dfe6146d9233bbea4872e53ddc16e77f7ad6922"
     },
     "src/data/weeks.ts": {
-      "bytes": 19667,
-      "sha256": "e31f988aa3465e4eb8149d2c9802a6fe66e0cee95f00e5f977d1c15caca6b276"
+      "bytes": 19665,
+      "sha256": "da9d442dd04d05a2186872915902c8e586e9594ddb51a7bef5814f32347b973d"
     }
   }
 }

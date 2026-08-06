@@ -207,9 +207,9 @@
     - { week: 96, role: "sandboxed execution precedent" }
 
 # ============================================================================
-# T1.11.g — The third-party template (durable pattern)
+# T1.11.g - The third-party template (durable pattern)
 # ============================================================================
-# Not a question — a marker that the third-party template
+# Not a question - a marker that the third-party template
 # ("Useful (integrate) / Fluff (exclude with reasoning) / Useful-but-not-yet")
 # is the durable ingestion pattern for future practitioner checklists.
 # Future artifacts: job description clusters, conference talk outlines,

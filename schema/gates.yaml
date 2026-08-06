@@ -1,4 +1,4 @@
-# Milestone gates — blocking checkpoints, not decorative progress markers.
+# Milestone gates - blocking checkpoints, not decorative progress markers.
 # Per T1.2 / T1.6: every entry has selection_rationale + level + seam +
 # cross_references. Drift check verifies schema matches src/data/gates.ts
 # at the byte-for-byte level after T1.7 lands.
@@ -20,7 +20,7 @@
     (linear algebra, numerical methods, calculus, autodiff, probability,
     statistics, basic experimentation) plus the engineering primitive
     intro. The release at W30 is the first "you can prove something"
-    moment — math foundations, a numerical toolkit, an experimentation
+    moment - math foundations, a numerical toolkit, an experimentation
     workflow. A learner who ships this and stops is genuinely more
     capable than 90% of ML engineers.
   load_bearing_for: [30, "gate-3"]
@@ -39,7 +39,7 @@
   selection_rationale: >
     Second stackable release. W31–69 covers engineering primitives,
     system design weeks, ML lifecycle and MLOps. The release at W69
-    is the "you can ship a production ML system" moment — primitives
+    is the "you can ship a production ML system" moment - primitives
     with tests, design docs, an experimentation tool, monitoring. A
     learner who ships this can hold a Staff-level conversation about
     system trade-offs.
@@ -120,7 +120,7 @@
     End of Phase 3 (Mathematical Foundations II) AND release of the
     Foundations program (W1–30). This is the first "publishable
     release" moment. After this gate, the learner can frame and answer
-    empirical questions correctly — the prerequisite for any ML work.
+    empirical questions correctly - the prerequisite for any ML work.
   load_bearing_for: [30, "foundations-release"]
   cross_references:
     - { entity: weeks, week: 30, role: "exit criterion" }
@@ -157,7 +157,7 @@
     End of Phase 5 (System Design & Distributed Systems Fundamentals,
     W46–57). This is the canonical interview-prep window. After this
     gate, the learner can produce a defensible design doc under time
-    pressure — the load-bearing skill for Staff-level interviews.
+    pressure - the load-bearing skill for Staff-level interviews.
   load_bearing_for: [57]
   cross_references:
     - { entity: weeks, week: 57, role: "exit criterion" }
@@ -174,7 +174,7 @@
   selection_rationale: >
     End of Phase 6 (ML Lifecycle, Experimentation, MLOps) AND release of
     the Engineering + Systems program (W31–69). This gate ensures
-    "trustworthy evidence" — the learner can run an experiment and
+    "trustworthy evidence" - the learner can run an experiment and
     distinguish a real signal from noise, which is the prerequisite
     for any production ML change.
   load_bearing_for: [69, "engineering-systems-release"]
