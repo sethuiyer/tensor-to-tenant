@@ -33,6 +33,11 @@ jobs:
         with:
           package-manager: npm
           node-version: 24
+        env:
+          # GitHub Pages serves this as a project site under /tensor-to-tenant/;
+          # Cloudflare Pages builds with the root base by default.
+          ASTRO_BASE: /tensor-to-tenant
+          ASTRO_SITE: https://sethuiyer.github.io
 
   deploy:
     needs: build
